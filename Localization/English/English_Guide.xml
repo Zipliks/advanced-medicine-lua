@@ -1,0 +1,269 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<infotexts language="English" nowhitespace="false" translatedname="English">
+  <entityname.am_guide>~Europan Medicine, 2 Edition.</entityname.am_guide>
+  <entitydescription.am_guide>Current page:</entitydescription.am_guide>
+  <guidebookinstruction>Choose a page (read the book description)</guidebookinstruction>
+  <introlabel>Introduction</introlabel>
+  <entityname.am_guide_intro>ඞIntroduction
+
+        This magazine is the most popular introduction to key aspects of Medicalypse, acclaimed by readers on many Europa stations and translated to 2 languages. It will help a reader to achieve a clean expectation of the structure of Medicalypse, its methods and its place in the medical education and the work of many novice medics
+
+        To navigate the book, hold it in your hands and open the corresponding page(on the right side of the interface). After that, a tooltip (which is what you read right now) will update. It's recommended to read the book in order (upside down), so you won't miss important details. Introduction will help you find the page you need.
+
+        If you still have questions after reading this, you're free to ask those in our dedicated Discord server:
+        https://discord.gg/ABvNrX8UC2
+        Good reading!</entityname.am_guide_intro>
+  <am_guide_indexlabel>Introduction</am_guide_indexlabel>
+  <entityname.am_guide_index>ඞIntroduction
+
+        The following describes the book contents, with a short review of each page:
+
+        1. Basics: Base info on Medicalypse
+        2. Medical gear: Tools, drugs and use of those
+        3. Surgeries: Methods and techniques of all the surgical operations
+        4. Medicine 101: Pathological states and how to treat those.
+        5. Blood compatibility: A table of AB0 system and rules of blood transfusions</entityname.am_guide_index>
+  <am_guide_mainlabel>Basics ; page 1</am_guide_mainlabel>
+  <entityname.am_guide_main>ඞBasics - 1
+        Immunity:
+        Every person has an immunity, which is 600% by default. It's responsible for passive regeneration of an organism.
+        If a person gets injured, the immunity level decreases. Low immunity level leads to wound infections.
+        ATTENTION: Wound infection is an extremely dangerous pathological state, leading to sepsis(blood infection) and necrosis (tissue death)!
+        If a person is healthy, immunity will restore itself
+
+        Blood type:
+        There are 4 blood types: O - "I", А - "II", В - "III", and АВ - "IV". Each of those can be either Rh-positive (O+, A+, B+, AB+) or Rh-negative (O-, A-, B-, AB-).
+        Be careful when mixing blood types. You can only transfuse blood of the type to a person of a same blood type (for example, AB+ for AB+ patient) , but in special cases, if you don't have any, it's possible to transfuse blood of the I type negative(0-). I negative type (0-) is universal. Patients of the IV type (AB+) can receive blood of any type. They are called a universal recipients.
+        Rh positive patients can recieve blood with any sign (either + or -), but Rh negative patients can only recieve Rh negative blood
+        WARNING: When transfusing incompatible blood transfusion shock occurs, accompanied by massive blood loss and severe health issues.</entityname.am_guide_main>
+  <am_guide_mainlabel2>Basics ; page 2</am_guide_mainlabel2>
+  <entityname.am_guide_main2>ඞBasics - 2
+        Dislications and fractures:
+        Each member of the crew in the event of an injury may partially lose the working capacity of a limb (arms, legs) or completely lose them. If a person dislocates, breaks or completely loses a limb, he will not be able to use it. If one limb is disabled, the patient will not be able to use two-handed tools, such as a welding tool or a shotgun.
+        Treatment: reduction of dislocation, installation of an implant on a broken limb, prosthetics.
+        TIP: Dislocation reduction is done with a WRENCH and only by a trained medical professional. Bless you Father Hnappin
+
+        Hypoxia (lack of oxygen in the tissue):
+        2 main causes of hypoxia are bloodloss and asphyxia (lack of oxygen, suffocation). Hypoxia leads to disruption of the heart and other complications.
+
+        Progress in the development of pathological heart conditions:
+         Ventricular tachycardia -&gt; Ventricular fibrillation -&gt; Asystole.
+
+        Ventricular tachycardia - abnormally rapid contraction of the chambers of the heart
+        Ventricular fibrillation - failure in the heart rhythm, the chambers are contracting chaotically
+        Asystole - heart failure
+
+        Asystole leads to cerebral(brain) hypoxia. It's a critical state, that may result in the death of a crew member.</entityname.am_guide_main2>
+  <am_guide_toolslabel>Tools ; page 1</am_guide_toolslabel>
+  <entityname.am_guide_tools>ඞTools ; page 1
+      Bandages are a dressing used to stop bleeding and protect a wound from infection. Can be used as a makeshift splint for fractured limbs.
+       TIP: before the start of the main therapeutic measures, first bandage the injured limb in order to prevent possible infection and injury to the limb.
+
+       Opium, Morphine, Fentanyl - drugs from the group of opiates that have a sedative effect on the body. Opioids increase resistance to injury by reducing sensitivity. Required for operations.
+        IMPORTANT: do not restore the functional state of organs and systems!
+
+        Adrenaline is a drug that has a stimulating effect on the cardiovascular system. Is a mandatory component of the resuscitation kit.
+        Indications for use: hypotension, hypoxia (weak effect), asphyxia, ventricular tachycardia, ventricular fibrillation, asystole.
+        TIP: If a person has suffered from asphyxia (suffocation), the use of adrenaline will significantly speed up the resuscitation process.
+
+        Antibiotics are drugs that have an antibacterial effect.
+        Indications for use: wound infections, sepsis, infection with the husky parasite (calix velonaceps eggs).
+
+        Saline - an aqueous solution of sodium chloride 0.9%.
+        Indications for use: blood loss (blood transfusion is required, though).
+
+        Health scanned HUD is a special medical device used to diagnose a patient's health condition. It is an extremely important tool in the work of a medic.</entityname.am_guide_tools>
+  <am_guide_toolslabel2>Tools ; page 2</am_guide_toolslabel2>
+  <entityname.am_guide_tools2>ඞTools - 2
+    Tools featured in Medicalypse:
+
+    Automated external defibrillator(defib):
+    The device needed to restore the heart rhythm. It helps in cases of
+    Ventricular tachycardia and ventricular fibrillation.
+   ATTENTION! The defibrillator does not treat Asystole, it requires cardiopulmonary resuscitation (CPR)
+
+   Ambu bag: A bag for manual lung ventilation, treats asphyxia.
+   Tourniquet: Stops arterial bleeding on the selected limb, except for the torso.
+   reboa: Stops arterial bleeding in the torso.
+   Decompression needle: Slows down the development of pneumothorax, an accumulation of air in the pleural region caused by penetrating trauma (drainage and surgery are required for complete healing).
+   Propofol: Allows operation off the operating table without shock, but stuns the patient; Can cause breathing issues.
+   Mannitol Plus: A powerful (and expensive) treatment for cerebral hypoxia, but causes nausea.
+   Antibiotic ointment: Used to treat burns and infections.
+   AutoPulse: Portable device with replaceable power supply. Automatically performs cardiopulmonary resuscitation.
+   Hematology analyzer: A device for determining the blood type. Requires cartridges to work.
+   HINT: Gives out a card with a blood type; the card can be put into the crew member's ID card.
+    </entityname.am_guide_tools2>
+  <am_guide_toolslabel3>Tools ; page 3</am_guide_toolslabel3>
+  <entityname.am_guide_tools3>ඞTools - 3
+      Sutures:
+      Required to complete operations
+      Helps treating Bites, Lacerations, Deep Tissue Injuries, Gunshot Wounds.
+      During the operation, they can sew up arterial bleeding, internal bleeding or cardiac tamponade, as well as sew a severed limb.
+      IMPORTANT: are the last step for all surgeries, even for incomplete ones.
+
+      Antiseptic spray: A device that decontaminates wounds at an early stage of infection, does not help with necrosis or sepsis.
+      Increases the protection of a body part from getting new infections. Consumed upon use
+
+      Stasis Bag: Puts the body into stasis.
+      Withstands pressure at a depth of no more than 5000m.
+      HINT: Stops all status effects. The charge of the bag is limited unreplenishable (17 minutes of work).
+
+      Body bag: For packing cargo 200
+      When put on a living person, it demobilizes him, causes suffocation. When used on a husk (or a human during transformation) does not kill him, as the husk enters stasis, but effectively disables it for subsequent kill and/or ejection
+      IT IS IMPOSSIBLE TO REMOVE THE BAG BY YOURSELF
+
+      Surgical instruments:
+      Scalpel, Hemostat (aka clamp), Retractor: Necessary tools to start the operation.
+      Tweezers: Required to remove foreign bodies from the body
+      Surgical drill: Required for inserting an implant in the limb in case of a fracture.
+      Surgical Saw: Required to perform amputations.
+      Drainage: Required to treat pneumothorax.
+      Operating table: Necessary for operations, without it or without Propofol, the patient will receive a traumatic shock.
+      HINT: The patient cannot be forcibly placed on the table, it is enough that the patient is in proximity to the table
+      Osteosynthesis Implants: Used to treat a broken limb, insertion requires drilling through the limb with a surgical drill.
+      Prostheses: Replacement for lost limbs.</entityname.am_guide_tools3>
+  <am_guide_operationslabel>Surgeries</am_guide_operationslabel>
+  <entityname.am_guide_operations>ඞSurgeries
+      This section covers different aspects of a surgery
+
+      First of all, you need to put the patient into analgesia with the help of opiates.
+
+      The patient must be on the operating table or be under Propofol.
+      If he cannot lie down on his own, it's enough to put him under the operating table.
+
+      To begin the surgery, you need to use the basic set of tools:
+      Scalpel, Hemostat, Retractor (in order; wait for the scale to fill completely before each next step).
+      Further in the text, the procedure for starting the operation will be called "Standard preliminary procedures", "SPP"
+
+      From this moment, you can begin to take concrete actions.
+
+      With tweezers you can:
+      Remove splinters, Internal trauma, Blunt force trauma, Necrosis.
+
+      With the help of a drill and implants, a fracture can be cured:
+      Drill a bone with and insert implants.
+      TIP: Treat fractures last, as the presence of trauma can cause a fracture again.
+
+      With the help of a surgical saw, you can amputate a limb, a stump it
+      Prostheses can be purchased at outposts; they are different for the right and left limbs.
+      Amputation: The limb is sawn off with a saw and sewn with sutures.
+      After the limb is amputated, it's possible to attach a prosthesis (just use the prosthesis on the missing limb).
+
+      To finish a surgery, suture a part of the body
+      ATTENTION: Do not forget to suture the patient after the end of the operation, otherwise it can lead to traumatic shock and a sharp deterioration in the patient's condition.
+
+      Also, with the help of surgical sutures, you can operate on wounds:
+      Bites, Lacerations, Deep Tissue Injuries, Gunshot Wounds.</entityname.am_guide_operations>
+  <am_guide_medicallabel>Medicine 101 ; page 1</am_guide_medicallabel>
+  <entityname.am_guide_medical>ඞMedicine 101 - 1
+        This section covers all the possible states of a person and what to do about it.
+
+        Burns
+        Treatment: Antibiotic ointment
+
+        Low oxygen level:
+        Treatment: Ambu bag, resuscitation (CPR).
+
+        Blunt force trauma, Internal trauma:
+        Treatment: SPP, remove with tweezers.
+
+        Lacerations, Bites, Gunshot Wounds, Deep Tissue Injuries:
+        Treatment: Sew up with Sutures.
+
+        Organ damage:
+        Treatment: Wait or administer Deusizine.
+
+        Ventricular tachycardia, ventricular fibrillation
+        Treatment: Defibrillator, resuscitation (CPR), Adrenaline.
+
+        Asystole (cardiac arrest)
+        Treatment: Resuscitation (CPR), Adrenaline.
+
+        Hypotension:
+        Treatment: Resuscitation (CPR), Adrenaline.
+
+        Cerebral hypoxia:
+        Treatment: Mannitol plus, Adrenaline.
+
+        Fracture:
+        First aid: Put a splint on a fractured limb.
+        Treatment: SPP, drill the bone, insert implants for osteosynthesis.
+
+        Arterial bleeding:
+        First aid: put a tourniquet on the limb, if bleeding in the body then use reboa.
+        Treatment: SPP, suture the artery with surgical sutures.
+
+        Traumatic shock:
+        Cause: The operation was performed not on the table / not under the influence of Propofol.
+        First aid: just put the person on the table, set up the AutoPulse, and wait.
+        Treatment: Stabilozine may also help.</entityname.am_guide_medical>
+  <am_guide_medicallabel2>Medicine 101 ; page 2</am_guide_medicallabel2>
+  <entityname.am_guide_medical2>ඞMedicine 101 - 2
+      Pneumothorax(collapsed lung):
+      Reason: physical damage to the torso.
+      First aid: decompression needle.
+      Treatment: SPP, drainage.
+
+      Infected Wound:
+      First aid: Apply a bandage to slow down the spread of infection, it is also recommended to apply an antibiotic ointment. If the patient has a very low immunity, use the ointment and bandage together.
+      Treatment: Bandage or ointment. To prevent severe infection, use an Antiseptic Spray. if a person has multiple foci of infection throughout the body, use broad-spectrum antibiotics.
+
+      Sepsis:
+      Treatment: use antibiotics.
+
+      Necrosis:
+      Treatment: SPP, remove with tweezers.
+
+      Transfusion Shock:
+      Prevention: Know the blood types of the crew/use filtered blood (if there's no compatible).
+      Treatment: Wait out, restore the loss of blood and oxygen.
+
+      Coma:
+      Treatment: Administer morbusine antidote.
+
+      Splinters in the body:
+      Treatment: SPP, remove with tweezers.
+
+      Traumatic amputation:
+      Treatment: SPP, amputate the stump, insert a prosthesis.
+
+      Spinal injury:
+      Reason: a consequence of a broken neck.
+      Treatment: SPP, install a spinal column implant.
+
+      Cardiac tamponade:
+      Treatment: SPP, suturing.
+
+      Internal bleeding:
+      Treatment: SPP, suturing.
+
+      Respiratory arrest:
+      Reason: Hypoxia, traumatic shock, bloodloss, coma, etc.
+      Treatment: Eliminate the source of the disease.</entityname.am_guide_medical2>
+  <am_guide_bloodtablelabel>Blood compatibility</am_guide_bloodtablelabel>
+  <entityname.am_guide_bloodtable>ඞBlood compatibility
+        In this section, you can check the blood type compatibility table
+
+        Blood type:
+        =========================
+        Can be a donor for:
+        AB+: AB+
+        AB-: AB+, AB-
+        A+ : AB+, A+
+        A- : AB+, AB-, A+, A-
+        B+ : AB+, B+
+        B- : AB+, AB-, B+, B-
+        O+ : AB+, A+, B+, O+
+        O- : UNIVERSAL DONOR
+        =========================
+        Can be a recipient from:
+        AB+: UNIVERSAL RECIPIENT
+        AB-: АВ-, А-, В-, О-
+        A+ : A+, А-, О+, О-
+        A- : A-, О-
+        B+ : B+, В-, О+, О-
+        B- : В-, О-
+        O+ : O+, О-
+        O- : О-
+        =========================</entityname.am_guide_bloodtable>
+</infotexts>

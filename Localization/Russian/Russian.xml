@@ -1,0 +1,372 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<infotexts language="Russian" nowhitespace="false" translatedname="Русский">
+  <stasisbugequipconfirmation>Вы уверены, что хотите залезть в стазис-мешок?</stasisbugequipconfirmation>
+  <bodybagequipconfirmation>Вы уверены, что хотите залезть в мешок для трупов?</bodybagequipconfirmation>
+  <entityname.defib>Автоматический наружный дефибриллятор</entityname.defib>
+  <entitydescription.defib>Прибор, генерирующий электрические импульсы для стабилизации нарушений сердечного ритма.</entitydescription.defib>
+  <entityname.advscalpel>Скальпель</entityname.advscalpel>
+  <entitydescription.advscalpel>Хирургический инструмент для рассечения мягких тканей.</entitydescription.advscalpel>
+  <entityname.advhemostat>Зажим</entityname.advhemostat>
+  <entitydescription.advhemostat>Хирургический инструмент для пережатия кровеносных сосудов, тканей или органов.</entitydescription.advhemostat>
+  <entityname.advretractors>Расширитель</entityname.advretractors>
+  <entitydescription.advretractors>Хирургический инструмент для расширения и удержания краёв операционной раны.</entitydescription.advretractors>
+  <entityname.autopulse>АвтоПульс</entityname.autopulse>
+  <entitydescription.autopulse>Автоматическое устройство для сердечно-легочной реанимации. Размещается на грудной клетке пациента.</entitydescription.autopulse>
+  <entityname.ambubag>Мешок Амбу</entityname.ambubag>
+  <entitydescription.ambubag>Механическое ручное устройство для искусственной вентиляции легких.</entitydescription.ambubag>
+  <entityname.stasisbag>Стазис-мешок</entityname.stasisbag>
+  <entitydescription.stasisbag>Высококачественный контейнер для тела со встроенной стазис-технологией. Полностью останавливает любые физиологические процессы.</entitydescription.stasisbag>
+  <entityname.bodybag>Мешок для трупов</entityname.bodybag>
+  <entitydescription.bodybag>Контейнер для транспортировки и хранения тел умерших. Если Европа - река Стикс, то человек в этом мешке - монета для Харона.</entitydescription.bodybag>
+  <entityname.surgerysaw>Хирургическая пила</entityname.surgerysaw>
+  <entitydescription.surgerysaw>Хирургический инструмент для перепиливания костей при ампутации конечности.</entitydescription.surgerysaw>
+  <entityname.suture>Шовный материал</entityname.suture>
+  <entitydescription.suture>Синтетические рассасывающиеся нити со встроенной иглой для зашивания ран и надрезов.</entitydescription.suture>
+  <entityname.surgicaldrill>Хирургическая дрель</entityname.surgicaldrill>
+  <entitydescription.surgicaldrill>Хирургический инструмент для эндопротезирования и обработки костных тканей.</entitydescription.surgicaldrill>
+  <entityname.mannitol>Маннитол Плюс</entityname.mannitol>
+  <entitydescription.mannitol>Многокомпонентный лекарственный препарат, стимулирующий восстановление огранизма при церебральной гипоксии. Побочные эффекты: слабость, тошнота.</entitydescription.mannitol>
+  <entityname.osteosynthesisimplants>Имплантаты для остеосинтеза</entityname.osteosynthesisimplants>
+  <entitydescription.osteosynthesisimplants>Хирургические имплантаты, изготовленные из сплава аллюминия и титана. Фиксируют костные отломки внутри тела пациента.</entitydescription.osteosynthesisimplants>
+  <entityname.operatingtable>Операционный стол</entityname.operatingtable>
+  <entitydescription.operatingtable>Специальное медицинское оборудование для проведения оперативного лечения. Оснащён аппаратом искусственной вентиляции легких.</entitydescription.operatingtable>
+  <entityname.ointment>Антибиотическая мазь</entityname.ointment>
+  <entitydescription.ointment>Лекарственное средство для местного лечения ожогов и инфекционных процессов.</entitydescription.ointment>
+  <entityname.tweezers>Пинцет</entityname.tweezers>
+  <entitydescription.tweezers>Хирургический инструмент для извлечения инородных тел из организма.</entitydescription.tweezers>
+  <entityname.tourniquet>Жгут</entityname.tourniquet>
+  <entitydescription.tourniquet>Средство временной остановки кровотечения из крупных кровеносных сосудов. Сдавливает конечность, ограничивая кровоток.</entitydescription.tourniquet>
+  <entityname.vialrack>Штатив для пробирок</entityname.vialrack>
+  <entitydescription.vialrack>Стойка для хранения и транспортировки пробирок.</entitydescription.vialrack>
+  <entityname.bloodanalyzer>Гематологический анализатор</entityname.bloodanalyzer>
+  <entitydescription.bloodanalyzer>Диагностический прибор для определения группы крови пациента. Расходует сменные картриджи при использовании.</entitydescription.bloodanalyzer>
+  <entityname.bloodcollector>Картридж для сбора крови</entityname.bloodcollector>
+  <entitydescription.bloodcollector>Пустая пластиковая пробирка. Заряжается в гематологический анализатор.</entitydescription.bloodcollector>
+  <entityname.emptybloodpack>Пакет для крови</entityname.emptybloodpack>
+  <entitydescription.emptybloodpack>Стерильный набор для сбора крови.</entitydescription.emptybloodpack>
+  <entityname.bloodpackoplus>Пакет с кровью O+</entityname.bloodpackoplus>
+  <entityname.bloodpackominus>Пакет с кровью O-</entityname.bloodpackominus>
+  <entityname.bloodpackaplus>Пакет с кровью A+</entityname.bloodpackaplus>
+  <entityname.bloodpackbplus>Пакет с кровью B+</entityname.bloodpackbplus>
+  <entityname.bloodpackabplus>Пакет с кровью AB+</entityname.bloodpackabplus>
+  <entityname.bloodpackaminus>Пакет с кровью A-</entityname.bloodpackaminus>
+  <entityname.bloodpackbminus>Пакет с кровью B-</entityname.bloodpackbminus>
+  <entityname.bloodpackabminus>Пакет с кровью AB-</entityname.bloodpackabminus>
+  <entityname.antibloodloss2>Пакет плазмы</entityname.antibloodloss2>
+  <entityname.antibloodloss1>Физраствор</entityname.antibloodloss1>
+  <entityname.antiseptic>Антисептик</entityname.antiseptic>
+  <entitydescription.antiseptic>Противомикробное средство, предназначенное для предотвращения процессов разложения на поверхности открытых ран.</entitydescription.antiseptic>
+  <entityname.antisepticspray>Антисептический спрей</entityname.antisepticspray>
+  <entitydescription.antisepticspray>Устройство для направленного разбрызгивания антисептика.</entitydescription.antisepticspray>
+  <entityname.propofol>Пропофол</entityname.propofol>
+  <entitydescription.propofol>Общий анестетик короткого действия, вызывает у пациента медикаментозный сон. Используется для проведения хирургических манипуляций.</entitydescription.propofol>
+  <entityname.drainage>Дренаж</entityname.drainage>
+  <entitydescription.drainage>Аппарат для удаления накопленных лёгочных выделений.</entitydescription.drainage>
+  <entityname.ominuscard>Карта донора</entityname.ominuscard>
+  <entitydescription.ominuscard>Группа крови: O-</entitydescription.ominuscard>
+  <entityname.opluscard>Карта донора</entityname.opluscard>
+  <entitydescription.opluscard>Группа крови: O+</entitydescription.opluscard>
+  <entityname.aminuscard>Карта донора</entityname.aminuscard>
+  <entitydescription.aminuscard>Группа крови: A-</entitydescription.aminuscard>
+  <entityname.apluscard>Карта донора</entityname.apluscard>
+  <entitydescription.apluscard>Группа крови: A+</entitydescription.apluscard>
+  <entityname.bminuscard>Карта донора</entityname.bminuscard>
+  <entitydescription.bminuscard>Группа крови: B-</entitydescription.bminuscard>
+  <entityname.bpluscard>Карта донора</entityname.bpluscard>
+  <entitydescription.bpluscard>Группа крови: B+</entitydescription.bpluscard>
+  <entityname.abminuscard>Карта донора</entityname.abminuscard>
+  <entitydescription.abminuscard>Группа крови: AB-</entitydescription.abminuscard>
+  <entityname.abpluscard>Карта донора</entityname.abpluscard>
+  <entitydescription.abpluscard>Группа крови: AB+</entitydescription.abpluscard>
+  <entityname.armlock1>Не рабочая правая рука</entityname.armlock1>
+  <entitydescription.armlock1>По какой-то причине ваша правая рука не слушается вас. С этим определенно надо что-то делать.</entitydescription.armlock1>
+  <entityname.armlock2>Не рабочая левая рука</entityname.armlock2>
+  <entitydescription.armlock2>По какой-то причине ваша левая рука не слушается вас. С этим определенно надо что-то делать.</entitydescription.armlock2>
+  <entityname.needle>Декомпрессионная игла</entityname.needle>
+  <entitydescription.needle>Игла с декомпрессионным клапаном для отвода воздуха или жидкости из плевральной полости или перикарда.</entitydescription.needle>
+  <entityname.rarm>Правая рука</entityname.rarm>
+  <entitydescription.rarm>Чья-то правая рука. Возможно ваша? Это уже не важно. Вы нашли её, и теперь это ваша собственность.</entitydescription.rarm>
+  <entityname.larm>Левая рука</entityname.larm>
+  <entitydescription.larm>Чья-то левая рука. Возможно ваша? Это уже не важно. Вы нашли её, и теперь это ваша собственность.</entitydescription.larm>
+  <entityname.rleg>Правая нога</entityname.rleg>
+  <entitydescription.rleg>Чья-то правая нога. Возможно ваша? Это уже не важно. Вы нашли её, и теперь это ваша собственность.</entitydescription.rleg>
+  <entityname.lleg>Левая нога</entityname.lleg>
+  <entitydescription.lleg>Чья-то левая нога. Возможно ваша? Это уже не важно. Вы нашли её, и теперь это ваша собственность.</entitydescription.lleg>
+  <entityname.llegp>Бионический протез левой ноги</entityname.llegp>
+  <entitydescription.llegp>Тихо работающие минисервоприводы наделяют обладателя недюжинной силой, а биогелевое нейросоединение даёт превосходный контроль. Этот протез превосходит обычную ногу почти по всем характеристикам.</entitydescription.llegp>
+  <entityname.rlegp>Бионический протез правой ноги</entityname.rlegp>
+  <entitydescription.rlegp>Тихо работающие минисервоприводы наделяют обладателя недюжинной силой, а биогелевое нейросоединение даёт превосходный контроль. Этот протез превосходит обычную ногу почти по всем характеристикам.</entitydescription.rlegp>
+  <entityname.larmp>Бионический протез левой руки</entityname.larmp>
+  <entitydescription.larmp>Тихо работающие минисервоприводы наделяют обладателя недюжинной силой, а биогелевое нейросоединение даёт превосходный контроль. Этот протез превосходит обычную руку почти по всем характеристикам.</entitydescription.larmp>
+  <entityname.rarmp>Бионический протез правой руки</entityname.rarmp>
+  <entitydescription.rarmp>Тихо работающие минисервоприводы наделяют обладателя недюжинной силой, а биогелевое нейросоединение даёт превосходный контроль. Этот протез превосходит обычную руку почти по всем характеристикам.</entitydescription.rarmp>
+  <entityname.spinalimplant>Имплант спинного мозга</entityname.spinalimplant>
+  <entitydescription.spinalimplant>Инновационный имплант, способный проводить электрические импульсы и химические вещества, необходимые для стимуляции нервов.</entitydescription.spinalimplant>
+  <entityname.reboa />
+  <entitydescription.reboa />
+  <afflictionname.vtach>Тахикардия желудочков</afflictionname.vtach>
+  <afflictiondescription.vtach>У пациента определяется учащенное сердцебиение и одышка. Кожа бледная и влажная.</afflictiondescription.vtach>
+  <afflictionname.vfib>Фибриляция желудочков</afflictionname.vfib>
+  <afflictiondescription.vfib>Отмечается усиленное и нерегулярное сердцебиение, перебои в работе сердца. Пациент бледный и холодный. Зрачки расширены, нет реакции на свет.</afflictiondescription.vfib>
+  <afflictionname.asys>Асистолия</afflictionname.asys>
+  <afflictiondescription.asys>Пациент без сознания, пульс не прощупывается. Кожа синюшная. Отсутствует любая реакция на внешние раздражители. Похоже, что это остановка сердца.</afflictiondescription.asys>
+  <afflictionname.hypotension>Гипотония</afflictionname.hypotension>
+  <afflictiondescription.hypotension>У пациента наблюдается слабость, бледность кожных покровов.</afflictiondescription.hypotension>
+  <afflictionname.hypoxia>Церебральная гипоксия</afflictionname.hypoxia>
+  <afflictiondescription.hypoxia>У пациента определяется выраженная сонливость, синеватый оттенок кожи.</afflictiondescription.hypoxia>
+  <afflictioncauseofdeath.hypoxia>Смерть мозга</afflictioncauseofdeath.hypoxia>
+  <afflictioncauseofdeathself.hypoxia>Вы умерли от церебральной гипоксии.</afflictioncauseofdeathself.hypoxia>
+  <afflictionname.surgeryincision>Хирургический надрез</afflictionname.surgeryincision>
+  <afflictiondescription.surgeryincision>Надрез скальпелем.</afflictiondescription.surgeryincision>
+  <afflictionname.surgeryincision1>Хирургический надрез</afflictionname.surgeryincision1>
+  <afflictiondescription.surgeryincision1>Надрез скальпелем.</afflictiondescription.surgeryincision1>
+  <afflictionname.surgeryincision2>Хирургический надрез</afflictionname.surgeryincision2>
+  <afflictiondescription.surgeryincision2>Надрез скальпелем.</afflictiondescription.surgeryincision2>
+  <afflictionname.surgeryincision3>Хирургический надрез</afflictionname.surgeryincision3>
+  <afflictiondescription.surgeryincision3>Надрез скальпелем.</afflictiondescription.surgeryincision3>
+  <afflictionname.surgeryincision4>Хирургический надрез</afflictionname.surgeryincision4>
+  <afflictiondescription.surgeryincision4>Надрез скальпелем.</afflictiondescription.surgeryincision4>
+  <afflictionname.surgeryincision5>Хирургический надрез</afflictionname.surgeryincision5>
+  <afflictiondescription.surgeryincision5>Надрез скальпелем.</afflictiondescription.surgeryincision5>
+  <afflictionname.surgeryincision6>Хирургический надрез</afflictionname.surgeryincision6>
+  <afflictiondescription.surgeryincision6>Надрез скальпелем.</afflictiondescription.surgeryincision6>
+  <afflictionname.clampedbleeders>Зажатое кровотечение</afflictionname.clampedbleeders>
+  <afflictiondescription.clampedbleeders>Кровотечение из надреза остановлено с помощью зажима.</afflictiondescription.clampedbleeders>
+  <afflictionname.clampedbleeders1>Зажатое кровотечение</afflictionname.clampedbleeders1>
+  <afflictiondescription.clampedbleeders1>Кровотечение из надреза остановлено с помощью зажима.</afflictiondescription.clampedbleeders1>
+  <afflictionname.clampedbleeders2>Зажатое кровотечение</afflictionname.clampedbleeders2>
+  <afflictiondescription.clampedbleeders2>Кровотечение из надреза остановлено с помощью зажима.</afflictiondescription.clampedbleeders2>
+  <afflictionname.clampedbleeders3>Зажатое кровотечение</afflictionname.clampedbleeders3>
+  <afflictiondescription.clampedbleeders3>Кровотечение из надреза остановлено с помощью зажима.</afflictiondescription.clampedbleeders3>
+  <afflictionname.clampedbleeders4>Зажатое кровотечение</afflictionname.clampedbleeders4>
+  <afflictiondescription.clampedbleeders4>Кровотечение из надреза остановлено с помощью зажима.</afflictiondescription.clampedbleeders4>
+  <afflictionname.clampedbleeders5>Зажатое кровотечение</afflictionname.clampedbleeders5>
+  <afflictiondescription.clampedbleeders5>Кровотечение из надреза остановлено с помощью зажима.</afflictiondescription.clampedbleeders5>
+  <afflictionname.clampedbleeders6>Зажатое кровотечение</afflictionname.clampedbleeders6>
+  <afflictiondescription.clampedbleeders6>Кровотечение из надреза остановлено с помощью зажима.</afflictiondescription.clampedbleeders6>
+  <afflictionname.arteriesclamp>Зажатые артерии</afflictionname.arteriesclamp>
+  <afflictiondescription.arteriesclamp>Кровотечение из артерии временно остановлено.</afflictiondescription.arteriesclamp>
+  <afflictionname.arteriesclamp1>Зажатые артерии</afflictionname.arteriesclamp1>
+  <afflictiondescription.arteriesclamp1>Кровотечение из артерии временно остановлено.</afflictiondescription.arteriesclamp1>
+  <afflictionname.arteriesclamp2>Зажатые артерии</afflictionname.arteriesclamp2>
+  <afflictiondescription.arteriesclamp2>Кровотечение из артерии временно остановлено.</afflictiondescription.arteriesclamp2>
+  <afflictionname.arteriesclamp3>Зажатые артерии</afflictionname.arteriesclamp3>
+  <afflictiondescription.arteriesclamp3>Кровотечение из артерии временно остановлено.</afflictiondescription.arteriesclamp3>
+  <afflictionname.arteriesclamp4>Зажатые артерии</afflictionname.arteriesclamp4>
+  <afflictiondescription.arteriesclamp4>Кровотечение из артерии временно остановлено.</afflictiondescription.arteriesclamp4>
+  <afflictionname.arteriesclamp5>Зажатые артерии</afflictionname.arteriesclamp5>
+  <afflictiondescription.arteriesclamp5>Кровотечение из артерии временно остановлено.</afflictiondescription.arteriesclamp5>
+  <afflictionname.arteriesclamp6>Зажатые артерии</afflictionname.arteriesclamp6>
+  <afflictiondescription.arteriesclamp6>Кровотечение из артерии временно остановлено.</afflictiondescription.arteriesclamp6>
+  <afflictionname.boneclamp>Шина</afflictionname.boneclamp>
+  <afflictiondescription.boneclamp>Конечность обездвижена с помощью шины.</afflictiondescription.boneclamp>
+  <afflictionname.boneclamp1>Шина</afflictionname.boneclamp1>
+  <afflictiondescription.boneclamp1>Конечность обездвижена с помощью шины.</afflictiondescription.boneclamp1>
+  <afflictionname.boneclamp2>Шина</afflictionname.boneclamp2>
+  <afflictiondescription.boneclamp2>Конечность обездвижена с помощью шины.</afflictiondescription.boneclamp2>
+  <afflictionname.boneclamp3>Шина</afflictionname.boneclamp3>
+  <afflictiondescription.boneclamp3>Конечность обездвижена с помощью шины.</afflictiondescription.boneclamp3>
+  <afflictionname.boneclamp4>Шина</afflictionname.boneclamp4>
+  <afflictiondescription.boneclamp4>Конечность обездвижена с помощью шины.</afflictiondescription.boneclamp4>
+  <afflictionname.boneclamp5>Шина</afflictionname.boneclamp5>
+  <afflictiondescription.boneclamp5>Конечность обездвижена с помощью шины.</afflictiondescription.boneclamp5>
+  <afflictionname.boneclamp6>Шина</afflictionname.boneclamp6>
+  <afflictiondescription.boneclamp6>Конечность обездвижена с помощью шины.</afflictiondescription.boneclamp6>
+  <afflictionname.boneclamp7>Шина</afflictionname.boneclamp7>
+  <afflictiondescription.boneclamp7>Конечность обездвижена с помощью шины.</afflictiondescription.boneclamp7>
+  <afflictionname.drilledbones>Просверленные кости</afflictionname.drilledbones>
+  <afflictiondescription.drilledbones>Кости подготовлены к остеосинтезу.</afflictiondescription.drilledbones>
+  <afflictionname.drilledbones1>Просверленные кости</afflictionname.drilledbones1>
+  <afflictiondescription.drilledbones1>Кости подготовлены к остеосинтезу.</afflictiondescription.drilledbones1>
+  <afflictionname.drilledbones2>Просверленные кости</afflictionname.drilledbones2>
+  <afflictiondescription.drilledbones2>Кости подготовлены к остеосинтезу.</afflictiondescription.drilledbones2>
+  <afflictionname.drilledbones3>Просверленные кости</afflictionname.drilledbones3>
+  <afflictiondescription.drilledbones3>Кости подготовлены к остеосинтезу.</afflictiondescription.drilledbones3>
+  <afflictionname.drilledbones4>Просверленные кости</afflictionname.drilledbones4>
+  <afflictiondescription.drilledbones4>Кости подготовлены к остеосинтезу.</afflictiondescription.drilledbones4>
+  <afflictionname.drilledbones5>Просверленные кости</afflictionname.drilledbones5>
+  <afflictiondescription.drilledbones5>Кости подготовлены к остеосинтезу.</afflictiondescription.drilledbones5>
+  <afflictionname.drilledbones6>Просверленные кости</afflictionname.drilledbones6>
+  <afflictiondescription.drilledbones6>Кости подготовлены к остеосинтезу.</afflictiondescription.drilledbones6>
+  <afflictionname.retractedskin>Оттянутая кожа</afflictionname.retractedskin>
+  <afflictiondescription.retractedskin>Разрез удерживается открытым с помощью расширителя.</afflictiondescription.retractedskin>
+  <afflictionname.retractedskin1>Оттянутая кожа</afflictionname.retractedskin1>
+  <afflictiondescription.retractedskin1>Назрез удерживается открытым с помощью расширителя.</afflictiondescription.retractedskin1>
+  <afflictionname.retractedskin2>Оттянутая кожа</afflictionname.retractedskin2>
+  <afflictiondescription.retractedskin2>Назрез удерживается открытым с помощью расширителя.</afflictiondescription.retractedskin2>
+  <afflictionname.retractedskin3>Оттянутая кожа</afflictionname.retractedskin3>
+  <afflictiondescription.retractedskin3>Назрез удерживается открытым с помощью расширителя.</afflictiondescription.retractedskin3>
+  <afflictionname.retractedskin4>Оттянутая кожа</afflictionname.retractedskin4>
+  <afflictiondescription.retractedskin4>Назрез удерживается открытым с помощью расширителя.</afflictiondescription.retractedskin4>
+  <afflictionname.retractedskin5>Оттянутая кожа</afflictionname.retractedskin5>
+  <afflictiondescription.retractedskin5>Назрез удерживается открытым с помощью расширителя.</afflictiondescription.retractedskin5>
+  <afflictionname.retractedskin6>Оттянутая кожа</afflictionname.retractedskin6>
+  <afflictiondescription.retractedskin6>Назрез удерживается открытым с помощью расширителя.</afflictiondescription.retractedskin6>
+  <afflictionname.suturedi>Зашитый надрез</afflictionname.suturedi>
+  <afflictiondescription.suturedi>Наложены швы.</afflictiondescription.suturedi>
+  <afflictionname.suturedi1>Зашитый надрез</afflictionname.suturedi1>
+  <afflictiondescription.suturedi1>Наложены швы.</afflictiondescription.suturedi1>
+  <afflictionname.suturedi2>Зашитый надрез</afflictionname.suturedi2>
+  <afflictiondescription.suturedi2>Наложены швы.</afflictiondescription.suturedi2>
+  <afflictionname.suturedi3>Зашитый надрез</afflictionname.suturedi3>
+  <afflictiondescription.suturedi3>Наложены швы.</afflictiondescription.suturedi3>
+  <afflictionname.suturedi4>Зашитый надрез</afflictionname.suturedi4>
+  <afflictiondescription.suturedi4>Наложены швы.</afflictiondescription.suturedi4>
+  <afflictionname.suturedi5>Зашитый надрез</afflictionname.suturedi5>
+  <afflictiondescription.suturedi5>Наложены швы.</afflictiondescription.suturedi5>
+  <afflictionname.suturedi6>Зашитый надрез</afflictionname.suturedi6>
+  <afflictiondescription.suturedi6>Наложены швы.</afflictiondescription.suturedi6>
+  <afflictionname.suturedw>Зашитая рана</afflictionname.suturedw>
+  <afflictiondescription.suturedw>Наложены швы.</afflictiondescription.suturedw>
+  <afflictionname.boncut>Кость распилена</afflictionname.boncut>
+  <afflictiondescription.boncut>Кость распилена пилой.</afflictiondescription.boncut>
+  <afflictionname.boncut1>Кость распилена</afflictionname.boncut1>
+  <afflictiondescription.boncut1>Кость распилена пилой.</afflictiondescription.boncut1>
+  <afflictionname.boncut2>Кость распилена</afflictionname.boncut2>
+  <afflictiondescription.boncut2>Кость распилена пилой.</afflictiondescription.boncut2>
+  <afflictionname.boncut3>Кость распилена</afflictionname.boncut3>
+  <afflictiondescription.boncut3>Кость распилена пилой.</afflictiondescription.boncut3>
+  <afflictionname.boncut4>Кость распилена</afflictionname.boncut4>
+  <afflictiondescription.boncut4>Кость распилена пилой.</afflictiondescription.boncut4>
+  <afflictionname.fracture>Перелом</afflictionname.fracture>
+  <afflictiondescription.fracture>Одна или несколько костей сломаны. При движении часть тела неествественно деформируется и сильно болит.</afflictiondescription.fracture>
+  <afflictionname.arterialcut>Артериальное кровотечение</afflictionname.arterialcut>
+  <afflictiondescription.arterialcut>Артерия повреждена, что вызывает обильную кровопотерю</afflictiondescription.arterialcut>
+  <afflictionname.ll_arterialcut>Кровотечение из бедренной артерии</afflictionname.ll_arterialcut>
+  <afflictiondescription.ll_arterialcut>Бедренная артерия повреждена, что вызывает обильную кровопотерю.</afflictiondescription.ll_arterialcut>
+  <afflictionname.rl_arterialcut>Кровотечение из бедренной артерии</afflictionname.rl_arterialcut>
+  <afflictiondescription.rl_arterialcut>Бедренная артерия повреждена, что вызывает обильную кровопотерю.</afflictiondescription.rl_arterialcut>
+  <afflictionname.la_arterialcut>Кровотечение из плечевой артерии</afflictionname.la_arterialcut>
+  <afflictiondescription.la_arterialcut>Плечевая артерия повреждена, что вызывает обильную кровопотерю.</afflictiondescription.la_arterialcut>
+  <afflictionname.ra_arterialcut>Кровотечение из плечевой артерии</afflictionname.ra_arterialcut>
+  <afflictiondescription.ra_arterialcut>Плечевая артерия повреждена, что вызывает обильную кровопотерю.</afflictiondescription.ra_arterialcut>
+  <afflictionname.t_arterialcut>Разрыв аорты</afflictionname.t_arterialcut>
+  <afflictiondescription.t_arterialcut>Массивное кровотечение из-за разрыва аорты.</afflictiondescription.t_arterialcut>
+  <afflictionname.h_arterialcut>Кровотечение из сонной артерии</afflictionname.h_arterialcut>
+  <afflictiondescription.h_arterialcut>Сонная артерия повреждена, что вызывает обильную кровопотерю.</afflictiondescription.h_arterialcut>
+  <afflictionname.traumaticshock>Травматический шок</afflictionname.traumaticshock>
+  <afflictiondescription.traumaticshock>Пациент испытывает сильную боль, дрожит и покрывается холодным потом.</afflictiondescription.traumaticshock>
+  <afflictionname.analgesia>Анальгезия</afflictionname.analgesia>
+  <afflictiondescription.analgesia>Пациент утратил болевую чувствительность после введения анальгетика.</afflictiondescription.analgesia>
+  <afflictionname.anesthesia>Анестезия</afflictionname.anesthesia>
+  <afflictiondescription.anesthesia>Пациент утратил сознание и болевую чувствительность после введения анестетика.</afflictiondescription.anesthesia>
+  <afflictionname.necrosis>Некроз</afflictionname.necrosis>
+  <afflictiondescription.necrosis>Ткани вокруг раны приобрели бледно-мраморный цвет, ощущается запах гнили.</afflictiondescription.necrosis>
+  <afflictioncauseofdeath.necrosis>Умер от некроза.</afflictioncauseofdeath.necrosis>
+  <afflictioncauseofdeathself.necrosis>Вы умерли от некроза.</afflictioncauseofdeathself.necrosis>
+  <afflictionname.sepsis>Сепсис</afflictionname.sepsis>
+  <afflictiondescription.sepsis>Инфекция из раны попала в кровь.</afflictiondescription.sepsis>
+  <afflictioncauseofdeath.sepsis>Умер от сепсиса</afflictioncauseofdeath.sepsis>
+  <afflictioncauseofdeathself.sepsis>Вы умерли от сепсиса.</afflictioncauseofdeathself.sepsis>
+  <afflictionname.infectedwound>Зараженная рана</afflictionname.infectedwound>
+  <afflictiondescription.infectedwound>Края раны воспалены и отёчны. При прикосновении возникает сильная боль.</afflictiondescription.infectedwound>
+  <afflictionname.bandaged>Перевязан</afflictionname.bandaged>
+  <afflictiondescription.bandaged>Перевязочный материал защищает рану от проникновения инфекции.</afflictiondescription.bandaged>
+  <afflictionname.ointmented>Антибиотическая мазь</afflictionname.ointmented>
+  <afflictiondescription.ointmented>Слой антибиотической мази защищает и защищает рану от проникновения инфекции.</afflictiondescription.ointmented>
+  <afflictionname.needlec>Катетер в груди.</afflictionname.needlec>
+  <afflictiondescription.needlec>Декомпрессионный катетер нормализует давление в плевральной полости.</afflictiondescription.needlec>
+  <afflictionname.ra_fracture>Перелом правой плечевой кости</afflictionname.ra_fracture>
+  <afflictiondescription.ra_fracture>При движении часть тела неествественно деформируется и сильно болит.</afflictiondescription.ra_fracture>
+  <afflictionname.la_fracture>Перелом левой плечевой кости</afflictionname.la_fracture>
+  <afflictiondescription.la_fracture>При движении часть тела неествественно деформируется и сильно болит.</afflictiondescription.la_fracture>
+  <afflictionname.rl_fracture>Перелом правой бедренной кости</afflictionname.rl_fracture>
+  <afflictiondescription.rl_fracture>При движении часть тела неествественно деформируется и сильно болит.</afflictiondescription.rl_fracture>
+  <afflictionname.ll_fracture>Перелом левой бедренной кости</afflictionname.ll_fracture>
+  <afflictiondescription.ll_fracture>При движении часть тела неествественно деформируется и сильно болит.</afflictiondescription.ll_fracture>
+  <afflictionname.t_fracture>Перелом ребер</afflictionname.t_fracture>
+  <afflictiondescription.t_fracture>Отмечается сильная боль в месте травмы, усиливающаяся при ощупывании и вдохе.</afflictiondescription.t_fracture>
+  <afflictionname.n_fracture>Перелом шеи</afflictionname.n_fracture>
+  <afflictiondescription.n_fracture>У пациента отмечаются сильные боли в области шеи с ограничением подвижности.</afflictiondescription.n_fracture>
+  <afflictionname.h_fracture>Перелом черепа</afflictionname.h_fracture>
+  <afflictiondescription.h_fracture>Пациент испытывает постоянную локализованную боль в области черепа, тошноту, нарушение дыхания. Визуально определяются кровоподтеки.</afflictiondescription.h_fracture>
+  <afflictionname.dislocation>Вывих</afflictionname.dislocation>
+  <afflictiondescription.dislocation>Отмечаются боли и грубое нарушение конфигурации сустава. Активные движения невозможны.</afflictiondescription.dislocation>
+  <afflictionname.dislocation1>Вывих</afflictionname.dislocation1>
+  <afflictiondescription.dislocation1>Отмечаются боли и грубое нарушение конфигурации сустава. Активные движения невозможны.</afflictiondescription.dislocation1>
+  <afflictionname.dislocation2>Вывих</afflictionname.dislocation2>
+  <afflictiondescription.dislocation2>Отмечаются боли и грубое нарушение конфигурации сустава. Активные движения невозможны.</afflictiondescription.dislocation2>
+  <afflictionname.dislocation3>Вывих</afflictionname.dislocation3>
+  <afflictiondescription.dislocation3>Отмечаются боли и грубое нарушение конфигурации сустава. Активные движения невозможны.</afflictiondescription.dislocation3>
+  <afflictionname.dislocation4>Вывих</afflictionname.dislocation4>
+  <afflictiondescription.dislocation4>Отмечаются боли и грубое нарушение конфигурации сустава. Активные движения невозможны.</afflictiondescription.dislocation4>
+  <afflictionname.immunity>Иммунитет</afflictionname.immunity>
+  <afflictionname.coma>Кома</afflictionname.coma>
+  <afflictiondescription.coma>Контакт с больным не достигается - похоже, что он в коме.</afflictiondescription.coma>
+  <afflictionname.rupturedface>Разорванное лицо</afflictionname.rupturedface>
+  <afflictiondescription.rupturedface>Лицо раненого сильно повреждено.</afflictiondescription.rupturedface>
+  <afflictionname.foreignbody>Инородное тело</afflictionname.foreignbody>
+  <afflictiondescription.foreignbody>В тканях определяется инородное тело.</afflictiondescription.foreignbody>
+  <afflictionname.t_paralysis>Повреждение спинного мозга</afflictionname.t_paralysis>
+  <afflictiondescription.t_paralysis>Отмечается нарушение всех видов чувствительности и двигательные расстройства.</afflictiondescription.t_paralysis>
+  <afflictionname.tamponade>Тампонада сердца</afflictionname.tamponade>
+  <afflictiondescription.tamponade>В результате повреждения сердца кровь скапливается в перикарде и сдавливает сердце.</afflictiondescription.tamponade>
+  <afflictionname.pneumothorax>Пневмоторакс</afflictionname.pneumothorax>
+  <afflictiondescription.pneumothorax>У больного определяется острая боль на стороне поражения. Он принимает вынужденное положение, ему тяжело дышать.</afflictiondescription.pneumothorax>
+  <afflictionname.respiratoryarrest>Остановка дыхания</afflictionname.respiratoryarrest>
+  <afflictiondescription.respiratoryarrest>Пациент не дышит.</afflictiondescription.respiratoryarrest>
+  <afflictionname.nervecut1>Повреждение нерва</afflictionname.nervecut1>
+  <afflictiondescription.nervecut1>В месте травмы отмечается нарушение чувствутельности.</afflictiondescription.nervecut1>
+  <afflictionname.nervecut2>Повреждение нерва</afflictionname.nervecut2>
+  <afflictiondescription.nervecut2>В месте травмы отмечается нарушение чувствутельности.</afflictiondescription.nervecut2>
+  <afflictionname.nervecut3>Повреждение нерва</afflictionname.nervecut3>
+  <afflictiondescription.nervecut3>В месте травмы отмечается нарушение чувствутельности.</afflictiondescription.nervecut3>
+  <afflictionname.nervecut4>Повреждение нерва</afflictionname.nervecut4>
+  <afflictiondescription.nervecut4>В месте травмы отмечается нарушение чувствутельности.</afflictiondescription.nervecut4>
+  <afflictionname.nervecut5>Повреждение нерва</afflictionname.nervecut5>
+  <afflictiondescription.nervecut5>В месте травмы отмечается нарушение чувствутельности.</afflictiondescription.nervecut5>
+  <afflictionname.nervecut6>Повреждение нерва</afflictionname.nervecut6>
+  <afflictiondescription.nervecut6>В месте травмы отмечается нарушение чувствутельности.</afflictiondescription.nervecut6>
+  <afflictionname.clampcut1>Травма сухожилия</afflictionname.clampcut1>
+  <afflictiondescription.clampcut1>Определяется выраженный отек в области травмы. Пальпация болезненна.</afflictiondescription.clampcut1>
+  <afflictionname.clampcut2>Травма сухожилия</afflictionname.clampcut2>
+  <afflictiondescription.clampcut2>Определяется выраженный отек в области травмы. Пальпация болезненна.</afflictiondescription.clampcut2>
+  <afflictionname.clampcut3>Травма сухожилия</afflictionname.clampcut3>
+  <afflictiondescription.clampcut3>Определяется выраженный отек в области травмы. Пальпация болезненна.</afflictiondescription.clampcut3>
+  <afflictionname.clampcut4>Травма сухожилия</afflictionname.clampcut4>
+  <afflictiondescription.clampcut4>Определяется выраженный отек в области травмы. Пальпация болезненна.</afflictiondescription.clampcut4>
+  <afflictionname.surgicalprepared>На операционном столе</afflictionname.surgicalprepared>
+  <afflictiondescription.surgicalprepared>Пациент находится на операционном столе и готов к проведению хирургических манипуляций.</afflictiondescription.surgicalprepared>
+  <afflictionname.afadrenaline>Адреналин</afflictionname.afadrenaline>
+  <afflictiondescription.afadrenaline>У пациента повышен тонус организма, участился пульс, снижена чувствительность к боли.</afflictiondescription.afadrenaline>
+  <afflictionname.afsaline>Физраствор</afflictionname.afsaline>
+  <afflictiondescription.afsaline>Объём жидкости в кровеносной системе временно восполнен.</afflictiondescription.afsaline>
+  <afflictionname.hemotransfusionshock>Гемотрансфузионный шок</afflictionname.hemotransfusionshock>
+  <afflictiondescription.hemotransfusionshock>Пациент испытывает психическое возбуждение, смутное беспокойство, сжимающие дыхание боли в груди, чувство нехватки воздуха.</afflictiondescription.hemotransfusionshock>
+  <afflictionname.tra_amputation>Травматическая ампутация</afflictionname.tra_amputation>
+  <afflictiondescription.tra_amputation>Правая рука оторвана в результате травмы. Пора отправляться на её поиски.</afflictiondescription.tra_amputation>
+  <afflictionname.tla_amputation>Травматическая ампутация</afflictionname.tla_amputation>
+  <afflictiondescription.tla_amputation>Левая рука оторвана в результате травмы. Пора отправляться на её поиски.</afflictiondescription.tla_amputation>
+  <afflictionname.trl_amputation>Травматическая ампутация</afflictionname.trl_amputation>
+  <afflictiondescription.trl_amputation>Правая нога оторвана в результате травмы. Пора отправляться на её поиски.</afflictiondescription.trl_amputation>
+  <afflictionname.tll_amputation>Травматическая ампутация</afflictionname.tll_amputation>
+  <afflictiondescription.tll_amputation>Левая нога оторвана в результате травмы. Пора отправляться на её поиски.</afflictiondescription.tll_amputation>
+  <afflictionname.th_amputation>Травматическая ампутация</afflictionname.th_amputation>
+  <afflictiondescription.th_amputation>Пациенту снесло голову. Несчастный случай?</afflictiondescription.th_amputation>
+  <afflictionname.sra_amputation>Ампутационная культя</afflictionname.sra_amputation>
+  <afflictiondescription.sra_amputation>На месте правой руки определяется культя, оставшаяся после ампутации.</afflictiondescription.sra_amputation>
+  <afflictionname.sla_amputation>Ампутационная культя</afflictionname.sla_amputation>
+  <afflictiondescription.sla_amputation>На месте левой руки определяется культя, оставшаяся после ампутации.</afflictiondescription.sla_amputation>
+  <afflictionname.srl_amputation>Ампутационная культя</afflictionname.srl_amputation>
+  <afflictiondescription.srl_amputation>На месте левой ноги определяется культя, оставшаяся после ампутации.</afflictiondescription.srl_amputation>
+  <afflictionname.sll_amputation>Ампутационная культя</afflictionname.sll_amputation>
+  <afflictiondescription.sll_amputation>На месте правой ноги определяется культя, оставшаяся после ампутации.</afflictiondescription.sll_amputation>
+  <afflictionname.sh_amputation>Ампутация головы</afflictionname.sh_amputation>
+  <afflictiondescription.sh_amputation>Голова пациента аккуратно ампутирована. Теперь главное не потерять её.</afflictiondescription.sh_amputation>
+  <afflictionname.llp>Бионический протез</afflictionname.llp>
+  <afflictiondescription.llp>У пациента определяется бионический протез левой ноги.</afflictiondescription.llp>
+  <afflictionname.rlp>Бионический протез</afflictionname.rlp>
+  <afflictiondescription.rlp>У пациента определяется бионический протез правой ноги.</afflictiondescription.rlp>
+  <afflictionname.lap>Бионический протез</afflictionname.lap>
+  <afflictiondescription.lap>У пациента определяется бионический протез левой руки.</afflictiondescription.lap>
+  <afflictionname.rap>Бионический протез</afflictionname.rap>
+  <afflictiondescription.rap>У пациента определяется бионический протез правой руки.</afflictiondescription.rap>
+  <afflictionname.eventration>Эвентрация</afflictionname.eventration>
+  <afflictiondescription.eventration>Пациент жалуется на сильную тупую боль в области грудной клетки, у него отмечается выраженная одышка. И похоже, что содержимое его живота медленно выступает наружу.</afflictiondescription.eventration>
+  <afflictionname.internalbleeding>Внутреннее кровотечение</afflictionname.internalbleeding>
+  <afflictiondescription.internalbleeding>Пациент бледный и холодный. Отмечается учащенный слабый пульс, частое дыхание, повышенная потливость.</afflictiondescription.internalbleeding>
+  <afflictionname.severepain>Острая боль</afflictionname.severepain>
+  <afflictiondescription.severepain>Пациент испытывает сильную боль.</afflictiondescription.severepain>
+  <afflictionname.lifesupport>Искусственная вентиляция лёгких</afflictionname.lifesupport>
+  <afflictiondescription.lifesupport>Аппарат ИВЛ помогает пациенту дышать.</afflictiondescription.lifesupport>
+</infotexts>

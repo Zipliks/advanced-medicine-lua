@@ -1,0 +1,105 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<infotexts language="French" nowhitespace="false" translatedname="Français">
+  <!-- MESSAGES -->
+  <stasisbugequipconfirmation>Êtes-vous sûr de vouloir entrer en stase ?</stasisbugequipconfirmation>
+  <!-- ITEMS -->
+  <entityname.defib>Défibrillateur automatique</entityname.defib>
+  <entitydescription.defib>Dispositif médical délivrant un choc électrique au cœur pour stabiliser les arythmies cardiaques. À utiliser sur un patient présentant une tachycardie ou une fibrillation ventriculaire.</entitydescription.defib>
+  <entityname.advscalpel>Scalpel</entityname.advscalpel>
+  <entitydescription.advscalpel>Petit couteau à manche plat servant à inciser et disséquer lors d'opérations chirurgicales.</entitydescription.advscalpel>
+  <entityname.advhemostat>Clamp</entityname.advhemostat>
+  <entitydescription.advhemostat>Instrument chirurgical servant à clamper des vaisseaux sanguins pour arrêter la circulation du sang et stopper les hémorragies.</entitydescription.advhemostat>
+  <entityname.advretractors>Écarteur chirurgical</entityname.advretractors>
+  <entitydescription.advretractors>Instrument chirurgical servant à tenir écartés les bords d'une incision lors d'une opération.</entitydescription.advretractors>
+  <entityname.autopulse>AutoPulse</entityname.autopulse>
+  <entitydescription.autopulse>AutoPulse est un appareil portable automatique de réanimation cardio-pulmonaire, fonctionnant sur batterie.</entitydescription.autopulse>
+  <entityname.ambubag>Respirateur artificiel</entityname.ambubag>
+  <entitydescription.ambubag>Un appareil médical d'assistance respiratoire qui vise à assurer une ventilation artificielle des poumons lors d'une opération chirurgicale ou en cas d'insuffisance respiratoire.</entitydescription.ambubag>
+  <entityname.stasisbag>Sac de stase</entityname.stasisbag>
+  <entitydescription.stasisbag>Plonge l'organisme en stase. Stoppe la circulation sanguine, empêche la dégradation des fonctions vitales et protège contre l'hypoxie cérébrale.</entitydescription.stasisbag>
+  <entityname.surgerysaw>Scie chirurgicale</entityname.surgerysaw>
+  <entitydescription.surgerysaw>Un outil utilisé en chirurgie pour scier les os.</entitydescription.surgerysaw>
+  <entityname.suture>Agrafes</entityname.suture>
+  <entitydescription.suture>Agrafes biodégradables utilisées pour suturer les blessures et les incisions chirurgicales.</entitydescription.suture>
+  <entityname.surgicaldrill>Perceuse chirurgicale</entityname.surgicaldrill>
+  <entitydescription.surgicaldrill>Un outil utilisé en chirurgie pour percer les os.</entitydescription.surgicaldrill>
+  <entityname.mannitol>Mannitol Plus</entityname.mannitol>
+  <entitydescription.mannitol>Un composé médicinal à la formule très complexe. Stimule la régénération du tissu nerveux.</entitydescription.mannitol>
+  <entityname.osteosynthesisimplants>Implants en titane</entityname.osteosynthesisimplants>
+  <entitydescription.osteosynthesisimplants>Implants osseux nécessaires à la réalisation d'une ostéosynthèse. À insérer lors d'une chirurgie orthopédique pour réparer les fractures osseuses.</entitydescription.osteosynthesisimplants>
+  <entityname.operatingtable>Table d'opération</entityname.operatingtable>
+  <entitydescription.operatingtable>Un dispositif incontournable et quasi indispensable à toute opération. Modèle équipé d'un respirateur artificiel intégré.</entitydescription.operatingtable>
+  <entityname.ointment>Pommade antibiotique</entityname.ointment>
+  <entitydescription.ointment>Un gel hautement antiseptique qui favorise la guérison des brûlures et des infections mineures.</entitydescription.ointment>
+  <entityname.tweezers>Pince à épiler</entityname.tweezers>
+  <entitydescription.tweezers>Un petit outil utilisé pour extraire des balles ou retirer des tissus endommagés ou nécrosés.</entitydescription.tweezers>
+  <entityname.tourniquet>Garrot tourniquet</entityname.tourniquet>
+  <entitydescription.tourniquet>Un appareil utilisé pour compresser un membre et interrompre le flux sanguin. Il est généralement utilisé en cas de saignements importants aux extrémités.</entitydescription.tourniquet>
+  <entityname.vialrack>Ratelier de stockage pour tubes à essai</entityname.vialrack>
+  <entitydescription.vialrack>Ratelier pour flacons et tubes à essai.</entitydescription.vialrack>
+  <entityname.bloodanalyzer>Analyseur d'hématologie</entityname.bloodanalyzer>
+  <entitydescription.bloodanalyzer>Un appareil permettant d’effectuer une numération de formule sanguine (NFS) ou hémogramme. Entièrement automatisé.</entitydescription.bloodanalyzer>
+  <entityname.propofol>Propofol</entityname.propofol>
+  <entitydescription.propofol>Un agent anesthésique intraveineux servant à l’induction et l’entretien de l’anesthésie générale. Entraîne une diminution du niveau de conscience qui peut causer des pertes de mémoire événementielle durant son utilisation. Agit rapidement mais est de courte durée.</entitydescription.propofol>
+  <!-- AFFLICTIONS -->
+  <!-- TEMPLATE -->
+  <!-- <afflictionname.organdamage>Повреждение органа</afflictionname.organdamage> -->
+  <!-- <afflictiondescription.organdamage>Пациент страдает от резкой боли в одном из внутренних органов. Видимых повреждений на коже нет.</afflictiondescription.organdamage> -->
+  <!-- <afflictioncauseofdeath.organdamage>Смерть из-за отказа внутреннего органа.</afflictioncauseofdeath.organdamage> -->
+  <!-- <afflictioncauseofdeathself.organdamage>Вы погибли из-за отказа внутреннего органа.</afflictioncauseofdeathself.organdamage> -->
+  <!-- TEMPLATE -->
+  <afflictionname.vtach>Tachycardie ventriculaire</afflictionname.vtach>
+  <afflictiondescription.vtach>Pouls très élevé en raison d'un faible taux d'oxygène dans le sang ou d'une pression artérielle anormalement élevée.</afflictiondescription.vtach>
+  <afflictionname.vfib>Fibrillation ventriculaire</afflictionname.vfib>
+  <afflictiondescription.vfib>Activité électrique irrégulière détectée dans le muscle cardiaque. Les pulsations du cœur sont très rapides et totalement asynchrones.</afflictiondescription.vfib>
+  <afflictionname.asys>Asystolie</afflictionname.asys>
+  <afflictiondescription.asys>Aucune activité électrique détectée dans le muscle cardiaque, le cœur a cessé de battre.</afflictiondescription.asys>
+  <afflictionname.hypotension>Hypotension</afflictionname.hypotension>
+  <afflictiondescription.hypotension>La tension artérielle faiblit au point de provoquer des symptômes comme des vertiges ou des évanouissements. Une tension artérielle trop basse peut provoquer des lésions aux organes.</afflictiondescription.hypotension>
+  <afflictionname.hypoxia>Hypoxie cérébrale</afflictionname.hypoxia>
+  <afflictiondescription.hypoxia>Le patient présente des signes de lésions cérébrales. Un examen neurologique approfondi est nécessaire.</afflictiondescription.hypoxia>
+  <afflictioncauseofdeath.hypoxia>Mort cérébrale.</afflictioncauseofdeath.hypoxia>
+  <afflictioncauseofdeathself.hypoxia>Vous êtes décédé d'hypoxie cérébrale.</afflictioncauseofdeathself.hypoxia>
+  <afflictionname.surgeryincision>Incision chirurgicale</afflictionname.surgeryincision>
+  <afflictiondescription.surgeryincision>Une incision faite à l'aide d'un scalpel.</afflictiondescription.surgeryincision>
+  <afflictionname.clampedbleeders>Clampage des veines</afflictionname.clampedbleeders>
+  <afflictiondescription.clampedbleeders>Les saignements ont été arrêtés.</afflictiondescription.clampedbleeders>
+  <afflictionname.arteriesclamp>Clampage des artères</afflictionname.arteriesclamp>
+  <afflictiondescription.arteriesclamp>L'hémorragie des artères a été stoppée temporairement.</afflictiondescription.arteriesclamp>
+  <afflictionname.boneclamp>Attelle</afflictionname.boneclamp>
+  <afflictiondescription.boneclamp>Le membre fracturé est maintenu immobile à l'aide d'une attelle.</afflictiondescription.boneclamp>
+  <afflictionname.drilledbones>Os percés</afflictionname.drilledbones>
+  <afflictiondescription.drilledbones>Les os ont été percés pour les préparer à des procédures orthopédiques.</afflictiondescription.drilledbones>
+  <afflictionname.retractedskin>Peau rétractée</afflictionname.retractedskin>
+  <afflictiondescription.retractedskin>La peau est maintenue ouverte à l'aide d'un écarteur chirurgical.</afflictiondescription.retractedskin>
+  <afflictionname.suturedi>Incision suturée</afflictionname.suturedi>
+  <afflictiondescription.suturedi>L'incision a été suturée avec des agrafes.</afflictiondescription.suturedi>
+  <afflictionname.suturedw>Plaie suturée</afflictionname.suturedw>
+  <afflictiondescription.suturedw>La plaie a été suturée pour éviter une infection.</afflictiondescription.suturedw>
+  <afflictionname.boncut>Os sciés</afflictionname.boncut>
+  <afflictiondescription.boncut>Les os ont été sciés à l'aide d'une scie chirurgicale.</afflictiondescription.boncut>
+  <afflictionname.fracture>Fracture</afflictionname.fracture>
+  <afflictiondescription.fracture>Un ou plusieurs os sont brisés, causant une douleur intense ainsi que des problèmes de locomotion.</afflictiondescription.fracture>
+  <afflictionname.arterialcut>Hémorragie artérielle</afflictionname.arterialcut>
+  <afflictiondescription.arterialcut>Une artère a été gravement endommagée, causant une importante perte de sang.</afflictiondescription.arterialcut>
+  <afflictionname.traumaticshock>Choc traumatique</afflictionname.traumaticshock>
+  <afflictiondescription.traumaticshock>Le patient ressent une douleur et un stress intenses.</afflictiondescription.traumaticshock>
+  <afflictionname.analgesia>Analgésie</afflictionname.analgesia>
+  <afflictiondescription.analgesia>Insensibilité à la douleur.</afflictiondescription.analgesia>
+  <afflictionname.anesthesia>Anesthésie</afflictionname.anesthesia>
+  <afflictiondescription.anesthesia>Le patient a été anesthésié à l'aide d'un sédatif. Perte de sensations et difficultés à articuler. Nécessaire avant de procéder à une opération chirurgicale.</afflictiondescription.anesthesia>
+  <afflictionname.necrosis>Nécrose</afflictionname.necrosis>
+  <afflictiondescription.necrosis>Dead tissue is slowly building up and is causing life-threatening complications.</afflictiondescription.necrosis>
+  <afflictioncauseofdeath.necrosis>Mort de nécrose.</afflictioncauseofdeath.necrosis>
+  <afflictioncauseofdeathself.necrosis>Vous êtes mort de nécrose.</afflictioncauseofdeathself.necrosis>
+  <afflictionname.sepsis>Septicémie</afflictionname.sepsis>
+  <!-- <afflictiondescription.sepsis></afflictiondescription.sepsis> -->
+  <afflictioncauseofdeath.sepsis>Mort d'une septicémie.</afflictioncauseofdeath.sepsis>
+  <afflictioncauseofdeathself.sepsis>Vous êtes mort d'une septicémie.</afflictioncauseofdeathself.sepsis>
+  <afflictionname.infectedwound>Plaie infectée</afflictionname.infectedwound>
+  <afflictiondescription.infectedwound>La blessure est rouge et enflée.</afflictiondescription.infectedwound>
+  <afflictionname.bandaged>Blessures bandées</afflictionname.bandaged>
+  <afflictiondescription.bandaged>Des couches protectrices de bandages empêchent les blessures de s'infecter.</afflictiondescription.bandaged>
+  <afflictionname.ointmented>Pommade</afflictionname.ointmented>
+  <afflictiondescription.ointmented>Une couche de gel antibiotique protège et nettoie la plaie de toute germe.</afflictiondescription.ointmented>
+</infotexts>
