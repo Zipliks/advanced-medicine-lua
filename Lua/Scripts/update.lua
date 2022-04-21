@@ -1,7 +1,4 @@
 ---@diagnostic disable: undefined-field, undefined-global
-UPDATE_COOLDOWN = 0
-UPDATE_INTERVAL = 120
-DELTA_TIME = UPDATE_INTERVAL/60 -- Time in seconds that transpires between updates
 
 local function is_game_paused()
     if(SERVER) then
@@ -11,19 +8,18 @@ local function is_game_paused()
     return Game.Paused
 end
 
-aff_list = {}
 local function update_human(character)
     for affliction in AfflictionPrefab.Prefabs do
         table.insert(aff_list, affliction)
     end
 end
 
--- gets run once every two seconds
+-- Срабатывает каждые две секунды
 local function update()
-    -- for every human
+    -- Для каждого человека
     for _, character in pairs(Character.CharacterList) do
         if(character.IsHuman and not character.IsDead) then
-            -- we spread the characters out over a timespan of half a second so the load isnt done all at once
+            -- Задаём разброс обновлений в полсекунды, чтобы не обновлять всех хуманов разом
             Timer.Wait(function()
                 update_human(character)
             end, math.random()*500)
