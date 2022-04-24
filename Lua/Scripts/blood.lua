@@ -1,18 +1,18 @@
 ---@diagnostic disable: lowercase-global, undefined-global
-local BLOODTYPE = {"ominus","oplus","aminus","aplus","bminus","bplus","abminus","abplus"}
-local setBlood = {}
-hasBlood = FALSE
+local set_blood = {}
+has_blood = FALSE
 
--- Insert all blood types in one table for RandomizeBlood()
+-- Пихаем всю кровь в таблицу, откуда потом достанем нужный тип 
 for _, blood in pairs(BLOODTYPE) do
-    table.insert(setBlood, AfflictionPrefab.Prefabs[blood])
+    table.insert(set_blood, AfflictionPrefab.Prefabs[blood])
 end
 
--- Applies math.random() blood type. Still not based on probability
-function RandomizeBlood(character)
+-- Накладывает случайную группу крови через таблицу (1,8) 
+local function randomize_blood(character)
     rand = math.random(1,8)
-    character.CharacterHealth.ApplyAffliction(character.AnimController.MainLimb, setBlood[rand].Instantiate(100))
+    character.CharacterHealth.ApplyAffliction(character.AnimController.MainLimb, set_blood[rand].Instantiate(100))
 end
+
 
 Hook.Add("characterCreated", "bloodGenerate", function(createdCharacter)
     Timer.Wait(function()
@@ -20,16 +20,15 @@ Hook.Add("characterCreated", "bloodGenerate", function(createdCharacter)
             for _, affliction in pairs(BLOODTYPE) do
                 local conditional = createdCharacter.CharacterHealth.GetAffliction(affliction)
 
-                if(conditional ~= nil and conditional.Strength > 0) then
-                    -- So if we found one -> break immediately and don't check any further 
-                    hasBlood = TRUE
+                if(conditional and conditional.Strength > 0) then
+                    has_blood = TRUE -- Если у игрока есть кровь, сразу выходим из цикла
                     break
                 end
             end
 
-            -- If not -> ApplyAffliction. Random blood group.
-            if(not hasBlood) then
-                RandomizeBlood(createdCharacter)
+            -- Если крови нет, генерируем
+            if(not has_blood) then
+                randomize_blood(createdCharacter)
             end
         end
     end, 1000)

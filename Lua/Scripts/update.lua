@@ -8,26 +8,21 @@ local function is_game_paused()
     return Game.Paused
 end
 
-local function update_human(character)
-    for affliction in AfflictionPrefab.Prefabs do
-        table.insert(aff_list, affliction)
-    end
-end
-
--- Срабатывает каждые две секунды
+-- * Срабатывает каждые 2 секунды
+-- * Проверяет каждого human
+-- * Задержка с разбросом в 0.5с. (500ms) чтобы сервер не умер
 local function update()
-    -- Для каждого человека
     for _, character in pairs(Character.CharacterList) do
         if(character.IsHuman and not character.IsDead) then
-            -- Задаём разброс обновлений в полсекунды, чтобы не обновлять всех хуманов разом
             Timer.Wait(function()
                 update_human(character)
-            end, math.random()*500)
+            end, math.random() * 500)
         end
     end
 end
 
-
+-- Вот эта херня работает 60 раз за тик \
+-- Задаёт интервал для срабатывая update()
 Hook.Add("think", "update", function()
     if(is_game_paused()) then
         return

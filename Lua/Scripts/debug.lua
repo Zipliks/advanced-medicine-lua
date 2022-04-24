@@ -3,7 +3,7 @@ local burnPrefab = AfflictionPrefab.Prefabs["ominus"]
 local gunshotwound = AfflictionPrefab.Prefabs["gunshotwound"]
 local asys = AfflictionPrefab.Prefabs["asys"]
 
-
+-- Suicide command, obviously
 Hook.Add('chatMessage', 'suicideMod', function(msg, client)
     if msg == '--die' and client.Character ~= nil then
         for key, character in pairs(Character.CharacterList) do
@@ -30,16 +30,18 @@ Hook.Add('chatMessage', 'bloodCheck', function(msg, client)
     end
 end)
 
+-- Выводит все аффликшены из всех модов. Использовать на чистом AMlua
 Hook.Add('chatMessage', 'getAffliction', function(msg, client)
-    if(msg == 'getAffs') then
+    if(msg == '--getaffs') then
         for affliction in AfflictionPrefab.Prefabs do
             print(affliction)
         end 
     end
 end)
 
+-- Накладывает асистолию на всех существ с огнестрельной раной
 Hook.Add('chatMessage', 'applyAffliction', function(msg, client)
-    if(msg == 'applyasys') then
+    if(msg == '--applyasys') then
         for _, character in pairs(Character.CharacterList) do
             if (character.CharacterHealth.GetAffliction("gunshotwound")) then
                 character.CharacterHealth.ApplyAffliction(character.AnimController.Limbs.Torso, asys.Instantiate(5))
