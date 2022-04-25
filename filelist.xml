@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<contentpackage name="Medicalypse" modversion="1.0.4" corepackage="False" gameversion="0.17.0.0">
+<contentpackage name="AMlua" modversion="1.0.4" corepackage="False" gameversion="0.17.0.0">
   <!-- Afflictions -->
   <Afflictions file="%ModDir%/Xml/Afflictions.xml" />
   <!-- Items -->
@@ -86,9 +86,9 @@
   <None file="%ModDir%/Images/limbs.png" />
   <None file="%ModDir%/Characters/Human/Ragdolls/HumanDefaultRagdoll.xml" />
   <None file="%ModDir%/Sound/Voice/screams_woman_2.ogg" />
-  <None file="%ModDir%/Lua/Autorun/hypothermia.lua" />
-  <None file="%ModDir%/Lua/Autorun/blood.lua" />
-  <None file="%ModDir%/Lua/Autorun/debug.lua" />
+  <None file="%ModDir%/Lua/Scripts/hypothermia.lua" />
+  <None file="%ModDir%/Lua/Scripts/blood.lua" />
+  <None file="%ModDir%/Lua/Scripts/debug.lua" />
   <None file="%ModDir%/Lua/Autorun/main.lua" />
   <!-- Character -->
   <Character file="%ModDir%/Characters/Human/Human.xml" />
