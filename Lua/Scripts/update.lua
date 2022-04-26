@@ -1,11 +1,14 @@
 ---@diagnostic disable: undefined-field, undefined-global
+require("Scripts.const")
+require("Scripts.utils")
 
+aff_list = {}
 
 -- Вот эта херня работает 60 раз за тик \
 -- Задаёт интервал для срабатывая update()
---[[Hook.Add("think", "update", function()
-    if(is_game_paused()) then
-        return
+Hook.Add("think", "updater", function()
+    if(Utils.is_game_paused()) then
+         return
     end
 
     UPDATE_COOLDOWN = UPDATE_COOLDOWN-1
@@ -13,11 +16,19 @@
         UPDATE_COOLDOWN = UPDATE_INTERVAL
         updater()
     end
-end)]]--
+end)
+
+function get_affliction()
+    for affliction in AfflictionPrefab.Prefabs do
+        table.insert(aff_list, affliction)
+    end
+end
 
 
 -- Обновляет все afflictions на персонаже
 local function update_human(character)
+    get_affliction()
+
     for key, affliction in ipairs(aff_list) do
         temp_affliction[key] = affliction
     end
@@ -35,8 +46,3 @@ function updater()
         end
     end
 end
-
-
-
-
-
