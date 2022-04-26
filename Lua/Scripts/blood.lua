@@ -1,27 +1,29 @@
 ---@diagnostic disable: lowercase-global, undefined-global
-local set_blood = {}
-has_blood = FALSE
+require("Scripts._DEFINES")
 
--- Пихаем всю кровь в таблицу, откуда потом достанем нужный тип 
-for _, blood in pairs(BLOODTYPE) do
-    table.insert(set_blood, AfflictionPrefab.Prefabs[blood])
+local blood = {}
+
+-- Пихаем всю кровь в таблицу, откуда потом достанем нужный тип
+for _, type in pairs(BLOODTYPE) do
+    table.insert(blood, AfflictionPrefab.Prefabs[type])
 end
 
 -- Накладывает случайную группу крови через таблицу (1,8) 
 local function randomize_blood(character)
     rand = math.random(1,8)
-    character.CharacterHealth.ApplyAffliction(character.AnimController.MainLimb, set_blood[rand].Instantiate(100))
+    character.CharacterHealth.ApplyAffliction(character.AnimController.MainLimb, blood[rand].Instantiate(100))
 end
-
 
 Hook.Add("characterCreated", "bloodGenerate", function(createdCharacter)
     Timer.Wait(function()
         if(createdCharacter.IsPlayer and not createdCharacter.IsDead) then
+            local has_blood = false
+
             for _, affliction in pairs(BLOODTYPE) do
                 local conditional = createdCharacter.CharacterHealth.GetAffliction(affliction)
 
                 if(conditional and conditional.Strength > 0) then
-                    has_blood = TRUE -- Если у игрока есть кровь, сразу выходим из цикла
+                    has_blood = true -- Если у игрока есть кровь, сразу выходим из цикла
                     break
                 end
             end

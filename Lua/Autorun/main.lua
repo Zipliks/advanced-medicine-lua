@@ -1,13 +1,17 @@
+PATH = table.pack(...)[1]
+IS_ENABLED = Game.GetEnabledContentPackages()
+
 print("honk!")
 
-local enabled = Game.GetEnabledContentPackages()
-
-
-for _, value in pairs(enabled) do
-    if (value.Name == "AMlua") then
-        dofile("LocalMods/AMlua/Lua/Scripts/blood.lua")
-        dofile("LocalMods/AMlua/Lua/Scripts/hypothermia.lua")
-        dofile("LocalMods/AMlua/Lua/Scripts/debug.lua")
-        dofile("LocalMods/AMlua/Lua/Scripts/update.lua")
+if Game.IsMultiplayer and SERVER or not Game.IsMultiplayer then
+    for _, value in pairs(IS_ENABLED) do
+        if (value.Name == "AMlua") then
+            require("Scripts.blood")
+            require("Scripts.hypothermia")
+            require("Scripts.debug")
+            require("Scripts.update")
+        end
     end
 end
+
+if CLIENT then return end
