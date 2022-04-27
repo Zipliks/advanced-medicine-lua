@@ -22,25 +22,27 @@
     <InventoryIcon texture="%ModDir%/Images/InventoryItemIconAtlas.png" sourcerect="128,196,64,64" origin="0.5,0.5" />
     <Sprite texture="%ModDir%/Images/InGameItemIconAtlas.png" sourcerect="768,128,128,128" depth="0.55" origin="0.5,0.5" />
     <Body width="90" height="80" density="20" />
-    <SuitableTreatment identifier="cardiacarrest" suitability="50" />
+    <SuitableTreatment identifier="vt" suitability="50" />
+    <SuitableTreatment identifier="vf" suitability="50" />
     <MeleeWeapon slots="Any,RightHand,LeftHand" aimpos="5,0" handle1="-5,0" holdangle="10" reload="9.0">
       <RequiredItems identifier="mobilebattery" type="Contained" msg="ItemMsgBatteryCellRequired" />
       <RequiredSkill identifier="medical" level="50" />
       <StatusEffect type="OnUse" targettype="Contained" targets="batterycell" Condition="-20" />
       <StatusEffect type="OnUse" targettype="Contained" targets="fulguriumbatterycell" Condition="-10" />
-      <StatusEffect tags="medical" type="OnUse" target="Character" setvalue="true" delay="2" comparison="And">
-        <Conditional cardiacarrest="gte 0.01" />
-        <ReduceAffliction identifier="cardiacarrest" amount="30" />
+      <StatusEffect tags="medical" type="OnUse" target="Character" setvalue="true" delay="2" comparison="Or">
+        <Conditional vf="gte 0.01" vt="gte 0.01"/>
+        <ReduceAffliction identifier="vf" amount="30" />
+        <ReduceAffliction identifier="vt" amount="100" />
         <Affliction identifier="stun" amount="2" />
       </StatusEffect>
       <StatusEffect tags="medical" type="OnUse" target="Character" setvalue="true" delay="2" comparison="And">
-        <Conditional cardiacarrest="lt 0.01" />
-        <Affliction identifier="cardiacarrest" amount="30" probability="0.5" />
+        <Conditional vt="eq 0" vf="eq 0"/>
+        <Affliction identifier="vf" amount="30" probability="0.5" />
         <Affliction identifier="stun" amount="2" />
       </StatusEffect>
       <StatusEffect tags="medical" type="OnFailure" target="Character" setvalue="true" delay="2" comparison="And" disabledeltatime="true">
-        <ReduceAffliction identifier="cardiacarrest" amount="30" probability="0.2" />
-        <Affliction identifier="cardiacarrest" amount="30" probability="0.75" />
+        <Affliction identifier="asys" amount="30" probability="0.75" />
+        <Affliction identifier="heartdamage" amount="10" probability="0.5" />
         <Affliction identifier="stun" amount="2" />
       </StatusEffect>
       <StatusEffect tags="medical" type="OnUse" target="Character" delay="0">
@@ -69,8 +71,6 @@
       <RequiredItem identifier="fpgacircuit" />
       <RequiredItem identifier="fpgacircuit" />
       <RequiredItem identifier="batterycell" />
-      <RequiredItem identifier="oxygeniteshard" />
-      <RequiredItem identifier="oxygeniteshard" />
     </Fabricate>
     <Deconstruct time="10">
       <Item identifier="plastic" />
@@ -81,7 +81,8 @@
     <InventoryIcon texture="%ModDir%/Images/InventoryItemIconAtlas.png" sourcerect="64,0,64,64" origin="0.5,0.5" />
     <Sprite texture="%ModDir%/Images/InGameItemIconAtlas.png" sourcerect="128,0,128,128" depth="0.55" origin="0.5,0.5" />
     <Body width="90" height="80" density="20" />
-    <SuitableTreatment identifier="cardiacarrest" suitability="100" />
+    <SuitableTreatment identifier="vf" suitability="100" />
+    <SuitableTreatment identifier="vt" suitability="100" />
     <MeleeWeapon slots="Any,RightHand,LeftHand" aimpos="5,0" handle1="-5,0" holdangle="10" reload="9.0">
       <RequiredItems identifier="mobilebattery" type="Contained" msg="ItemMsgBatteryCellRequired" />
       <StatusEffect type="OnUse" targettype="Contained" targets="batterycell" Condition="-20" />
@@ -89,16 +90,17 @@
       <StatusEffect type="OnUse" target="This" Condition="-100" />
       <StatusEffect type="OnBroken" target="This" Condition="100" disabledeltatime="true" delay="5" stackable="false" />
       <StatusEffect type="OnUse" target="Character" setvalue="true" delay="3.2" comparison="Or">
-        <Conditional сondition="gt 99" cardiacarrest="gte 0.01" />
-        <ReduceAffliction identifier="cardiacarrest" amount="30" />
+        <Conditional сondition="gt 99" vf="gte 0.01" vt="gte 0.01" />
+        <ReduceAffliction identifier="vt" amount="30" />
+        <ReduceAffliction identifier="vf" amount="30" />
         <Affliction identifier="stun" amount="2" />
       </StatusEffect>
       <StatusEffect type="OnUse" target="Character" setvalue="true" delay="0" comparison="Or">
-        <Conditional cardiacarrest="gte 0.01" />
+        <Conditional vt="gte 0.01" vf="gte 0.01"/>
         <Sound file="%ModDir%/Sound/Defib1.ogg" range="1000" />
       </StatusEffect>
       <StatusEffect type="OnUse" target="Character" setvalue="true" delay="0" comparison="And">
-        <Conditional cardiacarrest="eq 0" />
+        <Conditional vt="eq 0" vf="eq 0"/>
         <Sound file="%ModDir%/Sound/Defib2.ogg" range="500" />
       </StatusEffect>
       <StatusEffect type="OnSpawn">
@@ -762,7 +764,6 @@
       <RequiredSkill identifier="medical" level="35" />
       <RequiredSkill identifier="mechanical" level="20" />
       <RequiredItem identifier="titaniumaluminiumalloy" />
-      <RequiredItem identifier="oxygeniteshard" />
       <RequiredItem identifier="calcium" />
       <RequiredItem identifier="calcium" />
     </Fabricate>
