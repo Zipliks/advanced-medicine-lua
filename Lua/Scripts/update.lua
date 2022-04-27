@@ -1,10 +1,10 @@
 ---@diagnostic disable: undefined-field, undefined-global
-require("Scripts.const")
-require("Scripts.utils")
+require("Scripts._DEFINES.const")
+require("Scripts._HELPERS.utils")
 
 aff_list = {}
 
--- Вот эта херня работает 60 раз за тик \
+-- Работает 60 раз за тик \
 -- Задаёт интервал для срабатывая update()
 Hook.Add("think", "updater", function()
     if(Utils.is_game_paused()) then
@@ -23,7 +23,6 @@ function get_affliction()
         table.insert(aff_list, affliction)
     end
 end
-
 
 -- Обновляет все afflictions на персонаже
 local function update_human(character)
