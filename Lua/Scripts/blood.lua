@@ -1,5 +1,5 @@
 ---@diagnostic disable: lowercase-global, undefined-global
-require("Scripts._DEFINES")
+require("Scripts._DEFINES.const")
 
 local blood = {}
 
