@@ -1093,17 +1093,7 @@
                   OVERRIDES
   #########################################
   #########################################
---><!-- Splitting it to separate file leads to an undefined behaviour --><Override><CPRSettings
-    revivechanceperskill="0.01"
-    revivechanceexponent="2"
-    revivechancemin="0.05"
-    revivechancemax="0.9"
-    stabilizationperskill="0.02"
-    stabilizationmin="0.5"
-    stabilizationmax="2"
-    damageskillthreshold="20"
-    damageskillmultiplier="0.05"
-    insufficientskillaffliction="internaldamage"><!--
+--><!-- Splitting it to separate file leads to an undefined behaviour --><Override><CPRSettings revivechanceperskill="0.01" revivechanceexponent="2" revivechancemin="0.05" revivechancemax="0.9" stabilizationperskill="0.5" stabilizationmin="0.8" stabilizationmax="2" damageskillthreshold="0" damageskillmultiplier="0"><!--
       CPR revive chance = max(min((medicalskill * cprrevivechanceperskill) ^ cprrevivechanceexponent, cprrevivechancemin), cprrevivechancemax)
         Example:
           cprrevivechanceperskill="0.01"
