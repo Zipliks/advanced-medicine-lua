@@ -1,6 +1,6 @@
 ---@diagnostic disable: undefined-field, undefined-global
-require("Scripts.const")
-require("Scripts.utils")
+require("Scripts._DEFINES.const")
+require("Scripts._HELPERS.utils")
 
 aff_list = {}
 
