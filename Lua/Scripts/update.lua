@@ -29,7 +29,7 @@ local function update_human(character)
     get_affliction()
 
     for key, affliction in ipairs(aff_list) do
-        temp_affliction[key] = affliction
+        --temp_affliction[key] = affliction
     end
 end
 
