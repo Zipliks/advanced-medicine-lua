@@ -1032,7 +1032,7 @@
     <icon texture="Content/UI/MainIconsAtlas.png" sourcerect="256,896,128,128" color="10,193,114,255" origin="0,0" />
   </Affliction>
   <!-- Name: Immunity -->
-  <Affliction name="Immunity" identifier="immunity" description="" type="resistance" isbuff="True" limbspecific="False" maxstrength="600" showiconthreshold="700">
+  <Affliction name="Immunity" identifier="immunity" description="" type="resistance" isbuff="True" limbspecific="False" maxstrength="600" showiconthreshold="0">
     <Effect minstrength="1" maxstrength="3" strengthchange="7" />
     <Effect minstrength="3" maxstrength="100">
       <StatusEffect target="Character" checkconditionalalways="False" stackable="False" delay="1" comparison="and">
