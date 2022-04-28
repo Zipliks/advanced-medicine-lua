@@ -78,9 +78,33 @@
   <Affliction name="" identifier="stroke" description="" targets="human" healableinmedicalclinic="false" type="gaze" isbuff="false" limbspecific="false" indicatorlimb="Head" showiconthreshold="100" showinhealthscannerthreshold="0.1" maxstrength="50">
     <icon texture="%ModDir%/Images/AfflictionIcons.png" sourcerect="0,128,128,128" color="0,255,0,255" origin="0,0" />
   </Affliction>
+  <!-- Meningitis -->
+  <Affliction name="" identifier="meningitis" description="" targets="human" healableinmedicalclinic="false" type="gaze" isbuff="false" limbspecific="false" indicatorlimb="Head" showiconthreshold="100" showinhealthscannerthreshold="0.1" maxstrength="50">
+    <icon texture="%ModDir%/Images/AfflictionIcons.png" sourcerect="0,128,128,128" color="0,255,0,255" origin="0,0" />
+  </Affliction>
   <!-- Brain integrity
   Scanned Symptom -->
   <Affliction name="" identifier="brain_integrity" description="" healableinmedicalclinic="false" type="gaze" isbuff="false" targets="human" limbspecific="false" indicatorlimb="Head" activationthreshold="0" causeofdeathdescription="Brain dead" selfcauseofdeathdescription="Your brain is dead." showinhealthscannerthreshold="300" showiconthreshold="300" maxstrength="200">
+    <icon texture="Content/UI/MainIconsAtlas.png" sourcerect="128,640,128,128" color="195,177,60,255" origin="0,0" />
+  </Affliction>
+  <!-- Subdural hematoma
+  Scanned Symptom -->
+  <Affliction name="" identifier="s_hematoma" description="" healableinmedicalclinic="false" type="gaze" isbuff="false" targets="human" limbspecific="false" indicatorlimb="Head" activationthreshold="0" causeofdeathdescription="Brain dead" selfcauseofdeathdescription="Your brain is dead." showinhealthscannerthreshold="300" showiconthreshold="300" maxstrength="200">
+    <icon texture="Content/UI/MainIconsAtlas.png" sourcerect="128,640,128,128" color="195,177,60,255" origin="0,0" />
+  </Affliction>
+  <!-- Subarachnoid hemorrhage / SAH / Hemorrhagic stroke
+  Scanned Symptom -->
+  <Affliction name="" identifier="s_hemorrhage" description="" healableinmedicalclinic="false" type="gaze" isbuff="false" targets="human" limbspecific="false" indicatorlimb="Head" activationthreshold="0" causeofdeathdescription="Brain dead" selfcauseofdeathdescription="Your brain is dead." showinhealthscannerthreshold="300" showiconthreshold="300" maxstrength="200">
+    <icon texture="Content/UI/MainIconsAtlas.png" sourcerect="128,640,128,128" color="195,177,60,255" origin="0,0" />
+  </Affliction>
+  <!-- Epidural hematoma / Skull fracture
+  Scanned Symptom -->
+  <Affliction name="" identifier="e_hematoma" description="" healableinmedicalclinic="false" type="gaze" isbuff="false" targets="human" limbspecific="false" indicatorlimb="Head" activationthreshold="0" causeofdeathdescription="Brain dead" selfcauseofdeathdescription="Your brain is dead." showinhealthscannerthreshold="300" showiconthreshold="300" maxstrength="200">
+    <icon texture="Content/UI/MainIconsAtlas.png" sourcerect="128,640,128,128" color="195,177,60,255" origin="0,0" />
+  </Affliction>
+  <!-- Сerebral edema
+  Scanned Symptom -->
+  <Affliction name="" identifier="cerebral_edema" description="" healableinmedicalclinic="false" type="gaze" isbuff="false" targets="human" limbspecific="false" indicatorlimb="Head" activationthreshold="0" causeofdeathdescription="Brain dead" selfcauseofdeathdescription="Your brain is dead." showinhealthscannerthreshold="300" showiconthreshold="300" maxstrength="200">
     <icon texture="Content/UI/MainIconsAtlas.png" sourcerect="128,640,128,128" color="195,177,60,255" origin="0,0" />
   </Affliction>
   <!-- Cerebral hypoxia / Low oxygen presence in the brain
@@ -1569,6 +1593,22 @@
   </Affliction>
   <!-- Inflammation / Exposed Symptom -->
   <Affliction name="" identifier="inflammation" description="" healableinmedicalclinic="false" type="" isbuff="false" limbspecific="true" showiconthreshold="1" showinhealthscannerthreshold="100" maxstrength="2" iconcolors="255,90,0,255;255,90,0,255">
+    <icon texture="%ModDir%/Images/AfflictionIcons.png" sheetindex="4,3" sheetelementsize="128,128" origin="0,0" />
+  </Affliction>
+  <!-- Causalgia / Exposed Symptom -->
+  <Affliction name="" identifier="causalgia" description="" healableinmedicalclinic="false" type="" isbuff="false" limbspecific="true" showiconthreshold="1" showinhealthscannerthreshold="100" maxstrength="2" iconcolors="255,90,0,255;255,90,0,255">
+    <icon texture="%ModDir%/Images/AfflictionIcons.png" sheetindex="4,3" sheetelementsize="128,128" origin="0,0" />
+  </Affliction>
+  <!-- Hyperpathy / Exposed Symptom -->
+  <Affliction name="" identifier="hyperpathy" description="" healableinmedicalclinic="false" type="" isbuff="false" limbspecific="true" showiconthreshold="1" showinhealthscannerthreshold="100" maxstrength="2" iconcolors="255,90,0,255;255,90,0,255">
+    <icon texture="%ModDir%/Images/AfflictionIcons.png" sheetindex="4,3" sheetelementsize="128,128" origin="0,0" />
+  </Affliction>
+  <!-- Autometamorphopsia / Exposed Symptom -->
+  <Affliction name="" identifier="autometamorphopsia" description="" healableinmedicalclinic="false" type="" isbuff="false" limbspecific="true" showiconthreshold="1" showinhealthscannerthreshold="100" maxstrength="2" iconcolors="255,90,0,255;255,90,0,255">
+    <icon texture="%ModDir%/Images/AfflictionIcons.png" sheetindex="4,3" sheetelementsize="128,128" origin="0,0" />
+  </Affliction>
+  <!-- Phantom pains / Exposed Symptom -->
+  <Affliction name="" identifier="phantom_pains" description="" healableinmedicalclinic="false" type="" isbuff="false" limbspecific="true" showiconthreshold="1" showinhealthscannerthreshold="100" maxstrength="2" iconcolors="255,90,0,255;255,90,0,255">
     <icon texture="%ModDir%/Images/AfflictionIcons.png" sheetindex="4,3" sheetelementsize="128,128" origin="0,0" />
   </Affliction>
   <!-- Spasm / Exposed Symptom -->
