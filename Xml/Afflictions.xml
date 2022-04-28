@@ -152,6 +152,11 @@
   <Affliction name="" identifier="hypoxemia" description="" targets="human" limbspecific="false" indicatorlimb="Torso" activationthreshold="0" healableinmedicalclinic="false" type="gaze" isbuff="false" showinhealthscannerthreshold="5" showiconthreshold="300" maxstrength="100">
     <icon texture="%ModDir%/Images/AfflictionIcons.png" sourcerect="128,128,128,128" color="68,157,198,255" origin="0,0" />
   </Affliction>
+  <!-- Atherosclerosis
+  Scanned Symptom -->
+  <Affliction name="" identifier="atherosclerosis" description="" targets="human" limbspecific="false" indicatorlimb="Torso" activationthreshold="0" healableinmedicalclinic="false" type="gaze" isbuff="false" showinhealthscannerthreshold="5" showiconthreshold="300" maxstrength="100">
+    <icon texture="%ModDir%/Images/AfflictionIcons.png" sourcerect="128,128,128,128" color="68,157,198,255" origin="0,0" />
+  </Affliction>
   <!-- /// Lung Stuff /// -->
   <!-- Respiratory Arrest / Apnea
   Exposed Symptom -->
@@ -270,31 +275,31 @@
   </Affliction>
   <!-- /// Nerve Stuff /// -->
   <!-- /// Nerve Damage /// -->
-  <Affliction name="" identifier="nervedamage" description="" healableinmedicalclinic="false" type="gaze" isbuff="false" targets="human" causeofdeathdescription="" selfcauseofdeathdescription="" limbspecific="false" indicatorlimb="Torso" maxstrength="100" showiconthreshold="500" showinhealthscannerthreshold="20" damageoverlayalpha="1">
+  <Affliction name="" identifier="nervedamage" description="" healableinmedicalclinic="false" type="gaze" isbuff="false" targets="human" causeofdeathdescription="" selfcauseofdeathdescription="" limbspecific="true" maxstrength="100" showiconthreshold="500" showinhealthscannerthreshold="20" damageoverlayalpha="1">
     <icon texture="Content/UI/MainIconsAtlas.png" sourcerect="128,384,128,128" color="195,136,60,255" origin="0,0" />
   </Affliction>
   <!-- /// Nerve Integrity /// -->
-  <Affliction name="" identifier="nerveintegrity" description="" healableinmedicalclinic="false" type="gaze" isbuff="false" targets="human" causeofdeathdescription="" selfcauseofdeathdescription="" limbspecific="false" indicatorlimb="Torso" maxstrength="100" showiconthreshold="500" showinhealthscannerthreshold="20" damageoverlayalpha="1">
+  <Affliction name="" identifier="nerveintegrity" description="" healableinmedicalclinic="false" type="gaze" isbuff="false" targets="human" causeofdeathdescription="" selfcauseofdeathdescription="" limbspecific="true" maxstrength="100" showiconthreshold="500" showinhealthscannerthreshold="20" damageoverlayalpha="1">
     <icon texture="Content/UI/MainIconsAtlas.png" sourcerect="128,384,128,128" color="195,136,60,255" origin="0,0" />
   </Affliction>
   <!-- /// Motor Stuff /// -->
   <!-- /// Muscle Strains /// -->
-  <Affliction name="" identifier="musclestrains" description="" healableinmedicalclinic="false" type="gaze" isbuff="false" targets="human" causeofdeathdescription="" selfcauseofdeathdescription="" limbspecific="false" indicatorlimb="Torso" maxstrength="100" showiconthreshold="500" showinhealthscannerthreshold="20" damageoverlayalpha="1">
+  <Affliction name="" identifier="musclestrains" description="" healableinmedicalclinic="false" type="gaze" isbuff="false" targets="human" causeofdeathdescription="" selfcauseofdeathdescription="" limbspecific="true" maxstrength="100" showiconthreshold="500" showinhealthscannerthreshold="20" damageoverlayalpha="1">
     <icon texture="Content/UI/MainIconsAtlas.png" sourcerect="128,384,128,128" color="195,136,60,255" origin="0,0" />
   </Affliction>
   <!-- /// Torn ligaments and tendons /// -->
-  <Affliction name="" identifier="torn_l_t" description="" healableinmedicalclinic="false" type="gaze" isbuff="false" targets="human" causeofdeathdescription="" selfcauseofdeathdescription="" limbspecific="false" indicatorlimb="Torso" maxstrength="100" showiconthreshold="500" showinhealthscannerthreshold="20" damageoverlayalpha="1">
+  <Affliction name="" identifier="torn_l_t" description="" healableinmedicalclinic="false" type="gaze" isbuff="false" targets="human" causeofdeathdescription="" selfcauseofdeathdescription="" limbspecific="true" maxstrength="100" showiconthreshold="500" showinhealthscannerthreshold="20" damageoverlayalpha="1">
     <icon texture="Content/UI/MainIconsAtlas.png" sourcerect="128,384,128,128" color="195,136,60,255" origin="0,0" />
   </Affliction>
   <!-- /// Bone Stuff /// -->
   <!-- Bone Damage
   Scanned Symptom, leads to bone death if severe enough -->
-  <Affliction name="" identifier="bonedamage" description="" healableinmedicalclinic="false" type="gaze" isbuff="false" targets="human" causeofdeathdescription="" selfcauseofdeathdescription="" limbspecific="false" indicatorlimb="Torso" maxstrength="100" showiconthreshold="500" showinhealthscannerthreshold="20" damageoverlayalpha="1">
+  <Affliction name="" identifier="bonedamage" description="" healableinmedicalclinic="false" type="gaze" isbuff="false" targets="human" causeofdeathdescription="" selfcauseofdeathdescription="" limbspecific="true" maxstrength="100" showiconthreshold="500" showinhealthscannerthreshold="20" damageoverlayalpha="1">
     <icon texture="Content/UI/MainIconsAtlas.png" sourcerect="128,384,128,128" color="195,136,60,255" origin="0,0" />
   </Affliction>
   <!-- Osteonecrosis / Bone death / Bone Marrov Death
   Scanned Symptom, causes fractures / radiation, infections -->
-  <Affliction name="" identifier="bonedeath" description="" healableinmedicalclinic="false" type="gaze" isbuff="false" targets="human" limbspecific="false" indicatorlimb="Torso" showiconthreshold="500" showinhealthscannerthreshold="1" maxstrength="2">
+  <Affliction name="" identifier="bonedeath" description="" healableinmedicalclinic="false" type="gaze" isbuff="false" targets="human" limbspecific="true" showiconthreshold="500" showinhealthscannerthreshold="1" maxstrength="2">
     <icon texture="%ModDir%/Images/AfflictionIcons.png" sourcerect="0,128,128,128" color="0,255,0,255" origin="0,0" />
   </Affliction>
   <Affliction name="" identifier="bonemarrovdeath" description="" healableinmedicalclinic="false" type="gaze" isbuff="false" targets="human" limbspecific="false" indicatorlimb="Torso" showiconthreshold="500" showinhealthscannerthreshold="1" maxstrength="2">
