@@ -1,19 +1,20 @@
 --if Game.IsMultiplayer and CLIENT then return end
 
-NT = {} -- Neurotrauma
-NT.Name="Neurotrauma"
-NT.Version = "A1.7.4"
-NT.VersionNum = 01070400
-NT.Path = table.pack(...)[1]
+Main = {} -- Neurotrauma
+Main.Name="Advanced Neurotrauma"
+Main.Version = "A0.0.1"
+Main.VersionNum = 01070400
+Main.Path = table.pack(...)[1]
 
-dofile(NT.Path.."/Lua/Scripts/helperfunctions.lua")
+--dofile(Main.Path.."/Lua/Scripts/helperfunctions.lua")
+require("Scripts.helperfunctions")
 
 -- server-side code (also run in singleplayer)
 if (Game.IsMultiplayer and SERVER) or not Game.IsMultiplayer then
 
     -- Version and expansion display
     Timer.Wait(function() Timer.Wait(function()
-        local runstring = "\n/// Running Neurotrauma V "..NT.Version.." ///\n"
+        local runstring = "\n/// Running AAAAAAAAAAAAAAAA "..Main.Version.." ///\n"
 
         -- add dashes
         local linelength = string.len(runstring)+4
@@ -24,7 +25,7 @@ if (Game.IsMultiplayer and SERVER) or not Game.IsMultiplayer then
         -- add expansions
         for val in NTC.RegisteredExpansions do
             runstring = runstring.."\n+ "..(val.Name or "Unnamed expansion").." V "..(val.Version or "???")
-            if val.MinNTVersion ~= nil and NT.VersionNum < (val.MinNTVersionNum or 1) then
+            if val.MinNTVersion ~= nil and Main.VersionNum < (val.MinNTVersionNum or 1) then
                 runstring = runstring.."\n-- WARNING! Neurotrauma version "..val.MinNTVersion.." or higher required!"
             end
         end
@@ -38,19 +39,32 @@ if (Game.IsMultiplayer and SERVER) or not Game.IsMultiplayer then
         print(runstring)
     end,1) end,1)
 
-    dofile(NT.Path.."/Lua/Scripts/ntcompat.lua")
-    dofile(NT.Path.."/Lua/Scripts/blood.lua")
-    dofile(NT.Path.."/Lua/Scripts/humanupdate.lua")
-    dofile(NT.Path.."/Lua/Scripts/ondamaged.lua")
-    dofile(NT.Path.."/Lua/Scripts/items.lua")
-    dofile(NT.Path.."/Lua/Scripts/onfire.lua")
-    dofile(NT.Path.."/Lua/Scripts/cpr.lua")
-    dofile(NT.Path.."/Lua/Scripts/surgerytable.lua")
+    require("Scripts.ntcompat")
+    require("Scripts.blood")
+    require("Scripts.humanupdate")
+    require("Scripts.ondamaged")
+    require("Scripts.items")
+    require("Scripts.onfire")
+    require("Scripts.cpr")
+    require("Scripts.surgerytable")
+
+    require("Scripts.testing")
+
+    --[[dofile(Main.Path.."/Lua/Scripts/ntcompat.lua")
+    dofile(Main.Path.."/Lua/Scripts/blood.lua")
+    dofile(Main.Path.."/Lua/Scripts/humanupdate.lua")
+    dofile(Main.Path.."/Lua/Scripts/ondamaged.lua")
+    dofile(Main.Path.."/Lua/Scripts/items.lua")
+    dofile(Main.Path.."/Lua/Scripts/onfire.lua")
+    dofile(Main.Path.."/Lua/Scripts/cpr.lua")
+    dofile(Main.Path.."/Lua/Scripts/surgerytable.lua")
     
-    dofile(NT.Path.."/Lua/Scripts/testing.lua")
+    dofile(Main.Path.."/Lua/Scripts/testing.lua")--]]
 end
 
--- client-side code
-if CLIENT then
-    dofile(NT.Path.."/Lua/Scripts/clientonly.lua")
-end
+-- client-side code // Клиентсайд пока не используется.
+-- Нужно также сделать возможность игры игрокам без клиентсайда (Иначе людям с модом играть проблематично будет).
+
+--if CLIENT then
+--    dofile(Main.Path.."/Lua/Scripts/clientonly.lua")
+--end
