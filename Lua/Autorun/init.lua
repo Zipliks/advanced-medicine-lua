@@ -14,7 +14,7 @@ if (Game.IsMultiplayer and SERVER) or not Game.IsMultiplayer then
 
     -- Version and expansion display
     Timer.Wait(function() Timer.Wait(function()
-        local runstring = "\n/// Running AAAAAAAAAAAAAAAA "..Main.Version.." ///\n"
+        local runstring = "\n/// Running Advanced Neurotrauma "..Main.Version.." ///\n"
 
         -- add dashes
         local linelength = string.len(runstring)+4
@@ -26,7 +26,7 @@ if (Game.IsMultiplayer and SERVER) or not Game.IsMultiplayer then
         for val in NTC.RegisteredExpansions do
             runstring = runstring.."\n+ "..(val.Name or "Unnamed expansion").." V "..(val.Version or "???")
             if val.MinNTVersion ~= nil and Main.VersionNum < (val.MinNTVersionNum or 1) then
-                runstring = runstring.."\n-- WARNING! Neurotrauma version "..val.MinNTVersion.." or higher required!"
+                runstring = runstring.."\n-- WARNING! Advanced Neurotrauma version "..val.MinNTVersion.." or higher required!"
             end
         end
 
@@ -35,8 +35,9 @@ if (Game.IsMultiplayer and SERVER) or not Game.IsMultiplayer then
         if not hasAddons then
             runstring = runstring.."- Not running any expansions\n"
         end
-
+        
         print(runstring)
+        
     end,1) end,1)
 
     require("Scripts.ntcompat")
@@ -62,9 +63,10 @@ if (Game.IsMultiplayer and SERVER) or not Game.IsMultiplayer then
     dofile(Main.Path.."/Lua/Scripts/testing.lua")--]]
 end
 
--- client-side code // Клиентсайд пока не используется.
--- Нужно также сделать возможность игры игрокам без клиентсайда (Иначе людям с модом играть проблематично будет).
-
---if CLIENT then
---    dofile(Main.Path.."/Lua/Scripts/clientonly.lua")
---end
+--[[
+   Клиентсайд пока не используется.
+   TODO: Сделать возможность играть без клиентсайда (Иначе будет проблематично).
+if CLIENT then
+    dofile(Main.Path.."/Lua/Scripts/clientonly.lua")
+end --]]
+if CLIENT then return end

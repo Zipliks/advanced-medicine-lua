@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<contentpackage name="Neurotrauma" modversion="A1.7.4" corepackage="False" steamworkshopid="2776270649" gameversion="0.17.12.0" expectedhash="00911F94F1CBCD2EDA2FF1A20C500071" installtime="1650155549">
+<contentpackage name="AM Lua (NT Refactor)" modversion="0.0.1" corepackage="False" gameversion="0.17.15.0">
   <Other file="%ModDir%/Images/InGameItemIconAtlas.png" />
   <Other file="%ModDir%/Images/InventoryItemIconAtlas.png" />
   <Other file="%ModDir%/Images/BloodPacksAtlas.png" />
