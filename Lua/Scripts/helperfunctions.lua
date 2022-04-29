@@ -1,17 +1,17 @@
 
 -- This file contains a bunch of useful functions that see heavy use in the other scripts.
-HF = {} -- Helperfunctions
+Utils = {} -- Helperfunctions
 
-function HF.Lerp(a, b, t)
+function Utils.Lerp(a, b, t)
 	return a + (b - a) * t
 end
 
-function HF.Round(num, numDecimalPlaces)
+function Utils.Round(num, numDecimalPlaces)
     local mult = 10^(numDecimalPlaces or 0)
     return math.floor(num * mult + 0.5) / mult
 end
 
-function HF.Clamp(num, min, max)
+function Utils.Clamp(num, min, max)
     if(num<min) then
         num = min 
     elseif(num>max) then 
@@ -21,14 +21,14 @@ function HF.Clamp(num, min, max)
 end
 
 -- returns num if num > min, else defaultvalue
-function HF.Minimum(num, min, defaultvalue)
+function Utils.Minimum(num, min, defaultvalue)
     if(num<min) then num=(defaultvalue or 0) end
     return num
 end
 
 -- /// affliction magic ///
 ------------------------------
-function HF.GetAfflictionStrength(character,identifier,defaultvalue)
+function Utils.GetAfflictionStrength(character,identifier,defaultvalue)
     local aff = character.CharacterHealth.GetAffliction(identifier)
     local res = defaultvalue or 0
     if(aff~=nil) then
@@ -37,7 +37,7 @@ function HF.GetAfflictionStrength(character,identifier,defaultvalue)
     return res
 end
 
-function HF.GetAfflictionStrengthLimb(character,limbtype,identifier,defaultvalue)
+function Utils.GetAfflictionStrengthLimb(character,limbtype,identifier,defaultvalue)
     local aff = character.CharacterHealth.GetAffliction(identifier,character.AnimController.GetLimb(limbtype))
     local res = defaultvalue or 0
     if(aff~=nil) then
@@ -46,7 +46,7 @@ function HF.GetAfflictionStrengthLimb(character,limbtype,identifier,defaultvalue
     return res
 end
 
-function HF.HasAffliction(character,identifier,minamount)
+function Utils.HasAffliction(character,identifier,minamount)
     local aff = character.CharacterHealth.GetAffliction(identifier)
     local res = false
     if(aff~=nil) then
@@ -55,7 +55,7 @@ function HF.HasAffliction(character,identifier,minamount)
     return res
 end
 
-function HF.HasAfflictionLimb(character,identifier,limbtype,minamount)
+function Utils.HasAfflictionLimb(character,identifier,limbtype,minamount)
     local aff = character.CharacterHealth.GetAffliction(identifier,character.AnimController.GetLimb(limbtype))
     local res = false
     if(aff~=nil) then
@@ -65,7 +65,7 @@ function HF.HasAfflictionLimb(character,identifier,limbtype,minamount)
 end
 
 -- this might be overkill, but a lot of people have reported dislocation fixing issues
-function HF.HasAfflictionExtremity(character,identifier,limbtype,minamount)
+function Utils.HasAfflictionExtremity(character,identifier,limbtype,minamount)
     local aff = nil
     
     if(limbtype == LimbType.LeftArm or limbtype == LimbType.LeftForearm or limbtype == LimbType.LeftHand) then
@@ -93,12 +93,12 @@ function HF.HasAfflictionExtremity(character,identifier,limbtype,minamount)
     return res
 end
 
-function HF.SetAffliction(character,identifier,strength,aggressor,prevstrength)
-    HF.SetAfflictionLimb(character,identifier,LimbType.Torso,strength,aggressor,prevstrength)
+function Utils.SetAffliction(character,identifier,strength,aggressor,prevstrength)
+    Utils.SetAfflictionLimb(character,identifier,LimbType.Torso,strength,aggressor,prevstrength)
 end
 
 -- the main "mess with afflictions" function
-function HF.SetAfflictionLimb(character,identifier,limbtype,strength,aggressor,prevstrength)
+function Utils.SetAfflictionLimb(character,identifier,limbtype,strength,aggressor,prevstrength)
     local prefab = AfflictionPrefab.Prefabs[identifier]
     local resistance = character.CharacterHealth.GetResistance(prefab)
     if resistance >= 1 then return end
@@ -124,54 +124,54 @@ function HF.SetAfflictionLimb(character,identifier,limbtype,strength,aggressor,p
     
 end
 
-function HF.ApplyAfflictionChange(character,identifier,strength,prevstrength,minstrength,maxstrength)
-    strength = HF.Clamp(strength,minstrength,maxstrength)
-    prevstrength = HF.Clamp(prevstrength,minstrength,maxstrength)
+function Utils.ApplyAfflictionChange(character,identifier,strength,prevstrength,minstrength,maxstrength)
+    strength = Utils.Clamp(strength,minstrength,maxstrength)
+    prevstrength = Utils.Clamp(prevstrength,minstrength,maxstrength)
     if (prevstrength~=strength) then
-        HF.SetAffliction(character,identifier,strength)
+        Utils.SetAffliction(character,identifier,strength)
     end
 end
 
-function HF.ApplyAfflictionChangeLimb(character,limbtype,identifier,strength,prevstrength,minstrength,maxstrength)
-    strength = HF.Clamp(strength,minstrength,maxstrength)
-    prevstrength = HF.Clamp(prevstrength,minstrength,maxstrength)
+function Utils.ApplyAfflictionChangeLimb(character,limbtype,identifier,strength,prevstrength,minstrength,maxstrength)
+    strength = Utils.Clamp(strength,minstrength,maxstrength)
+    prevstrength = Utils.Clamp(prevstrength,minstrength,maxstrength)
     if (prevstrength~=strength) then
-        HF.SetAfflictionLimb(character,identifier,limbtype,strength)
+        Utils.SetAfflictionLimb(character,identifier,limbtype,strength)
     end
 end
 
-function HF.ApplySymptom(character,identifier,hassymptom,removeifnot)    
+function Utils.ApplySymptom(character,identifier,hassymptom,removeifnot)    
     if(not hassymptom and not removeifnot) then return end
     
     local strength = 0
     if(hassymptom) then strength = 100 end
     
     if(removeifnot or hassymptom) then 
-        HF.SetAffliction(character,identifier,strength)
+        Utils.SetAffliction(character,identifier,strength)
     end
 end
 
-function HF.ApplySymptomLimb(character,limbtype,identifier,hassymptom,removeifnot)    
+function Utils.ApplySymptomLimb(character,limbtype,identifier,hassymptom,removeifnot)    
     if(not hassymptom and not removeifnot) then return end
     
     local strength = 0
     if(hassymptom) then strength = 100 end
     
     if(removeifnot or hassymptom) then 
-        HF.SetAfflictionLimb(character,identifier,limbtype,strength)
+        Utils.SetAfflictionLimb(character,identifier,limbtype,strength)
     end
 end
 
-function HF.AddAfflictionLimb(character,identifier,limbtype,strength,aggressor)
-    local prevstrength = HF.GetAfflictionStrengthLimb(character,limbtype,identifier,0)
-    HF.SetAfflictionLimb(character,identifier,limbtype,
+function Utils.AddAfflictionLimb(character,identifier,limbtype,strength,aggressor)
+    local prevstrength = Utils.GetAfflictionStrengthLimb(character,limbtype,identifier,0)
+    Utils.SetAfflictionLimb(character,identifier,limbtype,
     strength+prevstrength,
     aggressor,prevstrength)
 end
 
-function HF.AddAffliction(character,identifier,strength,aggressor)
-    local prevstrength = HF.GetAfflictionStrength(character,identifier,0)
-    HF.SetAffliction(character,identifier,
+function Utils.AddAffliction(character,identifier,strength,aggressor)
+    local prevstrength = Utils.GetAfflictionStrength(character,identifier,0)
+    Utils.SetAffliction(character,identifier,
     strength+prevstrength,
     aggressor,prevstrength)
 end
@@ -189,7 +189,7 @@ function PrintChat(msg)
     
 end
 
-function HF.DMClient(client,msg,color)
+function Utils.DMClient(client,msg,color)
     if SERVER then
         if(client==nil) then return end
 
@@ -201,54 +201,54 @@ function HF.DMClient(client,msg,color)
     end
 end
 
-function HF.Chance(chance)
+function Utils.Chance(chance)
     return math.random() < chance
 end
 
-function HF.BoolToNum(val,trueoutput)
+function Utils.BoolToNum(val,trueoutput)
     if(val) then return trueoutput or 1 end
     return 0
 end
 
-function HF.GetSkillLevel(character,skilltype)
+function Utils.GetSkillLevel(character,skilltype)
     return character.GetSkillLevel(Identifier(skilltype))
 end
 
-function HF.GetSkillRequirementMet(character,skilltype,requiredamount)
-    local skilllevel = HF.GetSkillLevel(character,skilltype)
-    return HF.Chance(HF.Clamp(skilllevel/requiredamount,0,1))
+function Utils.GetSkillRequirementMet(character,skilltype,requiredamount)
+    local skilllevel = Utils.GetSkillLevel(character,skilltype)
+    return Utils.Chance(Utils.Clamp(skilllevel/requiredamount,0,1))
 end
 
-function HF.GetSurgerySkillRequirementMet(character,requiredamount)
-    local skilllevel = HF.GetSurgerySkill(character)
-    return HF.Chance(HF.Clamp(skilllevel/requiredamount,0,1))
+function Utils.GetSurgerySkillRequirementMet(character,requiredamount)
+    local skilllevel = Utils.GetSurgerySkill(character)
+    return Utils.Chance(Utils.Clamp(skilllevel/requiredamount,0,1))
 end
 
-function HF.GetSurgerySkill(character)
+function Utils.GetSurgerySkill(character)
     if NTSP ~= nil then 
         return math.max(
             5,
-            HF.GetSkillLevel(character,"surgery"),
-            HF.GetSkillLevel(character,"medical")/4)
+            Utils.GetSkillLevel(character,"surgery"),
+            Utils.GetSkillLevel(character,"medical")/4)
      end
 
-    return HF.GetSkillLevel(character,"medical")
+    return Utils.GetSkillLevel(character,"medical")
 end
 
-function HF.GiveSkill(character,skilltype,amount)
+function Utils.GiveSkill(character,skilltype,amount)
     if character ~= nil and character.Info ~= nil then
         character.Info.IncreaseSkillLevel(Identifier(skilltype), amount)
     end
 end
 
 -- amount = vitality healed
-function HF.GiveSkillScaled(character,skilltype,amount)
+function Utils.GiveSkillScaled(character,skilltype,amount)
     if character ~= nil and character.Info ~= nil then
-        HF.GiveSkill(character,skilltype,amount*0.001/math.max(HF.GetSkillLevel(character,skilltype),1))
+        Utils.GiveSkill(character,skilltype,amount*0.001/math.max(Utils.GetSkillLevel(character,skilltype),1))
     end
 end
 
-function HF.GiveItem(character,identifier)
+function Utils.GiveItem(character,identifier)
     if SERVER then
         -- use server spawn method
         Game.SpawnItem(identifier,character.WorldPosition,true,character)
@@ -258,7 +258,7 @@ function HF.GiveItem(character,identifier)
     end
 end
 
-function HF.GiveItemAtCondition(character,identifier,condition)
+function Utils.GiveItemAtCondition(character,identifier,condition)
     if SERVER then
         -- use server spawn method
         local prefab = ItemPrefab.GetItemPrefab(identifier)
@@ -274,7 +274,7 @@ function HF.GiveItemAtCondition(character,identifier,condition)
     end
 end
 
-function HF.SpawnItemAt(identifier,position)
+function Utils.SpawnItemAt(identifier,position)
     if SERVER then
         -- use server spawn method
         Game.SpawnItem(identifier,position,false,nil)
@@ -284,9 +284,9 @@ function HF.SpawnItemAt(identifier,position)
     end
 end
 
-function HF.ForceArmLock(character,identifier)
+function Utils.ForceArmLock(character,identifier)
     if SERVER then
-        HF.GiveItem(character,identifier)
+        Utils.GiveItem(character,identifier)
     else
         local item = Item(ItemPrefab.GetItemPrefab(identifier), character.WorldPosition)
         local handindex = 6
@@ -302,7 +302,7 @@ function HF.ForceArmLock(character,identifier)
     end
 end
 
-function HF.RemoveItem(item) 
+function Utils.RemoveItem(item) 
     if SERVER then
         -- use server remove method
         Entity.Spawner.AddEntityToRemoveQueue(item)
@@ -312,11 +312,11 @@ function HF.RemoveItem(item)
     end
 end
 
-function HF.StartsWith(String,Start)
+function Utils.StartsWith(String,Start)
     return string.sub(String,1,string.len(Start))==Start
 end
 
-function HF.SplitString (inputstr, sep)
+function Utils.SplitString (inputstr, sep)
     if sep == nil then
             sep = "%s"
     end
@@ -328,15 +328,15 @@ function HF.SplitString (inputstr, sep)
 end
 
 -- this function is dumb and you shouldn't use it
-function HF.TableSize(table)
+function Utils.TableSize(table)
     return #table
 end
 
-function HF.HasAbilityFlag(character,flagtype)
+function Utils.HasAbilityFlag(character,flagtype)
     return character.HasAbilityFlag(flagtype)
 end
 
-function HF.MakeAggressive(aggressor,target,damage)
+function Utils.MakeAggressive(aggressor,target,damage)
     
     -- this shit isnt working!!!!
     -- why is this shit not working!?!?!?!
@@ -355,7 +355,7 @@ function HF.MakeAggressive(aggressor,target,damage)
  
 end
 
-function HF.CharacterToClient(character)
+function Utils.CharacterToClient(character)
 
     if not SERVER then return nil end
 
@@ -368,7 +368,7 @@ function HF.CharacterToClient(character)
     return nil
 end
 
-function HF.ClientFromName(name)
+function Utils.ClientFromName(name)
 
     if not SERVER then return nil end
 
@@ -381,7 +381,7 @@ function HF.ClientFromName(name)
     return nil
 end
 
-function HF.LimbTypeToString(type)
+function Utils.LimbTypeToString(type)
     if(type==LimbType.Torso) then return "Torso" end
     if(type==LimbType.Head) then return "Head" end
     if(type==LimbType.LeftArm or type==LimbType.LeftForearm or type==LimbType.LeftHand) then return "Left Arm" end
@@ -391,13 +391,13 @@ function HF.LimbTypeToString(type)
     return "???"
 end
 
-function HF.GameIsPaused()
+function Utils.GameIsPaused()
     if SERVER then return false end
 
     return Game.Paused
 end
 
-function HF.TableContains(table, value)
+function Utils.TableContains(table, value)
     for i, v in ipairs(table) do
         if v == value then
             return true
@@ -407,7 +407,7 @@ function HF.TableContains(table, value)
     return false
 end
 
-function HF.PutItemInsideItem(container,identifier,index)
+function Utils.PutItemInsideItem(container,identifier,index)
     if index==nil then index = 0 end
 
     local inv = container.OwnInventory
@@ -435,12 +435,12 @@ function HF.PutItemInsideItem(container,identifier,index)
     10)
 end
 
-function HF.CanPerformSurgeryOn(character)
-    return HF.HasAffliction(character,"analgesia",1) or HF.HasAffliction(character,"sym_unconsciousness",0.1)
+function Utils.CanPerformSurgeryOn(character)
+    return Utils.HasAffliction(character,"analgesia",1) or Utils.HasAffliction(character,"sym_unconsciousness",0.1)
 end
 
 -- converts thighs, feet, forearms and hands into legs and arms
-function HF.NormalizeLimbType(limbtype) 
+function Utils.NormalizeLimbType(limbtype) 
     if 
         limbtype == LimbType.Head or 
         limbtype == LimbType.Torso or 
@@ -462,15 +462,15 @@ function HF.NormalizeLimbType(limbtype)
 end
 
 -- returns an unrounded random number
-function HF.RandomRange(min,max) 
+function Utils.RandomRange(min,max) 
     return min+math.random()*(max-min)
 end
 
-function HF.LimbIsExtremity(limbtype) 
+function Utils.LimbIsExtremity(limbtype) 
     return limbtype~=LimbType.Torso and limbtype~=LimbType.Head
 end
 
-function HF.HasTalent(character,talentidentifier) 
+function Utils.HasTalent(character,talentidentifier) 
 
     local talents = character.Info.UnlockedTalents
 
@@ -481,46 +481,46 @@ function HF.HasTalent(character,talentidentifier)
     return false
 end
 
-function HF.CharacterDistance(char1,char2) 
+function Utils.CharacterDistance(char1,char2) 
     return Vector2.Distance(char1.WorldPosition,char2.WorldPosition)
 end
 
-function HF.GetOuterWearIdentifier(character) 
-    return HF.GetCharacterInventorySlotIdentifer(character,4)
+function Utils.GetOuterWearIdentifier(character) 
+    return Utils.GetCharacterInventorySlotIdentifer(character,4)
 end
-function HF.GetInnerWearIdentifier(character) 
-    return HF.GetCharacterInventorySlotIdentifer(character,3)
+function Utils.GetInnerWearIdentifier(character) 
+    return Utils.GetCharacterInventorySlotIdentifer(character,3)
 end
-function HF.GetHeadWearIdentifier(character) 
-    return HF.GetCharacterInventorySlotIdentifer(character,2)
+function Utils.GetHeadWearIdentifier(character) 
+    return Utils.GetCharacterInventorySlotIdentifer(character,2)
 end
 
-function HF.GetCharacterInventorySlotIdentifer(character,slot) 
+function Utils.GetCharacterInventorySlotIdentifer(character,slot) 
     local item = character.Inventory.GetItemAt(slot)
     if item==nil then return nil end
     return item.Prefab.Identifier.Value
 end
 
-function HF.GetOuterWear(character) 
-    return HF.GetCharacterInventorySlot(character,4)
+function Utils.GetOuterWear(character) 
+    return Utils.GetCharacterInventorySlot(character,4)
 end
-function HF.GetInnerWear(character) 
-    return HF.GetCharacterInventorySlot(character,3)
+function Utils.GetInnerWear(character) 
+    return Utils.GetCharacterInventorySlot(character,3)
 end
-function HF.GetHeadWear(character) 
-    return HF.GetCharacterInventorySlot(character,2)
+function Utils.GetHeadWear(character) 
+    return Utils.GetCharacterInventorySlot(character,2)
 end
 
-function HF.GetCharacterInventorySlot(character,slot) 
+function Utils.GetCharacterInventorySlot(character,slot) 
     return character.Inventory.GetItemAt(slot)
 end
 
-function HF.ItemHasTag(item,tag)
+function Utils.ItemHasTag(item,tag)
     if item==nil then return false end
     return item.HasTag(tag)
 end
 
-function HF.CauseOfDeathToString(cod) 
+function Utils.CauseOfDeathToString(cod) 
     local res = nil
 
     if cod.Affliction ~= nil and -- from affliction
@@ -533,7 +533,7 @@ function HF.CauseOfDeathToString(cod)
     return res or ""
 end
 
-function HF.CombineArrays(arr1,arr2)
+function Utils.CombineArrays(arr1,arr2)
     local res = {}
     for _,v in ipairs(arr1) do
         table.insert(res, v) end
@@ -542,14 +542,14 @@ function HF.CombineArrays(arr1,arr2)
     return res
 end
 
-HF.EndocrineTalents =
+Utils.EndocrineTalents =
 {"aggressiveengineering","crisismanagement","cannedheat",
 "doubleduty","firemanscarry","fieldmedic","multitasker",
 "aceofalltrades","stillkicking","drunkensailor","trustedcaptain",
 "downwiththeship","physicalconditioning","beatcop","commando",
 "justascratch","intheflow","collegeathletics"}
-function HF.ApplyEndocrineBoost(character,talentlist)
-    talentlist=talentlist or HF.EndocrineTalents
+function Utils.ApplyEndocrineBoost(character,talentlist)
+    talentlist=talentlist or Utils.EndocrineTalents
         
     -- gee i sure do love translating c# into lua
     local targetCharacter = character
@@ -568,7 +568,7 @@ function HF.ApplyEndocrineBoost(character,talentlist)
 
     local viableTalents = {}
     for talent in talentlist do
-        if not HF.TableContains(disallowedTalents,talent) and not HF.TableContains(characterTalents,talent) then
+        if not Utils.TableContains(disallowedTalents,talent) and not Utils.TableContains(characterTalents,talent) then
             table.insert(viableTalents,talent)
         end
     end
@@ -581,7 +581,7 @@ function HF.ApplyEndocrineBoost(character,talentlist)
 
 end
 
-function HF.JobMemberCount(jobidentifier)
+function Utils.JobMemberCount(jobidentifier)
     local res = 0
     for _, character in pairs(Character.CharacterList) do
         if (character.IsHuman and not character.IsDead and character.Info.Job ~= nil) then

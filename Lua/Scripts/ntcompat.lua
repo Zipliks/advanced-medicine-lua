@@ -12,7 +12,7 @@ NTC = {} -- a class containing compatibility functions for other mods to make us
 -- MyExp.VersionNum = 01000000 -- split into two digits (01->1.; 00->0.; 00->0h; 00->0) -> 1.0.0h0
 -- MyExp.MinNTVersion = "A1.7.1"
 -- MyExp.MinNTVersionNum = 01070100 -- 01.07.01.00 -> A1.7.1h0
--- Timer.Wait(function() if NT ~= nil then NTC.RegisterExpansion(MyExp) end end,1)
+-- Timer.Wait(function() if Main ~= nil then NTC.RegisterExpansion(MyExp) end end,1)
 
 NTC.RegisteredExpansions = {}
 function NTC.RegisterExpansion(expansionMainObject)
@@ -138,8 +138,8 @@ end
 -- use this function to register an affliction to be detected by the hematology analyzer
 function NTC.AddHematologyAffliction(identifier)
     Timer.Wait(function()
-        if not HF.TableContains(NT.HematologyDetectable,identifier) then
-        table.insert(NT.HematologyDetectable,identifier) end
+        if not Utils.TableContains(Main.HematologyDetectable,identifier) then
+        table.insert(Main.HematologyDetectable,identifier) end
     end,1)
 end
 
@@ -151,8 +151,8 @@ end
 -- func(item, usingCharacter, targetCharacter, limb)
 function NTC.AddSuturedAffliction(identifier,surgeryskillgain,requiredaffliction,func)
     Timer.Wait(function()
-        if not HF.TableContains(NT.SutureAfflictions,identifier) then
-            NT.SutureAfflictions[identifier] = {
+        if not Utils.TableContains(Main.SutureAfflictions,identifier) then
+            Main.SutureAfflictions[identifier] = {
                 xpgain = surgeryskillgain,
                 case = requiredaffliction,
                 func = func
@@ -215,7 +215,7 @@ function NTC.AddEmptyCharacterData(character)
 end
 function NTC.CheckChardataEmpty(character)
     local chardat = NTC.GetCharacterData(character)
-    if (chardat == nil or HF.TableSize(chardat) > 1) then return end
+    if (chardat == nil or Utils.TableSize(chardat) > 1) then return end
 
     -- remove entry from data
     NTC.CharacterData[character.ID] = nil
@@ -229,7 +229,7 @@ function NTC.TickCharacter(character)
 
     for key,value in pairs(chardata) do
         if key ~="character" then
-            if HF.StartsWith(key,"mult_") then -- multipliers
+            if Utils.StartsWith(key,"mult_") then -- multipliers
                 chardata[key] = nil
                 NTC.CheckChardataEmpty(character)
             else -- symptoms
