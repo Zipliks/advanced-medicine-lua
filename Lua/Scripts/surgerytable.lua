@@ -25,33 +25,33 @@ Hook.Add("surgerytable.update", "surgerytable.update", function (effect, deltaTi
     -- send signals
     item.SendSignal("1","state_out")
     if target.IsDead then item.SendSignal("0","alive_out") else item.SendSignal("1","alive_out") end
-    if target.IsDead or HF.HasAffliction(target,"sym_unconsciousness",0.1) then item.SendSignal("0","conscious_out") else item.SendSignal("1","conscious_out") end
+    if target.IsDead or Utils.HasAffliction(target,"sym_unconsciousness",0.1) then item.SendSignal("0","conscious_out") else item.SendSignal("1","conscious_out") end
     item.SendSignal(target.Name,"name_out")
-    item.SendSignal(tostring(HF.Round(target.Vitality)),"vitality_out")
+    item.SendSignal(tostring(Utils.Round(target.Vitality)),"vitality_out")
     if target.IsDead then item.SendSignal("0","bloodpressure_out")
-    else item.SendSignal(tostring(HF.Round(HF.GetAfflictionStrength(target,"bloodpressure",100))),"bloodpressure_out") end
-    item.SendSignal(tostring(HF.Round(100-HF.GetAfflictionStrength(target,"hypoxemia",0))),"bloodoxygen_out")
-    item.SendSignal(tostring(HF.Round(HF.GetAfflictionStrength(target,"cerebralhypoxia",0))),"neurotrauma_out")
-    item.SendSignal(tostring(HF.Round(HF.GetAfflictionStrength(target,"organdamage",0))),"organdamage_out")
+    else item.SendSignal(tostring(Utils.Round(Utils.GetAfflictionStrength(target,"bloodpressure",100))),"bloodpressure_out") end
+    item.SendSignal(tostring(Utils.Round(100-Utils.GetAfflictionStrength(target,"hypoxemia",0))),"bloodoxygen_out")
+    item.SendSignal(tostring(Utils.Round(Utils.GetAfflictionStrength(target,"cerebralhypoxia",0))),"neurotrauma_out")
+    item.SendSignal(tostring(Utils.Round(Utils.GetAfflictionStrength(target,"organdamage",0))),"organdamage_out")
     
     local heartrate = math.random(80,85)
-    if HF.HasAffliction(target,"cardiacarrest") or target.IsDead then heartrate=0
-    elseif HF.HasAffliction(target,"tachycardia") then heartrate=heartrate+math.random(90,110) end
+    if Utils.HasAffliction(target,"cardiacarrest") or target.IsDead then heartrate=0
+    elseif Utils.HasAffliction(target,"tachycardia") then heartrate=heartrate+math.random(90,110) end
     item.SendSignal(tostring(heartrate),"heartrate_out")
 
     local breathingrate = math.random(15,18)
-    if HF.HasAffliction(target,"respiratoryarrest") or target.IsDead then breathingrate=0 
-    elseif HF.HasAffliction(target,"hyperventilation") then breathingrate=breathingrate+math.random(6,8)
-    elseif HF.HasAffliction(target,"hypoventilation") then breathingrate=breathingrate-math.random(6,8) end
+    if Utils.HasAffliction(target,"respiratoryarrest") or target.IsDead then breathingrate=0 
+    elseif Utils.HasAffliction(target,"hyperventilation") then breathingrate=breathingrate+math.random(6,8)
+    elseif Utils.HasAffliction(target,"hypoventilation") then breathingrate=breathingrate-math.random(6,8) end
     item.SendSignal(tostring(breathingrate),"breathingrate_out")
 
-    item.SendSignal(tostring(HF.BoolToNum(HF.HasAffliction(target,"surgeryincision"),1)),"insurgery_out")
+    item.SendSignal(tostring(Utils.BoolToNum(Utils.HasAffliction(target,"surgeryincision"),1)),"insurgery_out")
 
     if 
     target.IsDead and
     target.causeOfDeath~=nil 
     then
-        item.SendSignal(HF.CauseOfDeathToString(target.causeOfDeath),"causeofdeath_out")
+        item.SendSignal(Utils.CauseOfDeathToString(target.causeOfDeath),"causeofdeath_out")
     end
 
 end)
@@ -74,7 +74,7 @@ end)
 --    -- it's too janky to be released.
 --    
 --    -- target.Stun = 0
---    -- HF.SetAffliction(target,"givein",0)
+--    -- Utils.SetAffliction(target,"givein",0)
 --    -- controllerComponent.Select(target)
 --    -- target.SelectedConstruction = item
 --end)
