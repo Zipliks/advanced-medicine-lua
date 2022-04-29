@@ -1,11 +1,11 @@
-Hook.Add("human.CPRSuccess", "NT.CPRSuccess", function(animcontroller)
+Hook.Add("human.CPRSuccess", "AM.CPRSuccess", function(animcontroller)
     if animcontroller==nil or animcontroller.Character==nil or animcontroller.Character.SelectedCharacter==nil then return end
     local character = animcontroller.Character.SelectedCharacter
     
     Utils.AddAffliction(character,"cpr_buff",2)
 end)
 
-Hook.Add("human.CPRFailed", "NT.CPRFailed", function(animcontroller)
+Hook.Add("human.CPRFailed", "AM.CPRFailed", function(animcontroller)
     if animcontroller==nil or animcontroller.Character==nil or animcontroller.Character.SelectedCharacter==nil then return end
     local character = animcontroller.Character.SelectedCharacter
 

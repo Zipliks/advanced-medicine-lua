@@ -2,7 +2,7 @@
 -- set the below variable to true to enable debug and testing features
 Main.TestingEnabled = false
 
-Hook.Add('chatMessage', 'Main.testing', function(msg, client)
+Hook.Add('chatMessage', 'AM.testing', function(msg, client)
     
     if (msg == 'Main test') then -- a glorified suicide button
 
