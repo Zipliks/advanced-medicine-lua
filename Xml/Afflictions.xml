@@ -31,6 +31,11 @@
   <Affliction name="" identifier="asys" description="" healableinmedicalclinic="false" limbspecific="false" indicatorlimb="Torso" showiconthreshold="1" showinhealthscannerthreshold="1" targets="human" type="gaze" isbuff="false" maxstrength="10">
     <icon texture="%ModDir%/Images/AfflictionIcons.png" sheetindex="0,1" sheetelementsize="128,128" origin="0,0" />
   </Affliction>
+  <!-- Heart ATP deficiency
+  cause asystole and heart damage -->
+  <Affliction name="" identifier="heart_atp_down" description="" healableinmedicalclinic="false" limbspecific="false" indicatorlimb="Torso" showiconthreshold="1" showinhealthscannerthreshold="1" targets="human" type="gaze" isbuff="false" maxstrength="10">
+    <icon texture="%ModDir%/Images/AfflictionIcons.png" sheetindex="0,1" sheetelementsize="128,128" origin="0,0" />
+  </Affliction>
   <!-- Myocardial Infarction / Heart Attack
   Scanned Symptom, causes shortness of breath, chest pain,
   nausea, sweating, heart damage and potentially cardiac arrest -->
@@ -82,6 +87,11 @@
   <Affliction name="" identifier="meningitis" description="" targets="human" healableinmedicalclinic="false" type="gaze" isbuff="false" limbspecific="false" indicatorlimb="Head" showiconthreshold="100" showinhealthscannerthreshold="0.1" maxstrength="50">
     <icon texture="%ModDir%/Images/AfflictionIcons.png" sourcerect="0,128,128,128" color="0,255,0,255" origin="0,0" />
   </Affliction>
+  <!-- Post-cardiac arrest syndrome / PCAS
+  Scanned Symptom -->
+  <Affliction name="" identifier="pcas" description="" healableinmedicalclinic="false" type="gaze" isbuff="false" targets="human" limbspecific="false" indicatorlimb="Head" activationthreshold="0" causeofdeathdescription="Brain dead" selfcauseofdeathdescription="Your brain is dead." showinhealthscannerthreshold="300" showiconthreshold="300" maxstrength="200">
+    <icon texture="Content/UI/MainIconsAtlas.png" sourcerect="128,640,128,128" color="195,177,60,255" origin="0,0" />
+  </Affliction>
   <!-- Brain integrity
   Scanned Symptom -->
   <Affliction name="" identifier="brain_integrity" description="" healableinmedicalclinic="false" type="gaze" isbuff="false" targets="human" limbspecific="false" indicatorlimb="Head" activationthreshold="0" causeofdeathdescription="Brain dead" selfcauseofdeathdescription="Your brain is dead." showinhealthscannerthreshold="300" showiconthreshold="300" maxstrength="200">
@@ -97,12 +107,17 @@
   <Affliction name="" identifier="s_hemorrhage" description="" healableinmedicalclinic="false" type="gaze" isbuff="false" targets="human" limbspecific="false" indicatorlimb="Head" activationthreshold="0" causeofdeathdescription="Brain dead" selfcauseofdeathdescription="Your brain is dead." showinhealthscannerthreshold="300" showiconthreshold="300" maxstrength="200">
     <icon texture="Content/UI/MainIconsAtlas.png" sourcerect="128,640,128,128" color="195,177,60,255" origin="0,0" />
   </Affliction>
+  <!-- Intracerebral hemorrhage / Hemorrhagic stroke
+  Scanned Symptom --> 
+  <Affliction name="" identifier="i_hemorrhage" description="" healableinmedicalclinic="false" type="gaze" isbuff="false" targets="human" limbspecific="false" indicatorlimb="Head" activationthreshold="0" causeofdeathdescription="Brain dead" selfcauseofdeathdescription="Your brain is dead." showinhealthscannerthreshold="300" showiconthreshold="300" maxstrength="200">
+    <icon texture="Content/UI/MainIconsAtlas.png" sourcerect="128,640,128,128" color="195,177,60,255" origin="0,0" />
+  </Affliction>
   <!-- Epidural hematoma / Skull fracture
   Scanned Symptom -->
   <Affliction name="" identifier="e_hematoma" description="" healableinmedicalclinic="false" type="gaze" isbuff="false" targets="human" limbspecific="false" indicatorlimb="Head" activationthreshold="0" causeofdeathdescription="Brain dead" selfcauseofdeathdescription="Your brain is dead." showinhealthscannerthreshold="300" showiconthreshold="300" maxstrength="200">
     <icon texture="Content/UI/MainIconsAtlas.png" sourcerect="128,640,128,128" color="195,177,60,255" origin="0,0" />
   </Affliction>
-  <!-- Сerebral edema
+  <!-- Сerebral edema / Non-embolic stoke
   Scanned Symptom -->
   <Affliction name="" identifier="cerebral_edema" description="" healableinmedicalclinic="false" type="gaze" isbuff="false" targets="human" limbspecific="false" indicatorlimb="Head" activationthreshold="0" causeofdeathdescription="Brain dead" selfcauseofdeathdescription="Your brain is dead." showinhealthscannerthreshold="300" showiconthreshold="300" maxstrength="200">
     <icon texture="Content/UI/MainIconsAtlas.png" sourcerect="128,640,128,128" color="195,177,60,255" origin="0,0" />
@@ -110,8 +125,9 @@
   <!-- Cerebral hypoxia / Low oxygen presence in the brain
   Scanned Symptom -->
   <Affliction name="" identifier="cerebralhypoxia" description="" healableinmedicalclinic="false" type="gaze" isbuff="false" targets="human" limbspecific="false" indicatorlimb="Head" activationthreshold="0" causeofdeathdescription="Brain dead" selfcauseofdeathdescription="Your brain got deprived of oxygen for too long." showinhealthscannerthreshold="10" showiconthreshold="300" maxstrength="200">
-    <Effect minstrength="0" maxstrength="180" minscreendistort="0" maxscreendistort="1" minscreenblur="0" maxscreenblur="1" minradialdistort="0" maxradialdistort="1" minvitalitydecrease="0" maxvitalitydecrease="180"></Effect>
-    <Effect minstrength="180" maxstrength="200" minscreendistort="1" maxscreendistort="1" minscreenblur="1" maxscreenblur="1" minradialdistort="1" maxradialdistort="1" minvitalitydecrease="100" maxvitalitydecrease="600"></Effect>
+    <Effect minstrength="0" maxstrength="180" minscreendistort="0" maxscreendistort="1" minscreenblur="0" maxscreenblur="1" minradialdistort="0" maxradialdistort="1" minvitalitydecrease="0" maxvitalitydecrease="0"></Effect>
+    <Effect minstrength="180" maxstrength="225" minscreendistort="1" maxscreendistort="1" minscreenblur="1" maxscreenblur="1" minradialdistort="1" maxradialdistort="1" minvitalitydecrease="0" maxvitalitydecrease="0"></Effect>
+    <Effect minstrength="225" maxstrength="375" minscreendistort="1" maxscreendistort="1" minscreenblur="1" maxscreenblur="1" minradialdistort="1" maxradialdistort="1" minvitalitydecrease="100" maxvitalitydecrease="600"></Effect>
     <icon texture="Content/UI/MainIconsAtlas.png" sourcerect="128,640,128,128" color="195,177,60,255" origin="0,0" />
   </Affliction>
   <!-- Seizure
@@ -152,6 +168,11 @@
   <Affliction name="" identifier="hypoxemia" description="" targets="human" limbspecific="false" indicatorlimb="Torso" activationthreshold="0" healableinmedicalclinic="false" type="gaze" isbuff="false" showinhealthscannerthreshold="5" showiconthreshold="300" maxstrength="100">
     <icon texture="%ModDir%/Images/AfflictionIcons.png" sourcerect="128,128,128,128" color="68,157,198,255" origin="0,0" />
   </Affliction>
+  <!-- ATP deficiency / Resource depletion
+  Scanned Symptom -->
+  <Affliction name="" identifier="atp_down" description="" targets="human" limbspecific="false" indicatorlimb="Torso" activationthreshold="0" healableinmedicalclinic="false" type="gaze" isbuff="false" showinhealthscannerthreshold="5" showiconthreshold="300" maxstrength="100">
+    <icon texture="%ModDir%/Images/AfflictionIcons.png" sourcerect="128,128,128,128" color="68,157,198,255" origin="0,0" />
+  </Affliction>
   <!-- Atherosclerosis
   Scanned Symptom -->
   <Affliction name="" identifier="atherosclerosis" description="" targets="human" limbspecific="false" indicatorlimb="Torso" activationthreshold="0" healableinmedicalclinic="false" type="gaze" isbuff="false" showinhealthscannerthreshold="5" showiconthreshold="300" maxstrength="100">
@@ -171,6 +192,11 @@
   <!-- Pulmonary embolism
   Exposed Symptom -->
   <Affliction name="" identifier="pulmonary_embolism" description="" healableinmedicalclinic="false" type="gaze" isbuff="false" targets="human" limbspecific="false" indicatorlimb="Torso" showiconthreshold="1" showinhealthscannerthreshold="100" maxstrength="2">
+    <icon texture="%ModDir%/Images/AfflictionIcons.png" sheetindex="3,0" sheetelementsize="128,128" origin="0,0" />
+  </Affliction>
+  <!-- Pulmonary edema
+  Exposed Symptom -->
+  <Affliction name="" identifier="pulmonary_edema" description="" healableinmedicalclinic="false" type="gaze" isbuff="false" targets="human" limbspecific="false" indicatorlimb="Torso" showiconthreshold="1" showinhealthscannerthreshold="100" maxstrength="2">
     <icon texture="%ModDir%/Images/AfflictionIcons.png" sheetindex="3,0" sheetelementsize="128,128" origin="0,0" />
   </Affliction>
   <!-- Deep vein thrombosis
@@ -1463,12 +1489,12 @@
     <icon texture="%ModDir%/Images/AfflictionIcons.png" sheetindex="3,1" sheetelementsize="128,128" origin="0,0" />
   </Affliction>
   <!-- Blindness / Exposed Symptom -->
-  <Affliction name="" identifier="sym_blurredvision" description="" healableinmedicalclinic="false" type="gaze" isbuff="false" limbspecific="false" indicatorlimb="Head" showiconthreshold="1" showinhealthscannerthreshold="100" maxstrength="2" iconcolors="255,90,0,255;255,90,0,255">
+  <Affliction name="" identifier="sym_blindness" description="" healableinmedicalclinic="false" type="gaze" isbuff="false" limbspecific="false" indicatorlimb="Head" showiconthreshold="1" showinhealthscannerthreshold="100" maxstrength="2" iconcolors="255,90,0,255;255,90,0,255">
     <Effect minstrength="0" maxstrength="2" ObstructVision="true" />
     <icon texture="%ModDir%/Images/AfflictionIcons.png" sheetindex="3,1" sheetelementsize="128,128" origin="0,0" />
   </Affliction>
   <!-- Muteness / Exposed Symptom -->
-  <Affliction name="muteness" identifier="sym_confusion" description="" healableinmedicalclinic="false" type="gaze" isbuff="false" limbspecific="false" indicatorlimb="Head" showiconthreshold="1" showinhealthscannerthreshold="100" maxstrength="2" iconcolors="255,90,0,255;255,90,0,255">
+  <Affliction name="" identifier="sym_muteness" description="" healableinmedicalclinic="false" type="gaze" isbuff="false" limbspecific="false" indicatorlimb="Head" showiconthreshold="1" showinhealthscannerthreshold="100" maxstrength="2" iconcolors="255,90,0,255;255,90,0,255">
     <Effect minstrength="0" maxstrength="2" speechImpediment="100.0"/>
     <icon texture="%ModDir%/Images/AfflictionIcons.png" sheetindex="2,1" sheetelementsize="128,128" origin="0,0" />
   </Affliction>
@@ -1601,19 +1627,19 @@
     <icon texture="%ModDir%/Images/AfflictionIcons.png" sheetindex="4,3" sheetelementsize="128,128" origin="0,0" />
   </Affliction>
   <!-- Causalgia / Exposed Symptom -->
-  <Affliction name="" identifier="causalgia" description="" healableinmedicalclinic="false" type="" isbuff="false" limbspecific="true" showiconthreshold="1" showinhealthscannerthreshold="100" maxstrength="2" iconcolors="255,90,0,255;255,90,0,255">
+  <Affliction name="" identifier="sym_causalgia" description="" healableinmedicalclinic="false" type="" isbuff="false" limbspecific="true" showiconthreshold="1" showinhealthscannerthreshold="100" maxstrength="2" iconcolors="255,90,0,255;255,90,0,255">
     <icon texture="%ModDir%/Images/AfflictionIcons.png" sheetindex="4,3" sheetelementsize="128,128" origin="0,0" />
   </Affliction>
   <!-- Hyperpathy / Exposed Symptom -->
-  <Affliction name="" identifier="hyperpathy" description="" healableinmedicalclinic="false" type="" isbuff="false" limbspecific="true" showiconthreshold="1" showinhealthscannerthreshold="100" maxstrength="2" iconcolors="255,90,0,255;255,90,0,255">
+  <Affliction name="" identifier="sym_hyperpathy" description="" healableinmedicalclinic="false" type="" isbuff="false" limbspecific="true" showiconthreshold="1" showinhealthscannerthreshold="100" maxstrength="2" iconcolors="255,90,0,255;255,90,0,255">
     <icon texture="%ModDir%/Images/AfflictionIcons.png" sheetindex="4,3" sheetelementsize="128,128" origin="0,0" />
   </Affliction>
   <!-- Autometamorphopsia / Exposed Symptom -->
-  <Affliction name="" identifier="autometamorphopsia" description="" healableinmedicalclinic="false" type="" isbuff="false" limbspecific="true" showiconthreshold="1" showinhealthscannerthreshold="100" maxstrength="2" iconcolors="255,90,0,255;255,90,0,255">
+  <Affliction name="" identifier="sym_autometamorphopsia" description="" healableinmedicalclinic="false" type="" isbuff="false" limbspecific="true" showiconthreshold="1" showinhealthscannerthreshold="100" maxstrength="2" iconcolors="255,90,0,255;255,90,0,255">
     <icon texture="%ModDir%/Images/AfflictionIcons.png" sheetindex="4,3" sheetelementsize="128,128" origin="0,0" />
   </Affliction>
   <!-- Phantom pains / Exposed Symptom -->
-  <Affliction name="" identifier="phantom_pains" description="" healableinmedicalclinic="false" type="" isbuff="false" limbspecific="true" showiconthreshold="1" showinhealthscannerthreshold="100" maxstrength="2" iconcolors="255,90,0,255;255,90,0,255">
+  <Affliction name="" identifier="sym_phantom_pains" description="" healableinmedicalclinic="false" type="" isbuff="false" limbspecific="true" showiconthreshold="1" showinhealthscannerthreshold="100" maxstrength="2" iconcolors="255,90,0,255;255,90,0,255">
     <icon texture="%ModDir%/Images/AfflictionIcons.png" sheetindex="4,3" sheetelementsize="128,128" origin="0,0" />
   </Affliction>
   <!-- Spasm / Exposed Symptom -->

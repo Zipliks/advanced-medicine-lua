@@ -1,7 +1,7 @@
-NTC = {} -- a class containing compatibility functions for other mods to make use of neurotraumas symptom system
+NTC = {} -- a class containing compatibility functions for other mods to make use of cerebralhypoxias symptom system
 
 -- use this function to register your expansion mod to be displayed by the
--- console lua startup readout of neurotrauma expansions
+-- console lua startup readout of AM expansions
 
 -- check surgery plus or cybernetics for an example
 -- example of code for registering your expansion in init.lua:
@@ -92,7 +92,7 @@ end
 -- prints all of the current compatibility data in the chat
 -- might be useful for debugging
 function NTC.DebugPrintAllData()
-    local res = "neurotrauma compatibility data:\n"
+    local res = "Advanced Medicine compatibility data:\n"
     for key, value in pairs(NTC.CharacterData) do
 
         res=res.."\n"..value["character"].Name
@@ -160,7 +160,7 @@ function NTC.AddSuturedAffliction(identifier,surgeryskillgain,requiredaffliction
     end,1)
 end
 
--- these functions are used by neurotrauma to check for symptom overrides
+-- these functions are used by AM to check for symptom overrides
 function NTC.GetSymptom(character,symptomidentifer)
     local chardata = NTC.GetCharacterData(character)
     if chardata == nil then return false end
