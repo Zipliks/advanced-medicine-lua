@@ -55,6 +55,10 @@ function Main.UpdateHuman(character)
     end
 
     -- fetch blood oxygen
+    local atherosclerosis = Utils.GetAfflictionStrength(character,"atherosclerosis",0)
+    local atherosclerosis = atherosclerosis
+
+    -- fetch blood oxygen
     local hypoxemia = Utils.GetAfflictionStrength(character,"hypoxemia",0)
     local prevhypoxemia = hypoxemia
 
