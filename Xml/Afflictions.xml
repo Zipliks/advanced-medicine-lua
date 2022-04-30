@@ -6,26 +6,70 @@
     <icon texture="%ModDir%/Images/AfflictionIcons2.png" sheetindex="5,0" sheetelementsize="128,128" origin="0,0" />
   </Affliction>
   <!-- /// Heart Stuff /// -->
-  <!-- Ventricular Tachycardia / Rapid Heartbeat
+  <!-- Tachycardia / Rapid Heartbeat
   Exposed Symptom, counters hypoxemia and hypotension-->
   <Affliction name="" identifier="tachycardia" description="" limbspecific="false" indicatorlimb="Torso" showiconthreshold="1" showinhealthscannerthreshold="10" maxstrength="2" targets="human" type="gaze" isbuff="false" healableinmedicalclinic="false" iconcolors="255,90,0,255;255,90,0,255">
     <icon texture="%ModDir%/Images/AfflictionIcons.png" sheetindex="1,1" sheetelementsize="128,128" origin="0,0" />
   </Affliction>
-  <!-- Cardiac Arrest
-  Exposed Symptom -->
-  <Affliction name="" identifier="cardiacarrest" description="" healableinmedicalclinic="false" limbspecific="false" indicatorlimb="Torso" showiconthreshold="1" showinhealthscannerthreshold="1" targets="human" type="gaze" isbuff="false" maxstrength="10">
+  <!-- Atrial fibrillation / The atrial contract randomly 
+  Causes hypertension / Increased risk of myocarditis-->
+  <Affliction name="" identifier="af" description="" healableinmedicalclinic="false" limbspecific="false" indicatorlimb="Torso" showiconthreshold="1" showinhealthscannerthreshold="1" targets="human" type="gaze" isbuff="false" maxstrength="10">
     <icon texture="%ModDir%/Images/AfflictionIcons.png" sheetindex="0,1" sheetelementsize="128,128" origin="0,0" />
   </Affliction>
-  <!-- Heart Attack
+  <!-- Ventricular Tachycardia / The ventricles contract rapidly
+  cause hypoxemia and hypotension, if left untreated, it will become ventricular fibrillation -->
+  <Affliction name="" identifier="vt" description="" healableinmedicalclinic="false" limbspecific="false" indicatorlimb="Torso" showiconthreshold="1" showinhealthscannerthreshold="1" targets="human" type="gaze" isbuff="false" maxstrength="10">
+    <icon texture="%ModDir%/Images/AfflictionIcons.png" sheetindex="0,1" sheetelementsize="128,128" origin="0,0" />
+  </Affliction>
+  <!-- Ventricular Fibrillation / The ventricles contract randomly
+  cause hypoxemia and hypotension, if left untreated, it will become asystole-->
+  <Affliction name="" identifier="vf" description="" healableinmedicalclinic="false" limbspecific="false" indicatorlimb="Torso" showiconthreshold="1" showinhealthscannerthreshold="1" targets="human" type="gaze" isbuff="false" maxstrength="10">
+    <icon texture="%ModDir%/Images/AfflictionIcons.png" sheetindex="0,1" sheetelementsize="128,128" origin="0,0" />
+  </Affliction>
+  <!-- Asystole / Lack of electrical activity of the heart
+  Occurs due to exhaustion of the heart, cause hypoxemia and hypotension -->
+  <Affliction name="" identifier="asys" description="" healableinmedicalclinic="false" limbspecific="false" indicatorlimb="Torso" showiconthreshold="1" showinhealthscannerthreshold="1" targets="human" type="gaze" isbuff="false" maxstrength="10">
+    <icon texture="%ModDir%/Images/AfflictionIcons.png" sheetindex="0,1" sheetelementsize="128,128" origin="0,0" />
+  </Affliction>
+  <!-- Heart ATP deficiency
+  cause asystole and heart damage -->
+  <Affliction name="" identifier="heart_atp_down" description="" healableinmedicalclinic="false" limbspecific="false" indicatorlimb="Torso" showiconthreshold="1" showinhealthscannerthreshold="1" targets="human" type="gaze" isbuff="false" maxstrength="10">
+    <icon texture="%ModDir%/Images/AfflictionIcons.png" sheetindex="0,1" sheetelementsize="128,128" origin="0,0" />
+  </Affliction>
+  <!-- Myocardial Infarction / Heart Attack
   Scanned Symptom, causes shortness of breath, chest pain,
   nausea, sweating, heart damage and potentially cardiac arrest -->
   <Affliction name="" identifier="heartattack" description="" healableinmedicalclinic="false" limbspecific="false" indicatorlimb="Torso" maxstrength="100" targets="human" showiconthreshold="500" showinhealthscannerthreshold="1" type="gaze" isbuff="false" damageoverlayalpha="1">
+    <icon texture="Content/UI/MainIconsAtlas.png" sourcerect="128,384,128,128" color="195,136,60,255" origin="0,0" />
+  </Affliction>
+  <!-- Angina / Angina Pectoris
+  Scanned Symptom, causes shortness of breath, chest pain,
+  nausea, sweating, heart damage and potentially cardiac arrest -->
+  <Affliction name="" identifier="angina" description="" healableinmedicalclinic="false" limbspecific="false" indicatorlimb="Torso" maxstrength="100" targets="human" showiconthreshold="500" showinhealthscannerthreshold="1" type="gaze" isbuff="false" damageoverlayalpha="1">
+    <icon texture="Content/UI/MainIconsAtlas.png" sourcerect="128,384,128,128" color="195,136,60,255" origin="0,0" />
+  </Affliction>
+  <!-- Сoronary artery disease
+  Occurs due to atherosclerosis or heart damage, can cause angina or myocardial infarction-->
+  <Affliction name="" identifier="coronary_a_d" description="" healableinmedicalclinic="false" limbspecific="false" indicatorlimb="Torso" maxstrength="100" targets="human" showiconthreshold="500" showinhealthscannerthreshold="1" type="gaze" isbuff="false" damageoverlayalpha="1">
+    <icon texture="Content/UI/MainIconsAtlas.png" sourcerect="128,384,128,128" color="195,136,60,255" origin="0,0" />
+  </Affliction>
+  <!-- Myocarditis bacterial
+  if normal immunity, passes by itself, otherwise leads to heart damage and asystole-->
+  <Affliction name="" identifier="myocarditisinf" description="" healableinmedicalclinic="false" limbspecific="false" indicatorlimb="Torso" maxstrength="100" targets="human" showiconthreshold="500" showinhealthscannerthreshold="1" type="gaze" isbuff="false" damageoverlayalpha="1">
+    <icon texture="Content/UI/MainIconsAtlas.png" sourcerect="128,384,128,128" color="195,136,60,255" origin="0,0" />
+  </Affliction>
+  <!-- Myocarditis viral
+  if normal immunity, passes by itself, otherwise leads to heart damage and asystole-->
+  <Affliction name="" identifier="myocarditisvir" description="" healableinmedicalclinic="false" limbspecific="false" indicatorlimb="Torso" maxstrength="100" targets="human" showiconthreshold="500" showinhealthscannerthreshold="1" type="gaze" isbuff="false" damageoverlayalpha="1">
     <icon texture="Content/UI/MainIconsAtlas.png" sourcerect="128,384,128,128" color="195,136,60,255" origin="0,0" />
   </Affliction>
   <!-- Heart Damage
   Scanned Symptom, causes shortness of breath, chest pain and cough, hypoxemia
   leads to lung failure if severe enough -->
   <Affliction name="" identifier="heartdamage" description="" healableinmedicalclinic="false" type="" isbuff="false" targets="human" limbspecific="false" indicatorlimb="Torso" maxstrength="100" showiconthreshold="500" showinhealthscannerthreshold="20" damageoverlayalpha="1">
+    <icon texture="Content/UI/MainIconsAtlas.png" sourcerect="128,384,128,128" color="195,136,60,255" origin="0,0" />
+  </Affliction>
+  <Affliction name="" identifier="heartfibrosis" description="" healableinmedicalclinic="false" type="" isbuff="false" targets="human" limbspecific="false" indicatorlimb="Torso" maxstrength="100" showiconthreshold="500" showinhealthscannerthreshold="20" damageoverlayalpha="1">
     <icon texture="Content/UI/MainIconsAtlas.png" sourcerect="128,384,128,128" color="195,136,60,255" origin="0,0" />
   </Affliction>
   <!-- Heart removed
@@ -39,7 +83,46 @@
   <Affliction name="" identifier="stroke" description="" targets="human" healableinmedicalclinic="false" type="gaze" isbuff="false" limbspecific="false" indicatorlimb="Head" showiconthreshold="100" showinhealthscannerthreshold="0.1" maxstrength="50">
     <icon texture="%ModDir%/Images/AfflictionIcons.png" sourcerect="0,128,128,128" color="0,255,0,255" origin="0,0" />
   </Affliction>
-  <!-- Neurotrauma / Low oxygen presence in the brain
+  <!-- Meningitis -->
+  <Affliction name="" identifier="meningitis" description="" targets="human" healableinmedicalclinic="false" type="gaze" isbuff="false" limbspecific="false" indicatorlimb="Head" showiconthreshold="100" showinhealthscannerthreshold="0.1" maxstrength="50">
+    <icon texture="%ModDir%/Images/AfflictionIcons.png" sourcerect="0,128,128,128" color="0,255,0,255" origin="0,0" />
+  </Affliction>
+  <!-- Post-cardiac arrest syndrome / PCAS
+  Scanned Symptom -->
+  <Affliction name="" identifier="pcas" description="" healableinmedicalclinic="false" type="gaze" isbuff="false" targets="human" limbspecific="false" indicatorlimb="Head" activationthreshold="0" causeofdeathdescription="Brain dead" selfcauseofdeathdescription="Your brain is dead." showinhealthscannerthreshold="300" showiconthreshold="300" maxstrength="200">
+    <icon texture="Content/UI/MainIconsAtlas.png" sourcerect="128,640,128,128" color="195,177,60,255" origin="0,0" />
+  </Affliction>
+  <!-- Brain integrity
+  Scanned Symptom -->
+  <Affliction name="" identifier="brain_integrity" description="" healableinmedicalclinic="false" type="gaze" isbuff="false" targets="human" limbspecific="false" indicatorlimb="Head" activationthreshold="0" causeofdeathdescription="Brain dead" selfcauseofdeathdescription="Your brain is dead." showinhealthscannerthreshold="300" showiconthreshold="300" maxstrength="200">
+    <icon texture="Content/UI/MainIconsAtlas.png" sourcerect="128,640,128,128" color="195,177,60,255" origin="0,0" />
+  </Affliction>
+  <!-- Subdural hematoma
+  Scanned Symptom -->
+  <Affliction name="" identifier="s_hematoma" description="" healableinmedicalclinic="false" type="gaze" isbuff="false" targets="human" limbspecific="false" indicatorlimb="Head" activationthreshold="0" causeofdeathdescription="Brain dead" selfcauseofdeathdescription="Your brain is dead." showinhealthscannerthreshold="300" showiconthreshold="300" maxstrength="200">
+    <icon texture="Content/UI/MainIconsAtlas.png" sourcerect="128,640,128,128" color="195,177,60,255" origin="0,0" />
+  </Affliction>
+  <!-- Subarachnoid hemorrhage / SAH / Hemorrhagic stroke
+  Scanned Symptom -->
+  <Affliction name="" identifier="s_hemorrhage" description="" healableinmedicalclinic="false" type="gaze" isbuff="false" targets="human" limbspecific="false" indicatorlimb="Head" activationthreshold="0" causeofdeathdescription="Brain dead" selfcauseofdeathdescription="Your brain is dead." showinhealthscannerthreshold="300" showiconthreshold="300" maxstrength="200">
+    <icon texture="Content/UI/MainIconsAtlas.png" sourcerect="128,640,128,128" color="195,177,60,255" origin="0,0" />
+  </Affliction>
+  <!-- Intracerebral hemorrhage / Hemorrhagic stroke
+  Scanned Symptom --> 
+  <Affliction name="" identifier="i_hemorrhage" description="" healableinmedicalclinic="false" type="gaze" isbuff="false" targets="human" limbspecific="false" indicatorlimb="Head" activationthreshold="0" causeofdeathdescription="Brain dead" selfcauseofdeathdescription="Your brain is dead." showinhealthscannerthreshold="300" showiconthreshold="300" maxstrength="200">
+    <icon texture="Content/UI/MainIconsAtlas.png" sourcerect="128,640,128,128" color="195,177,60,255" origin="0,0" />
+  </Affliction>
+  <!-- Epidural hematoma / Skull fracture
+  Scanned Symptom -->
+  <Affliction name="" identifier="e_hematoma" description="" healableinmedicalclinic="false" type="gaze" isbuff="false" targets="human" limbspecific="false" indicatorlimb="Head" activationthreshold="0" causeofdeathdescription="Brain dead" selfcauseofdeathdescription="Your brain is dead." showinhealthscannerthreshold="300" showiconthreshold="300" maxstrength="200">
+    <icon texture="Content/UI/MainIconsAtlas.png" sourcerect="128,640,128,128" color="195,177,60,255" origin="0,0" />
+  </Affliction>
+  <!-- Сerebral edema / Non-embolic stoke
+  Scanned Symptom -->
+  <Affliction name="" identifier="cerebral_edema" description="" healableinmedicalclinic="false" type="gaze" isbuff="false" targets="human" limbspecific="false" indicatorlimb="Head" activationthreshold="0" causeofdeathdescription="Brain dead" selfcauseofdeathdescription="Your brain is dead." showinhealthscannerthreshold="300" showiconthreshold="300" maxstrength="200">
+    <icon texture="Content/UI/MainIconsAtlas.png" sourcerect="128,640,128,128" color="195,177,60,255" origin="0,0" />
+  </Affliction>
+  <!-- Cerebral hypoxia / Low oxygen presence in the brain
   Scanned Symptom -->
   <Affliction name="" identifier="cerebralhypoxia" description="" healableinmedicalclinic="false" type="gaze" isbuff="false" targets="human" limbspecific="false" indicatorlimb="Head" activationthreshold="0" causeofdeathdescription="Brain dead" selfcauseofdeathdescription="Your brain got deprived of oxygen for too long." showinhealthscannerthreshold="10" showiconthreshold="300" maxstrength="200">
     <Effect minstrength="0" maxstrength="180" minscreendistort="0" maxscreendistort="1" minscreenblur="0" maxscreenblur="1" minradialdistort="0" maxradialdistort="1" minvitalitydecrease="0" maxvitalitydecrease="180"></Effect>
@@ -84,10 +167,40 @@
   <Affliction name="" identifier="hypoxemia" description="" targets="human" limbspecific="false" indicatorlimb="Torso" activationthreshold="0" healableinmedicalclinic="false" type="gaze" isbuff="false" showinhealthscannerthreshold="5" showiconthreshold="300" maxstrength="100">
     <icon texture="%ModDir%/Images/AfflictionIcons.png" sourcerect="128,128,128,128" color="68,157,198,255" origin="0,0" />
   </Affliction>
+  <!-- ATP deficiency / Resource depletion
+  Scanned Symptom -->
+  <Affliction name="" identifier="atp_down" description="" targets="human" limbspecific="false" indicatorlimb="Torso" activationthreshold="0" healableinmedicalclinic="false" type="gaze" isbuff="false" showinhealthscannerthreshold="5" showiconthreshold="300" maxstrength="100">
+    <icon texture="%ModDir%/Images/AfflictionIcons.png" sourcerect="128,128,128,128" color="68,157,198,255" origin="0,0" />
+  </Affliction>
+  <!-- Atherosclerosis
+  Scanned Symptom -->
+  <Affliction name="" identifier="atherosclerosis" description="" targets="human" limbspecific="false" indicatorlimb="Torso" activationthreshold="0" healableinmedicalclinic="false" type="gaze" isbuff="false" showinhealthscannerthreshold="5" showiconthreshold="300" maxstrength="100">
+    <icon texture="%ModDir%/Images/AfflictionIcons.png" sourcerect="128,128,128,128" color="68,157,198,255" origin="0,0" />
+  </Affliction>
   <!-- /// Lung Stuff /// -->
   <!-- Respiratory Arrest / Apnea
   Exposed Symptom -->
   <Affliction name="" identifier="respiratoryarrest" description="" healableinmedicalclinic="false" type="gaze" isbuff="false" targets="human" limbspecific="false" indicatorlimb="Torso" showiconthreshold="1" showinhealthscannerthreshold="100" maxstrength="2">
+    <icon texture="%ModDir%/Images/AfflictionIcons.png" sheetindex="3,0" sheetelementsize="128,128" origin="0,0" />
+  </Affliction>
+  <!-- Chronic obstructive pulmonary disease / COPD
+  Exposed Symptom -->
+  <Affliction name="" identifier="copd" description="" healableinmedicalclinic="false" type="gaze" isbuff="false" targets="human" limbspecific="false" indicatorlimb="Torso" showiconthreshold="1" showinhealthscannerthreshold="100" maxstrength="2">
+    <icon texture="%ModDir%/Images/AfflictionIcons.png" sheetindex="3,0" sheetelementsize="128,128" origin="0,0" />
+  </Affliction>
+  <!-- Pulmonary embolism
+  Exposed Symptom -->
+  <Affliction name="" identifier="pulmonary_embolism" description="" healableinmedicalclinic="false" type="gaze" isbuff="false" targets="human" limbspecific="false" indicatorlimb="Torso" showiconthreshold="1" showinhealthscannerthreshold="100" maxstrength="2">
+    <icon texture="%ModDir%/Images/AfflictionIcons.png" sheetindex="3,0" sheetelementsize="128,128" origin="0,0" />
+  </Affliction>
+  <!-- Pulmonary edema
+  Exposed Symptom -->
+  <Affliction name="" identifier="pulmonary_edema" description="" healableinmedicalclinic="false" type="gaze" isbuff="false" targets="human" limbspecific="false" indicatorlimb="Torso" showiconthreshold="1" showinhealthscannerthreshold="100" maxstrength="2">
+    <icon texture="%ModDir%/Images/AfflictionIcons.png" sheetindex="3,0" sheetelementsize="128,128" origin="0,0" />
+  </Affliction>
+  <!-- Deep vein thrombosis
+  Exposed Symptom -->
+  <Affliction name="" identifier="deep_vein_thrombosis" description="" healableinmedicalclinic="false" type="gaze" isbuff="false" targets="human" limbspecific="false" indicatorlimb="Torso" showiconthreshold="1" showinhealthscannerthreshold="100" maxstrength="2">
     <icon texture="%ModDir%/Images/AfflictionIcons.png" sheetindex="3,0" sheetelementsize="128,128" origin="0,0" />
   </Affliction>
   <!-- Hyperventilation
@@ -126,6 +239,9 @@
   <Affliction name="" identifier="lungdamage" description="" healableinmedicalclinic="false" type="gaze" isbuff="false" targets="human" causeofdeathdescription="" selfcauseofdeathdescription="" limbspecific="false" indicatorlimb="Torso" maxstrength="100" showiconthreshold="500" showinhealthscannerthreshold="20" damageoverlayalpha="1">
     <icon texture="Content/UI/MainIconsAtlas.png" sourcerect="128,384,128,128" color="195,136,60,255" origin="0,0" />
   </Affliction>
+  <Affliction name="" identifier="lungfibrosis" description="" healableinmedicalclinic="false" type="gaze" isbuff="false" targets="human" causeofdeathdescription="" selfcauseofdeathdescription="" limbspecific="false" indicatorlimb="Torso" maxstrength="100" showiconthreshold="500" showinhealthscannerthreshold="20" damageoverlayalpha="1">
+    <icon texture="Content/UI/MainIconsAtlas.png" sourcerect="128,384,128,128" color="195,136,60,255" origin="0,0" />
+  </Affliction>
   <!-- Lungs removed
   Exposed Symptom, respiratory arrest -->
   <Affliction name="" identifier="lungremoved" description="" healableinmedicalclinic="false" targets="human" type="gaze" isbuff="false" limbspecific="false" indicatorlimb="Torso" showiconthreshold="1" showinhealthscannerthreshold="1" causeofdeathdescription="Died of missing lungs" selfcauseofdeathdescription="Your lungs got removed." iconcolors="84,211,211,255;84,211,211,255" maxstrength="2">
@@ -137,20 +253,81 @@
   <Affliction name="" identifier="kidneydamage" description="" healableinmedicalclinic="false" type="gaze" isbuff="false" targets="human" causeofdeathdescription="" selfcauseofdeathdescription="" limbspecific="false" indicatorlimb="Torso" maxstrength="100" showiconthreshold="500" showinhealthscannerthreshold="10" damageoverlayalpha="1">
     <icon texture="Content/UI/MainIconsAtlas.png" sourcerect="128,384,128,128" color="195,136,60,255" origin="0,0" />
   </Affliction>
+  <Affliction name="" identifier="kidneyfibrosis" description="" healableinmedicalclinic="false" type="gaze" isbuff="false" targets="human" causeofdeathdescription="" selfcauseofdeathdescription="" limbspecific="false" indicatorlimb="Torso" maxstrength="100" showiconthreshold="500" showinhealthscannerthreshold="10" damageoverlayalpha="1">
+    <icon texture="Content/UI/MainIconsAtlas.png" sourcerect="128,384,128,128" color="195,136,60,255" origin="0,0" />
+  </Affliction>
   <!-- Kidneys removed
   Exposed Symptom, kidney failure -->
   <Affliction name="" identifier="kidneyremoved" description="" healableinmedicalclinic="false" targets="human" type="gaze" isbuff="false" limbspecific="false" indicatorlimb="Torso" showiconthreshold="2" showinhealthscannerthreshold="1" iconcolors="84,211,211,255;84,211,211,255" maxstrength="3">
     <icon texture="%ModDir%/Images/AfflictionIcons.png" sheetindex="2,5" sheetelementsize="128,128" origin="0,0" />
   </Affliction>
+  <!-- /// Throat Stuff /// -->
+  <Affliction name="" identifier="slicedthroat" description="" healableinmedicalclinic="false" type="gaze" isbuff="false" targets="human" causeofdeathdescription="" selfcauseofdeathdescription="" limbspecific="false" indicatorlimb="Head" maxstrength="100" showiconthreshold="500" showinhealthscannerthreshold="20" damageoverlayalpha="1">
+    <icon texture="Content/UI/MainIconsAtlas.png" sourcerect="128,384,128,128" color="195,136,60,255" origin="0,0" />
+  </Affliction>
+  <!-- /// Eyes Stuff /// -->
+  <!-- Left Eye -->
+  <Affliction name="" identifier="l_cornealdamage" description="" healableinmedicalclinic="false" type="gaze" isbuff="false" targets="human" causeofdeathdescription="" selfcauseofdeathdescription="" limbspecific="false" indicatorlimb="Head" maxstrength="100" showiconthreshold="500" showinhealthscannerthreshold="20" damageoverlayalpha="1">
+    <icon texture="Content/UI/MainIconsAtlas.png" sourcerect="128,384,128,128" color="195,136,60,255" origin="0,0" />
+  </Affliction>
+  <Affliction name="" identifier="l_retinaldamage" description="" healableinmedicalclinic="false" type="gaze" isbuff="false" targets="human" causeofdeathdescription="" selfcauseofdeathdescription="" limbspecific="false" indicatorlimb="Head" maxstrength="100" showiconthreshold="500" showinhealthscannerthreshold="20" damageoverlayalpha="1">
+    <icon texture="Content/UI/MainIconsAtlas.png" sourcerect="128,384,128,128" color="195,136,60,255" origin="0,0" />
+  </Affliction>
+  <Affliction name="" identifier="l_lensdamage" description="" healableinmedicalclinic="false" type="gaze" isbuff="false" targets="human" causeofdeathdescription="" selfcauseofdeathdescription="" limbspecific="false" indicatorlimb="Head" maxstrength="100" showiconthreshold="500" showinhealthscannerthreshold="20" damageoverlayalpha="1">
+    <icon texture="Content/UI/MainIconsAtlas.png" sourcerect="128,384,128,128" color="195,136,60,255" origin="0,0" />
+  </Affliction>
+  <Affliction name="" identifier="l_vitreousremoval" description="" healableinmedicalclinic="false" type="gaze" isbuff="false" targets="human" causeofdeathdescription="" selfcauseofdeathdescription="" limbspecific="false" indicatorlimb="Head" maxstrength="100" showiconthreshold="500" showinhealthscannerthreshold="20" damageoverlayalpha="1">
+    <icon texture="Content/UI/MainIconsAtlas.png" sourcerect="128,384,128,128" color="195,136,60,255" origin="0,0" />
+  </Affliction>
+  <Affliction name="" identifier="l_eyeremoval" description="" healableinmedicalclinic="false" type="gaze" isbuff="false" targets="human" causeofdeathdescription="" selfcauseofdeathdescription="" limbspecific="false" indicatorlimb="Head" maxstrength="100" showiconthreshold="500" showinhealthscannerthreshold="20" damageoverlayalpha="1">
+    <icon texture="Content/UI/MainIconsAtlas.png" sourcerect="128,384,128,128" color="195,136,60,255" origin="0,0" />
+  </Affliction>
+  <!-- Right Eye -->
+  <Affliction name="" identifier="r_cornealdamage" description="" healableinmedicalclinic="false" type="gaze" isbuff="false" targets="human" causeofdeathdescription="" selfcauseofdeathdescription="" limbspecific="false" indicatorlimb="Head" maxstrength="100" showiconthreshold="500" showinhealthscannerthreshold="20" damageoverlayalpha="1">
+    <icon texture="Content/UI/MainIconsAtlas.png" sourcerect="128,384,128,128" color="195,136,60,255" origin="0,0" />
+  </Affliction>
+  <Affliction name="" identifier="r_retinaldamage" description="" healableinmedicalclinic="false" type="gaze" isbuff="false" targets="human" causeofdeathdescription="" selfcauseofdeathdescription="" limbspecific="false" indicatorlimb="Head" maxstrength="100" showiconthreshold="500" showinhealthscannerthreshold="20" damageoverlayalpha="1">
+    <icon texture="Content/UI/MainIconsAtlas.png" sourcerect="128,384,128,128" color="195,136,60,255" origin="0,0" />
+  </Affliction>
+  <Affliction name="" identifier="r_lensdamage" description="" healableinmedicalclinic="false" type="gaze" isbuff="false" targets="human" causeofdeathdescription="" selfcauseofdeathdescription="" limbspecific="false" indicatorlimb="Head" maxstrength="100" showiconthreshold="500" showinhealthscannerthreshold="20" damageoverlayalpha="1">
+    <icon texture="Content/UI/MainIconsAtlas.png" sourcerect="128,384,128,128" color="195,136,60,255" origin="0,0" />
+  </Affliction>
+  <Affliction name="" identifier="r_vitreousremoval" description="" healableinmedicalclinic="false" type="gaze" isbuff="false" targets="human" causeofdeathdescription="" selfcauseofdeathdescription="" limbspecific="false" indicatorlimb="Head" maxstrength="100" showiconthreshold="500" showinhealthscannerthreshold="20" damageoverlayalpha="1">
+    <icon texture="Content/UI/MainIconsAtlas.png" sourcerect="128,384,128,128" color="195,136,60,255" origin="0,0" />
+  </Affliction>
+  <Affliction name="" identifier="r_eyeremoval" description="" healableinmedicalclinic="false" type="gaze" isbuff="false" targets="human" causeofdeathdescription="" selfcauseofdeathdescription="" limbspecific="false" indicatorlimb="Head" maxstrength="100" showiconthreshold="500" showinhealthscannerthreshold="20" damageoverlayalpha="1">
+    <icon texture="Content/UI/MainIconsAtlas.png" sourcerect="128,384,128,128" color="195,136,60,255" origin="0,0" />
+  </Affliction>
+  <!-- /// Nerve Stuff /// -->
+  <!-- /// Nerve Damage /// -->
+  <Affliction name="" identifier="nervedamage" description="" healableinmedicalclinic="false" type="gaze" isbuff="false" targets="human" causeofdeathdescription="" selfcauseofdeathdescription="" limbspecific="true" maxstrength="100" showiconthreshold="500" showinhealthscannerthreshold="20" damageoverlayalpha="1">
+    <icon texture="Content/UI/MainIconsAtlas.png" sourcerect="128,384,128,128" color="195,136,60,255" origin="0,0" />
+  </Affliction>
+  <!-- /// Nerve Integrity /// -->
+  <Affliction name="" identifier="nerveintegrity" description="" healableinmedicalclinic="false" type="gaze" isbuff="false" targets="human" causeofdeathdescription="" selfcauseofdeathdescription="" limbspecific="true" maxstrength="100" showiconthreshold="500" showinhealthscannerthreshold="20" damageoverlayalpha="1">
+    <icon texture="Content/UI/MainIconsAtlas.png" sourcerect="128,384,128,128" color="195,136,60,255" origin="0,0" />
+  </Affliction>
+  <!-- /// Motor Stuff /// -->
+  <!-- /// Muscle Strains /// -->
+  <Affliction name="" identifier="musclestrains" description="" healableinmedicalclinic="false" type="gaze" isbuff="false" targets="human" causeofdeathdescription="" selfcauseofdeathdescription="" limbspecific="true" maxstrength="100" showiconthreshold="500" showinhealthscannerthreshold="20" damageoverlayalpha="1">
+    <icon texture="Content/UI/MainIconsAtlas.png" sourcerect="128,384,128,128" color="195,136,60,255" origin="0,0" />
+  </Affliction>
+  <!-- /// Torn ligaments and tendons /// -->
+  <Affliction name="" identifier="torn_l_t" description="" healableinmedicalclinic="false" type="gaze" isbuff="false" targets="human" causeofdeathdescription="" selfcauseofdeathdescription="" limbspecific="true" maxstrength="100" showiconthreshold="500" showinhealthscannerthreshold="20" damageoverlayalpha="1">
+    <icon texture="Content/UI/MainIconsAtlas.png" sourcerect="128,384,128,128" color="195,136,60,255" origin="0,0" />
+  </Affliction>
   <!-- /// Bone Stuff /// -->
   <!-- Bone Damage
   Scanned Symptom, leads to bone death if severe enough -->
-  <Affliction name="" identifier="bonedamage" description="" healableinmedicalclinic="false" type="gaze" isbuff="false" targets="human" causeofdeathdescription="" selfcauseofdeathdescription="" limbspecific="false" indicatorlimb="Torso" maxstrength="100" showiconthreshold="500" showinhealthscannerthreshold="20" damageoverlayalpha="1">
+  <Affliction name="" identifier="bonedamage" description="" healableinmedicalclinic="false" type="gaze" isbuff="false" targets="human" causeofdeathdescription="" selfcauseofdeathdescription="" limbspecific="true" maxstrength="100" showiconthreshold="500" showinhealthscannerthreshold="20" damageoverlayalpha="1">
     <icon texture="Content/UI/MainIconsAtlas.png" sourcerect="128,384,128,128" color="195,136,60,255" origin="0,0" />
   </Affliction>
-  <!-- Osteonecrosis / Bone death
-  Scanned Symptom, causes fractures -->
-  <Affliction name="" identifier="bonedeath" description="" healableinmedicalclinic="false" type="gaze" isbuff="false" targets="human" limbspecific="false" indicatorlimb="Torso" showiconthreshold="500" showinhealthscannerthreshold="1" maxstrength="2">
+  <!-- Osteonecrosis / Bone death / Bone Marrov Death
+  Scanned Symptom, causes fractures / radiation, infections -->
+  <Affliction name="" identifier="bonedeath" description="" healableinmedicalclinic="false" type="gaze" isbuff="false" targets="human" limbspecific="true" showiconthreshold="500" showinhealthscannerthreshold="1" maxstrength="2">
+    <icon texture="%ModDir%/Images/AfflictionIcons.png" sourcerect="0,128,128,128" color="0,255,0,255" origin="0,0" />
+  </Affliction>
+  <Affliction name="" identifier="bonemarrovdeath" description="" healableinmedicalclinic="false" type="gaze" isbuff="false" targets="human" limbspecific="false" indicatorlimb="Torso" showiconthreshold="500" showinhealthscannerthreshold="1" maxstrength="2">
     <icon texture="%ModDir%/Images/AfflictionIcons.png" sourcerect="0,128,128,128" color="0,255,0,255" origin="0,0" />
   </Affliction>
   <!-- Stimulated bone growth / the thing that cures bonedeath / bonedamage
@@ -165,6 +342,9 @@
   <Affliction name="" identifier="liverdamage" description="" healableinmedicalclinic="false" type="gaze" isbuff="false" targets="human" causeofdeathdescription="" selfcauseofdeathdescription="" limbspecific="false" indicatorlimb="Torso" maxstrength="100" showiconthreshold="500" showinhealthscannerthreshold="20" damageoverlayalpha="1">
     <icon texture="Content/UI/MainIconsAtlas.png" sourcerect="128,384,128,128" color="195,136,60,255" origin="0,0" />
   </Affliction>
+  <Affliction name="" identifier="liverfibrosis" description="" healableinmedicalclinic="false" type="gaze" isbuff="false" targets="human" causeofdeathdescription="" selfcauseofdeathdescription="" limbspecific="false" indicatorlimb="Torso" maxstrength="100" showiconthreshold="500" showinhealthscannerthreshold="20" damageoverlayalpha="1">
+    <icon texture="Content/UI/MainIconsAtlas.png" sourcerect="128,384,128,128" color="195,136,60,255" origin="0,0" />
+  </Affliction>
   <!-- Liver removed
   Exposed Symptom, kidney failure -->
   <Affliction name="" identifier="liverremoved" description="" healableinmedicalclinic="false" targets="human" type="gaze" isbuff="false" limbspecific="false" indicatorlimb="Torso" showiconthreshold="1" showinhealthscannerthreshold="1" iconcolors="84,211,211,255;84,211,211,255" maxstrength="2">
@@ -175,7 +355,9 @@
   <Affliction name="CPR" identifier="cpr_buff" healableinmedicalclinic="false" isbuff="true" targets="human" limbspecific="true" indicatorlimb="Torso" activationthreshold="0" showiconthreshold="10" showinhealthscannerthreshold="10" maxstrength="2">
     <Effect minstrength="0" maxstrength="2" strengthchange="-0.5">
       <StatusEffect tags="medical" target="Character" checkconditionalalways="true">
-        <ReduceAffliction identifier="cardiacarrest" amount="0.5" />
+        <ReduceAffliction identifier="asys" amount="0.5" />
+        <ReduceAffliction identifier="vt" amount="0.5" />
+        <ReduceAffliction identifier="vf" amount="0.5" />
         <ReduceAffliction identifier="respiratoryarrest" amount="0.25" />
         <Affliction identifier="bloodpressure" amount="1" />
         <ReduceAffliction identifier="oxygenlow" amount="8" />
@@ -251,10 +433,10 @@
   <Affliction name="" identifier="gypsumcast" description="" healableinmedicalclinic="false" targets="human" limbspecific="true" maxstrength="100" type="resistance" showiconthreshold="1" showinhealthscannerthreshold="200" isbuff="true">
     <Effect minstrength="0" maxstrength="100">
       <StatusEffect target="Limb">
-        <ReduceAffliction identifier="rl_fracture" amount="2.33" />
-        <ReduceAffliction identifier="ll_fracture" amount="2.33" />
-        <ReduceAffliction identifier="ra_fracture" amount="2.33" />
-        <ReduceAffliction identifier="la_fracture" amount="2.33" />
+        <ReduceAffliction identifier="rl_fracture" amount="1.33" />
+        <ReduceAffliction identifier="ll_fracture" amount="1.33" />
+        <ReduceAffliction identifier="ra_fracture" amount="1.33" />
+        <ReduceAffliction identifier="la_fracture" amount="1.33" />
       </StatusEffect>
     </Effect>
     <icon texture="%ModDir%/Images/AfflictionIcons.png" sheetindex="2,4" sheetelementsize="128,128" origin="0,0" />
@@ -280,6 +462,176 @@
       </StatusEffect>
     </Effect>
     <icon texture="%ModDir%/Images/AfflictionIcons.png" sheetindex="3,4" sheetelementsize="128,128" origin="0,0" />
+  </Affliction>
+  <!-- Nerves -->
+  <Affliction name="" identifier="ra_n" description="" healcostmultiplier="10" targets="human" limbspecific="true" type="nerves" showinhealthscannerthreshold="0" showiconthreshold="90" maxstrength="100">
+    <Effect minstrength="0" maxstrength="100" strengthchange="2" />
+    <PeriodicEffect mininterval="1" maxinterval="1">
+      <StatusEffect target="Character" disabledeltatime="true" stackable="false" delay="1" checkconditionalalways="false">
+        <Conditional ishuman="false" />
+        <ReduceAffliction identifier="ra_n" amount="1000" />
+      </StatusEffect>
+      <StatusEffect target="Limb" disabledeltatime="true" checkconditionalalways="false" comparison="and">
+        <Conditional sym_unconsciousness="eq 0"/>
+        <Affliction identifier="pain_extremity" indicatorlimb="Limb" amount="2" />
+      </StatusEffect>
+    </PeriodicEffect>
+    <icon texture="%ModDir%/Images/AfflictionIcons.png" sheetindex="6,2" sheetelementsize="128,128" origin="0,0" />
+  </Affliction>
+  <Affliction name="" identifier="la_n" description="" healcostmultiplier="10" targets="human" limbspecific="true" type="nerves" showinhealthscannerthreshold="0" showiconthreshold="90" maxstrength="100">
+    <Effect minstrength="0" maxstrength="100" strengthchange="2" />
+    <PeriodicEffect mininterval="1" maxinterval="1">
+      <StatusEffect target="Character" disabledeltatime="true" stackable="false" delay="1" checkconditionalalways="false">
+        <Conditional ishuman="false" />
+        <ReduceAffliction identifier="la_n" amount="1000" />
+      </StatusEffect>
+      <StatusEffect target="Limb" disabledeltatime="true" checkconditionalalways="false" comparison="and">
+        <Conditional sym_unconsciousness="eq 0"/>
+        <Affliction identifier="pain_extremity" indicatorlimb="Limb" amount="2" />
+      </StatusEffect>
+    </PeriodicEffect>
+    <icon texture="%ModDir%/Images/AfflictionIcons.png" sheetindex="6,2" sheetelementsize="128,128" origin="0,0" />
+  </Affliction>
+  <Affliction name="" identifier="rl_n" description="" healcostmultiplier="10" targets="human" limbspecific="true" type="nerves" showinhealthscannerthreshold="0" showiconthreshold="90" maxstrength="100">
+    <Effect minstrength="0" maxstrength="100" strengthchange="2" />
+    <PeriodicEffect mininterval="1" maxinterval="1">
+      <StatusEffect target="Character" disabledeltatime="true" stackable="false" delay="1" checkconditionalalways="false">
+        <Conditional ishuman="false" />
+        <ReduceAffliction identifier="rl_n" amount="1000" />
+      </StatusEffect>
+      <StatusEffect target="Limb" disabledeltatime="true" checkconditionalalways="false" comparison="and">
+        <Conditional sym_unconsciousness="eq 0"/>
+        <Affliction identifier="pain_extremity" indicatorlimb="Limb" amount="2" />
+      </StatusEffect>
+    </PeriodicEffect>
+    <icon texture="%ModDir%/Images/AfflictionIcons.png" sheetindex="6,2" sheetelementsize="128,128" origin="0,0" />
+  </Affliction>
+  <Affliction name="" identifier="ll_n" description="" healcostmultiplier="10" targets="human" limbspecific="true" type="nerves" showinhealthscannerthreshold="0" showiconthreshold="90" maxstrength="100">
+    <Effect minstrength="0" maxstrength="100" strengthchange="2" />
+    <PeriodicEffect mininterval="1" maxinterval="1">
+      <StatusEffect target="Character" disabledeltatime="true" stackable="false" delay="1" checkconditionalalways="false">
+        <Conditional ishuman="false" />
+        <ReduceAffliction identifier="ll_n" amount="1000" />
+      </StatusEffect>
+      <StatusEffect target="Limb" disabledeltatime="true" checkconditionalalways="false" comparison="and">
+        <Conditional sym_unconsciousness="eq 0"/>
+        <Affliction identifier="pain_extremity" indicatorlimb="Limb" amount="2" />
+      </StatusEffect>
+    </PeriodicEffect>
+    <icon texture="%ModDir%/Images/AfflictionIcons.png" sheetindex="6,2" sheetelementsize="128,128" origin="0,0" />
+  </Affliction>
+  <Affliction name="" identifier="t_n" description="" healcostmultiplier="10" targets="human" limbspecific="true" type="nerves" showinhealthscannerthreshold="0" showiconthreshold="90" maxstrength="100">
+    <Effect minstrength="0" maxstrength="100" strengthchange="2" />
+    <PeriodicEffect mininterval="1" maxinterval="1">
+      <StatusEffect target="Character" disabledeltatime="true" stackable="false" delay="1" checkconditionalalways="false">
+        <Conditional ishuman="false" />
+        <ReduceAffliction identifier="t_n" amount="1000" />
+      </StatusEffect>
+      <StatusEffect target="Limb" disabledeltatime="true" checkconditionalalways="false" comparison="and">
+        <Conditional sym_unconsciousness="eq 0"/>
+        <Affliction identifier="pain_extremity" indicatorlimb="Limb" amount="2" />
+      </StatusEffect>
+    </PeriodicEffect>
+    <icon texture="%ModDir%/Images/AfflictionIcons.png" sheetindex="6,2" sheetelementsize="128,128" origin="0,0" />
+  </Affliction>
+  <Affliction name="" identifier="n_n" description="" healcostmultiplier="10" targets="human" limbspecific="true" type="nerves" showinhealthscannerthreshold="0" showiconthreshold="90" maxstrength="100">
+    <Effect minstrength="0" maxstrength="100" strengthchange="2" />
+    <PeriodicEffect mininterval="1" maxinterval="1">
+      <StatusEffect target="Character" disabledeltatime="true" stackable="false" delay="1" checkconditionalalways="false">
+        <Conditional ishuman="false" />
+        <ReduceAffliction identifier="t_n" amount="1000" />
+      </StatusEffect>
+      <StatusEffect target="Limb" disabledeltatime="true" checkconditionalalways="false" comparison="and">
+        <Conditional sym_unconsciousness="eq 0"/>
+        <Affliction identifier="pain_extremity" indicatorlimb="Limb" amount="2" />
+      </StatusEffect>
+    </PeriodicEffect>
+    <icon texture="%ModDir%/Images/AfflictionIcons.png" sheetindex="6,2" sheetelementsize="128,128" origin="0,0" />
+  </Affliction>
+  <!-- Motor System -->
+  <Affliction name="" identifier="la_m" description="" healcostmultiplier="10" targets="human" limbspecific="true" type="nerves" showinhealthscannerthreshold="0" showiconthreshold="90" maxstrength="100">
+    <Effect minstrength="0" maxstrength="100" strengthchange="2" />
+    <PeriodicEffect mininterval="1" maxinterval="1">
+      <StatusEffect target="Character" disabledeltatime="true" stackable="false" delay="1" checkconditionalalways="false">
+        <Conditional ishuman="false" />
+        <ReduceAffliction identifier="la_m" amount="1000" />
+      </StatusEffect>
+      <StatusEffect target="Limb" disabledeltatime="true" checkconditionalalways="false" comparison="and">
+        <Conditional sym_unconsciousness="eq 0" analgesia="eq 0" />
+        <Affliction identifier="pain_extremity" indicatorlimb="Limb" amount="2" />
+      </StatusEffect>
+    </PeriodicEffect>
+    <icon texture="%ModDir%/Images/AfflictionIcons.png" sheetindex="6,2" sheetelementsize="128,128" origin="0,0" />
+  </Affliction>
+  <Affliction name="" identifier="ra_m" description="" healcostmultiplier="10" targets="human" limbspecific="true" type="nerves" showinhealthscannerthreshold="0" showiconthreshold="90" maxstrength="100">
+    <Effect minstrength="0" maxstrength="100" strengthchange="2" />
+    <PeriodicEffect mininterval="1" maxinterval="1">
+      <StatusEffect target="Character" disabledeltatime="true" stackable="false" delay="1" checkconditionalalways="false">
+        <Conditional ishuman="false" />
+        <ReduceAffliction identifier="ra_m" amount="1000" />
+      </StatusEffect>
+      <StatusEffect target="Limb" disabledeltatime="true" checkconditionalalways="false" comparison="and">
+        <Conditional sym_unconsciousness="eq 0" analgesia="eq 0" />
+        <Affliction identifier="pain_extremity" indicatorlimb="Limb" amount="2" />
+      </StatusEffect>
+    </PeriodicEffect>
+    <icon texture="%ModDir%/Images/AfflictionIcons.png" sheetindex="6,2" sheetelementsize="128,128" origin="0,0" />
+  </Affliction>
+  <Affliction name="" identifier="ll_m" description="" healcostmultiplier="10" targets="human" limbspecific="true" type="nerves" showinhealthscannerthreshold="0" showiconthreshold="90" maxstrength="100">
+    <Effect minstrength="0" maxstrength="100" strengthchange="2" />
+    <PeriodicEffect mininterval="1" maxinterval="1">
+      <StatusEffect target="Character" disabledeltatime="true" stackable="false" delay="1" checkconditionalalways="false">
+        <Conditional ishuman="false" />
+        <ReduceAffliction identifier="ll_m" amount="1000" />
+      </StatusEffect>
+      <StatusEffect target="Limb" disabledeltatime="true" checkconditionalalways="false" comparison="and">
+        <Conditional sym_unconsciousness="eq 0" analgesia="eq 0" />
+        <Affliction identifier="pain_extremity" indicatorlimb="Limb" amount="2" />
+      </StatusEffect>
+    </PeriodicEffect>
+    <icon texture="%ModDir%/Images/AfflictionIcons.png" sheetindex="6,2" sheetelementsize="128,128" origin="0,0" />
+  </Affliction>
+  <Affliction name="" identifier="rl_m" description="" healcostmultiplier="10" targets="human" limbspecific="true" type="nerves" showinhealthscannerthreshold="0" showiconthreshold="90" maxstrength="100">
+    <Effect minstrength="0" maxstrength="100" strengthchange="2" />
+    <PeriodicEffect mininterval="1" maxinterval="1">
+      <StatusEffect target="Character" disabledeltatime="true" stackable="false" delay="1" checkconditionalalways="false">
+        <Conditional ishuman="false" />
+        <ReduceAffliction identifier="rl_m" amount="1000" />
+      </StatusEffect>
+      <StatusEffect target="Limb" disabledeltatime="true" checkconditionalalways="false" comparison="and">
+        <Conditional sym_unconsciousness="eq 0" analgesia="eq 0" />
+        <Affliction identifier="pain_extremity" indicatorlimb="Limb" amount="2" />
+      </StatusEffect>
+    </PeriodicEffect>
+    <icon texture="%ModDir%/Images/AfflictionIcons.png" sheetindex="6,2" sheetelementsize="128,128" origin="0,0" />
+  </Affliction>
+  <Affliction name="" identifier="t_m" description="" healcostmultiplier="10" targets="human" limbspecific="true" type="nerves" showinhealthscannerthreshold="0" showiconthreshold="90" maxstrength="100">
+    <Effect minstrength="0" maxstrength="100" strengthchange="2" />
+    <PeriodicEffect mininterval="1" maxinterval="1">
+      <StatusEffect target="Character" disabledeltatime="true" stackable="false" delay="1" checkconditionalalways="false">
+        <Conditional ishuman="false" />
+        <ReduceAffliction identifier="t_m" amount="1000" />
+      </StatusEffect>
+      <StatusEffect target="Limb" disabledeltatime="true" checkconditionalalways="false" comparison="and">
+        <Conditional sym_unconsciousness="eq 0" analgesia="eq 0" />
+        <Affliction identifier="pain_extremity" indicatorlimb="Limb" amount="2" />
+      </StatusEffect>
+    </PeriodicEffect>
+    <icon texture="%ModDir%/Images/AfflictionIcons.png" sheetindex="6,2" sheetelementsize="128,128" origin="0,0" />
+  </Affliction>
+  <Affliction name="" identifier="n_m" description="" healcostmultiplier="10" targets="human" limbspecific="true" type="nerves" showinhealthscannerthreshold="0" showiconthreshold="90" maxstrength="100">
+    <Effect minstrength="0" maxstrength="100" strengthchange="2" />
+    <PeriodicEffect mininterval="1" maxinterval="1">
+      <StatusEffect target="Character" disabledeltatime="true" stackable="false" delay="1" checkconditionalalways="false">
+        <Conditional ishuman="false" />
+        <ReduceAffliction identifier="n_m" amount="1000" />
+      </StatusEffect>
+      <StatusEffect target="Limb" disabledeltatime="true" checkconditionalalways="false" comparison="and">
+        <Conditional sym_unconsciousness="eq 0" analgesia="eq 0" />
+        <Affliction identifier="pain_extremity" indicatorlimb="Limb" amount="2" />
+      </StatusEffect>
+    </PeriodicEffect>
+    <icon texture="%ModDir%/Images/AfflictionIcons.png" sheetindex="6,2" sheetelementsize="128,128" origin="0,0" />
   </Affliction>
   <!-- Fractures -->
   <Affliction name="" identifier="ra_fracture" description="" healcostmultiplier="10" targets="human" limbspecific="true" type="fractures" showinhealthscannerthreshold="0" showiconthreshold="90" maxstrength="100">
@@ -1135,6 +1487,16 @@
     <Effect minstrength="0" maxstrength="2" minscreenblur="0.0" maxscreenblur="1.0" />
     <icon texture="%ModDir%/Images/AfflictionIcons.png" sheetindex="3,1" sheetelementsize="128,128" origin="0,0" />
   </Affliction>
+  <!-- Blindness / Exposed Symptom -->
+  <Affliction name="" identifier="sym_blurredvision" description="" healableinmedicalclinic="false" type="gaze" isbuff="false" limbspecific="false" indicatorlimb="Head" showiconthreshold="1" showinhealthscannerthreshold="100" maxstrength="2" iconcolors="255,90,0,255;255,90,0,255">
+    <Effect minstrength="0" maxstrength="2" ObstructVision="true" />
+    <icon texture="%ModDir%/Images/AfflictionIcons.png" sheetindex="3,1" sheetelementsize="128,128" origin="0,0" />
+  </Affliction>
+  <!-- Muteness / Exposed Symptom -->
+  <Affliction name="muteness" identifier="sym_confusion" description="" healableinmedicalclinic="false" type="gaze" isbuff="false" limbspecific="false" indicatorlimb="Head" showiconthreshold="1" showinhealthscannerthreshold="100" maxstrength="2" iconcolors="255,90,0,255;255,90,0,255">
+    <Effect minstrength="0" maxstrength="2" speechImpediment="100.0"/>
+    <icon texture="%ModDir%/Images/AfflictionIcons.png" sheetindex="2,1" sheetelementsize="128,128" origin="0,0" />
+  </Affliction>
   <!-- Confusion / Exposed Symptom -->
   <Affliction name="" identifier="sym_confusion" description="" healableinmedicalclinic="false" type="gaze" isbuff="false" limbspecific="false" indicatorlimb="Head" showiconthreshold="1" showinhealthscannerthreshold="100" maxstrength="2" iconcolors="255,90,0,255;255,90,0,255">
     <Effect minstrength="0" maxstrength="2" minscreendistort="0.0" maxscreendistort="0.5" minradialdistort="0.0" maxradialdistort="0.5" />
@@ -1261,6 +1623,22 @@
   </Affliction>
   <!-- Inflammation / Exposed Symptom -->
   <Affliction name="" identifier="inflammation" description="" healableinmedicalclinic="false" type="" isbuff="false" limbspecific="true" showiconthreshold="1" showinhealthscannerthreshold="100" maxstrength="2" iconcolors="255,90,0,255;255,90,0,255">
+    <icon texture="%ModDir%/Images/AfflictionIcons.png" sheetindex="4,3" sheetelementsize="128,128" origin="0,0" />
+  </Affliction>
+  <!-- Causalgia / Exposed Symptom -->
+  <Affliction name="" identifier="causalgia" description="" healableinmedicalclinic="false" type="" isbuff="false" limbspecific="true" showiconthreshold="1" showinhealthscannerthreshold="100" maxstrength="2" iconcolors="255,90,0,255;255,90,0,255">
+    <icon texture="%ModDir%/Images/AfflictionIcons.png" sheetindex="4,3" sheetelementsize="128,128" origin="0,0" />
+  </Affliction>
+  <!-- Hyperpathy / Exposed Symptom -->
+  <Affliction name="" identifier="hyperpathy" description="" healableinmedicalclinic="false" type="" isbuff="false" limbspecific="true" showiconthreshold="1" showinhealthscannerthreshold="100" maxstrength="2" iconcolors="255,90,0,255;255,90,0,255">
+    <icon texture="%ModDir%/Images/AfflictionIcons.png" sheetindex="4,3" sheetelementsize="128,128" origin="0,0" />
+  </Affliction>
+  <!-- Autometamorphopsia / Exposed Symptom -->
+  <Affliction name="" identifier="autometamorphopsia" description="" healableinmedicalclinic="false" type="" isbuff="false" limbspecific="true" showiconthreshold="1" showinhealthscannerthreshold="100" maxstrength="2" iconcolors="255,90,0,255;255,90,0,255">
+    <icon texture="%ModDir%/Images/AfflictionIcons.png" sheetindex="4,3" sheetelementsize="128,128" origin="0,0" />
+  </Affliction>
+  <!-- Phantom pains / Exposed Symptom -->
+  <Affliction name="" identifier="phantom_pains" description="" healableinmedicalclinic="false" type="" isbuff="false" limbspecific="true" showiconthreshold="1" showinhealthscannerthreshold="100" maxstrength="2" iconcolors="255,90,0,255;255,90,0,255">
     <icon texture="%ModDir%/Images/AfflictionIcons.png" sheetindex="4,3" sheetelementsize="128,128" origin="0,0" />
   </Affliction>
   <!-- Spasm / Exposed Symptom -->
