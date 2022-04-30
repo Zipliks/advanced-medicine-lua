@@ -68,11 +68,22 @@ function Main.UpdateHuman(character)
     local respiratoryarrest = Utils.GetAfflictionStrength(character,"respiratoryarrest",0)
     local removedlung = Utils.GetAfflictionStrength(character,"lungremoved",0)
     local prevrespiratoryarrest = respiratoryarrest
-    local cardiacarrest = Utils.GetAfflictionStrength(character,"cardiacarrest",0)
+    local asys = Utils.GetAfflictionStrength(character,"asys",0)
     local removedheart = Utils.GetAfflictionStrength(character,"heartremoved",0)
-    local prevcardiacarrest = cardiacarrest
-    if(cardiacarrest > 1) then availableoxygen = 0 end
+    local prevasys = asys
+    if(asys > 1) then bloodpressure=bloodpressure-bloodpressure/10*Main.Deltatime  end
     local removedbrain = Utils.GetAfflictionStrength(character,"brainremoved",0)
+    
+    -- arrhythmias
+    local vt = Utils.GetAfflictionStrength(character,"vt",0)
+    local prevvt = vt
+    if(vt > 1) then bloodpressure=bloodpressure-bloodpressure/10*Main.Deltatime  end
+    local vf = Utils.GetAfflictionStrength(character,"vf",0)
+    local prevvf = vf
+    if(vf > 1) then bloodpressure=bloodpressure-bloodpressure/10*Main.Deltatime  end
+    local af = Utils.GetAfflictionStrength(character,"af",0)
+    local prevaf = af
+    
 
     -- organ damage
     local heartdamage = Utils.GetAfflictionStrength(character,"heartdamage",0)
@@ -140,6 +151,60 @@ function Main.UpdateHuman(character)
     end
 
     -- niche injuries and statuses
+    local cerebral_edema = Utils.GetAfflictionStrength(character,"cerebral_edema",0)
+    local prevcerebral_edema = cerebral_edema
+    local stroke = Utils.GetAfflictionStrength(character,"stroke",0)
+    local prevstroke = stroke
+    local meningitis = Utils.GetAfflictionStrength(character,"meningitis",0)
+    local prevmeningitis = meningitis
+    local pcas = Utils.GetAfflictionStrength(character,"pcas",0)
+    local prevpcas = pcas
+
+    local pulmonary_embolism = Utils.GetAfflictionStrength(character,"pulmonary_embolism",0)
+    local prevpulmonary_embolism = pulmonary_embolism
+    local copd = Utils.GetAfflictionStrength(character,"pulmonary_copd",0)
+    local prevcopd = copd
+    local pulmonary_embolism = Utils.GetAfflictionStrength(character,"pulmonary_embolism",0)
+    local prevpulmonary_embolism = pulmonary_embolism
+    local deep_vein_thrombosis = Utils.GetAfflictionStrength(character,"deep_vein_thrombosis",0)
+    local prevdeep_vein_thrombosis = deep_vein_thrombosis
+    local pulmonary_edema = Utils.GetAfflictionStrength(character,"pulmonary_edema",0)
+    local prevpulmonary_edema = pulmonary_edema
+
+    local atherosclerosis = Utils.GetAfflictionStrength(character,"atherosclerosis",0)
+    local prevatherosclerosis = atherosclerosis
+    local atp_down = Utils.GetAfflictionStrength(character,"atp_down",0)
+    local prevatp_down = atp_down
+    local slicedthroat = Utils.GetAfflictionStrength(character,"slicedthroat",0)
+    local prevslicedthroat = slicedthroat
+
+    local heart_atp_down = Utils.GetAfflictionStrength(character,"heart_atp_down",0)
+    local prevheart_atp_down = heart_atp_down
+    local angina = Utils.GetAfflictionStrength(character,"angina",0)
+    local prevangina = angina
+    local coronary_a_d = Utils.GetAfflictionStrength(character,"coronary_a_d",0)
+    local prevcoronary_a_d = coronary_a_d
+    local heartattack = Utils.GetAfflictionStrength(character,"heartattack",0)
+    local prevheartattack = heartattack
+    heartattack = heartattack - Main.Deltatime
+    local myocarditisinf = Utils.GetAfflictionStrength(character,"myocarditisinf",0)
+    local prevmyocarditisinf = myocarditisinf
+    local myocarditisvir = Utils.GetAfflictionStrength(character,"myocarditisvir",0)
+    local prevmyocarditisvir = myocarditisvir
+
+    local s_hematoma = Utils.GetAfflictionStrength(character,"s_hematoma",0)
+    local prevs_hematoma = s_hematoma
+    if(s_hematoma > 50) then s_hematoma=s_hematoma+0.5*Main.Deltatime end
+    local s_hemorrhage = Utils.GetAfflictionStrength(character,"pneumothorax",0)
+    local prevs_hemorrhage = s_hemorrhage
+    if(s_hemorrhage > 30) then s_hemorrhage=s_hemorrhage+0.5*Main.Deltatime end
+    local i_hemorrhage = Utils.GetAfflictionStrength(character,"i_hemorrhage",0)
+    local previ_hemorrhage = i_hemorrhage
+    if(i_hemorrhage > 30) then i_hemorrhage=i_hemorrhage+0.5*Main.Deltatime end
+    local e_hematoma = Utils.GetAfflictionStrength(character,"e_hematoma",0)
+    local preve_hematoma = e_hematoma
+    if(e_hematoma > 0) then e_hematoma=e_hematoma+0.5*Main.Deltatime end
+
     local pneumothorax = Utils.GetAfflictionStrength(character,"pneumothorax",0)
     local prevpneumothorax = pneumothorax
     if(pneumothorax > 0) then pneumothorax=pneumothorax+0.5*Main.Deltatime end
@@ -147,14 +212,9 @@ function Main.UpdateHuman(character)
     local prevtamponade = tamponade
     if(tamponade > 0) then tamponade=tamponade+0.5*Main.Deltatime end
     local hemoshock = Utils.GetAfflictionStrength(character,"hemotransfusionshock",0)
-    local heartattack = Utils.GetAfflictionStrength(character,"heartattack",0)
-    local prevheartattack = heartattack
-    heartattack = heartattack - Main.Deltatime
     local seizure = Utils.GetAfflictionStrength(character,"seizure",0)
     local prevseizure= seizure
     seizure = seizure - Main.Deltatime
-    local stroke = Utils.GetAfflictionStrength(character,"stroke",0)
-    local prevstroke = stroke
     local coma = Utils.GetAfflictionStrength(character,"coma",0)
     local prevcoma = coma
     coma = coma - Main.Deltatime/5
@@ -164,6 +224,42 @@ function Main.UpdateHuman(character)
     local prevslowdown = slowdown
     local speedmultiplier = 1
     local traumaticshock = Utils.GetAfflictionStrength(character,"traumaticshock",0)
+    
+    -- Motor system
+    local musclestrains = Utils.GetAfflictionStrength(character,"musclestrains",0)
+    local prevmusclestrains = musclestrains
+    local torn_l_t = Utils.GetAfflictionStrength(character,"torn_l_t",0)
+    local prevtorn_l_t = torn_l_t
+    
+    -- Nerve system
+    local nervedamage = Utils.GetAfflictionStrength(character,"nervedamage",0)
+    local prevnervedamage = nervedamage
+    local nerveintegrity = Utils.GetAfflictionStrength(character,"nerveintegrity",0)
+    local prevnerveintegrity = nerveintegrity
+    
+    -- Right Eye
+    local r_cornealdamage = Utils.GetAfflictionStrength(character,"r_cornealdamage",0)
+    local prevr_cornealdamage = r_cornealdamage
+    local r_retinaldamage = Utils.GetAfflictionStrength(character,"r_retinaldamagey",0)
+    local prevr_retinaldamagey = r_retinaldamage
+    local r_lensdamage = Utils.GetAfflictionStrength(character,"r_lensdamage",0)
+    local prevr_lensdamage = r_lensdamage
+    local r_vitreousremoval = Utils.GetAfflictionStrength(character,"r_vitreousremoval",0)
+    local prevr_vitreousremoval = r_vitreousremoval
+    local r_eyeremoval = Utils.GetAfflictionStrength(character,"r_eyeremoval",0)
+    local prevr_eyeremoval = r_eyeremoval
+    
+    -- Left Eye
+    local l_cornealdamage = Utils.GetAfflictionStrength(character,"l_cornealdamage",0)
+    local prevl_cornealdamage = l_cornealdamage
+    local l_retinaldamage = Utils.GetAfflictionStrength(character,"l_retinaldamagey",0)
+    local prevr_letinaldamagey = l_retinaldamage
+    local l_lensdamage = Utils.GetAfflictionStrength(character,"l_lensdamage",0)
+    local prevl_lensdamage = l_lensdamage
+    local l_vitreousremoval = Utils.GetAfflictionStrength(character,"l_vitreousremoval",0)
+    local prevr_vitreousremoval = l_vitreousremoval
+    local l_eyeremoval = Utils.GetAfflictionStrength(character,"l_eyeremoval",0)
+    local prevl_eyeremoval = l_eyeremoval
 
     -- anesthesia and drugs
     local analgesia = Utils.GetAfflictionStrength(character,"analgesia",0)
@@ -348,6 +444,10 @@ function Main.UpdateHuman(character)
     end
 
     -- arm locking
+    local la_n = Utils.GetAfflictionStrength(character,"la_n",0)
+    local ra_n = Utils.GetAfflictionStrength(character,"ra_n",0)
+    local la_m = Utils.GetAfflictionStrength(character,"la_m",0)
+    local ra_m = Utils.GetAfflictionStrength(character,"ra_m",0)
     local la_fracture = Utils.GetAfflictionStrength(character,"la_fracture",0)
     local ra_fracture = Utils.GetAfflictionStrength(character,"ra_fracture",0)
     local tla_amputation = Utils.GetAfflictionStrength(character,"tla_amputation",0)
@@ -359,8 +459,8 @@ function Main.UpdateHuman(character)
     local t_paralysis = Utils.GetAfflictionStrength(character,"t_paralysis",0)
     if(t_paralysis > 0) then speedmultiplier=0 end
 
-    local lockleftarm = not NTC.GetSymptomFalse(character,"lockleftarm") and (NTC.GetSymptom(character,"lockleftarm") or (t_paralysis > 0 or tla_amputation > 0 or sla_amputation > 0) or (Utils.GetAfflictionStrengthLimb(character,LimbType.LeftArm,"bandaged",0) <= 0 and la_dislocation > 0) or (Utils.GetAfflictionStrengthLimb(character,LimbType.LeftArm,"gypsumcast",0) <= 0 and la_fracture > 0))
-    local lockrightarm = not NTC.GetSymptomFalse(character,"lockrightarm") and (NTC.GetSymptom(character,"lockrightarm") or (t_paralysis > 0 or tra_amputation > 0 or sra_amputation > 0) or (Utils.GetAfflictionStrengthLimb(character,LimbType.RightArm,"bandaged",0) <= 0 and ra_dislocation > 0) or (Utils.GetAfflictionStrengthLimb(character,LimbType.RightArm,"gypsumcast",0) <= 0 and ra_fracture > 0))
+    local lockleftarm = not NTC.GetSymptomFalse(character,"lockleftarm") and (NTC.GetSymptom(character,"lockleftarm") or la_n > 0 or la_m > 0 or (t_paralysis > 0 or tla_amputation > 0 or sla_amputation > 0) or (Utils.GetAfflictionStrengthLimb(character,LimbType.LeftArm,"bandaged",0) <= 0 and la_dislocation > 0) or (Utils.GetAfflictionStrengthLimb(character,LimbType.LeftArm,"gypsumcast",0) <= 0 and la_fracture > 0))
+    local lockrightarm = not NTC.GetSymptomFalse(character,"lockrightarm") and (NTC.GetSymptom(character,"lockrightarm") or ra_n > 0 or ra_m > 0 or (t_paralysis > 0 or tra_amputation > 0 or sra_amputation > 0) or (Utils.GetAfflictionStrengthLimb(character,LimbType.RightArm,"bandaged",0) <= 0 and ra_dislocation > 0) or (Utils.GetAfflictionStrengthLimb(character,LimbType.RightArm,"gypsumcast",0) <= 0 and ra_fracture > 0))
 
     local leftlockitem = character.Inventory.FindItemByIdentifier("armlock2",false)
     local rightlockitem = character.Inventory.FindItemByIdentifier("armlock1",false)
@@ -376,6 +476,10 @@ function Main.UpdateHuman(character)
     local lockhands = lockleftarm and lockrightarm
 
     -- leg function
+    local ll_n = Utils.GetAfflictionStrength(character,"ll_n",0)
+    local rl_n = Utils.GetAfflictionStrength(character,"rl_n",0)
+    local ll_m = Utils.GetAfflictionStrength(character,"ll_m",0)
+    local rl_m = Utils.GetAfflictionStrength(character,"rl_m",0)
     local ll_fracture = Utils.GetAfflictionStrength(character,"ll_fracture",0)
     local rl_fracture = Utils.GetAfflictionStrength(character,"rl_fracture",0)
     local tll_amputation = Utils.GetAfflictionStrength(character,"tll_amputation",0)
@@ -385,8 +489,8 @@ function Main.UpdateHuman(character)
     local rl_dislocation = Utils.GetAfflictionStrength(character,"dislocation1",0)
     local ll_dislocation = Utils.GetAfflictionStrength(character,"dislocation2",0)
 
-    local lockleftleg = not NTC.GetSymptomFalse(character,"lockleftleg") and (NTC.GetSymptom(character,"lockleftleg") or (t_paralysis > 0 or tll_amputation > 0 or sll_amputation > 0) or (Utils.GetAfflictionStrengthLimb(character,LimbType.LeftLeg,"bandaged",0) <= 0 and ll_dislocation > 0) or (Utils.GetAfflictionStrengthLimb(character,LimbType.LeftLeg,"gypsumcast",0) <= 0 and ll_fracture > 0))
-    local lockrightleg = not NTC.GetSymptomFalse(character,"lockrightleg") and (NTC.GetSymptom(character,"lockrightleg") or (t_paralysis > 0 or trl_amputation > 0 or srl_amputation > 0) or (Utils.GetAfflictionStrengthLimb(character,LimbType.RightLeg,"bandaged",0) <= 0 and rl_dislocation > 0) or (Utils.GetAfflictionStrengthLimb(character,LimbType.LeftLeg,"gypsumcast",0) <= 0 and rl_fracture > 0))
+    local lockleftleg = not NTC.GetSymptomFalse(character,"lockleftleg") and (NTC.GetSymptom(character,"lockleftleg") or ll_n > 0 or ll_m > 0 or (t_paralysis > 0 or tll_amputation > 0 or sll_amputation > 0) or (Utils.GetAfflictionStrengthLimb(character,LimbType.LeftLeg,"bandaged",0) <= 0 and ll_dislocation > 0) or (Utils.GetAfflictionStrengthLimb(character,LimbType.LeftLeg,"gypsumcast",0) <= 0 and ll_fracture > 0))
+    local lockrightleg = not NTC.GetSymptomFalse(character,"lockrightleg") and (NTC.GetSymptom(character,"lockrightleg") or rl_n > 0 or rl_m > 0 or (t_paralysis > 0 or trl_amputation > 0 or srl_amputation > 0) or (Utils.GetAfflictionStrengthLimb(character,LimbType.RightLeg,"bandaged",0) <= 0 and rl_dislocation > 0) or (Utils.GetAfflictionStrengthLimb(character,LimbType.LeftLeg,"gypsumcast",0) <= 0 and rl_fracture > 0))
 
     -- wheelchair
     local outerwearItem = character.Inventory.GetItemAt(4)
@@ -439,7 +543,7 @@ function Main.UpdateHuman(character)
         end
 
         hypoxemia = Utils.Clamp(hypoxemia + (
-            - math.min(0,(bloodpressure-70) / 7) * hypoxemiagain    -- loss because of low blood pressure (-10 at 0 bp)
+            - math.min(0,(bloodpressure-80) / 3) * hypoxemiagain    -- loss because of low blood pressure (-? at 0 bp)
             - math.min(0,(bloodamount-60) / 4) * hypoxemiagain      -- loss because of low blood amount (-15 at 0 blood)
             - regularHypoxemiaChange                                -- change because of oxygen in lungs (-6.25 <> +12.5)
         )* Main.Deltatime,0,100)
@@ -504,7 +608,7 @@ function Main.UpdateHuman(character)
     end
 
     local hassym_unconsciousness = not NTC.GetSymptomFalse(character,"sym_unconsciousness") and ( NTC.GetSymptom(character,"sym_unconsciousness") or stasis or removedbrain > 0 or (character.Vitality <= 0 and not Utils.HasAbilityFlag(character,12)) or neurotrauma > 100 or coma > 15 or hypoxemia > 80 or t_arterialcut or seizure > 0.1 )
-    local hassym_tachycardia = not NTC.GetSymptomFalse(character,"tachycardia") and cardiacarrest < 1 and (NTC.GetSymptom(character,"tachycardia") or sepsis > 20 or bloodamount < 60 or bloodpressure < 80 or acidosis > 20 or pneumothorax > 30 or t_arterialcut or adrenaline > 1 or alcoholwithdrawal > 75)
+    local hassym_tachycardia = not NTC.GetSymptomFalse(character,"tachycardia") and asys <= 0 and vt < 1 and (NTC.GetSymptom(character,"tachycardia") or sepsis > 20 or bloodamount < 60 or bloodpressure < 80 or acidosis > 20 or pneumothorax > 30 or t_arterialcut or adrenaline > 1 or alcoholwithdrawal > 75)
     local hassym_hyperventilation = not NTC.GetSymptomFalse(character,"hyperventilation") and respiratoryarrest < 1 and (NTC.GetSymptom(character,"hyperventilation") or hypoxemia > 10 or bloodpressure < 80 or pneumothorax > 15 or sepsis > 15)
     local hassym_hypoventilation = not NTC.GetSymptomFalse(character,"hypoventilation") and respiratoryarrest < 1 and (NTC.GetSymptom(character,"hypoventilation") or analgesia > 20 or anesthesia > 40)
     if(hassym_hyperventilation and hassym_hypoventilation) then 
@@ -529,16 +633,17 @@ function Main.UpdateHuman(character)
     local hassym_bloating = not NTC.GetSymptomFalse(character,"sym_bloating") and (NTC.GetSymptom(character,"sym_bloating") or liverdamage > 50)
     local hassym_jaundice = not NTC.GetSymptomFalse(character,"sym_jaundice") and (NTC.GetSymptom(character,"sym_jaundice") or liverdamage > 80)
     local hassym_sweating = not NTC.GetSymptomFalse(character,"sym_sweating") and (NTC.GetSymptom(character,"sym_sweating") or heartattack > 1 or withdrawal > 30)
-    local hassym_palpitations = not NTC.GetSymptomFalse(character,"sym_palpitations") and cardiacarrest < 1 and (NTC.GetSymptom(character,"sym_palpitations") or alkalosis > 20)
+    local hassym_palpitations = not NTC.GetSymptomFalse(character,"sym_palpitations") and asys < 1 and (NTC.GetSymptom(character,"sym_palpitations") or alkalosis > 20)
     local hassym_craving = not NTC.GetSymptomFalse(character,"sym_craving") and not hassym_unconsciousness and (NTC.GetSymptom(character,"sym_craving") or withdrawal > 20)
     local hassym_pain_abdominal = not NTC.GetSymptomFalse(character,"pain_abdominal") and not hassym_unconsciousness and not sedated and (NTC.GetSymptom(character,"pain_abdominal") or (hemoshock>0 and hemoshock < 80) or t_arterialcut)
     local hassym_pain_chest = not NTC.GetSymptomFalse(character,"pain_chest") and not hassym_unconsciousness and not sedated and (NTC.GetSymptom(character,"pain_chest") or (hemoshock>0 and hemoshock < 60) or t_fracture or t_arterialcut)
 
     local triggersym_seizure = not NTC.GetSymptomFalse(character,"triggersym_seizure") and not stasis and (NTC.GetSymptom(character,"triggersym_seizure") or (stroke > 1 and Utils.Chance(0.05)) or (acidosis > 60 and Utils.Chance(0.05)) or (alkalosis > 60 and Utils.Chance(0.05)) or Utils.Chance(Utils.Minimum(rads,50,0)/200*0.1) or (alcoholwithdrawal > 50 and Utils.Chance(alcoholwithdrawal/1000)))
-    local triggersym_coma = not NTC.GetSymptomFalse(character,"triggersym_coma") and not stasis and (NTC.GetSymptom(character,"triggersym_coma") or (cardiacarrest > 1 and Utils.Chance(0.05)) or (stroke > 1 and Utils.Chance(0.05)) or (acidosis > 60 and Utils.Chance(0.05+(acidosis-60)/100)))
+    local triggersym_coma = not NTC.GetSymptomFalse(character,"triggersym_coma") and not stasis and (NTC.GetSymptom(character,"triggersym_coma") or (asys > 1 and Utils.Chance(0.05)) or (stroke > 1 and Utils.Chance(0.05)) or (acidosis > 60 and Utils.Chance(0.05+(acidosis-60)/100)))
     local triggersym_stroke = not NTC.GetSymptomFalse(character,"triggersym_stroke") and not stasis and (NTC.GetSymptom(character,"triggersym_stroke") or (bloodpressure > 150 and Utils.Chance((bloodpressure-150)/50*0.02+Utils.Clamp(streptokinase,0,1)*0.05)))
     local triggersym_heartattack = not NTC.GetSymptomFalse(character,"triggersym_heartattack") and not stasis and streptokinase <= 0 and (NTC.GetSymptom(character,"triggersym_heartattack") or (bloodpressure > 150 and Utils.Chance((bloodpressure-150)/50*0.02)))
-    local triggersym_cardiacarrest = not NTC.GetSymptomFalse(character,"triggersym_cardiacarrest") and (NTC.GetSymptom(character,"triggersym_cardiacarrest") or stasis or removedheart > 0 or removedbrain > 0 or (heartdamage > 99 and Utils.Chance(0.3)) or (traumaticshock > 20 and Utils.Chance(0.1)) or ((coma > 40 or bloodpressure < 20) and Utils.Chance(0.1)) or (hypoxemia > 80 and Utils.Chance(0.05)))
+    local triggersym_vt = not NTC.GetSymptomFalse(character,"triggersym_vt") and (NTC.GetSymptom(character,"triggersym_vt") and asys <= 0 and (traumaticshock > 20 and Utils.Chance(0.1)) or ((coma > 50 or bloodpressure < 20) and Utils.Chance(0.1)) or (hypoxemia > 80 and Utils.Chance(0.05)))
+    local triggersym_asys = not NTC.GetSymptomFalse(character,"triggersym_asys") and (NTC.GetSymptom(character,"triggersym_asys") and vf and vt <= 0 and stasis or removedheart > 0 or removedbrain > 0 or (heartdamage > 99 and Utils.Chance(0.3)) or (coma > 80)and Utils.Chance(0.05))
     local triggersym_respiratoryarrest = not NTC.GetSymptomFalse(character,"triggersym_respiratoryarrest") and (NTC.GetSymptom(character,"triggersym_respiratoryarrest") or stasis or removedlung > 0 or removedbrain > 0 or (lungdamage > 99 and Utils.Chance(0.3)) or (traumaticshock > 10 and Utils.Chance(0.1)) or ((neurotrauma > 100 or hypoxemia > 70) and Utils.Chance(0.1)))
 
     
@@ -593,7 +698,8 @@ function Main.UpdateHuman(character)
     Utils.ApplyAfflictionChange(character,"seizure",seizure + Utils.BoolToNum(triggersym_seizure,10),prevseizure,0,100)
     Utils.ApplyAfflictionChange(character,"stroke",stroke + Utils.BoolToNum(triggersym_stroke,5),prevstroke,0,100)
     Utils.ApplyAfflictionChange(character,"coma",coma + Utils.BoolToNum(triggersym_coma,14),prevcoma,0,100)
-    Utils.ApplyAfflictionChange(character,"cardiacarrest",cardiacarrest + Utils.BoolToNum(triggersym_cardiacarrest,10),prevcardiacarrest,0,10)
+    Utils.ApplyAfflictionChange(character,"asys",asys + Utils.BoolToNum(triggersym_asys,10),prevasys,0,10)
+    Utils.ApplyAfflictionChange(character,"vt",vt + Utils.BoolToNum(triggersym_vt,10),prevvt,0,10)
     Utils.ApplyAfflictionChange(character,"respiratoryarrest",respiratoryarrest + Utils.BoolToNum(triggersym_respiratoryarrest,10),prevrespiratoryarrest,0,10)
 
     -- /// Apply symptoms ///

@@ -31,6 +31,11 @@
   <Affliction name="" identifier="asys" description="" healableinmedicalclinic="false" limbspecific="false" indicatorlimb="Torso" showiconthreshold="1" showinhealthscannerthreshold="1" targets="human" type="gaze" isbuff="false" maxstrength="10">
     <icon texture="%ModDir%/Images/AfflictionIcons.png" sheetindex="0,1" sheetelementsize="128,128" origin="0,0" />
   </Affliction>
+  <!-- Heart ATP deficiency
+  cause asystole and heart damage -->
+  <Affliction name="" identifier="heart_atp_down" description="" healableinmedicalclinic="false" limbspecific="false" indicatorlimb="Torso" showiconthreshold="1" showinhealthscannerthreshold="1" targets="human" type="gaze" isbuff="false" maxstrength="10">
+    <icon texture="%ModDir%/Images/AfflictionIcons.png" sheetindex="0,1" sheetelementsize="128,128" origin="0,0" />
+  </Affliction>
   <!-- Myocardial Infarction / Heart Attack
   Scanned Symptom, causes shortness of breath, chest pain,
   nausea, sweating, heart damage and potentially cardiac arrest -->
@@ -82,6 +87,11 @@
   <Affliction name="" identifier="meningitis" description="" targets="human" healableinmedicalclinic="false" type="gaze" isbuff="false" limbspecific="false" indicatorlimb="Head" showiconthreshold="100" showinhealthscannerthreshold="0.1" maxstrength="50">
     <icon texture="%ModDir%/Images/AfflictionIcons.png" sourcerect="0,128,128,128" color="0,255,0,255" origin="0,0" />
   </Affliction>
+  <!-- Post-cardiac arrest syndrome / PCAS
+  Scanned Symptom -->
+  <Affliction name="" identifier="pcas" description="" healableinmedicalclinic="false" type="gaze" isbuff="false" targets="human" limbspecific="false" indicatorlimb="Head" activationthreshold="0" causeofdeathdescription="Brain dead" selfcauseofdeathdescription="Your brain is dead." showinhealthscannerthreshold="300" showiconthreshold="300" maxstrength="200">
+    <icon texture="Content/UI/MainIconsAtlas.png" sourcerect="128,640,128,128" color="195,177,60,255" origin="0,0" />
+  </Affliction>
   <!-- Brain integrity
   Scanned Symptom -->
   <Affliction name="" identifier="brain_integrity" description="" healableinmedicalclinic="false" type="gaze" isbuff="false" targets="human" limbspecific="false" indicatorlimb="Head" activationthreshold="0" causeofdeathdescription="Brain dead" selfcauseofdeathdescription="Your brain is dead." showinhealthscannerthreshold="300" showiconthreshold="300" maxstrength="200">
@@ -97,12 +107,17 @@
   <Affliction name="" identifier="s_hemorrhage" description="" healableinmedicalclinic="false" type="gaze" isbuff="false" targets="human" limbspecific="false" indicatorlimb="Head" activationthreshold="0" causeofdeathdescription="Brain dead" selfcauseofdeathdescription="Your brain is dead." showinhealthscannerthreshold="300" showiconthreshold="300" maxstrength="200">
     <icon texture="Content/UI/MainIconsAtlas.png" sourcerect="128,640,128,128" color="195,177,60,255" origin="0,0" />
   </Affliction>
+  <!-- Intracerebral hemorrhage / Hemorrhagic stroke
+  Scanned Symptom --> 
+  <Affliction name="" identifier="i_hemorrhage" description="" healableinmedicalclinic="false" type="gaze" isbuff="false" targets="human" limbspecific="false" indicatorlimb="Head" activationthreshold="0" causeofdeathdescription="Brain dead" selfcauseofdeathdescription="Your brain is dead." showinhealthscannerthreshold="300" showiconthreshold="300" maxstrength="200">
+    <icon texture="Content/UI/MainIconsAtlas.png" sourcerect="128,640,128,128" color="195,177,60,255" origin="0,0" />
+  </Affliction>
   <!-- Epidural hematoma / Skull fracture
   Scanned Symptom -->
   <Affliction name="" identifier="e_hematoma" description="" healableinmedicalclinic="false" type="gaze" isbuff="false" targets="human" limbspecific="false" indicatorlimb="Head" activationthreshold="0" causeofdeathdescription="Brain dead" selfcauseofdeathdescription="Your brain is dead." showinhealthscannerthreshold="300" showiconthreshold="300" maxstrength="200">
     <icon texture="Content/UI/MainIconsAtlas.png" sourcerect="128,640,128,128" color="195,177,60,255" origin="0,0" />
   </Affliction>
-  <!-- Сerebral edema
+  <!-- Сerebral edema / Non-embolic stoke
   Scanned Symptom -->
   <Affliction name="" identifier="cerebral_edema" description="" healableinmedicalclinic="false" type="gaze" isbuff="false" targets="human" limbspecific="false" indicatorlimb="Head" activationthreshold="0" causeofdeathdescription="Brain dead" selfcauseofdeathdescription="Your brain is dead." showinhealthscannerthreshold="300" showiconthreshold="300" maxstrength="200">
     <icon texture="Content/UI/MainIconsAtlas.png" sourcerect="128,640,128,128" color="195,177,60,255" origin="0,0" />
@@ -152,6 +167,11 @@
   <Affliction name="" identifier="hypoxemia" description="" targets="human" limbspecific="false" indicatorlimb="Torso" activationthreshold="0" healableinmedicalclinic="false" type="gaze" isbuff="false" showinhealthscannerthreshold="5" showiconthreshold="300" maxstrength="100">
     <icon texture="%ModDir%/Images/AfflictionIcons.png" sourcerect="128,128,128,128" color="68,157,198,255" origin="0,0" />
   </Affliction>
+  <!-- ATP deficiency / Resource depletion
+  Scanned Symptom -->
+  <Affliction name="" identifier="atp_down" description="" targets="human" limbspecific="false" indicatorlimb="Torso" activationthreshold="0" healableinmedicalclinic="false" type="gaze" isbuff="false" showinhealthscannerthreshold="5" showiconthreshold="300" maxstrength="100">
+    <icon texture="%ModDir%/Images/AfflictionIcons.png" sourcerect="128,128,128,128" color="68,157,198,255" origin="0,0" />
+  </Affliction>
   <!-- Atherosclerosis
   Scanned Symptom -->
   <Affliction name="" identifier="atherosclerosis" description="" targets="human" limbspecific="false" indicatorlimb="Torso" activationthreshold="0" healableinmedicalclinic="false" type="gaze" isbuff="false" showinhealthscannerthreshold="5" showiconthreshold="300" maxstrength="100">
@@ -171,6 +191,11 @@
   <!-- Pulmonary embolism
   Exposed Symptom -->
   <Affliction name="" identifier="pulmonary_embolism" description="" healableinmedicalclinic="false" type="gaze" isbuff="false" targets="human" limbspecific="false" indicatorlimb="Torso" showiconthreshold="1" showinhealthscannerthreshold="100" maxstrength="2">
+    <icon texture="%ModDir%/Images/AfflictionIcons.png" sheetindex="3,0" sheetelementsize="128,128" origin="0,0" />
+  </Affliction>
+  <!-- Pulmonary edema
+  Exposed Symptom -->
+  <Affliction name="" identifier="pulmonary_edema" description="" healableinmedicalclinic="false" type="gaze" isbuff="false" targets="human" limbspecific="false" indicatorlimb="Torso" showiconthreshold="1" showinhealthscannerthreshold="100" maxstrength="2">
     <icon texture="%ModDir%/Images/AfflictionIcons.png" sheetindex="3,0" sheetelementsize="128,128" origin="0,0" />
   </Affliction>
   <!-- Deep vein thrombosis
