@@ -31,7 +31,7 @@ Hook.Add("surgerytable.update", "surgerytable.update", function (effect, deltaTi
     if target.IsDead then item.SendSignal("0","bloodpressure_out")
     else item.SendSignal(tostring(Utils.Round(Utils.GetAfflictionStrength(target,"bloodpressure",100))),"bloodpressure_out") end
     item.SendSignal(tostring(Utils.Round(100-Utils.GetAfflictionStrength(target,"hypoxemia",0))),"bloodoxygen_out")
-    item.SendSignal(tostring(Utils.Round(Utils.GetAfflictionStrength(target,"cerebralhypoxia",0))),"cerebralhypoxia_out")
+    item.SendSignal(tostring(Utils.Round(Utils.GetAfflictionStrength(target,"cerebralhypoxia",0))),"neurotrauma_out")
     item.SendSignal(tostring(Utils.Round(Utils.GetAfflictionStrength(target,"organdamage",0))),"organdamage_out")
     
     local heartrate = math.random(80,85)

@@ -35,7 +35,7 @@ Main.OnDamagedMethods = {}
 local function HasLungs(c) return not Utils.HasAffliction(c,"lungremoved") end
 local function HasHeart(c) return not Utils.HasAffliction(c,"heartremoved") end
 
--- cause foreign bodies, rib fractures, pneumothorax, tamponade, internal bleeding, fractures, cerebralhypoxia
+-- cause foreign bodies, rib fractures, pneumothorax, tamponade, internal bleeding, fractures, neurotrauma
 Main.OnDamagedMethods.gunshotwound = function(character,strength,limbtype) 
     limbtype = Utils.NormalizeLimbType(limbtype)
 
@@ -194,7 +194,7 @@ Main.OnDamagedMethods.lacerations = function(character,strength,limbtype)
     end
 end
 
--- cause rib fractures, organ damage, pneumothorax, concussion, fractures, cerebralhypoxia
+-- cause rib fractures, organ damage, pneumothorax, concussion, fractures, neurotrauma
 Main.OnDamagedMethods.blunttrauma = function(character,strength,limbtype) 
     limbtype = Utils.NormalizeLimbType(limbtype)
 

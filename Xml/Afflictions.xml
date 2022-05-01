@@ -125,9 +125,8 @@
   <!-- Cerebral hypoxia / Low oxygen presence in the brain
   Scanned Symptom -->
   <Affliction name="" identifier="cerebralhypoxia" description="" healableinmedicalclinic="false" type="gaze" isbuff="false" targets="human" limbspecific="false" indicatorlimb="Head" activationthreshold="0" causeofdeathdescription="Brain dead" selfcauseofdeathdescription="Your brain got deprived of oxygen for too long." showinhealthscannerthreshold="10" showiconthreshold="300" maxstrength="200">
-    <Effect minstrength="0" maxstrength="180" minscreendistort="0" maxscreendistort="1" minscreenblur="0" maxscreenblur="1" minradialdistort="0" maxradialdistort="1" minvitalitydecrease="0" maxvitalitydecrease="0"></Effect>
-    <Effect minstrength="180" maxstrength="225" minscreendistort="1" maxscreendistort="1" minscreenblur="1" maxscreenblur="1" minradialdistort="1" maxradialdistort="1" minvitalitydecrease="0" maxvitalitydecrease="0"></Effect>
-    <Effect minstrength="225" maxstrength="375" minscreendistort="1" maxscreendistort="1" minscreenblur="1" maxscreenblur="1" minradialdistort="1" maxradialdistort="1" minvitalitydecrease="100" maxvitalitydecrease="600"></Effect>
+    <Effect minstrength="0" maxstrength="180" minscreendistort="0" maxscreendistort="1" minscreenblur="0" maxscreenblur="1" minradialdistort="0" maxradialdistort="1" minvitalitydecrease="0" maxvitalitydecrease="180"></Effect>
+    <Effect minstrength="180" maxstrength="200" minscreendistort="1" maxscreendistort="1" minscreenblur="1" maxscreenblur="1" minradialdistort="1" maxradialdistort="1" minvitalitydecrease="100" maxvitalitydecrease="600"></Effect>
     <icon texture="Content/UI/MainIconsAtlas.png" sourcerect="128,640,128,128" color="195,177,60,255" origin="0,0" />
   </Affliction>
   <!-- Seizure
@@ -1489,12 +1488,12 @@
     <icon texture="%ModDir%/Images/AfflictionIcons.png" sheetindex="3,1" sheetelementsize="128,128" origin="0,0" />
   </Affliction>
   <!-- Blindness / Exposed Symptom -->
-  <Affliction name="" identifier="sym_blindness" description="" healableinmedicalclinic="false" type="gaze" isbuff="false" limbspecific="false" indicatorlimb="Head" showiconthreshold="1" showinhealthscannerthreshold="100" maxstrength="2" iconcolors="255,90,0,255;255,90,0,255">
+  <Affliction name="" identifier="sym_blurredvision" description="" healableinmedicalclinic="false" type="gaze" isbuff="false" limbspecific="false" indicatorlimb="Head" showiconthreshold="1" showinhealthscannerthreshold="100" maxstrength="2" iconcolors="255,90,0,255;255,90,0,255">
     <Effect minstrength="0" maxstrength="2" ObstructVision="true" />
     <icon texture="%ModDir%/Images/AfflictionIcons.png" sheetindex="3,1" sheetelementsize="128,128" origin="0,0" />
   </Affliction>
   <!-- Muteness / Exposed Symptom -->
-  <Affliction name="" identifier="sym_muteness" description="" healableinmedicalclinic="false" type="gaze" isbuff="false" limbspecific="false" indicatorlimb="Head" showiconthreshold="1" showinhealthscannerthreshold="100" maxstrength="2" iconcolors="255,90,0,255;255,90,0,255">
+  <Affliction name="muteness" identifier="sym_confusion" description="" healableinmedicalclinic="false" type="gaze" isbuff="false" limbspecific="false" indicatorlimb="Head" showiconthreshold="1" showinhealthscannerthreshold="100" maxstrength="2" iconcolors="255,90,0,255;255,90,0,255">
     <Effect minstrength="0" maxstrength="2" speechImpediment="100.0"/>
     <icon texture="%ModDir%/Images/AfflictionIcons.png" sheetindex="2,1" sheetelementsize="128,128" origin="0,0" />
   </Affliction>
@@ -1627,19 +1626,19 @@
     <icon texture="%ModDir%/Images/AfflictionIcons.png" sheetindex="4,3" sheetelementsize="128,128" origin="0,0" />
   </Affliction>
   <!-- Causalgia / Exposed Symptom -->
-  <Affliction name="" identifier="sym_causalgia" description="" healableinmedicalclinic="false" type="" isbuff="false" limbspecific="true" showiconthreshold="1" showinhealthscannerthreshold="100" maxstrength="2" iconcolors="255,90,0,255;255,90,0,255">
+  <Affliction name="" identifier="causalgia" description="" healableinmedicalclinic="false" type="" isbuff="false" limbspecific="true" showiconthreshold="1" showinhealthscannerthreshold="100" maxstrength="2" iconcolors="255,90,0,255;255,90,0,255">
     <icon texture="%ModDir%/Images/AfflictionIcons.png" sheetindex="4,3" sheetelementsize="128,128" origin="0,0" />
   </Affliction>
   <!-- Hyperpathy / Exposed Symptom -->
-  <Affliction name="" identifier="sym_hyperpathy" description="" healableinmedicalclinic="false" type="" isbuff="false" limbspecific="true" showiconthreshold="1" showinhealthscannerthreshold="100" maxstrength="2" iconcolors="255,90,0,255;255,90,0,255">
+  <Affliction name="" identifier="hyperpathy" description="" healableinmedicalclinic="false" type="" isbuff="false" limbspecific="true" showiconthreshold="1" showinhealthscannerthreshold="100" maxstrength="2" iconcolors="255,90,0,255;255,90,0,255">
     <icon texture="%ModDir%/Images/AfflictionIcons.png" sheetindex="4,3" sheetelementsize="128,128" origin="0,0" />
   </Affliction>
   <!-- Autometamorphopsia / Exposed Symptom -->
-  <Affliction name="" identifier="sym_autometamorphopsia" description="" healableinmedicalclinic="false" type="" isbuff="false" limbspecific="true" showiconthreshold="1" showinhealthscannerthreshold="100" maxstrength="2" iconcolors="255,90,0,255;255,90,0,255">
+  <Affliction name="" identifier="autometamorphopsia" description="" healableinmedicalclinic="false" type="" isbuff="false" limbspecific="true" showiconthreshold="1" showinhealthscannerthreshold="100" maxstrength="2" iconcolors="255,90,0,255;255,90,0,255">
     <icon texture="%ModDir%/Images/AfflictionIcons.png" sheetindex="4,3" sheetelementsize="128,128" origin="0,0" />
   </Affliction>
   <!-- Phantom pains / Exposed Symptom -->
-  <Affliction name="" identifier="sym_phantom_pains" description="" healableinmedicalclinic="false" type="" isbuff="false" limbspecific="true" showiconthreshold="1" showinhealthscannerthreshold="100" maxstrength="2" iconcolors="255,90,0,255;255,90,0,255">
+  <Affliction name="" identifier="phantom_pains" description="" healableinmedicalclinic="false" type="" isbuff="false" limbspecific="true" showiconthreshold="1" showinhealthscannerthreshold="100" maxstrength="2" iconcolors="255,90,0,255;255,90,0,255">
     <icon texture="%ModDir%/Images/AfflictionIcons.png" sheetindex="4,3" sheetelementsize="128,128" origin="0,0" />
   </Affliction>
   <!-- Spasm / Exposed Symptom -->
