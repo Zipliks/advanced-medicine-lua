@@ -236,6 +236,42 @@ function Main.UpdateHuman(character)
     local prevslowdown = slowdown
     local speedmultiplier = 1
     local traumaticshock = Utils.GetAfflictionStrength(character,"traumaticshock",0)
+    
+    -- Motor system
+    local musclestrains = Utils.GetAfflictionStrength(character,"musclestrains",0)
+    local prevmusclestrains = musclestrains
+    local torn_l_t = Utils.GetAfflictionStrength(character,"torn_l_t",0)
+    local prevtorn_l_t = torn_l_t
+    
+    -- Nerve system
+    local nervedamage = Utils.GetAfflictionStrength(character,"nervedamage",0)
+    local prevnervedamage = nervedamage
+    local nerveintegrity = Utils.GetAfflictionStrength(character,"nerveintegrity",0)
+    local prevnerveintegrity = nerveintegrity
+    
+    -- Right Eye
+    local r_cornealdamage = Utils.GetAfflictionStrength(character,"r_cornealdamage",0)
+    local prevr_cornealdamage = r_cornealdamage
+    local r_retinaldamage = Utils.GetAfflictionStrength(character,"r_retinaldamagey",0)
+    local prevr_retinaldamagey = r_retinaldamage
+    local r_lensdamage = Utils.GetAfflictionStrength(character,"r_lensdamage",0)
+    local prevr_lensdamage = r_lensdamage
+    local r_vitreousremoval = Utils.GetAfflictionStrength(character,"r_vitreousremoval",0)
+    local prevr_vitreousremoval = r_vitreousremoval
+    local r_eyeremoval = Utils.GetAfflictionStrength(character,"r_eyeremoval",0)
+    local prevr_eyeremoval = r_eyeremoval
+    
+    -- Left Eye
+    local l_cornealdamage = Utils.GetAfflictionStrength(character,"l_cornealdamage",0)
+    local prevl_cornealdamage = l_cornealdamage
+    local l_retinaldamage = Utils.GetAfflictionStrength(character,"l_retinaldamagey",0)
+    local prevr_letinaldamagey = l_retinaldamage
+    local l_lensdamage = Utils.GetAfflictionStrength(character,"l_lensdamage",0)
+    local prevl_lensdamage = l_lensdamage
+    local l_vitreousremoval = Utils.GetAfflictionStrength(character,"l_vitreousremoval",0)
+    local prevr_vitreousremoval = l_vitreousremoval
+    local l_eyeremoval = Utils.GetAfflictionStrength(character,"l_eyeremoval",0)
+    local prevl_eyeremoval = l_eyeremoval
 
     -- Motor system
     local musclestrains = Utils.GetAfflictionStrength(character,"musclestrains",0)
