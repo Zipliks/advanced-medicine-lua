@@ -35,7 +35,7 @@ Main.OnDamagedMethods = {}
 local function HasLungs(c) return not Utils.HasAffliction(c,"lungremoved") end
 local function HasHeart(c) return not Utils.HasAffliction(c,"heartremoved") end
 
--- cause foreign bodies, rib fractures, pneumothorax, tamponade, internal bleeding, fractures, neurotrauma
+-- cause foreign bodies, rib fractures, pneumothorax, tamponade, internal bleeding, fractures, cerebralhypoxia
 Main.OnDamagedMethods.gunshotwound = function(character,strength,limbtype) 
     limbtype = Utils.NormalizeLimbType(limbtype)
 
@@ -80,6 +80,8 @@ Main.OnDamagedMethods.gunshotwound = function(character,strength,limbtype)
             Utils.AddAfflictionLimb(character,"h_fracture",limbtype,5) end
         if strength >= 5 and Utils.Chance(0.7) then
             Utils.AddAfflictionLimb(character,"cerebralhypoxia",limbtype,strength*Utils.RandomRange(0.1,0.4)) end
+        if strength >= 5 and Utils.Chance(0.7) then
+            Utils.AddAfflictionLimb(character,"s_hematoma",limbtype,strength*Utils.RandomRange(0.2,0.6)) end
     end
 
     -- extremities
@@ -117,6 +119,10 @@ Main.OnDamagedMethods.explosiondamage = function(character,strength,limbtype)
             Utils.AddAfflictionLimb(character,"h_fracture",limbtype,5) end
         if strength >= 15 and Utils.Chance(math.min(strength/60,0.7)*NTC.GetMultiplier(character,"anyfracturechance")) then
             Utils.AddAfflictionLimb(character,"n_fracture",limbtype,5) end
+        if strength >= 5 and Utils.Chance(0.7) then
+            Utils.AddAfflictionLimb(character,"s_hematoma",limbtype,strength*Utils.RandomRange(0.2,0.6)) end
+        if strength >= 5 and Utils.Chance(0.7) then
+            Utils.AddAfflictionLimb(character,"cerebral_edema",limbtype,strength*Utils.RandomRange(0.2,0.6)) end
         if strength >= 25 and Utils.Chance(0.25) then
             Utils.AddAfflictionLimb(character,"gate_ta_h",limbtype,5) end
     end
@@ -194,7 +200,7 @@ Main.OnDamagedMethods.lacerations = function(character,strength,limbtype)
     end
 end
 
--- cause rib fractures, organ damage, pneumothorax, concussion, fractures, neurotrauma
+-- cause rib fractures, organ damage, pneumothorax, concussion, fractures, s_hematoma
 Main.OnDamagedMethods.blunttrauma = function(character,strength,limbtype) 
     limbtype = Utils.NormalizeLimbType(limbtype)
 
@@ -222,7 +228,9 @@ Main.OnDamagedMethods.blunttrauma = function(character,strength,limbtype)
         if strength >= 15 and Utils.Chance(math.min((strength-10)/60,0.7)*NTC.GetMultiplier(character,"anyfracturechance")) then
             Utils.AddAfflictionLimb(character,"n_fracture",limbtype,5) end
         if strength >= 5 and Utils.Chance(0.7) then
-            Utils.AddAfflictionLimb(character,"cerebralhypoxia",limbtype,strength*Utils.RandomRange(0.1,0.4)) end
+            Utils.AddAfflictionLimb(character,"cerebral_edema",limbtype,strength*Utils.RandomRange(0.2,0.6)) end
+        if strength >= 5 and Utils.Chance(0.7) then
+            Utils.AddAfflictionLimb(character,"s_hematoma",limbtype,strength*Utils.RandomRange(0.2,0.6)) end
     end
 
     -- extremities
@@ -263,6 +271,8 @@ Main.OnDamagedMethods.internaldamage = function(character,strength,limbtype)
             Utils.AddAfflictionLimb(character,"h_fracture",limbtype,5) end
         if strength >= 15 and Utils.Chance(math.min((strength-5)/60,0.7)*NTC.GetMultiplier(character,"anyfracturechance")) then
             Utils.AddAfflictionLimb(character,"n_fracture",limbtype,5) end
+        if strength >= 5 and Utils.Chance(0.7) then
+            Utils.AddAfflictionLimb(character,"s_hematoma",limbtype,strength*Utils.RandomRange(0.2,0.6)) end
     end
 
     -- extremities
