@@ -1,20 +1,19 @@
 
 -- set the below variable to true to enable debug and testing features
-Main.TestingEnabled = false
+Main.TestingEnabled = true
 
 Hook.Add('chatMessage', 'AM.testing', function(msg, client)
     
-    if (msg == 'Main test') then -- a glorified suicide button
+    if (msg == 'AM test') then -- a glorified suicide button
 
         if(client.Character == nil) then return true end
-
-        Utils.SetAfflictionLimb(client.Character,"gate_ta_ra",LimbType.RightArm,100)
-        Utils.SetAfflictionLimb(client.Character,"gate_ta_la",LimbType.LeftArm,100)
-        Utils.SetAfflictionLimb(client.Character,"gate_ta_rl",LimbType.RightLeg,100)
-        Utils.SetAfflictionLimb(client.Character,"gate_ta_ll",LimbType.LeftLeg,100)
+        Main.TraumamputateLimb(client.Character,LimbType.RightArm)
+        Main.TraumamputateLimb(client.Character,LimbType.LeftArm)
+        Main.TraumamputateLimb(client.Character,LimbType.RightLeg)
+        Main.TraumamputateLimb(client.Character,LimbType.LeftLeg)
 
         return true -- hide message
-    elseif (msg == 'Main unfuck') then -- a command to remove non-sensical extremity amputations on the head and torso
+    elseif (msg == 'AM unfuck') then -- a command to remove non-sensical extremity amputations on the head and torso
 
         if(client.Character == nil) then return true end
 
@@ -29,7 +28,7 @@ Hook.Add('chatMessage', 'AM.testing', function(msg, client)
         Utils.SetAfflictionLimb(client.Character,"tra_amputation",LimbType.Torso,0)
 
         return true -- hide message
-    elseif(msg=="nt1") then
+    elseif(msg=="am1") then
         if not Main.TestingEnabled then return end
         -- insert testing stuff here
         
@@ -40,7 +39,7 @@ Hook.Add('chatMessage', 'AM.testing', function(msg, client)
         end
 
         return true
-    elseif(msg=="nt2") then
+    elseif(msg=="am2") then
         if not Main.TestingEnabled then return end
         -- insert other testing stuff here
         local crewenum = Character.GetFriendlyCrew(client.Character)
