@@ -1,17 +1,16 @@
 
 -- set the below variable to true to enable debug and testing features
-Main.TestingEnabled = false
+Main.TestingEnabled = true
 
 Hook.Add('chatMessage', 'AM.testing', function(msg, client)
     
     if (msg == 'Main test') then -- a glorified suicide button
 
         if(client.Character == nil) then return true end
-
-        Utils.SetAfflictionLimb(client.Character,"gate_ta_ra",LimbType.RightArm,100)
-        Utils.SetAfflictionLimb(client.Character,"gate_ta_la",LimbType.LeftArm,100)
-        Utils.SetAfflictionLimb(client.Character,"gate_ta_rl",LimbType.RightLeg,100)
-        Utils.SetAfflictionLimb(client.Character,"gate_ta_ll",LimbType.LeftLeg,100)
+        Main.TraumamputateLimb(client.Character,LimbType.RightArm)
+        Main.TraumamputateLimb(client.Character,LimbType.LeftArm)
+        Main.TraumamputateLimb(client.Character,LimbType.RightLeg)
+        Main.TraumamputateLimb(client.Character,LimbType.LeftLeg)
 
         return true -- hide message
     elseif (msg == 'Main unfuck') then -- a command to remove non-sensical extremity amputations on the head and torso
