@@ -1,4 +1,4 @@
-﻿﻿<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Afflictions>
   <!-- /// Meta /// -->
   <Affliction name="" identifier="luabotomy" description="" limbspecific="false" indicatorlimb="Head" showiconthreshold="13" showinhealthscannerthreshold="100" maxstrength="15" targets="human" type="gaze" isbuff="false" healableinmedicalclinic="false" iconcolors="255,255,255,255;255,255,255,255">
