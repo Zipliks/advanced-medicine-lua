@@ -40,6 +40,13 @@
   <Affliction name="" identifier="heart_atp_down" description="" healableinmedicalclinic="false" limbspecific="false" indicatorlimb="Torso" showiconthreshold="1" showinhealthscannerthreshold="1" targets="human" type="gaze" isbuff="false" maxstrength="10">
     <icon texture="%ModDir%/Images/AfflictionIcons.png" sheetindex="0,1" sheetelementsize="128,128" origin="0,0" />
   </Affliction>
+    <icon texture="%ModDir%/Images/AfflictionIcons.png" sheetindex="0,1" sheetelementsize="128,128" origin="0,0" />
+  </Affliction>
+  <!-- Heart ATP deficiency
+  cause asystole and heart damage -->
+  <Affliction name="" identifier="heart_atp_down" description="" healableinmedicalclinic="false" limbspecific="false" indicatorlimb="Torso" showiconthreshold="1" showinhealthscannerthreshold="1" targets="human" type="gaze" isbuff="false" maxstrength="10">
+    <icon texture="%ModDir%/Images/AfflictionIcons.png" sheetindex="0,1" sheetelementsize="128,128" origin="0,0" />
+  </Affliction>
   <!-- Myocardial Infarction / Heart Attack
   Scanned Symptom, causes shortness of breath, chest pain,
   nausea, sweating, heart damage and potentially cardiac arrest -->
@@ -179,7 +186,6 @@
   <Affliction name="" identifier="hypoxemia" description="" targets="human" limbspecific="false" indicatorlimb="Torso" activationthreshold="0" healableinmedicalclinic="false" type="gaze" isbuff="false" showinhealthscannerthreshold="5" showiconthreshold="300" maxstrength="100">
     <icon texture="%ModDir%/Images/AfflictionIcons.png" sourcerect="128,128,128,128" color="68,157,198,255" origin="0,0" />
   </Affliction>
-
     <!-- Saline / increases blood pressure, even into potentially unwanted and harmful regions.
   also causes acidosis.
   scanned Drug -->
@@ -258,8 +264,6 @@
   <Affliction name="B+" identifier="bplus" description="" healableinmedicalclinic="false" targets="human" type="resistance" isbuff="true" limbspecific="false" showinhealthscannerthreshold="3" showiconthreshold="3" maxstrength="1">
     <icon texture="Content/UI/MainIconsAtlas.png" sourcerect="256,896,128,128" color="10,193,114,255" origin="0,0" />
   </Affliction>
-  
-
 
 
 
@@ -274,6 +278,9 @@
   <Affliction name="" identifier="atherosclerosis" description="" targets="human" limbspecific="false" indicatorlimb="Torso" activationthreshold="0" healableinmedicalclinic="false" type="gaze" isbuff="false" showinhealthscannerthreshold="5" showiconthreshold="300" maxstrength="100">
     <icon texture="%ModDir%/Images/AfflictionIcons.png" sourcerect="128,128,128,128" color="68,157,198,255" origin="0,0" />
   </Affliction>
+
+
+
 
   <!-- /// Lung Stuff /// -->
   <!-- Respiratory Arrest / Apnea
@@ -376,7 +383,6 @@
   <Affliction name="" identifier="kidneyremoved" description="" healableinmedicalclinic="false" targets="human" type="gaze" isbuff="false" limbspecific="false" indicatorlimb="Torso" showiconthreshold="2" showinhealthscannerthreshold="1" iconcolors="84,211,211,255;84,211,211,255" maxstrength="3">
     <icon texture="%ModDir%/Images/AfflictionIcons.png" sheetindex="2,5" sheetelementsize="128,128" origin="0,0" />
   </Affliction>
-
 
 
 
@@ -722,8 +728,181 @@
 
 
 
+  <!-- Nerves -->
+  <Affliction name="" identifier="ra_n" description="" healcostmultiplier="10" targets="human" limbspecific="true" type="nerves" showinhealthscannerthreshold="0" showiconthreshold="90" maxstrength="100">
+    <Effect minstrength="0" maxstrength="100" strengthchange="2" />
+    <PeriodicEffect mininterval="1" maxinterval="1">
+      <StatusEffect target="Character" disabledeltatime="true" stackable="false" delay="1" checkconditionalalways="false">
+        <Conditional ishuman="false" />
+        <ReduceAffliction identifier="ra_n" amount="1000" />
+      </StatusEffect>
+      <StatusEffect target="Limb" disabledeltatime="true" checkconditionalalways="false" comparison="and">
+        <Conditional sym_unconsciousness="eq 0"/>
+        <Affliction identifier="pain_extremity" indicatorlimb="Limb" amount="2" />
+      </StatusEffect>
+    </PeriodicEffect>
+    <icon texture="%ModDir%/Images/AfflictionIcons.png" sheetindex="6,2" sheetelementsize="128,128" origin="0,0" />
+  </Affliction>
+  <Affliction name="" identifier="la_n" description="" healcostmultiplier="10" targets="human" limbspecific="true" type="nerves" showinhealthscannerthreshold="0" showiconthreshold="90" maxstrength="100">
+    <Effect minstrength="0" maxstrength="100" strengthchange="2" />
+    <PeriodicEffect mininterval="1" maxinterval="1">
+      <StatusEffect target="Character" disabledeltatime="true" stackable="false" delay="1" checkconditionalalways="false">
+        <Conditional ishuman="false" />
+        <ReduceAffliction identifier="la_n" amount="1000" />
+      </StatusEffect>
+      <StatusEffect target="Limb" disabledeltatime="true" checkconditionalalways="false" comparison="and">
+        <Conditional sym_unconsciousness="eq 0"/>
+        <Affliction identifier="pain_extremity" indicatorlimb="Limb" amount="2" />
+      </StatusEffect>
+    </PeriodicEffect>
+    <icon texture="%ModDir%/Images/AfflictionIcons.png" sheetindex="6,2" sheetelementsize="128,128" origin="0,0" />
+  </Affliction>
+  <Affliction name="" identifier="rl_n" description="" healcostmultiplier="10" targets="human" limbspecific="true" type="nerves" showinhealthscannerthreshold="0" showiconthreshold="90" maxstrength="100">
+    <Effect minstrength="0" maxstrength="100" strengthchange="2" />
+    <PeriodicEffect mininterval="1" maxinterval="1">
+      <StatusEffect target="Character" disabledeltatime="true" stackable="false" delay="1" checkconditionalalways="false">
+        <Conditional ishuman="false" />
+        <ReduceAffliction identifier="rl_n" amount="1000" />
+      </StatusEffect>
+      <StatusEffect target="Limb" disabledeltatime="true" checkconditionalalways="false" comparison="and">
+        <Conditional sym_unconsciousness="eq 0"/>
+        <Affliction identifier="pain_extremity" indicatorlimb="Limb" amount="2" />
+      </StatusEffect>
+    </PeriodicEffect>
+    <icon texture="%ModDir%/Images/AfflictionIcons.png" sheetindex="6,2" sheetelementsize="128,128" origin="0,0" />
+  </Affliction>
+  <Affliction name="" identifier="ll_n" description="" healcostmultiplier="10" targets="human" limbspecific="true" type="nerves" showinhealthscannerthreshold="0" showiconthreshold="90" maxstrength="100">
+    <Effect minstrength="0" maxstrength="100" strengthchange="2" />
+    <PeriodicEffect mininterval="1" maxinterval="1">
+      <StatusEffect target="Character" disabledeltatime="true" stackable="false" delay="1" checkconditionalalways="false">
+        <Conditional ishuman="false" />
+        <ReduceAffliction identifier="ll_n" amount="1000" />
+      </StatusEffect>
+      <StatusEffect target="Limb" disabledeltatime="true" checkconditionalalways="false" comparison="and">
+        <Conditional sym_unconsciousness="eq 0"/>
+        <Affliction identifier="pain_extremity" indicatorlimb="Limb" amount="2" />
+      </StatusEffect>
+    </PeriodicEffect>
+    <icon texture="%ModDir%/Images/AfflictionIcons.png" sheetindex="6,2" sheetelementsize="128,128" origin="0,0" />
+  </Affliction>
+  <Affliction name="" identifier="t_n" description="" healcostmultiplier="10" targets="human" limbspecific="true" type="nerves" showinhealthscannerthreshold="0" showiconthreshold="90" maxstrength="100">
+    <Effect minstrength="0" maxstrength="100" strengthchange="2" />
+    <PeriodicEffect mininterval="1" maxinterval="1">
+      <StatusEffect target="Character" disabledeltatime="true" stackable="false" delay="1" checkconditionalalways="false">
+        <Conditional ishuman="false" />
+        <ReduceAffliction identifier="t_n" amount="1000" />
+      </StatusEffect>
+      <StatusEffect target="Limb" disabledeltatime="true" checkconditionalalways="false" comparison="and">
+        <Conditional sym_unconsciousness="eq 0"/>
+        <Affliction identifier="pain_extremity" indicatorlimb="Limb" amount="2" />
+      </StatusEffect>
+    </PeriodicEffect>
+    <icon texture="%ModDir%/Images/AfflictionIcons.png" sheetindex="6,2" sheetelementsize="128,128" origin="0,0" />
+  </Affliction>
+  <Affliction name="" identifier="n_n" description="" healcostmultiplier="10" targets="human" limbspecific="true" type="nerves" showinhealthscannerthreshold="0" showiconthreshold="90" maxstrength="100">
+    <Effect minstrength="0" maxstrength="100" strengthchange="2" />
+    <PeriodicEffect mininterval="1" maxinterval="1">
+      <StatusEffect target="Character" disabledeltatime="true" stackable="false" delay="1" checkconditionalalways="false">
+        <Conditional ishuman="false" />
+        <ReduceAffliction identifier="t_n" amount="1000" />
+      </StatusEffect>
+      <StatusEffect target="Limb" disabledeltatime="true" checkconditionalalways="false" comparison="and">
+        <Conditional sym_unconsciousness="eq 0"/>
+        <Affliction identifier="pain_extremity" indicatorlimb="Limb" amount="2" />
+      </StatusEffect>
+    </PeriodicEffect>
+    <icon texture="%ModDir%/Images/AfflictionIcons.png" sheetindex="6,2" sheetelementsize="128,128" origin="0,0" />
+  </Affliction>
+  <!-- Motor System -->
+  <Affliction name="" identifier="la_m" description="" healcostmultiplier="10" targets="human" limbspecific="true" type="nerves" showinhealthscannerthreshold="0" showiconthreshold="90" maxstrength="100">
+    <Effect minstrength="0" maxstrength="100" strengthchange="2" />
+    <PeriodicEffect mininterval="1" maxinterval="1">
+      <StatusEffect target="Character" disabledeltatime="true" stackable="false" delay="1" checkconditionalalways="false">
+        <Conditional ishuman="false" />
+        <ReduceAffliction identifier="la_m" amount="1000" />
+      </StatusEffect>
+      <StatusEffect target="Limb" disabledeltatime="true" checkconditionalalways="false" comparison="and">
+        <Conditional sym_unconsciousness="eq 0" analgesia="eq 0" />
+        <Affliction identifier="pain_extremity" indicatorlimb="Limb" amount="2" />
+      </StatusEffect>
+    </PeriodicEffect>
+    <icon texture="%ModDir%/Images/AfflictionIcons.png" sheetindex="6,2" sheetelementsize="128,128" origin="0,0" />
+  </Affliction>
+  <Affliction name="" identifier="ra_m" description="" healcostmultiplier="10" targets="human" limbspecific="true" type="nerves" showinhealthscannerthreshold="0" showiconthreshold="90" maxstrength="100">
+    <Effect minstrength="0" maxstrength="100" strengthchange="2" />
+    <PeriodicEffect mininterval="1" maxinterval="1">
+      <StatusEffect target="Character" disabledeltatime="true" stackable="false" delay="1" checkconditionalalways="false">
+        <Conditional ishuman="false" />
+        <ReduceAffliction identifier="ra_m" amount="1000" />
+      </StatusEffect>
+      <StatusEffect target="Limb" disabledeltatime="true" checkconditionalalways="false" comparison="and">
+        <Conditional sym_unconsciousness="eq 0" analgesia="eq 0" />
+        <Affliction identifier="pain_extremity" indicatorlimb="Limb" amount="2" />
+      </StatusEffect>
+    </PeriodicEffect>
+    <icon texture="%ModDir%/Images/AfflictionIcons.png" sheetindex="6,2" sheetelementsize="128,128" origin="0,0" />
+  </Affliction>
+  <Affliction name="" identifier="ll_m" description="" healcostmultiplier="10" targets="human" limbspecific="true" type="nerves" showinhealthscannerthreshold="0" showiconthreshold="90" maxstrength="100">
+    <Effect minstrength="0" maxstrength="100" strengthchange="2" />
+    <PeriodicEffect mininterval="1" maxinterval="1">
+      <StatusEffect target="Character" disabledeltatime="true" stackable="false" delay="1" checkconditionalalways="false">
+        <Conditional ishuman="false" />
+        <ReduceAffliction identifier="ll_m" amount="1000" />
+      </StatusEffect>
+      <StatusEffect target="Limb" disabledeltatime="true" checkconditionalalways="false" comparison="and">
+        <Conditional sym_unconsciousness="eq 0" analgesia="eq 0" />
+        <Affliction identifier="pain_extremity" indicatorlimb="Limb" amount="2" />
+      </StatusEffect>
+    </PeriodicEffect>
+    <icon texture="%ModDir%/Images/AfflictionIcons.png" sheetindex="6,2" sheetelementsize="128,128" origin="0,0" />
+  </Affliction>
+  <Affliction name="" identifier="rl_m" description="" healcostmultiplier="10" targets="human" limbspecific="true" type="nerves" showinhealthscannerthreshold="0" showiconthreshold="90" maxstrength="100">
+    <Effect minstrength="0" maxstrength="100" strengthchange="2" />
+    <PeriodicEffect mininterval="1" maxinterval="1">
+      <StatusEffect target="Character" disabledeltatime="true" stackable="false" delay="1" checkconditionalalways="false">
+        <Conditional ishuman="false" />
+        <ReduceAffliction identifier="rl_m" amount="1000" />
+      </StatusEffect>
+      <StatusEffect target="Limb" disabledeltatime="true" checkconditionalalways="false" comparison="and">
+        <Conditional sym_unconsciousness="eq 0" analgesia="eq 0" />
+        <Affliction identifier="pain_extremity" indicatorlimb="Limb" amount="2" />
+      </StatusEffect>
+    </PeriodicEffect>
+    <icon texture="%ModDir%/Images/AfflictionIcons.png" sheetindex="6,2" sheetelementsize="128,128" origin="0,0" />
+  </Affliction>
+  <Affliction name="" identifier="t_m" description="" healcostmultiplier="10" targets="human" limbspecific="true" type="nerves" showinhealthscannerthreshold="0" showiconthreshold="90" maxstrength="100">
+    <Effect minstrength="0" maxstrength="100" strengthchange="2" />
+    <PeriodicEffect mininterval="1" maxinterval="1">
+      <StatusEffect target="Character" disabledeltatime="true" stackable="false" delay="1" checkconditionalalways="false">
+        <Conditional ishuman="false" />
+        <ReduceAffliction identifier="t_m" amount="1000" />
+      </StatusEffect>
+      <StatusEffect target="Limb" disabledeltatime="true" checkconditionalalways="false" comparison="and">
+        <Conditional sym_unconsciousness="eq 0" analgesia="eq 0" />
+        <Affliction identifier="pain_extremity" indicatorlimb="Limb" amount="2" />
+      </StatusEffect>
+    </PeriodicEffect>
+    <icon texture="%ModDir%/Images/AfflictionIcons.png" sheetindex="6,2" sheetelementsize="128,128" origin="0,0" />
+  </Affliction>
+  <Affliction name="" identifier="n_m" description="" healcostmultiplier="10" targets="human" limbspecific="true" type="nerves" showinhealthscannerthreshold="0" showiconthreshold="90" maxstrength="100">
+    <Effect minstrength="0" maxstrength="100" strengthchange="2" />
+    <PeriodicEffect mininterval="1" maxinterval="1">
+      <StatusEffect target="Character" disabledeltatime="true" stackable="false" delay="1" checkconditionalalways="false">
+        <Conditional ishuman="false" />
+        <ReduceAffliction identifier="n_m" amount="1000" />
+      </StatusEffect>
+      <StatusEffect target="Limb" disabledeltatime="true" checkconditionalalways="false" comparison="and">
+        <Conditional sym_unconsciousness="eq 0" analgesia="eq 0" />
+        <Affliction identifier="pain_extremity" indicatorlimb="Limb" amount="2" />
+      </StatusEffect>
+    </PeriodicEffect>
+    <icon texture="%ModDir%/Images/AfflictionIcons.png" sheetindex="6,2" sheetelementsize="128,128" origin="0,0" />
+  </Affliction>
+
+
+
 <!-- /// Fractures Stuff /// -->
-  <!-- Fractures -->
+  <!-- Right Arm Fracture -->
   <Affliction name="" identifier="ra_fracture" description="" healcostmultiplier="10" targets="human" limbspecific="true" type="fractures" showinhealthscannerthreshold="0" showiconthreshold="90" maxstrength="100">
     <Effect minstrength="0" maxstrength="6" strengthchange="2">
       <StatusEffect target="Limb">
