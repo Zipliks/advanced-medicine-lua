@@ -627,13 +627,13 @@ function Main.UpdateHuman(character)
         end
 
         heartdamage = organDamageCalc(heartdamage + NTC.GetMultiplier(character,"heartdamagegain")*(neworgandamage + Utils.Clamp(heartattack,0,0.5) * Main.Deltatime))
-        heartfibrosis = organDamageCalc(heartfibrosis + NTC.GetMultiplier(character,"heartfibrosis")*( Utils.Clamp(heartdamage,0,0.1) * Main.Deltatime))
+        heartfibrosis = organDamageCalc(heartfibrosis + NTC.GetMultiplier(character,"heartfibrosis")*( Utils.Clamp(heartdamage,0,0.05) * Main.Deltatime))
         lungdamage = organDamageCalc(lungdamage + NTC.GetMultiplier(character,"lungdamagegain")*(neworgandamage + math.max(rads-25,0)/800*Main.Deltatime))
-        lungfibrosis = organDamageCalc(lungfibrosis + NTC.GetMultiplier(character,"lungfibrosis")*( Utils.Clamp(lungdamage,0,0.1) * Main.Deltatime))
+        lungfibrosis = organDamageCalc(lungfibrosis + NTC.GetMultiplier(character,"lungfibrosis")*( Utils.Clamp(lungdamage,0,0.05) * Main.Deltatime))
         liverdamage = organDamageCalc(liverdamage + NTC.GetMultiplier(character,"liverdamagegain")*neworgandamage)
-        liverfibrosis = organDamageCalc(liverfibrosis + NTC.GetMultiplier(character,"liverfibrosis")*( Utils.Clamp(liverdamage,0,0.1) * Main.Deltatime))
+        liverfibrosis = organDamageCalc(liverfibrosis + NTC.GetMultiplier(character,"liverfibrosis")*( Utils.Clamp(liverdamage,0,0.05) * Main.Deltatime))
         kidneydamage = kidneyDamageCalc(kidneydamage + NTC.GetMultiplier(character,"kidneydamagegain")*(neworgandamage + Utils.Clamp((bloodpressure-120)/160,0,0.5)*Main.Deltatime*0.5))
-        kidneyfibrosis = organDamageCalc(kidneyfibrosis + NTC.GetMultiplier(character,"kidneyfibrosis")*( Utils.Clamp(kidneydamage,0,0.1) * Main.Deltatime))
+        kidneyfibrosis = organDamageCalc(kidneyfibrosis + NTC.GetMultiplier(character,"kidneyfibrosis")*( Utils.Clamp(kidneydamage,0,0.05) * Main.Deltatime))
         -- TODO: Bonedeath rework /// bonedamage = organDamageCalc(bonedamage + NTC.GetMultiplier(character,"bonedamagegain")*(sepsis/500 + hypoxemia/1000 + math.max(rads-25,0)/600)*Main.Deltatime)
         organdamage = organdamage + neworgandamage - 0.03 * healMultiplier * Main.Deltatime
 

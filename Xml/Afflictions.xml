@@ -104,32 +104,32 @@
   </Affliction>
   <!-- Subdural hematoma
   Scanned Symptom -->
-  <Affliction name="Subdural hematoma" identifier="s_hematoma" description="" healableinmedicalclinic="false" type="gaze" isbuff="false" targets="human" limbspecific="false" indicatorlimb="Head" activationthreshold="0" causeofdeathdescription="Brain dead" selfcauseofdeathdescription="Your brain is dead." showinhealthscannerthreshold="0" showiconthreshold="300" maxstrength="200">
+  <Affliction name="Subdural hematoma" identifier="s_hematoma" description="" healableinmedicalclinic="false" type="gaze" isbuff="false" targets="human" limbspecific="false" indicatorlimb="Head" activationthreshold="0" causeofdeathdescription="Brain dead" selfcauseofdeathdescription="Your brain is dead." showinhealthscannerthreshold="0" showiconthreshold="300" maxstrength="100">
     <icon texture="Content/UI/MainIconsAtlas.png" sourcerect="128,640,128,128" color="195,177,60,255" origin="0,0" />
   </Affliction>
   <!-- Subarachnoid hemorrhage / SAH / Hemorrhagic stroke
   Scanned Symptom -->
-  <Affliction name="Subarachnoid hemorrhage" identifier="s_hemorrhage" description="" healableinmedicalclinic="false" type="gaze" isbuff="false" targets="human" limbspecific="false" indicatorlimb="Head" activationthreshold="0" causeofdeathdescription="Brain dead" selfcauseofdeathdescription="Your brain is dead." showinhealthscannerthreshold="0" showiconthreshold="300" maxstrength="200">
+  <Affliction name="Subarachnoid hemorrhage" identifier="s_hemorrhage" description="" healableinmedicalclinic="false" type="gaze" isbuff="false" targets="human" limbspecific="false" indicatorlimb="Head" activationthreshold="0" causeofdeathdescription="Brain dead" selfcauseofdeathdescription="Your brain is dead." showinhealthscannerthreshold="0" showiconthreshold="300" maxstrength="100">
     <icon texture="Content/UI/MainIconsAtlas.png" sourcerect="128,640,128,128" color="195,177,60,255" origin="0,0" />
   </Affliction>
   <!-- Intracerebral hemorrhage / Hemorrhagic stroke
   Scanned Symptom --> 
-  <Affliction name="Intracerebral hemorrhage" identifier="i_hemorrhage" description="" healableinmedicalclinic="false" type="gaze" isbuff="false" targets="human" limbspecific="false" indicatorlimb="Head" activationthreshold="0" causeofdeathdescription="Brain dead" selfcauseofdeathdescription="Your brain is dead." showinhealthscannerthreshold="0" showiconthreshold="300" maxstrength="200">
+  <Affliction name="Intracerebral hemorrhage" identifier="i_hemorrhage" description="" healableinmedicalclinic="false" type="gaze" isbuff="false" targets="human" limbspecific="false" indicatorlimb="Head" activationthreshold="0" causeofdeathdescription="Brain dead" selfcauseofdeathdescription="Your brain is dead." showinhealthscannerthreshold="0" showiconthreshold="300" maxstrength="100">
     <icon texture="Content/UI/MainIconsAtlas.png" sourcerect="128,640,128,128" color="195,177,60,255" origin="0,0" />
   </Affliction>
   <!-- Intracerebral hemorrhage / Hemorrhagic stroke
   Scanned Symptom --> 
-  <Affliction name="" identifier="i_hemorrhage" description="" healableinmedicalclinic="false" type="gaze" isbuff="false" targets="human" limbspecific="false" indicatorlimb="Head" activationthreshold="0" causeofdeathdescription="Brain dead" selfcauseofdeathdescription="Your brain is dead." showinhealthscannerthreshold="300" showiconthreshold="300" maxstrength="200">
+  <Affliction name="" identifier="i_hemorrhage" description="" healableinmedicalclinic="false" type="gaze" isbuff="false" targets="human" limbspecific="false" indicatorlimb="Head" activationthreshold="0" causeofdeathdescription="Brain dead" selfcauseofdeathdescription="Your brain is dead." showinhealthscannerthreshold="300" showiconthreshold="300" maxstrength="100">
     <icon texture="Content/UI/MainIconsAtlas.png" sourcerect="128,640,128,128" color="195,177,60,255" origin="0,0" />
   </Affliction>
   <!-- Epidural hematoma / Skull fracture
   Scanned Symptom -->
-  <Affliction name="Epidural hematoma" identifier="e_hematoma" description="" healableinmedicalclinic="false" type="gaze" isbuff="false" targets="human" limbspecific="false" indicatorlimb="Head" activationthreshold="0" causeofdeathdescription="Brain dead" selfcauseofdeathdescription="Your brain is dead." showinhealthscannerthreshold="0" showiconthreshold="300" maxstrength="200">
+  <Affliction name="Epidural hematoma" identifier="e_hematoma" description="" healableinmedicalclinic="false" type="gaze" isbuff="false" targets="human" limbspecific="false" indicatorlimb="Head" activationthreshold="0" causeofdeathdescription="Brain dead" selfcauseofdeathdescription="Your brain is dead." showinhealthscannerthreshold="0" showiconthreshold="300" maxstrength="100">
     <icon texture="Content/UI/MainIconsAtlas.png" sourcerect="128,640,128,128" color="195,177,60,255" origin="0,0" />
   </Affliction>
   <!-- Сerebral edema / Non-embolic stoke
   Scanned Symptom -->
-  <Affliction name="Сerebral edema" identifier="cerebral_edema" description="" healableinmedicalclinic="false" type="gaze" isbuff="false" targets="human" limbspecific="false" indicatorlimb="Head" activationthreshold="0" causeofdeathdescription="Brain dead" selfcauseofdeathdescription="Your brain is dead." showinhealthscannerthreshold="0" showiconthreshold="300" maxstrength="200">
+  <Affliction name="Сerebral edema" identifier="cerebral_edema" description="" healableinmedicalclinic="false" type="gaze" isbuff="false" targets="human" limbspecific="false" indicatorlimb="Head" activationthreshold="0" causeofdeathdescription="Brain dead" selfcauseofdeathdescription="Your brain is dead." showinhealthscannerthreshold="0" showiconthreshold="300" maxstrength="100">
     <icon texture="Content/UI/MainIconsAtlas.png" sourcerect="128,640,128,128" color="195,177,60,255" origin="0,0" />
   </Affliction>
   <!-- Cerebral hypoxia / Low oxygen presence in the brain
