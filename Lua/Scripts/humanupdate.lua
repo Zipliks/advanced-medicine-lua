@@ -126,7 +126,7 @@ function Main.UpdateHuman(character)
         -- assume that blood type has also been lost and assign new bloodtype
         immunity = 100
         previmmunity = 0
-        Main.TryRandomizeBlood(character)
+        Main.InitAfflictions(character)
     end
     immunity = Utils.Clamp(immunity+(0.5+immunity/100)*Main.Deltatime,1,100)
 

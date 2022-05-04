@@ -1,4 +1,3 @@
-print("ondamage")
 Hook.Add("character.applyDamage", "AM.ondamaged", function (characterHealth, attackResult, hitLimb)
     
     if -- invalid attack data, don't do anything
@@ -118,7 +117,7 @@ Main.OnDamagedMethods.explosiondamage = function(character,strength,limbtype)
         if strength >= 15 and Utils.Chance(math.min(strength/60,0.7)*NTC.GetMultiplier(character,"anyfracturechance")) then
             Utils.AddAfflictionLimb(character,"n_fracture",limbtype,5) end
         if strength >= 25 and Utils.Chance(0.25) then
-            Utils.AddAfflictionLimb(character,"gate_ta_h",limbtype,5) end
+            Utils.AddAfflictionLimb(character,"th_amputation",limbtype,5) end
     end
 
     -- extremities
