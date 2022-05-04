@@ -1,4 +1,4 @@
-
+print("ondamage")
 Hook.Add("character.applyDamage", "AM.ondamaged", function (characterHealth, attackResult, hitLimb)
     
     if -- invalid attack data, don't do anything
@@ -35,7 +35,7 @@ Main.OnDamagedMethods = {}
 local function HasLungs(c) return not Utils.HasAffliction(c,"lungremoved") end
 local function HasHeart(c) return not Utils.HasAffliction(c,"heartremoved") end
 
--- cause foreign bodies, rib fractures, pneumothorax, tamponade, internal bleeding, fractures, cerebralhypoxia
+-- cause foreign bodies, rib fractures, pneumothorax, tamponade, internal bleeding, fractures, neurotrauma
 Main.OnDamagedMethods.gunshotwound = function(character,strength,limbtype) 
     limbtype = Utils.NormalizeLimbType(limbtype)
 
@@ -288,64 +288,53 @@ end
 
 
 function Main.DislocateLimb(character,limbtype)
-    local limbtoaffliction = {}
-    limbtoaffliction[LimbType.RightLeg] = "dislocation1"
-    limbtoaffliction[LimbType.LeftLeg] = "dislocation2"
-    limbtoaffliction[LimbType.RightArm] = "dislocation3"
-    limbtoaffliction[LimbType.LeftArm] = "dislocation4"
-    if limbtoaffliction[limbtype] == nil then return end
-    Utils.AddAfflictionLimb(character,limbtoaffliction[limbtype],limbtype,1)
+    local limb_data = Utils.LIMB_DATA[limbtype]
+    if limb_data == nil then return end
+    Utils.AddAfflictionLimb(character,limb_data.dislocation,limbtype,1)
 end
 
 function Main.BreakLimb(character,limbtype)
-    local limbtoaffliction = {}
-    limbtoaffliction[LimbType.RightLeg] = "rl_fracture"
-    limbtoaffliction[LimbType.LeftLeg] = "ll_fracture"
-    limbtoaffliction[LimbType.RightArm] = "ra_fracture"
-    limbtoaffliction[LimbType.LeftArm] = "la_fracture"
-    if limbtoaffliction[limbtype] == nil then return end
-    Utils.AddAfflictionLimb(character,limbtoaffliction[limbtype],limbtype,5)
+    local limb_data = Utils.LIMB_DATA[limbtype]
+    if limb_data == nil then return end
+    Utils.AddAfflictionLimb(character,limb_data.fracture,limbtype,5)
 end
 
 function Main.TraumamputateLimb(character,limbtype)
-    local limbtoaffliction = {}
-    limbtoaffliction[LimbType.RightLeg] = "gate_ta_rl"
-    limbtoaffliction[LimbType.LeftLeg] = "gate_ta_ll"
-    limbtoaffliction[LimbType.RightArm] = "gate_ta_ra"
-    limbtoaffliction[LimbType.LeftArm] = "gate_ta_la"
-    if limbtoaffliction[limbtype] == nil then return end
-    Utils.AddAfflictionLimb(character,limbtoaffliction[limbtype],limbtype,10)
+    local limb_data = Utils.LIMB_DATA[limbtype]
+    if limb_data == nil then return end
+    Utils.AddAfflictionLimb(character,limb_data.t_amputation,limbtype,10)
+
+    Utils.SetAfflictionLimb(character,limb_data.arterial_cut,limbtype,100)
+    Utils.SetAfflictionLimb(character,limb_data.fracture,limbtype,100)
+    Utils.SetAfflictionLimb(character,"severepain",limbtype,100)
+
+    -- Спавн оторванной конечности
+    local prefab = ItemPrefab.GetItemPrefab(limb_data.item)
+    Entity.Spawner.AddItemToSpawnQueue(prefab, character.WorldPosition, nil, nil, nil)
+
 end
 
 function Main.TraumamputateLimbMinusItem(character,limbtype)
-    local limbtoaffliction = {}
-    limbtoaffliction[LimbType.RightLeg] = "gate_ta_rl_2"
-    limbtoaffliction[LimbType.LeftLeg] = "gate_ta_ll_2"
-    limbtoaffliction[LimbType.RightArm] = "gate_ta_ra_2"
-    limbtoaffliction[LimbType.LeftArm] = "gate_ta_la_2"
-    if limbtoaffliction[limbtype] == nil then return end
-    Utils.AddAfflictionLimb(character,limbtoaffliction[limbtype],limbtype,10)
+    local limb_data = Utils.LIMB_DATA[limbtype]
+    if limb_data == nil then return end
+    Utils.AddAfflictionLimb(character,limb_data.t_amputation,limbtype,10)
+
+    Utils.SetAfflictionLimb(character,limb_data.arterial_cut,limbtype,100)
+    Utils.SetAfflictionLimb(character,limb_data.fracture,limbtype,100)
+    Utils.SetAfflictionLimb(character,"severepain",limbtype,100)
 end
 
 
 function Main.LimbIsDislocated(character,limbtype)
-    local limbtoaffliction = {}
-    limbtoaffliction[LimbType.RightLeg] = "dislocation1"
-    limbtoaffliction[LimbType.LeftLeg] = "dislocation2"
-    limbtoaffliction[LimbType.RightArm] = "dislocation3"
-    limbtoaffliction[LimbType.LeftArm] = "dislocation4"
-    if limbtoaffliction[limbtype] == nil then return false end
-    return Utils.HasAfflictionLimb(character,limbtoaffliction[limbtype],limbtype,1)
+    local limb_data = Utils.LIMB_DATA[limbtype]
+    if limb_data == nil then return end
+    return Utils.HasAfflictionLimb(character,limb_data.dislocation,limbtype,1)
 end
 
 function Main.LimbIsBroken(character,limbtype)
-    local limbtoaffliction = {}
-    limbtoaffliction[LimbType.RightLeg] = "rl_fracture"
-    limbtoaffliction[LimbType.LeftLeg] = "ll_fracture"
-    limbtoaffliction[LimbType.RightArm] = "ra_fracture"
-    limbtoaffliction[LimbType.LeftArm] = "la_fracture"
-    if limbtoaffliction[limbtype] == nil then return false end
-    return Utils.HasAfflictionLimb(character,limbtoaffliction[limbtype],limbtype,1)
+    local limb_data = Utils.LIMB_DATA[limbtype]
+    if limb_data == nil then return end
+    return Utils.HasAfflictionLimb(character,limb_data.fracture,limbtype,1)
 end
 
 function Main.LimbIsAmputated(character,limbtype)
@@ -355,21 +344,13 @@ function Main.LimbIsAmputated(character,limbtype)
 end
 
 function Main.LimbIsTraumaticallyAmputated(character,limbtype)
-    local limbtoaffliction = {}
-    limbtoaffliction[LimbType.RightLeg] = "trl_amputation"
-    limbtoaffliction[LimbType.LeftLeg] = "tll_amputation"
-    limbtoaffliction[LimbType.RightArm] = "tra_amputation"
-    limbtoaffliction[LimbType.LeftArm] = "tla_amputation"
-    if limbtoaffliction[limbtype] == nil then return false end
-    return Utils.HasAfflictionLimb(character,limbtoaffliction[limbtype],limbtype,0.1)
+    local limb_data = Utils.LIMB_DATA[limbtype]
+    if limb_data == nil then return end
+    return Utils.HasAfflictionLimb(character,limb_data.t_amputation,limbtype,0.1)
 end
 
 function Main.LimbIsSurgicallyAmputated(character,limbtype)
-    local limbtoaffliction = {}
-    limbtoaffliction[LimbType.RightLeg] = "srl_amputation"
-    limbtoaffliction[LimbType.LeftLeg] = "sll_amputation"
-    limbtoaffliction[LimbType.RightArm] = "sra_amputation"
-    limbtoaffliction[LimbType.LeftArm] = "sla_amputation"
-    if limbtoaffliction[limbtype] == nil then return false end
-    return Utils.HasAfflictionLimb(character,limbtoaffliction[limbtype],limbtype,0.1)
+    local limb_data = Utils.LIMB_DATA[limbtype]
+    if limb_data == nil then return end
+    return Utils.HasAfflictionLimb(character,limb_data.s_amputation,limbtype,0.1)
 end
