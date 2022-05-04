@@ -28,6 +28,23 @@ end
 
 -- /// affliction magic ///
 ------------------------------
+
+-- LIMB_DATA хранит в себе информацию о вещах, связанных с конечностью
+--[[
+    t_amputation: ID аффликшена травматичной ампутации
+    s_amputation: ID аффликшена хирургической ампутации
+    arterial_cut: ID аффликшена артериального кровотечения
+    fracture: ID аффликшена перелома
+    dislocation: ID аффликшена вывиха
+
+    item: ID предмета этой конечности
+--]]
+Utils.LIMB_DATA = {}
+Utils.LIMB_DATA[LimbType.RightLeg] = {t_amputation="trl_amputation",s_amputation="srl_amputation",arterial_cut="rl_arterialcut",fracture="rl_fracture",item="rleg",dislocation="dislocation1"}
+Utils.LIMB_DATA[LimbType.LeftLeg] = {t_amputation="tll_amputation",s_amputation="sll_amputation",arterial_cut="ll_arterialcut",fracture="ll_fracture",item="lleg",dislocation="dislocation1"}
+Utils.LIMB_DATA[LimbType.RightArm] = {t_amputation="tra_amputation",s_amputation="sra_amputation",arterial_cut="ra_arterialcut",fracture="ra_fracture",item="rarm",dislocation="dislocation1"}
+Utils.LIMB_DATA[LimbType.LeftArm] = {t_amputation="tla_amputation",s_amputation="sla_amputation",arterial_cut="la_arterialcut",fracture="la_fracture",item="larm",dislocation="dislocation1"}
+
 function Utils.GetAfflictionStrength(character,identifier,defaultvalue)
     local aff = character.CharacterHealth.GetAffliction(identifier)
     local res = defaultvalue or 0
