@@ -71,15 +71,18 @@ function Main.UpdateHuman(character)
     local asys = Utils.GetAfflictionStrength(character,"asys",0)
     local removedheart = Utils.GetAfflictionStrength(character,"heartremoved",0)
     local prevasys = asys
+    if(asys > 0) then asys=asys+0.5*Main.Deltatime end
     if(asys > 1) then bloodpressure=bloodpressure-bloodpressure/10*Main.Deltatime  end
     local removedbrain = Utils.GetAfflictionStrength(character,"brainremoved",0)
     
     -- arrhythmias
     local vt = Utils.GetAfflictionStrength(character,"vt",0)
     local prevvt = vt
+    if(vt > 0) then vt=vt+0.5*Main.Deltatime end
     if(vt > 1) then bloodpressure=bloodpressure-bloodpressure/10*Main.Deltatime  end
     local vf = Utils.GetAfflictionStrength(character,"vf",0)
     local prevvf = vf
+    if(vf > 0) then vf=vf+0.5*Main.Deltatime end
     if(vf > 1) then bloodpressure=bloodpressure-bloodpressure/10*Main.Deltatime  end
     local af = Utils.GetAfflictionStrength(character,"af",0)
     local prevaf = af
@@ -207,7 +210,7 @@ function Main.UpdateHuman(character)
     local s_hematoma = Utils.GetAfflictionStrength(character,"s_hematoma",0)
     local prevs_hematoma = s_hematoma
     if(s_hematoma > 50) then s_hematoma=s_hematoma+0.5*Main.Deltatime end
-    local s_hemorrhage = Utils.GetAfflictionStrength(character,"pneumothorax",0)
+    local s_hemorrhage = Utils.GetAfflictionStrength(character,"s_hemorrhage",0)
     local prevs_hemorrhage = s_hemorrhage
     if(s_hemorrhage > 30) then s_hemorrhage=s_hemorrhage+0.5*Main.Deltatime end
     local i_hemorrhage = Utils.GetAfflictionStrength(character,"i_hemorrhage",0)
@@ -249,42 +252,6 @@ function Main.UpdateHuman(character)
     local nerveintegrity = Utils.GetAfflictionStrength(character,"nerveintegrity",0)
     local prevnerveintegrity = nerveintegrity
     
-    -- Right Eye
-    local r_cornealdamage = Utils.GetAfflictionStrength(character,"r_cornealdamage",0)
-    local prevr_cornealdamage = r_cornealdamage
-    local r_retinaldamage = Utils.GetAfflictionStrength(character,"r_retinaldamagey",0)
-    local prevr_retinaldamagey = r_retinaldamage
-    local r_lensdamage = Utils.GetAfflictionStrength(character,"r_lensdamage",0)
-    local prevr_lensdamage = r_lensdamage
-    local r_vitreousremoval = Utils.GetAfflictionStrength(character,"r_vitreousremoval",0)
-    local prevr_vitreousremoval = r_vitreousremoval
-    local r_eyeremoval = Utils.GetAfflictionStrength(character,"r_eyeremoval",0)
-    local prevr_eyeremoval = r_eyeremoval
-    
-    -- Left Eye
-    local l_cornealdamage = Utils.GetAfflictionStrength(character,"l_cornealdamage",0)
-    local prevl_cornealdamage = l_cornealdamage
-    local l_retinaldamage = Utils.GetAfflictionStrength(character,"l_retinaldamagey",0)
-    local prevr_letinaldamagey = l_retinaldamage
-    local l_lensdamage = Utils.GetAfflictionStrength(character,"l_lensdamage",0)
-    local prevl_lensdamage = l_lensdamage
-    local l_vitreousremoval = Utils.GetAfflictionStrength(character,"l_vitreousremoval",0)
-    local prevr_vitreousremoval = l_vitreousremoval
-    local l_eyeremoval = Utils.GetAfflictionStrength(character,"l_eyeremoval",0)
-    local prevl_eyeremoval = l_eyeremoval
-
-    -- Motor system
-    local musclestrains = Utils.GetAfflictionStrength(character,"musclestrains",0)
-    local prevmusclestrains = musclestrains
-    local torn_l_t = Utils.GetAfflictionStrength(character,"torn_l_t",0)
-    local prevtorn_l_t = torn_l_t
-
-    -- Nerve system
-    local nervedamage = Utils.GetAfflictionStrength(character,"nervedamage",0)
-    local prevnervedamage = nervedamage
-    local nerveintegrity = Utils.GetAfflictionStrength(character,"nerveintegrity",0)
-    local prevnerveintegrity = nerveintegrity
-
     -- Right Eye
     local r_cornealdamage = Utils.GetAfflictionStrength(character,"r_cornealdamage",0)
     local prevr_cornealdamage = r_cornealdamage
@@ -761,9 +728,9 @@ function Main.UpdateHuman(character)
     Utils.ApplyAfflictionChange(character,"seizure",seizure + Utils.BoolToNum(triggersym_seizure,10),prevseizure,0,100)
     Utils.ApplyAfflictionChange(character,"stroke",stroke + Utils.BoolToNum(triggersym_stroke,5),prevstroke,0,100)
     Utils.ApplyAfflictionChange(character,"coma",coma + Utils.BoolToNum(triggersym_coma,14),prevcoma,0,100)
-    Utils.ApplyAfflictionChange(character,"asys",asys + Utils.BoolToNum(triggersym_asys,10),prevasys,0,10)
-    Utils.ApplyAfflictionChange(character,"vt",vt + Utils.BoolToNum(triggersym_vt,10),prevvt,0,10)
-    Utils.ApplyAfflictionChange(character,"vf",vf + Utils.BoolToNum(triggersym_vf,10),prevvt,0,10)
+    Utils.ApplyAfflictionChange(character,"asys",asys + Utils.BoolToNum(triggersym_asys,10),prevasys,0,100)
+    Utils.ApplyAfflictionChange(character,"vt",vt + Utils.BoolToNum(triggersym_vt,10),prevvt,0,100)
+    Utils.ApplyAfflictionChange(character,"vf",vf + Utils.BoolToNum(triggersym_vf,10),prevvt,0,100)
     Utils.ApplyAfflictionChange(character,"respiratoryarrest",respiratoryarrest + Utils.BoolToNum(triggersym_respiratoryarrest,10),prevrespiratoryarrest,0,10)
 
     -- /// Apply symptoms ///
