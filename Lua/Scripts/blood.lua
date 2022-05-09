@@ -1,39 +1,36 @@
 ---@diagnostic disable: lowercase-global, undefined-global
-require("Scripts._DEFINES.const")
 
-local blood = {}
-
--- Пихаем всю кровь в таблицу, откуда потом достанем нужный тип
-for _, type in pairs(BLOODTYPE) do
-    table.insert(blood, AfflictionPrefab.Prefabs[type])
+-- Накладывает случайную группу крови в таблице 
+local function randomize_blood(character)
+    rand = math.random(1,#BLOODTYPE)
+    Utils.SetAffliction(character,BLOODTYPE[rand],1)
 end
 
--- Накладывает случайную группу крови через таблицу (1,8) 
-local function randomize_blood(character)
-    rand = math.random(1,8)
-    character.CharacterHealth.ApplyAffliction(character.AnimController.MainLimb, blood[rand].Instantiate(100))
+-- Проверяет наличие крови и возвращает true если она есть
+local function HasBlood(character)
+    for _, affliction in pairs(BLOODTYPE) do
+        local conditional = Utils.GetAffliction(character,affliction)
+
+        if(conditional > 0) then
+            return true -- Если у игрока есть кровь, сразу выходим из цикла
+        end
+    end
+    return false
 end
 
 Hook.Add("characterCreated", "bloodGenerate", function(createdCharacter)
     Timer.Wait(function()
         if(createdCharacter.IsPlayer and not createdCharacter.IsDead) then
-            local has_blood = false
-
-            for _, affliction in pairs(BLOODTYPE) do
-                local conditional = createdCharacter.CharacterHealth.GetAffliction(affliction)
-
-                if(conditional and conditional.Strength > 0) then
-                    has_blood = true -- Если у игрока есть кровь, сразу выходим из цикла
-                    break
-                end
-            end
-
             -- Если крови нет, генерируем
-            if(not has_blood) then
+            if(not HasBlood(createdCharacter)) then
                 randomize_blood(createdCharacter)
             end
         end
     end, 1000)
 end)
 
-
+function Main.FixBlood(character)
+    if(not HasBlood(character)) then
+        randomize_blood(character)
+    end
+end

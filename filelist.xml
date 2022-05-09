@@ -2,9 +2,10 @@
 <contentpackage name="AMlua" modversion="1.0.4" corepackage="False" gameversion="0.17.0.0">
   <!-- Afflictions -->
   <Afflictions file="%ModDir%/Xml/Afflictions.xml" />
-  <!-- Items -->
+  <!-- Items, консоль от любого движения открывается, пусть пока будет закомменчено
   <Item file="%ModDir%/Xml/Items.xml" />
   <Item file="%ModDir%/Backpack/Medipack.xml" />
+   -->
   <!-- Localization -->
   <Text file="%ModDir%/Localization/Russian/Russian.xml" />
   <Text file="%ModDir%/Localization/Russian/Russian_Guide.xml" />
@@ -86,10 +87,11 @@
   <None file="%ModDir%/Images/limbs.png" />
   <None file="%ModDir%/Characters/Human/Ragdolls/HumanDefaultRagdoll.xml" />
   <None file="%ModDir%/Sound/Voice/screams_woman_2.ogg" />
+  <!-- Lua -->
   <None file="%ModDir%/Lua/Scripts/hypothermia.lua" />
   <None file="%ModDir%/Lua/Scripts/blood.lua" />
   <None file="%ModDir%/Lua/Scripts/debug.lua" />
   <None file="%ModDir%/Lua/Autorun/main.lua" />
-  <!-- Character -->
-  <Character file="%ModDir%/Characters/Human/Human.xml" />
+  <!-- Character, хуман.xml без текстурок ампутации не отличается от оригинала
+  <Character file="%ModDir%/Characters/Human/Human.xml" /> -->
 </contentpackage>
