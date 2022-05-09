@@ -1,10 +1,8 @@
-local freezingPrefab = AfflictionPrefab.Prefabs["freezing"]
-
 -- Checks if player limb is in water and applies freezing
 local function isFreezing(character)
     for _, limb in pairs(character.AnimController.Limbs) do
         if (limb.InWater) then
-            character.CharacterHealth.ApplyAffliction(limb, freezingPrefab.Instantiate(0.005))
+            Utils.SetAffliction(character,"freezing",0.005,true)
         end
     end
 end

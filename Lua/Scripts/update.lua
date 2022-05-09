@@ -1,6 +1,4 @@
 ---@diagnostic disable: undefined-field, undefined-global
-require("Scripts._DEFINES.const")
-require("Scripts._HELPERS.utils")
 
 aff_list = {}
 
@@ -29,9 +27,9 @@ end
 local function update_human(character)
     get_affliction()
 
-    for key, affliction in ipairs(aff_list) do
-        --temp_affliction[key] = affliction
-    end
+    --[[for key, affliction in ipairs(aff_list) do
+        temp_affliction[key] = affliction
+    end--]]
 end
 
 -- * Срабатывает каждые 2 секунды
