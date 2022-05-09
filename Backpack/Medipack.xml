@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Items>
+  <Item name="Medipack" identifier="medipack" category="Equipment" tags="smallitem,mobilecontainer,medical,toolbox" showcontentsintooltip="true" waterproof="true" scale="0.12" fireproof="true" impactsoundtag="impact_metal_heavy" description="A case allowing a easier medical related items transportation.">
+    <PreferredContainer primary="medcabinet" minamount="1" maxamount="1" spawnprobability="0.2" />
+    <PreferredContainer primary="medcontainer" minamount="1" maxamount="1" spawnprobability="0.2" />
+    <PreferredContainer primary="wreckstoragecab" minamount="0" maxamount="2" spawnprobability="0.1" />
+    <Deconstruct time="20">
+      <Item identifier="plastic" />
+      <Item identifier="rubber" />
+    </Deconstruct>
+    <Fabricate suitablefabricators="fabricator,medicalfabricator" requiredtime="20">
+      <RequiredSkill identifier="mechanical" level="15" />
+      <Item identifier="plastic" />
+      <Item identifier="rubber" />
+    </Fabricate>
+    <Price baseprice="50">
+      <Price locationtype="outpost" multiplier="1.75" minavailable="0" />
+      <Price locationtype="city" multiplier="1.5" minavailable="0" />
+      <Price locationtype="research" multiplier="0.5" minavailable="3" />
+      <Price locationtype="military" multiplier="1.0" minavailable="1" />
+      <Price locationtype="mine" multiplier="2.0" minavailable="0" />
+    </Price>
+    <InventoryIcon texture="Medipack.png" sourcerect="33,38,461,423" origin="0.5,0.6" />
+    <Sprite texture="Medipack.png" sourcerect="33,38,461,423" depth="0.55" origin="0.5,1" />
+    <Body width="45" height="31" density="20" />
+    <Holdable slots="RightHand,LeftHand" holdpos="10,-90" handle1="-5,360" aimable="false" msg="ItemMsgPickUpSelect" />
+    <ItemContainer capacity="12" keepopenwhenequipped="true" movableframe="true">
+      <Containable items="chem,medical,syringe,huskeggs,organicfiber,paralyxis,plant" excludeditems="mobilecontainer" />
+      <SlotIcon slotindex="0" texture="Content/UI/ContainerIndicators.png" sourcerect="2,155,120,29" origin="0.5,0.5" />
+      <SlotIcon slotindex="1" texture="Content/UI/ContainerIndicators.png" sourcerect="2,155,120,29" origin="0.5,0.5" />
+      <SlotIcon slotindex="2" texture="Content/UI/ContainerIndicators.png" sourcerect="2,155,120,29" origin="0.5,0.5" />
+      <SlotIcon slotindex="3" texture="Content/UI/ContainerIndicators.png" sourcerect="2,155,120,29" origin="0.5,0.5" />
+      <SlotIcon slotindex="4" texture="Content/UI/ContainerIndicators.png" sourcerect="2,155,120,29" origin="0.5,0.5" />
+      <SlotIcon slotindex="5" texture="Content/UI/ContainerIndicators.png" sourcerect="2,155,120,29" origin="0.5,0.5" />
+      <SlotIcon slotindex="6" texture="Content/UI/ContainerIndicators.png" sourcerect="2,155,120,29" origin="0.5,0.5" />
+      <SlotIcon slotindex="7" texture="Content/UI/ContainerIndicators.png" sourcerect="2,155,120,29" origin="0.5,0.5" />
+      <SlotIcon slotindex="8" texture="Content/UI/ContainerIndicators.png" sourcerect="2,155,120,29" origin="0.5,0.5" />
+      <SlotIcon slotindex="9" texture="Content/UI/ContainerIndicators.png" sourcerect="2,155,120,29" origin="0.5,0.5" />
+      <SlotIcon slotindex="10" texture="Content/UI/ContainerIndicators.png" sourcerect="2,155,120,29" origin="0.5,0.5" />
+      <SlotIcon slotindex="11" texture="Content/UI/ContainerIndicators.png" sourcerect="2,155,120,29" origin="0.5,0.5" />
+    </ItemContainer>
+    <aitarget sightrange="1000" soundrange="1000" fadeouttime="2" />
+  </Item>
+</Items>
