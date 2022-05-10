@@ -1,13 +1,11 @@
----@diagnostic disable: lowercase-global, undefined-global
-
 -- Накладывает случайную группу крови в таблице 
-local function randomize_blood(character)
+local function GiveRandomBlood(character)
     rand = math.random(1,#BLOODTYPE)
     Utils.SetAffliction(character,BLOODTYPE[rand],1)
 end
 
 -- Проверяет наличие крови и возвращает true если она есть
-local function HasBlood(character)
+local function HasBloodGroup(character)
     for _, affliction in pairs(BLOODTYPE) do
         local conditional = Utils.GetAffliction(character,affliction)
 
@@ -18,19 +16,23 @@ local function HasBlood(character)
     return false
 end
 
-Hook.Add("characterCreated", "bloodGenerate", function(createdCharacter)
+-- Возвращает недостающие аффликшены, которые обязательны
+function Main.FixRequiredAfflictions(character)
+    -- Выдача крови
+    if(not HasBloodGroup(character)) then
+        GiveRandomBlood(character)
+    end
+
+    -- Выдача иммунитета
+    if(Utils.GetAffliction(character,"immunity") == 0) then
+        Utils.SetAffliction(character,"immunity",600)
+    end
+end
+
+Hook.Add("characterCreated", "AM.init_char", function(createdCharacter)
     Timer.Wait(function()
         if(createdCharacter.IsPlayer and not createdCharacter.IsDead) then
-            -- Если крови нет, генерируем
-            if(not HasBlood(createdCharacter)) then
-                randomize_blood(createdCharacter)
-            end
+            Main.FixRequiredAfflictions(createdCharacter)
         end
     end, 1000)
 end)
-
-function Main.FixBlood(character)
-    if(not HasBlood(character)) then
-        randomize_blood(character)
-    end
-end

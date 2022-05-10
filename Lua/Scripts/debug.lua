@@ -2,7 +2,7 @@
 local asys = AfflictionPrefab.Prefabs["asys"]
 
 
-Hook.Add('chatMessage', 'chat_console', function(msg, client)
+Hook.Add('chatMessage', 'AM.chat_console', function(msg, client)
     -- Если клиент не управляет персонажем - игнорить
     if client.Character == nil then return false end
 
@@ -18,10 +18,8 @@ Hook.Add('chatMessage', 'chat_console', function(msg, client)
 
     -- Возвращает недостающие аффликшены, которые обязательны
     if(msg == '--fix') then
-        if Utils.GetAffliction(char,"immunity") == 0 then
-            Utils.SetAffliction(char,"immunity",600)
-        end
-        Main.FixBlood(char)
+        print("fix")
+        Main.FixRequiredAfflictions(char)
     end
 
     if(msg == '--bloody') then
