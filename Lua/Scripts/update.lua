@@ -4,7 +4,7 @@ aff_list = {}
 
 -- Вот эта херня работает 60 раз за тик \
 -- Задаёт интервал для срабатывая update()
-Hook.Add("think", "updater", function()
+Hook.Add("think", "AM.updater", function()
     if(Utils.is_game_paused()) then
          return
     end
