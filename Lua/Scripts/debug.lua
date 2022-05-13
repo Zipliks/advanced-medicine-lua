@@ -25,18 +25,6 @@ Hook.Add('chatMessage', 'AM.chat_console', function(msg, client)
         end
     end
 
-    -- Выводит аффликшены в консоль
-    if msg == '--shklet' then
-        local list = char.CharacterHealth.GetAfflictionsByType("damage",LimbType.Torso)
-        --local list = char.AnimController.GetLimb(LimbType.Head).HealthIndex
-        --local list = char.CharacterHealth.GetAfflictionsForLimb(LimbType.Torso)
-        print(list)
-        print(char.Name.."' Private Afflictions:")
-        for aff in list do
-            if aff.Strength > 0 then print("* "..tostring(aff)) end
-        end
-    end
-
     -- Возвращает недостающие аффликшены, которые обязательны
     if(msg == '--fix') then
         print("fix")

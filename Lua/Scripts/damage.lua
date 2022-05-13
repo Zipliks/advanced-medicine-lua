@@ -2,8 +2,8 @@ local damage_Handlers = {}
 
 
 
---[[ Main.AddHumanUpdater
-"Добавляет постоянный апдейтер человека"
+--[[ Main.AddDamageHandler
+"Добавляет обработчик урона"
 * id = Айди аффликшена
 * func - Функция, привязанная к аффликшену
     * Аргументы func: Character, Affliction, Strength, Limb, AttackResult    --]]
