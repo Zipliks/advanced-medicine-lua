@@ -1,4 +1,19 @@
-local OnDamagedMethods = {}
+local damage_Handlers = {}
+
+
+
+--[[ Main.AddHumanUpdater
+"Добавляет постоянный апдейтер человека"
+* id = Айди аффликшена
+* func - Функция, привязанная к аффликшену
+    * Аргументы func: Character, Affliction, Strength, Limb, AttackResult    --]]
+    function Main.AddDamageHandler(id,func)
+        if id == nil or func == nil then return end
+        damage_Handlers[id] = func
+        print("Damage Handler for "..id.." initialized ")
+    end
+
+
 
 Hook.Add("character.applyDamage", "AM.ondamaged", function (characterHealth, attackResult, hitLimb)
 
@@ -6,12 +21,12 @@ Hook.Add("character.applyDamage", "AM.ondamaged", function (characterHealth, att
         
         local id = aff.Prefab.Identifier.Value
         local strength = aff.Strength
-        local method = OnDamagedMethods[id]
+        local method = damage_Handlers[id]
 
         --print(index..". "..id..": "..strength) -- Выводит все полученные аффликшены в консоль
 
         if method ~= nil then
-            method(characterHealth.Character,id,strength,hitLimb.type)
+            method(characterHealth.Character,id,strength,hitLimb.type,attackResult)
         end
     end
 end)
@@ -24,7 +39,7 @@ end)
 --]]
 
 -- Этот код исполняется при получении стана
-OnDamagedMethods["stun"] = function (character,id,strength,limb)
+Main.AddDamageHandler("stun",function (character,id,strength,limb,attackResult)
     print("Stun: "..strength)
 
     -- Добавить ещё 2 секунды стана при ударе по голове
@@ -32,9 +47,9 @@ OnDamagedMethods["stun"] = function (character,id,strength,limb)
         Utils.SetAffliction(character,"stun",2,nil,true)
         print("Bonk!")
     end
-end
+end)
 
 -- Этот код исполняется при получении тупых травм
-OnDamagedMethods["blunttrauma"] = function (character,id,strength,limb)
+Main.AddDamageHandler("blunttrauma",function (character,id,strength,limb,attackResult)
     print("blunttrauma: "..strength)
-end
+end)

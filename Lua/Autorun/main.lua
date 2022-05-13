@@ -14,7 +14,8 @@ if Game.IsMultiplayer and SERVER or not Game.IsMultiplayer then
             require("Scripts.damage")
             --require("Scripts.hypothermia") -- freezing-а нету в аффликшенах
             require("Scripts.debug")
-            --require("Scripts.update") -- Инвалид :huh:
+            
+            require("Scripts.update")
         end
     end
 end
