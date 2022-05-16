@@ -12,6 +12,7 @@ local checkable_afflictions = {} -- Айди аффликшенов, котор�
 
 --[[ Main.AddHumanUpdater
 "Добавляет постоянный апдейтер человека"
+* id = Айди аффликшена
 * name = Имя апдейтера
 * func - Функция, привязанная к аффликшену
     * Аргументы func: Character    --]]
@@ -21,6 +22,10 @@ function Main.AddHumanUpdater(name,func)
     end
     updaters_Human[name] = func
     print("INIT: Initialized HumanUpdater with name \""..name.."\"")
+function Main.AddHumanUpdater(name,func)
+    if name == nil or func == nil then return end
+    updaters_Human[name] = func
+    print("Human Updater "..name.." initialized ")
 end
 
 
@@ -63,6 +68,14 @@ function Main.AddAfflictionLimbHandler(id,name,func)
     handlers_Afflictions_Limb[id][name] = func
     table.insert(checkable_afflictions,id) -- Вставить проверяемый аффликшен в соответствующий массив
     print("INIT: Initialized AfflictionLimbHandler \""..name.."\" on affliction \""..id.."\"")
+* func - Функция, привязанная к аффликшену
+    * Аргументы func: Character, Strength, LimbType
+    P.S Strength - Сила аффликшена на конечности LimbType   --]]
+function Main.AddAfflictionLimbHandler(id,func)
+    if id == nil or func == nil then return end
+    handlers_Afflictions_Limb[id] = func
+    table.insert(checkable_afflictions,id) -- Вставить проверяемый аффликшен в соответствующий массив
+    print("Affliction Limb Handler initialized on "..id)
 end
 
 
@@ -155,7 +168,6 @@ Main.AddAfflictionHandler("blunttrauma","test",function (character,strength)
     print("blunt for "..character.Name.." is "..strength)
     --Utils.SetAffliction(character,"blunttrauma",2*DELTA_TIME,nil,true) -- Умер от синяка
 end)  --]]
-
 
 
 --[[
