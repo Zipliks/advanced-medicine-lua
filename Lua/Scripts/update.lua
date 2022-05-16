@@ -12,39 +12,57 @@ local checkable_afflictions = {} -- Айди аффликшенов, котор�
 
 --[[ Main.AddHumanUpdater
 "Добавляет постоянный апдейтер человека"
-* id = Айди аффликшена
+* name = Имя апдейтера
 * func - Функция, привязанная к аффликшену
     * Аргументы func: Character    --]]
 function Main.AddHumanUpdater(name,func)
-    if name == nil or func == nil then return end
+    if name == nil or type(func) ~= "function" then
+        Utils.ThrowError("Bad argument",1)
+    end
     updaters_Human[name] = func
-    print("Human Updater "..name.." initialized ")
+    print("INIT: Initialized HumanUpdater with name \""..name.."\"")
 end
 
 
 --[[ Main.AddAfflictionHandler
 "Добавит обработчик аффликшена: func будет исполнятся только при наличии аффликшена id"
 * id = Айди аффликшена
+* name = Имя обработчика
 * func - Функция, привязанная к аффликшену
     * Аргументы func: Character, Strength    --]]
-function Main.AddAfflictionHandler(id,func)
-    if id == nil or func == nil then return end
-    handlers_Afflictions_Body[id] = func
-    print("Affliction Handler initialized on "..id)
+function Main.AddAfflictionHandler(id,name,func)
+    if name == nil or id == nil or type(func) ~= "function" then
+        Utils.ThrowError("Bad argument",1)
+    end
+    
+    if handlers_Afflictions_Body[id] == nil then
+        handlers_Afflictions_Body[id] = {}
+    end
+
+    handlers_Afflictions_Body[id][name] = func
+    print("INIT: Initialized AfflictionHandler \""..name.."\" on affliction \""..id.."\"")
 end
 
 
 --[[ Main.AddAfflictionLimbHandler
 "Добавит обработчик аффликшена на отдельных конечностях: func будет исполнятся только при наличии аффликшена id"
 * id = Айди аффликшена
+* name = Имя обработчика
 * func - Функция, привязанная к аффликшену
     * Аргументы func: Character, Strength, LimbType
     P.S Strength - Сила аффликшена на конечности LimbType   --]]
-function Main.AddAfflictionLimbHandler(id,func)
-    if id == nil or func == nil then return end
-    handlers_Afflictions_Limb[id] = func
+function Main.AddAfflictionLimbHandler(id,name,func)
+    if name == nil or id == nil or type(func) ~= "function" then
+        Utils.ThrowError("Bad argument",1)
+    end
+    
+    if handlers_Afflictions_Limb[id] == nil then
+        handlers_Afflictions_Limb[id] = {}
+    end
+
+    handlers_Afflictions_Limb[id][name] = func
     table.insert(checkable_afflictions,id) -- Вставить проверяемый аффликшен в соответствующий массив
-    print("Affliction Limb Handler initialized on "..id)
+    print("INIT: Initialized AfflictionLimbHandler \""..name.."\" on affliction \""..id.."\"")
 end
 
 
@@ -68,8 +86,8 @@ end)
 -- Обновляет все afflictions на персонаже
 local function update_human(character)
     -- Постоянные обработчики
-    for name, update_func in pairs(updaters_Human) do
-        update_func(character)
+    for name, func in pairs(updaters_Human) do
+        func(character)
     end
 
 
@@ -84,8 +102,10 @@ local function update_human(character)
             --print("* (A) "..id.." = "..merged_list[id])
         end
     end
-    for id,strength in pairs(merged_list) do
-        handlers_Afflictions_Body[id](character,strength)
+    for id,strength in pairs(merged_list) do   
+        for name, func in pairs(handlers_Afflictions_Body[id]) do
+            func(character,strength)
+        end
     end
 
 
@@ -94,8 +114,10 @@ local function update_human(character)
         for i_a,aff in pairs(checkable_afflictions) do
             local strength = Utils.GetAfflictionLimb(character,aff,limb) 
             if strength ~= 0 then
-                handlers_Afflictions_Limb[aff](character,strength,limb) 
                 --print("* ("..limb..") "..aff.." = "..strength)
+                for name, func in pairs(handlers_Afflictions_Limb[aff]) do
+                    func(character,strength)
+                end
             end
         end
     end
@@ -129,14 +151,16 @@ end) --]]
 
 --[[
 -- Исполняется при наличии тупых травм
-Main.AddAfflictionHandler("blunttrauma",function (character,strength)
+Main.AddAfflictionHandler("blunttrauma","test",function (character,strength)
     print("blunt for "..character.Name.." is "..strength)
     --Utils.SetAffliction(character,"blunttrauma",2*DELTA_TIME,nil,true) -- Умер от синяка
 end)  --]]
 
 
+
 --[[
 -- Исполняется для каждой конечности с тупыми травмами
-Main.AddAfflictionLimbHandler("blunttrauma",function (character,strength,limb)
-    print("blunt for "..character.Name.." on "..limb.." is "..strength)
+Main.AddAfflictionLimbHandler("blunttrauma","test",function (character,strength,limb)
+    --print("blunt for "..character.Name.." on "..tostring(limb).." is "..strength)
+    print("test")
 end)  --]]

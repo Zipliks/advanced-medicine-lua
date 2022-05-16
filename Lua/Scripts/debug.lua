@@ -15,6 +15,10 @@ Hook.Add('chatMessage', 'AM.chat_console', function(msg, client)
         end
         Utils.SetAffliction(char,"burn",200,LimbType.Torso,false)
     end
+    
+    if msg == '--testar' then
+        Main.SetItemFunction()
+    end
 
     -- Выводит аффликшены в консоль
     if msg == '--all_aff' then

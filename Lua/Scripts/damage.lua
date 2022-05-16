@@ -8,9 +8,11 @@ local damage_Handlers = {}
 * func - Функция, привязанная к аффликшену
     * Аргументы func: Character, Affliction, Strength, Limb, AttackResult    --]]
     function Main.AddDamageHandler(id,func)
-        if id == nil or func == nil then return end
+        if id == nil or func == nil then 
+            Utils.ThrowError("Bad argument",1)
+        end
         damage_Handlers[id] = func
-        print("Damage Handler for "..id.." initialized ")
+        print("INIT: Damage Handler for "..id.." initialized ")
     end
 
 
