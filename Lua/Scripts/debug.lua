@@ -15,6 +15,19 @@ Hook.Add('chatMessage', 'AM.chat_console', function(msg, client)
         end
         Utils.SetAffliction(char,"burn",200,LimbType.Torso,false)
     end
+    
+    if msg == '--testar' then
+        Main.SetItemFunction()
+    end
+
+    -- Выводит аффликшены в консоль
+    if msg == '--all_aff' then
+        local list = char.CharacterHealth.GetAllAfflictions()
+        print(char.Name.."' Afflictions:")
+        for aff in list do
+            if aff.Strength > 0 then print("* "..tostring(aff).."  "..aff.Strength) end
+        end
+    end
 
     -- Выводит аффликшены в консоль
     if msg == '--all_aff' then

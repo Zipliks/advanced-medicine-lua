@@ -49,3 +49,8 @@ function Utils.GetAfflictionLimb(character,affliction,limb)
     end
     return aff.Strength
 end
+
+function Utils.ThrowError(text,level)
+    if level == nil then level = 0 end
+    error("AMlua Custom Error: "..text,2+level)
+end

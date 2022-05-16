@@ -10,12 +10,14 @@ if Game.IsMultiplayer and SERVER or not Game.IsMultiplayer then
             require("Scripts._DEFINES.const")
             require("Scripts._HELPERS.utils")
 
-            require("Scripts.human")
             require("Scripts.damage")
-            --require("Scripts.hypothermia") -- freezing-а нету в аффликшенах
-            require("Scripts.debug")
-            
+            require("Scripts.items")
             require("Scripts.update")
+            require("Scripts.debug")
+
+            require("Scripts.human")
+            --require("Scripts.hypothermia") -- freezing-а нету в аффликшенах
+
         end
     end
 end
