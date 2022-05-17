@@ -18,6 +18,8 @@ local damage_Handlers = {}
 
 
 Hook.Add("character.applyDamage", "AM.ondamaged", function (characterHealth, attackResult, hitLimb)
+    if not characterHealth.Character.IsHuman and not characterHealth.Character.IsDead then return end
+    -- Все операции должны происходить только с людьми
 
     for index, aff in ipairs(attackResult.Afflictions) do
         
@@ -28,7 +30,7 @@ Hook.Add("character.applyDamage", "AM.ondamaged", function (characterHealth, att
         --print(index..". "..id..": "..strength) -- Выводит все полученные аффликшены в консоль
 
         if method ~= nil then
-            method(characterHealth.Character,id,strength,hitLimb.type,attackResult)
+            method(characterHealth.Character,strength,hitLimb.type,attackResult)
         end
     end
 end)
@@ -52,6 +54,6 @@ Main.AddDamageHandler("stun",function (character,id,strength,limb,attackResult)
 end)
 
 -- Этот код исполняется при получении тупых травм
-Main.AddDamageHandler("blunttrauma",function (character,id,strength,limb,attackResult)
+Main.AddDamageHandler("blunttrauma",function (character,strength,limb,attackResult)
     print("blunttrauma: "..strength)
 end)
