@@ -12,6 +12,7 @@ local checkable_afflictions = {} -- Айди аффликшенов, котор�
 
 --[[ Main.AddHumanUpdater
 "Добавляет постоянный апдейтер человека"
+* id = Айди аффликшена
 * name = Имя апдейтера
 * func - Функция, привязанная к аффликшену
     * Аргументы func: Character    --]]
@@ -155,7 +156,6 @@ Main.AddAfflictionHandler("blunttrauma","test",function (character,strength)
     print("blunt for "..character.Name.." is "..strength)
     --Utils.SetAffliction(character,"blunttrauma",2*DELTA_TIME,nil,true) -- Умер от синяка
 end)  --]]
-
 
 
 --[[

@@ -17,7 +17,6 @@ if Game.IsMultiplayer and SERVER or not Game.IsMultiplayer then
 
             require("Scripts.human")
             --require("Scripts.hypothermia") -- freezing-а нету в аффликшенах
-            
         end
     end
 end
