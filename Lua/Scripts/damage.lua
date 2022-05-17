@@ -1,4 +1,4 @@
-local damage_Handlers = {}
+local damage_handlers = {}
 
 
 
@@ -7,25 +7,24 @@ local damage_Handlers = {}
 * id = Айди аффликшена
 * func - Функция, привязанная к аффликшену
     * Аргументы func: Character, Affliction, Strength, Limb, AttackResult    --]]
-    function Main.AddDamageHandler(id,func)
+    function Main.AddDamageHandler(id, func)
         if id == nil or func == nil then 
             Utils.ThrowError("Bad argument",1)
         end
-        damage_Handlers[id] = func
+        damage_handlers[id] = func
         print("INIT: Damage Handler for "..id.." initialized ")
     end
 
 
 
-Hook.Add("character.applyDamage", "AM.ondamaged", function (characterHealth, attackResult, hitLimb)
+Hook.Add("character.applyDamage", "AM.ondamaged", function(characterHealth, attackResult, hitLimb)
     if not characterHealth.Character.IsHuman and not characterHealth.Character.IsDead then return end
     -- Все операции должны происходить только с людьми
 
-    for index, aff in ipairs(attackResult.Afflictions) do
-        
+    for _, aff in ipairs(attackResult.Afflictions) do
         local id = aff.Prefab.Identifier.Value
         local strength = aff.Strength
-        local method = damage_Handlers[id]
+        local method = damage_handlers[id]
 
         --print(index..". "..id..": "..strength) -- Выводит все полученные аффликшены в консоль
 
@@ -43,17 +42,17 @@ end)
 --]]
 
 -- Этот код исполняется при получении стана
-Main.AddDamageHandler("stun",function (character,id,strength,limb,attackResult)
+Main.AddDamageHandler("stun", function(character, id, strength, limb, attackResult)
     print("Stun: "..strength)
 
     -- Добавить ещё 2 секунды стана при ударе по голове
     if limb == LimbType.Head then
-        Utils.SetAffliction(character,"stun",2,nil,true)
+        Utils.SetAffliction(character, "stun", 2, nil, true)
         print("Bonk!")
     end
 end)
 
 -- Этот код исполняется при получении тупых травм
-Main.AddDamageHandler("blunttrauma",function (character,strength,limb,attackResult)
+Main.AddDamageHandler("blunttrauma",function (character, strength, limb, attackResult)
     print("blunttrauma: "..strength)
 end)

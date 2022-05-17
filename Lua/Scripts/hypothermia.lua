@@ -2,7 +2,7 @@
 local function isFreezing(character)
     for _, limb in pairs(character.AnimController.Limbs) do
         if (limb.InWater) then
-            Utils.SetAffliction(character,"freezing",0.005,true)
+            Utils.SetAffliction(character, "freezing", 0.005, true)
         end
     end
 end
