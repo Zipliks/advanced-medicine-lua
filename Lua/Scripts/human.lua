@@ -1,11 +1,11 @@
 -- Накладывает случайную группу крови в таблице 
-local function GiveRandomBlood(character)
+local function give_random_blood(character)
     rand = math.random(1, #BLOODTYPE)
     Utils.SetAffliction(character, BLOODTYPE[rand],1)
 end
 
 -- Проверяет наличие крови и возвращает true если она есть
-local function HasBloodGroup(character)
+local function has_blood_group(character)
     for _, affliction in pairs(BLOODTYPE) do
         local conditional = Utils.GetAffliction(character, affliction)
 
@@ -19,8 +19,8 @@ end
 -- Возвращает недостающие аффликшены, которые обязательны
 function Main.FixRequiredAfflictions(character)
     -- Выдача крови
-    if(not HasBloodGroup(character)) then
-        GiveRandomBlood(character)
+    if(not has_blood_group(character)) then
+        give_random_blood(character)
     end
 
     -- Выдача иммунитета
