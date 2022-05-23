@@ -10,7 +10,7 @@ local checkable_afflictions = {} -- Айди аффликшенов, котор�
 
 --[[ Main.AddHumanUpdater
 "Добавляет постоянный апдейтер человека"
-* id = Айди аффликшена
+* id = Айди аффликшена                  
 * name = Имя апдейтера
 * func - Функция, привязанная к аффликшену
     * Аргументы func: Character    --]]
@@ -101,9 +101,9 @@ local function update_human(character)
             --print("* (A) "..id.." = "..merged_list[id])
         end
     end
-    for id,strength in pairs(merged_list) do   
+    for id, strength in pairs(merged_list) do   
         for _, func in pairs(handlers_afflictions_body[id]) do
-            func(character,strength)
+            func(character, strength)
         end
     end
 
