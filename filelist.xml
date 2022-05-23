@@ -14,7 +14,7 @@
   <Text file="%ModDir%/Localization/French/French.xml" />
   <Text file="%ModDir%/Localization/French/French_Guide.xml" />
   <!-- None -->
-  <None file="%ModDir%/Images/AfflictionIcon.png" />
+  <None file="%ModDir%/Images/AfflictionIcons.png" />
   <None file="%ModDir%/Images/InGameItemIconAtlas.png" />
   <None file="%ModDir%/Images/InventoryItemIconAtlas.png" />
   <None file="%ModDir%/Images/BloodPacksAtlas.png" />
