@@ -1,10 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Afflictions>
   <!-- /// Meta /// -->
-  <Affliction name="" identifier="luabotomy" description="" limbspecific="false" indicatorlimb="Head" showiconthreshold="13" showinhealthscannerthreshold="100" maxstrength="15" targets="human" type="gaze" isbuff="false" healableinmedicalclinic="false" iconcolors="255,255,255,255;255,255,255,255">
-    <!--<afflictionoverlay texture="%ModDir%/Images/luabotomy.png"/>-->
-    <icon texture="%ModDir%/Images/AfflictionIcons2.png" sheetindex="5,0" sheetelementsize="128,128" origin="0,0" />
-  </Affliction>
 
 
 
@@ -264,22 +260,6 @@
   </Affliction>
 
 
-
-
-  <!-- ATP deficiency / Resource depletion
-  Scanned Symptom -->
-  <Affliction name="" identifier="atp_down" description="" targets="human" limbspecific="false" indicatorlimb="Torso" activationthreshold="0" healableinmedicalclinic="false" type="gaze" isbuff="false" showinhealthscannerthreshold="5" showiconthreshold="300" maxstrength="100">
-    <icon texture="%ModDir%/Images/AfflictionIcons.png" sourcerect="128,128,128,128" color="68,157,198,255" origin="0,0" />
-  </Affliction>
-  <!-- Atherosclerosis
-  Scanned Symptom -->
-  <Affliction name="" identifier="atherosclerosis" description="" targets="human" limbspecific="false" indicatorlimb="Torso" activationthreshold="0" healableinmedicalclinic="false" type="gaze" isbuff="false" showinhealthscannerthreshold="5" showiconthreshold="300" maxstrength="100">
-    <icon texture="%ModDir%/Images/AfflictionIcons.png" sourcerect="128,128,128,128" color="68,157,198,255" origin="0,0" />
-  </Affliction>
-
-
-
-
   <!-- /// Lung Stuff /// -->
   <!-- Respiratory Arrest / Apnea
   Exposed Symptom -->
@@ -353,14 +333,7 @@
   <!-- CPR
   Invisible Status -->
   <Affliction name="CPR" identifier="cpr_buff" healableinmedicalclinic="false" isbuff="true" targets="human" limbspecific="true" indicatorlimb="Torso" activationthreshold="0" showiconthreshold="10" showinhealthscannerthreshold="10" maxstrength="2">
-    <Effect minstrength="0" maxstrength="2" strengthchange="-0.5">
-      <StatusEffect tags="medical" target="Character" checkconditionalalways="true">
-        <ReduceAffliction identifier="cardiacarrest" amount="0.5" />
-        <ReduceAffliction identifier="respiratoryarrest" amount="0.25" />
-        <Affliction identifier="bloodpressure" amount="1" />
-        <ReduceAffliction identifier="oxygenlow" amount="8" />
-      </StatusEffect>
-    </Effect>
+    <Effect minstrength="0" maxstrength="2"/>
     <icon texture="Content/UI/MainIconsAtlas.png" sourcerect="256,896,128,128" color="195,104,60,255" origin="0,0" />
   </Affliction>
 
