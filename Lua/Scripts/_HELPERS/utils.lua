@@ -1,3 +1,4 @@
+---@diagnostic disable: undefined-field, undefined-global
 Utils = {}
 
 function Utils.is_game_paused()
