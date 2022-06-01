@@ -32,6 +32,7 @@ end)
 -- NOTE: Из-за особенностей барки, у предмета в xml должно быть прописана возможность применения в Health Menu
 -- NOTE: Также функция не триггерится при использовании вне Health Menu.
 -- TODO: Сделать чтобы они триггерились и вне меню (Или смирится с этим, лол)
-Main.SetItemFunction("antibleeding1",function (item, usingCharacter, targetCharacter, limb)
-    print("User: "..usingCharacter.Name.." Target: "..targetCharacter.Name)
+-- Zipliks: Пока забить и смириться
+Main.SetItemFunction("antibleeding1", function(item, usingCharacter, targetCharacter, limb)
+    print("User: " .. usingCharacter.Name .. " Target: " .. targetCharacter.Name)
 end)
