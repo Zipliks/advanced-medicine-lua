@@ -25,8 +25,8 @@ end
 
 --[[ Main.AddAfflictionHandler
 "Добавит обработчик аффликшена: func будет исполнятся только при наличии аффликшена id"
-* id = Айди аффликшена
-* name = Имя обработчика
+* id - ID аффликшена
+* name - Имя обработчика
 * func - Функция, привязанная к аффликшену
     * Аргументы func: Character, Strength    --]]
 function Main.AddAfflictionHandler(id, name, func)
@@ -45,8 +45,8 @@ end
 
 --[[ Main.AddAfflictionLimbHandler
 "Добавит обработчик аффликшена на отдельных конечностях: func будет исполнятся только при наличии аффликшена id"
-* id = Айди аффликшена
-* name = Имя обработчика
+* id - ID аффликшена
+* name - Имя обработчика
 * func - Функция, привязанная к аффликшену
     * Аргументы func: Character, Strength, LimbType
     P.S Strength - Сила аффликшена на конечности LimbType   --]]
