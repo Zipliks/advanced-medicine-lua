@@ -55,3 +55,15 @@ function Utils.ThrowError(text,level)
     if level == nil then level = 0 end
     error("AMlua Custom Error: "..text,2+level)
 end
+
+function Utils.Print(text)
+    if SILENT == true then return end
+    print(text)
+end
+
+function Utils.Contains(array,item)
+    for i, value in ipairs(array) do
+        if value == item then return true end
+    end
+    return false
+end

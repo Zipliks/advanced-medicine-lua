@@ -43,10 +43,11 @@ if strength_limb <= 10 then
 end
 ```
 
-## Main.AddHumanUpdater(name,func)
+## Main.AddHumanUpdater(name,func,tags)
 *"Добавляет HumanUpdater с функцией которая будет постоянно исполнятся относительно каждого человека"*
 - **name** (String) - Имя апдейтера
 - **func** (Function) - Функция для исполнения
+- **tags** (Table) - Тэги
 
 ### Аргументы func()
 - **character** (Barotrauma.Character) - Относительно кого работает апдейтер
@@ -56,11 +57,12 @@ Main.AddHumanUpdater("example",function (character)
 end)
 ```
 
-## Main.AddAfflictionHandler(id,name,func)
+## Main.AddAfflictionHandler(id,name,func,tags)
 *"Добавляет AfflictionHandler с функцией которая будет постоянно исполнятся относительно **заданного аффликшена** по всему телу у каждого человека"*
 - **id** (String) - Айди аффликшена
 - **name** (String) - Имя апдейтера
 - **func** (Function) - Функция для исполнения
+- **tags** (Table) - Тэги
 
 ### Аргументы func()
 - **character** (Barotrauma.Character) - Относительно кого работает апдейтер
@@ -72,11 +74,12 @@ Main.AddAfflictionHandler("blunttrauma","test",function (character,strength)
 end)
 ```
 
-## Main.AddAfflictionLimbHandler(id,name,func)
+## Main.AddAfflictionLimbHandler(id,name,func,tags)
 *"Добавляет AfflictionHandler с функцией которая будет постоянно исполнятся относительно аффликшена на **каждой** конечности у **каждого** человека"*
 - **id** (String) - Айди аффликшена
 - **name** (String) - Имя апдейтера
 - **func** (Function) - Функция для исполнения
+- **tags** (Table) - Тэги
 
 ### Аргументы func()
 - **character** (Barotrauma.Character) - Относительно кого работает апдейтер
@@ -124,7 +127,7 @@ end)
 Main.SetItemFunction("antibleeding1",function (item, usingCharacter, targetCharacter, limb)
   print("User: "..usingCharacter.Name.." Target: "..targetCharacter.Name)
   if limb == LimbType.Head then
-    print("Raiden Cosplay")
+    print("MGR:R Raiden Cosplay")
   end
 end)
 ```
@@ -140,4 +143,64 @@ function example(id,func)
   end
 end
 -- Вывод в консоль будет примерно такой: "AMlua Custom Error: *text*"
+```
+
+## Utils.Print(text)
+*"print(), но с приколом. Если SILENT = true, то функция не будет ничего делать"*
+- **text** (String) - Вывод в консоль
+```lua
+function example(id,func)
+  if id == nil or func == nil then 
+    Utils.Print("WARNING: Bad argument")
+  end
+end
+```
+
+## Main.Tags.AddNewTagBody(name,checker)
+*"Добавляет TagBody который может влиять на исполнение AfflictionHandler и HumanUpdater, использующих его"*
+- **id** (String) - Айди тэга
+- **checker** (Function) - Функция для исполнения
+
+### Аргументы checker()
+- **сharacter** (Barotrauma.Character) - Персонаж, обрабатываемый хендлером
+```lua
+-- Задаём новый тег
+Main.Tags.AddNewTagBody("force_stop",function (character)
+  return true -- Если апдейтер/хендлер не должен работать - надо возвращать true
+end)
+
+-- Использование тэга на обработчике
+Main.AddAfflictionHandler("blunttrauma", "csqrb", function(character, strength)
+  print("Я не буду работать, если на мне есть force_stop")
+end,{"force_stop"})
+
+-- Использование тэга на апдейтере
+Main.AddHumanUpdater("example",function (character)
+  print("asdfgh")
+end,{"force_stop"})
+```
+
+## Main.Tags.AddNewTagLimb(name,checker)
+*"Добавляет TagBody который может влиять на исполнение AfflictionLimbHandler, использующих его"*
+- **id** (String) - Айди тэга
+- **checker** (Function) - Функция для исполнения
+
+### Аргументы checker()
+- **сharacter** (Barotrauma.Character) - Персонаж, обрабатываемый хендлером
+- **limb** (Barotrauma.LimbType) - Обрабатываемая конечность персонажа
+```lua
+-- Задаём новый тег
+Main.Tags.AddNewTagLimb("no_head",function (character,limb)
+  -- Если хендлер собирается работать с головой, он не будет это делать
+  if limb == LimbType.Head then
+    return true
+  else
+    return false 
+  end
+end)
+
+-- Использование тэга на обработчике
+Main.AddAfflictionLimbHandler("blunttrauma", "senator_armstrong", function(character, strength)
+  print("Я не буду работать с головой")
+end,{"no_head"})
 ```

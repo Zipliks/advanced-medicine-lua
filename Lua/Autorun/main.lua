@@ -1,6 +1,9 @@
 ---@diagnostic disable: undefined-global
 PATH = table.pack(...)[1]
 IS_ENABLED = Game.GetEnabledContentPackages()
+
+--SILENT = true
+
 Main = {}
 
 print("honk!")
@@ -13,6 +16,7 @@ if (Game.IsMultiplayer and SERVER) or (Game.IsSingleplayer) then
 
             require("Scripts.damage")
             require("Scripts.items")
+            require("Scripts.tags")
             require("Scripts.update")
             require("Scripts.debug")
 
