@@ -8,18 +8,24 @@ local updaters_human = {} -- Функции, которые работают н�
 local checkable_afflictions = {} -- Айди аффликшенов, которые будут проверятся апдейтером (для конечностей)
 
 
+
+
 --[[ Main.AddHumanUpdater
 "Добавляет постоянный апдейтер человека"
 * id = Айди аффликшена                  
 * name = Имя апдейтера
 * func - Функция, привязанная к аффликшену
     * Аргументы func: Character    --]]
-function Main.AddHumanUpdater(name, func)
+function Main.AddHumanUpdater(name, func, tags)
     if name == nil or type(func) ~= "function" then
         Utils.ThrowError("Bad argument",1)
     end
-    updaters_human[name] = func
-    print("INIT: Initialized HumanUpdater with name \""..name.."\"")
+    if tags ~= nil then
+        tags = Main.Tags.CleanUpTagsBody(tags)
+    end
+
+    updaters_human[name] = {func=func, tags=tags}
+    Utils.Print("INIT: Initialized HumanUpdater with name \""..name.."\"")
 end
 
 
@@ -29,17 +35,20 @@ end
 * name - Имя обработчика
 * func - Функция, привязанная к аффликшену
     * Аргументы func: Character, Strength    --]]
-function Main.AddAfflictionHandler(id, name, func)
+function Main.AddAfflictionHandler(id, name, func, tags)
     if name == nil or id == nil or type(func) ~= "function" then
         Utils.ThrowError("Bad argument",1)
+    end
+    if tags ~= nil then
+        tags = Main.Tags.CleanUpTagsBody(tags)
     end
     
     if handlers_afflictions_body[id] == nil then
         handlers_afflictions_body[id] = {}
     end
 
-    handlers_afflictions_body[id][name] = func
-    print("INIT: Initialized AfflictionHandler \""..name.."\" on affliction \""..id.."\"")
+    handlers_afflictions_body[id][name] = {func=func, tags=tags}
+    Utils.Print("INIT: Initialized AfflictionHandler \""..name.."\" on affliction \""..id.."\"")
 end
 
 
@@ -50,18 +59,21 @@ end
 * func - Функция, привязанная к аффликшену
     * Аргументы func: Character, Strength, LimbType
     P.S Strength - Сила аффликшена на конечности LimbType   --]]
-function Main.AddAfflictionLimbHandler(id, name, func)
+function Main.AddAfflictionLimbHandler(id, name, func, tags)
     if name == nil or id == nil or type(func) ~= "function" then
         Utils.ThrowError("Bad argument",1)
+    end
+    if tags ~= nil then
+        tags = Main.Tags.CleanUpTagsLimb(tags)
     end
     
     if handlers_afflictions_limb[id] == nil then
         handlers_afflictions_limb[id] = {}
     end
 
-    handlers_afflictions_limb[id][name] = func
+    handlers_afflictions_limb[id][name] = {func=func, tags=tags}
     table.insert(checkable_afflictions,id) -- Вставить проверяемый аффликшен в соответствующий массив
-    print("INIT: Initialized AfflictionLimbHandler \""..name.."\" on affliction \""..id.."\"")
+    Utils.Print("INIT: Initialized AfflictionLimbHandler \""..name.."\" on affliction \""..id.."\"")
 end
 
 
@@ -84,40 +96,62 @@ end)
 
 -- Обновляет все afflictions на персонаже
 local function update_human(character)
+
     -- Постоянные обработчики
-    for _, func in pairs(updaters_human) do
-        func(character)
+    for _, updater in pairs(updaters_human) do
+        -- Проверка тегов
+        local prevent = Main.Tags.CheckTagsBody(character,updater.tags)
+        if not prevent then
+            updater.func(character)
+        end
     end
 
 
+    
     -- Обработчики, привязанные к аффликшенам по всему телу
     local all_list = character.CharacterHealth.GetAllAfflictions()
     local merged_list = {}
+
+    -- Получение всех аффликшенов у персонажа
     for aff in all_list do
         local id = aff.Prefab.Identifier.Value
         if aff.Strength > 0 and handlers_afflictions_body[id] ~= nil then
+            -- Метод собирает аффликшены раздельно со всех конечностей, поэтому нужно получить их общее значение
             if merged_list[id] == nil then merged_list[id] = 0 end
             merged_list[id] = merged_list[id] + aff.Strength
-            --print("* (A) "..id.." = "..merged_list[id])
         end
     end
+
+    -- Работа хендлеров
     for id, strength in pairs(merged_list) do   
-        for _, func in pairs(handlers_afflictions_body[id]) do
-            func(character, strength)
+        for _, handler in pairs(handlers_afflictions_body[id]) do
+            -- Проверка тегов
+            local prevent = Main.Tags.CheckTagsBody(character,handler.tags)
+            if not prevent then
+                handler.func(character, strength)
+            end
         end
     end
+
 
 
     -- Обработчики, привязанные к конечностям
     for _, limb in pairs(HUMAN_LIMBS) do
         for _, aff in pairs(checkable_afflictions) do
+            -- Получение списка проверяемых аффликшенов через костыль
             local strength = Utils.GetAfflictionLimb(character, aff, limb) 
+
+            -- Перебор аффликшена на всех конечностях
             if strength ~= 0 then
-                --print("* ("..limb..") "..aff.." = "..strength)
-                for _, func in pairs(handlers_afflictions_limb[aff]) do
-                    func(character, strength)
+                for _, handler in pairs(handlers_afflictions_limb[aff]) do
+                    -- Проверка тегов
+                    local prevent = Main.Tags.CheckTagsLimb(character,limb,handler.tags)
+                    if not prevent then
+                        handler.func(character, strength)
+                    end
                 end
             end
+            
         end
     end
 end

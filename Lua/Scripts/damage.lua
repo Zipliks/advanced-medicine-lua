@@ -12,7 +12,7 @@ local damage_handlers = {}
             Utils.ThrowError("Bad argument",1)
         end
         damage_handlers[id] = func
-        print("INIT: Damage Handler for "..id.." initialized ")
+        Utils.Print("INIT: Damage Handler for "..id.." initialized ")
     end
 
 
