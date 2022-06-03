@@ -43,10 +43,11 @@ if strength_limb <= 10 then
 end
 ```
 
-## Main.AddHumanUpdater(name,func)
+## Main.AddHumanUpdater(name,func,tags)
 *"Добавляет HumanUpdater с функцией которая будет постоянно исполнятся относительно каждого человека"*
 - **name** (String) - Имя апдейтера
 - **func** (Function) - Функция для исполнения
+- **tags** (Table) - Тэги
 
 ### Аргументы func()
 - **character** (Barotrauma.Character) - Относительно кого работает апдейтер
@@ -56,11 +57,12 @@ Main.AddHumanUpdater("example",function (character)
 end)
 ```
 
-## Main.AddAfflictionHandler(id,name,func)
+## Main.AddAfflictionHandler(id,name,func,tags)
 *"Добавляет AfflictionHandler с функцией которая будет постоянно исполнятся относительно **заданного аффликшена** по всему телу у каждого человека"*
 - **id** (String) - Айди аффликшена
 - **name** (String) - Имя апдейтера
 - **func** (Function) - Функция для исполнения
+- **tags** (Table) - Тэги
 
 ### Аргументы func()
 - **character** (Barotrauma.Character) - Относительно кого работает апдейтер
@@ -72,11 +74,12 @@ Main.AddAfflictionHandler("blunttrauma","test",function (character,strength)
 end)
 ```
 
-## Main.AddAfflictionLimbHandler(id,name,func)
+## Main.AddAfflictionLimbHandler(id,name,func,tags)
 *"Добавляет AfflictionHandler с функцией которая будет постоянно исполнятся относительно аффликшена на **каждой** конечности у **каждого** человека"*
 - **id** (String) - Айди аффликшена
 - **name** (String) - Имя апдейтера
 - **func** (Function) - Функция для исполнения
+- **tags** (Table) - Тэги
 
 ### Аргументы func()
 - **character** (Barotrauma.Character) - Относительно кого работает апдейтер
@@ -169,6 +172,11 @@ end)
 -- Использование тэга на обработчике
 Main.AddAfflictionHandler("blunttrauma", "csqrb", function(character, strength)
   print("Я не буду работать, если на мне есть force_stop")
+end,{"force_stop"})
+
+-- Использование тэга на апдейтере
+Main.AddHumanUpdater("example",function (character)
+  print("asdfgh")
 end,{"force_stop"})
 ```
 
