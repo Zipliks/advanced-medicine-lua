@@ -11,19 +11,18 @@ Main.AddAfflictionHandler("blunttrauma", "AM.test", function(character, strength
 end) 
 --]]
 
--- STUB: CPR
+--CPR
 Main.AddAfflictionHandler("cpr_buff", "has_cpr", function(character, strength)
     Utils.SetAffliction(character, "oxygenlow", -10, nil, true)
 end)
 
--- STUB: Bite Wounds
+--Bite Wounds
 Main.AddAfflictionHandler("bitewounds", "has_bitewounds", function(character, strength)
-
+    Utils.SetAffliction(character, "bloodloss", 1*DELTA_TIME, nil, true)
 end)
 
 -- STUB: Blunt Force Trauma
 Main.AddAfflictionHandler("blunttrauma", "has_blunttrauma", function(character, strength)
-
 end)
 
 -- STUB: Deep Tissue Injury
@@ -63,7 +62,7 @@ end)
 
 -- STUB: Bloodloss
 Main.AddAfflictionHandler("bloodloss", "has_bloodloss", function(character, strength)
-
+    Utils.SetAffliction(character, "oxygenlow", 10*DELTA_TIME, LimbType.Torso, true)
 end)
 
 -- STUB: Bleeding
@@ -74,4 +73,29 @@ end)
 -- STUB: Bleeding (Nonstop)
 Main.AddAfflictionHandler("bleedingnonstop", "has_bleedingnonstop", function(character, strength)
 
+end)
+
+-- STUB: Oxygenlow
+Main.AddAfflictionHandler("oxygenlow", "has_oxygenlow", function(character, strength)
+    oxygenlow_strength = Utils.GetAffliction(character, "oxygenlow")
+    
+    if(oxygenlow_strength >= 20) then
+        Utils.SetAffliction(character, "hypoxia", 0.5*DELTA_TIME, LimbType.Head, true)
+    end
+end)
+
+Main.AddAfflictionHandler("v_tachycardia", "has_vtach", function(character, strength)
+    Utils.SetAffliction(character, "oxygenlow")
+end)
+
+Main.AddAfflictionHandler("hypoxia", "has_hypoxia", function(character, strength)
+    Utils.SetAffliction(character, "neurotrauma", 0.5, nil, true)
+end)
+
+Main.AddAfflictionHandler("neurotrauma", "has_neurotrauma", function(character, strength)
+    braindamage_strength = Utils.GetAffliction(character, "neurotrauma")
+
+    if(braindamage_strength == 200) then
+        character.Kill(CauseOfDeathType.Unknown)
+    end
 end)
