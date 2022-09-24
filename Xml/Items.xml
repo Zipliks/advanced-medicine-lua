@@ -28,6 +28,7 @@
       <damagemodifier afflictionidentifiers="bitewounds" armorsector="0.0,360.0" damagemultiplier="0.3" damagesound="LimbArmor" deflectprojectiles="true" />
       <damagemodifier afflictiontypes="bleeding" armorsector="0.0,360.0" damagemultiplier="0.1" damagesound="LimbArmor" deflectprojectiles="true" />
       <sprite name="Security Vest Wearable" texture="%ModDir%/Images/Items/tactical_body_armor.png" limb="Torso" hidelimb="false" inheritscale="true" scale="0.65" inheritorigin="false" origin="0.5,0.5" inheritsourcerect="false" sourcerect="14,45,103,180" />
+      <SkillModifier skillidentifier="medical" skillvalue="10" />
     </Wearable>
     <ItemContainer capacity="0" maxstacksize="0" hideitems="true" slotsperrow="3" containedstateindicatorslot="1">
       <Containable items="smallitem,chem,medical,syringe" excludeditems="toolbelt,toolbox,bandolier,cargoscooter,backpack,metalcrate" />
@@ -41,6 +42,5 @@
         <Containable items="smallitem,mediumitem" excludeditems="backpack,toolbox" />
       </SubContainer>
     </ItemContainer>
-    <SkillModifier skillidentifier="medical" skillvalue="10" />
   </Item>
 </Items>

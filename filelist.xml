@@ -1,9 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<contentpackage name="AMlua" modversion="1.0.4" corepackage="False" gameversion="0.17.0.0">
+<contentpackage name="The Good Doctor" modversion="0.0.4" corepackage="False" gameversion="0.18.0.0">
   <!-- Afflictions -->
-  <Afflictions file="%ModDir%/Xml/Afflictions.xml" />
-  <!-- Items, консоль от любого движения открывается, пусть пока будет закомменчено  -->
-  <Item file="%ModDir%/Xml/Items.xml" />
+  <Afflictions file="%ModDir%/Xml/afflictions.xml" />
+  <Item file="%ModDir%/Xml/items.xml" />
   <Item file="%ModDir%/Backpack/Medipack.xml" />
  
   <!-- Localization -->
@@ -14,7 +13,7 @@
   <Text file="%ModDir%/Localization/French/French.xml" />
   <Text file="%ModDir%/Localization/French/French_Guide.xml" />
   <!-- None -->
-  <None file="%ModDir%/Images/AfflictionIcon.png" />
+  <None file="%ModDir%/Images/AfflictionIcons.png" />
   <None file="%ModDir%/Images/InGameItemIconAtlas.png" />
   <None file="%ModDir%/Images/InventoryItemIconAtlas.png" />
   <None file="%ModDir%/Images/BloodPacksAtlas.png" />
@@ -23,7 +22,7 @@
   <None file="%ModDir%/Images/Suits/baghelmets.png" />
   <None file="%ModDir%/Images/Suits/bag.png" />
   <None file="%ModDir%/Images/HandBook.jpg" />
-  <None file="%ModDir%/Images/respArrest.png" />
+  <None file="%ModDir%/Images/resp_arrest.png" />
   <None file="%ModDir%/Sound/Pageturn.ogg" />
   <None file="%ModDir%/Sound/drill.ogg" />
   <None file="%ModDir%/Sound/squelch1.ogg" />
@@ -88,9 +87,15 @@
   <None file="%ModDir%/Characters/Human/Ragdolls/HumanDefaultRagdoll.xml" />
   <None file="%ModDir%/Sound/Voice/screams_woman_2.ogg" />
   <!-- Lua -->
-  <None file="%ModDir%/Lua/Scripts/hypothermia.lua" />
-  <None file="%ModDir%/Lua/Scripts/debug.lua" />
   <None file="%ModDir%/Lua/Autorun/main.lua" />
+  <None file="%ModDir%/Lua/Scripts/_DEFINES/const.lua"/>
+  <None file="%ModDir%/Lua/Scripts/_HELPERS/utils.lua"/>
+  <None file="%ModDir%/Lua/Scripts/afflictions.lua"/>
+  <None file="%ModDir%/Lua/Scripts/cpr.lua"/>
+  <None file="%ModDir%/Lua/Scripts/damage.lua"/>
+  <None file="%ModDir%/Lua/Scripts/debug.lua" />
+  <None file="%ModDir%/Lua/Scripts/human.lua" />
+  <None file="%ModDir%/Lua/Scripts/update.lua" />
   <!-- Character, хуман.xml без текстурок ампутации не отличается от оригинала
   <Character file="%ModDir%/Characters/Human/Human.xml" /> -->
 </contentpackage>

@@ -1,0 +1,101 @@
+
+--[[
+
+nil означает, что SetAffliction будет наложен на Torso
+
+Main.AddAfflictionHandler("blunttrauma", "AM.test", function(character, strength)
+    blunttrauma = Utils.GetAffliction(character, "blunttrauma")
+    if blunttrauma >= 50 then
+        Utils.SetAffliction(character, "oxygenlow", 20*DELTA_TIME, nil, true)
+    end
+end) 
+--]]
+
+--CPR
+Main.AddAfflictionHandler("cpr_buff", "has_cpr", function(character, strength)
+    Utils.SetAffliction(character, "oxygenlow", -10, nil, true)
+end)
+
+--Bite Wounds
+Main.AddAfflictionHandler("bitewounds", "has_bitewounds", function(character, strength)
+    Utils.SetAffliction(character, "bloodloss", 1*DELTA_TIME, nil, true)
+end)
+
+-- STUB: Blunt Force Trauma
+Main.AddAfflictionHandler("blunttrauma", "has_blunttrauma", function(character, strength)
+end)
+
+-- STUB: Deep Tissue Injury
+Main.AddAfflictionHandler("explosiondamage", "has_explosiondamage", function(character, strength)
+
+end)
+
+-- STUB: Gunshot Wound
+Main.AddAfflictionHandler("gunshotwound", "has_gunshotwound", function(character, strength)
+
+end)
+
+-- STUB: Internal Damage
+Main.AddAfflictionHandler("internaldamage", "has_internaldamage", function(character, strength)
+
+end)
+
+-- STUB: Lacerations
+Main.AddAfflictionHandler("lacerations", "has_lacerations", function(character, strength)
+
+end)
+
+-- STUB: Organ Damage
+Main.AddAfflictionHandler("organdamage", "has_organdamage", function(character, strength)
+
+end)
+
+-- STUB: Acid Burn (Burn)
+Main.AddAfflictionHandler("acidburn", "has_acidburn", function(character, strength)
+
+end)
+
+-- STUB: Burn
+Main.AddAfflictionHandler("burn", "has_burn", function(character, strength)
+
+end)
+
+-- STUB: Bloodloss
+Main.AddAfflictionHandler("bloodloss", "has_bloodloss", function(character, strength)
+    Utils.SetAffliction(character, "oxygenlow", 10*DELTA_TIME, LimbType.Torso, true)
+end)
+
+-- STUB: Bleeding
+Main.AddAfflictionHandler("bleeding", "has_bleeding", function(character, strength)
+
+end)
+
+-- STUB: Bleeding (Nonstop)
+Main.AddAfflictionHandler("bleedingnonstop", "has_bleedingnonstop", function(character, strength)
+
+end)
+
+-- STUB: Oxygenlow
+Main.AddAfflictionHandler("oxygenlow", "has_oxygenlow", function(character, strength)
+    oxygenlow_strength = Utils.GetAffliction(character, "oxygenlow")
+    
+    if(oxygenlow_strength >= 20) then
+        Utils.SetAffliction(character, "hypoxia", 0.5*DELTA_TIME, LimbType.Head, true)
+    end
+end)
+
+Main.AddAfflictionHandler("v_tachycardia", "has_vtach", function(character, strength)
+    Utils.SetAffliction(character, "oxygenlow")
+end)
+
+Main.AddAfflictionHandler("hypoxia", "has_hypoxia", function(character, strength)
+    Utils.SetAffliction(character, "neurotrauma", 0.5, nil, true)
+end)
+
+Main.AddAfflictionHandler("neurotrauma", "has_neurotrauma", function(character, strength)
+    braindamage_strength = Utils.GetAffliction(character, "neurotrauma")
+
+    if(braindamage_strength == 200) then
+        character.Kill(CauseOfDeathType.Unknown)
+    end
+end)
