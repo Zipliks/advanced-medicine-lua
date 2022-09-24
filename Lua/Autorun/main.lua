@@ -7,7 +7,7 @@ print("honk!")
 
 if (Game.IsMultiplayer and SERVER) or (Game.IsSingleplayer) then
     for _, value in pairs(IS_ENABLED) do
-        if (value.Name == "Advanced Medicine (LUA)") then
+        if (value.Name == "The Good Doctor") then
             require("Scripts._DEFINES.const")
             require("Scripts._HELPERS.utils")
 
