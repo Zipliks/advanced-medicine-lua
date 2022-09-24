@@ -56,7 +56,7 @@ Main.AddHumanUpdater("example",function (character)
 end)
 ```
 
-## Main.add_affliction_handler(id,name,func)
+## Main.AddAfflictionHandler(id,name,func)
 *"Добавляет AfflictionHandler с функцией которая будет постоянно исполнятся относительно **заданного аффликшена** по всему телу у каждого человека"*
 - **id** (String) - Айди аффликшена
 - **name** (String) - Имя апдейтера
@@ -66,7 +66,7 @@ end)
 - **character** (Barotrauma.Character) - Относительно кого работает апдейтер
 - **strength** (Number) - Сила аффликшена
 ```lua
-Main.add_affliction_handler("blunttrauma","test",function (character,strength)
+Main.AddAfflictionHandler("blunttrauma","test",function (character,strength)
   print("blunt for "..character.Name.." is "..strength)
   --Utils.SetAffliction(character,"blunttrauma",2*DELTA_TIME,nil,true) -- Умер от синяка
 end)
