@@ -77,7 +77,7 @@ end)
 
 -- STUB: Oxygenlow
 Main.AddAfflictionHandler("oxygenlow", "has_oxygenlow", function(character, strength)
-    oxygenlow_strength = Utils.GetAffliction(character, "oxygenlow")
+    local oxygenlow_strength = Utils.GetAffliction(character, "oxygenlow")
     
     if(oxygenlow_strength >= 20) then
         Utils.SetAffliction(character, "hypoxia", 0.5*DELTA_TIME, LimbType.Head, true)
@@ -93,7 +93,7 @@ Main.AddAfflictionHandler("hypoxia", "has_hypoxia", function(character, strength
 end)
 
 Main.AddAfflictionHandler("neurotrauma", "has_neurotrauma", function(character, strength)
-    braindamage_strength = Utils.GetAffliction(character, "neurotrauma")
+    local braindamage_strength = Utils.GetAffliction(character, "neurotrauma")
 
     if(braindamage_strength == 200) then
         character.Kill(CauseOfDeathType.Unknown)
