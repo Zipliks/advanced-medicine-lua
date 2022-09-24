@@ -1,7 +1,3 @@
--- Debug commands
-local asys = AfflictionPrefab.Prefabs["asys"]
-
-
 Hook.Add('chatMessage', 'AM.chat_console', function(msg, client)
     -- Если клиент не управляет персонажем - игнорить
     if client.Character == nil then return false end
@@ -56,20 +52,15 @@ Hook.Add('chatMessage', 'AM.chat_console', function(msg, client)
         print("ouch is "..Utils.GetAfflictionLimb(char,"burn",LimbType.Head))
     end
 
+    if(msg == "--fixall") then
+        print("enablecrewai")
+    end
+
     -- Выводит все аффликшены из всех модов. Использовать на чистом AMlua
     if(msg == '--getaffs') then
         for affliction in AfflictionPrefab.Prefabs do
             print(affliction)
         end 
-    end
-
-    -- Накладывает асистолию на всех существ с огнестрельной раной
-    if(msg == '--applyasys') then
-        for _, character in pairs(Character.CharacterList) do
-            if (Utils.GetAffliction(character,"gunshotwound")) then
-                Utils.SetAffliction(character,"asys",5,LimbType.Torso,true)
-            end
-        end
     end
 end)
 
@@ -79,5 +70,4 @@ function check(character)
         print(Utils.GetAffliction(character,"ominus"))
     end
 end
-
 

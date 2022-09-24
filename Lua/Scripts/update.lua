@@ -71,10 +71,10 @@ end
 -- Задаёт интервал для срабатывая update()
 Hook.Add("think", "AM.updater", function()
     if(Utils.is_game_paused()) then
-         return
+        return
     end
 
-    UPDATE_COOLDOWN = UPDATE_COOLDOWN-1
+    UPDATE_COOLDOWN = UPDATE_COOLDOWN - 1
     if(UPDATE_COOLDOWN <= 0) then
         UPDATE_COOLDOWN = UPDATE_INTERVAL
         updater()

@@ -1,82 +1,47 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Afflictions>
+  <!-- /// Head /// -->
+  <!-- Brain Hypoxia -->
+  <Affliction name="" identifier="hypoxia" description="" limbspecific="false" indicatorlimb="Head" showiconthreshold="1" showinhealthscannerthreshold="10" maxstrength="2" targets="human" type="gaze" isbuff="false" healableinmedicalclinic="false" iconcolors="255,90,0,255;255,90,0,255">
+    <icon texture="%ModDir%/Images/AfflictionIcons.png" sheetindex="1,1" sheetelementsize="128,128" origin="0,0" sourcerect="256,384,128,128" />
+  </Affliction>
+  <!-- Brain Damage-->
+  <Affliction name="" identifier="neurotrauma" description="" limbspecific="false" indicatorlimb="Head" showiconthreshold="201" showinhealthscannerthreshold="20" maxstrength="200" targets="human" type="gaze" isbuff="false" healableinmedicalclinic="false" iconcolors="255,90,0,255;255,90,0,255">
+    <icon texture="%ModDir%/Images/debuff.png" sheetindex="1,1" sheetelementsize="128,128" origin="0,0" sourcerect="128,257,128,128" />
+  </Affliction>
+  <!-- ////////////////////////////////////////////////// -->
   <!-- /// Heart Stuff /// -->
   <!-- Tachycardia / Rapid Heartbeat
   Exposed Symptom, counters hypoxemia and hypotension-->
   <Affliction name="" identifier="tachycardia" description="" limbspecific="false" indicatorlimb="Torso" showiconthreshold="1" showinhealthscannerthreshold="10" maxstrength="2" targets="human" type="gaze" isbuff="false" healableinmedicalclinic="false" iconcolors="255,90,0,255;255,90,0,255">
-    <icon texture="%ModDir%/Images/AfflictionIcons.png" sheetindex="1,1" sheetelementsize="128,128" origin="0,0" />
+    <icon texture="%ModDir%/Images/AfflictionIcons.png" sheetindex="1,1" sheetelementsize="128,128" origin="0.098232545,0.13482961" sourcerect="127,128,128,128" />
   </Affliction>
   <!-- Atrial fibrillation / The atrial contract randomly 
   Causes hypertension / Increased risk of myocarditis-->
   <Affliction name="" identifier="af" description="" healableinmedicalclinic="false" limbspecific="false" indicatorlimb="Torso" showiconthreshold="1" showinhealthscannerthreshold="1" targets="human" type="gaze" isbuff="false" maxstrength="10">
-    <icon texture="%ModDir%/Images/AfflictionIcons.png" sheetindex="0,1" sheetelementsize="128,128" origin="0,0" />
+    <icon texture="%ModDir%/Images/AfflictionIcons.png" sheetindex="0,1" sheetelementsize="128,128" origin="0,0" sourcerect="0,128,128,128" />
   </Affliction>
   <!-- Ventricular Tachycardia / The ventricles contract rapidly
   cause hypoxemia and hypotension, if left untreated, it will become ventricular fibrillation -->
-  <Affliction name="" identifier="vt" description="" healableinmedicalclinic="false" limbspecific="false" indicatorlimb="Torso" showiconthreshold="1" showinhealthscannerthreshold="1" targets="human" type="gaze" isbuff="false" maxstrength="10">
-    <icon texture="%ModDir%/Images/AfflictionIcons.png" sheetindex="0,1" sheetelementsize="128,128" origin="0,0" />
+  <Affliction name="" identifier="v_tachycardia" description="" healableinmedicalclinic="false" limbspecific="false" indicatorlimb="Torso" showiconthreshold="1" showinhealthscannerthreshold="1" targets="human" type="gaze" isbuff="false" maxstrength="10">
+    <icon texture="%ModDir%/Images/AfflictionIcons.png" sheetindex="0,1" sheetelementsize="128,128" origin="0,0" sourcerect="0,128,128,128" />
   </Affliction>
   <!-- Ventricular Fibrillation / The ventricles contract randomly
   cause hypoxemia and hypotension, if left untreated, it will become asystole-->
-  <Affliction name="" identifier="vf" description="" healableinmedicalclinic="false" limbspecific="false" indicatorlimb="Torso" showiconthreshold="1" showinhealthscannerthreshold="1" targets="human" type="gaze" isbuff="false" maxstrength="10">
-    <icon texture="%ModDir%/Images/AfflictionIcons.png" sheetindex="0,1" sheetelementsize="128,128" origin="0,0" />
+  <Affliction name="" identifier="v_fibrillation" description="" healableinmedicalclinic="false" limbspecific="false" indicatorlimb="Torso" showiconthreshold="1" showinhealthscannerthreshold="1" targets="human" type="gaze" isbuff="false" maxstrength="10">
+    <icon texture="%ModDir%/Images/AfflictionIcons.png" sheetindex="0,1" sheetelementsize="128,128" origin="0,0" sourcerect="0,128,128,128" />
   </Affliction>
   <!-- Asystole / Lack of electrical activity of the heart
   Occurs due to exhaustion of the heart, cause hypoxemia and hypotension -->
-  <Affliction name="" identifier="asys" description="" healableinmedicalclinic="false" limbspecific="false" indicatorlimb="Torso" showiconthreshold="1" showinhealthscannerthreshold="1" targets="human" type="gaze" isbuff="false" maxstrength="10">
-    <icon texture="%ModDir%/Images/AfflictionIcons.png" sheetindex="0,1" sheetelementsize="128,128" origin="0,0" />
-  </Affliction>
-  <!-- Heart ATP deficiency
-  cause asystole and heart damage -->
-  <Affliction name="" identifier="heart_atp_down" description="" healableinmedicalclinic="false" limbspecific="false" indicatorlimb="Torso" showiconthreshold="1" showinhealthscannerthreshold="1" targets="human" type="gaze" isbuff="false" maxstrength="10">
-    <icon texture="%ModDir%/Images/AfflictionIcons.png" sheetindex="0,1" sheetelementsize="128,128" origin="0,0" />
-  </Affliction>
-  <!-- Myocardial Infarction / Heart Attack
-  Scanned Symptom, causes shortness of breath, chest pain,
-  nausea, sweating, heart damage and potentially cardiac arrest -->
-  <Affliction name="" identifier="heartattack" description="" healableinmedicalclinic="false" limbspecific="false" indicatorlimb="Torso" maxstrength="100" targets="human" showiconthreshold="500" showinhealthscannerthreshold="1" type="gaze" isbuff="false" damageoverlayalpha="1">
-    <icon texture="Content/UI/MainIconsAtlas.png" sourcerect="128,384,128,128" color="195,136,60,255" origin="0,0" />
-  </Affliction>
-  <!-- Angina / Angina Pectoris
-  Scanned Symptom, causes shortness of breath, chest pain,
-  nausea, sweating, heart damage and potentially cardiac arrest -->
-  <Affliction name="" identifier="angina" description="" healableinmedicalclinic="false" limbspecific="false" indicatorlimb="Torso" maxstrength="100" targets="human" showiconthreshold="500" showinhealthscannerthreshold="1" type="gaze" isbuff="false" damageoverlayalpha="1">
-    <icon texture="Content/UI/MainIconsAtlas.png" sourcerect="128,384,128,128" color="195,136,60,255" origin="0,0" />
-  </Affliction>
-  <!-- Сoronary artery disease
-  Occurs due to atherosclerosis or heart damage, can cause angina or myocardial infarction-->
-  <Affliction name="" identifier="coronary_a_d" description="" healableinmedicalclinic="false" limbspecific="false" indicatorlimb="Torso" maxstrength="100" targets="human" showiconthreshold="500" showinhealthscannerthreshold="1" type="gaze" isbuff="false" damageoverlayalpha="1">
-    <icon texture="Content/UI/MainIconsAtlas.png" sourcerect="128,384,128,128" color="195,136,60,255" origin="0,0" />
-  </Affliction>
-  <!-- Myocarditis bacterial
-  if normal immunity, passes by itself, otherwise leads to heart damage and asystole-->
-  <Affliction name="" identifier="myocarditisinf" description="" healableinmedicalclinic="false" limbspecific="false" indicatorlimb="Torso" maxstrength="100" targets="human" showiconthreshold="500" showinhealthscannerthreshold="1" type="gaze" isbuff="false" damageoverlayalpha="1">
-    <icon texture="Content/UI/MainIconsAtlas.png" sourcerect="128,384,128,128" color="195,136,60,255" origin="0,0" />
-  </Affliction>
-  <!-- Myocarditis viral
-  if normal immunity, passes by itself, otherwise leads to heart damage and asystole-->
-  <Affliction name="" identifier="myocarditisvir" description="" healableinmedicalclinic="false" limbspecific="false" indicatorlimb="Torso" maxstrength="100" targets="human" showiconthreshold="500" showinhealthscannerthreshold="1" type="gaze" isbuff="false" damageoverlayalpha="1">
-    <icon texture="Content/UI/MainIconsAtlas.png" sourcerect="128,384,128,128" color="195,136,60,255" origin="0,0" />
-  </Affliction>
-  <!-- Heart Damage
-  Scanned Symptom, causes shortness of breath, chest pain and cough, hypoxemia
-  leads to lung failure if severe enough -->
-  <Affliction name="" identifier="heartdamage" description="" healableinmedicalclinic="false" type="" isbuff="false" targets="human" limbspecific="false" indicatorlimb="Torso" maxstrength="100" showiconthreshold="500" showinhealthscannerthreshold="20" damageoverlayalpha="1">
-    <icon texture="Content/UI/MainIconsAtlas.png" sourcerect="128,384,128,128" color="195,136,60,255" origin="0,0" />
-  </Affliction>
-  <Affliction name="" identifier="heartfibrosis" description="" healableinmedicalclinic="false" type="" isbuff="false" targets="human" limbspecific="false" indicatorlimb="Torso" maxstrength="100" showiconthreshold="500" showinhealthscannerthreshold="20" damageoverlayalpha="1">
-    <icon texture="Content/UI/MainIconsAtlas.png" sourcerect="128,384,128,128" color="195,136,60,255" origin="0,0" />
+  <Affliction name="" identifier="asystole" description="" healableinmedicalclinic="false" limbspecific="false" indicatorlimb="Torso" showiconthreshold="1" showinhealthscannerthreshold="1" targets="human" type="gaze" isbuff="false" maxstrength="10">
+    <icon texture="%ModDir%/Images/AfflictionIcons.png" sheetindex="0,1" sheetelementsize="128,128" origin="0,0" sourcerect="0,128,128,128" />
   </Affliction>
   <!-- Heart removed
   Exposed Symptom, cardiac arrest -->
   <Affliction name="" identifier="heartremoved" description="The heart has been surgically removed" targets="human" healableinmedicalclinic="false" limbspecific="false" indicatorlimb="Torso" showiconthreshold="1" showinhealthscannerthreshold="1" type="gaze" isbuff="false" causeofdeathdescription="Died of missing a heart" selfcauseofdeathdescription="Your heart got removed." iconcolors="84,211,211,255;84,211,211,255" maxstrength="2">
-    <icon texture="%ModDir%/Images/AfflictionIcons.png" sheetindex="3,5" sheetelementsize="128,128" origin="0,0" />
+    <icon texture="%ModDir%/Images/AfflictionIcons.png" sheetindex="3,5" sheetelementsize="128,128" origin="0,0" sourcerect="384,640,128,128" />
   </Affliction>
-
-
-
-
-    <!-- Saline / increases blood pressure, even into potentially unwanted and harmful regions.
+  <!-- Saline / increases blood pressure, even into potentially unwanted and harmful regions.
   also causes acidosis.
   scanned Drug -->
   <Affliction name="" identifier="afsaline" description="" healableinmedicalclinic="false" targets="human" type="resistance" isbuff="true" limbspecific="false" showiconthreshold="200" showinhealthscannerthreshold="1" maxstrength="100">
@@ -87,9 +52,8 @@
         <Affliction identifier="bloodpressure" amount="3" />
       </StatusEffect>
     </Effect>
-    <icon texture="%ModDir%/Images/AfflictionIcons.png" sheetindex="3,3" sheetelementsize="128,128" origin="0,0" />
+    <icon texture="%ModDir%/Images/AfflictionIcons.png" sheetindex="3,3" sheetelementsize="128,128" origin="0,0" sourcerect="384,384,128,128" />
   </Affliction>
-
   <!-- Ringer's solution / increases blood pressure, even into potentially unwanted and harmful regions.
   unlike saline, doesnt cause acidosis.
   scanned Drug -->
@@ -100,38 +64,15 @@
         <Affliction identifier="bloodpressure" amount="3" />
       </StatusEffect>
     </Effect>
-    <icon texture="%ModDir%/Images/AfflictionIcons.png" sheetindex="3,3" sheetelementsize="128,128" origin="0,0" />
+    <icon texture="%ModDir%/Images/AfflictionIcons.png" sheetindex="3,3" sheetelementsize="128,128" origin="0,0" sourcerect="384,384,128,128" />
   </Affliction>
-
   <!-- Hemotransfusion shock
   Scanned Symptom -->
   <Affliction name="" identifier="hemotransfusionshock" description="" healableinmedicalclinic="false" targets="human" type="gaze" isbuff="false" limbspecific="false" showinhealthscannerthreshold="10" showiconthreshold="300" maxstrength="100">
-    <Effect minstrength="0" maxstrength="100" strengthchange="-0.5" />
-    <PeriodicEffect mininterval="1" maxinterval="3">
-      <StatusEffect target="character" disabledeltatime="true" comparison="and" checkconditionalalways="false">
-        <Conditional hemotransfusionshock="lt 70" />
-        <Conditional hemotransfusionshock="gte 15" />
-        <Affliction identifier="bloodloss" amount="1" />
-        <Affliction identifier="organdamage" amount="0.25" />
-        <Affliction identifier="liverdamage" amount="0.25" />
-        <Affliction identifier="kidneydamage" amount="0.25" />
-        <Affliction identifier="heartdamage" amount="0.25" />
-        <Affliction identifier="lungdamage" amount="0.25" />
-      </StatusEffect>
-      <StatusEffect target="character" disabledeltatime="true" comparison="and" checkconditionalalways="false">
-        <Conditional hemotransfusionshock="lt 15" />
-        <Affliction identifier="bloodloss" amount="1" />
-        <Affliction identifier="organdamage" amount="0.5" />
-        <Affliction identifier="liverdamage" amount="0.5" />
-        <Affliction identifier="kidneydamage" amount="0.5" />
-        <Affliction identifier="heartdamage" amount="0.5" />
-        <Affliction identifier="lungdamage" amount="0.5" />
-      </StatusEffect>
-    </PeriodicEffect>
+    <Effect minstrength="0" maxstrength="100" />
     <icon texture="%ModDir%/Images/AfflictionIcons.png" sourcerect="256,0,128,128" color="68,157,198,255" origin="0,0" />
   </Affliction>
-
-    <!-- Blood groups
+  <!-- Blood groups
   Invisible Property -->
   <Affliction name="O-" identifier="ominus" description="" healableinmedicalclinic="false" targets="human" type="resistance" isbuff="true" limbspecific="false" showinhealthscannerthreshold="0" showiconthreshold="0" maxstrength="1">
     <icon texture="Content/UI/MainIconsAtlas.png" sourcerect="256,896,128,128" color="10,193,114,255" origin="0,0" />
@@ -157,42 +98,31 @@
   <Affliction name="B+" identifier="bplus" description="" healableinmedicalclinic="false" targets="human" type="resistance" isbuff="true" limbspecific="false" showinhealthscannerthreshold="0" showiconthreshold="0" maxstrength="1">
     <icon texture="Content/UI/MainIconsAtlas.png" sourcerect="256,896,128,128" color="10,193,114,255" origin="0,0" />
   </Affliction>
-
   <!-- CPR
   Invisible Status -->
   <Affliction name="CPR" identifier="cpr_buff" healableinmedicalclinic="false" isbuff="true" targets="human" limbspecific="true" indicatorlimb="Torso" activationthreshold="1" showiconthreshold="10" showinhealthscannerthreshold="10" maxstrength="2">
-    <Effect minstrength="0" maxstrength="2" strengthchange="-0.5"/>
+    <Effect minstrength="0" maxstrength="2" strengthchange="-0.5" />
     <icon texture="Content/UI/MainIconsAtlas.png" sourcerect="256,896,128,128" color="195,104,60,255" origin="0,0" />
   </Affliction>
-
-
   <!-- /// First-Aid Stuff /// -->
   <!-- Bandaged
   Exposed, stops minorly infected wounds from deteriorating -->
   <Affliction name="" identifier="bandaged" description="" healableinmedicalclinic="false" targets="human" limbspecific="true" maxstrength="100" type="resistance" showiconthreshold="0.1" showinhealthscannerthreshold="200" isbuff="true">
     <Effect minstrength="0" maxstrength="100" />
-    <icon texture="%ModDir%/Images/AfflictionIcons.png" sheetindex="0,4" sheetelementsize="128,128" origin="0,0" />
+    <icon texture="%ModDir%/Images/AfflictionIcons.png" sheetindex="0,4" sheetelementsize="128,128" origin="0,0" sourcerect="0,512,128,128" />
   </Affliction>
-
-
-
-
-
-<!-- /// Immunity stuff /// -->
+  <!-- /// Immunity stuff /// -->
   <!-- Immunity / your immune system. heals you passively if high enough
   Scanned Property -->
   <Affliction name="" identifier="immunity" description="" healableinmedicalclinic="false" targets="human" type="gaze" isbuff="true" limbspecific="false" maxstrength="100" showinhealthscannerthreshold="0" showiconthreshold="0">
     <icon texture="Content/UI/MainIconsAtlas.png" sourcerect="256,896,128,128" color="10,193,114,255" origin="0,0" />
   </Affliction>
-  
   <!-- /// Override section begins /// -->
   <Override>
     <OxygenLow name="" identifier="oxygenlow" description="" type="oxygenlow" causeofdeathdescription="Suffocated" selfcauseofdeathdescription="You have suffocated." limbspecific="false" indicatorlimb="Torso" activationthreshold="1" showiconthreshold="500" showinhealthscannerthreshold="5" karmachangeonapplied="-0.2" maxstrength="200">
-      <Effect minstrength="1" maxstrength="200" strengthchange="0"/>
       <icon texture="Content/UI/MainIconsAtlas.png" sourcerect="512,640,128,128" color="68,157,198,255" origin="0,0" />
     </OxygenLow>
   </Override>
-
   <Override>
     <Bloodloss name="" identifier="bloodloss" description="" type="bloodloss" causeofdeathdescription="Bled to death" selfcauseofdeathdescription="You have bled to death." healableinmedicalclinic="false" limbspecific="false" indicatorlimb="Torso" activationthreshold="0" showiconthreshold="700" showinhealthscannerthreshold="5" maxstrength="200">
       <PeriodicEffect mininterval="4" maxinterval="4">
@@ -207,7 +137,6 @@
       <icon texture="Content/UI/MainIconsAtlas.png" sourcerect="0,768,128,128" color="139,60,42,255" origin="0,0" />
     </Bloodloss>
   </Override>
-  
   <Override>
     <Affliction name="" identifier="morbusinepoisoning" description="" type="poison" causeofdeathdescription="Died of morbusine poisoning." selfcauseofdeathdescription="You have died of morbusine poisoning." limbspecific="false" indicatorlimb="Torso" showiconthreshold="700" showinhealthscannerthreshold="5" karmachangeonapplied="-100" maxstrength="100">
       <!-- Reduce oxygen intake for the victim, cause suffocation -->
@@ -308,7 +237,7 @@
   <Override>
     <InternalDamage name="" identifier="blunttrauma" description="" type="damage" causeofdeathdescription="" selfcauseofdeathdescription="" limbspecific="true" maxstrength="200" damageoverlayalpha="1">
       <Effect minstrength="0" maxstrength="200" multiplybymaxvitality="true" minvitalitydecrease="0" maxvitalitydecrease="2"></Effect>
-      <icon texture="Content/UI/MainIconsAtlas.png" sourcerect="768,896,128,128" color="195,136,60,255" origin="0,0"/>
+      <icon texture="Content/UI/MainIconsAtlas.png" sourcerect="768,896,128,128" color="195,136,60,255" origin="0,0" />
     </InternalDamage>
   </Override>
   <Override>

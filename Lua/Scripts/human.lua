@@ -1,7 +1,7 @@
 -- Накладывает случайную группу крови в таблице 
 local function give_random_blood(character)
     rand = math.random(1, #BLOODTYPE)
-    Utils.SetAffliction(character, BLOODTYPE[rand],1)
+    Utils.SetAffliction(character, BLOODTYPE[rand], 1)
 end
 
 -- Проверяет наличие крови и возвращает true если она есть
