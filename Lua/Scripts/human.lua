@@ -27,11 +27,21 @@ function Main.FixRequiredAfflictions(character)
     if(Utils.GetAffliction(character, "immunity") == 0) then
         Utils.SetAffliction(character, "immunity", 600)
     end
+
+    -- Выдача давления
+    if(Utils.GetAffliction(character, "bloodpressure") == 0) then
+        Utils.SetAffliction(character, "bloodpressure", 100)
+    end
+
+    -- Выдача кислорода
+    if(Utils.GetAffliction(character, "SpO2") == 0) then
+        Utils.SetAffliction(character, "SpO2", 100)
+    end
 end
 
 Hook.Add("characterCreated", "AM.init_char", function(createdCharacter)
     Timer.Wait(function()
-        if(createdCharacter.IsPlayer and not createdCharacter.IsDead) then
+        if(createdCharacter.IsHuman and not createdCharacter.IsDead) then
             Main.FixRequiredAfflictions(createdCharacter)
         end
     end, 1000)

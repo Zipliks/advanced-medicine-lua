@@ -36,9 +36,9 @@
   <Affliction name="" identifier="asys" description="" healableinmedicalclinic="false" limbspecific="false" indicatorlimb="Torso" showiconthreshold="1" showinhealthscannerthreshold="1" targets="human" type="gaze" isbuff="false" maxstrength="10">
     <icon texture="%ModDir%/Images/AfflictionIcons.png" sheetindex="0,1" sheetelementsize="128,128" origin="0,0" />
   </Affliction>
-  <!-- Heart ATP deficiency
+  <!-- Heart failure
   cause asystole and heart damage -->
-  <Affliction name="" identifier="heart_atp_down" description="" healableinmedicalclinic="false" limbspecific="false" indicatorlimb="Torso" showiconthreshold="1" showinhealthscannerthreshold="1" targets="human" type="gaze" isbuff="false" maxstrength="10">
+  <Affliction name="Heart failure" identifier="heart_failure" description="" healableinmedicalclinic="false" limbspecific="false" indicatorlimb="Torso" showiconthreshold="1" showinhealthscannerthreshold="1" targets="human" type="gaze" isbuff="false" maxstrength="10">
     <icon texture="%ModDir%/Images/AfflictionIcons.png" sheetindex="0,1" sheetelementsize="128,128" origin="0,0" />
   </Affliction>
   <!-- Myocardial Infarction / Heart Attack
@@ -83,8 +83,17 @@
     <icon texture="%ModDir%/Images/AfflictionIcons.png" sheetindex="3,5" sheetelementsize="128,128" origin="0,0" />
   </Affliction>
 
-
-
+  <!-- /// Blood Stuff /// -->
+  <!-- Blood Pressure
+  Scanned Symptom -->
+  <Affliction name="Blood Pressure" identifier="bloodpressure" description="" targets="human" limbspecific="false" indicatorlimb="Torso" activationthreshold="0" healableinmedicalclinic="false" type="" isbuff="true" showinhealthscannerthreshold="0" showiconthreshold="300" maxstrength="200">
+    <icon texture="%ModDir%/Images/AfflictionIcons.png" sourcerect="128,128,128,128" color="68,157,198,255" origin="0,0" />
+  </Affliction>
+  <!-- SpO2 / Oxygen saturation in blood
+  Scanned Symptom -->
+  <Affliction name="SpO2" identifier="SpO2" description="" targets="human" limbspecific="false" indicatorlimb="Torso" activationthreshold="0" healableinmedicalclinic="false" type="gaze" isbuff="false" showinhealthscannerthreshold="0" showiconthreshold="300" maxstrength="100">
+    <icon texture="%ModDir%/Images/AfflictionIcons.png" sourcerect="128,128,128,128" color="68,157,198,255" origin="0,0" />
+  </Affliction>
 
     <!-- Saline / increases blood pressure, even into potentially unwanted and harmful regions.
   also causes acidosis.
