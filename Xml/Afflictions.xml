@@ -23,12 +23,12 @@
   </Affliction>
   <!-- Ventricular Tachycardia / The ventricles contract rapidly
   cause hypoxemia and hypotension, if left untreated, it will become ventricular fibrillation -->
-  <Affliction name="" identifier="vt" description="" healableinmedicalclinic="false" limbspecific="false" indicatorlimb="Torso" showiconthreshold="1" showinhealthscannerthreshold="1" targets="human" type="gaze" isbuff="false" maxstrength="10">
+  <Affliction name="Ventricular Tachycardia" identifier="vt" description="" healableinmedicalclinic="false" limbspecific="false" indicatorlimb="Torso" showiconthreshold="1" showinhealthscannerthreshold="1" targets="human" type="gaze" isbuff="false" maxstrength="10">
     <icon texture="%ModDir%/Images/AfflictionIcons.png" sheetindex="0,1" sheetelementsize="128,128" origin="0,0" />
   </Affliction>
   <!-- Ventricular Fibrillation / The ventricles contract randomly
   cause hypoxemia and hypotension, if left untreated, it will become asystole-->
-  <Affliction name="" identifier="vf" description="" healableinmedicalclinic="false" limbspecific="false" indicatorlimb="Torso" showiconthreshold="1" showinhealthscannerthreshold="1" targets="human" type="gaze" isbuff="false" maxstrength="10">
+  <Affliction name="Ventricular Fibrillation" identifier="vf" description="" healableinmedicalclinic="false" limbspecific="false" indicatorlimb="Torso" showiconthreshold="1" showinhealthscannerthreshold="1" targets="human" type="gaze" isbuff="false" maxstrength="10">
     <icon texture="%ModDir%/Images/AfflictionIcons.png" sheetindex="0,1" sheetelementsize="128,128" origin="0,0" />
   </Affliction>
   <!-- Asystole / Lack of electrical activity of the heart
@@ -38,7 +38,7 @@
   </Affliction>
   <!-- Heart failure
   cause asystole and heart damage -->
-  <Affliction name="Heart failure" identifier="heart_failure" description="" healableinmedicalclinic="false" limbspecific="false" indicatorlimb="Torso" showiconthreshold="1" showinhealthscannerthreshold="1" targets="human" type="gaze" isbuff="false" maxstrength="10">
+  <Affliction name="Heart failure" identifier="heart_failure" description="" healableinmedicalclinic="false" limbspecific="false" indicatorlimb="Torso" showiconthreshold="1" showinhealthscannerthreshold="1" targets="human" type="gaze" isbuff="false" maxstrength="200">
     <icon texture="%ModDir%/Images/AfflictionIcons.png" sheetindex="0,1" sheetelementsize="128,128" origin="0,0" />
   </Affliction>
   <!-- Myocardial Infarction / Heart Attack
