@@ -63,24 +63,25 @@ end)
 -- STUB: Bloodloss
 Main.AddAfflictionHandler("bloodloss", "has_bloodloss", function(character, strength)
     local bloodloss_strength = Utils.GetAffliction(character, "bloodloss")
+    local bloodpressure_strength = Utils.GetAffliction(character, "bloodpressure")
+    local oxygen_saturation_strength = Utils.GetAffliction(character, "oxygen_saturation")
     
-    if(bloodloss_strength >= 100 and SpO2_strength >= 2) then
-        Utils.SetAffliction(character, "SpO2", bloodloss_strength*-0.003*DELTA_TIME, LimbType.Torso, true)
+    if(bloodloss_strength >= 100) and (oxygen_saturation_strength >= 2) then
+        Utils.SetAffliction(character, "oxygen_saturation", bloodloss_strength*-0.001*DELTA_TIME, LimbType.Torso, true)
     end
 
-    if(bloodpressure_strength >= 2) and (bloodloss_strength >= 30) then
-            Utils.SetAffliction(character, "bloodpressure", bloodpressure_strength*-0.01*DELTA_TIME, LimbType.Torso, true)
-    elseif(bloodpressure_strength >= 2) and (bloodloss_strength >= 75) then
-            Utils.SetAffliction(character, "bloodpressure", bloodpressure_strength*-0.01*DELTA_TIME, LimbType.Torso, true)
-    elseif(bloodpressure_strength >= 2) and (bloodloss_strength >= 132) then
-            Utils.SetAffliction(character, "bloodpressure", bloodpressure_strength*-0.01*DELTA_TIME, LimbType.Torso, true)
-        end
+    if(bloodpressure_strength >= 80) and (bloodloss_strength >= 25) and (bloodloss_strength <= 65) then
+            Utils.SetAffliction(character, "bloodpressure", bloodpressure_strength*bloodloss_strength*-0.0001*DELTA_TIME, LimbType.Torso, true)
+    elseif(bloodpressure_strength >= 60) and (bloodloss_strength >= 65) and (bloodloss_strength <= 135) then
+            Utils.SetAffliction(character, "bloodpressure", bloodpressure_strength*bloodloss_strength*-0.0001*DELTA_TIME, LimbType.Torso, true)
+    elseif(bloodpressure_strength >= 2) and (bloodloss_strength >= 135) then
+            Utils.SetAffliction(character, "bloodpressure", bloodpressure_strength*bloodloss_strength*-0.0001*DELTA_TIME, LimbType.Torso, true)
     end
 end)
 
 -- STUB: Blood Pressure
 Main.AddAfflictionHandler("bloodpressure", "has_bloodpressure", function(character, strength)
-    bloodpressure_strength = Utils.GetAffliction(character, "bloodpressure")
+    local bloodpressure_strength = Utils.GetAffliction(character, "bloodpressure")
     
     if(bloodpressure_strength >= 100) then
         Utils.SetAffliction(character, "bloodpressure", -0.3*DELTA_TIME, LimbType.Head, true)
@@ -106,59 +107,61 @@ end)
 -- STUB: Oxygenlow
 Main.AddAfflictionHandler("oxygenlow", "has_oxygenlow", function(character, strength)
     local oxygenlow_strength = Utils.GetAffliction(character, "oxygenlow")
+    local oxygen_saturation_strength = Utils.GetAffliction(character, "oxygen_saturation")
     
-    if(oxygenlow_strength >= 50 and SpO2_strength >= 2) then
-        Utils.SetAffliction(character, "SpO2", -0.03*DELTA_TIME, LimbType.Torso, true)
+    if(oxygenlow_strength >= 50 and oxygen_saturation_strength >= 2) then
+        Utils.SetAffliction(character, "oxygen_saturation", -0.03*DELTA_TIME, LimbType.Torso, true)
     end
     if(oxygenlow_strength <= 50) then
-        Utils.SetAffliction(character, "SpO2", oxygenlow_strength*0.003*DELTA_TIME, LimbType.Torso, true)
+        Utils.SetAffliction(character, "oxygen_saturation", oxygenlow_strength*0.003*DELTA_TIME, LimbType.Torso, true)
     end
 end)
 
-Main.AddAfflictionHandler("SpO2", "has_SpO2", function(character, strength)
-    SpO2_strength = Utils.GetAffliction(character, "SpO2")
+Main.AddAfflictionHandler("oxygen_saturation", "has_oxygen_saturation", function(character, strength)
+    local oxygen_saturation_strength = Utils.GetAffliction(character, "oxygen_saturation")
     
-    if(SpO2_strength <= 90) then
-        Utils.SetAffliction(character, "hypoxia", SpO2_strength^-2*DELTA_TIME, LimbType.Torso, true)
-        Utils.SetAffliction(character, "heart_failure", SpO2_strength^-2*DELTA_TIME, LimbType.Torso, true)
+    if(oxygen_saturation_strength <= 90) then
+        Utils.SetAffliction(character, "hypoxia", oxygen_saturation_strength^-2*DELTA_TIME, LimbType.Torso, true)
+        Utils.SetAffliction(character, "heart_failure", oxygen_saturation_strength^-2*DELTA_TIME, LimbType.Torso, true)
     end
 end)
 
 Main.AddAfflictionHandler("heart_failure", "has_heart_failure", function(character, strength) --Hnappinn: Heart issue
-    heart_failure_strength = Utils.GetAffliction(character, "heart_failure")
+    local heart_failure_strength = Utils.GetAffliction(character, "heart_failure")
+    local ventricular_fib_strength = Utils.GetAffliction(character, "ventricular_fib")
     
-    if(heart_failure_strength >= 15 and heart_failure_strength <= 40 and vf_strength >= 1) then
-        Utils.SetAffliction(character, "vt", 10*DELTA_TIME, LimbType.Torso, true)
+    if(heart_failure_strength >= 15 and heart_failure_strength <= 40 and ventricular_fib_strength >= 1) then
+        Utils.SetAffliction(character, "ventricular_tachy", 10*DELTA_TIME, LimbType.Torso, true)
     end
     
     if(heart_failure_strength >= 40 and heart_failure_strength <= 125) then
-        Utils.SetAffliction(character, "vf", 10*DELTA_TIME, LimbType.Torso, true)
+        Utils.SetAffliction(character, "ventricular_fib", 10*DELTA_TIME, LimbType.Torso, true)
         Utils.SetAffliction(character, "asys", -10*DELTA_TIME, LimbType.Torso, true)
-        Utils.SetAffliction(character, "vt", -10*DELTA_TIME, LimbType.Torso, true)
+        Utils.SetAffliction(character, "ventricular_tachy", -10*DELTA_TIME, LimbType.Torso, true)
     end
     
     if(heart_failure_strength >= 125 and heart_failure_strength <= 200) then
         Utils.SetAffliction(character, "asys", 10*DELTA_TIME, LimbType.Torso, true)
-        Utils.SetAffliction(character, "vf", -10*DELTA_TIME, LimbType.Torso, true)
+        Utils.SetAffliction(character, "ventricular_fib", -10*DELTA_TIME, LimbType.Torso, true)
     end
 end)
 
-Main.AddAfflictionHandler("vt", "has_vt", function(character, strength)
-    vt_strength = Utils.GetAffliction(character, "vt")
+Main.AddAfflictionHandler("ventricular_tachy", "has_ventricular_tachy", function(character, strength)
+    local bloodpressure_strength = Utils.GetAffliction(character, "bloodpressure")
 
     Utils.SetAffliction(character, "bloodpressure", bloodpressure_strength*-0.01*DELTA_TIME, LimbType.Torso, true)
     Utils.SetAffliction(character, "heart_failure", 0.085*DELTA_TIME, LimbType.Torso, true)
 end)
 
-Main.AddAfflictionHandler("vf", "has_vf", function(character, strength)
-    vf_strength = Utils.GetAffliction(character, "vf")
+Main.AddAfflictionHandler("ventricular_fib", "has_ventricular_fib", function(character, strength)
+    local bloodpressure_strength = Utils.GetAffliction(character, "bloodpressure")
 
     Utils.SetAffliction(character, "bloodpressure", bloodpressure_strength*-0.03*DELTA_TIME, LimbType.Torso, true)
     Utils.SetAffliction(character, "heart_failure", 0.1*DELTA_TIME, LimbType.Torso, true)
 end)
 
 Main.AddAfflictionHandler("asys", "has_asys", function(character, strength)
-    asys_strength = Utils.GetAffliction(character, "asys")
+    local bloodpressure_strength = Utils.GetAffliction(character, "bloodpressure")
 
     Utils.SetAffliction(character, "bloodpressure", bloodpressure_strength*-0.03*DELTA_TIME, LimbType.Torso, true)
 end)
