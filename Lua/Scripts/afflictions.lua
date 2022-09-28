@@ -68,14 +68,11 @@ Main.AddAfflictionHandler("bloodloss", "has_bloodloss", function(character, stre
         Utils.SetAffliction(character, "SpO2", bloodloss_strength*-0.003*DELTA_TIME, LimbType.Torso, true)
     end
 
-    if(bloodpressure_strength >= 2) then
-        if(bloodloss_strength >= 30) then
+    if(bloodpressure_strength >= 2) and (bloodloss_strength >= 30) then
             Utils.SetAffliction(character, "bloodpressure", bloodpressure_strength*-0.01*DELTA_TIME, LimbType.Torso, true)
-        end
-        if(bloodloss_strength >= 75) then
+    elseif(bloodpressure_strength >= 2) and (bloodloss_strength >= 75) then
             Utils.SetAffliction(character, "bloodpressure", bloodpressure_strength*-0.01*DELTA_TIME, LimbType.Torso, true)
-        end
-        if(bloodloss_strength >= 132) then
+    elseif(bloodpressure_strength >= 2) and (bloodloss_strength >= 132) then
             Utils.SetAffliction(character, "bloodpressure", bloodpressure_strength*-0.01*DELTA_TIME, LimbType.Torso, true)
         end
     end
