@@ -84,13 +84,11 @@ Main.AddAfflictionHandler("bloodpressure", "has_bloodpressure", function(charact
     
     if(bloodpressure_strength >= 100) then
         Utils.SetAffliction(character, "bloodpressure", -0.3*DELTA_TIME, LimbType.Head, true)
-    end
 
-    if(bloodpressure_strength <= 70) then
+    elseif(bloodpressure_strength <= 70) then
         Utils.SetAffliction(character, "heart_failure", (1+bloodpressure_strength)^-1*DELTA_TIME, LimbType.Torso, true)
-    end
     
-    if(bloodpressure_strength <= 100) then
+    elseif(bloodpressure_strength <= 100) then
         Utils.SetAffliction(character, "bloodpressure", 0.3*DELTA_TIME, LimbType.Head, true)
     end
 end)
