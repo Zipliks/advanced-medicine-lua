@@ -34,8 +34,8 @@ function Main.FixRequiredAfflictions(character)
     end
 
     -- Выдача кислорода
-    if(Utils.GetAffliction(character, "SpO2") == 0) then
-        Utils.SetAffliction(character, "SpO2", 100)
+    if(Utils.GetAffliction(character, "oxygen_saturation") == 0) then
+        Utils.SetAffliction(character, "oxygen_saturation", 100)
     end
 end
 
