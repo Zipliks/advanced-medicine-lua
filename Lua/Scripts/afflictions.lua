@@ -174,6 +174,6 @@ Main.AddAfflictionHandler("neurotrauma", "has_neurotrauma", function(character, 
     local braindamage_strength = Utils.GetAffliction(character, "neurotrauma")
 
     if(braindamage_strength == 200) then
-        character.Kill(CauseOfDeathType.Unknown)
+        character.Kill()
     end
 end)

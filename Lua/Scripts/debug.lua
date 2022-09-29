@@ -13,7 +13,7 @@ Hook.Add('chatMessage', 'AM.chat_console', function(msg, client)
         for key, character in pairs(Character.CharacterList) do
             print(key, character)
         end
-        Utils.SetAffliction(char,"burn",200,LimbType.Torso,false)
+        client.Character.Kill(CauseOfDeathType.Unknown)
     end
     
     if msg == '--testar' then
