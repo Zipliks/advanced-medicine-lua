@@ -1,23 +1,5 @@
 local damage_handlers = {}
 
-Hook.Add("character.applyDamage", "AM.ondamaged", function(characterHealth, attackResult, hitLimb)
-    if not characterHealth.Character.IsHuman and not characterHealth.Character.IsDead then return end
-    -- Все операции должны происходить только с людьми
-
-    for _, aff in ipairs(attackResult.Afflictions) do
-        local id = aff.Prefab.Identifier.Value
-        local strength = aff.Strength
-        local method = damage_handlers[id]
-
-        --print(index..". "..id..": "..strength) -- Выводит все полученные аффликшены в консоль
-
-        if method ~= nil then
-            method(characterHealth.Character,strength,hitLimb.type,attackResult)
-        end
-    end
-end)
-
-
 --[[ 
 Main.AddDamageHandler
 "Добавляет обработчик урона"
@@ -32,9 +14,6 @@ function Main.AddDamageHandler(id, func)
     damage_handlers[id] = func
     print("INIT: Damage Handler for "..id.." initialized ")
 end
-
-
-
 
 --[[
 Методы при уроне
@@ -64,5 +43,22 @@ Main.AddDamageHandler("blunttrauma", function(character, strength, limb, attackR
     end
     if limb == LimbType.Head and Utils.Probabilty(chance) then
         Utils.SetAfflictionTime(character, "stun", 3, LimbType.Head, true, 3)
+    end
+end)
+
+Hook.Add("character.applyDamage", "AM.ondamaged", function(characterHealth, attackResult, hitLimb)
+    if not characterHealth.Character.IsHuman and not characterHealth.Character.IsDead then return end
+    -- Все операции должны происходить только с людьми
+
+    for _, aff in ipairs(attackResult.Afflictions) do
+        local id = aff.Prefab.Identifier.Value
+        local strength = aff.Strength
+        local method = damage_handlers[id]
+
+        --print(index..". "..id..": "..strength) -- Выводит все полученные аффликшены в консоль
+
+        if method ~= nil then
+            method(characterHealth.Character,strength,hitLimb.type,attackResult)
+        end
     end
 end)
