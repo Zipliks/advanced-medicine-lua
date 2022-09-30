@@ -6,3 +6,6 @@ DELTA_TIME = UPDATE_INTERVAL / 60
 -- Blood
 BLOODTYPE = {"ominus","oplus","aminus","aplus","bminus","bplus","abminus","abplus"}
 HUMAN_LIMBS = {LimbType.Head,LimbType.Torso,LimbType.RightLeg,LimbType.LeftLeg,LimbType.RightArm,LimbType.LeftArm}
+
+--Magic numbers
+REDUCE_PRESSURE = -0.0001

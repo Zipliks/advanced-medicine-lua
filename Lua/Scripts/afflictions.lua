@@ -71,11 +71,11 @@ Main.AddAfflictionHandler("bloodloss", "has_bloodloss", function(character, stre
     end
 
     if(bloodpressure_strength >= 80) and (bloodloss_strength >= 25) and (bloodloss_strength <= 65) then
-            Utils.SetAffliction(character, "bloodpressure", bloodpressure_strength*bloodloss_strength*-0.0001*DELTA_TIME, LimbType.Torso, true)
+            Utils.SetAffliction(character, "bloodpressure", bloodpressure_strength*bloodloss_strength*REDUCE_PRESSURE*DELTA_TIME, LimbType.Torso, true)
     elseif(bloodpressure_strength >= 60) and (bloodloss_strength >= 65) and (bloodloss_strength <= 135) then
-            Utils.SetAffliction(character, "bloodpressure", bloodpressure_strength*bloodloss_strength*-0.0001*DELTA_TIME, LimbType.Torso, true)
+            Utils.SetAffliction(character, "bloodpressure", bloodpressure_strength*bloodloss_strength*REDUCE_PRESSURE*DELTA_TIME, LimbType.Torso, true)
     elseif(bloodpressure_strength >= 2) and (bloodloss_strength >= 135) then
-            Utils.SetAffliction(character, "bloodpressure", bloodpressure_strength*bloodloss_strength*-0.0001*DELTA_TIME, LimbType.Torso, true)
+            Utils.SetAffliction(character, "bloodpressure", bloodpressure_strength*bloodloss_strength*REDUCE_PRESSURE*DELTA_TIME, LimbType.Torso, true)
     end
 end)
 
@@ -174,6 +174,6 @@ Main.AddAfflictionHandler("neurotrauma", "has_neurotrauma", function(character, 
     local braindamage_strength = Utils.GetAffliction(character, "neurotrauma")
 
     if(braindamage_strength == 200) then
-        character.Kill(CauseOfDeathType.Unknown)
+        character.Kill()
     end
 end)
