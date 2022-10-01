@@ -2,7 +2,7 @@
 <Afflictions>
   <!-- /// Head /// -->
   <!-- Brain Hypoxia -->
-  <Affliction name="" identifier="hypoxia" description="" limbspecific="false" indicatorlimb="Head" showiconthreshold="1" showinhealthscannerthreshold="10" maxstrength="2" targets="human" type="gaze" isbuff="false" healableinmedicalclinic="false" iconcolors="255,90,0,255;255,90,0,255">
+  <Affliction name="" identifier="hypoxia" description="" limbspecific="false" indicatorlimb="Head" showiconthreshold="1" showinhealthscannerthreshold="10" maxstrength="30" targets="human" type="gaze" isbuff="false" healableinmedicalclinic="false" iconcolors="255,90,0,255;255,90,0,255">
     <icon texture="%ModDir%/Images/AfflictionIcons.png" sheetindex="1,1" sheetelementsize="128,128" origin="0,0" sourcerect="256,384,128,128" />
   </Affliction>
   <!-- Brain Damage-->
@@ -175,6 +175,67 @@
   </Affliction>
   <Affliction name="B+" identifier="bplus" description="" healableinmedicalclinic="false" targets="human" type="resistance" isbuff="true" limbspecific="false" showinhealthscannerthreshold="0" showiconthreshold="0" maxstrength="1">
     <icon texture="Content/UI/MainIconsAtlas.png" sourcerect="256,896,128,128" color="10,193,114,255" origin="0,0" />
+  </Affliction>
+
+  <!-- /// Lung Stuff /// -->
+  <!-- Respiratory Arrest / Apnea
+  Exposed Symptom -->
+  <Affliction name="Respiratory Arrest" identifier="respiratoryarrest" description="" healableinmedicalclinic="false" type="gaze" isbuff="false" targets="human" limbspecific="false" indicatorlimb="Torso" showiconthreshold="1" showinhealthscannerthreshold="100" maxstrength="2">
+    <icon texture="%ModDir%/Images/AfflictionIcons.png" sheetindex="3,0" sheetelementsize="128,128" origin="0,0" />
+  </Affliction>
+  <!-- Respiratory failure / Respiratory failure results from inadequate gas exchange by the respiratory system
+  Exposed Symptom -->
+  <Affliction name="Respiratory Failure" identifier="respiratoryfailure" description="" healableinmedicalclinic="false" type="gaze" isbuff="false" targets="human" limbspecific="false" indicatorlimb="Torso" showiconthreshold="1" showinhealthscannerthreshold="1" maxstrength="100">
+    <icon texture="%ModDir%/Images/AfflictionIcons.png" sheetindex="3,0" sheetelementsize="128,128" origin="0,0" />
+  </Affliction>
+  <!-- Pulmonary edema
+  Exposed Symptom -->
+  <Affliction name="" identifier="pulmonary_edema" description="" healableinmedicalclinic="false" type="gaze" isbuff="false" targets="human" limbspecific="false" indicatorlimb="Torso" showiconthreshold="1" showinhealthscannerthreshold="100" maxstrength="2">
+    <icon texture="%ModDir%/Images/AfflictionIcons.png" sheetindex="3,0" sheetelementsize="128,128" origin="0,0" />
+  </Affliction>
+  <!-- Hyperventilation
+  Exposed Symptom -->
+  <Affliction name="" identifier="hyperventilation" description="" healableinmedicalclinic="false" type="gaze" isbuff="false" targets="human" limbspecific="false" indicatorlimb="Torso" showiconthreshold="1" showinhealthscannerthreshold="200" maxstrength="2" iconcolors="255,90,0,255;255,90,0,255">
+    <icon texture="%ModDir%/Images/AfflictionIcons.png" sheetindex="4,0" sheetelementsize="128,128" origin="0,0" />
+  </Affliction>
+  <!-- Hypoventilation
+  Exposed Symptom -->
+  <Affliction name="" identifier="hypoventilation" description="" healableinmedicalclinic="false" type="gaze" isbuff="false" targets="human" limbspecific="false" indicatorlimb="Torso" showiconthreshold="1" showinhealthscannerthreshold="200" maxstrength="2" iconcolors="255,90,0,255;255,90,0,255">
+    <icon texture="%ModDir%/Images/AfflictionIcons.png" sheetindex="5,0" sheetelementsize="128,128" origin="0,0" />
+  </Affliction>
+  <!-- Dyspnea / Shortness of breath
+  Exposed Symptom -->
+  <Affliction name="" identifier="dyspnea" description="" healableinmedicalclinic="false" type="gaze" isbuff="false" targets="human" limbspecific="false" indicatorlimb="Torso" showinhealthscannerthreshold="100" showiconthreshold="1" maxstrength="2" iconcolors="255,90,0,255;255,90,0,255">
+    <icon texture="%ModDir%/Images/AfflictionIcons.png" sheetindex="6,0" sheetelementsize="128,128" origin="0,0" />
+  </Affliction>
+  <!-- Alkalosis
+  scanned Symptom -->
+  <Affliction name="" identifier="alkalosis" description="" healableinmedicalclinic="false" type="gaze" isbuff="false" targets="human" limbspecific="false" indicatorlimb="Torso" showiconthreshold="500" showinhealthscannerthreshold="500" maxstrength="100">
+    <icon texture="%ModDir%/Images/AfflictionIcons.png" sourcerect="0,128,128,128" color="0,255,0,255" origin="0,0" />
+  </Affliction>
+  <!-- Acidosis
+  scanned Symptom -->
+  <Affliction name="" identifier="acidosis" description="" healableinmedicalclinic="false" type="gaze" isbuff="false" targets="human" limbspecific="false" indicatorlimb="Torso" showiconthreshold="500" showinhealthscannerthreshold="500" maxstrength="100">
+    <icon texture="%ModDir%/Images/AfflictionIcons.png" sourcerect="0,128,128,128" color="0,255,0,255" origin="0,0" />
+  </Affliction>
+  <!-- Pneumothroax / collapsed lung / causes shortness of breath, tachycardia, hyperventilation, hypotension, chest pain
+  scanned Symptom -->
+  <Affliction name="" identifier="pneumothorax" description="" healableinmedicalclinic="false" targets="human" type="gaze" isbuff="false" causeofdeathdescription="" selfcauseofdeathdescription="" limbspecific="True" showiconthreshold="700" showinhealthscannerthreshold="10" maxstrength="100">
+    <icon texture="Content/UI/MainIconsAtlas.png" sourcerect="896,896,128,128" color="195,136,60,255" origin="0,0" />
+  </Affliction>
+  <!-- Lung Damage
+  Scanned Symptom, causes shortness of breath, chest pain and cough, hypoxemia
+  leads to lung failure if severe enough -->
+  <Affliction name="" identifier="lungdamage" description="" healableinmedicalclinic="false" type="gaze" isbuff="false" targets="human" causeofdeathdescription="" selfcauseofdeathdescription="" limbspecific="false" indicatorlimb="Torso" maxstrength="100" showiconthreshold="500" showinhealthscannerthreshold="20" damageoverlayalpha="1">
+    <icon texture="Content/UI/MainIconsAtlas.png" sourcerect="128,384,128,128" color="195,136,60,255" origin="0,0" />
+  </Affliction>
+  <Affliction name="" identifier="lungfibrosis" description="" healableinmedicalclinic="false" type="gaze" isbuff="false" targets="human" causeofdeathdescription="" selfcauseofdeathdescription="" limbspecific="false" indicatorlimb="Torso" maxstrength="100" showiconthreshold="500" showinhealthscannerthreshold="20" damageoverlayalpha="1">
+    <icon texture="Content/UI/MainIconsAtlas.png" sourcerect="128,384,128,128" color="195,136,60,255" origin="0,0" />
+  </Affliction>
+  <!-- Lungs removed
+  Exposed Symptom, respiratory arrest -->
+  <Affliction name="" identifier="lungremoved" description="" healableinmedicalclinic="false" targets="human" type="gaze" isbuff="false" limbspecific="false" indicatorlimb="Torso" showiconthreshold="1" showinhealthscannerthreshold="1" causeofdeathdescription="Died of missing lungs" selfcauseofdeathdescription="Your lungs got removed." iconcolors="84,211,211,255;84,211,211,255" maxstrength="2">
+    <icon texture="%ModDir%/Images/AfflictionIcons.png" sheetindex="1,5" sheetelementsize="128,128" origin="0,0" />
   </Affliction>
 
   <!-- CPR
