@@ -14,7 +14,6 @@ end)
 --CPR
 Main.AddAfflictionHandler("cpr_buff", "has_cpr", function(character, strength)
     Utils.SetAffliction(character, "oxygenlow", -10, nil, true)
-    Utils.SetAffliction(character, "oxygenlow", -10, nil, true)
 end)
 
 --Bite Wounds
