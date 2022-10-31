@@ -1,6 +1,8 @@
 ---@diagnostic disable: undefined-field, undefined-global
 Utils = {}
 
+math.randomseed(os.time())
+
 function Utils.is_game_paused()
     if SERVER then
         return false
@@ -89,7 +91,6 @@ end
 Возвращает true/false с псевдошансом
 ]]
 function Utils.Probabilty(chance)
-    math.randomseed(os.time())
     local random = math.random() * 100
 
     if random <= chance then
