@@ -220,9 +220,9 @@ Main.AddAfflictionHandler("respiratoryarrest", "has_respiratoryarrest", function
 end)
 
 Main.AddAfflictionHandler("respiratoryfailure", "has_respiratoryfailure", function(character, strength)
-    local respiratoryfailure_strength = Utils.GetAffliction(character, "respiratoryfailure")
-    local oxygen_saturation_strength = Utils.GetAffliction(character, "oxygen_saturation")
-    local bloodpressure_strength = Utils.GetAffliction(character, "bloodpressure")
+	local respiratoryfailure_strength = Utils.GetAffliction(character, "respiratoryfailure")
+	local oxygen_saturation_strength = Utils.GetAffliction(character, "oxygen_saturation")
+	local bloodpressure_strength = Utils.GetAffliction(character, "bloodpressure")
 
 
     if(respiratoryfailure_strength >= 25 and oxygen_saturation_strength >= 90) then
