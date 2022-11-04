@@ -90,7 +90,7 @@ end
 --[[
 Возвращает true/false с псевдошансом
 ]]
-function Utils.Probability(chance)
+function Utils.Probabilty(chance)
     local random = math.random() * 100
 
     if random <= chance then
