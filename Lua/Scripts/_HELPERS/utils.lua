@@ -92,9 +92,5 @@ end
 ]]
 function Utils.Probability(chance)
     local random = math.random() * 100
-
-    if random <= chance then
-        return true
-    end
-    return false
+	return random <= chance
 end
