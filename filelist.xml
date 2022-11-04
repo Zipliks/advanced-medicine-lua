@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<contentpackage name="The Good Doctor" modversion="0.0.4" corepackage="False" gameversion="0.18.0.0">
+<contentpackage name="Enhanced Medicine" modversion="0.0.4" corepackage="False" gameversion="0.19.0.0">
   <!-- Afflictions -->
   <Afflictions file="%ModDir%/Xml/afflictions.xml" />
   <Item file="%ModDir%/Xml/items.xml" />

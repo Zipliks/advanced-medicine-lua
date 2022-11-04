@@ -33,7 +33,136 @@ end)
 
 -- Этот код исполняется при получении тупых травм
 Main.AddDamageHandler("blunttrauma", function(character, strength, limb, attackResult)
-    print("blunttrauma: "..strength)
+        print("blunttrauma: "..strength)
+        head_bonk = Utils.GetAfflictionLimb(character, "blunttrauma", LimbType.Head)
+        chance = head_bonk * 3 - 50
+        --print("Chance: " .. chance)
+        
+        if(chance <= 0) then
+            return
+        end
+
+        if limb == LimbType.Head and Utils.Probability(chance) then
+            Utils.SetAfflictionTime(character, "stun", 3, LimbType.Head, true, 3)
+        
+        if limb == LimbType.Torso then
+            if  strength >= 5 and Utils.Probability(30) then
+                Utils.SetAffliction(character, "fracture", 5, LimbType.Head, true)
+            end
+            if  strength >= 5 and Utils.Probability(30) then
+                Utils.SetAffliction(character, "pneumothorax", 5, limb, true)
+            end
+        end
+        
+        if limb == LimbType.Head then
+            if  strength >= 5 and Utils.Probability(30) then
+                Utils.SetAffliction(character, "fracture", 5, limb, true)
+            end
+            
+            if  Utils.GetAfflictionLimb(character, "fracture", limb) == 0 and strength >= 5 and Utils.Probability(15) then
+                Utils.SetAffliction(character, "fracture_Neck", 100, limb, true)
+            end
+            if (Utils.GetAfflictionLimb(character, "fracture", limb) > 0 or Utils.GetAfflictionLimb(character, "fracture_Neck", limb) > 0) and strength >= 5 and Utils.Probability(35) then
+                Utils.SetAffliction(character, "weirdthing25", 100, limb, true) -- TO DO: Не знаю что такое WeirdThing, сменить на нужное
+            end
+        end
+        if  limb == LimbType.RightArm or limb == LimbType.RightHand or limb == LimbType.RightForearm or 
+            limb == LimbType.LeftArm or limb == LimbType.LeftHand or limb == LimbType.LeftForearm then
+            
+            if strength >= 5 and Utils.Probability(30) then
+                Utils.SetAffliction(character, "fracture", 5, limb, true)
+            end
+            if strength >= 1 and Utils.Probability(25) then
+                Utils.SetAffliction(character, "dislocation", 5, limb, true)
+            end
+            if  (Utils.GetAfflictionLimb(character, "fracture", limb) > 0 and 
+                Utils.GetAfflictionLimb(character, "amputation", limb) == 0) and 
+                strength >= 5 and Utils.Probability(35) then
+                    Utils.SetAffliction(character, "weirdthing24", 100, limb, true) -- TO DO: Не знаю что такое WeirdThing, сменить на нужное
+            end
+
+        end
+
+        if  limb == LimbType.RightThigh or limb == LimbType.RightLeg or limb == LimbType.RightFoot or 
+            limb == LimbType.LeftThigh or limb == LimbType.LeftLeg or limb == LimbType.LeftFoot then
+
+            if strength >= 5 and Utils.Probability(20) then
+                Utils.SetAffliction(character, "fracture", 5, limb, true)
+            end
+            if strength >= 1 and Utils.Probability(25) then
+                Utils.SetAffliction(character, "dislocation", 5, limb, true)
+            end
+            if  (Utils.GetAfflictionLimb(character, "fracture", limb) > 0 and 
+                Utils.GetAfflictionLimb(character, "amputation", limb) == 0) and 
+                strength >= 5 and Utils.Probability(35) then
+                    Utils.SetAffliction(character, "weirdthing21", 100, limb, true) -- TO DO: Не знаю что такое WeirdThing, сменить на нужное
+            end
+        end
+    end
+end)
+
+Main.AddDamageHandler("internaldamage", function(character, strength, limb, attackResult)
+    print("internaldamage: "..strength)    
+    if(chance <= 0) then
+        return
+    end
+
+    if limb == LimbType.Torso then
+        if  strength >= 5 and Utils.Probability(30) then
+            Utils.SetAffliction(character, "fracture", 5, LimbType.Head, true)
+        end
+        if  strength >= 5 and Utils.Probability(30) then
+            Utils.SetAffliction(character, "pneumothorax", 5, limb, true)
+        end
+    end
+    
+    if limb == LimbType.Head then
+        if  strength >= 5 and Utils.Probability(30) then
+            Utils.SetAffliction(character, "fracture", 5, limb, true)
+        end
+        
+        if  Utils.GetAfflictionLimb(character, "fracture", limb) == 0 and strength >= 5 and Utils.Probability(15) then
+            Utils.SetAffliction(character, "fracture_Neck", 100, limb, true)
+        end
+        if (Utils.GetAfflictionLimb(character, "fracture", limb) > 0 or Utils.GetAfflictionLimb(character, "fracture_Neck", limb) > 0) and strength >= 5 and Utils.Probability(35) then
+            Utils.SetAffliction(character, "weirdthing25", 100, limb, true) -- TO DO: Не знаю что такое WeirdThing, сменить на нужное
+        end
+    end
+    
+    if  limb == LimbType.RightArm or limb == LimbType.RightHand or limb == LimbType.RightForearm or 
+    limb == LimbType.LeftArm or limb == LimbType.LeftHand or limb == LimbType.LeftForearm then
+        if strength >= 5 and Utils.Probability(30) then
+            Utils.SetAffliction(character, "fracture", 5, limb, true)
+        end
+        if strength >= 1 and Utils.Probability(25) then
+            Utils.SetAffliction(character, "dislocation", 5, limb, true)
+        end
+        if  (Utils.GetAfflictionLimb(character, "fracture", limb) > 0 and 
+            Utils.GetAfflictionLimb(character, "amputation", limb) == 0) and 
+            strength >= 5 and Utils.Probability(35) then
+                Utils.SetAffliction(character, "weirdthing24", 100, limb, true) -- TO DO: Не знаю что такое WeirdThing, сменить на нужное
+        end
+    end
+    if  limb == LimbType.RightThigh or limb == LimbType.RightLeg or limb == LimbType.RightFoot or 
+        limb == LimbType.LeftThigh or limb == LimbType.LeftLeg or limb == LimbType.LeftFoot then
+
+        if strength >= 5 and Utils.Probability(20) then
+            Utils.SetAffliction(character, "fracture", 5, limb, true)
+        end
+        if strength >= 1 and Utils.Probability(25) then
+            Utils.SetAffliction(character, "dislocation", 5, limb, true)
+        end
+        if  (Utils.GetAfflictionLimb(character, "fracture", limb) > 0 and 
+            Utils.GetAfflictionLimb(character, "amputation", limb) == 0) and 
+            strength >= 5 and Utils.Probability(35) then
+                Utils.SetAffliction(character, "weirdthing21", 100, limb, true) -- TO DO: Не знаю что такое WeirdThing, сменить на нужное
+        end
+    end
+    
+end)
+
+Main.AddDamageHandler("gunshotwound", function(character, strength, limb, attackResult)
+    print("gunshotwound: "..strength)
     head_bonk = Utils.GetAfflictionLimb(character, "blunttrauma", LimbType.Head)
     chance = head_bonk * 3 - 50
     --print("Chance: " .. chance)
@@ -41,9 +170,275 @@ Main.AddDamageHandler("blunttrauma", function(character, strength, limb, attackR
     if(chance <= 0) then
         return
     end
-    if limb == LimbType.Head and Utils.Probabilty(chance) then
-        Utils.SetAfflictionTime(character, "stun", 3, LimbType.Head, true, 3)
+
+
+    if strength >= 1 and Utils.Probability(75) then
+        Utils.SetAffliction(character, "foreignbody", 5, limb, true)
     end
+
+
+    if limb == LimbType.Torso then
+        if  strength >= 5 and Utils.Probability(30) then
+            Utils.SetAffliction(character, "fracture", 5, limb, true)
+        end
+        if  strength >= 5 and Utils.Probability(30) then
+            Utils.SetAffliction(character, "pneumothorax", 5, limb, true)
+        end
+        if  strength >= 5 and Utils.Probability(30) then
+            Utils.SetAffliction(character, "tamponade", 5, limb, true)
+        end
+        if  strength >= 5 and Utils.Probability(30) then
+            Utils.SetAffliction(character, "internalbleeding", 5, limb, true)
+        end
+    end
+
+    if limb == LimbType.Waist then
+        if  strength >= 5 and Utils.Probability(40) then
+            Utils.SetAffliction(character, "internalbleeding", 5, limb, true)
+        end
+    end
+    
+    if limb == LimbType.Head then
+        if  strength >= 5 and Utils.Probability(30) then
+            Utils.SetAffliction(character, "fracture", 5, limb, true)
+        end
+        if (Utils.GetAfflictionLimb(character, "fracture", limb) > 0 or Utils.GetAfflictionLimb(character, "fracture_Neck", limb) > 0) and strength >= 5 and Utils.Probability(35) then
+            Utils.SetAffliction(character, "weirdthing25", 100, limb, true) -- TO DO: Не знаю что такое WeirdThing, сменить на нужное
+        end
+    end
+
+
+    if  limb == LimbType.RightArm or limb == LimbType.RightHand or limb == LimbType.RightForearm or 
+    limb == LimbType.LeftArm or limb == LimbType.LeftHand or limb == LimbType.LeftForearm then
+    
+    if strength >= 5 and Utils.Probability(30) then
+        Utils.SetAffliction(character, "fracture", 5, limb, true)
+    end
+    if  (Utils.GetAfflictionLimb(character, "fracture", limb) > 0 and 
+        Utils.GetAfflictionLimb(character, "amputation", limb) == 0) and 
+        strength >= 5 and Utils.Probability(35) then
+            Utils.SetAffliction(character, "weirdthing24", 100, limb, true) -- TO DO: Не знаю что такое WeirdThing, сменить на нужное
+    end
+
+end
+
+if  limb == LimbType.RightThigh or limb == LimbType.RightLeg or limb == LimbType.RightFoot or 
+    limb == LimbType.LeftThigh or limb == LimbType.LeftLeg or limb == LimbType.LeftFoot then
+
+    if strength >= 1 and Utils.Probability(20) then
+        Utils.SetAffliction(character, "fracture", 5, limb, true)
+    end
+    if  (Utils.GetAfflictionLimb(character, "fracture", limb) > 0 and 
+        Utils.GetAfflictionLimb(character, "amputation", limb) == 0) and 
+        strength >= 5 and Utils.Probability(35) then
+            Utils.SetAffliction(character, "weirdthing21", 100, limb, true) -- TO DO: Не знаю что такое WeirdThing, сменить на нужное
+    end
+end
+    
+end)
+
+Main.AddDamageHandler("lacerations", function(character, strength, limb, attackResult)
+    print("lacerations: "..strength)    
+    if(chance <= 0) then
+        return
+    end
+
+    if limb == LimbType.Torso then
+        if  strength >= 5 and Utils.Probability(30) then
+            Utils.SetAffliction(character, "fracture", 5, limb, true)
+        end
+        if  strength >= 5 and Utils.Probability(30) then
+            Utils.SetAffliction(character, "pneumothorax", 5, limb, true)
+        end
+        if  strength >= 5 and Utils.Probability(30) then
+            Utils.SetAffliction(character, "tamponade", 5, limb, true)
+        end
+        if  strength >= 5 and Utils.Probability(30) then
+            Utils.SetAffliction(character, "internalbleeding", 5, limb, true)
+        end
+    end
+    
+    if limb == LimbType.Head then
+        if  strength >= 5 and Utils.Probability(30) then
+            Utils.SetAffliction(character, "fracture", 5, limb, true)
+        end
+        if (Utils.GetAfflictionLimb(character, "fracture", limb) > 0 or Utils.GetAfflictionLimb(character, "fracture_Neck", limb) > 0) and strength >= 5 and Utils.Probability(35) then
+            Utils.SetAffliction(character, "weirdthing25", 100, limb, true) -- TO DO: Не знаю что такое WeirdThing, сменить на нужное
+        end
+    end
+
+    if limb == LimbType.Waist then
+        if  strength >= 5 and Utils.Probability(40) then
+            Utils.SetAffliction(character, "internalbleeding", 5, limb, true)
+        end
+    end
+
+    if  limb == LimbType.RightArm or limb == LimbType.RightHand or limb == LimbType.RightForearm or 
+    limb == LimbType.LeftArm or limb == LimbType.LeftHand or limb == LimbType.LeftForearm then
+        if strength >= 5 and Utils.Probability(30) then
+            Utils.SetAffliction(character, "fracture", 5, limb, true)
+        end
+        if  (Utils.GetAfflictionLimb(character, "fracture", limb) > 0 and 
+            Utils.GetAfflictionLimb(character, "amputation", limb) == 0) and 
+            strength >= 5 and Utils.Probability(35) then
+                Utils.SetAffliction(character, "weirdthing24", 100, limb, true) -- TO DO: Не знаю что такое WeirdThing, сменить на нужное
+        end
+    end
+
+    if  limb == LimbType.RightThigh or limb == LimbType.RightLeg or limb == LimbType.RightFoot or 
+        limb == LimbType.LeftThigh or limb == LimbType.LeftLeg or limb == LimbType.LeftFoot then
+
+        if strength >= 1 and Utils.Probability(20) then
+            Utils.SetAffliction(character, "fracture", 5, limb, true)
+        end
+        if  (Utils.GetAfflictionLimb(character, "fracture", limb) > 0 and 
+            Utils.GetAfflictionLimb(character, "amputation", limb) == 0) and 
+            strength >= 5 and Utils.Probability(35) then
+                Utils.SetAffliction(character, "weirdthing21", 100, limb, true) -- TO DO: Не знаю что такое WeirdThing, сменить на нужное
+        end
+    end
+
+end)
+
+Main.AddDamageHandler("bitewounds", function(character, strength, limb, attackResult)
+    print("bitewounds: "..strength)    
+    if(chance <= 0) then
+        return
+    end
+
+    if limb == LimbType.Torso then
+        if  strength >= 5 and Utils.Probability(30) then
+            Utils.SetAffliction(character, "fracture", 5, limb, true)
+        end
+        if  strength >= 5 and Utils.Probability(30) then
+            Utils.SetAffliction(character, "pneumothorax", 5, limb, true)
+        end
+        if  strength >= 5 and Utils.Probability(30) then
+            Utils.SetAffliction(character, "internalbleeding", 5, limb, true)
+        end
+    end
+    
+    if limb == LimbType.Head then
+        if  strength >= 5 and Utils.Probability(30) then
+            Utils.SetAffliction(character, "fracture", 5, limb, true)
+        end
+        if (Utils.GetAfflictionLimb(character, "fracture", limb) > 0 or Utils.GetAfflictionLimb(character, "fracture_Neck", limb) > 0) and strength >= 5 and Utils.Probability(35) then
+            Utils.SetAffliction(character, "weirdthing25", 100, limb, true) -- TO DO: Не знаю что такое WeirdThing, сменить на нужное
+        end
+    end
+
+    if limb == LimbType.Waist then
+        if  strength >= 5 and Utils.Probability(40) then
+            Utils.SetAffliction(character, "internalbleeding", 5, limb, true)
+        end
+    end
+
+    if  limb == LimbType.RightArm or limb == LimbType.RightHand or limb == LimbType.RightForearm or 
+    limb == LimbType.LeftArm or limb == LimbType.LeftHand or limb == LimbType.LeftForearm then
+        if strength >= 5 and Utils.Probability(30) then
+            Utils.SetAffliction(character, "fracture", 5, limb, true)
+        end
+        if  (Utils.GetAfflictionLimb(character, "fracture", limb) > 0 and 
+            Utils.GetAfflictionLimb(character, "amputation", limb) == 0) and 
+            strength >= 5 and Utils.Probability(35) then
+                Utils.SetAffliction(character, "weirdthing24", 100, limb, true) -- TO DO: Не знаю что такое WeirdThing, сменить на нужное
+        end
+    end
+
+    if  limb == LimbType.RightThigh or limb == LimbType.RightLeg or limb == LimbType.RightFoot or 
+        limb == LimbType.LeftThigh or limb == LimbType.LeftLeg or limb == LimbType.LeftFoot then
+
+        if strength >= 1 and Utils.Probability(20) then
+            Utils.SetAffliction(character, "fracture", 5, limb, true)
+        end
+        if  (Utils.GetAfflictionLimb(character, "fracture", limb) > 0 and 
+            Utils.GetAfflictionLimb(character, "amputation", limb) == 0) and 
+            strength >= 5 and Utils.Probability(35) then
+                Utils.SetAffliction(character, "weirdthing21", 100, limb, true) -- TO DO: Не знаю что такое WeirdThing, сменить на нужное
+        end
+    end
+end)
+
+Main.AddDamageHandler("explosiondamage", function(character, strength, limb, attackResult)
+    print("explosiondamage: "..strength)    
+    if(chance <= 0) then
+        return
+    end
+
+    if strength >= 1 and Utils.Probability(75) then
+        Utils.SetAffliction(character, "foreignbody", 5, limb, true)
+    end
+
+    if limb == LimbType.Torso then
+        if  strength >= 5 and Utils.Probability(30) then
+            Utils.SetAffliction(character, "fracture", 5, limb, true)
+        end
+        if  strength >= 5 and Utils.Probability(30) then
+            Utils.SetAffliction(character, "pneumothorax", 5, limb, true)
+        end
+        if  strength >= 5 and Utils.Probability(30) then
+            Utils.SetAffliction(character, "internalbleeding", 5, limb, true)
+        end
+    end
+    
+    if limb == LimbType.Head then
+        if  strength >= 5 and Utils.Probability(30) then
+            Utils.SetAffliction(character, "fracture", 5, limb, true)
+        end
+        if  Utils.GetAfflictionLimb(character, "fracture", limb) == 0 and strength >= 5 and Utils.Probability(15) then
+            Utils.SetAffliction(character, "fracture_Neck", 100, limb, true)
+        end
+        if (Utils.GetAfflictionLimb(character, "fracture", limb) > 0 or Utils.GetAfflictionLimb(character, "fracture_Neck", limb) > 0) and strength >= 5 and Utils.Probability(35) then
+            Utils.SetAffliction(character, "weirdthing25", 100, limb, true) -- TO DO: Не знаю что такое WeirdThing, сменить на нужное
+        end
+    end
+
+    if limb == LimbType.Waist then
+        if  strength >= 5 and Utils.Probability(40) then
+            Utils.SetAffliction(character, "internalbleeding", 5, limb, true)
+        end
+    end
+
+    if  limb == LimbType.RightArm or limb == LimbType.RightHand or limb == LimbType.RightForearm or 
+    limb == LimbType.LeftArm or limb == LimbType.LeftHand or limb == LimbType.LeftForearm then
+        if strength >= 5 and Utils.Probability(30) then
+            Utils.SetAffliction(character, "fracture", 5, limb, true)
+        end
+        if strength >= 1 and Utils.Probability(35) then
+            Utils.SetAffliction(character, "dislocation", 5, limb, true)
+        end
+        if  (Utils.GetAfflictionLimb(character, "fracture", limb) > 0 and 
+            Utils.GetAfflictionLimb(character, "amputation", limb) == 0) and 
+            strength >= 5 and Utils.Probability(35) then
+                Utils.SetAffliction(character, "weirdthing24", 100, limb, true) -- TO DO: Не знаю что такое WeirdThing, сменить на нужное
+        end
+
+        if  Utils.GetAfflictionLimb(character, "amputation", limb) == 0 and 
+            strength >= 10 and Utils.Probability(25) then
+                Utils.SetAffliction(character, "weirdthing24", 100, limb, true) -- TO DO: Не знаю что такое WeirdThing, сменить на нужное
+        end
+    end
+
+    if  limb == LimbType.RightThigh or limb == LimbType.RightLeg or limb == LimbType.RightFoot or 
+        limb == LimbType.LeftThigh or limb == LimbType.LeftLeg or limb == LimbType.LeftFoot then
+
+        if strength >= 1 and Utils.Probability(20) then
+            Utils.SetAffliction(character, "fracture", 5, limb, true)
+        end
+        if strength >= 1 and Utils.Probability(35) then
+            Utils.SetAffliction(character, "dislocation", 5, limb, true)
+        end
+        if  (Utils.GetAfflictionLimb(character, "fracture", limb) > 0 and 
+            Utils.GetAfflictionLimb(character, "amputation", limb) == 0) and 
+            strength >= 5 and Utils.Probability(35) then
+                Utils.SetAffliction(character, "weirdthing21", 100, limb, true) -- TO DO: Не знаю что такое WeirdThing, сменить на нужное
+        end
+        if  Utils.GetAfflictionLimb(character, "amputation", limb) == 0 and 
+            strength >= 10 and Utils.Probability(25) then
+                Utils.SetAffliction(character, "weirdthing24", 100, limb, true) -- TO DO: Не знаю что такое WeirdThing, сменить на нужное
+        end
+    end
+    
 end)
 
 Hook.Add("character.applyDamage", "AM.ondamaged", function(characterHealth, attackResult, hitLimb)

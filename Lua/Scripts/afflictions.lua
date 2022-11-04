@@ -1,15 +1,4 @@
-
---[[
-
-nil означает, что SetAffliction будет наложен на Torso
-
-Main.AddAfflictionHandler("blunttrauma", "AM.test", function(character, strength)
-    blunttrauma = Utils.GetAffliction(character, "blunttrauma")
-    if blunttrauma >= 50 then
-        Utils.SetAffliction(character, "oxygenlow", 20*DELTA_TIME, nil, true)
-    end
-end) 
---]]
+---@diagnostic disable: undefined-global
 
 --CPR
 Main.AddAfflictionHandler("cpr_buff", "has_cpr", function(character, strength)
@@ -77,7 +66,9 @@ Main.AddAfflictionHandler("bloodloss", "has_bloodloss", function(character, stre
             Utils.SetAffliction(character, "bloodpressure", bloodpressure_strength*bloodloss_strength*REDUCE_PRESSURE*DELTA_TIME, LimbType.Torso, true)
     elseif(bloodpressure_strength >= 60) and (bloodloss_strength >= 65) and (bloodloss_strength <= 135) then
             Utils.SetAffliction(character, "bloodpressure", bloodpressure_strength*bloodloss_strength*REDUCE_PRESSURE*DELTA_TIME, LimbType.Torso, true)
-    elseif(bloodpressure_strength >= 2) and (bloodloss_strength >= 135) then
+    end
+
+    if(bloodpressure_strength >= 2) and (bloodloss_strength >= 135) then
             Utils.SetAffliction(character, "bloodpressure", bloodpressure_strength*bloodloss_strength*REDUCE_PRESSURE*DELTA_TIME, LimbType.Torso, true)
     end
 end)
@@ -89,15 +80,13 @@ Main.AddAfflictionHandler("bloodpressure", "has_bloodpressure", function(charact
     
     if(bloodpressure_strength >= 100) then
         Utils.SetAffliction(character, "bloodpressure", -0.3*DELTA_TIME, LimbType.Head, true)
+    elseif(bloodpressure_strength <= 70) then
+        Utils.SetAffliction(character, "heart_failure", (1+bloodpressure_strength)^-0.5*DELTA_TIME, LimbType.Torso, true)
+    elseif(bloodpressure_strength <= 100) then
+        Utils.SetAffliction(character, "bloodpressure", 0.3*DELTA_TIME, LimbType.Head, true)
     end
 
-    if(bloodpressure_strength <= 70) then
-        Utils.SetAffliction(character, "heart_failure", (1+bloodpressure_strength)^-0.5*DELTA_TIME, LimbType.Torso, true)
-    end
-    
-    if(bloodpressure_strength <= 100) then
-        Utils.SetAffliction(character, "bloodpressure", 0.3*DELTA_TIME, LimbType.Head, true)
-    elseif(bloodpressure_strength <= 100) and (ventricular_fib_strength == 0 and ventricular_tachy == 0 and asys == 0) then
+    if(bloodpressure_strength <= 100) and (ventricular_fib_strength == 0 and ventricular_tachy == 0 and asys == 0) then
         Utils.SetAffliction(character, "bloodpressure", 1*DELTA_TIME, LimbType.Head, true)
     end
 
@@ -178,6 +167,7 @@ Main.AddAfflictionHandler("ventricular_tachy", "has_ventricular_tachy", function
     if(bloodpressure_strength >= 2) then
         Utils.SetAffliction(character, "bloodpressure", bloodpressure_strength*-0.01*DELTA_TIME, LimbType.Torso, true)
     end
+
     Utils.SetAffliction(character, "heart_failure", 0.03*DELTA_TIME, LimbType.Torso, true)
 end)
 
@@ -187,6 +177,7 @@ Main.AddAfflictionHandler("ventricular_fib", "has_ventricular_fib", function(cha
     if(bloodpressure_strength >= 2) then
         Utils.SetAffliction(character, "bloodpressure", bloodpressure_strength*-0.03*DELTA_TIME, LimbType.Torso, true)
     end
+
     Utils.SetAffliction(character, "heart_failure", 0.075*DELTA_TIME, LimbType.Torso, true)
 end)
 
@@ -203,9 +194,7 @@ Main.AddAfflictionHandler("hypoxia", "has_hypoxia", function(character, strength
 
     if(hypoxia_strength >= 2) then
         Utils.SetAffliction(character, "stun", 5, nil, true)
-    end
-
-    if(hypoxia_strength >= 20) then
+    elseif(hypoxia_strength >= 20) then
         Utils.SetAffliction(character, "neurotrauma", 0.5, nil, true)
         Utils.SetAffliction(character, "respiratoryarrest", 1, nil, true)
     end
@@ -221,12 +210,13 @@ end)
 
 Main.AddAfflictionHandler("respiratoryarrest", "has_respiratoryarrest", function(character, strength)
     local hypoxia_strength = Utils.GetAffliction(character, "hypoxia")
-    
-    Utils.SetAffliction(character, "oxygenlow", 22, nil, true)
 
     if(hypoxia_strength <= 10) then
         Utils.SetAffliction(character, "respiratoryarrest", -2, nil, true)
     end
+
+    Utils.SetAffliction(character, "oxygenlow", 22, nil, true)
+
 end)
 
 Main.AddAfflictionHandler("respiratoryfailure", "has_respiratoryfailure", function(character, strength)
