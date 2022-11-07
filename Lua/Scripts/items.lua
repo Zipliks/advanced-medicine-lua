@@ -6,6 +6,7 @@ local item_functions = {}
 * func - Функция, привязанная к аффликшену
     * Аргументы func: Item, UserChar, TargetChar, Limb--]]
 function Main.SetItemFunction(id,func)
+	print("Test")
     if id == nil or func == nil then
         Utils.ThrowError("Bad argument",1)
     end
@@ -27,6 +28,50 @@ Hook.Add("item.applyTreatment", "AM.itemused", function(item, usingCharacter, ta
     end
 end)
 
+Main.SetItemFunction("healthscanner", function(item, usingCharacter, targetCharacter, limb)
+    local limbtype = Utils.NormalizeLimbType(limb.type)
+
+    local containedItem = item.OwnInventory.GetItemAt(0)
+    if containedItem == nil then
+		return
+	end
+    local hasVoltage = containedItem.Condition > 0
+
+    if hasVoltage then
+        containedItem.Condition = containedItem.Condition - 5
+
+        -- print readout of afflictions
+        local readoutstring = "Health status report for "..targetCharacter.Name.." on "..Utils.LimbTypeToString(limbtype)..":\n"
+        local afflictionlist = targetCharacter.CharacterHealth.GetAllAfflictions()
+        local afflictionsdisplayed = 0
+        for value in afflictionlist do
+            local strength = value.Strength
+            local prefab = value.Prefab
+            local limb = targetCharacter.CharacterHealth.GetAfflictionLimb(value)
+            local afflimbtype = LimbType.Torso
+            
+            if(not prefab.LimbSpecific) then afflimbtype = prefab.IndicatorLimb
+            elseif(limb~=nil) then afflimbtype=limb.type end
+            
+            afflimbtype = Utils.NormalizeLimbType(afflimbtype)
+
+            if (strength >= prefab.ShowInHealthScannerThreshold and afflimbtype==limbtype) then
+                -- add the affliction to the readout
+                readoutstring = readoutstring.."\n"..value.Prefab.Name.Value..": "..strength.."%"
+                afflictionsdisplayed = afflictionsdisplayed + 1
+            end
+        end
+
+        -- add a message in case there is nothing to display
+        if afflictionsdisplayed <= 0 then
+            readoutstring = readoutstring.."\nNo afflictions! Good work!" 
+        end
+
+        Timer.Wait(function()
+            Utils.DMClient(Utils.CharacterToClient(usingCharacter), readoutstring, Color(127,255,255,255))
+        end, 2000)
+    end
+end)
 
 -- Пример использования на бинте
 -- NOTE: Из-за особенностей барки, у предмета в xml должно быть прописана возможность применения в Health Menu
@@ -36,3 +81,4 @@ end)
 Main.SetItemFunction("antibleeding1", function(item, usingCharacter, targetCharacter, limb)
     print("User: " .. usingCharacter.Name .. " Target: " .. targetCharacter.Name)
 end)
+

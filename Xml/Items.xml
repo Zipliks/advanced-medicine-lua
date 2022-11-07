@@ -43,4 +43,101 @@
       </SubContainer>
     </ItemContainer>
   </Item>
+
+  <Override>
+    <!-- Scanner, ID card -->
+    <Item name="" identifier="healthscanner" scale="0.27" category="Equipment" tags="smallitem,tool,medical" cargocontaineridentifier="metalcrate" impactsoundtag="impact_metal_light" isshootable="true" requireaimtouse="True" useinhealthinterface="True">
+      <Price baseprice="150" minavailable="1">
+        <Price storeidentifier="merchantoutpost" sold="false" multiplier="1.3" />
+        <Price storeidentifier="merchantcity" multiplier="1.2" />
+        <Price storeidentifier="merchantresearch" minavailable="8" />
+        <Price storeidentifier="merchantmilitary" multiplier="1.25" />
+        <Price storeidentifier="merchantmine" sold="false" />
+        <Price storeidentifier="merchantmedical" minavailable="8" />
+      </Price>
+      <Deconstruct time="10">
+        <Item identifier="aluminium" />
+      </Deconstruct>
+      <Fabricate suitablefabricators="fabricator" requiredtime="10">
+        <RequiredSkill identifier="medical" level="40" />
+        <RequiredItem identifier="fpgacircuit" />
+        <RequiredItem identifier="aluminium" />
+      </Fabricate>
+      <InventoryIcon texture="%ModDir%/Images/InventoryItemIconAtlas.png" sourcerect="448,64,64,64" origin="0.5,0.5" />
+      <Sprite texture="%ModDir%/Images/InGameItemIconAtlas.png" sourcerect="768,0,128,128" depth="0.6" origin="0.5,0.5" />
+      <Body width="112" height="96" density="25" />
+      <Holdable slots="Any,RightHand,LeftHand" holdpos="30,-15" aimpos="100,0" handle1="-13,0" handle2="-13,0" msg="ItemMsgPickUpSelect">
+        <StatusEffect type="OnUse" target="This" Voltage="1.0" setvalue="true">
+          <RequiredItem items="mobilebattery" type="Contained" />
+        </StatusEffect>
+      </Holdable>
+      <Propulsion force="0">
+        <RequiredItems items="mobilebattery" type="Contained" msg="ItemMsgBatteryCellRequired" />
+        <StatusEffect type="OnUse" target="Contained" Condition="-1.0">
+          <RequiredItem items="batterycell" type="Contained" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="Contained" Condition="-0.5">
+          <RequiredItem items="fulguriumbatterycell" type="Contained" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="Contained" Condition="-1.0">
+          <RequiredItem excludedidentifiers="batterycell,fulguriumbatterycell" type="Contained" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="NearbyCharacters" range="50">
+          <Affliction identifier="radiationsickness" amount="0.5" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="Character">
+          <ReduceAffliction identifier="radiationsickness" amount="0.3" />
+        </StatusEffect>
+        <LightComponent LightColor="100,255,100,200" Flicker="0.5" range="10" powerconsumption="0">
+          <LightTexture texture="Content/Lights/lightcone.png" origin="0.0, 0.4" size="4,4" />
+        </LightComponent>
+      </Propulsion>
+      <LightComponent LightColor="100,255,100,200" Flicker="0.25" range="10" powerconsumption="10" />
+      <ItemContainer capacity="1" maxstacksize="1" hideitems="true" containedstateindicatorstyle="battery">
+        <Containable items="mobilebattery" />
+        <StatusEffect type="Always" target="This" Voltage="-0.5" />
+      </ItemContainer>
+      <StatusHUD range="150" overlaycolor="0,50,25,30">
+        <StatusEffect type="Always" target="This,Character" drawhudwhenequipped="true" setvalue="true" comparison="And">
+          <Conditional Voltage="gt 0.5" />
+        </StatusEffect>
+        <StatusEffect type="Always" target="This,Character" drawhudwhenequipped="false" setvalue="true" comparison="And">
+          <Conditional Voltage="lt 0.5" />
+        </StatusEffect>
+      </StatusHUD>
+    </Item>
+    <!-- Bandages -->
+    <Item name="" identifier="antibleeding1" aliases="Bandage" category="Equipment" Tags="smallitem,medical" maxstacksize="8" useinhealthinterface="true" cargocontaineridentifier="mediccrate" description="" scale="0.5" impactsoundtag="impact_soft">
+      <Upgrade gameversion="0.10.0.0" scale="0.5" />
+      <PreferredContainer secondary="supplycab" minamount="1" maxamount="2" spawnprobability="0.5" notcampaign="true" />
+      <PreferredContainer secondary="wrecksupplycab,beaconsupplycab" amount="1" spawnprobability="0.3" />
+      <PreferredContainer secondary="wreckmedcab,abandonedmedcab" minamount="1" maxamount="2" spawnprobability="0.8" />
+      <PreferredContainer secondary="outpostmedcompartment,outpostmedcab" minamount="1" maxamount="3" spawnprobability="0.5" />
+      <PreferredContainer primary="medcab" secondary="medcontainer" />
+      <Price baseprice="30" minavailable="25">
+        <Price storeidentifier="merchantoutpost" />
+        <Price storeidentifier="merchantcity" />
+        <Price storeidentifier="merchantresearch" />
+        <Price storeidentifier="merchantmilitary" />
+        <Price storeidentifier="merchantmine" />
+        <Price storeidentifier="merchantmedical" multiplier="0.9" />
+      </Price>
+      <Fabricate suitablefabricators="medicalfabricator" requiredtime="15" amount="3">
+        <RequiredSkill identifier="medical" level="5" />
+        <RequiredItem identifier="organicfiber" />
+      </Fabricate>
+      <Deconstruct time="2" />
+      <SuitableTreatment type="bleeding" suitability="30" />
+      <InventoryIcon texture="Content/Items/InventoryIconAtlas.png" sourcerect="128,448,64,64" origin="0.5,0.5" />
+      <Sprite texture="Content/Items/Medical/Medicines.png" sourcerect="310,33,26,42" depth="0.6" origin="0.5,0.5" />
+      <Body width="25" height="40" density="20" />
+      <MeleeWeapon canBeCombined="true" removeOnCombined="true" slots="Any,RightHand,LeftHand" aimpos="5,0" handle1="-5,0" holdangle="10" reload="1.0" msg="ItemMsgPickUpSelect">
+        <!-- Remove the item when fully used -->
+        <StatusEffect type="OnBroken" target="This">
+          <Remove />
+        </StatusEffect>
+      </MeleeWeapon>
+    </Item>
+
+  </Override>
 </Items>
