@@ -30,12 +30,12 @@ end)
 
 Main.SetItemFunction("healthscanner", function(item, usingCharacter, targetCharacter, limb)
     local limbtype = Utils.NormalizeLimbType(limb.type)
-
     local containedItem = item.OwnInventory.GetItemAt(0)
-    if containedItem == nil then
+    local hasVoltage = containedItem.Condition > 0
+
+	if(containedItem == nil) then 
 		return
 	end
-    local hasVoltage = containedItem.Condition > 0
 
     if hasVoltage then
         containedItem.Condition = containedItem.Condition - 5
@@ -44,18 +44,22 @@ Main.SetItemFunction("healthscanner", function(item, usingCharacter, targetChara
         local readoutstring = "Health status report for "..targetCharacter.Name.." on "..Utils.LimbTypeToString(limbtype)..":\n"
         local afflictionlist = targetCharacter.CharacterHealth.GetAllAfflictions()
         local afflictionsdisplayed = 0
+
         for value in afflictionlist do
-            local strength = value.Strength
+            local strength = math.floor(value.Strength)
             local prefab = value.Prefab
             local limb = targetCharacter.CharacterHealth.GetAfflictionLimb(value)
             local afflimbtype = LimbType.Torso
             
-            if(not prefab.LimbSpecific) then afflimbtype = prefab.IndicatorLimb
-            elseif(limb~=nil) then afflimbtype=limb.type end
+            if(not prefab.LimbSpecific) then
+				afflimbtype = prefab.IndicatorLimb
+            elseif(limb~=nil) then
+				afflimbtype=limb.type
+			end
             
             afflimbtype = Utils.NormalizeLimbType(afflimbtype)
 
-            if (strength >= prefab.ShowInHealthScannerThreshold and afflimbtype==limbtype) then
+            if(strength >= prefab.ShowInHealthScannerThreshold and afflimbtype==limbtype) then
                 -- add the affliction to the readout
                 readoutstring = readoutstring.."\n"..value.Prefab.Name.Value..": "..strength.."%"
                 afflictionsdisplayed = afflictionsdisplayed + 1
@@ -64,7 +68,7 @@ Main.SetItemFunction("healthscanner", function(item, usingCharacter, targetChara
 
         -- add a message in case there is nothing to display
         if afflictionsdisplayed <= 0 then
-            readoutstring = readoutstring.."\nNo afflictions! Good work!" 
+            readoutstring = readoutstring.."\nNo deviations were detected." 
         end
 
         Timer.Wait(function()
@@ -79,6 +83,7 @@ end)
 -- TODO: Сделать чтобы они триггерились и вне меню (Или смирится с этим, лол)
 -- Zipliks: Пока забить и смириться
 Main.SetItemFunction("antibleeding1", function(item, usingCharacter, targetCharacter, limb)
-    print("User: " .. usingCharacter.Name .. " Target: " .. targetCharacter.Name)
+		Utils.SetAffliction(targetCharacter, "bleeding", -15, limb, true)
+		Utils.SetAffliction(targetCharacter, "bandaged", 20, limb, true)
 end)
 
