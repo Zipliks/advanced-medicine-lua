@@ -194,7 +194,8 @@ Main.AddAfflictionHandler("hypoxia", "has_hypoxia", function(character, strength
 
     if(hypoxia_strength >= 2) then
         Utils.SetAffliction(character, "stun", 5, nil, true)
-    elseif(hypoxia_strength >= 20) then
+	end
+    if(hypoxia_strength >= 20) then
         Utils.SetAffliction(character, "neurotrauma", 0.5, nil, true)
         Utils.SetAffliction(character, "respiratoryarrest", 1, nil, true)
     end
