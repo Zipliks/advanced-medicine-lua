@@ -1,143 +1,214 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Items>
-  <Item name="Security Vest Item" identifier="tacticalbodyarmor" category="Equipment" tags="smallitem,clothing" scale="0.35" cargocontaineridentifier="metalcrate" description="" impactsoundtag="impact_soft">
-    <Upgrade gameversion="" scale="0.35" />
-    <Price baseprice="600">
-      <Price storeidentifier="merchantoutpost" sold="false" multiplier="1.3" />
-      <Price storeidentifier="merchantcity" multiplier="1.2" minavailable="1" sold="false" />
-      <Price storeidentifier="merchantresearch" sold="false" />
-      <Price storeidentifier="merchantmilitary" multiplier="0.9" minavailable="3" />
-      <Price storeidentifier="merchantmine" sold="false" />
-      <Price storeidentifier="merchantarmory" multiplier="0.9" minavailable="3" />
-    </Price>
-    <Deconstruct time="45">
-      <Item identifier="bodyarmor" />
-      <Item identifier="bandolier" />
-    </Deconstruct>
-    <Fabricate suitablefabricators="fabricator" requiredtime="35">
-      <RequiredSkill identifier="weapons" level="45" />
-      <RequiredItem identifier="bodyarmor" />
-      <RequiredItem identifier="bandolier" />
-    </Fabricate>
-    <InventoryIcon texture="%ModDir%/Images/Items/tactical_body_armor.png" sourcerect="14,45,103,180" origin="0.5,0.5" />
-    <Sprite name="Security Vest Item" texture="%ModDir%/Images/Items/tactical_body_armor.png" sourcerect="14,45,103,180" depth="0.6" origin="0.5,0.35" />
-    <Body width="85" height="90" density="40" />
-    <Wearable slots="Any,OuterClothes" msg="ItemMsgPickUpSelect">
-      <damagemodifier afflictiontypes="burn" armorsector="0.0,360.0" damagemultiplier="0.9" />
-      <damagemodifier afflictionidentifiers="blunttrauma,lacerations,gunshotwound" armorsector="0.0,360.0" damagemultiplier="0.2" damagesound="LimbArmor" deflectprojectiles="true" />
-      <damagemodifier afflictionidentifiers="bitewounds" armorsector="0.0,360.0" damagemultiplier="0.3" damagesound="LimbArmor" deflectprojectiles="true" />
-      <damagemodifier afflictiontypes="bleeding" armorsector="0.0,360.0" damagemultiplier="0.1" damagesound="LimbArmor" deflectprojectiles="true" />
-      <sprite name="Security Vest Wearable" texture="%ModDir%/Images/Items/tactical_body_armor.png" limb="Torso" hidelimb="false" inheritscale="true" scale="0.65" inheritorigin="false" origin="0.5,0.5" inheritsourcerect="false" sourcerect="14,45,103,180" />
-      <SkillModifier skillidentifier="medical" skillvalue="10" />
-    </Wearable>
-    <ItemContainer capacity="0" maxstacksize="0" hideitems="true" slotsperrow="3" containedstateindicatorslot="1">
-      <Containable items="smallitem,chem,medical,syringe" excludeditems="toolbelt,toolbox,bandolier,cargoscooter,backpack,metalcrate" />
-      <SlotIcon slotindex="0" texture="Content/UI/ContainerIndicators.png" sourcerect="2,155,120,29" origin="0.5,0.5" />
-      <SlotIcon slotindex="1" texture="Content/UI/ContainerIndicators.png" sourcerect="2,155,120,29" origin="0.5,0.5" />
-      <SlotIcon slotindex="2" texture="Content/UI/ContainerIndicators.png" sourcerect="2,155,120,29" origin="0.5,0.5" />
-      <SubContainer capacity="3" maxstacksize="16">
-        <Containable items="chem,medical,syringe" excludeditems="backpack,toolbox" />
-      </SubContainer>
-      <SubContainer capacity="6" maxstacksize="64">
-        <Containable items="smallitem,mediumitem" excludeditems="backpack,toolbox" />
-      </SubContainer>
-    </ItemContainer>
-  </Item>
+	<Item name="Security Vest Item" identifier="tacticalbodyarmor" category="Equipment" tags="smallitem,clothing" scale="0.35" cargocontaineridentifier="metalcrate" description="" impactsoundtag="impact_soft">
+		<Upgrade gameversion="" scale="0.35" />
+		<Price baseprice="600">
+			<Price storeidentifier="merchantoutpost" sold="false" multiplier="1.3" />
+			<Price storeidentifier="merchantcity" multiplier="1.2" minavailable="1" sold="false" />
+			<Price storeidentifier="merchantresearch" sold="false" />
+			<Price storeidentifier="merchantmilitary" multiplier="0.9" minavailable="3" />
+			<Price storeidentifier="merchantmine" sold="false" />
+			<Price storeidentifier="merchantarmory" multiplier="0.9" minavailable="3" />
+		</Price>
+		<Deconstruct time="45">
+			<Item identifier="bodyarmor" />
+			<Item identifier="bandolier" />
+		</Deconstruct>
+		<Fabricate suitablefabricators="fabricator" requiredtime="35">
+			<RequiredSkill identifier="weapons" level="45" />
+			<RequiredItem identifier="bodyarmor" />
+			<RequiredItem identifier="bandolier" />
+		</Fabricate>
+		<InventoryIcon texture="%ModDir%/Images/Items/tactical_body_armor.png" sourcerect="14,45,103,180" origin="0.5,0.5" />
+		<Sprite name="Security Vest Item" texture="%ModDir%/Images/Items/tactical_body_armor.png" sourcerect="14,45,103,180" depth="0.6" origin="0.5,0.35" />
+		<Body width="85" height="90" density="40" />
+		<Wearable slots="Any,OuterClothes" msg="ItemMsgPickUpSelect">
+			<damagemodifier afflictiontypes="burn" armorsector="0.0,360.0" damagemultiplier="0.9" />
+			<damagemodifier afflictionidentifiers="blunttrauma,lacerations,gunshotwound" armorsector="0.0,360.0" damagemultiplier="0.2" damagesound="LimbArmor" deflectprojectiles="true" />
+			<damagemodifier afflictionidentifiers="bitewounds" armorsector="0.0,360.0" damagemultiplier="0.3" damagesound="LimbArmor" deflectprojectiles="true" />
+			<damagemodifier afflictiontypes="bleeding" armorsector="0.0,360.0" damagemultiplier="0.1" damagesound="LimbArmor" deflectprojectiles="true" />
+			<sprite name="Security Vest Wearable" texture="%ModDir%/Images/Items/tactical_body_armor.png" limb="Torso" hidelimb="false" inheritscale="true" scale="0.65" inheritorigin="false" origin="0.5,0.5" inheritsourcerect="false" sourcerect="14,45,103,180" />
+			<SkillModifier skillidentifier="medical" skillvalue="10" />
+		</Wearable>
+		<ItemContainer capacity="0" maxstacksize="0" hideitems="true" slotsperrow="3" containedstateindicatorslot="1">
+			<Containable items="smallitem,chem,medical,syringe" excludeditems="toolbelt,toolbox,bandolier,cargoscooter,backpack,metalcrate" />
+			<SlotIcon slotindex="0" texture="Content/UI/ContainerIndicators.png" sourcerect="2,155,120,29" origin="0.5,0.5" />
+			<SlotIcon slotindex="1" texture="Content/UI/ContainerIndicators.png" sourcerect="2,155,120,29" origin="0.5,0.5" />
+			<SlotIcon slotindex="2" texture="Content/UI/ContainerIndicators.png" sourcerect="2,155,120,29" origin="0.5,0.5" />
+			<SubContainer capacity="3" maxstacksize="16">
+				<Containable items="chem,medical,syringe" excludeditems="backpack,toolbox" />
+			</SubContainer>
+			<SubContainer capacity="6" maxstacksize="64">
+				<Containable items="smallitem,mediumitem" excludeditems="backpack,toolbox" />
+			</SubContainer>
+		</ItemContainer>
+	</Item>
+	<Item name="" description="" identifier="bloodanalyzer" category="Equipment" cargocontaineridentifier="metalcrate" tags="smallitem" useinhealthinterface="true" impactsoundtag="impact_metal_light" scale="0.4">
+		<PreferredContainer primary="medcab" minamount="1" maxamount="1" spawnprobability="1" />
+		<PreferredContainer primary="wreckmedcab,abandonedmedcab" minamount="0" maxamount="1" spawnprobability="0.25" />
+		<Price baseprice="250">
+			<Price locationtype="outpost" multiplier="1.25" minavailable="1" />
+			<Price locationtype="city" multiplier="1.5" minavailable="1" />
+			<Price locationtype="research" multiplier="0.9" minavailable="1" />
+			<Price locationtype="military" multiplier="1" minavailable="1" />
+			<Price locationtype="mine" multiplier="1.75" minavailable="1" />
+		</Price>
+		<Deconstruct time="10">
+			<Item identifier="fpgacircuit" />
+			<Item identifier="plastic" />
+			<Item identifier="silicon" />
+		</Deconstruct>
+		<Fabricate suitablefabricators="medicalfabricator" requiredtime="20">
+			<RequiredSkill identifier="medical" level="50" />
+			<RequiredItem identifier="fpgacircuit" />
+			<RequiredItem identifier="plastic" />
+			<RequiredItem identifier="silicon" />
+		</Fabricate>
+		<InventoryIcon texture="%ModDir%/Images/InventoryItemIconAtlas.png" sheetindex="0,2" sheetelementsize="64,64" origin="0.5,0.5" />
+		<Sprite texture="%ModDir%/Images/InGameItemIconAtlas.png" sheetindex="4,1" sheetelementsize="128,128" origin="0.5,0.5" />
+		<Body width="50" height="50" density="40" />
+		<MeleeWeapon slots="Any,RightHand,LeftHand" aimpos="40,5" handle1="-10,-10" reload="1.0">
+			<RequiredItems identifier="bloodcollector" type="Contained" msg="Need «Blood collection cartridge»" />
+			<StatusEffect type="OnUse" target="This, Character" comparison="And">
+				<Conditional condition="gt 90" />
+				<Affliction identifier="bloodloss" amount="2" />
+				<Sound file="Mods/Advanced Medicine/Sound/hypospray.ogg" />
+			</StatusEffect>
+			<StatusEffect type="OnUse" targettype="Contained" targets="bloodcollector" Condition="-100" />
+			<StatusEffect type="OnUse" target="This, Character" comparison="And" delay="0.5">
+				<Conditional condition="gt 99" aplus="gt 0" />
+				<SpawnItem spawnposition="ThisInventory" identifier="apluscard" />
+			</StatusEffect>
+			<StatusEffect type="OnUse" target="This, Character" comparison="And" delay="0.5">
+				<Conditional condition="gt 99" bplus="gt 0" />
+				<SpawnItem spawnposition="ThisInventory" identifier="bpluscard" />
+			</StatusEffect>
+			<StatusEffect type="OnUse" target="This, Character" comparison="And" delay="0.5">
+				<Conditional condition="gt 99" oplus="gt 0" />
+				<SpawnItem spawnposition="ThisInventory" identifier="opluscard" />
+			</StatusEffect>
+			<StatusEffect type="OnUse" target="This, Character" comparison="And" delay="0.5">
+				<Conditional condition="gt 99" abplus="gt 0" />
+				<SpawnItem spawnposition="ThisInventory" identifier="abpluscard" />
+			</StatusEffect>
+			<StatusEffect type="OnUse" target="This, Character" comparison="And" delay="0.5">
+				<Conditional condition="gt 99" aminus="gt 0" />
+				<SpawnItem spawnposition="ThisInventory" identifier="aminuscard" />
+			</StatusEffect>
+			<StatusEffect type="OnUse" target="This, Character" comparison="And" delay="0.5">
+				<Conditional condition="gt 99" bminus="gt 0" />
+				<SpawnItem spawnposition="ThisInventory" identifier="bminuscard" />
+			</StatusEffect>
+			<StatusEffect type="OnUse" target="This, Character" comparison="And" delay="0.5">
+				<Conditional condition="gt 99" abminus="gt 0" />
+				<SpawnItem spawnposition="ThisInventory" identifier="abminuscard" />
+			</StatusEffect>
+			<StatusEffect type="OnUse" target="This, Character" comparison="And" delay="0.5">
+				<Conditional condition="gt 99" ominus="gt 0" />
+				<SpawnItem spawnposition="ThisInventory" identifier="ominuscard" />
+			</StatusEffect>
+			<StatusEffect type="OnUse" target="This" Condition="-100" />
+			<StatusEffect type="OnBroken" target="This" Condition="100" disabledeltatime="true" delay="5" stackable="false" />
+		</MeleeWeapon>
+		<Pickable msg="ItemMsgPickUpSelect" />
+		<ItemContainer capacity="1" maxstacksize="1" canbeselected="false" hideitems="true" drawinventory="true">
+			<Containable items="bloodcollector, ominuscard, opluscard, aminuscard ,apluscard ,bminuscard ,bpluscard ,abminuscard , abpluscard" />
+		</ItemContainer>
+	</Item>
 
-  <Override>
-    <!-- Scanner, ID card -->
-    <Item name="" identifier="healthscanner" scale="0.27" category="Equipment" tags="smallitem,tool,medical" cargocontaineridentifier="metalcrate" impactsoundtag="impact_metal_light" isshootable="true" requireaimtouse="True" useinhealthinterface="True">
-      <Price baseprice="150" minavailable="1">
-        <Price storeidentifier="merchantoutpost" sold="false" multiplier="1.3" />
-        <Price storeidentifier="merchantcity" multiplier="1.2" />
-        <Price storeidentifier="merchantresearch" minavailable="8" />
-        <Price storeidentifier="merchantmilitary" multiplier="1.25" />
-        <Price storeidentifier="merchantmine" sold="false" />
-        <Price storeidentifier="merchantmedical" minavailable="8" />
-      </Price>
-      <Deconstruct time="10">
-        <Item identifier="aluminium" />
-      </Deconstruct>
-      <Fabricate suitablefabricators="fabricator" requiredtime="10">
-        <RequiredSkill identifier="medical" level="40" />
-        <RequiredItem identifier="fpgacircuit" />
-        <RequiredItem identifier="aluminium" />
-      </Fabricate>
-      <InventoryIcon texture="%ModDir%/Images/InventoryItemIconAtlas.png" sourcerect="448,64,64,64" origin="0.5,0.5" />
-      <Sprite texture="%ModDir%/Images/InGameItemIconAtlas.png" sourcerect="768,0,128,128" depth="0.6" origin="0.5,0.5" />
-      <Body width="112" height="96" density="25" />
-      <Holdable slots="Any,RightHand,LeftHand" holdpos="30,-15" aimpos="100,0" handle1="-13,0" handle2="-13,0" msg="ItemMsgPickUpSelect">
-        <StatusEffect type="OnUse" target="This" Voltage="1.0" setvalue="true">
-          <RequiredItem items="mobilebattery" type="Contained" />
-        </StatusEffect>
-      </Holdable>
-      <Propulsion force="0">
-        <RequiredItems items="mobilebattery" type="Contained" msg="ItemMsgBatteryCellRequired" />
-        <StatusEffect type="OnUse" target="Contained" Condition="-1.0">
-          <RequiredItem items="batterycell" type="Contained" />
-        </StatusEffect>
-        <StatusEffect type="OnUse" target="Contained" Condition="-0.5">
-          <RequiredItem items="fulguriumbatterycell" type="Contained" />
-        </StatusEffect>
-        <StatusEffect type="OnUse" target="Contained" Condition="-1.0">
-          <RequiredItem excludedidentifiers="batterycell,fulguriumbatterycell" type="Contained" />
-        </StatusEffect>
-        <StatusEffect type="OnUse" target="NearbyCharacters" range="50">
-          <Affliction identifier="radiationsickness" amount="0.5" />
-        </StatusEffect>
-        <StatusEffect type="OnUse" target="Character">
-          <ReduceAffliction identifier="radiationsickness" amount="0.3" />
-        </StatusEffect>
-        <LightComponent LightColor="100,255,100,200" Flicker="0.5" range="10" powerconsumption="0">
-          <LightTexture texture="Content/Lights/lightcone.png" origin="0.0, 0.4" size="4,4" />
-        </LightComponent>
-      </Propulsion>
-      <LightComponent LightColor="100,255,100,200" Flicker="0.25" range="10" powerconsumption="10" />
-      <ItemContainer capacity="1" maxstacksize="1" hideitems="true" containedstateindicatorstyle="battery">
-        <Containable items="mobilebattery" />
-        <StatusEffect type="Always" target="This" Voltage="-0.5" />
-      </ItemContainer>
-      <StatusHUD range="150" overlaycolor="0,50,25,30">
-        <StatusEffect type="Always" target="This,Character" drawhudwhenequipped="true" setvalue="true" comparison="And">
-          <Conditional Voltage="gt 0.5" />
-        </StatusEffect>
-        <StatusEffect type="Always" target="This,Character" drawhudwhenequipped="false" setvalue="true" comparison="And">
-          <Conditional Voltage="lt 0.5" />
-        </StatusEffect>
-      </StatusHUD>
-    </Item>
-    <!-- Bandages -->
-    <Item name="" identifier="antibleeding1" aliases="Bandage" category="Equipment" Tags="smallitem,medical" maxstacksize="8" useinhealthinterface="true" cargocontaineridentifier="mediccrate" description="" scale="0.5" impactsoundtag="impact_soft">
-      <Upgrade gameversion="0.10.0.0" scale="0.5" />
-      <PreferredContainer secondary="supplycab" minamount="1" maxamount="2" spawnprobability="0.5" notcampaign="true" />
-      <PreferredContainer secondary="wrecksupplycab,beaconsupplycab" amount="1" spawnprobability="0.3" />
-      <PreferredContainer secondary="wreckmedcab,abandonedmedcab" minamount="1" maxamount="2" spawnprobability="0.8" />
-      <PreferredContainer secondary="outpostmedcompartment,outpostmedcab" minamount="1" maxamount="3" spawnprobability="0.5" />
-      <PreferredContainer primary="medcab" secondary="medcontainer" />
-      <Price baseprice="30" minavailable="25">
-        <Price storeidentifier="merchantoutpost" />
-        <Price storeidentifier="merchantcity" />
-        <Price storeidentifier="merchantresearch" />
-        <Price storeidentifier="merchantmilitary" />
-        <Price storeidentifier="merchantmine" />
-        <Price storeidentifier="merchantmedical" multiplier="0.9" />
-      </Price>
-      <Fabricate suitablefabricators="medicalfabricator" requiredtime="15" amount="3">
-        <RequiredSkill identifier="medical" level="5" />
-        <RequiredItem identifier="organicfiber" />
-      </Fabricate>
-      <Deconstruct time="2" />
-      <SuitableTreatment type="bleeding" suitability="30" />
-      <InventoryIcon texture="Content/Items/InventoryIconAtlas.png" sourcerect="128,448,64,64" origin="0.5,0.5" />
-      <Sprite texture="Content/Items/Medical/Medicines.png" sourcerect="310,33,26,42" depth="0.6" origin="0.5,0.5" />
-      <Body width="25" height="40" density="20" />
-      <MeleeWeapon canBeCombined="true" removeOnCombined="true" slots="Any,RightHand,LeftHand" aimpos="5,0" handle1="-5,0" holdangle="10" reload="1.0" msg="ItemMsgPickUpSelect">
-        <!-- Remove the item when fully used -->
-        <StatusEffect type="OnBroken" target="This">
-          <Remove />
-        </StatusEffect>
-      </MeleeWeapon>
-    </Item>
-
-  </Override>
+	<Override>
+		<!-- Scanner, ID card -->
+		<Item name="" identifier="healthscanner" scale="0.27" category="Equipment" tags="smallitem,tool,medical" cargocontaineridentifier="metalcrate" impactsoundtag="impact_metal_light" isshootable="true" requireaimtouse="True" useinhealthinterface="True">
+			<Price baseprice="150" minavailable="1">
+				<Price storeidentifier="merchantoutpost" sold="false" multiplier="1.3" />
+				<Price storeidentifier="merchantcity" multiplier="1.2" />
+				<Price storeidentifier="merchantresearch" minavailable="8" />
+				<Price storeidentifier="merchantmilitary" multiplier="1.25" />
+				<Price storeidentifier="merchantmine" sold="false" />
+				<Price storeidentifier="merchantmedical" minavailable="8" />
+			</Price>
+			<Deconstruct time="10">
+				<Item identifier="aluminium" />
+			</Deconstruct>
+			<Fabricate suitablefabricators="fabricator" requiredtime="10">
+				<RequiredSkill identifier="medical" level="40" />
+				<RequiredItem identifier="fpgacircuit" />
+				<RequiredItem identifier="aluminium" />
+			</Fabricate>
+			<InventoryIcon texture="%ModDir%/Images/InventoryItemIconAtlas.png" sheetindex="7,1" sheetelementsize="64,64" origin="0.5,0.5" />
+			<Sprite texture="%ModDir%/Images/InGameItemIconAtlas.png" sheetindex="6,0" sheetelementsize="128,128" depth="0.6" origin="0.5,0.5" />
+			<Body width="112" height="96" density="25" />
+			<Holdable slots="Any,RightHand,LeftHand" holdpos="30,-15" aimpos="100,0" handle1="-13,0" handle2="-13,0" msg="ItemMsgPickUpSelect">
+				<StatusEffect type="OnUse" target="This" Voltage="1.0" setvalue="true">
+					<RequiredItem items="mobilebattery" type="Contained" />
+				</StatusEffect>
+			</Holdable>
+			<Propulsion force="0">
+				<RequiredItems items="mobilebattery" type="Contained" msg="ItemMsgBatteryCellRequired" />
+				<StatusEffect type="OnUse" target="Contained" Condition="-1.0">
+					<RequiredItem items="batterycell" type="Contained" />
+				</StatusEffect>
+				<StatusEffect type="OnUse" target="Contained" Condition="-0.5">
+					<RequiredItem items="fulguriumbatterycell" type="Contained" />
+				</StatusEffect>
+				<StatusEffect type="OnUse" target="Contained" Condition="-1.0">
+					<RequiredItem excludedidentifiers="batterycell,fulguriumbatterycell" type="Contained" />
+				</StatusEffect>
+				<StatusEffect type="OnUse" target="NearbyCharacters" range="50">
+					<Affliction identifier="radiationsickness" amount="0.5" />
+				</StatusEffect>
+				<StatusEffect type="OnUse" target="Character">
+					<ReduceAffliction identifier="radiationsickness" amount="0.3" />
+				</StatusEffect>
+				<LightComponent LightColor="100,255,100,200" Flicker="0.5" range="10" powerconsumption="0">
+					<LightTexture texture="Content/Lights/lightcone.png" origin="0.0, 0.4" size="4,4" />
+				</LightComponent>
+			</Propulsion>
+			<LightComponent LightColor="100,255,100,200" Flicker="0.25" range="10" powerconsumption="10" />
+			<ItemContainer capacity="1" maxstacksize="1" hideitems="true" containedstateindicatorstyle="battery">
+				<Containable items="mobilebattery" />
+				<StatusEffect type="Always" target="This" Voltage="-0.5" />
+			</ItemContainer>
+			<StatusHUD range="150" overlaycolor="0,50,25,30">
+				<StatusEffect type="Always" target="This,Character" drawhudwhenequipped="true" setvalue="true" comparison="And">
+					<Conditional Voltage="gt 0.5" />
+				</StatusEffect>
+				<StatusEffect type="Always" target="This,Character" drawhudwhenequipped="false" setvalue="true" comparison="And">
+					<Conditional Voltage="lt 0.5" />
+				</StatusEffect>
+			</StatusHUD>
+		</Item>
+		<!-- Bandages -->
+		<Item name="" identifier="antibleeding1" aliases="Bandage" category="Equipment" Tags="smallitem,medical" maxstacksize="8" useinhealthinterface="true" cargocontaineridentifier="mediccrate" description="" scale="0.5" impactsoundtag="impact_soft">
+			<Upgrade gameversion="0.10.0.0" scale="0.5" />
+			<PreferredContainer secondary="supplycab" minamount="1" maxamount="2" spawnprobability="0.5" notcampaign="true" />
+			<PreferredContainer secondary="wrecksupplycab,beaconsupplycab" amount="1" spawnprobability="0.3" />
+			<PreferredContainer secondary="wreckmedcab,abandonedmedcab" minamount="1" maxamount="2" spawnprobability="0.8" />
+			<PreferredContainer secondary="outpostmedcompartment,outpostmedcab" minamount="1" maxamount="3" spawnprobability="0.5" />
+			<PreferredContainer primary="medcab" secondary="medcontainer" />
+			<Price baseprice="30" minavailable="25">
+				<Price storeidentifier="merchantoutpost" />
+				<Price storeidentifier="merchantcity" />
+				<Price storeidentifier="merchantresearch" />
+				<Price storeidentifier="merchantmilitary" />
+				<Price storeidentifier="merchantmine" />
+				<Price storeidentifier="merchantmedical" multiplier="0.9" />
+			</Price>
+			<Fabricate suitablefabricators="medicalfabricator" requiredtime="15" amount="3">
+				<RequiredSkill identifier="medical" level="5" />
+				<RequiredItem identifier="organicfiber" />
+			</Fabricate>
+			<Deconstruct time="2" />
+			<SuitableTreatment type="bleeding" suitability="30" />
+			<InventoryIcon texture="Content/Items/InventoryIconAtlas.png" sourcerect="128,448,64,64" origin="0.5,0.5" />
+			<Sprite texture="Content/Items/Medical/Medicines.png" sourcerect="310,33,26,42" depth="0.6" origin="0.5,0.5" />
+			<Body width="25" height="40" density="20" />
+			<MeleeWeapon canBeCombined="true" removeOnCombined="true" slots="Any,RightHand,LeftHand" aimpos="5,0" handle1="-5,0" holdangle="10" reload="1.0" msg="ItemMsgPickUpSelect">
+				<!-- Remove the item when fully used -->
+				<StatusEffect type="OnBroken" target="This">
+					<Remove />
+				</StatusEffect>
+			</MeleeWeapon>
+		</Item>
+	</Override>
 </Items>
