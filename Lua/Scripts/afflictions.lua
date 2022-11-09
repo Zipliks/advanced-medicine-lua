@@ -5,10 +5,11 @@ Main.AddAfflictionHandler("cpr_buff", "has_cpr", function(character, strength)
     Utils.SetAffliction(character, "oxygenlow", -10, nil, true)
 end)
 
---Bite Wounds
+-- //SECTION - Bite Wounds
 Main.AddAfflictionHandler("bitewounds", "has_bitewounds", function(character, strength)
     Utils.SetAffliction(character, "bloodloss", 1*DELTA_TIME, nil, true)
 end)
+-- //!SECTION
 
 Main.AddAfflictionHandler("stun", "has_stun", function(character, strength)
 end)
@@ -47,12 +48,13 @@ Main.AddAfflictionHandler("acidburn", "has_acidburn", function(character, streng
 
 end)
 
--- STUB: Burn
+-- //SECTION: Burn
 Main.AddAfflictionHandler("burn", "has_burn", function(character, strength)
 
 end)
+--//!SECTION
 
--- STUB: Bloodloss
+-- //SECTION - Bloodloss
 Main.AddAfflictionHandler("bloodloss", "has_bloodloss", function(character, strength)
     local bloodloss_strength = Utils.GetAffliction(character, "bloodloss")
     local bloodpressure_strength = Utils.GetAffliction(character, "bloodpressure")
@@ -72,8 +74,9 @@ Main.AddAfflictionHandler("bloodloss", "has_bloodloss", function(character, stre
             Utils.SetAffliction(character, "bloodpressure", bloodpressure_strength*bloodloss_strength*REDUCE_PRESSURE*DELTA_TIME, LimbType.Torso, true)
     end
 end)
+--//!SECTION
 
--- STUB: Blood Pressure
+-- //SECTION: Blood Pressure
 Main.AddAfflictionHandler("bloodpressure", "has_bloodpressure", function(character, strength)
     local bloodpressure_strength = Utils.GetAffliction(character, "bloodpressure")
     local respiratoryfailure_strength = Utils.GetAffliction(character, "respiratoryfailure")
@@ -98,6 +101,7 @@ Main.AddAfflictionHandler("bloodpressure", "has_bloodpressure", function(charact
             Utils.SetAffliction(character, "respiratoryfailure", 1*DELTA_TIME, LimbType.Torso, true)
     end
 end)
+-- //!SECTION
 
 -- STUB: Bleeding
 Main.AddAfflictionHandler("bleeding", "has_bleeding", function(character, strength)
@@ -109,7 +113,7 @@ Main.AddAfflictionHandler("bleedingnonstop", "has_bleedingnonstop", function(cha
 
 end)
 
--- STUB: Oxygenlow
+-- //SECTION - Oxygenlow
 Main.AddAfflictionHandler("oxygenlow", "has_oxygenlow", function(character, strength)
     local oxygenlow_strength = Utils.GetAffliction(character, "oxygenlow")
     local oxygen_saturation_strength = Utils.GetAffliction(character, "oxygen_saturation")
@@ -118,7 +122,9 @@ Main.AddAfflictionHandler("oxygenlow", "has_oxygenlow", function(character, stre
         Utils.SetAffliction(character, "oxygen_saturation", oxygen_saturation_strength*oxygenlow_strength*REDUCE_PRESSURE*DELTA_TIME, LimbType.Torso, true)
     end
 end)
+-- //!SECTION
 
+-- //SECTION - Oxygen Saturation
 Main.AddAfflictionHandler("oxygen_saturation", "has_oxygen_saturation", function(character, strength)
     local oxygen_saturation_strength = Utils.GetAffliction(character, "oxygen_saturation")
     local bloodpressure_strength = Utils.GetAffliction(character, "bloodpressure")
@@ -138,7 +144,9 @@ Main.AddAfflictionHandler("oxygen_saturation", "has_oxygen_saturation", function
         Utils.SetAffliction(character, "oxygen_saturation", 0.3*DELTA_TIME, LimbType.Torso, true)
     end
 end)
+-- //!SECTION
 
+-- //SECTION - Heart Failure
 Main.AddAfflictionHandler("heart_failure", "has_heart_failure", function(character, strength) --Hnappinn: Heart issue
     local heart_failure_strength = Utils.GetAffliction(character, "heart_failure")
     local ventricular_fib_strength = Utils.GetAffliction(character, "ventricular_fib")
@@ -160,7 +168,9 @@ Main.AddAfflictionHandler("heart_failure", "has_heart_failure", function(charact
         Utils.SetAffliction(character, "ventricular_fib", -10*DELTA_TIME, LimbType.Torso, true)
     end
 end)
+-- //!SECTION
 
+-- //SECTION - Ventricular Tachycardia
 Main.AddAfflictionHandler("ventricular_tachy", "has_ventricular_tachy", function(character, strength)
     local bloodpressure_strength = Utils.GetAffliction(character, "bloodpressure")
 
@@ -170,7 +180,9 @@ Main.AddAfflictionHandler("ventricular_tachy", "has_ventricular_tachy", function
 
     Utils.SetAffliction(character, "heart_failure", 0.03*DELTA_TIME, LimbType.Torso, true)
 end)
+-- //!SECTION
 
+-- //SECTION - Ventricular Fibrillation
 Main.AddAfflictionHandler("ventricular_fib", "has_ventricular_fib", function(character, strength)
     local bloodpressure_strength = Utils.GetAffliction(character, "bloodpressure")
 
@@ -180,7 +192,9 @@ Main.AddAfflictionHandler("ventricular_fib", "has_ventricular_fib", function(cha
 
     Utils.SetAffliction(character, "heart_failure", 0.075*DELTA_TIME, LimbType.Torso, true)
 end)
+-- //!SECTION
 
+-- //SECTION - Asystole
 Main.AddAfflictionHandler("asys", "has_asys", function(character, strength)
     local bloodpressure_strength = Utils.GetAffliction(character, "bloodpressure")
 
@@ -188,7 +202,9 @@ Main.AddAfflictionHandler("asys", "has_asys", function(character, strength)
         Utils.SetAffliction(character, "bloodpressure", bloodpressure_strength*-0.03*DELTA_TIME, LimbType.Torso, true)
     end
 end)
+-- //!SECTION
 
+-- //SECTION - Hypoxia
 Main.AddAfflictionHandler("hypoxia", "has_hypoxia", function(character, strength)
     local hypoxia_strength = Utils.GetAffliction(character, "hypoxia")
 
@@ -200,7 +216,9 @@ Main.AddAfflictionHandler("hypoxia", "has_hypoxia", function(character, strength
         Utils.SetAffliction(character, "respiratoryarrest", 1, nil, true)
     end
 end)
+-- //!SECTION
 
+-- //SECTION - Neurotrauma
 Main.AddAfflictionHandler("neurotrauma", "has_neurotrauma", function(character, strength)
     local braindamage_strength = Utils.GetAffliction(character, "neurotrauma")
 
@@ -208,7 +226,9 @@ Main.AddAfflictionHandler("neurotrauma", "has_neurotrauma", function(character, 
         character.Kill(CauseOfDeathType.Unknown)
     end
 end)
+-- //!SECTION
 
+-- //SECTION - Respiratory arrest
 Main.AddAfflictionHandler("respiratoryarrest", "has_respiratoryarrest", function(character, strength)
     local hypoxia_strength = Utils.GetAffliction(character, "hypoxia")
 
@@ -219,7 +239,9 @@ Main.AddAfflictionHandler("respiratoryarrest", "has_respiratoryarrest", function
     Utils.SetAffliction(character, "oxygenlow", 22, nil, true)
 
 end)
+-- //!SECTION
 
+-- //SECTION - Respiratory Failure
 Main.AddAfflictionHandler("respiratoryfailure", "has_respiratoryfailure", function(character, strength)
 	local respiratoryfailure_strength = Utils.GetAffliction(character, "respiratoryfailure")
 	local oxygen_saturation_strength = Utils.GetAffliction(character, "oxygen_saturation")
@@ -242,3 +264,4 @@ Main.AddAfflictionHandler("respiratoryfailure", "has_respiratoryfailure", functi
             Utils.SetAffliction(character, "respiratoryfailure", -1*DELTA_TIME, LimbType.Torso, true)
     end
 end)
+-- //!SECTION
