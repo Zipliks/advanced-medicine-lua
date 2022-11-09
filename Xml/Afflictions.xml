@@ -6,7 +6,7 @@
 		<icon texture="%ModDir%/Images/AfflictionIcons.png" sheetindex="1,1" sheetelementsize="128,128" origin="0,0" sourcerect="256,384,128,128" />
 	</Affliction>
 	<!-- Brain Damage-->
-	<Affliction name="" identifier="neurotrauma" description="" limbspecific="false" indicatorlimb="Head" showiconthreshold="201" showinhealthscannerthreshold="20" maxstrength="200" targets="human" type="gaze" isbuff="false" healableinmedicalclinic="false" iconcolors="255,90,0,255;255,90,0,255">
+	<Affliction name="Neurotrauma" identifier="neurotrauma" description="" limbspecific="false" indicatorlimb="Head" showiconthreshold="201" showinhealthscannerthreshold="20" maxstrength="200" targets="human" type="gaze" isbuff="false" healableinmedicalclinic="false" iconcolors="255,90,0,255;255,90,0,255">
 		<icon texture="%ModDir%/Images/debuff.png" sheetindex="1,1" sheetelementsize="128,128" origin="0,0" sourcerect="128,257,128,128" />
 	</Affliction>
 	<!-- ////////////////////////////////////////////////// -->
