@@ -30,51 +30,53 @@ end)
 
 Main.SetItemFunction("healthscanner", function(item, usingCharacter, targetCharacter, limb)
     local limbtype = Utils.NormalizeLimbType(limb.type)
-    local containedItem = item.OwnInventory.GetItemAt(0)
-    local hasVoltage = containedItem.Condition > 0
+    local contained_item = item.OwnInventory.GetItemAt(0)
+    local has_voltage = contained_item.Condition > 0
 
-	if(containedItem == nil) then 
+	contained_item.Condition = contained_item.Condition - 5
+	
+	if(contained_item == nil) then 
 		return
 	end
 
-    if hasVoltage then
-        containedItem.Condition = containedItem.Condition - 5
+    if(not has_voltage) then
+		return
+	end
 
-        -- print readout of afflictions
-        local readoutstring = "Health status report for "..targetCharacter.Name.." on "..Utils.LimbTypeToString(limbtype)..":\n"
-        local afflictionlist = targetCharacter.CharacterHealth.GetAllAfflictions()
-        local afflictionsdisplayed = 0
+	-- print readout of afflictions
+	local readoutstring = "Health status report for "..targetCharacter.Name.." on "..Utils.LimbTypeToString(limbtype)..":\n"
+	local afflictionlist = targetCharacter.CharacterHealth.GetAllAfflictions()
+	local afflictionsdisplayed = 0
 
-        for value in afflictionlist do
-            local strength = math.floor(value.Strength)
-            local prefab = value.Prefab
-            local limb = targetCharacter.CharacterHealth.GetAfflictionLimb(value)
-            local afflimbtype = LimbType.Torso
-            
-            if(not prefab.LimbSpecific) then
-				afflimbtype = prefab.IndicatorLimb
-            elseif(limb~=nil) then
-				afflimbtype=limb.type
-			end
-            
-            afflimbtype = Utils.NormalizeLimbType(afflimbtype)
+	for value in afflictionlist do
+		local strength = math.floor(value.Strength)
+		local prefab = value.Prefab
+		local limb = targetCharacter.CharacterHealth.GetAfflictionLimb(value)
+		local afflimbtype = LimbType.Torso
+		
+		if(not prefab.LimbSpecific) then
+			afflimbtype = prefab.IndicatorLimb
+		elseif(limb~=nil) then
+			afflimbtype=limb.type
+		end
+		
+		afflimbtype = Utils.NormalizeLimbType(afflimbtype)
 
-            if(strength >= prefab.ShowInHealthScannerThreshold and afflimbtype==limbtype) then
-                -- add the affliction to the readout
-                readoutstring = readoutstring.."\n"..value.Prefab.Name.Value..": "..strength.."%"
-                afflictionsdisplayed = afflictionsdisplayed + 1
-            end
-        end
+		if(strength >= prefab.ShowInHealthScannerThreshold and afflimbtype==limbtype) then
+			-- add the affliction to the readout
+			readoutstring = readoutstring.."\n"..value.Prefab.Name.Value..": "..strength.."%"
+			afflictionsdisplayed = afflictionsdisplayed + 1
+		end
+	end
 
-        -- add a message in case there is nothing to display
-        if afflictionsdisplayed <= 0 then
-            readoutstring = readoutstring.."\nNo deviations were detected." 
-        end
+	-- add a message in case there is nothing to display
+	if afflictionsdisplayed <= 0 then
+		readoutstring = readoutstring.."\nNo deviations were detected." 
+	end
 
-        Timer.Wait(function()
-            Utils.DMClient(Utils.CharacterToClient(usingCharacter), readoutstring, Color(127,255,255,255))
-        end, 2000)
-    end
+	Timer.Wait(function()
+		Utils.DMClient(Utils.CharacterToClient(usingCharacter), readoutstring, Color(127,255,255,255))
+	end, 2000)
 end)
 
 -- Пример использования на бинте
