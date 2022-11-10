@@ -90,7 +90,7 @@
 	<!-- /// Blood Stuff /// -->
 	<!-- Blood Pressure
   Scanned Symptom -->
-	<Affliction name="Blood Pressure" identifier="bloodpressure" description="" targets="human" limbspecific="false" indicatorlimb="Torso" activationthreshold="0" healableinmedicalclinic="false" type="" isbuff="true" showinhealthscannerthreshold="300" showiconthreshold="300" maxstrength="200">
+	<Affliction name="Blood Pressure" identifier="bloodpressure" description="" targets="human" limbspecific="false" indicatorlimb="Torso" activationthreshold="0" healableinmedicalclinic="false" type="" isbuff="true" showinhealthscannerthreshold="0" showiconthreshold="300" maxstrength="200">
 		<icon texture="%ModDir%/Images/AfflictionIcons.png" sourcerect="128,128,128,128" color="68,157,198,255" origin="0,0" />
 	</Affliction>
 	<!-- SpO2 / Oxygen saturation in blood
