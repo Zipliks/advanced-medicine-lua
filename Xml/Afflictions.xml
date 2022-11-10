@@ -84,7 +84,7 @@
 	</Affliction>
   <!-- Cardiac tamponade -->
     <Affliction name="Cardiac tamponade" identifier="tamponade" description="" healableinmedicalclinic="false" targets="human" type="gaze" isbuff="false" causeofdeathdescription="" selfcauseofdeathdescription="" limbspecific="False" indicatorlimb="Torso" showinhealthscannerthreshold="10" showiconthreshold="300" maxstrength="100">
-       <icon texture="Content/UI/MainIconsAtlas.png" sourcerect="896,896,128,128" color="195,136,60,255" origin="0,0" />
+       <icon texture="%ModDir%/Images/AfflictionIcons.png" sheetindex="2,2" sheetelementsize="128,128" origin="0,0" />
     </Affliction>
 
 	<!-- /// Blood Stuff /// -->
@@ -101,7 +101,7 @@
   <!-- Internal Bleeding
   Scanned Symptom -->
     <Affliction name="" identifier="internalbleeding" healableinmedicalclinic="false" targets="human" description="" causeofdeathdescription="" selfcauseofdeathdescription="" limbspecific="False" indicatorlimb="Torso" showinhealthscannerthreshold="10" showiconthreshold="300" maxstrength="100">
-        <icon texture="Content/UI/CommandUIAtlas.png" sourcerect="896,896,128,128" origin="0,0" />
+        <icon texture="%ModDir%/Images/AfflictionIcons.png" sheetindex="6,2" sheetelementsize="128,128" origin="0,0" />
     </Affliction>
 
 	<!-- Saline / increases blood pressure, even into potentially unwanted and harmful regions.
@@ -230,7 +230,7 @@
 	<!-- Pneumothroax / collapsed lung / causes shortness of breath, tachycardia, hyperventilation, hypotension, chest pain
   scanned Symptom -->
 	<Affliction name="" identifier="pneumothorax" description="" healableinmedicalclinic="false" targets="human" type="gaze" isbuff="false" causeofdeathdescription="" selfcauseofdeathdescription="" limbspecific="True" showiconthreshold="700" showinhealthscannerthreshold="10" maxstrength="100">
-		<icon texture="Content/UI/MainIconsAtlas.png" sourcerect="896,896,128,128" color="195,136,60,255" origin="0,0" />
+		<icon texture="%ModDir%/Images/AfflictionIcons.png" sheetindex="2,4" sheetelementsize="128,128" origin="0,0" />
 	</Affliction>
 	<!-- Lung Damage
   Scanned Symptom, causes shortness of breath, chest pain and cough, hypoxemia
@@ -296,7 +296,7 @@
         <Sound file="%ModDir%/Sound/Voice/female_cough6.ogg" />
       </StatusEffect>
     </PeriodicEffect>
-    <icon texture="%ModDir%/Images/AfflictionIcons.png" sheetindex="7,0" sheetelementsize="128,128" origin="0,0" />
+    <icon texture="%ModDir%/Images/placeholder.png" sheetindex="1,1" sheetelementsize="128,128" origin="0,0" />
   </Affliction>
 
   <!-- Vomiting Blood / Exposed Symptom -->
@@ -327,7 +327,7 @@
         <Conditional HideFace="eq False" />
       </StatusEffect>
     </PeriodicEffect>
-    <icon texture="%ModDir%/Images/AfflictionIcons.png" sheetindex="7,1" sheetelementsize="128,128" origin="0,0" />
+    <icon texture="%ModDir%/Images/placeholder.png" sheetindex="1,1" sheetelementsize="128,128" origin="0,0" />
   </Affliction>
 
 	<!-- /// Override section begins /// -->
