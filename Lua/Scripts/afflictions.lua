@@ -265,3 +265,65 @@ Main.AddAfflictionHandler("respiratoryfailure", "has_respiratoryfailure", functi
     end
 end)
 -- //!SECTION
+
+-- //SECTION - Cardiac tamponade
+Main.AddAfflictionHandler("tamponade", "has_tamponade", function(character, strength)
+    local bloodpressure_strength = Utils.GetAffliction(character, "bloodpressure")
+    local tamponade_strength = Utils.GetAffliction(character, "tamponade")
+
+    if(bloodpressure_strength >= 90) and (tamponade_strength >= 20 and tamponade_strength <= 45) then
+            Utils.SetAffliction(character, "bloodpressure", -0.3*DELTA_TIME, LimbType.Torso, true)
+    elseif(bloodpressure_strength >= 70) and (tamponade_strength >= 45 and tamponade_strength <= 80) then
+            Utils.SetAffliction(character, "bloodpressure", -0.5*DELTA_TIME, LimbType.Torso, true)
+    elseif(bloodpressure_strength >= 20) and (tamponade_strength >= 80) then
+            Utils.SetAffliction(character, "bloodpressure", bloodpressure_strength*-0.1*DELTA_TIME, LimbType.Torso, true)
+    end
+    Utils.SetAffliction(character, "tamponade", 0.25*DELTA_TIME, nil, true)
+end)
+-- //!SECTION
+
+-- //SECTION - Internal Bleeding
+Main.AddAfflictionHandler("internalbleeding", "has_internalbleeding", function(character, strength)
+    local internalbleeding_strength = Utils.GetAffliction(character, "internalbleeding")
+
+    if(internalbleeding_strength >= 0 and internalbleeding_strength <= 30) then
+            Utils.SetAffliction(character, "bloodloss", 0.15*DELTA_TIME, LimbType.Torso, true)
+    elseif(internalbleeding_strength >= 30 and internalbleeding_strength <= 60) then
+            Utils.SetAffliction(character, "bloodloss", 0.3*DELTA_TIME, LimbType.Torso, true)
+    elseif(internalbleeding_strength >= 60) then
+            Utils.SetAffliction(character, "bloodloss", 0.5*DELTA_TIME, LimbType.Torso, true)
+            Utils.SetAffliction(character, "sym_hematemesis", 2*DELTA_TIME, nil, true)
+    end
+    if(internalbleeding_strength <= 30) then
+        Utils.SetAffliction(character, "sym_hematemesis", 0, nil, false)
+    end
+    Utils.SetAffliction(character, "internalbleeding", 0.2*DELTA_TIME, nil, true)
+end)
+-- //!SECTION
+
+-- //SECTION - Pneumothorax
+Main.AddAfflictionHandler("pneumothorax", "has_pneumothorax", function(character, strength)
+    local bloodpressure_strength = Utils.GetAffliction(character, "bloodpressure")
+    local pneumothorax_strength = Utils.GetAffliction(character, "pneumothorax")
+    if(bloodpressure_strength >= 90) and (pneumothorax_strength >= 20 and pneumothorax_strength <= 45) then
+            Utils.SetAffliction(character, "bloodpressure", -0.3*DELTA_TIME, LimbType.Torso, true)
+    elseif(bloodpressure_strength >= 70) and (pneumothorax_strength >= 45 and pneumothorax_strength <= 80) then
+            Utils.SetAffliction(character, "bloodpressure", -0.45*DELTA_TIME, LimbType.Torso, true)
+    elseif(bloodpressure_strength >= 20) and (pneumothorax_strength >= 80) then
+            Utils.SetAffliction(character, "bloodpressure", -0.5*DELTA_TIME, LimbType.Torso, true)
+    end
+
+    if(pneumothorax_strength >= 20 and pneumothorax_strength <= 80) then
+            Utils.SetAffliction(character, "oxygenlow", 8, nil, true)
+    elseif(pneumothorax_strength >= 80) then
+            Utils.SetAffliction(character, "oxygenlow", 22, nil, true)
+    end
+
+    if(pneumothorax_strength <= 5) then
+        Utils.SetAffliction(character, "sym_cough", 0, nil, false)
+    else
+        Utils.SetAffliction(character, "sym_cough", 2*DELTA_TIME, nil, false)
+    end
+    Utils.SetAffliction(character, "pneumothorax", 0.2*DELTA_TIME, nil, true)
+end)
+-- //!SECTION

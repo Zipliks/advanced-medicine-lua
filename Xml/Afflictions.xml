@@ -82,11 +82,15 @@
 	<Affliction name="" identifier="heartremoved" description="The heart has been surgically removed" targets="human" healableinmedicalclinic="false" limbspecific="false" indicatorlimb="Torso" showiconthreshold="1" showinhealthscannerthreshold="1" type="gaze" isbuff="false" causeofdeathdescription="Died of missing a heart" selfcauseofdeathdescription="Your heart got removed." iconcolors="84,211,211,255;84,211,211,255" maxstrength="2">
 		<icon texture="%ModDir%/Images/AfflictionIcons.png" sheetindex="3,5" sheetelementsize="128,128" origin="0,0" />
 	</Affliction>
+  <!-- Cardiac tamponade -->
+    <Affliction name="Cardiac tamponade" identifier="tamponade" description="" healableinmedicalclinic="false" targets="human" type="gaze" isbuff="false" causeofdeathdescription="" selfcauseofdeathdescription="" limbspecific="False" indicatorlimb="Torso" showinhealthscannerthreshold="10" showiconthreshold="300" maxstrength="100">
+       <icon texture="%ModDir%/Images/AfflictionIcons.png" sheetindex="2,2" sheetelementsize="128,128" origin="0,0" />
+    </Affliction>
 
 	<!-- /// Blood Stuff /// -->
 	<!-- Blood Pressure
   Scanned Symptom -->
-	<Affliction name="Blood Pressure" identifier="bloodpressure" description="" targets="human" limbspecific="false" indicatorlimb="Torso" activationthreshold="0" healableinmedicalclinic="false" type="" isbuff="true" showinhealthscannerthreshold="300" showiconthreshold="300" maxstrength="200">
+	<Affliction name="Blood Pressure" identifier="bloodpressure" description="" targets="human" limbspecific="false" indicatorlimb="Torso" activationthreshold="0" healableinmedicalclinic="false" type="" isbuff="true" showinhealthscannerthreshold="0" showiconthreshold="300" maxstrength="200">
 		<icon texture="%ModDir%/Images/AfflictionIcons.png" sourcerect="128,128,128,128" color="68,157,198,255" origin="0,0" />
 	</Affliction>
 	<!-- SpO2 / Oxygen saturation in blood
@@ -94,6 +98,11 @@
 	<Affliction name="SpO2" identifier="oxygen_saturation" description="" targets="human" limbspecific="false" indicatorlimb="Torso" activationthreshold="0" healableinmedicalclinic="false" type="gaze" isbuff="false" showinhealthscannerthreshold="0" showiconthreshold="300" maxstrength="100">
 		<icon texture="%ModDir%/Images/AfflictionIcons.png" sourcerect="128,128,128,128" color="68,157,198,255" origin="0,0" />
 	</Affliction>
+  <!-- Internal Bleeding
+  Scanned Symptom -->
+    <Affliction name="" identifier="internalbleeding" healableinmedicalclinic="false" targets="human" description="" causeofdeathdescription="" selfcauseofdeathdescription="" limbspecific="False" indicatorlimb="Torso" showinhealthscannerthreshold="10" showiconthreshold="300" maxstrength="100">
+        <icon texture="%ModDir%/Images/AfflictionIcons.png" sheetindex="6,2" sheetelementsize="128,128" origin="0,0" />
+    </Affliction>
 
 	<!-- Saline / increases blood pressure, even into potentially unwanted and harmful regions.
   also causes acidosis.
@@ -221,7 +230,7 @@
 	<!-- Pneumothroax / collapsed lung / causes shortness of breath, tachycardia, hyperventilation, hypotension, chest pain
   scanned Symptom -->
 	<Affliction name="" identifier="pneumothorax" description="" healableinmedicalclinic="false" targets="human" type="gaze" isbuff="false" causeofdeathdescription="" selfcauseofdeathdescription="" limbspecific="True" showiconthreshold="700" showinhealthscannerthreshold="10" maxstrength="100">
-		<icon texture="Content/UI/MainIconsAtlas.png" sourcerect="896,896,128,128" color="195,136,60,255" origin="0,0" />
+		<icon texture="%ModDir%/Images/AfflictionIcons.png" sheetindex="2,4" sheetelementsize="128,128" origin="0,0" />
 	</Affliction>
 	<!-- Lung Damage
   Scanned Symptom, causes shortness of breath, chest pain and cough, hypoxemia
@@ -261,6 +270,65 @@
 	<Affliction name="" identifier="immunity" description="" healableinmedicalclinic="false" targets="human" type="gaze" isbuff="true" limbspecific="false" maxstrength="100" showinhealthscannerthreshold="300" showiconthreshold="300">
 		<icon texture="Content/UI/MainIconsAtlas.png" sourcerect="256,896,128,128" color="10,193,114,255" origin="0,0" />
 	</Affliction>
+
+    <!-- ///// SYMPTOMS ///// -->
+  <!-- as a rule of thumb, exposed symptoms arent visible on the scanner to reduce clutter -->
+  
+  <!-- Cough / Exposed Symptom -->
+  <Affliction name="" identifier="sym_cough" description="" healableinmedicalclinic="false" type="gaze" isbuff="false" limbspecific="false" indicatorlimb="Head" showiconthreshold="1" showinhealthscannerthreshold="100" maxstrength="2" iconcolors="255,90,0,255;255,90,0,255">
+    <PeriodicEffect mininterval="12" maxinterval="26">
+      <StatusEffect target="Character" comparison="and">
+        <Conditional ishuman="true" />
+        <Conditional ismale="true" />
+        <Sound file="%ModDir%/Sound/Voice/male_cough1.ogg" selectionmode="Random" />
+        <Sound file="%ModDir%/Sound/Voice/male_cough2.ogg" />
+        <Sound file="%ModDir%/Sound/Voice/male_cough3.ogg" />
+        <Sound file="%ModDir%/Sound/Voice/male_cough4.ogg" />
+      </StatusEffect>
+      <StatusEffect target="Character" comparison="and">
+        <Conditional ishuman="true" />
+        <Conditional isfemale="true" />
+        <Sound file="%ModDir%/Sound/Voice/female_cough1.ogg" selectionmode="Random" />
+        <Sound file="%ModDir%/Sound/Voice/female_cough2.ogg" />
+        <Sound file="%ModDir%/Sound/Voice/female_cough3.ogg" />
+        <Sound file="%ModDir%/Sound/Voice/female_cough4.ogg" />
+        <Sound file="%ModDir%/Sound/Voice/female_cough5.ogg" />
+        <Sound file="%ModDir%/Sound/Voice/female_cough6.ogg" />
+      </StatusEffect>
+    </PeriodicEffect>
+    <icon texture="%ModDir%/Images/placeholder.png" sheetindex="1,1" sheetelementsize="128,128" origin="0,0" />
+  </Affliction>
+
+  <!-- Vomiting Blood / Exposed Symptom -->
+  <Affliction name="" identifier="sym_hematemesis" description="" healableinmedicalclinic="false" type="gaze" isbuff="false" limbspecific="false" maxstrength="2" treatmentthreshold="1000" karmachangeonapplied="-0.1" damageoverlayalpha="1" healcostmultiplier="2.25" showiconthreshold="1" showinhealthscannerthreshold="100">
+    <Effect minstrength="0" maxstrength="2" />
+    <PeriodicEffect mininterval="8" maxinterval="16">
+      <StatusEffect target="Character" SpeedMultiplier="0.0" setvalue="true" duration="1.7" />
+      <StatusEffect target="Character" comparison="and">
+        <Conditional ishuman="true" />
+        <Conditional ismale="true" />
+        <Sound file="Content/Sounds/HUMAN_chokeMale1.ogg" selectionmode="Random" />
+        <Sound file="Content/Sounds/HUMAN_chokeMale2.ogg" />
+        <Sound file="Content/Sounds/HUMAN_chokeMale3.ogg" />
+      </StatusEffect>
+      <StatusEffect target="Character" comparison="and">
+        <Conditional ishuman="true" />
+        <Conditional isfemale="true" />
+        <Sound file="Content/Sounds/HUMAN_chokeFemale1.ogg" selectionmode="Random" />
+        <Sound file="Content/Sounds/HUMAN_chokeFemale2.ogg" />
+        <Sound file="Content/Sounds/HUMAN_chokeFemale3.ogg" />
+      </StatusEffect>
+      <StatusEffect target="Character">
+        <Affliction identifier="stun" strength="0.1" />
+      </StatusEffect>
+      <StatusEffect target="Character" targetlimbs="Head" duration="1">
+        <ParticleEmitter particle="bloodsplash" copyentityangle="true" anglemin="-20" anglemax="5" particlespersecond="100" velocitymin="60" velocitymax="250" scalemin="0.2" scalemax="0.4" />
+        <Explosion range="0.0" structuredamage="0" itemdamage="0" force="0.0" severlimbsprobability="0.0" decal="blood" decalsize="1.25" shockwave="false" underwaterbubble="false" />
+        <Conditional HideFace="eq False" />
+      </StatusEffect>
+    </PeriodicEffect>
+    <icon texture="%ModDir%/Images/placeholder.png" sheetindex="1,1" sheetelementsize="128,128" origin="0,0" />
+  </Affliction>
 
 	<!-- /// Override section begins /// -->
 	<Override>
