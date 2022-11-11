@@ -122,8 +122,19 @@ end)
 Main.SetItemFunction("tweezers", function(item, source, target, limb)
 	local limbtype = Utils.NormalizeLimbType(limb.type)
 	local is_retracted = Utils.GetAfflictionLimb(target, "retraction", limbtype)
+
 	if (not is_retracted) then
 		return
 	end
 	Utils.SetAffliction(target, "foreignbody", -1, limbtype, true)
+end)
+
+Main.SetItemFunction("suture", function(item, source, target, limb)
+	local limbtype = Utils.NormalizeLimbType(limb.type)
+	local is_retracted = Utils.GetAfflictionLimb(target, "retraction", limbtype)
+
+	if (not is_retracted) then
+		return
+	end
+	Utils.SetAffliction(target, "incision", 0, limbtype, true)
 end)
