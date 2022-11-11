@@ -133,8 +133,13 @@ Main.SetItemFunction("suture", function(item, source, target, limb)
 	local limbtype = Utils.NormalizeLimbType(limb.type)
 	local is_retracted = Utils.GetAfflictionLimb(target, "retraction", limbtype)
 
-	if (not is_retracted) then
+	if (has_incision) then
+		Utils.SetAffliction(target, "incision", -1, true)
+	elseif (has_ligature) then
+		Utils.SetAffliction(target, "ligature", -1, true)
+	elseif (is_retracted) then
+		Utils.SetAffliction(target, "retraction", -1, true)
+	else
 		return
 	end
-	Utils.SetAffliction(target, "incision", 0, limbtype, true)
 end)
