@@ -56,6 +56,18 @@ function Utils.SetAfflictionTime(character, affliction, strength, limb, add, sec
 	end, delay)
 end
 
+function Utils.RemoveItem(item)
+	if item == nil or item.Removed then return end
+
+	if SERVER then
+		-- use server remove method
+		Entity.Spawner.AddEntityToRemoveQueue(item)
+	else
+		-- use client remove method
+		item.Remove()
+	end
+end
+
 --[[
 Utils.GetAffliction
 * character: У кого проверять (Barotrauma.Character)
@@ -120,7 +132,7 @@ function Utils.NormalizeLimbType(limbtype)
 		return LimbType.LeftArm
 	elseif limbtype == LimbType.RightForearm or limbtype == LimbType.RightHand then
 		return LimbType.RightArm
-	elseif limbtype == LimbType.LeftThigh or limbtype == LimbType.LeftFoot then 
+	elseif limbtype == LimbType.LeftThigh or limbtype == LimbType.LeftFoot then
 		return LimbType.LeftLeg
 	elseif limbtype == LimbType.RightThigh or limbtype == LimbType.RightFoot then
 		return LimbType.RightLeg
