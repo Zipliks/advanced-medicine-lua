@@ -150,6 +150,31 @@
 		<Body width="65" height="65" density="50" />
 		<MeleeWeapon slots="Any,RightHand,LeftHand" aimpos="5,0" handle1="-5,-5" holdangle="10" reload="1.0" />
 	</Item>
+	<Item name="Suture" identifier="suture" category="Equipment" maxstacksize="8" cargocontaineridentifier="chemicalcrate" Tags="smallitem,medical,surgery" description="" useinhealthinterface="True" scale="0.250">
+		<PreferredContainer primary="medcab" minamount="1" maxamount="2" spawnprobability="1" />
+		<PreferredContainer primary="wreckmedcab,abandonedmedcab" minamount="0" maxamount="3" spawnprobability="0.5" />
+		<PreferredContainer primary="outpostmedcompartment" minamount="0" maxamount="1" spawnprobability="0.25" />
+		<Fabricate suitablefabricators="medicalfabricator" amount="4" requiredtime="10">
+			<RequiredSkill identifier="medical" level="25" />
+			<RequiredItem identifier="aluminium" mincondition="0.25" usecondition="true" />
+			<RequiredItem identifier="organicfiber" />
+		</Fabricate>
+		<Price baseprice="30">
+			<Price locationtype="outpost" multiplier="1" minavailable="25" />
+			<Price locationtype="city" multiplier="0.9" minavailable="30" />
+			<Price locationtype="research" multiplier="0.9" minavailable="25" />
+			<Price locationtype="military" multiplier="1" minavailable="30" />
+			<Price locationtype="mine" multiplier="0.75" minavailable="20" />
+		</Price>
+		<InventoryIcon texture="%ModDir%/Images/InventoryItemIconAtlas.png" sheetindex="5,0" sheetelementsize="64,64" origin="0.5,0.5" />
+		<Sprite texture="%ModDir%/Images/InGameItemIconAtlas.png" sheetindex="2,1" sheetelementsize="128,128" depth="0.55" origin="0.5,0.5" />
+		<Body width="65" height="45" density="50" />
+		<SuitableTreatment identifier="lacerations" suitability="70" />
+		<SuitableTreatment identifier="bitewounds" suitability="70" />
+		<SuitableTreatment identifier="explosiondamage" suitability="70" />
+		<SuitableTreatment identifier="bleeding" suitability="30" />
+		<MeleeWeapon slots="Any,RightHand,LeftHand" aimpos="5,0" handle1="-5,0" holdangle="10" reload="1.0"/>
+	</Item>
 	//SECTION: OVERRIDE
 	<Override>
 		<!-- Scanner, ID card -->
