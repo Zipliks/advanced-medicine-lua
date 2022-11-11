@@ -89,6 +89,8 @@ Main.SetItemFunction("antibleeding1", function(item, source, target, limb)
 	local limbtype = Utils.NormalizeLimbType(limb.type)
 	Utils.SetAffliction(target, "bleeding", -15, limbtype, true)
 	Utils.SetAffliction(target, "bandaged", 20, limbtype, true)
+
+	Utils.RemoveItem(item)
 end)
 
 Main.SetItemFunction("scalpel", function(item, source, target, limb)
