@@ -5,7 +5,11 @@ Main.AddDamageHandler
 "Добавляет обработчик урона"
 * id = Айди аффликшена
 * func - Функция, привязанная к аффликшену
-* Аргументы func: Character, Affliction, Strength, Limb, AttackResult 
+* Аргументы func: Character, Affliction, Strength, Limb, AttackResult
+	* character (Barotrauma.Character) - Персонаж который получил урон
+	* strength (Number) - Сила полученного аффликшена
+	* limb (Barotrauma.LimbType) - Конечность, которая пострадала
+	* attackResult (Barotrauma.AttackResult) - Результат атаки, нужен например чтобы получить остальные аффликшены
 ]]
 function Main.AddDamageHandler(id, func)
     if id == nil or func == nil then 
@@ -14,6 +18,23 @@ function Main.AddDamageHandler(id, func)
     damage_handlers[id] = func
     print("INIT: Damage Handler for "..id.." initialized ")
 end
+
+Hook.Add("character.applyDamage", "AM.ondamaged", function(characterHealth, attackResult, hitLimb)
+    if not characterHealth.Character.IsHuman and not characterHealth.Character.IsDead then return end
+    -- Все операции должны происходить только с людьми
+
+    for _, aff in ipairs(attackResult.Afflictions) do
+        local id = aff.Prefab.Identifier.Value
+        local strength = aff.Strength
+        local method = damage_handlers[id]
+
+        --print(index..". "..id..": "..strength) -- Выводит все полученные аффликшены в консоль
+
+        if method ~= nil then
+            method(characterHealth.Character,strength,hitLimb.type,attackResult)
+        end
+    end
+end)
 
 --[[
 Методы при уроне
@@ -441,19 +462,3 @@ Main.AddDamageHandler("explosiondamage", function(character, strength, limb, att
     
 end)
 
-Hook.Add("character.applyDamage", "AM.ondamaged", function(characterHealth, attackResult, hitLimb)
-    if not characterHealth.Character.IsHuman and not characterHealth.Character.IsDead then return end
-    -- Все операции должны происходить только с людьми
-
-    for _, aff in ipairs(attackResult.Afflictions) do
-        local id = aff.Prefab.Identifier.Value
-        local strength = aff.Strength
-        local method = damage_handlers[id]
-
-        --print(index..". "..id..": "..strength) -- Выводит все полученные аффликшены в консоль
-
-        if method ~= nil then
-            method(characterHealth.Character,strength,hitLimb.type,attackResult)
-        end
-    end
-end)
