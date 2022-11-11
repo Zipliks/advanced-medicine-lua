@@ -142,4 +142,5 @@ Main.SetItemFunction("suture", function(item, source, target, limb)
 	else
 		return
 	end
+	Utils.RemoveItem(item)
 end)
