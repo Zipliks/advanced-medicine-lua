@@ -142,5 +142,7 @@ Main.SetItemFunction("suture", function(item, source, target, limb)
 	else
 		return
 	end
+
 	Utils.RemoveItem(item)
+	Utils.SetAfflictionTime(target, "stitches", 100, limbtype, false, 300)
 end)
