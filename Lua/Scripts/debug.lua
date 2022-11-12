@@ -1,5 +1,5 @@
 -- Debug commands
-local asys = AfflictionPrefab.Prefabs["asys"]
+local asystole = AfflictionPrefab.Prefabs["asystole"]
 
 
 Hook.Add('chatMessage', 'AM.chat_console', function(msg, client)
@@ -64,10 +64,10 @@ Hook.Add('chatMessage', 'AM.chat_console', function(msg, client)
 	end
 
 	-- Накладывает асистолию на всех существ с огнестрельной раной
-	if (msg == '--applyasys') then
+	if (msg == '--applyasystole') then
 		for _, character in pairs(Character.CharacterList) do
 			if (Utils.GetAffliction(character, "gunshotwound")) then
-				Utils.SetAffliction(character, "asys", 5, LimbType.Torso, true)
+				Utils.SetAffliction(character, "asystole", 5, LimbType.Torso, true)
 			end
 		end
 	end

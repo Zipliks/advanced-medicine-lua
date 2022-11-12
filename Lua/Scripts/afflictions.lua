@@ -63,7 +63,7 @@ Main.AddAfflictionHandler("bloodpressure", "has_bloodpressure", function(charact
         Utils.SetAffliction(character, "bloodpressure", 0.3*DELTA_TIME, LimbType.Head, true)
     end
 
-    if(bloodpressure_strength <= 100) and (ventricular_fib_strength == 0 and ventricular_tachy == 0 and asys == 0) then
+    if(bloodpressure_strength <= 100) and (ventricular_fib_strength == 0 and ventricular_tachy == 0 and asystole == 0) then
         Utils.SetAffliction(character, "bloodpressure", 1*DELTA_TIME, LimbType.Head, true)
     end
 
@@ -135,10 +135,10 @@ Main.AddAfflictionHandler("heart_failure", "has_heart_failure", function(charact
         Utils.SetAffliction(character, "ventricular_tachy", 10*DELTA_TIME, LimbType.Torso, true)
     elseif(heart_failure_strength >= 40 and heart_failure_strength <= 125) then
         Utils.SetAffliction(character, "ventricular_fib", 10*DELTA_TIME, LimbType.Torso, true)
-        Utils.SetAffliction(character, "asys", -10*DELTA_TIME, LimbType.Torso, true)
+        Utils.SetAffliction(character, "asystole", -10*DELTA_TIME, LimbType.Torso, true)
         Utils.SetAffliction(character, "ventricular_tachy", -10*DELTA_TIME, LimbType.Torso, true)
     elseif(heart_failure_strength >= 125 and heart_failure_strength <= 200) then
-        Utils.SetAffliction(character, "asys", 10*DELTA_TIME, LimbType.Torso, true)
+        Utils.SetAffliction(character, "asystole", 10*DELTA_TIME, LimbType.Torso, true)
         Utils.SetAffliction(character, "ventricular_fib", -10*DELTA_TIME, LimbType.Torso, true)
     end
 end)
@@ -168,8 +168,8 @@ Main.AddAfflictionHandler("ventricular_fib", "has_ventricular_fib", function(cha
 end)
 -- //!SECTION
 
--- //SECTION - Asystole
-Main.AddAfflictionHandler("asys", "has_asys", function(character, strength)
+-- //SECTION - asystole
+Main.AddAfflictionHandler("asystole", "has_asystole", function(character, strength)
     local bloodpressure_strength = Utils.GetAffliction(character, "bloodpressure")
 
     if(bloodpressure_strength >= 2) then
