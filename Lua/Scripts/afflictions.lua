@@ -1,37 +1,11 @@
 ---@diagnostic disable: undefined-global
 
---CPR
-Main.AddAfflictionHandler("cpr_buff", "has_cpr", function(character, strength)
-    Utils.SetAffliction(character, "oxygenlow", -10, nil, true)
-end)
 
 -- //SECTION - Bite Wounds
 Main.AddAfflictionHandler("bitewounds", "has_bitewounds", function(character, strength)
     Utils.SetAffliction(character, "bloodloss", 1*DELTA_TIME, nil, true)
 end)
 -- //!SECTION
-
-Main.AddAfflictionHandler("stun", "has_stun", function(character, strength)
-end)
-
--- STUB: Blunt Force Trauma
-Main.AddAfflictionHandler("blunttrauma", "has_blunttrauma", function(character, strength)
-end)
-
--- STUB: Deep Tissue Injury
-Main.AddAfflictionHandler("explosiondamage", "has_explosiondamage", function(character, strength)
-
-end)
-
--- STUB: Gunshot Wound
-Main.AddAfflictionHandler("gunshotwound", "has_gunshotwound", function(character, strength)
-
-end)
-
--- STUB: Internal Damage
-Main.AddAfflictionHandler("internaldamage", "has_internaldamage", function(character, strength)
-
-end)
 
 -- STUB: Lacerations
 Main.AddAfflictionHandler("lacerations", "has_lacerations", function(character, strength)
