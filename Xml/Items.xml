@@ -175,6 +175,40 @@
 		<SuitableTreatment identifier="bleeding" suitability="30" />
 		<MeleeWeapon slots="Any,RightHand,LeftHand" aimpos="5,0" handle1="-5,0" holdangle="10" reload="1.0"/>
 	</Item>
+	
+  <Item name="" identifier="crackle" description="" scale="0.5" nonplayerteaminteractable="True" category="hidden">
+    <InventoryIcon texture="Content/Items/InventoryIconAtlas.png" sourcerect="0,0,1,1" origin="0.5,0.5" />
+    <Sprite texture="Content/Items/Medical/Medicines.png" sourcerect="0,0,1,1" depth="0.6" origin="0.5,0.5" />
+    <Holdable slots="any" handle1="0,0" msg="ItemMsgPickUpSelect">
+      <StatusEffect type="always" target="This, Character" disabledeltatime="true">
+        <sound file="%ModDir%/Sound/bonebreak4.ogg" selectionmode="random" />
+        <sound file="%ModDir%/Sound/bonebreak3.ogg" />
+        <sound file="%ModDir%/Sound/bonebreak2.ogg" />
+        <sound file="%ModDir%/Sound/bonebreak1.ogg" />
+        <Remove />
+      </StatusEffect>
+    </Holdable>
+  </Item>
+	
+  <Item name="" identifier="armlock1" description="" scale="0.5" nonplayerteaminteractable="True" category="hidden">
+    <InventoryIcon texture="Content/Items/InventoryIconAtlas.png" sourcerect="0,0,1,1" origin="0.5,0.5" />
+    <Sprite texture="Content/Items/Medical/Medicines.png" sourcerect="0,0,1,1" depth="0.6" origin="0.5,0.5" />
+    <Holdable slots="RightHand" handle1="0,0" msg="ItemMsgPickUpSelect">
+      <StatusEffect type="onnotcontained" target="This" disabledeltatime="true">
+        <Remove />
+      </StatusEffect>
+    </Holdable>
+  </Item>
+  <Item name="" identifier="armlock2" description="" scale="0.5" nonplayerteaminteractable="True" category="hidden">
+    <InventoryIcon texture="Content/Items/InventoryIconAtlas.png" sourcerect="0,0,1,1" origin="0.5,0.5" />
+    <Sprite texture="Content/Items/Medical/Medicines.png" sourcerect="0,0,1,1" depth="0.6" origin="0.5,0.5" />
+    <Holdable slots="LeftHand" handle1="0,0" msg="ItemMsgPickUpSelect">
+      <StatusEffect type="onnotcontained" target="This" disabledeltatime="true">
+        <Remove />
+      </StatusEffect>
+    </Holdable>
+  </Item>
+
 	//SECTION: OVERRIDE
 	<Override>
 		<!-- Scanner, ID card -->
