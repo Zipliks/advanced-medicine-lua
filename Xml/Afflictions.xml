@@ -33,7 +33,7 @@
 	</Affliction>
 	<!-- Asystole / Lack of electrical activity of the heart
   Occurs due to exhaustion of the heart, cause hypoxemia and hypotension -->
-	<Affliction name="" identifier="asys" description="" healableinmedicalclinic="false" limbspecific="false" indicatorlimb="Torso" showiconthreshold="1" showinhealthscannerthreshold="1" targets="human" type="gaze" isbuff="false" maxstrength="10">
+	<Affliction name="" identifier="asystole" description="" healableinmedicalclinic="false" limbspecific="false" indicatorlimb="Torso" showiconthreshold="1" showinhealthscannerthreshold="1" targets="human" type="gaze" isbuff="false" maxstrength="10">
 		<icon texture="%ModDir%/Images/AfflictionIcons.png" sheetindex="0,1" sheetelementsize="128,128" origin="0,0" />
 	</Affliction>
 	<!-- Heart failure
