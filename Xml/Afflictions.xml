@@ -335,16 +335,16 @@
 	</Affliction>
 
 	<!-- //SECTION - Surgery -->
-	<Affliction name="Open Incision" identifier="incision" description="" type="gaze" isbuff="false" limbspecific="True" maxstrength="1">
+	<Affliction name="Open Incision" identifier="incision" description="" type="gaze" isbuff="false" limbspecific="True" maxstrength="1" showiconthreshold="1" showinhealthscannerthreshold="300">
 		<icon texture="%ModDIr%/Images/AfflictionIcons.png" sheetindex="0,2" sheetelementsize="128,128" color="139,60,42,255" origin="0,0" />
 	</Affliction>
-	<Affliction name="Ligature" identifier="ligature" description="" type="gaze" isbuff="false" limbspecific="True" maxstrength="1">
+	<Affliction name="Ligature" identifier="ligature" description="" type="gaze" isbuff="false" limbspecific="True" maxstrength="1" showiconthreshold="1" showinhealthscannerthreshold="300">
 		<icon texture="%ModDIr%/Images/AfflictionIcons.png" sheetindex="1,2" sheetelementsize="128,128" color="139,60,42,255" origin="0,0" />
 	</Affliction>
-	<Affliction name="Retracted Wound" identifier="retraction" description="" type="gaze" isbuff="false" limbspecific="True" maxstrength="1">
+	<Affliction name="Retracted Wound" identifier="retraction" description="" type="gaze" isbuff="false" limbspecific="True" maxstrength="1" showiconthreshold="1" showinhealthscannerthreshold="300">
 		<icon texture="%ModDIr%/Images/AfflictionIcons.png" sheetindex="2,2" sheetelementsize="128,128" color="139,60,42,255" origin="0,0" />
 	</Affliction>
-	<Affliction name="Stitches" identifier="stitches" description="" type="gaze" isbuff="true" limbspecific="True" maxstrength="1">
+	<Affliction name="Stitches" identifier="stitches" description="" type="gaze" isbuff="true" limbspecific="True" maxstrength="100" showiconthreshold="1" showinhealthscannerthreshold="300">
 		<icon texture="%ModDIr%/Images/AfflictionIcons.png" sheetindex="3,2" sheetelementsize="128,128" color="139,60,42,255" origin="0,0" />
 	</Affliction>
 	<!-- //!SECTION -->
