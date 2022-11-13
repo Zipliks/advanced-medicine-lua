@@ -1,0 +1,17 @@
+{
+    "Lua.diagnostics.globals": [
+        "Hook",
+        "SERVER"
+    ],
+
+    "Lua.diagnostics.libraryFiles": "Enable",
+    "Lua.workspace.library": [
+        "${workspaceRoot}/Lua/lua-docs/server",
+        "${workspaceRoot}/Lua/lua-docs/shared"
+    ],
+    "Lua.diagnostics.disable": [
+        "undefined-field",
+        "missing-return-value",
+        "missing-return"
+    ]
+}

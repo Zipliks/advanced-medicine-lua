@@ -1,0 +1,30 @@
+---@meta
+---@class Barotrauma.Networking.TempClient : System.ValueType
+---`Field Public Instance`
+---@field Name System.String|string
+---`Field Public Instance`
+---@field PreferredJob Barotrauma.Identifier
+---`Field Public Instance`
+---@field PreferredTeam Barotrauma.CharacterTeamType
+---`Field Public Instance`
+---@field NameId System.UInt16|integer
+---`Field Public Instance`
+---@field AccountInfo Barotrauma.Networking.AccountInfo
+---`Field Public Instance`
+---@field SessionId System.Byte|integer
+---`Field Public Instance`
+---@field CharacterId System.UInt16|integer
+---`Field Public Instance`
+---@field Karma System.Single|number
+---`Field Public Instance`
+---@field Muted System.Boolean|boolean
+---`Field Public Instance`
+---@field InGame System.Boolean|boolean
+---`Field Public Instance`
+---@field HasPermissions System.Boolean|boolean
+---`Field Public Instance`
+---@field IsOwner System.Boolean|boolean
+---`Field Public Instance`
+---@field IsDownloading System.Boolean|boolean
+_G['TempClient'] = {}
+

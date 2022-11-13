@@ -1,0 +1,22 @@
+---@meta
+---@class Barotrauma.Anchor : System.Enum
+---`Field Public Static`
+---@field TopLeft Barotrauma.Anchor
+---`Field Public Static`
+---@field TopCenter Barotrauma.Anchor
+---`Field Public Static`
+---@field TopRight Barotrauma.Anchor
+---`Field Public Static`
+---@field CenterLeft Barotrauma.Anchor
+---`Field Public Static`
+---@field Center Barotrauma.Anchor
+---`Field Public Static`
+---@field CenterRight Barotrauma.Anchor
+---`Field Public Static`
+---@field BottomLeft Barotrauma.Anchor
+---`Field Public Static`
+---@field BottomCenter Barotrauma.Anchor
+---`Field Public Static`
+---@field BottomRight Barotrauma.Anchor
+_G['GUI']['Anchor'] = {}
+

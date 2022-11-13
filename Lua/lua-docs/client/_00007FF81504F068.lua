@@ -1,0 +1,30 @@
+---@meta
+---@class Barotrauma.AbilityFlags : System.Enum
+---`Field Public Static`
+---@field None Barotrauma.AbilityFlags
+---`Field Public Static`
+---@field MustWalk Barotrauma.AbilityFlags
+---`Field Public Static`
+---@field ImmuneToPressure Barotrauma.AbilityFlags
+---`Field Public Static`
+---@field IgnoredByEnemyAI Barotrauma.AbilityFlags
+---`Field Public Static`
+---@field MoveNormallyWhileDragging Barotrauma.AbilityFlags
+---`Field Public Static`
+---@field CanTinker Barotrauma.AbilityFlags
+---`Field Public Static`
+---@field CanTinkerFabricatorsAndDeconstructors Barotrauma.AbilityFlags
+---`Field Public Static`
+---@field TinkeringPowersDevices Barotrauma.AbilityFlags
+---`Field Public Static`
+---@field GainSkillPastMaximum Barotrauma.AbilityFlags
+---`Field Public Static`
+---@field RetainExperienceForNewCharacter Barotrauma.AbilityFlags
+---`Field Public Static`
+---@field AllowSecondOrderedTarget Barotrauma.AbilityFlags
+---`Field Public Static`
+---@field PowerfulCPR Barotrauma.AbilityFlags
+---`Field Public Static`
+---@field AlwaysStayConscious Barotrauma.AbilityFlags
+_G['AbilityFlags'] = {}
+

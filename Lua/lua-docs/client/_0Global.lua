@@ -1,0 +1,2090 @@
+---@meta
+
+---@class System.Type : System.Reflection.MemberInfo
+---@class System.Reflection.MemberInfo : System.Object
+---@class System.ValueType : System.Object
+---@class System.Char : System.ValueType
+---@class System.StringComparison : System.Enum
+---@class System.Enum : System.ValueType
+---@class System.Globalization.CultureInfo : System.Object
+---@class System.Globalization.CompareInfo : System.Object
+---@class System.Globalization.CompareOptions : System.Enum
+---@class System.ReadOnlySpan*1System*Char : System.ValueType, {[System.Int32|integer]:System.Char-ref}
+---@class System.ReadOnlySpan*1System*Int32 : System.ValueType, {[System.Int32|integer]:System.Int32-ref}
+---@class System.Int32-ref
+---@class System.StringSplitOptions : System.Enum
+---@class System.String-arr : System.Array
+---@class System.Array : System.Object, {[System.Int32|integer]:System.Object}
+---@class System.Char-arr : System.Array
+---@class System.Collections.Generic.ValueListBuilder
+---@class System.Text.TrimType : System.Enum
+---@class System.Char-ptr
+---@class System.UInt32-ptr
+---@class System.Char-ref
+---@class System.Byte-ptr
+---@class System.Text.Encoding : System.Object
+---@class System.IFormatProvider
+---@class System.CharEnumerator : System.Object
+---@class System.Text.StringRuneEnumerator : System.ValueType
+---@class System.TypeCode : System.Enum
+---@class System.Text.NormalizationForm : System.Enum
+---@class System.Object-arr : System.Array
+---@class System.Collections.Generic.IEnumerable*1System*String*T
+---@class System.String.T : System.Object
+---@class System.Collections.Generic.IEnumerable*1System*String
+---@class System.ParamsArray : System.ValueType, {[System.Int32|integer]:System.Object}
+---@class System.Collections.Generic.IEnumerable*1System*String*T
+---@class System.String.T : System.Object
+---@class System.Collections.Generic.IEnumerable*1System*String*T
+---@class System.String.T : System.Object
+---@class System.Collections.Generic.IEnumerable*1System*String*T
+---@class System.String.T : System.Object
+---@class System.ReadOnlySpan*1System*String : System.ValueType, {[System.Int32|integer]:System.String-ref}
+---@class System.Byte-ref
+---@class System.IntPtr : System.ValueType
+---@class System.SByte-ptr
+---@class System.String.TState : System.Object
+---@class System.Buffers.SpanAction*1System*Char*1System*String*TState : System.MulticastDelegate
+---@class System.MulticastDelegate : System.Delegate
+---@class System.Delegate : System.Object
+---@class System.Span*1System*Char : System.ValueType, {[System.Int32|integer]:System.Char-ref}
+---@class System.Runtime.CompilerServices.DefaultInterpolatedStringHandler-ref
+---@class System.ReadOnlySpan
+---@class System.Boolean-ref
+---@class System.Globalization.NumberStyles : System.Enum
+---@class System.Globalization.NumberFormatInfo : System.Object
+---@class System.SByte-ref
+---@class System.Int16-ref
+---@class System.UInt16-ref
+---@class System.Int32.TOther : System.Object
+---@class System.UInt32-ref
+---@class System.Int64-ref
+---@class System.UInt64-ref
+---@class System.Single-ref
+---@class System.Double-ref
+---@class Microsoft.Xna.Framework.Graphics.GraphicsResource : System.Object
+---@class Microsoft.Xna.Framework.Graphics.SpriteBatcher : System.Object
+---@class Microsoft.Xna.Framework.Graphics.SpriteSortMode : System.Enum
+---@class Microsoft.Xna.Framework.Graphics.BlendState : Microsoft.Xna.Framework.Graphics.GraphicsResource, {[System.Int32|integer]:Microsoft.Xna.Framework.Graphics.TargetBlendState}
+---@class Microsoft.Xna.Framework.Graphics.SamplerState : Microsoft.Xna.Framework.Graphics.GraphicsResource
+---@class Microsoft.Xna.Framework.Graphics.DepthStencilState : Microsoft.Xna.Framework.Graphics.GraphicsResource
+---@class Microsoft.Xna.Framework.Graphics.RasterizerState : Microsoft.Xna.Framework.Graphics.GraphicsResource
+---@class Microsoft.Xna.Framework.Graphics.SpriteBatch.EffectWithParams : System.ValueType
+---@class Microsoft.Xna.Framework.Graphics.Effect : Microsoft.Xna.Framework.Graphics.GraphicsResource
+---@class Microsoft.Xna.Framework.Graphics.EffectParameter : System.Object
+---@class Microsoft.Xna.Framework.Graphics.EffectPass : System.Object
+---@class System.Nullable*1Microsoft*Xna*Framework*Matrix : System.ValueType
+---@class Microsoft.Xna.Framework.Graphics.Viewport : System.ValueType
+---@class System.Collections.Generic.Dictionary*1System*String*1System*Object : System.Object, {[System.String|string]:System.Object}, {[System.Object]:System.Object}
+---@class Microsoft.Xna.Framework.Graphics.Texture : Microsoft.Xna.Framework.Graphics.GraphicsResource
+---@class Microsoft.Xna.Framework.Graphics.SpriteFont : System.Object
+---@class System.Text.StringBuilder : System.Object, {[System.Int32|integer]:System.Char}
+---@class System.Nullable*1Microsoft*Xna*Framework*Vector2 : System.ValueType
+---@class System.Nullable*1Microsoft*Xna*Framework*Rectangle : System.ValueType
+---@class System.Nullable*1Microsoft*Xna*Framework*Color : System.ValueType
+---@class Microsoft.Xna.Framework.Graphics.SpriteEffects : System.Enum
+---@class Microsoft.Xna.Framework.Graphics.VertexPositionColorTexture-arr : System.Array
+---@class Microsoft.Xna.Framework.Graphics.VertexPositionColorTexture : System.ValueType
+---@class System.Nullable*1System*Int32 : System.ValueType
+---@class Microsoft.Xna.Framework.Graphics.GraphicsDevice : System.Object
+---@class SharpDX.DXGI.SampleDescription : System.ValueType
+---@class SharpDX.Direct3D11.Texture2D : SharpDX.Direct3D11.Resource
+---@class SharpDX.Direct3D11.Resource : SharpDX.Direct3D11.DeviceChild
+---@class SharpDX.Direct3D11.DeviceChild : SharpDX.ComObject
+---@class SharpDX.ComObject : SharpDX.CppObject
+---@class SharpDX.CppObject : SharpDX.DisposeBase
+---@class SharpDX.DisposeBase : System.Object
+---@class SharpDX.WIC.ImagingFactory : SharpDX.ComObject
+---@class Microsoft.Xna.Framework.Graphics.T-arr : System.Array
+---@class Microsoft.Xna.Framework.Graphics.Texture2D.T : System.ValueType
+---@class Microsoft.Xna.Framework.Graphics.T-arr : System.Array
+---@class Microsoft.Xna.Framework.Graphics.Texture2D.T : System.ValueType
+---@class Microsoft.Xna.Framework.Graphics.T-arr : System.Array
+---@class Microsoft.Xna.Framework.Graphics.Texture2D.T : System.ValueType
+---@class Microsoft.Xna.Framework.Graphics.T-arr : System.Array
+---@class Microsoft.Xna.Framework.Graphics.Texture2D.T : System.ValueType
+---@class Microsoft.Xna.Framework.Graphics.T-arr : System.Array
+---@class Microsoft.Xna.Framework.Graphics.Texture2D.T : System.ValueType
+---@class Microsoft.Xna.Framework.Graphics.T-arr : System.Array
+---@class Microsoft.Xna.Framework.Graphics.Texture2D.T : System.ValueType
+---@class Microsoft.Xna.Framework.Graphics.T-arr : System.Array
+---@class Microsoft.Xna.Framework.Graphics.Texture2D.T : System.ValueType
+---@class Microsoft.Xna.Framework.Graphics.T-arr : System.Array
+---@class Microsoft.Xna.Framework.Graphics.Texture2D.T : System.ValueType
+---@class System.IO.Stream : System.MarshalByRefObject
+---@class System.MarshalByRefObject : System.Object
+---@class System.Byte-arr : System.Array
+---@class System.Int32-arr : System.Array
+---@class Microsoft.Xna.Framework.Graphics.T-arr : System.Array
+---@class Microsoft.Xna.Framework.Graphics.Texture2D.T : System.ValueType
+---@class Microsoft.Xna.Framework.Rectangle-ref
+---@class Microsoft.Xna.Framework.Graphics.SurfaceFormat : System.Enum
+---@class Microsoft.Xna.Framework.Graphics.Texture2D.SurfaceType : System.Enum
+---@class Microsoft.Xna.Framework.Graphics.T-arr : System.Array
+---@class Microsoft.Xna.Framework.Graphics.Texture2D.T : System.ValueType
+---@class Microsoft.Xna.Framework.Graphics.T-arr : System.Array
+---@class Microsoft.Xna.Framework.Graphics.Texture2D.T : System.ValueType
+---@class Microsoft.Xna.Framework.Graphics.T-arr : System.Array
+---@class Microsoft.Xna.Framework.Graphics.Texture2D.T : System.ValueType
+---@class SharpDX.WIC.BitmapSource : SharpDX.ComObject
+---@class SharpDX.WIC.BitmapDecoder-ref
+---@class SharpDX.Direct3D11.Texture2DDescription : System.ValueType
+---@class SharpDX.Direct3D11.ShaderResourceView : SharpDX.Direct3D11.ResourceView
+---@class SharpDX.Direct3D11.ResourceView : SharpDX.Direct3D11.DeviceChild
+---@class Microsoft.Xna.Framework.Matrix-ref
+---@class System.Single-arr : System.Array
+---@class System.Nullable*1Microsoft*Xna*Framework*Vector3 : System.ValueType
+---@class Microsoft.Xna.Framework.Vector3-ref
+---@class Microsoft.Xna.Framework.Quaternion : System.ValueType
+---@class Microsoft.Xna.Framework.Quaternion-ref
+---@class Microsoft.Xna.Framework.Plane : System.ValueType
+---@class Microsoft.Xna.Framework.Plane-ref
+---@class Microsoft.Xna.Framework.Vector2-ref
+---@class Microsoft.Xna.Framework.Vector2-arr : System.Array
+---@class Microsoft.Xna.Framework.Vector3-arr : System.Array
+---@class Microsoft.Xna.Framework.Vector4-ref
+---@class Microsoft.Xna.Framework.Vector4-arr : System.Array
+---@class Microsoft.Xna.Framework.Point-ref
+---@class System.Reflection.FieldInfo : System.Reflection.MemberInfo
+---@class System.Reflection.MethodInfo : System.Reflection.MethodBase
+---@class System.Reflection.MethodBase : System.Reflection.MemberInfo
+---@class MoonSharp.Interpreter.DynValue : System.Object
+---@class System.Nullable*1System*Boolean : System.ValueType
+---@class System.Collections.Generic.HashSet*1Barotrauma*Item : System.Object
+---@class System.Collections.Generic.HashSet*1Barotrauma*Character : System.Object
+---@class System.Collections.Generic.List*1Barotrauma*DebugConsole*Command : System.Object, {[System.Int32|integer]:Barotrauma.DebugConsole.Command}, {[System.Int32|integer]:System.Object}
+---@class Barotrauma.ContentPackage-arr : System.Array
+---@class System.AsyncCallback : System.MulticastDelegate
+---@class System.IAsyncResult
+---@class HarmonyLib.Harmony : System.Object
+---@class System.Lazy*1System*Reflection*Emit*ModuleBuilder : System.Object
+---@class System.Collections.Generic.Dictionary*1System*String*1System*Collections*Generic*Dictionary*2System*String*2System*ValueTuple*3Barotrauma*LuaCsHook*LuaCsHookCallback*3Barotrauma*ACsMod : System.Object, {[System.String|string]:System.Collections.Generic.Dictionary*1System*String*1System*ValueTuple*2Barotrauma*LuaCsHook*LuaCsHookCallback*2Barotrauma*ACsMod|{[System.String|string]:System.ValueTuple*1Barotrauma*LuaCsHook*LuaCsHookCallback*1Barotrauma*ACsMod}}, {[System.Object]:System.Object}
+---@class System.Collections.Generic.Dictionary*1System*String*1System*ValueTuple*2Barotrauma*LuaCsHook*LuaCsHookCallback*2Barotrauma*ACsMod : System.Object, {[System.String|string]:System.ValueTuple*1Barotrauma*LuaCsHook*LuaCsHookCallback*1Barotrauma*ACsMod}, {[System.Object]:System.Object}
+---@class System.ValueTuple*1Barotrauma*LuaCsHook*LuaCsHookCallback*1Barotrauma*ACsMod : System.ValueType, {[System.Int32|integer]:System.Object}
+---@class System.Collections.Generic.Dictionary*1Barotrauma*LuaCsHook*MethodKey*1Barotrauma*LuaCsHook*PatchedMethod : System.Object, {[Barotrauma.LuaCsHook.MethodKey]:Barotrauma.LuaCsHook.PatchedMethod}, {[System.Object]:System.Object}
+---@class Barotrauma.LuaCsHook.MethodKey : System.ValueType
+---@class Barotrauma.LuaCsHook.PatchedMethod : System.Object
+---@class Barotrauma.LuaCsSetup : System.Object
+---@class System.Diagnostics.Stopwatch : System.Object
+---@class System.Collections.Generic.Dictionary*1System*Int64*1System*Collections*Generic*HashSet*2System*ValueTuple*3System*String*3Barotrauma*LuaCsPatch*3Barotrauma*ACsMod : System.Object, {[System.Int64|integer]:System.Collections.Generic.HashSet*1System*ValueTuple*2System*String*2Barotrauma*LuaCsPatch*2Barotrauma*ACsMod|System.ValueTuple*1System*String*1Barotrauma*LuaCsPatch*1Barotrauma*ACsMod[]}, {[System.Object]:System.Object}
+---@class System.Collections.Generic.HashSet*1System*ValueTuple*2System*String*2Barotrauma*LuaCsPatch*2Barotrauma*ACsMod : System.Object
+---@class System.ValueTuple*1System*String*1Barotrauma*LuaCsPatch*1Barotrauma*ACsMod : System.ValueType, {[System.Int32|integer]:System.Object}
+---@class System.Text.RegularExpressions.Regex : System.Object
+---@class System.Reflection.Emit.ModuleBuilder : System.Reflection.Module
+---@class System.Reflection.Module : System.Object
+---@class Barotrauma.ACsMod : System.Object
+---@class Barotrauma.LuaCsHook.T : System.Object
+---@class System.Object-ref
+---@class System.Collections.Generic.List*1Barotrauma*LuaCsTimer*TimedAction : System.Object, {[System.Int32|integer]:Barotrauma.LuaCsTimer.TimedAction}, {[System.Int32|integer]:System.Object}
+---@class Barotrauma.LuaCsTimer.TimedAction : System.Object
+---@class Barotrauma.LuaCsMessageOrigin : System.Enum
+---@class System.IO.FileStream : System.IO.Stream
+---@class System.Collections.Generic.Dictionary*1System*String*1Barotrauma*LuaCsAction : System.Object, {[System.String|string]:Barotrauma.LuaCsAction|(fun(...:System.Object))}, {[System.Object]:System.Object}
+---@class System.Net.HttpListener : System.Object
+---@class Barotrauma.LuaCsNetworking.HttpListener : System.Object
+---@class Barotrauma.Networking.INetSerializable
+---@class Barotrauma.Networking.NetEntityEvent.IData
+---@class System.Collections.Generic.List*1Barotrauma*LuaCsSteam*WorkshopItemDownload : System.Object, {[System.Int32|integer]:Barotrauma.LuaCsSteam.WorkshopItemDownload}, {[System.Int32|integer]:System.Object}
+---@class Barotrauma.LuaCsSteam.WorkshopItemDownload : System.ValueType
+---@class System.Collections.Generic.Dictionary*1System*String*1System*Collections*Generic*Dictionary*2System*String*2System*Double : System.Object, {[System.String|string]:System.Collections.Generic.Dictionary*1System*String*1System*Double|{[System.String|string]:System.Double|number}}, {[System.Object]:System.Object}
+---@class System.Collections.Generic.Dictionary*1System*String*1System*Double : System.Object, {[System.String|string]:System.Double|number}, {[System.Object]:System.Object}
+---@class System.Collections.Generic.HashSet*1Barotrauma*LuaCsSetup*LuaCsModStore*LuaModStore : System.Object
+---@class Barotrauma.LuaCsSetup.LuaCsModStore.ModStore*1System*String*1MoonSharp*Interpreter*DynValue : System.Object
+---@class System.Collections.Generic.HashSet*1Barotrauma*LuaCsSetup*LuaCsModStore*CsModStore : System.Object
+---@class Barotrauma.LuaCsSetup.LuaCsModStore.ModStore*1Barotrauma*ACsMod*1System*Object : System.Object
+---@class System.Collections.Generic.Dictionary*1System*String*1MoonSharp*Interpreter*DynValue : System.Object, {[System.String|string]:MoonSharp.Interpreter.DynValue}, {[System.Object]:System.Object}
+---@class MoonSharp.Interpreter.Script : System.Object
+---@class System.Random : System.Object
+---@class System.Collections.Generic.Dictionary*1Barotrauma*Rand*RandSync*1System*Random : System.Object, {[Barotrauma.Rand.RandSync]:System.Random}, {[System.Object]:System.Object}
+---@class Steamworks.SteamId : System.ValueType
+---@class Steamworks.Relationship : System.Enum
+---@class Steamworks.FriendState : System.Enum
+---@class System.Nullable*1Steamworks*Friend*FriendGameInfo : System.ValueType
+---@class System.Threading.Tasks.Task : System.Object
+---@class System.Threading.Tasks.Task*1System*Nullable*2Steamworks*Data*Image : System.Threading.Tasks.Task
+---@class System.Threading.Tasks.Task*1System*Boolean : System.Threading.Tasks.Task
+---@class System.DateTime : System.ValueType
+---@class Steamworks.Data.SteamUGCDetails_t : System.ValueType
+---@class Steamworks.Data.PublishedFileId : System.ValueType
+---@class System.Collections.Generic.Dictionary*1System*String*1System*String : System.Object, {[System.String|string]:System.String|string}, {[System.Object]:System.Object}
+---@class Steamworks.AppId : System.ValueType
+---@class Steamworks.Ugc.Visibility : System.Enum
+---@class Steamworks.ItemState : System.Enum
+---@class Steamworks.Result : System.Enum
+---@class System.Threading.Tasks.Task*1System*Nullable*2Steamworks*Ugc*Item : System.Threading.Tasks.Task
+---@class System.Action*1System*Single : System.MulticastDelegate
+---@class System.Threading.CancellationToken : System.ValueType
+---@class System.Threading.Tasks.Task*1System*Nullable*2Steamworks*Result : System.Threading.Tasks.Task
+---@class System.Threading.Tasks.Task*1System*Nullable*2Steamworks*Ugc*UserItemVote : System.Threading.Tasks.Task
+---@class Steamworks.Ugc.Editor : System.ValueType
+---@class Barotrauma.Option*1Barotrauma*SteamWorkshopId : System.Object
+---@class Barotrauma.Character-ref
+---@class Barotrauma.T1-ref
+---@class System.Func*1Barotrauma*Character*1Barotrauma*Option*TType : System.MulticastDelegate
+---@class Barotrauma.Option.TType : System.Object
+---@class Barotrauma.Option*1Barotrauma*Option*TType : System.Object
+---@class Barotrauma.Networking.AccountId-ref
+---@class System.Func*1Barotrauma*Networking*AccountId*1Barotrauma*Option*TType : System.MulticastDelegate
+---@class Barotrauma.Networking.SteamId-ref
+---@class System.Func*1Barotrauma*Networking*SteamId*1Barotrauma*Option*TType : System.MulticastDelegate
+---@class Barotrauma.ContentPackageId-ref
+---@class System.Func*1Barotrauma*ContentPackageId*1Barotrauma*Option*TType : System.MulticastDelegate
+---@class System.DateTime-ref
+---@class System.Func*1System*DateTime*1Barotrauma*Option*TType : System.MulticastDelegate
+---@class Barotrauma.Networking.BannedPlayer-ref
+---@class System.Func*1Barotrauma*Networking*BannedPlayer*1Barotrauma*Option*TType : System.MulticastDelegate
+---@class System.Nullable
+---@class System.Collections.Generic.List*1Microsoft*Xna*Framework*Vector2 : System.Object, {[System.Int32|integer]:Microsoft.Xna.Framework.Vector2}, {[System.Int32|integer]:System.Object}
+---@class System.Collections.Generic.List*1Microsoft*Xna*Framework*Vector2-arr : System.Object, {[System.Int32|integer]:Microsoft.Xna.Framework.Vector2-arr|Microsoft.Xna.Framework.Vector2[]}, {[System.Int32|integer]:System.Object}
+---@class System.Collections.Generic.List*1Microsoft*Xna*Framework*Rectangle : System.Object, {[System.Int32|integer]:Microsoft.Xna.Framework.Rectangle}, {[System.Int32|integer]:System.Object}
+---@class System.Double-arr : System.Array
+---@class System.Decimal : System.ValueType
+---@class System.UIntPtr : System.ValueType
+---@class System.MidpointRounding : System.Enum
+---@class System.Math.T : System.Object
+---@class System.ValueTuple*1System*Double*1System*Double : System.ValueType, {[System.Int32|integer]:System.Object}
+---@class System.Double-ptr
+---@class System.ValueTuple*1System*SByte*1System*SByte : System.ValueType, {[System.Int32|integer]:System.Object}
+---@class System.ValueTuple*1System*Byte*1System*Byte : System.ValueType, {[System.Int32|integer]:System.Object}
+---@class System.ValueTuple*1System*Int16*1System*Int16 : System.ValueType, {[System.Int32|integer]:System.Object}
+---@class System.ValueTuple*1System*UInt16*1System*UInt16 : System.ValueType, {[System.Int32|integer]:System.Object}
+---@class System.ValueTuple*1System*Int32*1System*Int32 : System.ValueType, {[System.Int32|integer]:System.Object}
+---@class System.ValueTuple*1System*UInt32*1System*UInt32 : System.ValueType, {[System.Int32|integer]:System.Object}
+---@class System.ValueTuple*1System*Int64*1System*Int64 : System.ValueType, {[System.Int32|integer]:System.Object}
+---@class System.ValueTuple*1System*UInt64*1System*UInt64 : System.ValueType, {[System.Int32|integer]:System.Object}
+---@class System.ValueTuple*1System*IntPtr*1System*IntPtr : System.ValueType, {[System.Int32|integer]:System.Object}
+---@class System.ValueTuple*1System*UIntPtr*1System*UIntPtr : System.ValueType, {[System.Int32|integer]:System.Object}
+---@class System.ValueTuple*1System*Single*1System*Single : System.ValueType, {[System.Int32|integer]:System.Object}
+---@class System.Single-ptr
+---@class System.Collections.Generic.Queue*1System*Double : System.Object
+---@class System.Collections.Generic.Dictionary*1System*String*1System*Collections*Generic*Queue*2System*Int64 : System.Object, {[System.String|string]:System.Collections.Generic.Queue*1System*Int64|(fun():System.Int64|integer)}, {[System.Object]:System.Object}
+---@class System.Collections.Generic.Queue*1System*Int64 : System.Object
+---@class System.Collections.Generic.Dictionary*1System*String*1System*Int64 : System.Object, {[System.String|string]:System.Int64|integer}, {[System.Object]:System.Object}
+---@class System.Collections.Generic.List*1System*String : System.Object, {[System.Int32|integer]:System.String|string}, {[System.Int32|integer]:System.Object}
+---@class System.Collections.Generic.IReadOnlyList*1System*String : {[System.Int32|integer]:System.String|string}
+---@class Microsoft.Xna.Framework.Game : System.Object
+---@class Barotrauma.CoroutineHandle : System.Object
+---@class Microsoft.Xna.Framework.GameTime : System.Object
+---@class Barotrauma.Option*1Barotrauma*ConnectCommand : System.Object
+---@class System.Action : System.MulticastDelegate
+---@class System.Version : System.Object
+---@class Barotrauma.ModDownloadScreen : Barotrauma.Screen
+---@class Microsoft.Xna.Framework.Graphics.GraphicsProfile : System.Enum
+---@class System.Threading.Thread : System.Runtime.ConstrainedExecution.CriticalFinalizerObject
+---@class System.Runtime.ConstrainedExecution.CriticalFinalizerObject : System.Object
+---@class Microsoft.Xna.Framework.GraphicsDeviceManager : System.Object
+---@class Barotrauma.WindowMode : System.Enum
+---@class Microsoft.Xna.Framework.FileDropEventArgs : System.EventArgs
+---@class System.EventArgs : System.Object
+---@class System.Collections.Generic.IEnumerable*1Barotrauma*CoroutineStatus
+---@class Barotrauma.CoroutineStatus : System.Object
+---@class Steamworks.Data.Lobby : System.ValueType
+---@class System.ComponentModel.AttributeCollection : System.Object, {[System.Int32|integer]:System.Attribute}, {[System.Type]:System.Attribute}
+---@class System.Reflection.PropertyInfo : System.Reflection.MemberInfo
+---@class System.Collections.Immutable.ImmutableDictionary*1Barotrauma*Identifier*1System*Func*2System*Object*2System*Object : System.Object, {[Barotrauma.Identifier]:System.Func*1System*Object*1System*Object|(fun(arg:System.Object):System.Object)}, {[Barotrauma.Identifier]:System.Func*1System*Object*1System*Object|(fun(arg:System.Object):System.Object)}, {[System.Object]:System.Object}
+---@class System.Func*1System*Object*1System*Object : System.MulticastDelegate
+---@class System.Collections.Immutable.ImmutableDictionary*1System*Type*1System*String : System.Object, {[System.Type]:System.String|string}, {[System.Type]:System.String|string}, {[System.Object]:System.Object}
+---@class System.Collections.Generic.Dictionary*1System*Type*1System*Collections*Generic*Dictionary*2Barotrauma*Identifier*2Barotrauma*SerializableProperty : System.Object, {[System.Type]:System.Collections.Generic.Dictionary*1Barotrauma*Identifier*1Barotrauma*SerializableProperty|{[Barotrauma.Identifier]:Barotrauma.SerializableProperty}}, {[System.Object]:System.Object}
+---@class System.Collections.Generic.Dictionary*1Barotrauma*Identifier*1Barotrauma*SerializableProperty : System.Object, {[Barotrauma.Identifier]:Barotrauma.SerializableProperty}, {[System.Object]:System.Object}
+---@class Barotrauma.SerializableProperty.T : System.Attribute
+---@class System.Attribute : System.Object
+---@class System.String-ref
+---@class Barotrauma.ISerializableEntity
+---@class System.Collections.Generic.List*1Barotrauma*SerializableProperty : System.Object, {[System.Int32|integer]:Barotrauma.SerializableProperty}, {[System.Int32|integer]:System.Object}
+---@class System.Xml.Linq.XObject : System.Object
+---@class System.ComponentModel.PropertyDescriptor : System.ComponentModel.MemberDescriptor
+---@class System.ComponentModel.MemberDescriptor : System.Object
+---@class System.Collections.Immutable.ImmutableArray*1Barotrauma*LocalizedString : System.ValueType, {[System.Int32|integer]:Barotrauma.LocalizedString}, {[System.Int32|integer]:Barotrauma.LocalizedString}, {[System.Int32|integer]:System.Object}, {[System.Int32|integer]:Barotrauma.LocalizedString}
+---@class Barotrauma.LocalizedString-arr : System.Array
+---@class System.Collections.Generic.IEnumerable*1Barotrauma*LocalizedString
+---@class System.Collections.Generic.IReadOnlyList*1Barotrauma*LocalizedString : {[System.Int32|integer]:Barotrauma.LocalizedString}
+---@class System.Collections.Immutable.ImmutableDictionary*1Barotrauma*LocalizedString*1System*ValueTuple*2Barotrauma*LocalizedString*2Barotrauma*FormatCapitals : System.Object, {[Barotrauma.LocalizedString]:System.ValueTuple*1Barotrauma*LocalizedString*1Barotrauma*FormatCapitals}, {[Barotrauma.LocalizedString]:System.ValueTuple*1Barotrauma*LocalizedString*1Barotrauma*FormatCapitals}, {[System.Object]:System.Object}
+---@class System.ValueTuple*1Barotrauma*LocalizedString*1Barotrauma*FormatCapitals : System.ValueType, {[System.Int32|integer]:System.Object}
+---@class System.Collections.Generic.IEnumerable*1System*ValueTuple*2Barotrauma*LocalizedString*2Barotrauma*LocalizedString*2Barotrauma*FormatCapitals
+---@class System.ValueTuple*1Barotrauma*LocalizedString*1Barotrauma*LocalizedString*1Barotrauma*FormatCapitals : System.ValueType, {[System.Int32|integer]:System.Object}
+---@class System.ValueTuple : System.Array
+---@class System.ValueTuple*1Barotrauma*LocalizedString*1Barotrauma*LocalizedString : System.ValueType, {[System.Int32|integer]:System.Object}
+---@class System.Collections.Generic.IEnumerable*1System*ValueTuple*2Barotrauma*Identifier*2Barotrauma*LocalizedString*2Barotrauma*FormatCapitals
+---@class System.ValueTuple*1Barotrauma*Identifier*1Barotrauma*LocalizedString*1Barotrauma*FormatCapitals : System.ValueType, {[System.Int32|integer]:System.Object}
+---@class System.ValueTuple : System.Array
+---@class System.ValueTuple*1Barotrauma*Identifier*1Barotrauma*LocalizedString : System.ValueType, {[System.Int32|integer]:System.Object}
+---@class System.Collections.Immutable.ImmutableArray*1System*String : System.ValueType, {[System.Int32|integer]:System.String|string}, {[System.Int32|integer]:System.String|string}, {[System.Int32|integer]:System.Object}, {[System.Int32|integer]:System.String|string}
+---@class Barotrauma.LocalizedString.LoadedSuccessfully : System.Enum
+---@class System.Collections.Immutable.ImmutableDictionary*1Barotrauma*Identifier*1System*Func*2System*String*2System*String : System.Object, {[Barotrauma.Identifier]:System.Func*1System*String*1System*String|(fun(arg:System.String|string):System.String|string)}, {[Barotrauma.Identifier]:System.Func*1System*String*1System*String|(fun(arg:System.String|string):System.String|string)}, {[System.Object]:System.Object}
+---@class System.Func*1System*String*1System*String : System.MulticastDelegate
+---@class System.Collections.Immutable.ImmutableHashSet*1System*Char : System.Object
+---@class Barotrauma.LStringSplitter : System.Object
+---@class System.Collections.Immutable.ImmutableArray*1Barotrauma*Identifier : System.ValueType, {[System.Int32|integer]:Barotrauma.Identifier}, {[System.Int32|integer]:Barotrauma.Identifier}, {[System.Int32|integer]:System.Object}, {[System.Int32|integer]:Barotrauma.Identifier}
+---@class Barotrauma.Identifier-arr : System.Array
+---@class Barotrauma.TrimLString.Mode : System.Enum
+---@class Barotrauma.GUISelector*1Barotrauma*GUIFontPrefab : System.Object
+---@class System.Nullable*1System*Collections*Immutable*ImmutableArray*2Barotrauma*RichTextData : System.ValueType
+---@class System.Collections.Concurrent.ConcurrentDictionary*1Barotrauma*LanguageIdentifier*1System*Collections*Immutable*ImmutableHashSet*2Barotrauma*TextPack : System.Object, {[Barotrauma.LanguageIdentifier]:System.Collections.Immutable.ImmutableHashSet*1Barotrauma*TextPack|Barotrauma.TextPack[]}, {[System.Object]:System.Object}
+---@class System.Collections.Generic.KeyValuePair*1Barotrauma*LanguageIdentifier*1System*Collections*Immutable*ImmutableHashSet*2Barotrauma*TextPack : System.ValueType
+---@class System.Collections.Generic.Dictionary*1Barotrauma*Identifier*1System*WeakReference*2Barotrauma*TagLString : System.Object, {[Barotrauma.Identifier]:System.WeakReference*1Barotrauma*TagLString}, {[System.Object]:System.Object}
+---@class System.WeakReference*1Barotrauma*TagLString : System.Object
+---@class System.Collections.Immutable.ImmutableHashSet*1Barotrauma*Identifier : System.Object
+---@class System.Collections.Immutable.ImmutableArray*1Barotrauma*Range*2System*Int32 : System.ValueType, {[System.Int32|integer]:Barotrauma.Range*1System*Int32}, {[System.Int32|integer]:Barotrauma.Range*1System*Int32}, {[System.Int32|integer]:System.Object}, {[System.Int32|integer]:Barotrauma.Range*1System*Int32}
+---@class Barotrauma.Range*1System*Int32 : System.ValueType
+---@class System.Collections.Generic.IEnumerable*1Barotrauma*LanguageIdentifier
+---@class System.Collections.Generic.IEnumerable*1System*Collections*Generic*KeyValuePair*2Barotrauma*Identifier*2System*String
+---@class System.Collections.Generic.KeyValuePair*1Barotrauma*Identifier*1System*String : System.ValueType
+---@class System.ValueTuple : System.Array
+---@class System.ValueTuple*1System*String*1System*String : System.ValueType, {[System.Int32|integer]:System.Object}
+---@class Barotrauma.FormatCapitals : System.Enum
+---@class System.ValueTuple : System.Array
+---@class System.ValueTuple*1System*String*1Barotrauma*LocalizedString : System.ValueType, {[System.Int32|integer]:System.Object}
+---@class System.ValueTuple : System.Array
+---@class System.ValueTuple*1System*String*1Barotrauma*LocalizedString*1Barotrauma*FormatCapitals : System.ValueType, {[System.Int32|integer]:System.Object}
+---@class System.ValueTuple : System.Array
+---@class System.ValueTuple*1System*String*1System*String*1Barotrauma*FormatCapitals : System.ValueType, {[System.Int32|integer]:System.Object}
+---@class Barotrauma.LocalizedString-ref
+---@class Barotrauma.TextFile : Barotrauma.ContentFile
+---@class System.Collections.Immutable.ImmutableDictionary*1Barotrauma*Identifier*1System*Collections*Immutable*ImmutableArray*2System*String : System.Object, {[Barotrauma.Identifier]:System.Collections.Immutable.ImmutableArray*1System*String|System.String|string[]}, {[Barotrauma.Identifier]:System.Collections.Immutable.ImmutableArray*1System*String|System.String|string[]}, {[System.Object]:System.Object}
+---@class System.Lazy*1System*Int32 : System.Object
+---@class Barotrauma.Identifier-ref
+---@class Barotrauma.Networking.AccountId-arr : System.Array
+---@class System.UInt16-arr : System.Array
+---@class System.Net.Sockets.AddressFamily : System.Enum
+---@class System.Net.IPAddress-ref
+---@class System.Span*1System*Byte : System.ValueType, {[System.Int32|integer]:System.Byte-ref}
+---@class System.ReadOnlySpan*1System*Byte : System.ValueType, {[System.Int32|integer]:System.Byte-ref}
+---@class System.ReadOnlySpan*1System*UInt16 : System.ValueType, {[System.Int32|integer]:System.UInt16-ref}
+---@class Barotrauma.Option*1Barotrauma*Networking*Address : System.Object
+---@class Barotrauma.Option*1Barotrauma*Networking*LidgrenAddress : System.Object
+---@class Barotrauma.Option*1Barotrauma*Networking*SteamP2PAddress : System.Object
+---@class Barotrauma.Option*1Barotrauma*Networking*Endpoint : System.Object
+---@class System.Net.IPEndPoint : System.Net.EndPoint
+---@class System.Net.EndPoint : System.Object
+---@class Barotrauma.Option*1Barotrauma*Networking*LidgrenEndpoint : System.Object
+---@class Barotrauma.Option*1Barotrauma*Networking*SteamP2PEndpoint : System.Object
+---@class Barotrauma.Md5Hash : System.Object
+---@class System.Collections.Immutable.ImmutableHashSet*1Barotrauma*ContentFile*TypeInfo : System.Object
+---@class Barotrauma.ContentFile.TypeInfo : System.Object
+---@class Barotrauma.Result*1Barotrauma*ContentFile*1Barotrauma*ContentFile*LoadError : System.Object
+---@class System.Action*1Barotrauma*Sprite : System.MulticastDelegate
+---@class System.Collections.Immutable.ImmutableArray*1Barotrauma*ContentFile : System.ValueType, {[System.Int32|integer]:Barotrauma.ContentFile}, {[System.Int32|integer]:Barotrauma.ContentFile}, {[System.Int32|integer]:System.Object}, {[System.Int32|integer]:Barotrauma.ContentFile}
+---@class System.Collections.Immutable.ImmutableArray*1Barotrauma*ContentFile*LoadError : System.ValueType, {[System.Int32|integer]:Barotrauma.ContentFile.LoadError}, {[System.Int32|integer]:Barotrauma.ContentFile.LoadError}, {[System.Int32|integer]:System.Object}, {[System.Int32|integer]:Barotrauma.ContentFile.LoadError}
+---@class Barotrauma.ContentFile.LoadError : System.ValueType
+---@class System.Collections.Generic.IEnumerable*1Barotrauma*ContentPackage*T
+---@class Barotrauma.ContentPackage.T : Barotrauma.ContentFile
+---@class System.Collections.Generic.IEnumerable*1Barotrauma*ContentFile
+---@class Barotrauma.ContentPackage.LoadResult : System.Enum
+---@class System.Collections.Generic.IEnumerable*1Barotrauma*ContentPackageManager*LoadProgress
+---@class Barotrauma.ContentPackageManager.LoadProgress : System.ValueType
+---@class System.Exception : System.Object
+---@class System.Collections.Generic.IEnumerable*1Barotrauma*CorePackage
+---@class System.Collections.Generic.IEnumerable*1Barotrauma*RegularPackage
+---@class System.Collections.Generic.IEnumerable*1Barotrauma*ContentPackage
+---@class System.Threading.Tasks.Task*1System*Collections*Generic*IEnumerable*2Steamworks*Ugc*Item : System.Threading.Tasks.Task
+---@class System.Predicate*1System*String : System.MulticastDelegate
+---@class System.Collections.Generic.HashSet*1Barotrauma*RegularPackage : System.Object
+---@class System.Collections.Generic.HashSet*1Barotrauma*CorePackage : System.Object
+---@class Barotrauma.ModProject : System.Object
+---@class System.Collections.Generic.IEnumerator*1Barotrauma*ContentPackage
+---@class System.Collections.Generic.List*1Barotrauma*RegularPackage : System.Object, {[System.Int32|integer]:Barotrauma.RegularPackage}, {[System.Int32|integer]:System.Object}
+---@class System.Collections.Generic.IReadOnlyList*1Barotrauma*RegularPackage : {[System.Int32|integer]:Barotrauma.RegularPackage}
+---@class System.Collections.Generic.IReadOnlyCollection*1Barotrauma*ContentPackage
+---@class System.Collections.Generic.IEnumerable*1Barotrauma*ContentXElement
+---@class System.Collections.Generic.IEnumerable*1System*Xml*Linq*XAttribute
+---@class Microsoft.Xna.Framework.Color-ref
+---@class Microsoft.Xna.Framework.Color-arr : System.Array
+---@class Barotrauma.T-ref
+---@class Barotrauma.ContentXElement.T : System.ValueType
+---@class System.ValueTuple
+---@class System.ValueTuple*1Barotrauma*ContentXElement*T1*1Barotrauma*ContentXElement*T2 : System.ValueType, {[System.Int32|integer]:System.Object}
+---@class System.ValueTuple
+---@class System.ValueTuple : System.Array
+---@class System.ValueTuple*1Barotrauma*ContentXElement*T1*1Barotrauma*ContentXElement*T2 : System.ValueType, {[System.Int32|integer]:System.Object}
+---@class System.Collections.Immutable.ImmutableDictionary*1System*Type*1System*Func*2System*String*2System*Object*2System*Object : System.Object, {[System.Type]:System.Func*1System*String*1System*Object*1System*Object|(fun(arg1:System.String|string, arg2:System.Object):System.Object)}, {[System.Type]:System.Func*1System*String*1System*Object*1System*Object|(fun(arg1:System.String|string, arg2:System.Object):System.Object)}, {[System.Object]:System.Object}
+---@class System.Func*1System*String*1System*Object*1System*Object : System.MulticastDelegate
+---@class System.Xml.XmlReaderSettings : System.Object
+---@class System.Xml.XmlReader : System.Object, {[System.Int32|integer]:System.String|string}, {[System.String|string]:System.String|string}
+---@class System.Exception-ref
+---@class Barotrauma.XMLExtensions.T : System.ValueType
+---@class Barotrauma.KeyOrMouse : System.Object
+---@class System.ValueTuple*1Barotrauma*XMLExtensions*T1*1Barotrauma*XMLExtensions*T2 : System.ValueType, {[System.Int32|integer]:System.Object}
+---@class System.ValueTuple : System.Array
+---@class System.ValueTuple*1Barotrauma*XMLExtensions*T1*1Barotrauma*XMLExtensions*T2 : System.ValueType, {[System.Int32|integer]:System.Object}
+---@class System.ValueTuple*1Barotrauma*XMLExtensions*T1*1Barotrauma*XMLExtensions*T2 : System.ValueType, {[System.Int32|integer]:System.Object}
+---@class System.Func*1System*Xml*Linq*XAttribute*1System*Boolean : System.MulticastDelegate
+---@class System.Collections.Generic.IEnumerable*1System*Xml*Linq*XElement
+---@class System.Xml.XmlNodeType : System.Enum
+---@class System.Xml.Linq.LoadOptions : System.Enum
+---@class System.Threading.Tasks.Task*1System*Xml*Linq*XElement : System.Threading.Tasks.Task
+---@class System.Xml.Linq.SaveOptions : System.Enum
+---@class System.IO.TextWriter : System.MarshalByRefObject
+---@class System.Xml.XmlWriter : System.Object
+---@class System.Collections.Generic.IEnumerable*1System*Xml*Linq*XNode
+---@class System.Xml.Linq.XNamespace : System.Object
+---@class System.IO.TextReader : System.MarshalByRefObject
+---@class System.Xml.Linq.XStreamingElement : System.Object
+---@class System.Xml.Linq.XElement.AsyncConstructionSentry : System.ValueType
+---@class System.Xml.Linq.XNode-ref
+---@class System.Collections.Generic.List*1System*Object : System.Object, {[System.Int32|integer]:System.Object}, {[System.Int32|integer]:System.Object}
+---@class System.Xml.Linq.XDeclaration : System.Object
+---@class System.Xml.Linq.XDocumentType : System.Xml.Linq.XNode
+---@class System.Threading.Tasks.Task*1System*Xml*Linq*XDocument : System.Threading.Tasks.Task
+---@class System.Xml.Linq.XDocument.T : System.Xml.Linq.XNode
+---@class System.Xml.Linq.XNodeDocumentOrderComparer : System.Object
+---@class System.Xml.Linq.XNodeEqualityComparer : System.Object
+---@class System.Xml.Linq.ReaderOptions : System.Enum
+---@class System.Threading.Tasks.Task*1System*Xml*Linq*XNode : System.Threading.Tasks.Task
+---@class System.Xml.XmlWriterSettings : System.Object
+---@class System.Nullable*1System*Single : System.ValueType
+---@class System.Collections.Generic.HashSet*1Barotrauma*Identifier : System.Object
+---@class Barotrauma.Level.Tunnel : System.Object
+---@class Barotrauma.RuinGeneration.Ruin : System.Object
+---@class System.Collections.Generic.Dictionary*1System*String*1Barotrauma*Sprite : System.Object, {[System.String|string]:Barotrauma.Sprite}, {[System.Object]:System.Object}
+---@class System.Collections.Generic.List*1Barotrauma*WayPoint : System.Object, {[System.Int32|integer]:Barotrauma.WayPoint}, {[System.Int32|integer]:System.Object}
+---@class System.Action*1Barotrauma*WayPoint : System.MulticastDelegate
+---@class System.Collections.Generic.IEnumerable*1Barotrauma*Identifier
+---@class System.Collections.Generic.IEnumerable*1Barotrauma*WayPoint*T
+---@class Barotrauma.WayPoint.T : Barotrauma.MapEntity
+---@class System.Action*1Barotrauma*WayPoint*T : System.MulticastDelegate
+---@class System.Collections.Generic.IEnumerable*1System*ValueTuple*2Barotrauma*WayPoint*2System*Int32
+---@class System.ValueTuple*1Barotrauma*WayPoint*1System*Int32 : System.ValueType, {[System.Int32|integer]:System.Object}
+---@class FarseerPhysics.Dynamics.Body : System.Object
+---@class System.Collections.Generic.IEnumerable*1Barotrauma*WayPoint
+---@class System.Func*1System*ValueTuple*2Barotrauma*WayPoint*2System*Int32*1System*Boolean : System.MulticastDelegate
+---@class System.Func*1Barotrauma*WayPoint*1System*Boolean : System.MulticastDelegate
+---@class System.Collections.Generic.List*1Barotrauma*CharacterInfo : System.Object, {[System.Int32|integer]:Barotrauma.CharacterInfo}, {[System.Int32|integer]:System.Object}
+---@class Barotrauma.WayPoint-arr : System.Array
+---@class Barotrauma.IdRemap : System.Object
+---@class Barotrauma.WayPoint.Type : System.Enum
+---@class System.Collections.Generic.Dictionary*1Barotrauma*Networking*ServerLog*MessageType*1Microsoft*Xna*Framework*Color : System.Object, {[Barotrauma.Networking.ServerLog.MessageType]:Microsoft.Xna.Framework.Color}, {[System.Object]:System.Object}
+---@class System.Collections.Generic.Dictionary*1Barotrauma*Networking*ServerLog*MessageType*1System*String : System.Object, {[Barotrauma.Networking.ServerLog.MessageType]:System.String|string}, {[System.Object]:System.Object}
+---@class System.Collections.Generic.Queue*1Barotrauma*Networking*ServerLog*LogMessage : System.Object
+---@class Barotrauma.Networking.ServerLog.LogMessage : System.ValueType
+---@class System.Boolean-arr : System.Array
+---@class System.Collections.Generic.List*1Barotrauma*Particles*ParticleEmitter : System.Object, {[System.Int32|integer]:Barotrauma.Particles.ParticleEmitter}, {[System.Int32|integer]:System.Object}
+---@class System.Collections.Generic.List*1Barotrauma*RoundSound : System.Object, {[System.Int32|integer]:Barotrauma.RoundSound}, {[System.Int32|integer]:System.Object}
+---@class Barotrauma.Items.Components.SoundSelectionMode : System.Enum
+---@class System.Collections.Generic.List*1Barotrauma*RelatedItem : System.Object, {[System.Int32|integer]:Barotrauma.RelatedItem}, {[System.Int32|integer]:System.Object}
+---@class System.Collections.Generic.List*1Barotrauma*PropertyConditional : System.Object, {[System.Int32|integer]:Barotrauma.PropertyConditional}, {[System.Int32|integer]:System.Object}
+---@class System.Collections.Generic.HashSet*1System*String : System.Object
+---@class System.Collections.Generic.List*1Barotrauma*Explosion : System.Object, {[System.Int32|integer]:Barotrauma.Explosion}, {[System.Int32|integer]:System.Object}
+---@class System.Collections.Generic.List*1Barotrauma*StatusEffect*ItemSpawnInfo : System.Object, {[System.Int32|integer]:Barotrauma.StatusEffect.ItemSpawnInfo}, {[System.Int32|integer]:System.Object}
+---@class Barotrauma.StatusEffect.ItemSpawnInfo : System.Object
+---@class System.Collections.Generic.List*1Barotrauma*StatusEffect*CharacterSpawnInfo : System.Object, {[System.Int32|integer]:Barotrauma.StatusEffect.CharacterSpawnInfo}, {[System.Int32|integer]:System.Object}
+---@class System.Collections.Generic.List*1Barotrauma*StatusEffect*GiveTalentInfo : System.Object, {[System.Int32|integer]:Barotrauma.StatusEffect.GiveTalentInfo}, {[System.Int32|integer]:System.Object}
+---@class System.Collections.Generic.List*1Barotrauma*AITrigger : System.Object, {[System.Int32|integer]:Barotrauma.AITrigger}, {[System.Int32|integer]:System.Object}
+---@class System.Collections.Generic.List*1Barotrauma*EventPrefab : System.Object, {[System.Int32|integer]:Barotrauma.EventPrefab}, {[System.Int32|integer]:System.Object}
+---@class Barotrauma.LimbType-arr : System.Array
+---@class System.Collections.Generic.HashSet*1System*ValueTuple*2Barotrauma*Identifier*2System*Single : System.Object
+---@class System.ValueTuple*1Barotrauma*Identifier*1System*Single : System.ValueType, {[System.Int32|integer]:System.Object}
+---@class System.Collections.Generic.List*1System*ValueTuple*2Barotrauma*Identifier*2System*Single : System.Object, {[System.Int32|integer]:System.ValueTuple*1Barotrauma*Identifier*1System*Single}, {[System.Int32|integer]:System.Object}
+---@class System.Collections.Generic.List*1Barotrauma*Identifier : System.Object, {[System.Int32|integer]:Barotrauma.Identifier}, {[System.Int32|integer]:System.Object}
+---@class System.Collections.Generic.List*1System*Int32 : System.Object, {[System.Int32|integer]:System.Int32|integer}, {[System.Int32|integer]:System.Object}
+---@class System.Collections.Generic.List*1Barotrauma*StatusEffect*GiveSkill : System.Object, {[System.Int32|integer]:Barotrauma.StatusEffect.GiveSkill}, {[System.Int32|integer]:System.Object}
+---@class System.Collections.Generic.List*1Barotrauma*ISerializableEntity : System.Object, {[System.Int32|integer]:Barotrauma.ISerializableEntity}, {[System.Int32|integer]:System.Object}
+---@class System.Collections.Generic.HashSet*1Barotrauma*StatusEffect : System.Object
+---@class System.Collections.Generic.List*1Barotrauma*DurationListElement : System.Object, {[System.Int32|integer]:Barotrauma.DurationListElement}, {[System.Int32|integer]:System.Object}
+---@class System.Collections.Generic.IEnumerable*1Barotrauma*RoundSound
+---@class System.Collections.Generic.List*1Barotrauma*Affliction : System.Object, {[System.Int32|integer]:Barotrauma.Affliction}, {[System.Int32|integer]:System.Object}
+---@class System.Collections.Generic.IEnumerable*1Barotrauma*StatusEffect*CharacterSpawnInfo
+---@class System.Collections.Generic.IReadOnlyList*1Barotrauma*ISerializableEntity : {[System.Int32|integer]:Barotrauma.ISerializableEntity}
+---@class System.Collections.Generic.IReadOnlyList*1Barotrauma*PropertyConditional : {[System.Int32|integer]:Barotrauma.PropertyConditional}
+---@class Barotrauma.Abilities.AbilityObject : System.Object
+---@class Barotrauma.DelayedEffect.DelayTypes : System.Enum
+---@class System.Collections.Generic.List*1Barotrauma*DelayedListElement : System.Object, {[System.Int32|integer]:Barotrauma.DelayedListElement}, {[System.Int32|integer]:System.Object}
+---@class System.Collections.Generic.IEnumerable*1Barotrauma*ISerializableEntity
+---@class System.Collections.Generic.List*1Barotrauma*Decal : System.Object, {[System.Int32|integer]:Barotrauma.Decal}, {[System.Int32|integer]:System.Object}
+---@class Barotrauma.Particles.Particle.OnChangeHullHandler : System.MulticastDelegate
+---@class System.Collections.Generic.List*1Barotrauma*FireSource : System.Object, {[System.Int32|integer]:Barotrauma.FireSource}, {[System.Int32|integer]:System.Object}
+---@class System.Collections.Generic.List*1Barotrauma*DummyFireSource : System.Object, {[System.Int32|integer]:Barotrauma.DummyFireSource}, {[System.Int32|integer]:System.Object}
+---@class System.Collections.Generic.HashSet*1Barotrauma*Submarine : System.Object
+---@class System.Collections.Generic.List*1Barotrauma*Structure : System.Object, {[System.Int32|integer]:Barotrauma.Structure}, {[System.Int32|integer]:System.Object}
+---@class System.Collections.Generic.Dictionary*1Barotrauma*Structure*1System*Single : System.Object, {[Barotrauma.Structure]:System.Single|number}, {[System.Object]:System.Object}
+---@class System.Collections.Generic.IEnumerable*1Barotrauma*Submarine
+---@class Microsoft.Xna.Framework.Graphics.RenderTarget2D : Microsoft.Xna.Framework.Graphics.Texture2D
+---@class Microsoft.Xna.Framework.Content.ContentManager : System.Object
+---@class Barotrauma.SubmarinePreview : System.Object
+---@class Barotrauma.GUIButton-arr : System.Array
+---@class Barotrauma.GUITickBox-arr : System.Array
+---@class Barotrauma.CharacterInfo.AppearanceCustomizationMenu : System.Object
+---@class System.Collections.Generic.List*1Barotrauma*GUIComponent : System.Object, {[System.Int32|integer]:Barotrauma.GUIComponent}, {[System.Int32|integer]:System.Object}
+---@class System.Collections.Generic.List*1Barotrauma*GUITextBox : System.Object, {[System.Int32|integer]:Barotrauma.GUITextBox}, {[System.Int32|integer]:System.Object}
+---@class Barotrauma.MultiPlayerCampaignSetupUI : Barotrauma.CampaignSetupUI
+---@class Barotrauma.CampaignSetupUI : System.Object
+---@class System.Nullable*1Barotrauma*Networking*PlayStyle : System.ValueType
+---@class System.Nullable*1Barotrauma*NetLobbyScreen*FailedSubInfo : System.ValueType
+---@class System.Collections.Generic.List*1Barotrauma*NetLobbyScreen*FailedSubInfo : System.Object, {[System.Int32|integer]:Barotrauma.NetLobbyScreen.FailedSubInfo}, {[System.Int32|integer]:System.Object}
+---@class Barotrauma.NetLobbyScreen.FailedSubInfo : System.ValueType
+---@class System.Collections.Generic.List*1Barotrauma*SubmarineInfo : System.Object, {[System.Int32|integer]:Barotrauma.SubmarineInfo}, {[System.Int32|integer]:System.Object}
+---@class Barotrauma.MissionType : System.Enum
+---@class System.Collections.Generic.List*1Barotrauma*JobVariant : System.Object, {[System.Int32|integer]:Barotrauma.JobVariant}, {[System.Int32|integer]:System.Object}
+---@class Barotrauma.GUIImage-arr-arr : System.Array
+---@class Barotrauma.GUIImage-arr : System.Array
+---@class Barotrauma.NetLobbyScreen.SubmarineDeliveryData : System.Enum
+---@class Barotrauma.Networking.BotSpawnMode : System.Enum
+---@class Barotrauma.Networking.YesNoMaybe : System.Enum
+---@class System.Collections.Generic.IReadOnlyList*1Barotrauma*SubmarineInfo : {[System.Int32|integer]:Barotrauma.SubmarineInfo}
+---@class System.Collections.Generic.IEnumerable*1Barotrauma*SubmarineInfo
+---@class Barotrauma.GUIComponent-arr : System.Array
+---@class System.Action*1Microsoft*Xna*Framework*Graphics*SpriteBatch*1Barotrauma*GUICustomComponent : System.MulticastDelegate
+---@class Barotrauma.GUITextBlock.ClickableArea : System.ValueType
+---@class Barotrauma.GameSettings.Config : System.ValueType
+---@class Barotrauma.Config-ref
+---@class Barotrauma.Steam.WorkshopMenu : System.Object
+---@class System.Collections.Generic.Dictionary*1Barotrauma*SettingsMenu*Tab*1System*ValueTuple*2Barotrauma*GUIButton*2Barotrauma*GUIFrame : System.Object, {[Barotrauma.SettingsMenu.Tab]:System.ValueTuple*1Barotrauma*GUIButton*1Barotrauma*GUIFrame}, {[System.Object]:System.Object}
+---@class Barotrauma.SettingsMenu.Tab : System.Enum
+---@class System.ValueTuple*1Barotrauma*GUIButton*1Barotrauma*GUIFrame : System.ValueType, {[System.Int32|integer]:System.Object}
+---@class System.Collections.Generic.Dictionary*1Barotrauma*GUIButton*1System*Func*2Barotrauma*LocalizedString : System.Object, {[Barotrauma.GUIButton]:System.Func*1Barotrauma*LocalizedString|(fun():Barotrauma.LocalizedString)}, {[System.Object]:System.Object}
+---@class System.Func*1Barotrauma*LocalizedString : System.MulticastDelegate
+---@class System.Collections.Immutable.ImmutableHashSet*1Barotrauma*InputType : System.Object
+---@class System.ValueTuple*1Barotrauma*GUILayoutGroup*1Barotrauma*GUILayoutGroup : System.ValueType, {[System.Int32|integer]:System.Object}
+---@class System.Func*1Barotrauma*SettingsMenu*T*1Barotrauma*LocalizedString : System.MulticastDelegate
+---@class Barotrauma.SettingsMenu.T : System.Enum
+---@class System.Action*1Barotrauma*SettingsMenu*T : System.MulticastDelegate
+---@class System.Func*1Barotrauma*SettingsMenu*T*1Barotrauma*LocalizedString : System.MulticastDelegate
+---@class Barotrauma.SettingsMenu.T : System.Object
+---@class System.Collections.Generic.IReadOnlyList*1Barotrauma*SettingsMenu*T : {[System.Int32|integer]:Barotrauma.SettingsMenu.T}
+---@class System.Action*1Barotrauma*SettingsMenu*T : System.MulticastDelegate
+---@class System.Func*1System*Single*1System*String : System.MulticastDelegate
+---@class System.Action*1System*Boolean : System.MulticastDelegate
+---@class System.Collections.Generic.IReadOnlyList
+---@class Barotrauma.Steam.WorkshopMenu-ref
+---@class Barotrauma.Location-arr : System.Array
+---@class System.Collections.Generic.List*1Barotrauma*Mission : System.Object, {[System.Int32|integer]:Barotrauma.Mission}, {[System.Int32|integer]:System.Object}
+---@class Barotrauma.Mission : System.Object
+---@class System.Nullable*1Barotrauma*CharacterTeamType : System.ValueType
+---@class Barotrauma.RoundSummary : System.Object
+---@class System.Collections.Generic.IEnumerable*1Barotrauma*Mission
+---@class System.Collections.Generic.IEnumerable*1Barotrauma*Character
+---@class Barotrauma.CampaignSettings : System.Object
+---@class System.Collections.Generic.IEnumerable*1Barotrauma*MissionPrefab
+---@class Barotrauma.MissionPrefab : Barotrauma.PrefabWithUintIdentifier
+---@class System.Collections.Immutable.ImmutableHashSet*1Barotrauma*Character : System.Object
+---@class System.Collections.Generic.List*1Barotrauma*TraitorMissionResult : System.Object, {[System.Int32|integer]:Barotrauma.TraitorMissionResult}, {[System.Int32|integer]:System.Object}
+---@class Barotrauma.CampaignMode.TransitionType : System.Enum
+---@class System.Collections.Generic.IList*1System*String : {[System.Int32|integer]:System.String|string}
+---@class System.Collections.Generic.Dictionary*1Barotrauma*Identifier*1System*Object : System.Object, {[Barotrauma.Identifier]:System.Object}, {[System.Object]:System.Object}
+---@class Barotrauma.PrefabCollection*1Barotrauma*FactionPrefab : System.Object, {[Barotrauma.Identifier]:Barotrauma.FactionPrefab}, {[System.String|string]:Barotrauma.FactionPrefab}
+---@class Barotrauma.FactionsFile : Barotrauma.GenericPrefabFile*1Barotrauma*FactionPrefab
+---@class Barotrauma.GenericPrefabFile*1Barotrauma*FactionPrefab : Barotrauma.ContentFile
+---@class Barotrauma.NamedEvent*1Barotrauma*Reputation : System.Object
+---@class System.Collections.Generic.List*1Barotrauma*GameModePreset : System.Object, {[System.Int32|integer]:Barotrauma.GameModePreset}, {[System.Int32|integer]:System.Object}
+---@class Barotrauma.OutpostGenerationParams : Barotrauma.PrefabWithUintIdentifier
+---@class System.Collections.Generic.List*1Barotrauma*Event : System.Object, {[System.Int32|integer]:Barotrauma.Event}, {[System.Int32|integer]:System.Object}
+---@class Barotrauma.Tutorials.Tutorial : System.Object
+---@class Barotrauma.CampaignUI : System.Object
+---@class System.Collections.Generic.List*1Barotrauma*Faction : System.Object, {[System.Int32|integer]:Barotrauma.Faction}, {[System.Int32|integer]:System.Object}
+---@class Barotrauma.NamedEvent*1Barotrauma*WalletChangedEvent : System.Object
+---@class Barotrauma.Wallet : System.Object
+---@class System.Collections.Generic.Dictionary*1Barotrauma*Character*1System*Single : System.Object, {[Barotrauma.Character]:System.Single|number}, {[System.Object]:System.Object}
+---@class System.Threading.CancellationTokenSource : System.Object
+---@class Barotrauma.CampaignMode.InteractionType : System.Enum
+---@class System.Collections.Generic.List*1Barotrauma*Submarine : System.Object, {[System.Int32|integer]:Barotrauma.Submarine}, {[System.Int32|integer]:System.Object}
+---@class Barotrauma.LevelData-ref
+---@class Barotrauma.Submarine-ref
+---@class System.Collections.Generic.Dictionary*1Barotrauma*MultiPlayerCampaign*NetFlags*1System*UInt16 : System.Object, {[Barotrauma.MultiPlayerCampaign.NetFlags]:System.UInt16|integer}, {[System.Object]:System.Object}
+---@class Barotrauma.MultiPlayerCampaign.NetFlags : System.Enum
+---@class System.Collections.Generic.List*1Barotrauma*CampaignMode*SaveInfo : System.Object, {[System.Int32|integer]:Barotrauma.CampaignMode.SaveInfo}, {[System.Int32|integer]:System.Object}
+---@class Barotrauma.CampaignMode.SaveInfo : System.ValueType
+---@class System.Collections.Generic.Dictionary*1Barotrauma*Identifier*1System*Collections*Generic*List*2Barotrauma*PurchasedItem : System.Object, {[Barotrauma.Identifier]:System.Collections.Generic.List*1Barotrauma*PurchasedItem|Barotrauma.PurchasedItem[]}, {[System.Object]:System.Object}
+---@class System.Collections.Generic.List*1Barotrauma*PurchasedItem : System.Object, {[System.Int32|integer]:Barotrauma.PurchasedItem}, {[System.Int32|integer]:System.Object}
+---@class Barotrauma.PurchasedItem : System.Object
+---@class System.Collections.Generic.Dictionary*1Barotrauma*Identifier*1System*Collections*Generic*List*2Barotrauma*SoldItem : System.Object, {[Barotrauma.Identifier]:System.Collections.Generic.List*1Barotrauma*SoldItem|Barotrauma.SoldItem[]}, {[System.Object]:System.Object}
+---@class System.Collections.Generic.List*1Barotrauma*SoldItem : System.Object, {[System.Int32|integer]:Barotrauma.SoldItem}, {[System.Int32|integer]:System.Object}
+---@class Barotrauma.SoldItem : System.Object
+---@class System.Collections.Generic.Dictionary*1Barotrauma*MissionType*1System*Type : System.Object, {[Barotrauma.MissionType]:System.Type}, {[System.Object]:System.Object}
+---@class System.Collections.Generic.IEnumerable*1Barotrauma*Networking*Client
+---@class System.ValueTuple : System.Array
+---@class System.ValueTuple*1System*Int32*1System*Single : System.ValueType, {[System.Int32|integer]:System.Object}
+---@class System.Nullable*1Barotrauma*Identifier : System.ValueType
+---@class System.Collections.Generic.IEnumerable*1Barotrauma*Items*Components*ItemContainer
+---@class System.Collections.Generic.Dictionary*1Barotrauma*Items*Components*ItemContainer*1Barotrauma*PreferredContainer : System.Object, {[Barotrauma.Items.Components.ItemContainer]:Barotrauma.PreferredContainer}, {[System.Object]:System.Object}
+---@class System.Collections.Generic.List*1Barotrauma*Items*Components*ItemContainer : System.Object, {[System.Int32|integer]:Barotrauma.Items.Components.ItemContainer}, {[System.Int32|integer]:System.Object}
+---@class System.Collections.Generic.KeyValuePair*1Barotrauma*Items*Components*ItemContainer*1Barotrauma*PreferredContainer : System.ValueType
+---@class System.Collections.Generic.List*1Barotrauma*Item : System.Object, {[System.Int32|integer]:Barotrauma.Item}, {[System.Int32|integer]:System.Object}
+---@class System.Collections.Generic.List*1Barotrauma*InvSlotType : System.Object, {[System.Int32|integer]:Barotrauma.InvSlotType}, {[System.Int32|integer]:System.Object}
+---@class Barotrauma.NamedEvent*1Barotrauma*CargoManager : System.Object
+---@class System.Collections.Generic.List*1System*ValueTuple*2Barotrauma*PurchasedItem*2Barotrauma*Items*Components*IdCard : System.Object, {[System.Int32|integer]:System.ValueTuple*1Barotrauma*PurchasedItem*1Barotrauma*Items*Components*IdCard}, {[System.Int32|integer]:System.Object}
+---@class System.ValueTuple*1Barotrauma*PurchasedItem*1Barotrauma*Items*Components*IdCard : System.ValueType, {[System.Int32|integer]:System.Object}
+---@class System.Collections.Generic.List*1Barotrauma*CargoManager*SoldEntity : System.Object, {[System.Int32|integer]:Barotrauma.CargoManager.SoldEntity}, {[System.Int32|integer]:System.Object}
+---@class Barotrauma.CargoManager.SoldEntity : System.Object
+---@class System.Collections.Generic.Dictionary*1Barotrauma*ItemPrefab*1System*Int32 : System.Object, {[Barotrauma.ItemPrefab]:System.Int32|integer}, {[System.Object]:System.Object}
+---@class System.Collections.Generic.IEnumerable*1Barotrauma*Item
+---@class System.Collections.Generic.IEnumerable*1Barotrauma*CargoManager*SoldEntity
+---@class Barotrauma.Store.StoreTab : System.Enum
+---@class System.Collections.Generic.Dictionary*1Barotrauma*Identifier*1System*Collections*Generic*List*2Barotrauma*CargoManager*T : System.Object, {[Barotrauma.Identifier]:System.Collections.Generic.List*1Barotrauma*CargoManager*T|Barotrauma.CargoManager.T[]}, {[System.Object]:System.Object}
+---@class System.Collections.Generic.List*1Barotrauma*CargoManager*T : System.Object, {[System.Int32|integer]:Barotrauma.CargoManager.T}, {[System.Int32|integer]:System.Object}
+---@class Barotrauma.CargoManager.T : System.Object
+---@class Barotrauma.Location.StoreInfo : System.Object
+---@class System.Collections.Generic.IEnumerable*1Barotrauma*ItemPrefab
+---@class Barotrauma.ISpatialEntity
+---@class System.Collections.Generic.List
+---@class System.Collections.Generic.List*1Barotrauma*GUIButton : System.Object, {[System.Int32|integer]:Barotrauma.GUIButton}, {[System.Int32|integer]:System.Object}
+---@class System.Collections.Generic.List*1Barotrauma*CrewManager*OptionNode : System.Object, {[System.Int32|integer]:Barotrauma.CrewManager.OptionNode}, {[System.Int32|integer]:System.Object}
+---@class Barotrauma.CrewManager.OptionNode : System.Object
+---@class System.Collections.Generic.List*1Barotrauma*OrderCategory : System.Object, {[System.Int32|integer]:Barotrauma.OrderCategory}, {[System.Int32|integer]:System.Object}
+---@class System.Collections.Generic.Stack*1Barotrauma*GUIButton : System.Object
+---@class System.Collections.Generic.List*1Barotrauma*Character : System.Object, {[System.Int32|integer]:Barotrauma.Character}, {[System.Int32|integer]:System.Object}
+---@class Barotrauma.WallSection : System.Object
+---@class System.Collections.Generic.List*1Barotrauma*Order : System.Object, {[System.Int32|integer]:Barotrauma.Order}, {[System.Int32|integer]:System.Object}
+---@class System.Collections.Generic.List*1System*ValueTuple*2Barotrauma*Character*2System*String : System.Object, {[System.Int32|integer]:System.ValueTuple*1Barotrauma*Character*1System*String}, {[System.Int32|integer]:System.Object}
+---@class System.ValueTuple*1Barotrauma*Character*1System*String : System.ValueType, {[System.Int32|integer]:System.Object}
+---@class System.Collections.Generic.List*1Barotrauma*CrewManager*ActiveOrder : System.Object, {[System.Int32|integer]:Barotrauma.CrewManager.ActiveOrder}, {[System.Int32|integer]:System.Object}
+---@class Barotrauma.CrewManager.ActiveOrder : System.Object
+---@class Barotrauma.Hull-ref
+---@class Barotrauma.WallSection-ref
+---@class System.Collections.Generic.IEnumerable*1Barotrauma*CharacterInfo
+---@class System.Collections.Generic.IReadOnlyList*1Barotrauma*OrderPrefab : {[System.Int32|integer]:Barotrauma.OrderPrefab}
+---@class System.Collections.Generic.List*1Barotrauma*MedicalClinic*RequestAction*2Barotrauma*MedicalClinic*AfflictionRequest : System.Object, {[System.Int32|integer]:Barotrauma.MedicalClinic.RequestAction*1Barotrauma*MedicalClinic*AfflictionRequest}, {[System.Int32|integer]:System.Object}
+---@class Barotrauma.MedicalClinic.RequestAction*1Barotrauma*MedicalClinic*AfflictionRequest : System.ValueType
+---@class System.Collections.Generic.List*1Barotrauma*MedicalClinic*RequestAction*2Barotrauma*MedicalClinic*PendingRequest : System.Object, {[System.Int32|integer]:Barotrauma.MedicalClinic.RequestAction*1Barotrauma*MedicalClinic*PendingRequest}, {[System.Int32|integer]:System.Object}
+---@class Barotrauma.MedicalClinic.RequestAction*1Barotrauma*MedicalClinic*PendingRequest : System.ValueType
+---@class System.Collections.Generic.List*1Barotrauma*MedicalClinic*RequestAction*2Barotrauma*MedicalClinic*CallbackOnlyRequest : System.Object, {[System.Int32|integer]:Barotrauma.MedicalClinic.RequestAction*1Barotrauma*MedicalClinic*CallbackOnlyRequest}, {[System.Int32|integer]:System.Object}
+---@class Barotrauma.MedicalClinic.RequestAction*1Barotrauma*MedicalClinic*CallbackOnlyRequest : System.ValueType
+---@class System.Collections.Generic.List*1Barotrauma*MedicalClinic*RequestAction*2Barotrauma*MedicalClinic*HealRequest : System.Object, {[System.Int32|integer]:Barotrauma.MedicalClinic.RequestAction*1Barotrauma*MedicalClinic*HealRequest}, {[System.Int32|integer]:System.Object}
+---@class Barotrauma.MedicalClinic.RequestAction*1Barotrauma*MedicalClinic*HealRequest : System.ValueType
+---@class System.Collections.Generic.List*1Barotrauma*MedicalClinic*NetCrewMember : System.Object, {[System.Int32|integer]:Barotrauma.MedicalClinic.NetCrewMember}, {[System.Int32|integer]:System.Object}
+---@class Barotrauma.MedicalClinic.NetCrewMember : System.ValueType
+---@class System.Action*1Barotrauma*MedicalClinic*AfflictionRequest : System.MulticastDelegate
+---@class Barotrauma.MedicalClinic.AfflictionRequest : System.ValueType
+---@class System.Action*1Barotrauma*MedicalClinic*PendingRequest : System.MulticastDelegate
+---@class Barotrauma.MedicalClinic.PendingRequest : System.ValueType
+---@class Barotrauma.MedicalClinic.NetAffliction : System.ValueType
+---@class System.Collections.Generic.List*1Barotrauma*MedicalClinic*RequestAction*2Barotrauma*MedicalClinic*T : System.Object, {[System.Int32|integer]:Barotrauma.MedicalClinic.RequestAction*1Barotrauma*MedicalClinic*T}, {[System.Int32|integer]:System.Object}
+---@class Barotrauma.MedicalClinic.RequestAction*1Barotrauma*MedicalClinic*T : System.ValueType
+---@class System.Action
+---@class System.Collections.Generic.List*1Barotrauma*MedicalClinic*RequestAction*2Barotrauma*MedicalClinic*T : System.Object, {[System.Int32|integer]:Barotrauma.MedicalClinic.RequestAction*1Barotrauma*MedicalClinic*T}, {[System.Int32|integer]:System.Object}
+---@class Barotrauma.MedicalClinic.RequestAction*1Barotrauma*MedicalClinic*T : System.ValueType
+---@class System.DateTimeOffset : System.ValueType
+---@class System.Action*1System*Action*2Barotrauma*MedicalClinic*T : System.MulticastDelegate
+---@class System.Action*1Barotrauma*MedicalClinic*T : System.MulticastDelegate
+---@class Barotrauma.MedicalClinic.T : System.Object
+---@class Barotrauma.WalletChangedEvent : System.ValueType
+---@class System.Action*1Barotrauma*MedicalClinic*HealRequest : System.MulticastDelegate
+---@class Barotrauma.MedicalClinic.HealRequest : System.ValueType
+---@class System.Action*1Barotrauma*MedicalClinic*CallbackOnlyRequest : System.MulticastDelegate
+---@class Barotrauma.MedicalClinic.CallbackOnlyRequest : System.ValueType
+---@class Barotrauma.MedicalClinic.MessageFlag : System.Enum
+---@class Barotrauma.MedicalClinic.NetworkHeader : System.Enum
+---@class Barotrauma.MedicalClinic.HealRequestResult : System.Enum
+---@class Barotrauma.NetAffliction-arr : System.Array
+---@class System.Collections.Immutable.ImmutableArray*1Barotrauma*CharacterInfo : System.ValueType, {[System.Int32|integer]:Barotrauma.CharacterInfo}, {[System.Int32|integer]:Barotrauma.CharacterInfo}, {[System.Int32|integer]:System.Object}, {[System.Int32|integer]:Barotrauma.CharacterInfo}
+---@class System.Collections.Generic.Dictionary*1System*Byte*1Barotrauma*ReadyStatus : System.Object, {[System.Byte|integer]:Barotrauma.ReadyStatus}, {[System.Object]:System.Object}
+---@class Barotrauma.ReadyStatus : System.Enum
+---@class System.Collections.Generic.List*1System*Byte : System.Object, {[System.Int32|integer]:System.Byte|integer}, {[System.Int32|integer]:System.Object}
+---@class Barotrauma.Level.Cave : System.Object
+---@class Barotrauma.LevelRenderer : System.Object
+---@class Barotrauma.BackgroundCreatureManager : System.Object
+---@class System.Collections.Generic.List : System.Array
+---@class System.Collections.Generic.List*1Voronoi2*VoronoiCell : System.Object, {[System.Int32|integer]:Voronoi2.VoronoiCell}, {[System.Int32|integer]:System.Object}
+---@class System.Collections.Generic.List*1Barotrauma*Level*AbyssIsland : System.Object, {[System.Int32|integer]:Barotrauma.Level.AbyssIsland}, {[System.Int32|integer]:System.Object}
+---@class Barotrauma.Level.AbyssIsland : System.Object
+---@class System.Collections.Generic.List*1System*Double : System.Object, {[System.Int32|integer]:System.Double|number}, {[System.Int32|integer]:System.Object}
+---@class System.Collections.Generic.List*1System*ValueTuple*2Microsoft*Xna*Framework*Point*2System*Double : System.Object, {[System.Int32|integer]:System.ValueTuple*1Microsoft*Xna*Framework*Point*1System*Double}, {[System.Int32|integer]:System.Object}
+---@class System.ValueTuple*1Microsoft*Xna*Framework*Point*1System*Double : System.ValueType, {[System.Int32|integer]:System.Object}
+---@class System.Collections.Generic.List*1FarseerPhysics*Dynamics*Body : System.Object, {[System.Int32|integer]:FarseerPhysics.Dynamics.Body}, {[System.Int32|integer]:System.Object}
+---@class System.Collections.Generic.List*1Microsoft*Xna*Framework*Point : System.Object, {[System.Int32|integer]:Microsoft.Xna.Framework.Point}, {[System.Int32|integer]:System.Object}
+---@class System.Collections.Generic.Dictionary*1Barotrauma*Level*LevelGenStage*1System*Int32 : System.Object, {[Barotrauma.Level.LevelGenStage]:System.Int32|integer}, {[System.Object]:System.Object}
+---@class Barotrauma.Level.LevelGenStage : System.Enum
+---@class System.Collections.Generic.Dictionary*1Barotrauma*Submarine*1System*Collections*Generic*List*2Microsoft*Xna*Framework*Vector2 : System.Object, {[Barotrauma.Submarine]:System.Collections.Generic.List*1Microsoft*Xna*Framework*Vector2|Microsoft.Xna.Framework.Vector2[]}, {[System.Object]:System.Object}
+---@class System.Collections.Generic.Dictionary*1Barotrauma*Submarine*1System*Collections*Generic*List*2Microsoft*Xna*Framework*Rectangle : System.Object, {[Barotrauma.Submarine]:System.Collections.Generic.List*1Microsoft*Xna*Framework*Rectangle|Microsoft.Xna.Framework.Rectangle[]}, {[System.Object]:System.Object}
+---@class System.Collections.Generic.List*1Barotrauma*RuinGeneration*Ruin : System.Object, {[System.Int32|integer]:Barotrauma.RuinGeneration.Ruin}, {[System.Int32|integer]:System.Object}
+---@class System.Collections.Generic.List*1Barotrauma*LevelWall : System.Object, {[System.Int32|integer]:Barotrauma.LevelWall}, {[System.Int32|integer]:System.Object}
+---@class System.Collections.Generic.List*1Barotrauma*Level*Tunnel : System.Object, {[System.Int32|integer]:Barotrauma.Level.Tunnel}, {[System.Int32|integer]:System.Object}
+---@class System.Collections.Generic.List*1Barotrauma*Level*Cave : System.Object, {[System.Int32|integer]:Barotrauma.Level.Cave}, {[System.Int32|integer]:System.Object}
+---@class System.Collections.Generic.List*1Barotrauma*Level*InterestingPosition : System.Object, {[System.Int32|integer]:Barotrauma.Level.InterestingPosition}, {[System.Int32|integer]:System.Object}
+---@class System.Collections.Generic.IReadOnlyDictionary*1Barotrauma*Level*LevelGenStage*1System*Int32 : {[Barotrauma.Level.LevelGenStage]:System.Int32|integer}
+---@class System.Collections.Generic.List*1Barotrauma*Entity : System.Object, {[System.Int32|integer]:Barotrauma.Entity}, {[System.Int32|integer]:System.Object}
+---@class Barotrauma.LevelData.LevelType : System.Enum
+---@class System.Collections.Generic.List*1Barotrauma*Level*PathPoint : System.Object, {[System.Int32|integer]:Barotrauma.Level.PathPoint}, {[System.Int32|integer]:System.Object}
+---@class Barotrauma.Level.PathPoint : System.ValueType
+---@class System.Collections.Generic.List*1Barotrauma*Level*ClusterLocation : System.Object, {[System.Int32|integer]:Barotrauma.Level.ClusterLocation}, {[System.Int32|integer]:System.Object}
+---@class Barotrauma.Level.ClusterLocation : System.ValueType
+---@class Barotrauma.CaveGenerationParams : Barotrauma.PrefabWithUintIdentifier
+---@class System.Collections.Generic.IEnumerable*1Voronoi2*GraphEdge
+---@class System.Collections.Generic.List*1Voronoi2*GraphEdge : System.Object, {[System.Int32|integer]:Voronoi2.GraphEdge}, {[System.Int32|integer]:System.Object}
+---@class System.Collections.Generic.IEnumerable*1Barotrauma*Level*Cave
+---@class System.Collections.Generic.List
+---@class System.Func*1Barotrauma*Level*InterestingPosition*1System*Boolean : System.MulticastDelegate
+---@class Barotrauma.SubmarineType : System.Enum
+---@class Barotrauma.PrefabCollection*1Barotrauma*LevelGenerationParams : System.Object, {[Barotrauma.Identifier]:Barotrauma.LevelGenerationParams}, {[System.String|string]:Barotrauma.LevelGenerationParams}
+---@class Barotrauma.LevelGenerationParametersFile : Barotrauma.ContentFile
+---@class System.Collections.Generic.List*1Barotrauma*LevelObject : System.Object, {[System.Int32|integer]:Barotrauma.LevelObject}, {[System.Int32|integer]:System.Object}
+---@class System.Collections.Generic.List : System.Array
+---@class System.Collections.Generic.HashSet*1Barotrauma*LevelObject : System.Object
+---@class System.Collections.Generic.IEnumerable*1Barotrauma*LevelObject
+---@class Barotrauma.LevelObjectManager.SpawnPosition : System.Object
+---@class System.Collections.Generic.IEnumerable*1Voronoi2*VoronoiCell
+---@class Barotrauma.LevelObjectPrefab.SpawnPosType : System.Enum
+---@class System.Collections.Generic.List*1Barotrauma*LevelObjectManager*SpawnPosition : System.Object, {[System.Int32|integer]:Barotrauma.LevelObjectManager.SpawnPosition}, {[System.Int32|integer]:System.Object}
+---@class System.Collections.Generic.IList*1Barotrauma*LevelObjectPrefab : {[System.Int32|integer]:Barotrauma.LevelObjectPrefab}
+---@class System.Collections.Generic.List*1Barotrauma*ContentXElement : System.Object, {[System.Int32|integer]:Barotrauma.ContentXElement}, {[System.Int32|integer]:System.Object}
+---@class System.Collections.Generic.Dictionary*1Barotrauma*Identifier*1System*Single : System.Object, {[Barotrauma.Identifier]:System.Single|number}, {[System.Object]:System.Object}
+---@class Barotrauma.PrefabCollection*1Barotrauma*LevelObjectPrefab : System.Object, {[Barotrauma.Identifier]:Barotrauma.LevelObjectPrefab}, {[System.String|string]:Barotrauma.LevelObjectPrefab}
+---@class System.Collections.Generic.List*1Barotrauma*Particles*ParticleEmitterPrefab : System.Object, {[System.Int32|integer]:Barotrauma.Particles.ParticleEmitterPrefab}, {[System.Int32|integer]:System.Object}
+---@class Barotrauma.Particles.ParticleEmitterPrefab : System.Object
+---@class System.Collections.Generic.List*1Barotrauma*LevelObjectPrefab*SoundConfig : System.Object, {[System.Int32|integer]:Barotrauma.LevelObjectPrefab.SoundConfig}, {[System.Int32|integer]:System.Object}
+---@class Barotrauma.LevelObjectPrefab.SoundConfig : System.Object
+---@class System.Collections.Generic.List*1Barotrauma*Lights*LightSourceParams : System.Object, {[System.Int32|integer]:Barotrauma.Lights.LightSourceParams}, {[System.Int32|integer]:System.Object}
+---@class System.Collections.Generic.List*1Barotrauma*SpriteDeformations*SpriteDeformation : System.Object, {[System.Int32|integer]:Barotrauma.SpriteDeformations.SpriteDeformation}, {[System.Int32|integer]:System.Object}
+---@class Barotrauma.SpriteDeformations.SpriteDeformation : System.Object
+---@class System.Collections.Generic.List*1Barotrauma*Sprite : System.Object, {[System.Int32|integer]:Barotrauma.Sprite}, {[System.Int32|integer]:System.Object}
+---@class System.Collections.Generic.Dictionary*1Barotrauma*Sprite*1System*Xml*Linq*XElement : System.Object, {[Barotrauma.Sprite]:System.Xml.Linq.XElement}, {[System.Object]:System.Object}
+---@class System.Collections.Generic.List*1Barotrauma*LevelObjectPrefab*ChildObject : System.Object, {[System.Int32|integer]:Barotrauma.LevelObjectPrefab.ChildObject}, {[System.Int32|integer]:System.Object}
+---@class Barotrauma.LevelObjectPrefab.ChildObject : System.Object
+---@class System.Collections.Generic.List*1Barotrauma*LevelObjectPrefab : System.Object, {[System.Int32|integer]:Barotrauma.LevelObjectPrefab}, {[System.Int32|integer]:System.Object}
+---@class Barotrauma.LevelObjectPrefabsFile : Barotrauma.GenericPrefabFile*1Barotrauma*LevelObjectPrefab
+---@class Barotrauma.GenericPrefabFile*1Barotrauma*LevelObjectPrefab : Barotrauma.ContentFile
+---@class Barotrauma.Lights.LightSource-arr : System.Array
+---@class Barotrauma.LevelTrigger-arr : System.Array
+---@class Barotrauma.Particles.ParticleEmitter-arr : System.Array
+---@class Barotrauma.RoundSound-arr : System.Array
+---@class Barotrauma.Sounds.SoundChannel-arr : System.Array
+---@class Microsoft.Xna.Framework.Vector2[,] : System.Array
+---@class System.Collections.Generic.List*1Barotrauma*LevelTrigger : System.Object, {[System.Int32|integer]:Barotrauma.LevelTrigger}, {[System.Int32|integer]:System.Object}
+---@class Barotrauma.SpriteDeformations.PositionalDeformation : Barotrauma.SpriteDeformations.SpriteDeformation
+---@class System.Action*1Barotrauma*LevelTrigger*1Barotrauma*Entity : System.MulticastDelegate
+---@class System.Collections.Generic.List*1Barotrauma*StatusEffect : System.Object, {[System.Int32|integer]:Barotrauma.StatusEffect}, {[System.Int32|integer]:System.Object}
+---@class System.Collections.Generic.List*1Barotrauma*Attack : System.Object, {[System.Int32|integer]:Barotrauma.Attack}, {[System.Int32|integer]:System.Object}
+---@class System.Collections.Generic.HashSet*1Barotrauma*Entity : System.Object
+---@class Barotrauma.LevelTrigger.TriggererType : System.Enum
+---@class Barotrauma.LevelTrigger.TriggerForceMode : System.Enum
+---@class System.Collections.Generic.IEnumerable*1Barotrauma*StatusEffect
+---@class System.Collections.Generic.Dictionary*1Barotrauma*Entity*1Microsoft*Xna*Framework*Vector2 : System.Object, {[Barotrauma.Entity]:Microsoft.Xna.Framework.Vector2}, {[System.Object]:System.Object}
+---@class System.Collections.Generic.IEnumerable*1Barotrauma*Entity
+---@class FarseerPhysics.Dynamics.Category : System.Enum
+---@class FarseerPhysics.Dynamics.Contacts.Contact : System.Object
+---@class System.ValueTuple*1System*Boolean*1Barotrauma*Submarine : System.ValueType, {[System.Int32|integer]:System.Object}
+---@class Barotrauma.IDamageable
+---@class Barotrauma.LevelWallVertexBuffer : System.Object
+---@class Microsoft.Xna.Framework.Graphics.VertexBuffer : Microsoft.Xna.Framework.Graphics.GraphicsResource
+---@class Microsoft.Xna.Framework.Graphics.VertexPositionTexture-arr : System.Array
+---@class Microsoft.Xna.Framework.Graphics.VertexPositionTexture : System.ValueType
+---@class System.Collections.Immutable.ImmutableHashSet*1System*Int32 : System.Object
+---@class Barotrauma.PrefabCollection*1Barotrauma*Biome : System.Object, {[Barotrauma.Identifier]:Barotrauma.Biome}, {[System.String|string]:Barotrauma.Biome}
+---@class System.Collections.Generic.Queue*1Barotrauma*Map*MapAnim : System.Object
+---@class Barotrauma.Map.MapAnim : System.Object
+---@class Barotrauma.Sprite[,] : System.Array
+---@class System.Boolean[,] : System.Array
+---@class System.Nullable*1System*ValueTuple*2Microsoft*Xna*Framework*Rectangle*2Barotrauma*RichString : System.ValueType
+---@class System.ValueTuple*1Barotrauma*SubmarineInfo*1System*Single : System.ValueType, {[System.Int32|integer]:System.Object}
+---@class Barotrauma.MapGenerationParams : Barotrauma.Prefab
+---@class System.Action*1Barotrauma*Location*1Barotrauma*LocationConnection : System.MulticastDelegate
+---@class System.Action*1Barotrauma*LocationConnection*1System*Collections*Generic*IEnumerable*2Barotrauma*Mission : System.MulticastDelegate
+---@class Barotrauma.NamedEvent*1Barotrauma*Map*LocationChangeInfo : System.Object
+---@class System.Collections.Generic.List*1Barotrauma*Location : System.Object, {[System.Int32|integer]:Barotrauma.Location}, {[System.Int32|integer]:System.Object}
+---@class System.Collections.Generic.List*1Barotrauma*LocationConnection : System.Object, {[System.Int32|integer]:Barotrauma.LocationConnection}, {[System.Int32|integer]:System.Object}
+---@class System.Collections.Generic.IEnumerable*1System*Int32
+---@class Barotrauma.Location-ref
+---@class Barotrauma.RadiationParams : System.Object
+---@class Barotrauma.PriceInfo-ref
+---@class System.Collections.Generic.List*1Barotrauma*PriceInfo : System.Object, {[System.Int32|integer]:Barotrauma.PriceInfo}, {[System.Int32|integer]:System.Object}
+---@class System.Collections.Immutable.ImmutableArray*1System*ValueTuple*2Barotrauma*Identifier*2System*Single : System.ValueType, {[System.Int32|integer]:System.ValueTuple*1Barotrauma*Identifier*1System*Single}, {[System.Int32|integer]:System.ValueTuple*1Barotrauma*Identifier*1System*Single}, {[System.Int32|integer]:System.Object}, {[System.Int32|integer]:System.ValueTuple*1Barotrauma*Identifier*1System*Single}
+---@class System.Collections.Generic.Dictionary*1System*Int32*1System*Single : System.Object, {[System.Int32|integer]:System.Single|number}, {[System.Object]:System.Object}
+---@class System.Collections.Generic.Dictionary*1System*Int32*1System*Int32 : System.Object, {[System.Int32|integer]:System.Int32|integer}, {[System.Object]:System.Object}
+---@class System.Collections.Generic.List*1Barotrauma*LocationTypeChange : System.Object, {[System.Int32|integer]:Barotrauma.LocationTypeChange}, {[System.Int32|integer]:System.Object}
+---@class System.Nullable*1System*Collections*Immutable*ImmutableArray*2System*String : System.ValueType
+---@class Barotrauma.PrefabCollection*1Barotrauma*LocationType : System.Object, {[Barotrauma.Identifier]:Barotrauma.LocationType}, {[System.String|string]:Barotrauma.LocationType}
+---@class System.Collections.Generic.IEnumerable*1Barotrauma*Location
+---@class Barotrauma.LocationTypesFile : Barotrauma.GenericPrefabFile*1Barotrauma*LocationType
+---@class Barotrauma.GenericPrefabFile*1Barotrauma*LocationType : Barotrauma.ContentFile
+---@class System.Collections.Generic.Dictionary*1Barotrauma*LocationTypeChange*Requirement*1System*Int32 : System.Object, {[Barotrauma.LocationTypeChange.Requirement]:System.Int32|integer}, {[System.Object]:System.Object}
+---@class Barotrauma.LocationTypeChange.Requirement : System.Object
+---@class System.Nullable*1System*ValueTuple*2Barotrauma*LocationTypeChange*2System*Int32*2Barotrauma*MissionPrefab : System.ValueType
+---@class System.Collections.Generic.List*1Barotrauma*Location*TakenItem : System.Object, {[System.Int32|integer]:Barotrauma.Location.TakenItem}, {[System.Int32|integer]:System.Object}
+---@class Barotrauma.Location.TakenItem : System.Object
+---@class System.Collections.Generic.HashSet*1System*Int32 : System.Object
+---@class System.Collections.Generic.List*1Barotrauma*Location*LoadedMission : System.Object, {[System.Int32|integer]:Barotrauma.Location.LoadedMission}, {[System.Int32|integer]:System.Object}
+---@class Barotrauma.Location.LoadedMission : System.ValueType
+---@class System.Collections.Generic.Dictionary*1Barotrauma*Identifier*1Barotrauma*Location*StoreInfo : System.Object, {[Barotrauma.Identifier]:Barotrauma.Location.StoreInfo}, {[System.Object]:System.Object}
+---@class System.Collections.Generic.IEnumerable*1Barotrauma*Location*TakenItem
+---@class Barotrauma.LocationConnection-ref
+---@class System.Collections.Generic.List*1Barotrauma*LocationTypeChange*Requirement : System.Object, {[System.Int32|integer]:Barotrauma.LocationTypeChange.Requirement}, {[System.Int32|integer]:System.Object}
+---@class System.Func*1Barotrauma*Location*1System*Boolean : System.MulticastDelegate
+---@class System.Collections.Generic.HashSet*1Barotrauma*Location : System.Object
+---@class System.Collections.Generic.Dictionary*1System*UInt16*1Barotrauma*Entity : System.Object, {[System.UInt16|integer]:Barotrauma.Entity}, {[System.Object]:System.Object}
+---@class System.Collections.Generic.IReadOnlyCollection*1Barotrauma*Entity
+---@class System.Collections.Generic.List*1System*ValueTuple*2Barotrauma*Entity*2System*Boolean : System.Object, {[System.Int32|integer]:System.ValueTuple*1Barotrauma*Entity*1System*Boolean}, {[System.Int32|integer]:System.Object}
+---@class System.ValueTuple*1Barotrauma*Entity*1System*Boolean : System.ValueType, {[System.Int32|integer]:System.Object}
+---@class System.Collections.Generic.Queue*1Barotrauma*EntitySpawner*IEntitySpawnInfo : System.Object
+---@class Barotrauma.EntitySpawner.IEntitySpawnInfo
+---@class System.Collections.Generic.Queue*1Barotrauma*Entity : System.Object
+---@class System.Action*1Barotrauma*Item : System.MulticastDelegate
+---@class System.Action*1Barotrauma*Character : System.MulticastDelegate
+---@class System.Predicate*1Barotrauma*EntitySpawner*IEntitySpawnInfo : System.MulticastDelegate
+---@class System.Collections.Generic.List*1Barotrauma*MapEntity : System.Object, {[System.Int32|integer]:Barotrauma.MapEntity}, {[System.Int32|integer]:System.Object}
+---@class System.Collections.Generic.List : System.Array
+---@class System.Collections.Generic.IEnumerable*1Barotrauma*MapEntity
+---@class System.Action*1Microsoft*Xna*Framework*Rectangle : System.MulticastDelegate
+---@class System.Collections.Generic.List*1System*UInt16 : System.Object, {[System.Int32|integer]:System.UInt16|integer}, {[System.Int32|integer]:System.Object}
+---@class System.Collections.Generic.List*1Barotrauma*Upgrade : System.Object, {[System.Int32|integer]:Barotrauma.Upgrade}, {[System.Int32|integer]:System.Object}
+---@class System.Collections.Generic.HashSet*1Barotrauma*MapEntity : System.Object
+---@class System.Collections.Generic.HashSet*1Barotrauma*MapEntity*T : System.Object
+---@class Barotrauma.MapEntity.T : Barotrauma.MapEntity
+---@class System.Func*1Barotrauma*MapEntity*T*1System*Boolean : System.MulticastDelegate
+---@class System.Collections.Generic.HashSet*1Barotrauma*MapEntity*T : System.Object
+---@class Barotrauma.MapEntity.T : Barotrauma.MapEntity
+---@class System.Func*1Barotrauma*MapEntity*T*1System*Boolean : System.MulticastDelegate
+---@class System.Action*1Barotrauma*Items*Components*Door*1Barotrauma*Gap : System.MulticastDelegate
+---@class System.Collections.Immutable.ImmutableHashSet*1System*Type : System.Object
+---@class System.Collections.Generic.IEnumerable*1Barotrauma*MapEntityPrefab
+---@class System.Collections.Immutable.ImmutableHashSet*1System*String : System.Object
+---@class System.Predicate*1Barotrauma*MapEntityPrefab : System.MulticastDelegate
+---@class System.Reflection.ConstructorInfo : System.Reflection.MethodBase
+---@class Barotrauma.PrefabCollection*1Barotrauma*CoreEntityPrefab : System.Object, {[Barotrauma.Identifier]:Barotrauma.CoreEntityPrefab}, {[System.String|string]:Barotrauma.CoreEntityPrefab}
+---@class System.Action*1Barotrauma*ItemPrefab*1System*Boolean : System.MulticastDelegate
+---@class System.Action*1Barotrauma*ItemPrefab : System.MulticastDelegate
+---@class System.Action*1Barotrauma*ContentFile : System.MulticastDelegate
+---@class System.Collections.Concurrent.ConcurrentDictionary*1Barotrauma*Identifier*1Barotrauma*PrefabSelector*2Barotrauma*ItemPrefab : System.Object, {[Barotrauma.Identifier]:Barotrauma.PrefabSelector*1Barotrauma*ItemPrefab|(fun():Barotrauma.ItemPrefab)}, {[System.Object]:System.Object}
+---@class System.Collections.Generic.KeyValuePair*1Barotrauma*Identifier*1Barotrauma*PrefabSelector*2Barotrauma*ItemPrefab : System.ValueType
+---@class System.Collections.Generic.HashSet*1Barotrauma*ContentFile : System.Object
+---@class System.Collections.Generic.IEnumerable*1System*Collections*Generic*KeyValuePair*2Barotrauma*Identifier*2Barotrauma*PrefabSelector*3Barotrauma*ItemPrefab
+---@class Barotrauma.ItemPrefab-ref
+---@class System.Predicate*1Barotrauma*ItemPrefab : System.MulticastDelegate
+---@class System.Collections.Generic.IEnumerator*1Barotrauma*ItemPrefab
+---@class System.Action*1Barotrauma*JobPrefab*1System*Boolean : System.MulticastDelegate
+---@class System.Action*1Barotrauma*JobPrefab : System.MulticastDelegate
+---@class System.Collections.Concurrent.ConcurrentDictionary*1Barotrauma*Identifier*1Barotrauma*PrefabSelector*2Barotrauma*JobPrefab : System.Object, {[Barotrauma.Identifier]:Barotrauma.PrefabSelector*1Barotrauma*JobPrefab|(fun():Barotrauma.JobPrefab)}, {[System.Object]:System.Object}
+---@class System.Collections.Generic.KeyValuePair*1Barotrauma*Identifier*1Barotrauma*PrefabSelector*2Barotrauma*JobPrefab : System.ValueType
+---@class System.Collections.Generic.IEnumerable*1System*Collections*Generic*KeyValuePair*2Barotrauma*Identifier*2Barotrauma*PrefabSelector*3Barotrauma*JobPrefab
+---@class Barotrauma.JobPrefab-ref
+---@class System.Predicate*1Barotrauma*JobPrefab : System.MulticastDelegate
+---@class System.Collections.Generic.IEnumerator*1Barotrauma*JobPrefab
+---@class System.Action*1Barotrauma*CharacterPrefab*1System*Boolean : System.MulticastDelegate
+---@class System.Action*1Barotrauma*CharacterPrefab : System.MulticastDelegate
+---@class System.Collections.Concurrent.ConcurrentDictionary*1Barotrauma*Identifier*1Barotrauma*PrefabSelector*2Barotrauma*CharacterPrefab : System.Object, {[Barotrauma.Identifier]:Barotrauma.PrefabSelector*1Barotrauma*CharacterPrefab|(fun():Barotrauma.CharacterPrefab)}, {[System.Object]:System.Object}
+---@class System.Collections.Generic.KeyValuePair*1Barotrauma*Identifier*1Barotrauma*PrefabSelector*2Barotrauma*CharacterPrefab : System.ValueType
+---@class System.Collections.Generic.IEnumerable*1System*Collections*Generic*KeyValuePair*2Barotrauma*Identifier*2Barotrauma*PrefabSelector*3Barotrauma*CharacterPrefab
+---@class Barotrauma.CharacterPrefab-ref
+---@class System.Predicate*1Barotrauma*CharacterPrefab : System.MulticastDelegate
+---@class System.Collections.Generic.IEnumerator*1Barotrauma*CharacterPrefab
+---@class Barotrauma.HumanPrefab : Barotrauma.PrefabWithUintIdentifier
+---@class System.Action*1Barotrauma*HumanPrefab*1System*Boolean : System.MulticastDelegate
+---@class System.Action*1Barotrauma*HumanPrefab : System.MulticastDelegate
+---@class System.Collections.Concurrent.ConcurrentDictionary*1Barotrauma*Identifier*1Barotrauma*PrefabSelector*2Barotrauma*HumanPrefab : System.Object, {[Barotrauma.Identifier]:Barotrauma.PrefabSelector*1Barotrauma*HumanPrefab|(fun():Barotrauma.HumanPrefab)}, {[System.Object]:System.Object}
+---@class System.Collections.Generic.KeyValuePair*1Barotrauma*Identifier*1Barotrauma*PrefabSelector*2Barotrauma*HumanPrefab : System.ValueType
+---@class System.Collections.Generic.IEnumerable*1System*Collections*Generic*KeyValuePair*2Barotrauma*Identifier*2Barotrauma*PrefabSelector*3Barotrauma*HumanPrefab
+---@class Barotrauma.HumanPrefab-ref
+---@class System.Predicate*1Barotrauma*HumanPrefab : System.MulticastDelegate
+---@class System.Collections.Generic.IEnumerator*1Barotrauma*HumanPrefab
+---@class System.Action*1Barotrauma*AfflictionPrefab*1System*Boolean : System.MulticastDelegate
+---@class System.Action*1Barotrauma*AfflictionPrefab : System.MulticastDelegate
+---@class System.Collections.Concurrent.ConcurrentDictionary*1Barotrauma*Identifier*1Barotrauma*PrefabSelector*2Barotrauma*AfflictionPrefab : System.Object, {[Barotrauma.Identifier]:Barotrauma.PrefabSelector*1Barotrauma*AfflictionPrefab|(fun():Barotrauma.AfflictionPrefab)}, {[System.Object]:System.Object}
+---@class System.Collections.Generic.KeyValuePair*1Barotrauma*Identifier*1Barotrauma*PrefabSelector*2Barotrauma*AfflictionPrefab : System.ValueType
+---@class System.Collections.Generic.IEnumerable*1System*Collections*Generic*KeyValuePair*2Barotrauma*Identifier*2Barotrauma*PrefabSelector*3Barotrauma*AfflictionPrefab
+---@class Barotrauma.AfflictionPrefab-ref
+---@class System.Predicate*1Barotrauma*AfflictionPrefab : System.MulticastDelegate
+---@class System.Collections.Generic.IEnumerator*1Barotrauma*AfflictionPrefab
+---@class System.Action*1Barotrauma*TalentPrefab*1System*Boolean : System.MulticastDelegate
+---@class System.Action*1Barotrauma*TalentPrefab : System.MulticastDelegate
+---@class System.Collections.Concurrent.ConcurrentDictionary*1Barotrauma*Identifier*1Barotrauma*PrefabSelector*2Barotrauma*TalentPrefab : System.Object, {[Barotrauma.Identifier]:Barotrauma.PrefabSelector*1Barotrauma*TalentPrefab|(fun():Barotrauma.TalentPrefab)}, {[System.Object]:System.Object}
+---@class System.Collections.Generic.KeyValuePair*1Barotrauma*Identifier*1Barotrauma*PrefabSelector*2Barotrauma*TalentPrefab : System.ValueType
+---@class System.Collections.Generic.IEnumerable*1System*Collections*Generic*KeyValuePair*2Barotrauma*Identifier*2Barotrauma*PrefabSelector*3Barotrauma*TalentPrefab
+---@class Barotrauma.TalentPrefab-ref
+---@class System.Predicate*1Barotrauma*TalentPrefab : System.MulticastDelegate
+---@class System.Collections.Generic.IEnumerator*1Barotrauma*TalentPrefab
+---@class System.Action*1Barotrauma*TalentTree*1System*Boolean : System.MulticastDelegate
+---@class System.Action*1Barotrauma*TalentTree : System.MulticastDelegate
+---@class System.Collections.Concurrent.ConcurrentDictionary*1Barotrauma*Identifier*1Barotrauma*PrefabSelector*2Barotrauma*TalentTree : System.Object, {[Barotrauma.Identifier]:Barotrauma.PrefabSelector*1Barotrauma*TalentTree|(fun():Barotrauma.TalentTree)}, {[System.Object]:System.Object}
+---@class System.Collections.Generic.KeyValuePair*1Barotrauma*Identifier*1Barotrauma*PrefabSelector*2Barotrauma*TalentTree : System.ValueType
+---@class System.Collections.Generic.IEnumerable*1System*Collections*Generic*KeyValuePair*2Barotrauma*Identifier*2Barotrauma*PrefabSelector*3Barotrauma*TalentTree
+---@class Barotrauma.TalentTree-ref
+---@class System.Predicate*1Barotrauma*TalentTree : System.MulticastDelegate
+---@class System.Collections.Generic.IEnumerator*1Barotrauma*TalentTree
+---@class System.Action*1Barotrauma*OrderPrefab*1System*Boolean : System.MulticastDelegate
+---@class System.Action*1Barotrauma*OrderPrefab : System.MulticastDelegate
+---@class System.Collections.Concurrent.ConcurrentDictionary*1Barotrauma*Identifier*1Barotrauma*PrefabSelector*2Barotrauma*OrderPrefab : System.Object, {[Barotrauma.Identifier]:Barotrauma.PrefabSelector*1Barotrauma*OrderPrefab|(fun():Barotrauma.OrderPrefab)}, {[System.Object]:System.Object}
+---@class System.Collections.Generic.KeyValuePair*1Barotrauma*Identifier*1Barotrauma*PrefabSelector*2Barotrauma*OrderPrefab : System.ValueType
+---@class System.Collections.Generic.IEnumerable*1System*Collections*Generic*KeyValuePair*2Barotrauma*Identifier*2Barotrauma*PrefabSelector*3Barotrauma*OrderPrefab
+---@class Barotrauma.OrderPrefab-ref
+---@class System.Predicate*1Barotrauma*OrderPrefab : System.MulticastDelegate
+---@class System.Collections.Generic.IEnumerator*1Barotrauma*OrderPrefab
+---@class System.Action*1Barotrauma*EventPrefab*1System*Boolean : System.MulticastDelegate
+---@class System.Action*1Barotrauma*EventPrefab : System.MulticastDelegate
+---@class System.Collections.Concurrent.ConcurrentDictionary*1Barotrauma*Identifier*1Barotrauma*PrefabSelector*2Barotrauma*EventPrefab : System.Object, {[Barotrauma.Identifier]:Barotrauma.PrefabSelector*1Barotrauma*EventPrefab|(fun():Barotrauma.EventPrefab)}, {[System.Object]:System.Object}
+---@class System.Collections.Generic.KeyValuePair*1Barotrauma*Identifier*1Barotrauma*PrefabSelector*2Barotrauma*EventPrefab : System.ValueType
+---@class System.Collections.Generic.IEnumerable*1System*Collections*Generic*KeyValuePair*2Barotrauma*Identifier*2Barotrauma*PrefabSelector*3Barotrauma*EventPrefab
+---@class Barotrauma.EventPrefab-ref
+---@class System.Predicate*1Barotrauma*EventPrefab : System.MulticastDelegate
+---@class System.Collections.Generic.IEnumerator*1Barotrauma*EventPrefab
+---@class System.Action*1Barotrauma*GUIPrefab*1System*Boolean : System.MulticastDelegate
+---@class System.Action*1Barotrauma*GUIPrefab : System.MulticastDelegate
+---@class System.Collections.Concurrent.ConcurrentDictionary*1Barotrauma*Identifier*1Barotrauma*PrefabSelector*2Barotrauma*GUIPrefab : System.Object, {[Barotrauma.Identifier]:Barotrauma.PrefabSelector*1Barotrauma*GUIPrefab|(fun():Barotrauma.GUIPrefab)}, {[System.Object]:System.Object}
+---@class System.Collections.Generic.KeyValuePair*1Barotrauma*Identifier*1Barotrauma*PrefabSelector*2Barotrauma*GUIPrefab : System.ValueType
+---@class System.Collections.Generic.IEnumerable*1System*Collections*Generic*KeyValuePair*2Barotrauma*Identifier*2Barotrauma*PrefabSelector*3Barotrauma*GUIPrefab
+---@class Barotrauma.GUIPrefab-ref
+---@class System.Predicate*1Barotrauma*GUIPrefab : System.MulticastDelegate
+---@class System.Collections.Generic.IEnumerator*1Barotrauma*GUIPrefab
+---@class System.Action*1Barotrauma*SoundPrefab*1System*Boolean : System.MulticastDelegate
+---@class System.Action*1Barotrauma*SoundPrefab : System.MulticastDelegate
+---@class System.Collections.Concurrent.ConcurrentDictionary*1Barotrauma*Identifier*1Barotrauma*PrefabSelector*2Barotrauma*SoundPrefab : System.Object, {[Barotrauma.Identifier]:Barotrauma.PrefabSelector*1Barotrauma*SoundPrefab|(fun():Barotrauma.SoundPrefab)}, {[System.Object]:System.Object}
+---@class System.Collections.Generic.KeyValuePair*1Barotrauma*Identifier*1Barotrauma*PrefabSelector*2Barotrauma*SoundPrefab : System.ValueType
+---@class System.Collections.Generic.IEnumerable*1System*Collections*Generic*KeyValuePair*2Barotrauma*Identifier*2Barotrauma*PrefabSelector*3Barotrauma*SoundPrefab
+---@class Barotrauma.SoundPrefab-ref
+---@class System.Predicate*1Barotrauma*SoundPrefab : System.MulticastDelegate
+---@class System.Collections.Generic.IEnumerator*1Barotrauma*SoundPrefab
+---@class System.Action*1Barotrauma*BackgroundMusic*1System*Boolean : System.MulticastDelegate
+---@class System.Action*1Barotrauma*BackgroundMusic : System.MulticastDelegate
+---@class System.Collections.Concurrent.ConcurrentDictionary*1Barotrauma*Identifier*1Barotrauma*PrefabSelector*2Barotrauma*BackgroundMusic : System.Object, {[Barotrauma.Identifier]:Barotrauma.PrefabSelector*1Barotrauma*BackgroundMusic|(fun():Barotrauma.BackgroundMusic)}, {[System.Object]:System.Object}
+---@class System.Collections.Generic.KeyValuePair*1Barotrauma*Identifier*1Barotrauma*PrefabSelector*2Barotrauma*BackgroundMusic : System.ValueType
+---@class System.Collections.Generic.IEnumerable*1System*Collections*Generic*KeyValuePair*2Barotrauma*Identifier*2Barotrauma*PrefabSelector*3Barotrauma*BackgroundMusic
+---@class Barotrauma.BackgroundMusic-ref
+---@class System.Predicate*1Barotrauma*BackgroundMusic : System.MulticastDelegate
+---@class System.Collections.Generic.IEnumerator*1Barotrauma*BackgroundMusic
+---@class System.Action*1Barotrauma*GUISound*1System*Boolean : System.MulticastDelegate
+---@class System.Action*1Barotrauma*GUISound : System.MulticastDelegate
+---@class System.Collections.Concurrent.ConcurrentDictionary*1Barotrauma*Identifier*1Barotrauma*PrefabSelector*2Barotrauma*GUISound : System.Object, {[Barotrauma.Identifier]:Barotrauma.PrefabSelector*1Barotrauma*GUISound|(fun():Barotrauma.GUISound)}, {[System.Object]:System.Object}
+---@class System.Collections.Generic.KeyValuePair*1Barotrauma*Identifier*1Barotrauma*PrefabSelector*2Barotrauma*GUISound : System.ValueType
+---@class System.Collections.Generic.IEnumerable*1System*Collections*Generic*KeyValuePair*2Barotrauma*Identifier*2Barotrauma*PrefabSelector*3Barotrauma*GUISound
+---@class Barotrauma.GUISound-ref
+---@class System.Predicate*1Barotrauma*GUISound : System.MulticastDelegate
+---@class System.Collections.Generic.IEnumerator*1Barotrauma*GUISound
+---@class System.Action*1Barotrauma*DamageSound*1System*Boolean : System.MulticastDelegate
+---@class System.Action*1Barotrauma*DamageSound : System.MulticastDelegate
+---@class System.Collections.Concurrent.ConcurrentDictionary*1Barotrauma*Identifier*1Barotrauma*PrefabSelector*2Barotrauma*DamageSound : System.Object, {[Barotrauma.Identifier]:Barotrauma.PrefabSelector*1Barotrauma*DamageSound|(fun():Barotrauma.DamageSound)}, {[System.Object]:System.Object}
+---@class System.Collections.Generic.KeyValuePair*1Barotrauma*Identifier*1Barotrauma*PrefabSelector*2Barotrauma*DamageSound : System.ValueType
+---@class System.Collections.Generic.IEnumerable*1System*Collections*Generic*KeyValuePair*2Barotrauma*Identifier*2Barotrauma*PrefabSelector*3Barotrauma*DamageSound
+---@class Barotrauma.DamageSound-ref
+---@class System.Predicate*1Barotrauma*DamageSound : System.MulticastDelegate
+---@class System.Collections.Generic.IEnumerator*1Barotrauma*DamageSound
+---@class System.Threading.ReaderWriterLockSlim : System.Object
+---@class System.Collections.Generic.List*1Barotrauma*SoundPrefab : System.Object, {[System.Int32|integer]:Barotrauma.SoundPrefab}, {[System.Int32|integer]:System.Object}
+---@class Barotrauma.CharacterFile : Barotrauma.ContentFile
+---@class System.Collections.Generic.List*1Barotrauma*WearableSprite : System.Object, {[System.Int32|integer]:Barotrauma.WearableSprite}, {[System.Int32|integer]:System.Object}
+---@class System.Collections.Generic.Dictionary*1Barotrauma*WearableType*1Microsoft*Xna*Framework*Graphics*SpriteBatch*EffectWithParams : System.Object, {[Barotrauma.WearableType]:Microsoft.Xna.Framework.Graphics.SpriteBatch.EffectWithParams}, {[System.Object]:System.Object}
+---@class System.ValueTuple*1Barotrauma*Identifier*1Barotrauma*Identifier : System.ValueType, {[System.Int32|integer]:System.Object}
+---@class System.Collections.Immutable.ImmutableArray*1System*ValueTuple*2Microsoft*Xna*Framework*Color*2System*Single : System.ValueType, {[System.Int32|integer]:System.ValueTuple*1Microsoft*Xna*Framework*Color*1System*Single}, {[System.Int32|integer]:System.ValueTuple*1Microsoft*Xna*Framework*Color*1System*Single}, {[System.Int32|integer]:System.Object}, {[System.Int32|integer]:System.ValueTuple*1Microsoft*Xna*Framework*Color*1System*Single}
+---@class System.ValueTuple*1Microsoft*Xna*Framework*Color*1System*Single : System.ValueType, {[System.Int32|integer]:System.Object}
+---@class System.Collections.Generic.Dictionary*1Barotrauma*StatTypes*1System*Collections*Generic*List*2Barotrauma*SavedStatValue : System.Object, {[Barotrauma.StatTypes]:System.Collections.Generic.List*1Barotrauma*SavedStatValue|Barotrauma.SavedStatValue[]}, {[System.Object]:System.Object}
+---@class System.Collections.Generic.List*1Barotrauma*SavedStatValue : System.Object, {[System.Int32|integer]:Barotrauma.SavedStatValue}, {[System.Int32|integer]:System.Object}
+---@class Barotrauma.SavedStatValue : System.Object
+---@class Barotrauma.NPCPersonalityTrait : Barotrauma.PrefabWithUintIdentifier
+---@class System.Collections.Generic.IReadOnlyList*1Barotrauma*ContentXElement : {[System.Int32|integer]:Barotrauma.ContentXElement}
+---@class System.Collections.Generic.IEnumerable*1System*Single
+---@class Barotrauma.Order-arr : System.Array
+---@class System.Collections.Generic.List*1Barotrauma*LinkedSubmarine : System.Object, {[System.Int32|integer]:Barotrauma.LinkedSubmarine}, {[System.Int32|integer]:System.Object}
+---@class Barotrauma.LinkedSubmarine : Barotrauma.MapEntity
+---@class System.Func*1Barotrauma*AfflictionPrefab*1System*Boolean : System.MulticastDelegate
+---@class System.Nullable*1Barotrauma*WearableType : System.ValueType
+---@class System.Collections.Immutable.ImmutableArray
+---@class Barotrauma.MultiplayerPreferences : System.Object
+---@class Barotrauma.Either*1Barotrauma*Job*1Barotrauma*JobPrefab : System.Object
+---@class System.Collections.Immutable.ImmutableArray*1Barotrauma*CharacterInfo*HeadPreset : System.ValueType, {[System.Int32|integer]:Barotrauma.CharacterInfo.HeadPreset}, {[System.Int32|integer]:Barotrauma.CharacterInfo.HeadPreset}, {[System.Int32|integer]:System.Object}, {[System.Int32|integer]:Barotrauma.CharacterInfo.HeadPreset}
+---@class System.Collections.Immutable.ImmutableDictionary*1Barotrauma*Identifier*1System*Collections*Immutable*ImmutableHashSet*2Barotrauma*Identifier : System.Object, {[Barotrauma.Identifier]:System.Collections.Immutable.ImmutableHashSet*1Barotrauma*Identifier|Barotrauma.Identifier[]}, {[Barotrauma.Identifier]:System.Collections.Immutable.ImmutableHashSet*1Barotrauma*Identifier|Barotrauma.Identifier[]}, {[System.Object]:System.Object}
+---@class System.Collections.Generic.List*1Barotrauma*CharacterSound : System.Object, {[System.Int32|integer]:Barotrauma.CharacterSound}, {[System.Int32|integer]:System.Object}
+---@class Barotrauma.CharacterSound : System.Object
+---@class System.Collections.Generic.Dictionary*1System*Object*1Barotrauma*HUDProgressBar : System.Object, {[System.Object]:Barotrauma.HUDProgressBar}, {[System.Object]:System.Object}
+---@class Barotrauma.HUDProgressBar : System.Object
+---@class System.Collections.Generic.List*1System*Collections*Generic*KeyValuePair*2System*Object*2Barotrauma*HUDProgressBar : System.Object, {[System.Int32|integer]:System.Collections.Generic.KeyValuePair*1System*Object*1Barotrauma*HUDProgressBar}, {[System.Int32|integer]:System.Object}
+---@class System.Collections.Generic.KeyValuePair*1System*Object*1Barotrauma*HUDProgressBar : System.ValueType
+---@class System.Collections.Generic.List*1Barotrauma*Character*GUIMessage : System.Object, {[System.Int32|integer]:Barotrauma.Character.GUIMessage}, {[System.Int32|integer]:System.Object}
+---@class Barotrauma.Character.GUIMessage : System.Object
+---@class System.Collections.Generic.List*1Barotrauma*Character*ObjectiveEntity : System.Object, {[System.Int32|integer]:Barotrauma.Character.ObjectiveEntity}, {[System.Int32|integer]:System.Object}
+---@class Barotrauma.Character.ObjectiveEntity : System.Object
+---@class System.Collections.Generic.List*1System*ValueTuple*2Barotrauma*Item*2System*Single : System.Object, {[System.Int32|integer]:System.ValueTuple*1Barotrauma*Item*1System*Single}, {[System.Int32|integer]:System.Object}
+---@class System.ValueTuple*1Barotrauma*Item*1System*Single : System.ValueType, {[System.Int32|integer]:System.Object}
+---@class Barotrauma.Key-arr : System.Array
+---@class System.Collections.Generic.HashSet*1Barotrauma*LatchOntoAI : System.Object
+---@class Barotrauma.LatchOntoAI : System.Object
+---@class System.Collections.Generic.HashSet*1Barotrauma*Items*Components*Projectile : System.Object
+---@class System.Collections.Generic.Dictionary*1System*String*1Barotrauma*ActiveTeamChange : System.Object, {[System.String|string]:Barotrauma.ActiveTeamChange}, {[System.Object]:System.Object}
+---@class Barotrauma.ActiveTeamChange : System.Object
+---@class Barotrauma.CombatAction : Barotrauma.EventAction
+---@class Barotrauma.EventAction : System.Object
+---@class System.Collections.Generic.List*1Barotrauma*Character*Attacker : System.Object, {[System.Int32|integer]:Barotrauma.Character.Attacker}, {[System.Int32|integer]:System.Object}
+---@class Barotrauma.Character.Attacker : System.Object
+---@class System.Collections.Generic.Dictionary*1Barotrauma*ItemPrefab*1System*Double : System.Object, {[Barotrauma.ItemPrefab]:System.Double|number}, {[System.Object]:System.Object}
+---@class System.Collections.Generic.Dictionary*1Barotrauma*ActionType*1System*Collections*Generic*List*2Barotrauma*StatusEffect : System.Object, {[Barotrauma.ActionType]:System.Collections.Generic.List*1Barotrauma*StatusEffect|Barotrauma.StatusEffect[]}, {[System.Object]:System.Object}
+---@class System.Action*1Barotrauma*Character*1Barotrauma*Character : System.MulticastDelegate
+---@class Barotrauma.ConversationAction : Barotrauma.EventAction
+---@class Barotrauma.Character.OnDeathHandler : System.MulticastDelegate
+---@class Barotrauma.Character.OnAttackedHandler : System.MulticastDelegate
+---@class Barotrauma.Character.AttackTargetData : System.ValueType
+---@class System.Collections.Generic.List*1Barotrauma*AIChatMessage : System.Object, {[System.Int32|integer]:Barotrauma.AIChatMessage}, {[System.Int32|integer]:System.Object}
+---@class System.Collections.Generic.HashSet*1Barotrauma*AttackContext : System.Object
+---@class System.Collections.Generic.List*1Barotrauma*Hull : System.Object, {[System.Int32|integer]:Barotrauma.Hull}, {[System.Int32|integer]:System.Object}
+---@class System.Collections.Generic.HashSet*1Barotrauma*Hull : System.Object
+---@class System.Collections.Generic.List*1Barotrauma*CharacterTalent : System.Object, {[System.Int32|integer]:Barotrauma.CharacterTalent}, {[System.Int32|integer]:System.Object}
+---@class System.Collections.Generic.Dictionary*1Barotrauma*StatTypes*1System*Single : System.Object, {[Barotrauma.StatTypes]:System.Single|number}, {[System.Object]:System.Object}
+---@class Barotrauma.Character.InputNetFlags : System.Enum
+---@class System.Collections.Generic.List*1Barotrauma*Character*NetInputMem : System.Object, {[System.Int32|integer]:Barotrauma.Character.NetInputMem}, {[System.Int32|integer]:System.Object}
+---@class Barotrauma.Character.NetInputMem : System.ValueType
+---@class System.Collections.Generic.List*1Barotrauma*CharacterStateInfo : System.Object, {[System.Int32|integer]:Barotrauma.CharacterStateInfo}, {[System.Int32|integer]:System.Object}
+---@class Barotrauma.CharacterStateInfo : Barotrauma.PosInfo
+---@class Barotrauma.PosInfo : System.Object
+---@class System.Collections.Generic.IEnumerable*1Barotrauma*Particles*ParticleEmitter
+---@class System.Collections.Generic.IEnumerable*1Barotrauma*Character*ObjectiveEntity
+---@class System.Collections.Generic.IEnumerable*1Barotrauma*Character*Attacker
+---@class Barotrauma.AnimController.Animation : System.Enum
+---@class System.Nullable*1Barotrauma*InvSlotType : System.ValueType
+---@class System.Func*1Barotrauma*InvSlotType*1System*Boolean : System.MulticastDelegate
+---@class Barotrauma.Item-ref
+---@class System.Func*1Barotrauma*Item*1System*Boolean : System.MulticastDelegate
+---@class System.Func*1Barotrauma*Item*1System*Single : System.MulticastDelegate
+---@class System.Func*1Barotrauma*Order*1System*Boolean : System.MulticastDelegate
+---@class System.Nullable*1Barotrauma*Networking*ChatMessageType : System.ValueType
+---@class System.Collections.Generic.IEnumerable*1Barotrauma*Affliction
+---@class Barotrauma.Limb-ref
+---@class System.Collections.Generic.IEnumerable*1Barotrauma*AttackContext
+---@class Barotrauma.Item-arr : System.Array
+---@class Barotrauma.CharacterSound.SoundType : System.Enum
+---@class System.Func*1Barotrauma*CharacterSound*1System*Boolean : System.MulticastDelegate
+---@class System.Nullable*1System*ValueTuple*2Barotrauma*Affliction*2Barotrauma*LocalizedString : System.ValueType
+---@class System.Collections.Generic.List*1System*ValueTuple*2Barotrauma*Affliction*2System*Single : System.Object, {[System.Int32|integer]:System.ValueTuple*1Barotrauma*Affliction*1System*Single}, {[System.Int32|integer]:System.Object}
+---@class System.ValueTuple*1Barotrauma*Affliction*1System*Single : System.ValueType, {[System.Int32|integer]:System.Object}
+---@class System.Collections.Generic.List*1System*ValueTuple*2Barotrauma*CharacterHealth*LimbHealth*2Barotrauma*AfflictionPrefab*2System*Single : System.Object, {[System.Int32|integer]:System.ValueTuple*1Barotrauma*CharacterHealth*LimbHealth*1Barotrauma*AfflictionPrefab*1System*Single}, {[System.Int32|integer]:System.Object}
+---@class System.ValueTuple*1Barotrauma*CharacterHealth*LimbHealth*1Barotrauma*AfflictionPrefab*1System*Single : System.ValueType, {[System.Int32|integer]:System.Object}
+---@class System.Collections.Generic.List*1System*ValueTuple*2Barotrauma*AfflictionPrefab*PeriodicEffect*2System*Single : System.Object, {[System.Int32|integer]:System.ValueTuple*1Barotrauma*AfflictionPrefab*PeriodicEffect*1System*Single}, {[System.Int32|integer]:System.Object}
+---@class System.ValueTuple*1Barotrauma*AfflictionPrefab*PeriodicEffect*1System*Single : System.ValueType, {[System.Int32|integer]:System.Object}
+---@class System.Collections.Generic.List*1Barotrauma*CharacterHealth*LimbHealth : System.Object, {[System.Int32|integer]:Barotrauma.CharacterHealth.LimbHealth}, {[System.Int32|integer]:System.Object}
+---@class System.Collections.Generic.Dictionary*1Barotrauma*Affliction*1Barotrauma*CharacterHealth*LimbHealth : System.Object, {[Barotrauma.Affliction]:Barotrauma.CharacterHealth.LimbHealth}, {[System.Object]:System.Object}
+---@class System.Collections.Generic.HashSet*1Barotrauma*Affliction : System.Object
+---@class System.Collections.Generic.List*1System*ValueTuple*2Barotrauma*CharacterHealth*LimbHealth*2Barotrauma*Affliction : System.Object, {[System.Int32|integer]:System.ValueTuple*1Barotrauma*CharacterHealth*LimbHealth*1Barotrauma*Affliction}, {[System.Int32|integer]:System.Object}
+---@class System.ValueTuple*1Barotrauma*CharacterHealth*LimbHealth*1Barotrauma*Affliction : System.ValueType, {[System.Int32|integer]:System.Object}
+---@class System.Collections.Generic.List*1System*Collections*Generic*KeyValuePair*2Barotrauma*Affliction*2Barotrauma*CharacterHealth*LimbHealth : System.Object, {[System.Int32|integer]:System.Collections.Generic.KeyValuePair*1Barotrauma*Affliction*1Barotrauma*CharacterHealth*LimbHealth}, {[System.Int32|integer]:System.Object}
+---@class System.Collections.Generic.KeyValuePair*1Barotrauma*Affliction*1Barotrauma*CharacterHealth*LimbHealth : System.ValueType
+---@class Barotrauma.CharacterHealth.T : Barotrauma.Affliction
+---@class System.Func*1Barotrauma*Affliction*1System*Boolean : System.MulticastDelegate
+---@class System.Nullable*1Barotrauma*ActionType : System.ValueType
+---@class System.ValueTuple*1Barotrauma*CauseOfDeathType*1Barotrauma*Affliction : System.ValueType, {[System.Int32|integer]:System.Object}
+---@class System.Collections.Generic.IReadOnlyCollection*1Barotrauma*Affliction
+---@class Barotrauma.CharacterInventory.Layout : System.Enum
+---@class System.Collections.Generic.Dictionary*1Barotrauma*InvSlotType*1Barotrauma*Sprite : System.Object, {[Barotrauma.InvSlotType]:Barotrauma.Sprite}, {[System.Object]:System.Object}
+---@class System.Collections.Generic.List*1Barotrauma*Inventory*SlotReference : System.Object, {[System.Int32|integer]:Barotrauma.Inventory.SlotReference}, {[System.Int32|integer]:System.Object}
+---@class Barotrauma.Inventory.SlotReference : System.Object
+---@class Barotrauma.InvSlotType-arr : System.Array
+---@class Barotrauma.CharacterInventory.QuickUseAction : System.Enum
+---@class System.Nullable*1Barotrauma*CharacterInventory*QuickUseAction : System.ValueType
+---@class System.Collections.Generic.IEnumerable*1Barotrauma*InvSlotType
+---@class System.Collections.Generic.Dictionary*1Barotrauma*AbilityEffectType*1System*Collections*Generic*List*2Barotrauma*Abilities*CharacterAbilityGroupEffect : System.Object, {[Barotrauma.AbilityEffectType]:System.Collections.Generic.List*1Barotrauma*Abilities*CharacterAbilityGroupEffect|Barotrauma.Abilities.CharacterAbilityGroupEffect[]}, {[System.Object]:System.Object}
+---@class System.Collections.Generic.List*1Barotrauma*Abilities*CharacterAbilityGroupEffect : System.Object, {[System.Int32|integer]:Barotrauma.Abilities.CharacterAbilityGroupEffect}, {[System.Int32|integer]:System.Object}
+---@class Barotrauma.Abilities.CharacterAbilityGroupEffect : Barotrauma.Abilities.CharacterAbilityGroup
+---@class Barotrauma.Abilities.CharacterAbilityGroup : System.Object
+---@class System.Collections.Generic.List*1Barotrauma*Abilities*CharacterAbilityGroupInterval : System.Object, {[System.Int32|integer]:Barotrauma.Abilities.CharacterAbilityGroupInterval}, {[System.Int32|integer]:System.Object}
+---@class Barotrauma.Abilities.CharacterAbilityGroupInterval : Barotrauma.Abilities.CharacterAbilityGroup
+---@class System.Collections.Generic.List*1Barotrauma*CharacterParams*SubParam : System.Object, {[System.Int32|integer]:Barotrauma.CharacterParams.SubParam}, {[System.Int32|integer]:System.Object}
+---@class System.Collections.Generic.List*1Barotrauma*CharacterParams*SoundParams : System.Object, {[System.Int32|integer]:Barotrauma.CharacterParams.SoundParams}, {[System.Int32|integer]:System.Object}
+---@class System.Collections.Generic.List*1Barotrauma*CharacterParams*ParticleParams : System.Object, {[System.Int32|integer]:Barotrauma.CharacterParams.ParticleParams}, {[System.Int32|integer]:System.Object}
+---@class System.Collections.Generic.List*1Barotrauma*CharacterParams*InventoryParams : System.Object, {[System.Int32|integer]:Barotrauma.CharacterParams.InventoryParams}, {[System.Int32|integer]:System.Object}
+---@class Barotrauma.CharacterParams.T : Barotrauma.CharacterParams.SubParam
+---@class System.Collections.Generic.IList*1Barotrauma*CharacterParams*T : {[System.Int32|integer]:Barotrauma.CharacterParams.T}
+---@class System.Func*1Barotrauma*ContentXElement*1Barotrauma*CharacterParams*1Barotrauma*CharacterParams*T : System.MulticastDelegate
+---@class Barotrauma.CharacterParams.T : Barotrauma.CharacterParams.SubParam
+---@class Barotrauma.T-ref
+---@class System.Collections.Generic.IList*1Barotrauma*CharacterParams*T : {[System.Int32|integer]:Barotrauma.CharacterParams.T}
+---@class System.Func*1System*Collections*Generic*IList*2Barotrauma*CharacterParams*T*1System*Boolean : System.MulticastDelegate
+---@class System.Collections.Generic.List*1Barotrauma*CharacterParams*TargetParams : System.Object, {[System.Int32|integer]:Barotrauma.CharacterParams.TargetParams}, {[System.Int32|integer]:System.Object}
+---@class Barotrauma.WallTargetingMethod : System.Enum
+---@class System.Collections.Generic.IEnumerable*1Barotrauma*CharacterParams*TargetParams
+---@class Barotrauma.TargetParams-ref
+---@class System.Collections.Generic.List*1Barotrauma*CharacterParams*InventoryParams*InventoryItem : System.Object, {[System.Int32|integer]:Barotrauma.CharacterParams.InventoryParams.InventoryItem}, {[System.Int32|integer]:System.Object}
+---@class Barotrauma.CharacterParams.InventoryParams.InventoryItem : Barotrauma.CharacterParams.SubParam
+---@class Barotrauma.SerializableEntityEditor : Barotrauma.GUIComponent
+---@class Barotrauma.CharacterParams.SubParam.T : Barotrauma.CharacterParams.SubParam
+---@class System.Collections.Generic.IList*1Barotrauma*CharacterParams*SubParam*T : {[System.Int32|integer]:Barotrauma.CharacterParams.SubParam.T}
+---@class System.Collections.Generic.Dictionary*1Barotrauma*Items*Components*VineTileType*1Barotrauma*Items*Components*VineSprite : System.Object, {[Barotrauma.Items.Components.VineTileType]:Barotrauma.Items.Components.VineSprite}, {[System.Object]:System.Object}
+---@class Barotrauma.Items.Components.VineTileType : System.Enum
+---@class System.Collections.Generic.HashSet*1Barotrauma*Items*Components*PowerTransfer : System.Object
+---@class System.Collections.Generic.HashSet*1Barotrauma*Items*Components*PowerContainer : System.Object
+---@class System.Collections.Generic.Dictionary*1Barotrauma*Item*1System*Int32 : System.Object, {[Barotrauma.Item]:System.Int32|integer}, {[System.Object]:System.Object}
+---@class System.Collections.Generic.List*1System*Tuple*2System*UInt16*2System*Int32 : System.Object, {[System.Int32|integer]:System.Tuple*1System*UInt16*1System*Int32}, {[System.Int32|integer]:System.Object}
+---@class System.Tuple*1System*UInt16*1System*Int32 : System.Object, {[System.Int32|integer]:System.Object}
+---@class System.Collections.Generic.List*1Barotrauma*MapCreatures*Behavior*BallastFloraBehavior*AITarget : System.Object, {[System.Int32|integer]:Barotrauma.MapCreatures.Behavior.BallastFloraBehavior.AITarget}, {[System.Int32|integer]:System.Object}
+---@class Barotrauma.MapCreatures.Behavior.BallastFloraBehavior.AITarget : System.ValueType
+---@class System.Collections.Generic.List*1Barotrauma*MapCreatures*Behavior*BallastFloraBranch : System.Object, {[System.Int32|integer]:Barotrauma.MapCreatures.Behavior.BallastFloraBranch}, {[System.Int32|integer]:System.Object}
+---@class Barotrauma.MapCreatures.Behavior.BallastFloraStateMachine : System.Object
+---@class System.Collections.Generic.List*1Barotrauma*MapCreatures*Behavior*BallastFloraBehavior : System.Object, {[System.Int32|integer]:Barotrauma.MapCreatures.Behavior.BallastFloraBehavior}, {[System.Int32|integer]:System.Object}
+---@class System.Collections.Generic.IEnumerable*1Barotrauma*MapCreatures*Behavior*BallastFloraBehavior
+---@class Barotrauma.BallastFloraPrefab : Barotrauma.Prefab
+---@class Barotrauma.Items.Components.TileSide : System.Enum
+---@class System.Collections.Generic.List
+---@class Barotrauma.MapCreatures.Behavior.BallastFloraBehavior.AttackType : System.Enum
+---@class Barotrauma.MapCreatures.Behavior.BallastFloraBehavior.NetworkHeader : System.Enum
+---@class System.Collections.Generic.Dictionary*1Barotrauma*Items*Components*TileSide*1Barotrauma*MapCreatures*Behavior*BallastFloraBranch : System.Object, {[Barotrauma.Items.Components.TileSide]:Barotrauma.MapCreatures.Behavior.BallastFloraBranch}, {[System.Object]:System.Object}
+---@class System.Nullable*1Barotrauma*Items*Components*FoliageConfig : System.ValueType
+---@class System.Collections.Generic.List*1Barotrauma*PetBehavior*ItemProduction : System.Object, {[System.Int32|integer]:Barotrauma.PetBehavior.ItemProduction}, {[System.Int32|integer]:System.Object}
+---@class Barotrauma.PetBehavior.ItemProduction : System.Object
+---@class System.Collections.Generic.List*1Barotrauma*PetBehavior*Food : System.Object, {[System.Int32|integer]:Barotrauma.PetBehavior.Food}, {[System.Int32|integer]:System.Object}
+---@class Barotrauma.PetBehavior.Food : System.Object
+---@class Barotrauma.PetBehavior.StatusIndicatorType : System.Enum
+---@class System.Nullable*1Barotrauma*OrderCategory : System.ValueType
+---@class System.Collections.Immutable.ImmutableDictionary*1Barotrauma*Identifier*1System*Collections*Immutable*ImmutableArray*2Barotrauma*Identifier : System.Object, {[Barotrauma.Identifier]:System.Collections.Immutable.ImmutableArray*1Barotrauma*Identifier|Barotrauma.Identifier[]}, {[Barotrauma.Identifier]:System.Collections.Immutable.ImmutableArray*1Barotrauma*Identifier|Barotrauma.Identifier[]}, {[System.Object]:System.Object}
+---@class Barotrauma.ListDictionary*1Barotrauma*Identifier*1Barotrauma*LocalizedString : System.Object, {[Barotrauma.Identifier]:Barotrauma.LocalizedString}
+---@class System.Collections.Generic.KeyValuePair*1Barotrauma*Identifier*1Barotrauma*LocalizedString : System.ValueType
+---@class System.Collections.Immutable.ImmutableDictionary*1Barotrauma*Identifier*1Barotrauma*Sprite : System.Object, {[Barotrauma.Identifier]:Barotrauma.Sprite}, {[Barotrauma.Identifier]:Barotrauma.Sprite}, {[System.Object]:System.Object}
+---@class Barotrauma.OrderPrefab.OrderTargetType : System.Enum
+---@class System.Collections.Generic.IReadOnlyList*1Barotrauma*Identifier : {[System.Int32|integer]:Barotrauma.Identifier}
+---@class Barotrauma.Items.Components.ItemComponent-ref
+---@class Barotrauma.OrdersFile : Barotrauma.ContentFile
+---@class Barotrauma.Order.OrderType : System.Enum
+---@class Barotrauma.Order.OrderTargetType : System.Enum
+---@class System.Collections.Immutable.ImmutableArray
+---@class System.Nullable*1Barotrauma*Order*OrderType : System.ValueType
+---@class System.Nullable*1Barotrauma*Order*OrderTargetType : System.ValueType
+---@class Barotrauma.SteeringManager : System.Object
+---@class System.Collections.Generic.IEnumerable*1Barotrauma*Hull
+---@class System.Collections.Generic.HashSet*1Barotrauma*Gap : System.Object
+---@class System.Collections.Generic.Dictionary*1Barotrauma*AITarget*1Barotrauma*AITargetMemory : System.Object, {[Barotrauma.AITarget]:Barotrauma.AITargetMemory}, {[System.Object]:System.Object}
+---@class Barotrauma.CirclePhase : System.Enum
+---@class System.Collections.Generic.List*1System*Single : System.Object, {[System.Int32|integer]:System.Single|number}, {[System.Int32|integer]:System.Object}
+---@class System.Collections.Generic.List*1Barotrauma*Limb : System.Object, {[System.Int32|integer]:Barotrauma.Limb}, {[System.Int32|integer]:System.Object}
+---@class Barotrauma.EnemyAIController.WallTarget : System.Object
+---@class System.Collections.Generic.List*1System*ValueTuple*2FarseerPhysics*Dynamics*Body*2System*Int32*2Microsoft*Xna*Framework*Vector2 : System.Object, {[System.Int32|integer]:System.ValueTuple*1FarseerPhysics*Dynamics*Body*1System*Int32*1Microsoft*Xna*Framework*Vector2}, {[System.Int32|integer]:System.Object}
+---@class System.ValueTuple*1FarseerPhysics*Dynamics*Body*1System*Int32*1Microsoft*Xna*Framework*Vector2 : System.ValueType, {[System.Int32|integer]:System.Object}
+---@class System.Collections.Generic.List*1Barotrauma*AITarget : System.Object, {[System.Int32|integer]:Barotrauma.AITarget}, {[System.Int32|integer]:System.Object}
+---@class System.Collections.Generic.HashSet*1Barotrauma*AITarget : System.Object
+---@class System.Collections.Generic.Dictionary*1Barotrauma*AITrigger*1Barotrauma*CharacterParams*TargetParams : System.Object, {[Barotrauma.AITrigger]:Barotrauma.CharacterParams.TargetParams}, {[System.Object]:System.Object}
+---@class System.Collections.Generic.HashSet*1Barotrauma*AITrigger : System.Object
+---@class System.Collections.Generic.Dictionary*1Barotrauma*Identifier*1Barotrauma*CharacterParams*TargetParams : System.Object, {[Barotrauma.Identifier]:Barotrauma.CharacterParams.TargetParams}, {[System.Object]:System.Object}
+---@class Barotrauma.IndoorsSteeringManager : Barotrauma.SteeringManager
+---@class Barotrauma.SwarmBehavior : System.Object
+---@class System.Collections.Generic.Dictionary*1Barotrauma*Character*1Barotrauma*AttackResult : System.Object, {[Barotrauma.Character]:Barotrauma.AttackResult}, {[System.Object]:System.Object}
+---@class System.Collections.Generic.Dictionary*1Barotrauma*Hull*1Barotrauma*HumanAIController*HullSafety : System.Object, {[Barotrauma.Hull]:Barotrauma.HumanAIController.HullSafety}, {[System.Object]:System.Object}
+---@class Barotrauma.HumanAIController.HullSafety : System.Object
+---@class Barotrauma.HumanAIController.FindItemState : System.Enum
+---@class Barotrauma.MentalStateManager : System.Object
+---@class Barotrauma.ShipCommandManager : System.Object
+---@class System.Func*1Barotrauma*AIObjective*1System*Boolean : System.MulticastDelegate
+---@class System.Collections.Generic.IEnumerable
+---@class Barotrauma.HumanAIController.T2 : System.Object
+---@class Barotrauma.HumanAIController.T2 : System.Object
+---@class System.Func*1Barotrauma*HumanAIController*1System*Boolean : System.MulticastDelegate
+---@class System.Action*1Barotrauma*HumanAIController : System.MulticastDelegate
+---@class Barotrauma.AITarget.TargetType : System.Enum
+---@class System.Collections.Generic.List*1Barotrauma*AIObjective : System.Object, {[System.Int32|integer]:Barotrauma.AIObjective}, {[System.Int32|integer]:System.Object}
+---@class System.Collections.Generic.Dictionary*1Barotrauma*AIObjective*1Barotrauma*CoroutineHandle : System.Object, {[Barotrauma.AIObjective]:Barotrauma.CoroutineHandle}, {[System.Object]:System.Object}
+---@class Barotrauma.AIObjectiveManager.T : Barotrauma.AIObjective
+---@class Barotrauma.AIObjectiveManager.T : Barotrauma.AIObjective
+---@class Barotrauma.AIObjectiveManager.T : Barotrauma.AIObjective
+---@class Barotrauma.AIObjectiveManager.T : Barotrauma.AIObjective
+---@class Barotrauma.AIObjectiveManager.T : Barotrauma.AIObjective
+---@class System.Collections.Generic.IEnumerable*1Barotrauma*AIObjectiveManager*T
+---@class Barotrauma.AIObjectiveManager.T : Barotrauma.AIObjective
+---@class System.Func*1Barotrauma*AIObjectiveManager*T*1System*Boolean : System.MulticastDelegate
+---@class Barotrauma.AIObjectiveManager.T : Barotrauma.AIObjective
+---@class System.Collections.Generic.IEnumerable*1Barotrauma*AIObjective
+---@class Barotrauma.T-ref
+---@class Barotrauma.AIObjective.T : Barotrauma.AIObjective
+---@class System.Collections.Generic.Dictionary*1Barotrauma*AIObjective*T1*1Barotrauma*AIObjective*T2 : System.Object, {[Barotrauma.AIObjective.T1]:Barotrauma.AIObjective.T2}, {[System.Object]:System.Object}
+---@class Barotrauma.AIObjective.T1 : System.Object
+---@class Barotrauma.AIObjective.T2 : Barotrauma.AIObjective
+---@class System.Collections.Generic.IEnumerable*1Barotrauma*AIObjective*T1
+---@class Barotrauma.T-ref
+---@class System.Func*1Barotrauma*AIObjective*T : System.MulticastDelegate
+---@class Barotrauma.AIObjective.T : Barotrauma.AIObjective
+---@class Barotrauma.AIObjectiveLoop*1Barotrauma*Items*Components*PowerContainer : Barotrauma.AIObjective
+---@class System.Collections.Generic.IEnumerable*1Barotrauma*Items*Components*PowerContainer
+---@class Barotrauma.AIObjectiveLoop*1Barotrauma*Item : Barotrauma.AIObjective
+---@class System.Collections.Generic.HashSet*1Barotrauma*Items*Components*ItemComponent : System.Object
+---@class System.Collections.Generic.IEnumerable*1FarseerPhysics*Dynamics*Body
+---@class System.Func*1System*Boolean : System.MulticastDelegate
+---@class System.Collections.Generic.IEnumerable*1Barotrauma*Items*Components*ItemComponent
+---@class System.Collections.Generic.ICollection*1Barotrauma*Items*Components*ItemComponent
+---@class Barotrauma.AIObjectiveLoop*1Barotrauma*Hull : Barotrauma.AIObjective
+---@class Barotrauma.AIObjectiveLoop*1Barotrauma*Character : Barotrauma.AIObjective
+---@class Barotrauma.AIObjectiveFindSafety.HullSearchStatus : System.Enum
+---@class Barotrauma.AIObjectiveLoop*1Barotrauma*Gap : Barotrauma.AIObjective
+---@class System.Collections.Generic.IEnumerable*1Barotrauma*Gap
+---@class System.Func*1Barotrauma*PathNode*1System*Boolean : System.MulticastDelegate
+---@class Barotrauma.PathNode : System.Object
+---@class System.Func*1System*Single : System.MulticastDelegate
+---@class Barotrauma.AIObjectiveIdle.BehaviorType : System.Enum
+---@class Barotrauma.AIObjectiveOperateItem.T : Barotrauma.AIObjective
+---@class Barotrauma.AIObjectiveLoop*1Barotrauma*Items*Components*Pump : Barotrauma.AIObjective
+---@class System.Collections.Generic.List*1Barotrauma*Items*Components*Pump : System.Object, {[System.Int32|integer]:Barotrauma.Items.Components.Pump}, {[System.Int32|integer]:System.Object}
+---@class System.Collections.Generic.IEnumerable*1Barotrauma*Items*Components*Pump
+---@class Barotrauma.AIObjectiveRepairItems.T : Barotrauma.AIObjective
+---@class System.Collections.Generic.List*1Barotrauma*LocalizedString : System.Object, {[System.Int32|integer]:Barotrauma.LocalizedString}, {[System.Int32|integer]:System.Object}
+---@class System.Collections.Generic.Dictionary*1Barotrauma*DecorativeSprite*1Barotrauma*Limb*SpriteState : System.Object, {[Barotrauma.DecorativeSprite]:Barotrauma.Limb.SpriteState}, {[System.Object]:System.Object}
+---@class Barotrauma.Limb.SpriteState : System.Object
+---@class System.Collections.Generic.Dictionary*1System*Int32*1System*Collections*Generic*List*2Barotrauma*DecorativeSprite : System.Object, {[System.Int32|integer]:System.Collections.Generic.List*1Barotrauma*DecorativeSprite|Barotrauma.DecorativeSprite[]}, {[System.Object]:System.Object}
+---@class System.Collections.Generic.List*1Barotrauma*DecorativeSprite : System.Object, {[System.Int32|integer]:Barotrauma.DecorativeSprite}, {[System.Int32|integer]:System.Object}
+---@class System.Collections.Generic.HashSet*1Barotrauma*WearableType : System.Object
+---@class Barotrauma.RagdollParams.LimbParams : Barotrauma.RagdollParams.SubParam
+---@class Barotrauma.RagdollParams.SubParam : System.Object
+---@class FarseerPhysics.Dynamics.Joints.FixedMouseJoint : FarseerPhysics.Dynamics.Joints.Joint
+---@class FarseerPhysics.Dynamics.Joints.Joint : System.Object
+---@class Barotrauma.Direction : System.Enum
+---@class System.Collections.Generic.List*1Barotrauma*DamageModifier : System.Object, {[System.Int32|integer]:Barotrauma.DamageModifier}, {[System.Int32|integer]:System.Object}
+---@class Barotrauma.DamageModifier : System.Object
+---@class FarseerPhysics.Dynamics.Joints.WeldJoint : FarseerPhysics.Dynamics.Joints.Joint
+---@class System.Collections.Generic.List*1System*ValueTuple*2Barotrauma*ConditionalSprite*2System*Collections*Generic*IEnumerable*3Barotrauma*SpriteDeformations*SpriteDeformation : System.Object, {[System.Int32|integer]:System.ValueTuple*1Barotrauma*ConditionalSprite*1System*Collections*Generic*IEnumerable*2Barotrauma*SpriteDeformations*SpriteDeformation}, {[System.Int32|integer]:System.Object}
+---@class System.ValueTuple*1Barotrauma*ConditionalSprite*1System*Collections*Generic*IEnumerable*2Barotrauma*SpriteDeformations*SpriteDeformation : System.ValueType, {[System.Int32|integer]:System.Object}
+---@class System.Collections.Generic.List*1Barotrauma*ConditionalSprite : System.Object, {[System.Int32|integer]:Barotrauma.ConditionalSprite}, {[System.Int32|integer]:System.Object}
+---@class Barotrauma.AttackResult-ref
+---@class System.Collections.Generic.IEnumerable*1Barotrauma*LimbJoint
+---@class System.Collections.Generic.IEnumerable*1Barotrauma*Limb
+---@class Barotrauma.RagdollParams.SpriteParams : Barotrauma.RagdollParams.SubParam
+---@class Barotrauma.RagdollParams.JointParams : Barotrauma.RagdollParams.SubParam
+---@class FarseerPhysics.Dynamics.Joints.RevoluteJoint : FarseerPhysics.Dynamics.Joints.Joint
+---@class Barotrauma.Limb-arr : System.Array
+---@class System.Collections.Generic.Queue*1Barotrauma*Ragdoll*Impact : System.Object
+---@class Barotrauma.Ragdoll.Impact : System.ValueType
+---@class System.Collections.Generic.Dictionary*1Barotrauma*LimbType*1Barotrauma*Limb : System.Object, {[Barotrauma.LimbType]:Barotrauma.Limb}, {[System.Object]:System.Object}
+---@class Barotrauma.LimbJoint-arr : System.Array
+---@class System.Collections.Generic.List*1Barotrauma*PhysicsBody : System.Object, {[System.Int32|integer]:Barotrauma.PhysicsBody}, {[System.Int32|integer]:System.Object}
+---@class System.Collections.Generic.List*1Barotrauma*LimbJoint : System.Object, {[System.Int32|integer]:Barotrauma.LimbJoint}, {[System.Int32|integer]:System.Object}
+---@class System.Collections.Generic.List*1Barotrauma*Ragdoll : System.Object, {[System.Int32|integer]:Barotrauma.Ragdoll}, {[System.Int32|integer]:System.Object}
+---@class System.Collections.Generic.HashSet*1Barotrauma*SpriteDeformations*SpriteDeformation : System.Object
+---@class System.Func*1Barotrauma*Limb*1System*Boolean : System.MulticastDelegate
+---@class Barotrauma.AnimationType : System.Enum
+---@class System.Collections.Generic.List*1Barotrauma*AnimationParams : System.Object, {[System.Int32|integer]:Barotrauma.AnimationParams}, {[System.Int32|integer]:System.Object}
+---@class System.Collections.Generic.IEnumerable*1Barotrauma*LimbType
+---@class Barotrauma.IFishAnimation
+---@class Barotrauma.IHumanAnimation
+---@class System.Collections.Generic.Dictionary*1Barotrauma*Identifier*1System*Collections*Generic*Dictionary*2System*String*2Barotrauma*RagdollParams : System.Object, {[Barotrauma.Identifier]:System.Collections.Generic.Dictionary*1System*String*1Barotrauma*RagdollParams|{[System.String|string]:Barotrauma.RagdollParams}}, {[System.Object]:System.Object}
+---@class System.Collections.Generic.Dictionary*1System*String*1Barotrauma*RagdollParams : System.Object, {[System.String|string]:Barotrauma.RagdollParams}, {[System.Object]:System.Object}
+---@class System.Collections.Generic.List*1Barotrauma*RagdollParams*ColliderParams : System.Object, {[System.Int32|integer]:Barotrauma.RagdollParams.ColliderParams}, {[System.Int32|integer]:System.Object}
+---@class Barotrauma.RagdollParams.ColliderParams : Barotrauma.RagdollParams.SubParam
+---@class System.Collections.Generic.List*1Barotrauma*RagdollParams*LimbParams : System.Object, {[System.Int32|integer]:Barotrauma.RagdollParams.LimbParams}, {[System.Int32|integer]:System.Object}
+---@class System.Collections.Generic.List*1Barotrauma*RagdollParams*JointParams : System.Object, {[System.Int32|integer]:Barotrauma.RagdollParams.JointParams}, {[System.Int32|integer]:System.Object}
+---@class Barotrauma.Memento*1Barotrauma*RagdollParams : System.Object
+---@class System.Collections.Generic.IEnumerable*1Barotrauma*RagdollParams*SubParam
+---@class Barotrauma.RagdollParams.T : Barotrauma.RagdollParams
+---@class Barotrauma.RagdollParams.T : Barotrauma.RagdollParams
+---@class Barotrauma.RagdollParams.T : Barotrauma.RagdollParams
+---@class System.Collections.Generic.Dictionary*1Barotrauma*Identifier*1System*Collections*Generic*Dictionary*2System*String*2Barotrauma*AnimationParams : System.Object, {[Barotrauma.Identifier]:System.Collections.Generic.Dictionary*1System*String*1Barotrauma*AnimationParams|{[System.String|string]:Barotrauma.AnimationParams}}, {[System.Object]:System.Object}
+---@class System.Collections.Generic.Dictionary*1System*String*1Barotrauma*AnimationParams : System.Object, {[System.String|string]:Barotrauma.AnimationParams}, {[System.Object]:System.Object}
+---@class Barotrauma.Memento*1Barotrauma*AnimationParams : System.Object
+---@class Barotrauma.AnimationParams.T : Barotrauma.AnimationParams
+---@class Barotrauma.AnimationParams.T : Barotrauma.AnimationParams
+---@class Barotrauma.AnimationParams.T : Barotrauma.AnimationParams
+---@class Barotrauma.Range*1System*Single : System.ValueType
+---@class Barotrauma.PrefabSelector*1Barotrauma*SkillSettings : System.Object
+---@class Barotrauma.SkillSettingsFile : Barotrauma.ContentFile
+---@class System.Collections.Generic.Dictionary*1Barotrauma*Identifier*1Barotrauma*Skill : System.Object, {[Barotrauma.Identifier]:Barotrauma.Skill}, {[System.Object]:System.Object}
+---@class System.Collections.Generic.IEnumerable*1Barotrauma*Skill
+---@class Barotrauma.Skill-arr : System.Array
+---@class System.Collections.Generic.Dictionary*1System*Int32*1Barotrauma*ContentXElement : System.Object, {[System.Int32|integer]:Barotrauma.ContentXElement}, {[System.Object]:System.Object}
+---@class System.Collections.Immutable.ImmutableDictionary*1System*Int32*1System*Collections*Immutable*ImmutableArray*2Barotrauma*JobPrefab*PreviewItem : System.Object, {[System.Int32|integer]:System.Collections.Immutable.ImmutableArray*1Barotrauma*JobPrefab*PreviewItem|Barotrauma.JobPrefab.PreviewItem[]}, {[System.Int32|integer]:System.Collections.Immutable.ImmutableArray*1Barotrauma*JobPrefab*PreviewItem|Barotrauma.JobPrefab.PreviewItem[]}, {[System.Object]:System.Object}
+---@class System.Collections.Immutable.ImmutableArray*1Barotrauma*JobPrefab*PreviewItem : System.ValueType, {[System.Int32|integer]:Barotrauma.JobPrefab.PreviewItem}, {[System.Int32|integer]:Barotrauma.JobPrefab.PreviewItem}, {[System.Int32|integer]:System.Object}, {[System.Int32|integer]:Barotrauma.JobPrefab.PreviewItem}
+---@class Barotrauma.JobPrefab.PreviewItem : System.Object
+---@class System.Collections.Generic.List*1Barotrauma*SkillPrefab : System.Object, {[System.Int32|integer]:Barotrauma.SkillPrefab}, {[System.Int32|integer]:System.Object}
+---@class System.Collections.Generic.List*1Barotrauma*AutonomousObjective : System.Object, {[System.Int32|integer]:Barotrauma.AutonomousObjective}, {[System.Int32|integer]:System.Object}
+---@class Barotrauma.AutonomousObjective : System.Object
+---@class System.Collections.Generic.IReadOnlyDictionary*1Barotrauma*Identifier*1System*Single : {[Barotrauma.Identifier]:System.Single|number}
+---@class Barotrauma.GUIComponent-ref
+---@class System.Collections.Generic.List*1Barotrauma*JobPrefab*OutfitPreview : System.Object, {[System.Int32|integer]:Barotrauma.JobPrefab.OutfitPreview}, {[System.Int32|integer]:System.Object}
+---@class Barotrauma.JobPrefab.OutfitPreview : System.Object
+---@class System.Func*1Barotrauma*JobPrefab*1System*Boolean : System.MulticastDelegate
+---@class Barotrauma.JobsFile : Barotrauma.ContentFile
+---@class System.Collections.Generic.HashSet*1Barotrauma*BackgroundSection : System.Object
+---@class Barotrauma.BackgroundSection : System.Object
+---@class Barotrauma.PrefabCollection*1Barotrauma*DecalPrefab : System.Object, {[Barotrauma.Identifier]:Barotrauma.DecalPrefab}, {[System.String|string]:Barotrauma.DecalPrefab}
+---@class Barotrauma.PrefabCollection*1Barotrauma*GrimeSprite : System.Object, {[Barotrauma.Identifier]:Barotrauma.GrimeSprite}, {[System.String|string]:Barotrauma.GrimeSprite}
+---@class Barotrauma.GrimeSprite : Barotrauma.Prefab
+---@class Barotrauma.DecalsFile : Barotrauma.ContentFile
+---@class Barotrauma.TalentsFile : Barotrauma.GenericPrefabFile*1Barotrauma*TalentPrefab
+---@class Barotrauma.GenericPrefabFile*1Barotrauma*TalentPrefab : Barotrauma.ContentFile
+---@class System.Collections.Immutable.ImmutableArray*1Barotrauma*TalentOption : System.ValueType, {[System.Int32|integer]:Barotrauma.TalentOption}, {[System.Int32|integer]:Barotrauma.TalentOption}, {[System.Int32|integer]:System.Object}, {[System.Int32|integer]:Barotrauma.TalentOption}
+---@class System.Collections.Immutable.ImmutableArray*1Barotrauma*TalentSubTree : System.ValueType, {[System.Int32|integer]:Barotrauma.TalentSubTree}, {[System.Int32|integer]:Barotrauma.TalentSubTree}, {[System.Int32|integer]:System.Object}, {[System.Int32|integer]:Barotrauma.TalentSubTree}
+---@class System.Collections.Generic.ICollection*1Barotrauma*Identifier
+---@class Barotrauma.TalentTree.TalentTreeStageState : System.Enum
+---@class Barotrauma.TalentTreesFile : Barotrauma.GenericPrefabFile*1Barotrauma*TalentTree
+---@class Barotrauma.GenericPrefabFile*1Barotrauma*TalentTree : Barotrauma.ContentFile
+---@class System.Collections.Immutable.ImmutableDictionary*1Barotrauma*Identifier*1System*Single : System.Object, {[Barotrauma.Identifier]:System.Single|number}, {[Barotrauma.Identifier]:System.Single|number}, {[System.Object]:System.Object}
+---@class System.Collections.Generic.List*1System*Xml*Linq*XElement : System.Object, {[System.Int32|integer]:System.Xml.Linq.XElement}, {[System.Int32|integer]:System.Object}
+---@class System.Collections.Immutable.ImmutableDictionary*1Barotrauma*Identifier*1System*Collections*Immutable*ImmutableArray*2Barotrauma*DecorativeSprite : System.Object, {[Barotrauma.Identifier]:System.Collections.Immutable.ImmutableArray*1Barotrauma*DecorativeSprite|Barotrauma.DecorativeSprite[]}, {[Barotrauma.Identifier]:System.Collections.Immutable.ImmutableArray*1Barotrauma*DecorativeSprite|Barotrauma.DecorativeSprite[]}, {[System.Object]:System.Object}
+---@class System.Collections.Immutable.ImmutableArray*1Barotrauma*DecorativeSprite : System.ValueType, {[System.Int32|integer]:Barotrauma.DecorativeSprite}, {[System.Int32|integer]:Barotrauma.DecorativeSprite}, {[System.Int32|integer]:System.Object}, {[System.Int32|integer]:Barotrauma.DecorativeSprite}
+---@class System.Collections.Immutable.ImmutableArray*1Barotrauma*BrokenItemSprite : System.ValueType, {[System.Int32|integer]:Barotrauma.BrokenItemSprite}, {[System.Int32|integer]:Barotrauma.BrokenItemSprite}, {[System.Int32|integer]:System.Object}, {[System.Int32|integer]:Barotrauma.BrokenItemSprite}
+---@class System.Collections.Immutable.ImmutableArray*1Barotrauma*ContainedItemSprite : System.ValueType, {[System.Int32|integer]:Barotrauma.ContainedItemSprite}, {[System.Int32|integer]:Barotrauma.ContainedItemSprite}, {[System.Int32|integer]:System.Object}, {[System.Int32|integer]:Barotrauma.ContainedItemSprite}
+---@class System.Collections.Immutable.ImmutableDictionary*1System*Int32*1System*Collections*Immutable*ImmutableArray*2Barotrauma*DecorativeSprite : System.Object, {[System.Int32|integer]:System.Collections.Immutable.ImmutableArray*1Barotrauma*DecorativeSprite|Barotrauma.DecorativeSprite[]}, {[System.Int32|integer]:System.Collections.Immutable.ImmutableArray*1Barotrauma*DecorativeSprite|Barotrauma.DecorativeSprite[]}, {[System.Object]:System.Object}
+---@class System.Collections.Immutable.ImmutableDictionary*1Barotrauma*Identifier*1Barotrauma*PriceInfo : System.Object, {[Barotrauma.Identifier]:Barotrauma.PriceInfo}, {[Barotrauma.Identifier]:Barotrauma.PriceInfo}, {[System.Object]:System.Object}
+---@class System.Collections.Immutable.ImmutableArray*1Microsoft*Xna*Framework*Rectangle : System.ValueType, {[System.Int32|integer]:Microsoft.Xna.Framework.Rectangle}, {[System.Int32|integer]:Microsoft.Xna.Framework.Rectangle}, {[System.Int32|integer]:System.Object}, {[System.Int32|integer]:Microsoft.Xna.Framework.Rectangle}
+---@class System.Collections.Immutable.ImmutableArray*1Barotrauma*DeconstructItem : System.ValueType, {[System.Int32|integer]:Barotrauma.DeconstructItem}, {[System.Int32|integer]:Barotrauma.DeconstructItem}, {[System.Int32|integer]:System.Object}, {[System.Int32|integer]:Barotrauma.DeconstructItem}
+---@class System.Collections.Immutable.ImmutableDictionary*1System*UInt32*1Barotrauma*FabricationRecipe : System.Object, {[System.UInt32|integer]:Barotrauma.FabricationRecipe}, {[System.UInt32|integer]:Barotrauma.FabricationRecipe}, {[System.Object]:System.Object}
+---@class System.Collections.Immutable.ImmutableArray*1Barotrauma*PreferredContainer : System.ValueType, {[System.Int32|integer]:Barotrauma.PreferredContainer}, {[System.Int32|integer]:Barotrauma.PreferredContainer}, {[System.Int32|integer]:System.Object}, {[System.Int32|integer]:Barotrauma.PreferredContainer}
+---@class System.Collections.Immutable.ImmutableDictionary*1Barotrauma*Identifier*1Barotrauma*ItemPrefab*CommonnessInfo : System.Object, {[Barotrauma.Identifier]:Barotrauma.ItemPrefab.CommonnessInfo}, {[Barotrauma.Identifier]:Barotrauma.ItemPrefab.CommonnessInfo}, {[System.Object]:System.Object}
+---@class Barotrauma.ItemPrefab.CommonnessInfo : System.ValueType
+---@class System.Collections.Immutable.ImmutableDictionary*1Barotrauma*Identifier*1Barotrauma*ItemPrefab*FixedQuantityResourceInfo : System.Object, {[Barotrauma.Identifier]:Barotrauma.ItemPrefab.FixedQuantityResourceInfo}, {[Barotrauma.Identifier]:Barotrauma.ItemPrefab.FixedQuantityResourceInfo}, {[System.Object]:System.Object}
+---@class Barotrauma.ItemPrefab.FixedQuantityResourceInfo : System.ValueType
+---@class System.Nullable*1Barotrauma*ItemPrefab*CommonnessInfo : System.ValueType
+---@class Barotrauma.ItemFile : Barotrauma.GenericPrefabFile*1Barotrauma*ItemPrefab
+---@class Barotrauma.GenericPrefabFile*1Barotrauma*ItemPrefab : Barotrauma.ContentFile
+---@class System.Collections.Generic.List*1Barotrauma*PosInfo : System.Object, {[System.Int32|integer]:Barotrauma.PosInfo}, {[System.Int32|integer]:System.Object}
+---@class System.Collections.Generic.List*1Barotrauma*Items*Components*ItemComponent : System.Object, {[System.Int32|integer]:Barotrauma.Items.Components.ItemComponent}, {[System.Int32|integer]:System.Object}
+---@class System.Collections.Generic.List*1Barotrauma*SerializableEntityEditor : System.Object, {[System.Int32|integer]:Barotrauma.SerializableEntityEditor}, {[System.Int32|integer]:System.Object}
+---@class System.Collections.Generic.Dictionary*1Barotrauma*DecorativeSprite*1Barotrauma*DecorativeSprite*State : System.Object, {[Barotrauma.DecorativeSprite]:Barotrauma.DecorativeSprite.State}, {[System.Object]:System.Object}
+---@class Barotrauma.DecorativeSprite.State : System.Object
+---@class System.Collections.Generic.List*1Barotrauma*ColoredText : System.Object, {[System.Int32|integer]:Barotrauma.ColoredText}, {[System.Int32|integer]:System.Object}
+---@class Barotrauma.ColoredText : System.ValueType
+---@class System.Collections.Generic.Dictionary*1System*Type*1Barotrauma*Items*Components*ItemComponent : System.Object, {[System.Type]:Barotrauma.Items.Components.ItemComponent}, {[System.Object]:System.Object}
+---@class System.Collections.Generic.List*1Barotrauma*Items*Components*IDrawableComponent : System.Object, {[System.Int32|integer]:Barotrauma.Items.Components.IDrawableComponent}, {[System.Int32|integer]:System.Object}
+---@class Barotrauma.Items.Components.IDrawableComponent
+---@class System.Collections.Generic.List*1FarseerPhysics*Dynamics*Fixture : System.Object, {[System.Int32|integer]:FarseerPhysics.Dynamics.Fixture}, {[System.Int32|integer]:System.Object}
+---@class System.Collections.Generic.Dictionary*1System*String*1Barotrauma*Items*Components*Connection : System.Object, {[System.String|string]:Barotrauma.Items.Components.Connection}, {[System.Object]:System.Object}
+---@class System.Collections.Generic.List*1Barotrauma*Items*Components*Repairable : System.Object, {[System.Int32|integer]:Barotrauma.Items.Components.Repairable}, {[System.Int32|integer]:System.Object}
+---@class System.Collections.Concurrent.ConcurrentQueue*1System*Single : System.Object
+---@class System.Collections.Generic.HashSet*1Barotrauma*InvSlotType : System.Object
+---@class System.Collections.Generic.HashSet*1Barotrauma*ItemPrefab : System.Object
+---@class System.Collections.Generic.HashSet*1System*ValueTuple*2Barotrauma*Items*Components*Signal*2Barotrauma*Items*Components*Connection : System.Object
+---@class System.ValueTuple*1Barotrauma*Items*Components*Signal*1Barotrauma*Items*Components*Connection : System.ValueType, {[System.Int32|integer]:System.Object}
+---@class System.Collections.Immutable.ImmutableArray*1System*ValueTuple*2Barotrauma*Identifier*2Barotrauma*Identifier : System.ValueType, {[System.Int32|integer]:System.ValueTuple*1Barotrauma*Identifier*1Barotrauma*Identifier}, {[System.Int32|integer]:System.ValueTuple*1Barotrauma*Identifier*1Barotrauma*Identifier}, {[System.Int32|integer]:System.Object}, {[System.Int32|integer]:System.ValueTuple*1Barotrauma*Identifier*1Barotrauma*Identifier}
+---@class System.Collections.Generic.IReadOnlyCollection*1Barotrauma*Item
+---@class System.Collections.Generic.List*1Barotrauma*Items*Components*Connection : System.Object, {[System.Int32|integer]:Barotrauma.Items.Components.Connection}, {[System.Int32|integer]:System.Object}
+---@class Barotrauma.Item.T : Barotrauma.Items.Components.ItemComponent
+---@class System.Collections.Generic.IEnumerable*1Barotrauma*Item*T
+---@class Barotrauma.Item.T : System.Object
+---@class Barotrauma.Items.Components.Quality.StatType : System.Enum
+---@class System.Func*1Barotrauma*Inventory*1System*Boolean : System.MulticastDelegate
+---@class System.Func*1Barotrauma*Items*Components*Connection*1System*Boolean : System.MulticastDelegate
+---@class System.Collections.Generic.List*1Barotrauma*Item*T : System.Object, {[System.Int32|integer]:Barotrauma.Item.T}, {[System.Int32|integer]:System.Object}
+---@class Barotrauma.Item.T : Barotrauma.Items.Components.ItemComponent
+---@class System.Collections.Generic.HashSet*1Barotrauma*Items*Components*Connection : System.Object
+---@class System.Collections.Generic.List*1Barotrauma*Item*T : System.Object, {[System.Int32|integer]:Barotrauma.Item.T}, {[System.Int32|integer]:System.Object}
+---@class Barotrauma.Item.T : Barotrauma.Items.Components.ItemComponent
+---@class System.Collections.Generic.List*1Barotrauma*Item*T : System.Object, {[System.Int32|integer]:Barotrauma.Item.T}, {[System.Int32|integer]:System.Object}
+---@class Barotrauma.Item.T : Barotrauma.Items.Components.ItemComponent
+---@class System.Collections.Generic.List*1Barotrauma*Item*T : System.Object, {[System.Int32|integer]:Barotrauma.Item.T}, {[System.Int32|integer]:System.Object}
+---@class Barotrauma.Item.T : Barotrauma.Items.Components.ItemComponent
+---@class System.Nullable*1System*Collections*Immutable*ImmutableArray*2Barotrauma*Identifier : System.ValueType
+---@class Barotrauma.Items.Components.Controller-ref
+---@class System.Collections.Generic.List*1System*ValueTuple*2System*Object*2Barotrauma*SerializableProperty : System.Object, {[System.Int32|integer]:System.ValueTuple*1System*Object*1Barotrauma*SerializableProperty}, {[System.Int32|integer]:System.Object}
+---@class System.ValueTuple*1System*Object*1Barotrauma*SerializableProperty : System.ValueType, {[System.Int32|integer]:System.Object}
+---@class Barotrauma.Item.T : Barotrauma.Items.Components.ItemComponent
+---@class Barotrauma.Item.T : Barotrauma.Items.Components.ItemComponent
+---@class Barotrauma.Items.Components.ItemComponent.IEventData
+---@class Barotrauma.RelatedItem.RelationType : System.Enum
+---@class System.Collections.Generic.Dictionary*1Barotrauma*RelatedItem*RelationType*1System*Collections*Generic*List*2Barotrauma*RelatedItem : System.Object, {[Barotrauma.RelatedItem.RelationType]:System.Collections.Generic.List*1Barotrauma*RelatedItem|Barotrauma.RelatedItem[]}, {[System.Object]:System.Object}
+---@class Barotrauma.Items.Components.IdCard.OwnerAppearance : System.ValueType
+---@class System.Collections.Generic.Queue*1FarseerPhysics*Dynamics*Fixture : System.Object
+---@class Barotrauma.Items.Components.Propulsion.UseEnvironment : System.Enum
+---@class Barotrauma.Items.Components.RangedWeapon.ChargingState : System.Enum
+---@class System.Collections.Generic.List*1System*ValueTuple*2Barotrauma*RelatedItem*2Barotrauma*Particles*ParticleEmitter : System.Object, {[System.Int32|integer]:System.ValueTuple*1Barotrauma*RelatedItem*1Barotrauma*Particles*ParticleEmitter}, {[System.Int32|integer]:System.Object}
+---@class System.ValueTuple*1Barotrauma*RelatedItem*1Barotrauma*Particles*ParticleEmitter : System.ValueType, {[System.Int32|integer]:System.Object}
+---@class Barotrauma.Items.Components.RepairTool.UseEnvironment : System.Enum
+---@class System.Collections.Generic.List*1Barotrauma*BackgroundSection : System.Object, {[System.Int32|integer]:Barotrauma.BackgroundSection}, {[System.Int32|integer]:System.Object}
+---@class Microsoft.Xna.Framework.Point-arr : System.Array
+---@class System.Collections.Generic.Dictionary*1Barotrauma*Identifier*1Microsoft*Xna*Framework*Color : System.Object, {[Barotrauma.Identifier]:Microsoft.Xna.Framework.Color}, {[System.Object]:System.Object}
+---@class System.Collections.Generic.List*1Barotrauma*Items*Components*LimbPos : System.Object, {[System.Int32|integer]:Barotrauma.Items.Components.LimbPos}, {[System.Int32|integer]:System.Object}
+---@class System.Collections.Generic.IEnumerable*1Barotrauma*Items*Components*LimbPos
+---@class Barotrauma.Items.Components.Controller.UseEnvironment : System.Enum
+---@class System.Collections.Immutable.ImmutableArray*1Barotrauma*Item : System.ValueType, {[System.Int32|integer]:Barotrauma.Item}, {[System.Int32|integer]:Barotrauma.Item}, {[System.Int32|integer]:System.Object}, {[System.Int32|integer]:Barotrauma.Item}
+---@class System.Collections.Generic.List*1Barotrauma*DeconstructItem : System.Object, {[System.Int32|integer]:Barotrauma.DeconstructItem}, {[System.Int32|integer]:System.Object}
+---@class System.Collections.Generic.IEnumerable*1System*ValueTuple*2Barotrauma*Item*2Barotrauma*DeconstructItem
+---@class System.ValueTuple*1Barotrauma*Item*1Barotrauma*DeconstructItem : System.ValueType, {[System.Int32|integer]:System.Object}
+---@class Barotrauma.Items.Components.Fabricator.ToolTip : System.Object
+---@class System.Collections.Generic.Dictionary*1Barotrauma*FabricationRecipe*RequiredItem*1System*Int32 : System.Object, {[Barotrauma.FabricationRecipe.RequiredItem]:System.Int32|integer}, {[System.Object]:System.Object}
+---@class System.Collections.Generic.Dictionary*1Barotrauma*Identifier*1System*Collections*Generic*List*2Barotrauma*Item : System.Object, {[Barotrauma.Identifier]:System.Collections.Generic.List*1Barotrauma*Item|Barotrauma.Item[]}, {[System.Object]:System.Object}
+---@class Barotrauma.Items.Components.Fabricator.FabricatorState : System.Enum
+---@class System.Collections.Generic.Dictionary*1System*UInt32*1System*Int32 : System.Object, {[System.UInt32|integer]:System.Int32|integer}, {[System.Object]:System.Object}
+---@class System.Collections.Generic.HashSet*1Barotrauma*Inventory : System.Object
+---@class System.Collections.Generic.IReadOnlyDictionary*1Barotrauma*Identifier*1System*Collections*Generic*List*2Barotrauma*Item : {[Barotrauma.Identifier]:System.Collections.Generic.List*1Barotrauma*Item|Barotrauma.Item[]}
+---@class System.Collections.Immutable.ImmutableArray*1Barotrauma*Skill : System.ValueType, {[System.Int32|integer]:Barotrauma.Skill}, {[System.Int32|integer]:Barotrauma.Skill}, {[System.Int32|integer]:System.Object}, {[System.Int32|integer]:Barotrauma.Skill}
+---@class System.Collections.Generic.HashSet*1Barotrauma*Items*Components*MiniMapSprite : System.Object
+---@class Barotrauma.Items.Components.MiniMapSprite : System.ValueType
+---@class Barotrauma.Items.Components.MiniMapMode : System.Enum
+---@class System.Collections.Immutable.ImmutableArray*1Barotrauma*GUIButton : System.ValueType, {[System.Int32|integer]:Barotrauma.GUIButton}, {[System.Int32|integer]:Barotrauma.GUIButton}, {[System.Int32|integer]:System.Object}, {[System.Int32|integer]:Barotrauma.GUIButton}
+---@class System.Collections.Immutable.ImmutableDictionary*1Barotrauma*MapEntity*1Barotrauma*Items*Components*MiniMapGUIComponent : System.Object, {[Barotrauma.MapEntity]:Barotrauma.Items.Components.MiniMapGUIComponent}, {[Barotrauma.MapEntity]:Barotrauma.Items.Components.MiniMapGUIComponent}, {[System.Object]:System.Object}
+---@class Barotrauma.Items.Components.MiniMapGUIComponent : System.ValueType
+---@class System.Collections.Immutable.ImmutableDictionary*1Barotrauma*Items*Components*MiniMapGUIComponent*1Barotrauma*GUIComponent : System.Object, {[Barotrauma.Items.Components.MiniMapGUIComponent]:Barotrauma.GUIComponent}, {[Barotrauma.Items.Components.MiniMapGUIComponent]:Barotrauma.GUIComponent}, {[System.Object]:System.Object}
+---@class System.Collections.Immutable.ImmutableHashSet*1Barotrauma*ItemPrefab : System.Object
+---@class System.Collections.Immutable.ImmutableHashSet*1Microsoft*Xna*Framework*Vector2 : System.Object
+---@class System.Collections.Generic.Dictionary*1Barotrauma*Hull*1Barotrauma*Items*Components*MiniMap*HullData : System.Object, {[Barotrauma.Hull]:Barotrauma.Items.Components.MiniMap.HullData}, {[System.Object]:System.Object}
+---@class Barotrauma.Items.Components.MiniMap.HullData : System.Object
+---@class Microsoft.Xna.Framework.Graphics.ISpriteBatch
+---@class Microsoft.Xna.Framework.RectangleF : System.ValueType
+---@class Barotrauma.Items.Components.MiniMapSettings : System.ValueType
+---@class System.Collections.Immutable.ImmutableDictionary
+---@class System.Collections.Immutable.ImmutableArray*1Barotrauma*Hull : System.ValueType, {[System.Int32|integer]:Barotrauma.Hull}, {[System.Int32|integer]:Barotrauma.Hull}, {[System.Int32|integer]:System.Object}, {[System.Int32|integer]:Barotrauma.Hull}
+---@class System.Collections.Immutable.ImmutableDictionary*1Barotrauma*Hull*1System*Collections*Immutable*ImmutableArray*2Barotrauma*Hull : System.Object, {[Barotrauma.Hull]:System.Collections.Immutable.ImmutableArray*1Barotrauma*Hull|Barotrauma.Hull[]}, {[Barotrauma.Hull]:System.Collections.Immutable.ImmutableArray*1Barotrauma*Hull|Barotrauma.Hull[]}, {[System.Object]:System.Object}
+---@class Barotrauma.Items.Components.MiniMapHullData : System.ValueType
+---@class System.Collections.Generic.List*1System*ValueTuple*2Barotrauma*Items*Components*Vent*2System*Single : System.Object, {[System.Int32|integer]:System.ValueTuple*1Barotrauma*Items*Components*Vent*1System*Single}, {[System.Int32|integer]:System.Object}
+---@class System.ValueTuple*1Barotrauma*Items*Components*Vent*1System*Single : System.ValueType, {[System.Int32|integer]:System.Object}
+---@class System.Collections.Generic.List*1System*ValueTuple*2Microsoft*Xna*Framework*Vector2*2Barotrauma*Particles*ParticleEmitter : System.Object, {[System.Int32|integer]:System.ValueTuple*1Microsoft*Xna*Framework*Vector2*1Barotrauma*Particles*ParticleEmitter}, {[System.Int32|integer]:System.Object}
+---@class System.ValueTuple*1Microsoft*Xna*Framework*Vector2*1Barotrauma*Particles*ParticleEmitter : System.ValueType, {[System.Int32|integer]:System.Object}
+---@class System.Collections.Generic.Dictionary*1System*String*1Barotrauma*GUIButton : System.Object, {[System.String|string]:Barotrauma.GUIButton}, {[System.Object]:System.Object}
+---@class Barotrauma.Items.Components.PowerPriority : System.Enum
+---@class System.Collections.Generic.IList*1System*Single : {[System.Int32|integer]:System.Single|number}
+---@class System.Collections.Generic.IList*1Barotrauma*Items*Components*Reactor*T : {[System.Int32|integer]:Barotrauma.Items.Components.Reactor.T}
+---@class Barotrauma.Items.Components.Reactor.T : System.Object
+---@class Barotrauma.Items.Components.PowerRange : System.ValueType
+---@class Barotrauma.PathFinder : System.Object
+---@class Barotrauma.Sprite-arr : System.Array
+---@class System.Collections.Generic.Dictionary*1Barotrauma*Identifier*1System*Tuple*2Barotrauma*Sprite*2Microsoft*Xna*Framework*Color : System.Object, {[Barotrauma.Identifier]:System.Tuple*1Barotrauma*Sprite*1Microsoft*Xna*Framework*Color}, {[System.Object]:System.Object}
+---@class System.Tuple*1Barotrauma*Sprite*1Microsoft*Xna*Framework*Color : System.Object, {[System.Int32|integer]:System.Object}
+---@class System.Collections.Generic.List*1Barotrauma*Items*Components*SonarBlip : System.Object, {[System.Int32|integer]:Barotrauma.Items.Components.SonarBlip}, {[System.Int32|integer]:System.Object}
+---@class Barotrauma.Items.Components.SonarBlip : System.Object
+---@class System.Collections.Generic.List*1System*ValueTuple*2Microsoft*Xna*Framework*Vector2*2System*Single : System.Object, {[System.Int32|integer]:System.ValueTuple*1Microsoft*Xna*Framework*Vector2*1System*Single}, {[System.Int32|integer]:System.Object}
+---@class System.ValueTuple*1Microsoft*Xna*Framework*Vector2*1System*Single : System.ValueType, {[System.Int32|integer]:System.Object}
+---@class System.Collections.Generic.Dictionary*1System*Object*1Barotrauma*CachedDistance : System.Object, {[System.Object]:Barotrauma.CachedDistance}, {[System.Object]:System.Object}
+---@class Barotrauma.CachedDistance : System.Object
+---@class System.Collections.Generic.List*1Barotrauma*GUITextBlock : System.Object, {[System.Int32|integer]:Barotrauma.GUITextBlock}, {[System.Int32|integer]:System.Object}
+---@class Barotrauma.Items.Components.Sonar.Mode : System.Enum
+---@class Barotrauma.Items.Components.ActivePing-arr : System.Array
+---@class Barotrauma.Items.Components.Sonar.ActivePing : System.Object
+---@class System.Collections.Generic.List*1Barotrauma*Items*Components*Sonar*ConnectedTransducer : System.Object, {[System.Int32|integer]:Barotrauma.Items.Components.Sonar.ConnectedTransducer}, {[System.Int32|integer]:System.Object}
+---@class Barotrauma.Items.Components.Sonar.ConnectedTransducer : System.Object
+---@class System.Collections.Generic.Dictionary*1Barotrauma*Items*Components*Sonar*BlipType*1Microsoft*Xna*Framework*Color-arr : System.Object, {[Barotrauma.Items.Components.Sonar.BlipType]:Microsoft.Xna.Framework.Color-arr|Microsoft.Xna.Framework.Color[]}, {[System.Object]:System.Object}
+---@class Barotrauma.Items.Components.Sonar.BlipType : System.Enum
+---@class System.Collections.Generic.Dictionary*1System*String*1System*Collections*Generic*List*2Barotrauma*Character : System.Object, {[System.String|string]:System.Collections.Generic.List*1Barotrauma*Character|Barotrauma.Character[]}, {[System.Object]:System.Object}
+---@class System.Collections.Generic.List*1System*ValueTuple*2Microsoft*Xna*Framework*Vector2*2System*Collections*Generic*List*3Barotrauma*Item : System.Object, {[System.Int32|integer]:System.ValueTuple*1Microsoft*Xna*Framework*Vector2*1System*Collections*Generic*List*2Barotrauma*Item}, {[System.Int32|integer]:System.Object}
+---@class System.ValueTuple*1Microsoft*Xna*Framework*Vector2*1System*Collections*Generic*List*2Barotrauma*Item : System.ValueType, {[System.Int32|integer]:System.Object}
+---@class System.Collections.Generic.IEnumerable*1Barotrauma*Items*Components*SonarTransducer
+---@class System.Collections.Generic.List*1Barotrauma*Items*Components*DockingPort : System.Object, {[System.Int32|integer]:Barotrauma.Items.Components.DockingPort}, {[System.Int32|integer]:System.Object}
+---@class Barotrauma.SteeringPath : System.Object
+---@class System.Collections.Generic.List*1Barotrauma*Items*Components*Steering*ObstacleDebugInfo : System.Object, {[System.Int32|integer]:Barotrauma.Items.Components.Steering.ObstacleDebugInfo}, {[System.Int32|integer]:System.Object}
+---@class Barotrauma.Items.Components.Steering.ObstacleDebugInfo : System.ValueType
+---@class System.Collections.Generic.List*1Barotrauma*Items*Components*Powered : System.Object, {[System.Int32|integer]:Barotrauma.Items.Components.Powered}, {[System.Int32|integer]:System.Object}
+---@class System.Collections.Generic.Dictionary*1System*Int32*1Barotrauma*Items*Components*GridInfo : System.Object, {[System.Int32|integer]:Barotrauma.Items.Components.GridInfo}, {[System.Object]:System.Object}
+---@class Barotrauma.Items.Components.GridInfo : System.Object
+---@class System.Collections.Generic.IEnumerable*1Barotrauma*Items*Components*Powered
+---@class System.Collections.Generic.List*1Barotrauma*Items*Components*PowerContainer : System.Object, {[System.Int32|integer]:Barotrauma.Items.Components.PowerContainer}, {[System.Int32|integer]:System.Object}
+---@class System.Collections.Generic.Dictionary*1Barotrauma*Items*Components*Connection*1System*Boolean : System.Object, {[Barotrauma.Items.Components.Connection]:System.Boolean|boolean}, {[System.Object]:System.Object}
+---@class System.Collections.Generic.Dictionary*1Barotrauma*Items*Components*Connection*1System*Collections*Generic*HashSet*2Barotrauma*Items*Components*Connection : System.Object, {[Barotrauma.Items.Components.Connection]:System.Collections.Generic.HashSet*1Barotrauma*Items*Components*Connection|Barotrauma.Items.Components.Connection[]}, {[System.Object]:System.Object}
+---@class Barotrauma.Items.Components.BooleanOperatorComponent : Barotrauma.Items.Components.ItemComponent
+---@class Barotrauma.Character-arr : System.Array
+---@class System.Collections.Generic.HashSet*1Barotrauma*Items*Components*Wire : System.Object
+---@class System.Collections.Generic.IReadOnlyCollection*1Barotrauma*Items*Components*Wire
+---@class System.Collections.Generic.List*1Barotrauma*Items*Components*CustomInterface*CustomInterfaceElement : System.Object, {[System.Int32|integer]:Barotrauma.Items.Components.CustomInterface.CustomInterfaceElement}, {[System.Int32|integer]:System.Object}
+---@class Barotrauma.Items.Components.CustomInterface.CustomInterfaceElement : System.Object
+---@class System.Collections.Generic.Queue*1Barotrauma*Items*Components*DelayComponent*DelayedSignal : System.Object
+---@class Barotrauma.Items.Components.DelayComponent.DelayedSignal : System.Object
+---@class Barotrauma.Items.Components.FunctionComponent.FunctionType : System.Enum
+---@class Barotrauma.Items.Components.MotionSensor.TargetType : System.Enum
+---@class Barotrauma.Items.Components.OscillatorComponent.WaveType : System.Enum
+---@class System.Text.RegularExpressions.GroupCollection : System.Object, {[System.Int32|integer]:System.Text.RegularExpressions.Group}, {[System.String|string]:System.Text.RegularExpressions.Group}, {[System.Int32|integer]:System.Text.RegularExpressions.Group}, {[System.Int32|integer]:System.Object}
+---@class System.TimeSpan : System.ValueType
+---@class System.Collections.Generic.List*1Barotrauma*Items*Components*TerminalMessage : System.Object, {[System.Int32|integer]:Barotrauma.Items.Components.TerminalMessage}, {[System.Int32|integer]:System.Object}
+---@class Barotrauma.Items.Components.TerminalMessage : System.ValueType
+---@class Barotrauma.Items.Components.TrigonometricFunctionComponent.FunctionType : System.Enum
+---@class System.Collections.Generic.List*1Barotrauma*Items*Components*WifiComponent : System.Object, {[System.Int32|integer]:Barotrauma.Items.Components.WifiComponent}, {[System.Int32|integer]:System.Object}
+---@class System.Collections.Generic.IEnumerable*1Barotrauma*Items*Components*WifiComponent
+---@class System.Collections.Generic.List*1Barotrauma*Items*Components*Wire*WireSection : System.Object, {[System.Int32|integer]:Barotrauma.Items.Components.Wire.WireSection}, {[System.Int32|integer]:System.Object}
+---@class Barotrauma.Items.Components.Wire.WireSection : System.Object
+---@class Barotrauma.Items.Components.Connection-arr : System.Array
+---@class System.Collections.Generic.List*1Barotrauma*Items*Components*Wire : System.Object, {[System.Int32|integer]:Barotrauma.Items.Components.Wire}, {[System.Int32|integer]:System.Object}
+---@class Barotrauma.Hull-arr : System.Array
+---@class FarseerPhysics.Dynamics.Body-arr : System.Array
+---@class Barotrauma.Items.Components.DockingPort.AllowOutpostAutoDocking : System.Enum
+---@class System.Collections.Generic.IEnumerable*1Barotrauma*Items*Components*DockingPort
+---@class Barotrauma.Items.Components.DockingPort.DirectionType : System.Enum
+---@class Barotrauma.Lights.ConvexHull : System.Object
+---@class System.Collections.Generic.List*1Barotrauma*Items*Components*ElectricalDischarger*Node : System.Object, {[System.Int32|integer]:Barotrauma.Items.Components.ElectricalDischarger.Node}, {[System.Int32|integer]:System.Object}
+---@class Barotrauma.Items.Components.ElectricalDischarger.Node : System.ValueType
+---@class System.Collections.Generic.List*1System*ValueTuple*2Barotrauma*Character*2Barotrauma*Items*Components*ElectricalDischarger*Node : System.Object, {[System.Int32|integer]:System.ValueTuple*1Barotrauma*Character*1Barotrauma*Items*Components*ElectricalDischarger*Node}, {[System.Int32|integer]:System.Object}
+---@class System.ValueTuple*1Barotrauma*Character*1Barotrauma*Items*Components*ElectricalDischarger*Node : System.ValueType, {[System.Int32|integer]:System.Object}
+---@class System.Collections.Generic.List*1Barotrauma*Items*Components*ElectricalDischarger : System.Object, {[System.Int32|integer]:Barotrauma.Items.Components.ElectricalDischarger}, {[System.Int32|integer]:System.Object}
+---@class System.Collections.Generic.IEnumerable*1Barotrauma*Items*Components*ElectricalDischarger
+---@class System.Collections.Generic.IEnumerable*1Barotrauma*Items*Components*ElectricalDischarger*Node
+---@class Barotrauma.Items.Components.EntitySpawnerComponent.AreaShape : System.Enum
+---@class Barotrauma.Items.Components.GeneticMaterial.CombineResult : System.Enum
+---@class System.Collections.Generic.HashSet*1Microsoft*Xna*Framework*Rectangle : System.Object
+---@class System.Collections.Generic.List*1Barotrauma*Items*Components*ProducedItem : System.Object, {[System.Int32|integer]:Barotrauma.Items.Components.ProducedItem}, {[System.Int32|integer]:System.Object}
+---@class System.Collections.Generic.List*1Barotrauma*Items*Components*VineTile : System.Object, {[System.Int32|integer]:Barotrauma.Items.Components.VineTile}, {[System.Int32|integer]:System.Object}
+---@class Barotrauma.Items.Components.PlantSlot : System.ValueType
+---@class Barotrauma.Items.Components.FoliageConfig : System.ValueType
+---@class System.Collections.Generic.Dictionary*1Barotrauma*Items*Components*TileSide*1Microsoft*Xna*Framework*Vector2 : System.Object, {[Barotrauma.Items.Components.TileSide]:Microsoft.Xna.Framework.Vector2}, {[System.Object]:System.Object}
+---@class System.Collections.Generic.Dictionary*1Barotrauma*ActionType*1System*Collections*Generic*List*2Barotrauma*Items*Components*ItemSound : System.Object, {[Barotrauma.ActionType]:System.Collections.Generic.List*1Barotrauma*Items*Components*ItemSound|Barotrauma.Items.Components.ItemSound[]}, {[System.Object]:System.Object}
+---@class System.Collections.Generic.List*1Barotrauma*Items*Components*ItemSound : System.Object, {[System.Int32|integer]:Barotrauma.Items.Components.ItemSound}, {[System.Int32|integer]:System.Object}
+---@class System.Collections.Generic.Dictionary*1Barotrauma*ActionType*1Barotrauma*Items*Components*SoundSelectionMode : System.Object, {[Barotrauma.ActionType]:Barotrauma.Items.Components.SoundSelectionMode}, {[System.Object]:System.Object}
+---@class System.Collections.Generic.List*1Barotrauma*Sounds*SoundChannel : System.Object, {[System.Int32|integer]:Barotrauma.Sounds.SoundChannel}, {[System.Int32|integer]:System.Object}
+---@class System.Collections.Generic.List*1Barotrauma*Skill : System.Object, {[System.Int32|integer]:Barotrauma.Skill}, {[System.Int32|integer]:System.Object}
+---@class Barotrauma.Items.Components.ItemComponent.GUILayoutSettings : System.Object
+---@class Barotrauma.Skill-ref
+---@class Barotrauma.Items.Components.ItemComponent.T : System.Object
+---@class Barotrauma.Items.Components.T-ref
+---@class Barotrauma.NamedEvent*1Barotrauma*Items*Components*ItemContainer : System.Object
+---@class System.Collections.Generic.List*1Barotrauma*Items*Components*ItemContainer*ActiveContainedItem : System.Object, {[System.Int32|integer]:Barotrauma.Items.Components.ItemContainer.ActiveContainedItem}, {[System.Int32|integer]:System.Object}
+---@class Barotrauma.Items.Components.ItemContainer.ActiveContainedItem : System.Object
+---@class System.Collections.Generic.List : System.Array
+---@class System.Collections.Immutable.ImmutableArray*1Barotrauma*Items*Components*ItemContainer*SlotRestrictions : System.ValueType, {[System.Int32|integer]:Barotrauma.Items.Components.ItemContainer.SlotRestrictions}, {[System.Int32|integer]:Barotrauma.Items.Components.ItemContainer.SlotRestrictions}, {[System.Int32|integer]:System.Object}, {[System.Int32|integer]:Barotrauma.Items.Components.ItemContainer.SlotRestrictions}
+---@class Barotrauma.Items.Components.ItemContainer.SlotRestrictions : System.Object
+---@class System.Collections.Generic.List*1Barotrauma*Items*Components*Ladder : System.Object, {[System.Int32|integer]:Barotrauma.Items.Components.Ladder}, {[System.Int32|integer]:System.Object}
+---@class System.Collections.Generic.Dictionary*1System*Int32*1Barotrauma*Items*Components*PlantSlot : System.Object, {[System.Int32|integer]:Barotrauma.Items.Components.PlantSlot}, {[System.Object]:System.Object}
+---@class Barotrauma.Items.Components.Growable-arr : System.Array
+---@class System.Collections.Generic.List*1Barotrauma*Items*Components*LightComponent : System.Object, {[System.Int32|integer]:Barotrauma.Items.Components.LightComponent}, {[System.Int32|integer]:System.Object}
+---@class Barotrauma.Items.Components.SuitablePlantItem : System.ValueType
+---@class System.Collections.Generic.Queue*1Barotrauma*Items*Components*Projectile*Impact : System.Object
+---@class Barotrauma.Items.Components.Projectile.Impact : System.ValueType
+---@class System.Collections.Generic.HashSet*1FarseerPhysics*Dynamics*Body : System.Object
+---@class System.Collections.Generic.List*1Barotrauma*Items*Components*Projectile*HitscanResult : System.Object, {[System.Int32|integer]:Barotrauma.Items.Components.Projectile.HitscanResult}, {[System.Int32|integer]:System.Object}
+---@class Barotrauma.Items.Components.Projectile.HitscanResult : System.ValueType
+---@class FarseerPhysics.Dynamics.Fixture-ref
+---@class System.Collections.Generic.Dictionary*1Barotrauma*Items*Components*Quality*StatType*1System*Single : System.Object, {[Barotrauma.Items.Components.Quality.StatType]:System.Single|number}, {[System.Object]:System.Object}
+---@class Barotrauma.Items.Components.Repairable.FixActions : System.Enum
+---@class System.Action*1Barotrauma*Items*Components*Scanner : System.MulticastDelegate
+---@class System.Collections.Generic.Dictionary*1System*String*1Barotrauma*Widget : System.Object, {[System.String|string]:Barotrauma.Widget}, {[System.Object]:System.Object}
+---@class System.Collections.Generic.List*1System*ValueTuple*2Barotrauma*Sprite*2Microsoft*Xna*Framework*Vector2 : System.Object, {[System.Int32|integer]:System.ValueTuple*1Barotrauma*Sprite*1Microsoft*Xna*Framework*Vector2}, {[System.Int32|integer]:System.Object}
+---@class System.ValueTuple*1Barotrauma*Sprite*1Microsoft*Xna*Framework*Vector2 : System.ValueType, {[System.Int32|integer]:System.Object}
+---@class Barotrauma.Items.Components.Turret.ChargingState : System.Enum
+---@class Barotrauma.WreckAI : System.Object
+---@class System.Collections.Generic.List*1Barotrauma*Items*Components*Projectile : System.Object, {[System.Int32|integer]:Barotrauma.Items.Components.Projectile}, {[System.Int32|integer]:System.Object}
+---@class System.Action*1Barotrauma*Widget : System.MulticastDelegate
+---@class Barotrauma.ContentXElement-arr : System.Array
+---@class Barotrauma.WearableSprite-arr : System.Array
+---@class System.Collections.Generic.IEnumerable*1Barotrauma*DamageModifier
+---@class Barotrauma.SubmarineInfo.CrewExperienceLevel : System.Enum
+---@class Barotrauma.SubmarineClass : System.Enum
+---@class System.Collections.Generic.Dictionary*1Barotrauma*Identifier*1System*Collections*Generic*List*2Barotrauma*Character : System.Object, {[Barotrauma.Identifier]:System.Collections.Generic.List*1Barotrauma*Character|Barotrauma.Character[]}, {[System.Object]:System.Object}
+---@class Barotrauma.SubmarineTag : System.Enum
+---@class Barotrauma.OutpostModuleInfo : System.Object
+---@class Barotrauma.BeaconStationInfo : System.Object
+---@class System.IO.MemoryStream : System.IO.Stream
+---@class System.Collections.Generic.Dictionary*1Barotrauma*Submarine*1Barotrauma*Items*Components*DockingPort : System.Object, {[Barotrauma.Submarine]:Barotrauma.Items.Components.DockingPort}, {[System.Object]:System.Object}
+---@class System.Collections.Generic.List*1Barotrauma*PathNode : System.Object, {[System.Int32|integer]:Barotrauma.PathNode}, {[System.Int32|integer]:System.Object}
+---@class System.Collections.Generic.Dictionary*1Barotrauma*Submarine*1System*Collections*Generic*HashSet*2Barotrauma*PathNode : System.Object, {[Barotrauma.Submarine]:System.Collections.Generic.HashSet*1Barotrauma*PathNode|Barotrauma.PathNode[]}, {[System.Object]:System.Object}
+---@class System.Collections.Generic.HashSet*1Barotrauma*PathNode : System.Object
+---@class Barotrauma.Submarine-arr : System.Array
+---@class System.Collections.Generic.Dictionary*1FarseerPhysics*Dynamics*Body*1System*Single : System.Object, {[FarseerPhysics.Dynamics.Body]:System.Single|number}, {[System.Object]:System.Object}
+---@class System.Collections.Generic.List*1Barotrauma*Gap : System.Object, {[System.Int32|integer]:Barotrauma.Gap}, {[System.Int32|integer]:System.Object}
+---@class System.Collections.Generic.List*1Barotrauma*Submarine*T : System.Object, {[System.Int32|integer]:Barotrauma.Submarine.T}, {[System.Int32|integer]:System.Object}
+---@class Barotrauma.Submarine.T : Barotrauma.MapEntity
+---@class System.Collections.Generic.IEnumerable*1Barotrauma*Submarine*T
+---@class Barotrauma.Submarine.T : Barotrauma.MapEntity
+---@class System.Collections.Generic.List*1System*ValueTuple*2Barotrauma*Items*Components*ItemContainer*2System*Int32 : System.Object, {[System.Int32|integer]:System.ValueTuple*1Barotrauma*Items*Components*ItemContainer*1System*Int32}, {[System.Int32|integer]:System.Object}
+---@class System.ValueTuple*1Barotrauma*Items*Components*ItemContainer*1System*Int32 : System.ValueType, {[System.Int32|integer]:System.Object}
+---@class System.Predicate*1Barotrauma*MapEntity : System.MulticastDelegate
+---@class System.Nullable*1Microsoft*Xna*Framework*Point : System.ValueType
+---@class System.Nullable*1FarseerPhysics*Dynamics*Category : System.ValueType
+---@class System.Predicate*1FarseerPhysics*Dynamics*Fixture : System.MulticastDelegate
+---@class System.Func*1Barotrauma*Submarine*1System*Collections*Generic*List*2Barotrauma*MapEntity : System.MulticastDelegate
+---@class System.Collections.Generic.Queue*1Barotrauma*SubmarineBody*Impact : System.Object
+---@class Barotrauma.SubmarineBody.Impact : System.ValueType
+---@class System.Collections.Generic.List*1Barotrauma*Lights*ConvexHull : System.Object, {[System.Int32|integer]:Barotrauma.Lights.ConvexHull}, {[System.Int32|integer]:System.Object}
+---@class System.Collections.Generic.List*1Barotrauma*Lights*LightSource : System.Object, {[System.Int32|integer]:Barotrauma.Lights.LightSource}, {[System.Int32|integer]:System.Object}
+---@class Barotrauma.WallSection-arr : System.Array
+---@class System.Collections.Generic.List*1Barotrauma*WallSection : System.Object, {[System.Int32|integer]:Barotrauma.WallSection}, {[System.Int32|integer]:System.Object}
+---@class Barotrauma.PrefabCollection*1Barotrauma*StructurePrefab : System.Object, {[Barotrauma.Identifier]:Barotrauma.StructurePrefab}, {[System.String|string]:Barotrauma.StructurePrefab}
+---@class Barotrauma.StructureFile : Barotrauma.GenericPrefabFile*1Barotrauma*StructurePrefab
+---@class Barotrauma.GenericPrefabFile*1Barotrauma*StructurePrefab : Barotrauma.ContentFile
+---@class System.Collections.Generic.List*1Barotrauma*AfflictionPrefab*Effect : System.Object, {[System.Int32|integer]:Barotrauma.AfflictionPrefab.Effect}, {[System.Int32|integer]:System.Object}
+---@class Barotrauma.AfflictionPrefab.Effect : System.Object
+---@class System.Collections.Generic.List*1Barotrauma*AfflictionPrefab*PeriodicEffect : System.Object, {[System.Int32|integer]:Barotrauma.AfflictionPrefab.PeriodicEffect}, {[System.Int32|integer]:System.Object}
+---@class Barotrauma.AfflictionPrefab.PeriodicEffect : System.Object
+---@class System.Collections.Generic.IEnumerable*1Barotrauma*AfflictionPrefab
+---@class System.Collections.Generic.IEnumerable*1Barotrauma*AfflictionPrefab*Effect
+---@class System.Collections.Generic.IList*1Barotrauma*AfflictionPrefab*PeriodicEffect : {[System.Int32|integer]:Barotrauma.AfflictionPrefab.PeriodicEffect}
+---@class System.Collections.Generic.IEnumerable*1System*Collections*Generic*KeyValuePair*2Barotrauma*Identifier*2System*Single
+---@class System.Collections.Generic.KeyValuePair*1Barotrauma*Identifier*1System*Single : System.ValueType
+---@class Barotrauma.AfflictionsFile : Barotrauma.ContentFile
+---@class System.Collections.Generic.Dictionary*1Barotrauma*AfflictionPrefab*PeriodicEffect*1System*Single : System.Object, {[Barotrauma.AfflictionPrefab.PeriodicEffect]:System.Single|number}, {[System.Object]:System.Object}
+---@class Barotrauma.AfflictionHusk.InfectionState : System.Enum
+---@class System.Nullable*1Barotrauma*AfflictionHusk*InfectionState : System.ValueType
+---@class Barotrauma.AfflictionPsychosis.FloodType : System.Enum
+---@class System.Collections.Generic.Dictionary*1Barotrauma*Affliction*1System*Xml*Linq*XElement : System.Object, {[Barotrauma.Affliction]:System.Xml.Linq.XElement}, {[System.Object]:System.Object}
+---@class Barotrauma.HitDetection : System.Enum
+---@class Barotrauma.AIBehaviorAfterAttack : System.Enum
+---@class Barotrauma.VisualSlot-arr : System.Array
+---@class Barotrauma.ItemSlot-arr : System.Array
+---@class Barotrauma.Inventory.ItemSlot : System.Object
+---@class System.Collections.Generic.HashSet*1Barotrauma*Inventory*SlotReference : System.Object
+---@class System.Collections.Generic.List
+---@class System.Collections.Generic.IReadOnlyList*1Microsoft*Xna*Framework*Rectangle : {[System.Int32|integer]:Microsoft.Xna.Framework.Rectangle}
+---@class System.Collections.Generic.Dictionary*1Barotrauma*InventorySlotItem*1Barotrauma*Inventory : System.Object, {[Barotrauma.InventorySlotItem]:Barotrauma.Inventory}, {[System.Object]:System.Object}
+---@class System.Collections.Generic.List*1Barotrauma*AddOrDeleteCommand : System.Object, {[System.Int32|integer]:Barotrauma.AddOrDeleteCommand}, {[System.Int32|integer]:System.Object}
+---@class System.Collections.Generic.Dictionary*1System*Object*1System*Collections*Generic*List*2Barotrauma*ISerializableEntity : System.Object, {[System.Object]:System.Collections.Generic.List*1Barotrauma*ISerializableEntity|Barotrauma.ISerializableEntity[]}, {[System.Object]:System.Object}
+---@class System.Collections.Generic.List*1Barotrauma*InventorySlotItem : System.Object, {[System.Int32|integer]:Barotrauma.InventorySlotItem}, {[System.Int32|integer]:System.Object}
+---@class Barotrauma.PrefabCollection*1Barotrauma*TraitorMissionPrefab : System.Object, {[Barotrauma.Identifier]:Barotrauma.TraitorMissionPrefab}, {[System.String|string]:Barotrauma.TraitorMissionPrefab}
+---@class Barotrauma.TraitorMissionsFile : Barotrauma.GenericPrefabFile*1Barotrauma*TraitorMissionPrefab
+---@class Barotrauma.GenericPrefabFile*1Barotrauma*TraitorMissionPrefab : Barotrauma.ContentFile
+---@class System.Collections.Generic.HashSet*1FarseerPhysics*Dynamics*Joints*Joint : System.Object
+---@class System.Func*1FarseerPhysics*Dynamics*Fixture*1System*Boolean : System.MulticastDelegate
+---@class System.Func*1System*Int32*1System*Boolean : System.MulticastDelegate
+---@class FarseerPhysics.Collision.TOIInput : System.Object
+---@class System.Func*1FarseerPhysics*Dynamics*Fixture*1Microsoft*Xna*Framework*Vector2*1Microsoft*Xna*Framework*Vector2*1System*Single*1System*Single : System.MulticastDelegate
+---@class System.Func*1FarseerPhysics*Collision*RayCastInput*1FarseerPhysics*Dynamics*FixtureProxy*1System*Single : System.MulticastDelegate
+---@class FarseerPhysics.Collision.RayCastInput : System.ValueType
+---@class FarseerPhysics.Dynamics.FixtureProxy : System.ValueType
+---@class FarseerPhysics.Dynamics.BodyDelegate : System.MulticastDelegate
+---@class FarseerPhysics.Dynamics.FixtureDelegate : System.MulticastDelegate
+---@class FarseerPhysics.Dynamics.JointDelegate : System.MulticastDelegate
+---@class FarseerPhysics.Dynamics.ControllerDelegate : System.MulticastDelegate
+---@class FarseerPhysics.Controllers.Controller : FarseerPhysics.Common.PhysicsLogic.FilterData
+---@class FarseerPhysics.Common.PhysicsLogic.FilterData : System.Object
+---@class System.Collections.Generic.List*1FarseerPhysics*Controllers*Controller : System.Object, {[System.Int32|integer]:FarseerPhysics.Controllers.Controller}, {[System.Int32|integer]:System.Object}
+---@class FarseerPhysics.Dynamics.ContactManager : System.Object
+---@class System.Collections.Generic.List*1FarseerPhysics*Dynamics*Joints*Joint : System.Object, {[System.Int32|integer]:FarseerPhysics.Dynamics.Joints.Joint}, {[System.Int32|integer]:System.Object}
+---@class FarseerPhysics.Fluids.FluidSystem2 : System.Object
+---@class FarseerPhysics.Dynamics.Contacts.ContactListHead : FarseerPhysics.Dynamics.Contacts.Contact
+---@class FarseerPhysics.Dynamics.Island : System.Object
+---@class FarseerPhysics.Dynamics.TimeStep-ref
+---@class FarseerPhysics.Dynamics.SolverIterations-ref
+---@class FarseerPhysics.Collision.AABB-ref
+---@class FarseerPhysics.BodyType : System.Enum
+---@class FarseerPhysics.Common.Vertices : System.Collections.Generic.List*1Microsoft*Xna*Framework*Vector2
+---@class System.Collections.Generic.List*1FarseerPhysics*Common*Vertices : System.Object, {[System.Int32|integer]:FarseerPhysics.Common.Vertices}, {[System.Int32|integer]:System.Object}
+---@class FarseerPhysics.Common.Path : System.Object
+---@class FarseerPhysics.Collision.IBroadPhase
+---@class FarseerPhysics.Dynamics.AfterCollisionEventHandler : System.MulticastDelegate
+---@class FarseerPhysics.Dynamics.Contacts.ContactVelocityConstraint : System.Object
+---@class FarseerPhysics.Dynamics.BeforeCollisionEventHandler : System.MulticastDelegate
+---@class FarseerPhysics.Dynamics.OnCollisionEventHandler : System.MulticastDelegate
+---@class FarseerPhysics.Dynamics.OnSeparationEventHandler : System.MulticastDelegate
+---@class FarseerPhysics.Dynamics.FixtureProxy-arr : System.Array
+---@class FarseerPhysics.Collision.Shapes.Shape : System.Object
+---@class FarseerPhysics.Collision.RayCastOutput-ref
+---@class FarseerPhysics.Collision.RayCastInput-ref
+---@class FarseerPhysics.Common.Transform-ref
+---@class FarseerPhysics.Dynamics.Category-ref
+---@class Barotrauma.PhysicsBody.Shape : System.Enum
+---@class System.Collections.Generic.List*1Barotrauma*PhysicsBody*T : System.Object, {[System.Int32|integer]:Barotrauma.PhysicsBody.T}, {[System.Int32|integer]:System.Object}
+---@class Barotrauma.PhysicsBody.T : Barotrauma.PosInfo
+---@class Barotrauma.NetworkFireSource-arr : System.Array
+---@class Barotrauma.Hull.NetworkFireSource : System.ValueType
+---@class System.Collections.Generic.List*1Barotrauma*Hull*RemoteDecal : System.Object, {[System.Int32|integer]:Barotrauma.Hull.RemoteDecal}, {[System.Int32|integer]:System.Object}
+---@class Barotrauma.Hull.RemoteDecal : System.Object
+---@class System.Collections.Generic.HashSet*1Barotrauma*Decal : System.Object
+---@class System.Collections.Generic.List*1Barotrauma*EntityGrid : System.Object, {[System.Int32|integer]:Barotrauma.EntityGrid}, {[System.Int32|integer]:System.Object}
+---@class System.Collections.Generic.IEnumerable*1Barotrauma*BackgroundSection
+---@class Barotrauma.WaterRenderer : System.Object
+---@class Barotrauma.BackgroundSectionsEventData-ref
+---@class Barotrauma.NetworkFireSource-arr-ref
+---@class System.Action*1Barotrauma*Hull*BackgroundSectionNetworkUpdate : System.MulticastDelegate
+---@class Barotrauma.Hull.BackgroundSectionNetworkUpdate : System.ValueType
+---@class Voronoi2.Site-arr : System.Array
+---@class Voronoi2.CellType : System.Enum
+---@class System.Collections.Generic.Dictionary*1Barotrauma*Identifier*1Barotrauma*Sprite*TextureRefCounter : System.Object, {[Barotrauma.Identifier]:Barotrauma.Sprite.TextureRefCounter}, {[System.Object]:System.Object}
+---@class Barotrauma.Sprite.TextureRefCounter : System.Object
+---@class System.Collections.Generic.List*1System*WeakReference*2Barotrauma*Sprite : System.Object, {[System.Int32|integer]:System.WeakReference*1Barotrauma*Sprite}, {[System.Int32|integer]:System.Object}
+---@class System.WeakReference*1Barotrauma*Sprite : System.Object
+---@class System.Collections.Generic.IEnumerable*1Barotrauma*Sprite
+---@class Microsoft.Xna.Framework.Rectangle-arr : System.Array
+---@class System.Collections.Generic.List*1Barotrauma*WearableType : System.Object, {[System.Int32|integer]:Barotrauma.WearableType}, {[System.Int32|integer]:System.Object}
+---@class Microsoft.Xna.Framework.Graphics.IndexBuffer : Microsoft.Xna.Framework.Graphics.GraphicsResource
+---@class System.Collections.Generic.List*1Barotrauma*DeformableSprite : System.Object, {[System.Int32|integer]:Barotrauma.DeformableSprite}, {[System.Int32|integer]:System.Object}
+---@class System.Func*1Microsoft*Xna*Framework*Vector2*1Microsoft*Xna*Framework*Vector2 : System.MulticastDelegate
+---@class System.Collections.Generic.List*1Barotrauma*SpriteRecorder*RecordedBuffer : System.Object, {[System.Int32|integer]:Barotrauma.SpriteRecorder.RecordedBuffer}, {[System.Int32|integer]:System.Object}
+---@class Barotrauma.SpriteRecorder.RecordedBuffer : System.ValueType
+---@class System.Collections.Generic.List*1Barotrauma*SpriteRecorder*Command : System.Object, {[System.Int32|integer]:Barotrauma.SpriteRecorder.Command}, {[System.Int32|integer]:System.Object}
+---@class Barotrauma.SpriteRecorder.Command : System.ValueType
+---@class Microsoft.Xna.Framework.Graphics.BasicEffect : Microsoft.Xna.Framework.Graphics.Effect
+---@class Barotrauma.DecorativeSprite.AnimationType : System.Enum
+---@class System.Func*1Barotrauma*PropertyConditional*1System*Boolean : System.MulticastDelegate
+---@class Barotrauma.ContainedItemSprite.DecorativeSpriteBehaviorType : System.Enum
+---@class System.Collections.Generic.List*1System*ValueTuple*2Barotrauma*Identifier*2Barotrauma*Identifier : System.Object, {[System.Int32|integer]:System.ValueTuple*1Barotrauma*Identifier*1Barotrauma*Identifier}, {[System.Int32|integer]:System.Object}
+---@class System.Lazy*1Barotrauma*LocalizedString : System.Object
+---@class System.Collections.Immutable.ImmutableArray*1Barotrauma*FabricationRecipe*RequiredItem : System.ValueType, {[System.Int32|integer]:Barotrauma.FabricationRecipe.RequiredItem}, {[System.Int32|integer]:Barotrauma.FabricationRecipe.RequiredItem}, {[System.Int32|integer]:System.Object}, {[System.Int32|integer]:Barotrauma.FabricationRecipe.RequiredItem}
+---@class Barotrauma.UpgradeContentPrefab : Barotrauma.Prefab
+---@class Barotrauma.PrefabCollection*1Barotrauma*UpgradeCategory : System.Object, {[Barotrauma.Identifier]:Barotrauma.UpgradeCategory}, {[System.String|string]:Barotrauma.UpgradeCategory}
+---@class Barotrauma.UpgradeModulesFile : Barotrauma.GenericPrefabFile*1Barotrauma*UpgradeContentPrefab
+---@class Barotrauma.GenericPrefabFile*1Barotrauma*UpgradeContentPrefab : Barotrauma.ContentFile
+---@class System.Collections.Generic.List*1Barotrauma*PurchasedUpgrade : System.Object, {[System.Int32|integer]:Barotrauma.PurchasedUpgrade}, {[System.Int32|integer]:System.Object}
+---@class System.Collections.Generic.List*1Barotrauma*PurchasedItemSwap : System.Object, {[System.Int32|integer]:Barotrauma.PurchasedItemSwap}, {[System.Int32|integer]:System.Object}
+---@class Barotrauma.PurchasedItemSwap : System.Object
+---@class Barotrauma.NamedEvent*1Barotrauma*UpgradeManager : System.Object
+---@class System.Collections.Generic.ICollection*1Barotrauma*Item
+---@class System.Collections.Immutable.ImmutableArray*1Barotrauma*UpgradeMaxLevelMod : System.ValueType, {[System.Int32|integer]:Barotrauma.UpgradeMaxLevelMod}, {[System.Int32|integer]:Barotrauma.UpgradeMaxLevelMod}, {[System.Int32|integer]:System.Object}, {[System.Int32|integer]:Barotrauma.UpgradeMaxLevelMod}
+---@class Barotrauma.UpgradeMaxLevelMod : System.ValueType
+---@class Barotrauma.PrefabCollection*1Barotrauma*UpgradePrefab : System.Object, {[Barotrauma.Identifier]:Barotrauma.UpgradePrefab}, {[System.String|string]:Barotrauma.UpgradePrefab}
+---@class System.Collections.Generic.IEnumerable*1Barotrauma*UpgradeCategory
+---@class System.Collections.Generic.Dictionary*1System*String*1System*String-arr : System.Object, {[System.String|string]:System.String-arr|System.String|string[]}, {[System.Object]:System.Object}
+---@class System.Collections.Generic.Dictionary*1Barotrauma*ISerializableEntity*1Barotrauma*PropertyReference-arr : System.Object, {[Barotrauma.ISerializableEntity]:Barotrauma.PropertyReference-arr|Barotrauma.PropertyReference[]}, {[System.Object]:System.Object}
+---@class Barotrauma.PropertyReference-arr : System.Array
+---@class Barotrauma.PropertyReference : System.Object
+---@class Barotrauma.ISerializableEntity-arr : System.Array
+---@class Barotrauma.UpgradePrefab-ref
+---@class Barotrauma.UpgradeCategory-ref
+---@class Barotrauma.EventSet : Barotrauma.Prefab
+---@class Barotrauma.T-ref
+---@class Barotrauma.RandomEventsFile : Barotrauma.ContentFile
+---@class System.Collections.Generic.List*1Barotrauma*EventManager*DebugLine : System.Object, {[System.Int32|integer]:Barotrauma.EventManager.DebugLine}, {[System.Int32|integer]:System.Object}
+---@class Barotrauma.EventManager.DebugLine : System.ValueType
+---@class System.Collections.Generic.List*1Barotrauma*EventSet : System.Object, {[System.Int32|integer]:Barotrauma.EventSet}, {[System.Int32|integer]:System.Object}
+---@class System.Collections.Generic.Dictionary*1Barotrauma*EventSet*1System*Collections*Generic*List*2Barotrauma*Event : System.Object, {[Barotrauma.EventSet]:System.Collections.Generic.List*1Barotrauma*Event|Barotrauma.Event[]}, {[System.Object]:System.Object}
+---@class System.Collections.Generic.HashSet*1Barotrauma*Event : System.Object
+---@class System.Collections.Generic.HashSet*1Barotrauma*EventPrefab : System.Object
+---@class System.Collections.Generic.Queue*1Barotrauma*Event : System.Object
+---@class System.Collections.Generic.List*1Barotrauma*EventManager*TimeStamp : System.Object, {[System.Int32|integer]:Barotrauma.EventManager.TimeStamp}, {[System.Int32|integer]:System.Object}
+---@class Barotrauma.EventManager.TimeStamp : System.ValueType
+---@class Barotrauma.MTRandom : System.Random
+---@class Barotrauma.ScriptedEvent : Barotrauma.Event
+---@class Barotrauma.ArtifactEvent : Barotrauma.Event
+---@class Barotrauma.MonsterEvent : Barotrauma.Event
+---@class System.Collections.Generic.IReadOnlyList*1Barotrauma*EventSet : {[System.Int32|integer]:Barotrauma.EventSet}
+---@class System.Collections.Generic.List*1System*Tuple*2System*Int32*2Barotrauma*EventAction : System.Object, {[System.Int32|integer]:System.Tuple*1System*Int32*1Barotrauma*EventAction}, {[System.Int32|integer]:System.Object}
+---@class System.Tuple*1System*Int32*1Barotrauma*EventAction : System.Object, {[System.Int32|integer]:System.Object}
+---@class Barotrauma.PrefabCollection*1Barotrauma*EventManagerSettings : System.Object, {[Barotrauma.Identifier]:Barotrauma.EventManagerSettings}, {[System.String|string]:Barotrauma.EventManagerSettings}
+---@class System.Linq.IOrderedEnumerable*1Barotrauma*EventManagerSettings
+---@class Barotrauma.EventManagerSettingsFile : Barotrauma.GenericPrefabFile*1Barotrauma*EventManagerSettings
+---@class Barotrauma.GenericPrefabFile*1Barotrauma*EventManagerSettings : Barotrauma.ContentFile
+---@class Barotrauma.AIObjectiveManager.ObjectiveType : System.Enum
+---@class Barotrauma.Character.ItemTeamChange : System.ValueType
+---@class System.Collections.Generic.Dictionary*1Barotrauma*Identifier*1System*Boolean : System.Object, {[Barotrauma.Identifier]:System.Boolean|boolean}, {[System.Object]:System.Object}
+---@class Barotrauma.GUIFrame-arr : System.Array
+---@class System.Collections.Generic.Dictionary*1System*UInt32*1Barotrauma*Networking*ServerSettings*NetPropertyData : System.Object, {[System.UInt32|integer]:Barotrauma.Networking.ServerSettings.NetPropertyData}, {[System.Object]:System.Object}
+---@class Barotrauma.Networking.ServerSettings.NetPropertyData : System.Object
+---@class Barotrauma.Networking.PlayStyle : System.Enum
+---@class Barotrauma.Networking.SelectionMode : System.Enum
+---@class System.Collections.Generic.List*1Barotrauma*Networking*ServerSettings*SavedClientPermission : System.Object, {[System.Int32|integer]:Barotrauma.Networking.ServerSettings.SavedClientPermission}, {[System.Int32|integer]:System.Object}
+---@class Barotrauma.Networking.ServerSettings.SavedClientPermission : System.Object
+---@class Barotrauma.LosMode : System.Enum
+---@class System.Collections.Generic.List*1Barotrauma*MissionType : System.Object, {[System.Int32|integer]:Barotrauma.MissionType}, {[System.Int32|integer]:System.Object}
+---@class Barotrauma.Networking.LootedMoneyDestination : System.Enum
+---@class System.Collections.Generic.List*1Barotrauma*Range*2System*Int32 : System.Object, {[System.Int32|integer]:Barotrauma.Range*1System*Int32}, {[System.Int32|integer]:System.Object}
+---@class System.Collections.Generic.IReadOnlyDictionary*1Barotrauma*Identifier*1System*Boolean : {[Barotrauma.Identifier]:System.Boolean|boolean}
+---@class Barotrauma.Networking.ServerSettings.NetFlags : System.Enum
+---@class Barotrauma.GUIScrollBar-ref
+---@class Barotrauma.GUITextBlock-ref
+---@class Barotrauma.Networking.PlayerConnectionChangeType : System.Enum
+---@class Barotrauma.Items.Components.WifiComponent-ref
+---@class System.Collections.Generic.HashSet*1Barotrauma*DebugConsole*Command : System.Object
+---@class Barotrauma.Sounds.Sound : System.Object
+---@class System.Collections.Generic.IReadOnlyList*1Barotrauma*Networking*Client : {[System.Int32|integer]:Barotrauma.Networking.Client}
+---@class System.Collections.Generic.IEnumerable*1Barotrauma*DebugConsole*Command
+---@class Barotrauma.Networking.VoteType : System.Enum
+---@class Barotrauma.Networking.Client.T : System.Object
+---@class Barotrauma.Networking.ClientPermissions-ref
+---@class System.Collections.Generic.List
+---@class Barotrauma.INetSerializableStruct.T : System.Object
+---@class Barotrauma.ReadOnlyBitField : System.Object
+---@class Barotrauma.INetSerializableStruct.T : System.Object
+---@class Barotrauma.WriteOnlyBitField : System.Object
+---@class Lidgren.Network.NetConnection : System.Object
+---@class Barotrauma.Voting : System.Object
+---@class System.Nullable*1System*TimeSpan : System.ValueType
+---@class System.Collections.Generic.List*1System*UInt32 : System.Object, {[System.Int32|integer]:System.UInt32|integer}, {[System.Int32|integer]:System.Object}
+---@class System.Collections.Generic.List*1Barotrauma*Networking*BannedPlayer : System.Object, {[System.Int32|integer]:Barotrauma.Networking.BannedPlayer}, {[System.Int32|integer]:System.Object}
+---@class System.Collections.Generic.IReadOnlyList*1Barotrauma*Networking*BannedPlayer : {[System.Int32|integer]:Barotrauma.Networking.BannedPlayer}
+---@class System.Collections.Generic.IEnumerable*1Barotrauma*Either*2Barotrauma*Networking*Address*2Barotrauma*Networking*AccountId
+---@class Barotrauma.Either*1Barotrauma*Networking*Address*1Barotrauma*Networking*AccountId : System.Object
+---@class System.Nullable*1System*DateTime : System.ValueType
+---@class Barotrauma.Networking.NetStats : System.Object
+---@class Barotrauma.CameraTransition : System.Object
+---@class Barotrauma.Networking.GameClient.RoundInitStatus : System.Enum
+---@class System.Collections.Generic.List*1Barotrauma*Networking*Client : System.Object, {[System.Int32|integer]:Barotrauma.Networking.Client}, {[System.Int32|integer]:System.Object}
+---@class System.Collections.Generic.List*1Barotrauma*Networking*ChatMessage : System.Object, {[System.Int32|integer]:Barotrauma.Networking.ChatMessage}, {[System.Int32|integer]:System.Object}
+---@class Barotrauma.Networking.FileReceiver : System.Object
+---@class Barotrauma.Networking.ClientEntityEventManager : Barotrauma.Networking.NetEntityEventManager
+---@class Barotrauma.Networking.NetEntityEventManager : System.Object
+---@class Barotrauma.Option*1System*Int32 : System.Object
+---@class Barotrauma.NamedEvent*1Barotrauma*Networking*GameClient*PermissionChangedEvent : System.Object
+---@class System.Collections.Generic.List*1Barotrauma*Networking*IReadMessage : System.Object, {[System.Int32|integer]:Barotrauma.Networking.IReadMessage}, {[System.Int32|integer]:System.Object}
+---@class System.Collections.Generic.List*1Barotrauma*Networking*IServerSerializable : System.Object, {[System.Int32|integer]:Barotrauma.Networking.IServerSerializable}, {[System.Int32|integer]:System.Object}
+---@class Barotrauma.Networking.IServerSerializable
+---@class Barotrauma.Networking.ClientNetError : System.Enum
+---@class Barotrauma.Networking.ServerInfo : System.Object
+---@class Barotrauma.Networking.PeerDisconnectPacket : System.ValueType
+---@class Barotrauma.Networking.FileTransferType : System.Enum
+---@class Barotrauma.Networking.FileReceiver.FileTransferIn : System.Object
+---@class Barotrauma.Networking.ClientPeer.Callbacks : System.ValueType
+---@class Steamworks.AuthTicket : System.Object
+---@class System.Collections.Immutable.ImmutableArray*1Barotrauma*Networking*ServerContentPackage : System.ValueType, {[System.Int32|integer]:Barotrauma.Networking.ServerContentPackage}, {[System.Int32|integer]:Barotrauma.Networking.ServerContentPackage}, {[System.Int32|integer]:System.Object}, {[System.Int32|integer]:Barotrauma.Networking.ServerContentPackage}
+---@class Barotrauma.Networking.ServerContentPackage : System.Object
+---@class Barotrauma.Networking.PeerPacketHeaders : System.ValueType
+---@class Barotrauma.Networking.ClientPeer.IncomingInitializationMessage : System.ValueType
+---@class Lidgren.Network.NetClient : Lidgren.Network.NetPeer
+---@class Lidgren.Network.NetPeer : System.Object
+---@class Lidgren.Network.NetPeerConfiguration : System.Object
+---@class System.Collections.Generic.List*1Lidgren*Network*NetIncomingMessage : System.Object, {[System.Int32|integer]:Lidgren.Network.NetIncomingMessage}, {[System.Int32|integer]:System.Object}
+---@class Lidgren.Network.NetIncomingMessage : Lidgren.Network.NetBuffer
+---@class Lidgren.Network.NetBuffer : System.Object
+---@class Lidgren.Network.NetSendResult : System.Enum
+---@class System.Collections.Generic.List*1Barotrauma*Networking*ClientPeer*IncomingInitializationMessage : System.Object, {[System.Int32|integer]:Barotrauma.Networking.ClientPeer.IncomingInitializationMessage}, {[System.Int32|integer]:System.Object}
+---@class Steamworks.P2PSessionError : System.Enum
+---@class System.Collections.Generic.List*1Barotrauma*Networking*SteamP2POwnerPeer*RemotePeer : System.Object, {[System.Int32|integer]:Barotrauma.Networking.SteamP2POwnerPeer.RemotePeer}, {[System.Int32|integer]:System.Object}
+---@class Barotrauma.Networking.SteamP2POwnerPeer.RemotePeer : System.Object
+---@class Steamworks.AuthResponse : System.Enum
+---@class EventInput.IKeyboardSubscriber
+---@class EventInput.CharacterEventArgs : System.EventArgs
+---@class Microsoft.Xna.Framework.GameWindow : System.Object
+---@class Barotrauma.Particles.ParticlePrefab.DrawTargetType : System.Enum
+---@class Barotrauma.Particles.ParticleBlendState : System.Enum
+---@class System.Tuple*1Microsoft*Xna*Framework*Vector2*1Microsoft*Xna*Framework*Vector2 : System.Object, {[System.Int32|integer]:System.Object}
+---@class Barotrauma.Particles.Particle.UpdateResult : System.Enum
+---@class Barotrauma.Particles.Particle-arr : System.Array
+---@class System.Collections.Generic.List*1Barotrauma*Particles*ParticlePrefab : System.Object, {[System.Int32|integer]:Barotrauma.Particles.ParticlePrefab}, {[System.Int32|integer]:System.Object}
+---@class System.Collections.Generic.Dictionary*1Barotrauma*Particles*ParticlePrefab*1System*Int32 : System.Object, {[Barotrauma.Particles.ParticlePrefab]:System.Int32|integer}, {[System.Object]:System.Object}
+---@class Barotrauma.PrefabCollection*1Barotrauma*Particles*ParticlePrefab : System.Object, {[Barotrauma.Identifier]:Barotrauma.Particles.ParticlePrefab}, {[System.String|string]:Barotrauma.Particles.ParticlePrefab}
+---@class SharpFont.Face : SharpFont.NativeObject
+---@class SharpFont.NativeObject : System.Object
+---@class System.Collections.Generic.Dictionary*1System*UInt32*1Barotrauma*ScalableFont*GlyphData : System.Object, {[System.UInt32|integer]:Barotrauma.ScalableFont.GlyphData}, {[System.Object]:System.Object}
+---@class Barotrauma.ScalableFont.GlyphData : System.ValueType
+---@class System.Collections.Generic.List*1Microsoft*Xna*Framework*Graphics*Texture2D : System.Object, {[System.Int32|integer]:Microsoft.Xna.Framework.Graphics.Texture2D}, {[System.Int32|integer]:System.Object}
+---@class System.UInt32-arr : System.Array
+---@class System.Collections.Generic.List*1Barotrauma*ScalableFont : System.Object, {[System.Int32|integer]:Barotrauma.ScalableFont}, {[System.Int32|integer]:System.Object}
+---@class SharpFont.Library : System.Object
+---@class System.Collections.Generic.IEnumerable*1System*UInt32
+---@class Barotrauma.ForceUpperCase : System.Enum
+---@class System.Nullable
+---@class Microsoft.Xna.Framework.Vector2-arr-ref
+---@class Barotrauma.ChatManager : System.Object
+---@class Barotrauma.GUITextBox.OnEnterHandler : System.MulticastDelegate
+---@class Barotrauma.ChatBox.ChatKeyStates : System.ValueType
+---@class System.Nullable*1Barotrauma*CampaignUI*PlayerBalanceElement : System.ValueType
+---@class Barotrauma.CrewManagement.SortingMethod : System.Enum
+---@class System.ValueTuple*1Barotrauma*CharacterInfo*1System*String : System.ValueType, {[System.Int32|integer]:System.Object}
+---@class System.IO.FileSystemWatcher : System.ComponentModel.Component
+---@class System.ComponentModel.Component : System.MarshalByRefObject
+---@class System.Action*1System*String : System.MulticastDelegate
+---@class System.IO.FileSystemEventArgs : System.EventArgs
+---@class Barotrauma.Graph.GraphDelegate : System.MulticastDelegate
+---@class System.Collections.Generic.List*1Barotrauma*GUIMessage : System.Object, {[System.Int32|integer]:Barotrauma.GUIMessage}, {[System.Int32|integer]:System.Object}
+---@class Barotrauma.GUI.SavingIndicatorState : System.Enum
+---@class System.Collections.Generic.HashSet*1Barotrauma*GUIComponent : System.Object
+---@class System.Collections.Generic.Queue*1Barotrauma*GUIComponent : System.Object
+---@class System.Collections.Immutable.ImmutableArray*1Microsoft*Xna*Framework*Vector2 : System.ValueType, {[System.Int32|integer]:Microsoft.Xna.Framework.Vector2}, {[System.Int32|integer]:Microsoft.Xna.Framework.Vector2}, {[System.Int32|integer]:System.Object}, {[System.Int32|integer]:Microsoft.Xna.Framework.Vector2}
+---@class Barotrauma.GUISelector*1Barotrauma*GUICursorPrefab : System.Object
+---@class System.Nullable*1Barotrauma*Pivot : System.ValueType
+---@class System.Func*1System*Int32*1System*Int32 : System.MulticastDelegate
+---@class System.Func*1Barotrauma*RectTransform*1Barotrauma*GUI*T : System.MulticastDelegate
+---@class Barotrauma.GUI.T : Barotrauma.GUIComponent
+---@class System.Collections.Generic.List*1Barotrauma*GUI*T : System.Object, {[System.Int32|integer]:Barotrauma.GUI.T}, {[System.Int32|integer]:System.Object}
+---@class System.Func*1Barotrauma*RectTransform*1Barotrauma*GUI*T : System.MulticastDelegate
+---@class Barotrauma.GUI.T : Barotrauma.GUIComponent
+---@class System.Collections.Generic.List*1Barotrauma*GUI*T : System.Object, {[System.Int32|integer]:Barotrauma.GUI.T}, {[System.Int32|integer]:System.Object}
+---@class System.Func*1Barotrauma*RectTransform*1Barotrauma*GUI*T : System.MulticastDelegate
+---@class Barotrauma.GUI.T : Barotrauma.GUIComponent
+---@class System.Collections.Generic.List*1Barotrauma*GUI*T : System.Object, {[System.Int32|integer]:Barotrauma.GUI.T}, {[System.Int32|integer]:System.Object}
+---@class System.Tuple*1Microsoft*Xna*Framework*Vector2*1Microsoft*Xna*Framework*Point : System.Object, {[System.Int32|integer]:System.Object}
+---@class System.Collections.Generic.IList*1Barotrauma*GUIComponent : {[System.Int32|integer]:Barotrauma.GUIComponent}
+---@class System.Collections.Generic.IList*1Microsoft*Xna*Framework*Rectangle : {[System.Int32|integer]:Microsoft.Xna.Framework.Rectangle}
+---@class System.Collections.Generic.IEnumerable*1Barotrauma*GUIComponent
+---@class Barotrauma.Range
+---@class Barotrauma.UIStyleFile : Barotrauma.HashlessFile
+---@class Barotrauma.HashlessFile : Barotrauma.ContentFile
+---@class System.Collections.Generic.Dictionary*1Barotrauma*GUIComponent*ComponentState*1System*Collections*Generic*List*2Barotrauma*UISprite : System.Object, {[Barotrauma.GUIComponent.ComponentState]:System.Collections.Generic.List*1Barotrauma*UISprite|Barotrauma.UISprite[]}, {[System.Object]:System.Object}
+---@class System.Collections.Generic.List*1Barotrauma*UISprite : System.Object, {[System.Int32|integer]:Barotrauma.UISprite}, {[System.Int32|integer]:System.Object}
+---@class System.Collections.Generic.Dictionary*1Barotrauma*Identifier*1Barotrauma*GUIComponentStyle : System.Object, {[Barotrauma.Identifier]:Barotrauma.GUIComponentStyle}, {[System.Object]:System.Object}
+---@class Microsoft.Xna.Framework.Input.MouseState : System.ValueType
+---@class Microsoft.Xna.Framework.Input.KeyboardState : System.ValueType, {[Microsoft.Xna.Framework.Input.Keys]:Microsoft.Xna.Framework.Input.KeyState}
+---@class System.Collections.Generic.List*1Microsoft*Xna*Framework*Input*Keys : System.Object, {[System.Int32|integer]:Microsoft.Xna.Framework.Input.Keys}, {[System.Int32|integer]:System.Object}
+---@class Barotrauma.GUISelector*1Barotrauma*GUISpritePrefab : System.Object
+---@class Barotrauma.GUISelector*1Barotrauma*GUISpriteSheetPrefab : System.Object
+---@class Barotrauma.GUIButton.OnClickedHandler : System.MulticastDelegate
+---@class Barotrauma.GUIButton.OnPressedHandler : System.MulticastDelegate
+---@class Barotrauma.GUIButton.OnButtonDownHandler : System.MulticastDelegate
+---@class System.Collections.Generic.List*1System*WeakReference*2Barotrauma*RectTransform : System.Object, {[System.Int32|integer]:System.WeakReference*1Barotrauma*RectTransform}, {[System.Int32|integer]:System.Object}
+---@class System.WeakReference*1Barotrauma*RectTransform : System.Object
+---@class Barotrauma.GUISelector*1Barotrauma*GUIColorPrefab : System.Object
+---@class Barotrauma.GUIColorPicker.OnColorSelectedHandler : System.MulticastDelegate
+---@class Microsoft.Xna.Framework.Color-arr-ref
+---@class System.Func*1System*Single*1System*Single*1Microsoft*Xna*Framework*Color : System.MulticastDelegate
+---@class Barotrauma.GUIComponent.SecondaryButtonDownHandler : System.MulticastDelegate
+---@class System.Action*1Barotrauma*GUIComponent : System.MulticastDelegate
+---@class Barotrauma.SlideDirection : System.Enum
+---@class System.Nullable*1Barotrauma*Anchor : System.ValueType
+---@class Barotrauma.GUIComponent.T : Barotrauma.GUIComponent
+---@class Barotrauma.GUIComponent.T : Barotrauma.GUIComponent
+---@class System.Collections.Generic.IEnumerable*1Barotrauma*GUIComponent*T
+---@class Barotrauma.GUIComponent.T : Barotrauma.GUIComponent
+---@class System.Func*1Barotrauma*GUIComponent*1System*Boolean : System.MulticastDelegate
+---@class System.Collections.Generic.Dictionary*1Barotrauma*ContextMenuOption*1Barotrauma*GUITextBlock : System.Object, {[Barotrauma.ContextMenuOption]:Barotrauma.GUITextBlock}, {[System.Object]:System.Object}
+---@class Barotrauma.ContextMenuOption : System.ValueType
+---@class Barotrauma.ContextMenuOption-arr : System.Array
+---@class System.Action*1System*Single*1Barotrauma*GUICustomComponent : System.MulticastDelegate
+---@class Barotrauma.GUIDropDown.OnSelectedHandler : System.MulticastDelegate
+---@class System.Collections.Generic.List*1Barotrauma*RectTransform : System.Object, {[System.Int32|integer]:Barotrauma.RectTransform}, {[System.Int32|integer]:System.Object}
+---@class System.Collections.Generic.IEnumerable*1System*Object
+---@class System.Nullable*1Barotrauma*GUIComponent*ComponentState : System.ValueType
+---@class Barotrauma.GUIListBox.OnSelectedHandler : System.MulticastDelegate
+---@class Barotrauma.GUIListBox.CheckSelectedHandler : System.MulticastDelegate
+---@class Barotrauma.GUIListBox.OnRearrangedHandler : System.MulticastDelegate
+---@class System.Collections.Generic.Dictionary*1Barotrauma*GUIComponent*1System*Boolean : System.Object, {[Barotrauma.GUIComponent]:System.Boolean|boolean}, {[System.Object]:System.Object}
+---@class Barotrauma.GUIListBox.SelectMode : System.Enum
+---@class System.Nullable*1Microsoft*Xna*Framework*Vector4 : System.ValueType
+---@class Barotrauma.GUIListBox.DragMode : System.Enum
+---@class System.Collections.Generic.IReadOnlyList*1Barotrauma*GUIComponent : {[System.Int32|integer]:Barotrauma.GUIComponent}
+---@class System.Nullable*1Barotrauma*GUISoundType : System.ValueType
+---@class Barotrauma.GUIListBox.Force : System.Enum
+---@class Barotrauma.GUIListBox.AutoScroll : System.Enum
+---@class Barotrauma.GUIListBox.TakeKeyBoardFocus : System.Enum
+---@class Barotrauma.GUIListBox.PlaySelectSound : System.Enum
+---@class System.Action*1System*Int32*1Microsoft*Xna*Framework*Point : System.MulticastDelegate
+---@class Barotrauma.GUIMessageBox.Type : System.Enum
+---@class Barotrauma.Type-arr : System.Array
+---@class Barotrauma.GUINumberInput.OnValueEnteredHandler : System.MulticastDelegate
+---@class Barotrauma.GUINumberInput.OnValueChangedHandler : System.MulticastDelegate
+---@class Barotrauma.GUIProgressBar.ProgressGetterHandler : System.MulticastDelegate
+---@class System.Collections.Generic.Dictionary*1System*Int32*1Barotrauma*GUITickBox : System.Object, {[System.Int32|integer]:Barotrauma.GUITickBox}, {[System.Object]:System.Object}
+---@class Barotrauma.GUIRadioButtonGroup.RadioButtonGroupDelegate : System.MulticastDelegate
+---@class Barotrauma.GUIScrollBar.OnMovedHandler : System.MulticastDelegate
+---@class Barotrauma.GUIScrollBar.ScrollConversion : System.MulticastDelegate
+---@class System.Collections.Immutable.ImmutableDictionary*1Barotrauma*Identifier*1Barotrauma*GUIFont : System.Object, {[Barotrauma.Identifier]:Barotrauma.GUIFont}, {[Barotrauma.Identifier]:Barotrauma.GUIFont}, {[System.Object]:System.Object}
+---@class System.Collections.Immutable.ImmutableDictionary*1Barotrauma*Identifier*1Barotrauma*GUISprite : System.Object, {[Barotrauma.Identifier]:Barotrauma.GUISprite}, {[Barotrauma.Identifier]:Barotrauma.GUISprite}, {[System.Object]:System.Object}
+---@class System.Collections.Immutable.ImmutableDictionary*1Barotrauma*Identifier*1Barotrauma*GUISpriteSheet : System.Object, {[Barotrauma.Identifier]:Barotrauma.GUISpriteSheet}, {[Barotrauma.Identifier]:Barotrauma.GUISpriteSheet}, {[System.Object]:System.Object}
+---@class System.Collections.Immutable.ImmutableDictionary*1Barotrauma*Identifier*1Barotrauma*GUIColor : System.Object, {[Barotrauma.Identifier]:Barotrauma.GUIColor}, {[Barotrauma.Identifier]:Barotrauma.GUIColor}, {[System.Object]:System.Object}
+---@class Barotrauma.PrefabCollection*1Barotrauma*GUIComponentStyle : System.Object, {[Barotrauma.Identifier]:Barotrauma.GUIComponentStyle}, {[System.String|string]:Barotrauma.GUIComponentStyle}
+---@class Barotrauma.GUITextBlock.TextGetterHandler : System.MulticastDelegate
+---@class Barotrauma.GUITextBlock.StrikethroughSettings : System.Object
+---@class System.Collections.Generic.List*1Barotrauma*GUITextBlock*ClickableArea : System.Object, {[System.Int32|integer]:Barotrauma.GUITextBlock.ClickableArea}, {[System.Int32|integer]:System.Object}
+---@class Barotrauma.GUITextBlock-arr : System.Array
+---@class System.Collections.Generic.IEnumerable*1Barotrauma*GUITextBlock
+---@class Barotrauma.TextBoxEvent : System.MulticastDelegate
+---@class Barotrauma.GUITextBox.OnTextChangedHandler : System.MulticastDelegate
+---@class Barotrauma.Memento*1System*String : System.Object
+---@class Barotrauma.GUITickBox.OnSelectedHandler : System.MulticastDelegate
+---@class Barotrauma.Media.Video : System.Object
+---@class System.Collections.Generic.Queue*1Barotrauma*LoadingScreen*PendingSplashScreen : System.Object
+---@class Barotrauma.LoadingScreen.PendingSplashScreen : System.ValueType
+---@class Barotrauma.LanguageIdentifier-arr : System.Array
+---@class System.Nullable*1Barotrauma*MedicalClinicUI*PendingHealList : System.ValueType
+---@class System.Nullable*1Barotrauma*MedicalClinicUI*CrewHealList : System.ValueType
+---@class System.Nullable*1Barotrauma*MedicalClinicUI*PopupAfflictionList : System.ValueType
+---@class Barotrauma.MedicalClinicUI.PendingHealElement : System.ValueType
+---@class Barotrauma.MedicalClinicUI.CrewElement : System.ValueType
+---@class Barotrauma.MedicalClinicUI.CrewHealList : System.ValueType
+---@class Barotrauma.MedicalClinicUI.PendingHealList : System.ValueType
+---@class System.Collections.Immutable.ImmutableArray*1Barotrauma*GUIComponent : System.ValueType, {[System.Int32|integer]:Barotrauma.GUIComponent}, {[System.Int32|integer]:Barotrauma.GUIComponent}, {[System.Int32|integer]:System.Object}, {[System.Int32|integer]:Barotrauma.GUIComponent}
+---@class System.Collections.Immutable.ImmutableArray*1Barotrauma*MedicalClinic*NetAffliction : System.ValueType, {[System.Int32|integer]:Barotrauma.MedicalClinic.NetAffliction}, {[System.Int32|integer]:Barotrauma.MedicalClinic.NetAffliction}, {[System.Int32|integer]:System.Object}, {[System.Int32|integer]:Barotrauma.MedicalClinic.NetAffliction}
+---@class System.Nullable*1System*Collections*Immutable*ImmutableArray*2Barotrauma*GUILayoutGroup : System.ValueType
+---@class Barotrauma.MedicalClinic.RequestResult : System.Enum
+---@class System.Collections.Immutable.ImmutableArray*1Barotrauma*MedicalClinic*NetCrewMember : System.ValueType, {[System.Int32|integer]:Barotrauma.MedicalClinic.NetCrewMember}, {[System.Int32|integer]:Barotrauma.MedicalClinic.NetCrewMember}, {[System.Int32|integer]:System.Object}, {[System.Int32|integer]:Barotrauma.MedicalClinic.NetCrewMember}
+---@class Barotrauma.MedicalClinicUI.ElementState : System.Enum
+---@class Barotrauma.GUILayoutGroup-arr : System.Array
+---@class System.Collections.Generic.IEnumerable*1Barotrauma*SerializableEntityEditor
+---@class System.Action*1Barotrauma*RectTransform : System.MulticastDelegate
+---@class System.Collections.Generic.IEnumerable*1Barotrauma*RectTransform
+---@class System.Comparison*1Barotrauma*RectTransform : System.MulticastDelegate
+---@class Barotrauma.Polygon : System.Object
+---@class System.Collections.Generic.IReadOnlyList*1Microsoft*Xna*Framework*Vector2 : {[System.Int32|integer]:Microsoft.Xna.Framework.Vector2}
+---@class System.Collections.Generic.Dictionary*1Barotrauma*Store*StoreTab*1Barotrauma*GUIListBox : System.Object, {[Barotrauma.Store.StoreTab]:Barotrauma.GUIListBox}, {[System.Object]:System.Object}
+---@class System.Collections.Generic.Dictionary*1Barotrauma*Store*StoreTab*1Barotrauma*Store*SortingMethod : System.Object, {[Barotrauma.Store.StoreTab]:Barotrauma.Store.SortingMethod}, {[System.Object]:System.Object}
+---@class Barotrauma.Store.SortingMethod : System.Enum
+---@class System.Nullable*1Barotrauma*MapEntityCategory : System.ValueType
+---@class System.Collections.Generic.Dictionary*1Barotrauma*ItemPrefab*1Barotrauma*Store*ItemQuantity : System.Object, {[Barotrauma.ItemPrefab]:Barotrauma.Store.ItemQuantity}, {[System.Object]:System.Object}
+---@class Barotrauma.Store.ItemQuantity : System.Object
+---@class System.Collections.Generic.IEnumerable*1Barotrauma*PurchasedItem
+---@class Barotrauma.SubmarineDisplayContent-arr : System.Array
+---@class Barotrauma.SubmarineSelection.SubmarineDisplayContent : System.ValueType
+---@class System.Collections.Generic.List*1Barotrauma*TabMenu*LinkedGUI : System.Object, {[System.Int32|integer]:Barotrauma.TabMenu.LinkedGUI}, {[System.Int32|integer]:System.Object}
+---@class Barotrauma.TabMenu.LinkedGUI : System.Object
+---@class Barotrauma.GUIListBox-arr : System.Array
+---@class System.Collections.Generic.List*1Barotrauma*CharacterTeamType : System.Object, {[System.Int32|integer]:Barotrauma.CharacterTeamType}, {[System.Int32|integer]:System.Object}
+---@class System.Collections.Generic.List*1System*ValueTuple*2Barotrauma*GUIButton*2Barotrauma*GUIComponent : System.Object, {[System.Int32|integer]:System.ValueTuple*1Barotrauma*GUIButton*1Barotrauma*GUIComponent}, {[System.Int32|integer]:System.Object}
+---@class System.ValueTuple*1Barotrauma*GUIButton*1Barotrauma*GUIComponent : System.ValueType, {[System.Int32|integer]:System.Object}
+---@class System.Collections.Generic.List*1System*ValueTuple*2Barotrauma*Identifier*2System*Int32*2Barotrauma*GUIImage*2Barotrauma*GUIFrame*2Barotrauma*GUIFrame : System.Object, {[System.Int32|integer]:System.ValueTuple*1Barotrauma*Identifier*1System*Int32*1Barotrauma*GUIImage*1Barotrauma*GUIFrame*1Barotrauma*GUIFrame}, {[System.Int32|integer]:System.Object}
+---@class System.ValueTuple*1Barotrauma*Identifier*1System*Int32*1Barotrauma*GUIImage*1Barotrauma*GUIFrame*1Barotrauma*GUIFrame : System.ValueType, {[System.Int32|integer]:System.Object}
+---@class System.Collections.Immutable.ImmutableDictionary*1Barotrauma*TalentTree*TalentTreeStageState*1Barotrauma*GUIComponentStyle : System.Object, {[Barotrauma.TalentTree.TalentTreeStageState]:Barotrauma.GUIComponentStyle}, {[Barotrauma.TalentTree.TalentTreeStageState]:Barotrauma.GUIComponentStyle}, {[System.Object]:System.Object}
+---@class System.Collections.Immutable.ImmutableDictionary*1Barotrauma*TalentTree*TalentTreeStageState*1Microsoft*Xna*Framework*Color : System.Object, {[Barotrauma.TalentTree.TalentTreeStageState]:Microsoft.Xna.Framework.Color}, {[Barotrauma.TalentTree.TalentTreeStageState]:Microsoft.Xna.Framework.Color}, {[System.Object]:System.Object}
+---@class System.Collections.Generic.List*1System*ValueTuple*2System*String*2Barotrauma*Networking*PlayerConnectionChangeType : System.Object, {[System.Int32|integer]:System.ValueTuple*1System*String*1Barotrauma*Networking*PlayerConnectionChangeType}, {[System.Int32|integer]:System.Object}
+---@class System.ValueTuple*1System*String*1Barotrauma*Networking*PlayerConnectionChangeType : System.ValueType, {[System.Int32|integer]:System.Object}
+---@class Barotrauma.TabMenu.InfoFrameTab : System.Enum
+---@class Barotrauma.GUIImage-ref
+---@class Barotrauma.UpgradeStore.UpgradeTab : System.Enum
+---@class System.Collections.Generic.List*1Barotrauma*UpgradeCategory : System.Object, {[System.Int32|integer]:Barotrauma.UpgradeCategory}, {[System.Int32|integer]:System.Object}
+---@class Microsoft.Xna.Framework.Vector2-arr-arr : System.Array
+---@class System.Collections.Generic.Dictionary*1Barotrauma*Item*1Barotrauma*GUIComponent : System.Object, {[Barotrauma.Item]:Barotrauma.GUIComponent}, {[System.Object]:System.Object}
+---@class System.Func*1System*Boolean*1System*Boolean : System.MulticastDelegate
+---@class System.Collections.Generic.List*1Barotrauma*UpgradePrefab : System.Object, {[System.Int32|integer]:Barotrauma.UpgradePrefab}, {[System.Int32|integer]:System.Object}
+---@class System.Predicate*1Barotrauma*UpgradeStore*CategoryData : System.MulticastDelegate
+---@class Barotrauma.UpgradeStore.CategoryData : System.ValueType
+---@class Barotrauma.VideoPlayer.VideoSettings : System.Object
+---@class Barotrauma.VideoPlayer.TextSettings : System.Object
+---@class System.Func*1System*Int32 : System.MulticastDelegate
+---@class Barotrauma.Widget.Shape : System.Enum
+---@class System.Action*1Microsoft*Xna*Framework*Graphics*SpriteBatch*1System*Single : System.MulticastDelegate
+---@class System.Collections.Generic.List*1Barotrauma*Widget : System.Object, {[System.Int32|integer]:Barotrauma.Widget}, {[System.Int32|integer]:System.Object}
+---@class Concentus.Structs.OpusEncoder : System.Object
+---@class Concentus.Structs.OpusDecoder : System.Object
+---@class System.Byte-arr-arr : System.Array
+---@class System.Byte-arr-ref
+---@class Barotrauma.GenericPrefabFile*1Barotrauma*SoundPrefab : Barotrauma.ContentFile
+---@class System.Collections.Generic.Dictionary*1Barotrauma*Hull*1Microsoft*Xna*Framework*Rectangle : System.Object, {[Barotrauma.Hull]:Microsoft.Xna.Framework.Rectangle}, {[System.Object]:System.Object}
+---@class System.Collections.Generic.IEnumerable*1Barotrauma*Lights*LightSource
+---@class System.Int16-arr : System.Array
+---@class System.Collections.Generic.List*1Barotrauma*Lights*ConvexHullList : System.Object, {[System.Int32|integer]:Barotrauma.Lights.ConvexHullList}, {[System.Int32|integer]:System.Object}
+---@class Barotrauma.Lights.ConvexHullList : System.Object
+---@class System.Collections.Generic.Dictionary*1Barotrauma*Submarine*1Microsoft*Xna*Framework*Vector2 : System.Object, {[Barotrauma.Submarine]:Microsoft.Xna.Framework.Vector2}, {[System.Object]:System.Object}
+---@class Microsoft.Xna.Framework.Graphics.DynamicVertexBuffer : Microsoft.Xna.Framework.Graphics.VertexBuffer
+---@class Microsoft.Xna.Framework.Graphics.DynamicIndexBuffer : Microsoft.Xna.Framework.Graphics.IndexBuffer
+---@class System.Collections.Generic.List*1Barotrauma*Lights*Segment : System.Object, {[System.Int32|integer]:Barotrauma.Lights.Segment}, {[System.Int32|integer]:System.Object}
+---@class Barotrauma.Lights.Segment : System.Object
+---@class System.ValueTuple*1System*Int32*1Microsoft*Xna*Framework*Vector2 : System.ValueType, {[System.Int32|integer]:System.Object}
+---@class Barotrauma.Sounds.SoundSourcePool-arr : System.Array
+---@class Barotrauma.Sounds.SoundSourcePool : System.Object
+---@class System.Collections.Generic.List*1Barotrauma*Sounds*Sound : System.Object, {[System.Int32|integer]:Barotrauma.Sounds.Sound}, {[System.Int32|integer]:System.Object}
+---@class Barotrauma.Sounds.SoundChannel-arr-arr : System.Array
+---@class System.Collections.Generic.Dictionary*1System*String*1Barotrauma*Sounds*SoundManager*CategoryModifier : System.Object, {[System.String|string]:Barotrauma.Sounds.SoundManager.CategoryModifier}, {[System.Object]:System.Object}
+---@class Barotrauma.Sounds.SoundManager.CategoryModifier : System.Object
+---@class System.Threading.ManualResetEvent : System.Threading.EventWaitHandle
+---@class System.Threading.EventWaitHandle : System.Threading.WaitHandle
+---@class System.Threading.WaitHandle : System.MarshalByRefObject
+---@class System.Collections.Generic.IReadOnlyList*1Barotrauma*Sounds*Sound : {[System.Int32|integer]:Barotrauma.Sounds.Sound}
+---@class Barotrauma.Sounds.SoundManager.SourcePoolIndex : System.Enum
+---@class NVorbis.VorbisReader : System.Object
+---@class System.Collections.Generic.Dictionary*1System*Int32*1Barotrauma*Sounds*BiQuad : System.Object, {[System.Int32|integer]:Barotrauma.Sounds.BiQuad}, {[System.Object]:System.Object}
+---@class Barotrauma.Sounds.BiQuad : System.Object
+---@class System.Collections.Generic.Queue*1System*Int16-arr : System.Object
+---@class Barotrauma.Sounds.BiQuad-arr : System.Array
+---@class System.Collections.Generic.List*1Barotrauma*Networking*VoipQueue : System.Object, {[System.Int32|integer]:Barotrauma.Networking.VoipQueue}, {[System.Int32|integer]:System.Object}
+---@class System.Nullable*1System*UInt16 : System.ValueType
+---@class System.Collections.Generic.HashSet*1System*UInt32 : System.Object
+---@class Barotrauma.BackgroundMusic-arr : System.Array
+---@class System.Collections.Generic.HashSet*1Barotrauma*Sounds*SoundChannel : System.Object
+---@class System.Collections.Generic.List*1Barotrauma*DamageSound : System.Object, {[System.Int32|integer]:Barotrauma.DamageSound}, {[System.Int32|integer]:System.Object}
+---@class System.Collections.Generic.IEnumerable*1Barotrauma*BackgroundMusic
+---@class System.Collections.Generic.IReadOnlyList*1Barotrauma*SoundPrefab : {[System.Int32|integer]:Barotrauma.SoundPrefab}
+---@class System.Collections.Generic.IEnumerable*1Barotrauma*DamageSound
+---@class System.Collections.Immutable.ImmutableDictionary*1Barotrauma*Identifier*1System*Type : System.Object, {[Barotrauma.Identifier]:System.Type}, {[Barotrauma.Identifier]:System.Type}, {[System.Object]:System.Object}
+---@class System.Collections.Immutable.ImmutableDictionary*1System*Type*1Barotrauma*SoundPrefab*PrefabCollectionHandler : System.Object, {[System.Type]:Barotrauma.SoundPrefab.PrefabCollectionHandler}, {[System.Type]:Barotrauma.SoundPrefab.PrefabCollectionHandler}, {[System.Object]:System.Object}
+---@class Barotrauma.SoundPrefab.PrefabCollectionHandler : System.Object
+---@class System.Collections.Immutable.ImmutableDictionary*1Barotrauma*Identifier*1Barotrauma*PrefabSelector*2Barotrauma*SoundPrefab : System.Object, {[Barotrauma.Identifier]:Barotrauma.PrefabSelector*1Barotrauma*SoundPrefab|(fun():Barotrauma.SoundPrefab)}, {[Barotrauma.Identifier]:Barotrauma.PrefabSelector*1Barotrauma*SoundPrefab|(fun():Barotrauma.SoundPrefab)}, {[System.Object]:System.Object}
+---@class System.Collections.Immutable.ImmutableDictionary*1Barotrauma*Identifier*1System*Collections*Generic*List*2Barotrauma*SoundPrefab : System.Object, {[Barotrauma.Identifier]:System.Collections.Generic.List*1Barotrauma*SoundPrefab|Barotrauma.SoundPrefab[]}, {[Barotrauma.Identifier]:System.Collections.Generic.List*1Barotrauma*SoundPrefab|Barotrauma.SoundPrefab[]}, {[System.Object]:System.Object}
+---@class Barotrauma.CreditsPlayer : Barotrauma.GUIComponent
+---@class System.Collections.Generic.List*1Barotrauma*EditorNode : System.Object, {[System.Int32|integer]:Barotrauma.EditorNode}, {[System.Int32|integer]:System.Object}
+---@class Barotrauma.EditorNode : System.Object
+---@class System.Collections.Generic.Dictionary*1Barotrauma*EditorNode*1Microsoft*Xna*Framework*Vector2 : System.Object, {[Barotrauma.EditorNode]:Microsoft.Xna.Framework.Vector2}, {[System.Object]:System.Object}
+---@class Barotrauma.NodeConnection : System.Object
+---@class Barotrauma.ValueNode : Barotrauma.EditorNode
+---@class System.Collections.Generic.Dictionary*1Barotrauma*MainMenuScreen*Tab*1Barotrauma*GUIFrame : System.Object, {[Barotrauma.MainMenuScreen.Tab]:Barotrauma.GUIFrame}, {[System.Object]:System.Object}
+---@class Barotrauma.MainMenuScreen.Tab : System.Enum
+---@class Barotrauma.SinglePlayerCampaignSetupUI : Barotrauma.CampaignSetupUI
+---@class System.Collections.Generic.Queue*1System*UInt64 : System.Object
+---@class Barotrauma.Particles.ParticleEmitterProperties : System.Object
+---@class Barotrauma.PanelAnimator : System.Object
+---@class Barotrauma.Option*1Barotrauma*Networking*ServerInfo : System.Object
+---@class Barotrauma.FriendProvider : System.Object
+---@class System.Collections.Generic.List*1Barotrauma*ServerListScreen*FriendInfo : System.Object, {[System.Int32|integer]:Barotrauma.ServerListScreen.FriendInfo}, {[System.Int32|integer]:System.Object}
+---@class Barotrauma.ServerListScreen.FriendInfo : System.Object
+---@class System.Collections.Generic.Dictionary*1Barotrauma*ServerListScreen*TabEnum*1Barotrauma*ServerListScreen*Tab : System.Object, {[Barotrauma.ServerListScreen.TabEnum]:Barotrauma.ServerListScreen.Tab}, {[System.Object]:System.Object}
+---@class Barotrauma.ServerListScreen.TabEnum : System.Enum
+---@class Barotrauma.ServerListScreen.Tab : System.ValueType
+---@class Barotrauma.ServerProvider : System.Object
+---@class System.Collections.Generic.Dictionary*1Barotrauma*Identifier*1Barotrauma*GUIDropDown : System.Object, {[Barotrauma.Identifier]:Barotrauma.GUIDropDown}, {[System.Object]:System.Object}
+---@class System.Collections.Generic.Dictionary*1Barotrauma*Identifier*1Barotrauma*GUITickBox : System.Object, {[Barotrauma.Identifier]:Barotrauma.GUITickBox}, {[System.Object]:System.Object}
+---@class Barotrauma.ServerListScreen.TernaryOption : System.Enum
+---@class Barotrauma.ServerListScreen.ColumnLabel : System.Enum
+---@class System.Collections.Immutable.ImmutableDictionary*1Barotrauma*ServerListScreen*ColumnLabel*1Barotrauma*ServerListScreen*Column : System.Object, {[Barotrauma.ServerListScreen.ColumnLabel]:Barotrauma.ServerListScreen.Column}, {[Barotrauma.ServerListScreen.ColumnLabel]:Barotrauma.ServerListScreen.Column}, {[System.Object]:System.Object}
+---@class Barotrauma.ServerListScreen.Column : System.ValueType
+---@class System.Action*1Barotrauma*ServerListScreen*TernaryOption : System.MulticastDelegate
+---@class Barotrauma.ServerListScreen.MsgUserData : System.Enum
+---@class System.ValueTuple*1System*Action*2Barotrauma*Networking*ServerInfo*1System*Action : System.ValueType, {[System.Int32|integer]:System.Object}
+---@class System.Collections.Generic.HashSet*1Barotrauma*Sprite : System.Object
+---@class System.Collections.Generic.HashSet*1System*UInt64 : System.Object
+---@class System.Collections.Generic.List*1Barotrauma*GUITickBox : System.Object, {[System.Int32|integer]:Barotrauma.GUITickBox}, {[System.Int32|integer]:System.Object}
+---@class System.Collections.Generic.Dictionary*1System*String*1System*Boolean : System.Object, {[System.String|string]:System.Boolean|boolean}, {[System.Object]:System.Object}
+---@class Barotrauma.SubEditorScreen.Mode : System.Enum
+---@class System.Collections.Generic.List*1Barotrauma*SubEditorScreen*WarningType : System.Object, {[System.Int32|integer]:Barotrauma.SubEditorScreen.WarningType}, {[System.Int32|integer]:System.Object}
+---@class Barotrauma.SubEditorScreen.WarningType : System.Enum
+---@class Barotrauma.EditorImageManager : System.Object
+---@class System.Collections.Generic.List*1Barotrauma*Command : System.Object, {[System.Int32|integer]:Barotrauma.Command}, {[System.Int32|integer]:System.Object}
+---@class System.Collections.Generic.Dictionary*1System*String*1Barotrauma*SubEditorScreen*LayerData : System.Object, {[System.String|string]:Barotrauma.SubEditorScreen.LayerData}, {[System.Object]:System.Object}
+---@class Barotrauma.SubEditorScreen.LayerData : System.ValueType
+---@class System.Collections.Immutable.ImmutableHashSet*1Barotrauma*MapEntity : System.Object
+---@class Barotrauma.ItemAssemblyPrefab : Barotrauma.MapEntityPrefab
+---@class Barotrauma.CharacterEditor.CharacterEditorScreen.JointCreationMode : System.Enum
+---@class Barotrauma.CharacterEditor.CharacterEditorScreen.WallGroup : System.Object
+---@class Barotrauma.CharacterEditor.WallGroup-arr : System.Array
+---@class System.Collections.Generic.List*1Barotrauma*CharacterFile : System.Object, {[System.Int32|integer]:Barotrauma.CharacterFile}, {[System.Int32|integer]:System.Object}
+---@class Barotrauma.CharacterEditor.CharacterEditorScreen.ToggleButton : System.Object
+---@class System.Collections.Generic.IEnumerable*1Barotrauma*Structure
+---@class System.Action*1Barotrauma*Limb : System.MulticastDelegate
+---@class System.Action*1Barotrauma*Limb*1Barotrauma*LimbJoint : System.MulticastDelegate
+---@class Barotrauma.CharacterEditor.CharacterEditorScreen.WidgetType : System.Enum
+---@class System.Collections.Generic.IEnumerable*1Barotrauma*AnimationParams
+---@class System.Collections.Generic.Dictionary*1System*String*1System*Xml*Linq*XElement : System.Object, {[System.String|string]:System.Xml.Linq.XElement}, {[System.Object]:System.Object}
+---@class System.Collections.Generic.List*1Barotrauma*Items*Components*Door : System.Object, {[System.Int32|integer]:Barotrauma.Items.Components.Door}, {[System.Int32|integer]:System.Object}
+---@class Barotrauma.Networking.RespawnManager.State : System.Enum
+---@class System.Collections.Generic.Queue*1Barotrauma*ColoredText : System.Object
+---@class Barotrauma.DebugConsole.QuestionCallback : System.MulticastDelegate
+---@class System.Action*1System*String-arr : System.MulticastDelegate
+---@class System.Collections.Generic.List*1Barotrauma*FabricationRecipe : System.Object, {[System.Int32|integer]:Barotrauma.FabricationRecipe}, {[System.Int32|integer]:System.Object}
+---@class Barotrauma.DebugConsole.AdjustItemTypes : System.Enum
+---@class System.TimeSpan-ref
+---@class System.Func*1System*String-arr-arr : System.MulticastDelegate
+---@class System.String-arr-arr : System.Array
+---@class Microsoft.Xna.Framework.Graphics.TargetBlendState : System.Object
+---@class System.Collections.Immutable.ImmutableHashSet*1Barotrauma*TextPack : System.Object
+---@class Barotrauma.PrefabSelector*1Barotrauma*ItemPrefab : System.Object
+---@class Barotrauma.PrefabSelector*1Barotrauma*JobPrefab : System.Object
+---@class Barotrauma.PrefabSelector*1Barotrauma*CharacterPrefab : System.Object
+---@class Barotrauma.PrefabSelector*1Barotrauma*HumanPrefab : System.Object
+---@class Barotrauma.PrefabSelector*1Barotrauma*AfflictionPrefab : System.Object
+---@class Barotrauma.PrefabSelector*1Barotrauma*TalentPrefab : System.Object
+---@class Barotrauma.PrefabSelector*1Barotrauma*TalentTree : System.Object
+---@class Barotrauma.PrefabSelector*1Barotrauma*OrderPrefab : System.Object
+---@class Barotrauma.PrefabSelector*1Barotrauma*EventPrefab : System.Object
+---@class Barotrauma.PrefabSelector*1Barotrauma*GUIPrefab : System.Object
+---@class Barotrauma.PrefabSelector*1Barotrauma*BackgroundMusic : System.Object
+---@class Barotrauma.PrefabSelector*1Barotrauma*GUISound : System.Object
+---@class Barotrauma.PrefabSelector*1Barotrauma*DamageSound : System.Object
+---@class System.Text.RegularExpressions.Group : System.Text.RegularExpressions.Capture
+---@class System.Text.RegularExpressions.Capture : System.Object
+---@class Microsoft.Xna.Framework.Input.KeyState : System.Enum

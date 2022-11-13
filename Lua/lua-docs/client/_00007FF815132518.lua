@@ -1,0 +1,42 @@
+---@meta
+---@class Barotrauma.LimbType : System.Enum
+---`Field Public Static`
+---@field None Barotrauma.LimbType
+---`Field Public Static`
+---@field LeftHand Barotrauma.LimbType
+---`Field Public Static`
+---@field RightHand Barotrauma.LimbType
+---`Field Public Static`
+---@field LeftArm Barotrauma.LimbType
+---`Field Public Static`
+---@field RightArm Barotrauma.LimbType
+---`Field Public Static`
+---@field LeftForearm Barotrauma.LimbType
+---`Field Public Static`
+---@field RightForearm Barotrauma.LimbType
+---`Field Public Static`
+---@field LeftLeg Barotrauma.LimbType
+---`Field Public Static`
+---@field RightLeg Barotrauma.LimbType
+---`Field Public Static`
+---@field LeftFoot Barotrauma.LimbType
+---`Field Public Static`
+---@field RightFoot Barotrauma.LimbType
+---`Field Public Static`
+---@field Head Barotrauma.LimbType
+---`Field Public Static`
+---@field Torso Barotrauma.LimbType
+---`Field Public Static`
+---@field Tail Barotrauma.LimbType
+---`Field Public Static`
+---@field Legs Barotrauma.LimbType
+---`Field Public Static`
+---@field RightThigh Barotrauma.LimbType
+---`Field Public Static`
+---@field LeftThigh Barotrauma.LimbType
+---`Field Public Static`
+---@field Waist Barotrauma.LimbType
+---`Field Public Static`
+---@field Jaw Barotrauma.LimbType
+_G['LimbType'] = {}
+
