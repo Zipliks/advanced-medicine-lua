@@ -1,8 +1,7 @@
 {
     "Lua.diagnostics.globals": [
         "Hook",
-        "SERVER",
-        "CLIENT"
+        "SERVER"
     ],
 
     "Lua.diagnostics.libraryFiles": "Enable",
