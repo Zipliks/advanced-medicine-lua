@@ -1,0 +1,177 @@
+---@meta
+---@class Barotrauma.Particles.ParticlePrefab : Barotrauma.Prefab
+---`Field Public Instance`
+---@field Sprites System.Collections.Generic.List*1Barotrauma*Sprite|Barotrauma.Sprite[]
+---`Field Private Instance`
+---@field angularVelocityMin System.Single|number
+---`Field Private Instance`
+---@field angularVelocityMax System.Single|number
+---`Field Private Instance`
+---@field startRotationMin System.Single|number
+---`Field Private Instance`
+---@field startRotationMax System.Single|number
+---`Field Private Instance`
+---@field velocityChange Microsoft.Xna.Framework.Vector2
+---`Field Private Instance`
+---@field velocityChangeWater Microsoft.Xna.Framework.Vector2
+---`Field Public Instance`
+---@field SubEmitters System.Collections.Generic.List*1Barotrauma*Particles*ParticleEmitterPrefab|Barotrauma.Particles.ParticleEmitterPrefab[]
+---`Field Public Static`
+---@field Prefabs Barotrauma.PrefabCollection*1Barotrauma*Particles*ParticlePrefab|(fun():Barotrauma.Particles.ParticlePrefab)
+---`Getter Public Instance Virtual`
+---@field Name System.String|string
+---`Getter Public Instance`
+---<br/>`Setter Private Instance`
+---@field LifeTime System.Single|number
+---`Getter Public Instance`
+---<br/>`Setter Private Instance`
+---@field LifeTimeMin System.Single|number
+---`Getter Public Instance`
+---<br/>`Setter Private Instance`
+---@field StartDelayMin System.Single|number
+---`Getter Public Instance`
+---<br/>`Setter Private Instance`
+---@field StartDelayMax System.Single|number
+---`Getter Public Instance`
+---<br/>`Setter Private Instance`
+---@field AngularVelocityMinRad System.Single|number
+---`Getter Public Instance`
+---<br/>`Setter Private Instance`
+---@field AngularVelocityMin System.Single|number
+---`Getter Public Instance`
+---<br/>`Setter Private Instance`
+---@field AngularVelocityMaxRad System.Single|number
+---`Getter Public Instance`
+---<br/>`Setter Private Instance`
+---@field AngularVelocityMax System.Single|number
+---`Getter Public Instance`
+---<br/>`Setter Private Instance`
+---@field StartRotationMinRad System.Single|number
+---`Getter Public Instance`
+---<br/>`Setter Private Instance`
+---@field StartRotationMin System.Single|number
+---`Getter Public Instance`
+---<br/>`Setter Private Instance`
+---@field StartRotationMaxRad System.Single|number
+---`Getter Public Instance`
+---<br/>`Setter Private Instance`
+---@field StartRotationMax System.Single|number
+---`Getter Public Instance`
+---<br/>`Setter Private Instance`
+---@field RotateToDirection System.Boolean|boolean
+---`Getter Public Instance`
+---<br/>`Setter Private Instance`
+---@field Drag System.Single|number
+---`Getter Public Instance`
+---<br/>`Setter Private Instance`
+---@field WaterDrag System.Single|number
+---`Getter Public Instance`
+---<br/>`Setter Private Instance`
+---@field VelocityChangeDisplay Microsoft.Xna.Framework.Vector2
+---`Getter Public Instance`
+---<br/>`Setter Private Instance`
+---@field VelocityChange Microsoft.Xna.Framework.Vector2
+---`Getter Public Instance`
+---<br/>`Setter Private Instance`
+---@field VelocityChangeWaterDisplay Microsoft.Xna.Framework.Vector2
+---`Getter Public Instance`
+---<br/>`Setter Private Instance`
+---@field VelocityChangeWater Microsoft.Xna.Framework.Vector2
+---`Getter Public Instance`
+---<br/>`Setter Private Instance`
+---@field CollisionRadius System.Single|number
+---`Getter Public Instance`
+---<br/>`Setter Private Instance`
+---@field UseCollision System.Boolean|boolean
+---`Getter Public Instance`
+---<br/>`Setter Private Instance`
+---@field DeleteOnCollision System.Boolean|boolean
+---`Getter Public Instance`
+---<br/>`Setter Private Instance`
+---@field Friction System.Single|number
+---`Getter Public Instance`
+---<br/>`Setter Private Instance`
+---@field Restitution System.Single|number
+---`Getter Public Instance`
+---<br/>`Setter Private Instance`
+---@field StartSizeMin Microsoft.Xna.Framework.Vector2
+---`Getter Public Instance`
+---<br/>`Setter Private Instance`
+---@field StartSizeMax Microsoft.Xna.Framework.Vector2
+---`Getter Public Instance`
+---<br/>`Setter Private Instance`
+---@field SizeChangeMin Microsoft.Xna.Framework.Vector2
+---`Getter Public Instance`
+---<br/>`Setter Private Instance`
+---@field SizeChangeMax Microsoft.Xna.Framework.Vector2
+---`Getter Public Instance`
+---<br/>`Setter Private Instance`
+---@field GrowTime System.Single|number
+---`Getter Public Instance`
+---<br/>`Setter Private Instance`
+---@field StartColor Microsoft.Xna.Framework.Color
+---`Getter Public Instance`
+---<br/>`Setter Private Instance`
+---@field MiddleColor Microsoft.Xna.Framework.Color
+---`Getter Public Instance`
+---<br/>`Setter Private Instance`
+---@field EndColor Microsoft.Xna.Framework.Color
+---`Getter Public Instance`
+---<br/>`Setter Private Instance`
+---@field UseMiddleColor System.Boolean|boolean
+---`Getter Public Instance`
+---<br/>`Setter Private Instance`
+---@field DrawTarget Barotrauma.Particles.ParticlePrefab.DrawTargetType
+---`Getter Public Instance`
+---<br/>`Setter Private Instance`
+---@field DrawOnTop System.Boolean|boolean
+---`Getter Public Instance`
+---<br/>`Setter Private Instance`
+---@field BlendState Barotrauma.Particles.ParticleBlendState
+---`Getter Public Instance`
+---<br/>`Setter Private Instance`
+---@field Priority System.Int32|integer
+---`Getter Public Instance`
+---<br/>`Setter Private Instance`
+---@field AnimDuration System.Single|number
+---`Getter Public Instance`
+---<br/>`Setter Private Instance`
+---@field LoopAnim System.Boolean|boolean
+---`Getter Public Instance Virtual`
+---<br/>`Setter Private Instance`
+---@field SerializableProperties System.Collections.Generic.Dictionary*1Barotrauma*Identifier*1Barotrauma*SerializableProperty|{[Barotrauma.Identifier]:Barotrauma.SerializableProperty}
+_G['ParticlePrefab'] = {}
+
+---`Method Public Instance Virtual`
+_G['ParticlePrefab'].Dispose = function() end
+
+---`Method Public Instance`
+---@param startPosition Microsoft.Xna.Framework.Vector2
+---@param velocity Microsoft.Xna.Framework.Vector2
+---@return Microsoft.Xna.Framework.Vector2
+_G['ParticlePrefab'].CalculateEndPosition = function(startPosition, velocity) end
+
+---`Method Public Instance`
+---@return Microsoft.Xna.Framework.Vector2
+_G['ParticlePrefab'].CalculateEndSize = function() end
+
+---`Constructor Public Instance`
+---@overload fun(element:Barotrauma.ContentXElement, file:Barotrauma.ContentFile):Barotrauma.Particles.ParticlePrefab
+---@return Barotrauma.Particles.ParticlePrefab
+_G['ParticlePrefab'] = function() end
+
+---`Constructor Public Instance`
+---@overload fun(element:Barotrauma.ContentXElement, file:Barotrauma.ContentFile):Barotrauma.Particles.ParticlePrefab
+---@return Barotrauma.Particles.ParticlePrefab
+_G['ParticlePrefab'].__new = function() end
+
+---`Constructor Private Static`
+---@overload fun(element:Barotrauma.ContentXElement, file:Barotrauma.ContentFile):Barotrauma.Particles.ParticlePrefab
+---@return Barotrauma.Particles.ParticlePrefab
+_G['ParticlePrefab'] = function() end
+
+---`Constructor Private Static`
+---@overload fun(element:Barotrauma.ContentXElement, file:Barotrauma.ContentFile):Barotrauma.Particles.ParticlePrefab
+---@return Barotrauma.Particles.ParticlePrefab
+_G['ParticlePrefab'].__new = function() end
+

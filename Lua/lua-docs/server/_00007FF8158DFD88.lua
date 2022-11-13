@@ -1,0 +1,105 @@
+---@meta
+---@class Barotrauma.CharacterParams.TargetParams : Barotrauma.CharacterParams.SubParam
+---`Getter Public Instance Virtual`
+---@field Name System.String|string
+---`Getter Public Instance`
+---<br/>`Setter Private Instance`
+---@field Tag System.String|string
+---`Getter Public Instance`
+---<br/>`Setter Public Instance`
+---@field State Barotrauma.AIState
+---`Getter Public Instance`
+---<br/>`Setter Public Instance`
+---@field Priority System.Single|number
+---`Getter Public Instance`
+---<br/>`Setter Public Instance`
+---@field ReactDistance System.Single|number
+---`Getter Public Instance`
+---<br/>`Setter Public Instance`
+---@field AttackDistance System.Single|number
+---`Getter Public Instance`
+---<br/>`Setter Public Instance`
+---@field Timer System.Single|number
+---`Getter Public Instance`
+---<br/>`Setter Public Instance`
+---@field IgnoreContained System.Boolean|boolean
+---`Getter Public Instance`
+---<br/>`Setter Public Instance`
+---@field IgnoreInside System.Boolean|boolean
+---`Getter Public Instance`
+---<br/>`Setter Public Instance`
+---@field IgnoreOutside System.Boolean|boolean
+---`Getter Public Instance`
+---<br/>`Setter Public Instance`
+---@field IgnoreIfNotInSameSub System.Boolean|boolean
+---`Getter Public Instance`
+---<br/>`Setter Public Instance`
+---@field IgnoreIncapacitated System.Boolean|boolean
+---`Getter Public Instance`
+---<br/>`Setter Private Instance`
+---@field Threshold System.Single|number
+---`Getter Public Instance`
+---<br/>`Setter Private Instance`
+---@field ThresholdMin System.Single|number
+---`Getter Public Instance`
+---<br/>`Setter Private Instance`
+---@field ThresholdMax System.Single|number
+---`Getter Public Instance`
+---<br/>`Setter Private Instance`
+---@field Offset Microsoft.Xna.Framework.Vector2
+---`Getter Public Instance`
+---<br/>`Setter Public Instance`
+---@field AttackPattern Barotrauma.AttackPattern
+---`Getter Public Instance`
+---<br/>`Setter Public Instance`
+---@field PrioritizeSubCenter System.Boolean|boolean
+---`Getter Public Instance`
+---<br/>`Setter Private Instance`
+---@field SweepDistance System.Single|number
+---`Getter Public Instance`
+---<br/>`Setter Private Instance`
+---@field SweepStrength System.Single|number
+---`Getter Public Instance`
+---<br/>`Setter Private Instance`
+---@field SweepSpeed System.Single|number
+---`Getter Public Instance`
+---<br/>`Setter Private Instance`
+---@field CircleStartDistance System.Single|number
+---`Getter Public Instance`
+---<br/>`Setter Private Instance`
+---@field CircleRotationSpeed System.Single|number
+---`Getter Public Instance`
+---<br/>`Setter Private Instance`
+---@field CircleStrikeDistanceMultiplier System.Single|number
+---`Getter Public Instance`
+---<br/>`Setter Private Instance`
+---@field CircleMaxRandomOffset System.Single|number
+_G['CharacterParams']['TargetParams'] = {}
+
+---`Method Public Static`
+---@overload fun(character:Barotrauma.CharacterParams, tag:Barotrauma.Identifier, state:Barotrauma.AIState, priority:System.Single|number):Barotrauma.ContentXElement
+---@param character Barotrauma.CharacterParams
+---@param tag System.String|string
+---@param state Barotrauma.AIState
+---@param priority System.Single|number
+---@return Barotrauma.ContentXElement
+_G['CharacterParams']['TargetParams'].CreateNewElement = function(character, tag, state, priority) end
+
+---`Constructor Public Instance`
+---@overload fun(element:Barotrauma.ContentXElement, character:Barotrauma.CharacterParams):Barotrauma.CharacterParams.TargetParams
+---@param tag System.String|string
+---@param state Barotrauma.AIState
+---@param priority System.Single|number
+---@param character Barotrauma.CharacterParams
+---@return Barotrauma.CharacterParams.TargetParams
+_G['CharacterParams']['TargetParams'] = function(tag, state, priority, character) end
+
+---`Constructor Public Instance`
+---@overload fun(element:Barotrauma.ContentXElement, character:Barotrauma.CharacterParams):Barotrauma.CharacterParams.TargetParams
+---@param tag System.String|string
+---@param state Barotrauma.AIState
+---@param priority System.Single|number
+---@param character Barotrauma.CharacterParams
+---@return Barotrauma.CharacterParams.TargetParams
+_G['CharacterParams']['TargetParams'].__new = function(tag, state, priority, character) end
+

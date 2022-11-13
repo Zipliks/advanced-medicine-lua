@@ -1,0 +1,28 @@
+---@meta
+---@class Barotrauma.Networking.ChatMessageType : System.Enum
+---`Field Public Static`
+---@field Default Barotrauma.Networking.ChatMessageType
+---`Field Public Static`
+---@field Error Barotrauma.Networking.ChatMessageType
+---`Field Public Static`
+---@field Dead Barotrauma.Networking.ChatMessageType
+---`Field Public Static`
+---@field Server Barotrauma.Networking.ChatMessageType
+---`Field Public Static`
+---@field Radio Barotrauma.Networking.ChatMessageType
+---`Field Public Static`
+---@field Private Barotrauma.Networking.ChatMessageType
+---`Field Public Static`
+---@field Console Barotrauma.Networking.ChatMessageType
+---`Field Public Static`
+---@field MessageBox Barotrauma.Networking.ChatMessageType
+---`Field Public Static`
+---@field Order Barotrauma.Networking.ChatMessageType
+---`Field Public Static`
+---@field ServerLog Barotrauma.Networking.ChatMessageType
+---`Field Public Static`
+---@field ServerMessageBox Barotrauma.Networking.ChatMessageType
+---`Field Public Static`
+---@field ServerMessageBoxInGame Barotrauma.Networking.ChatMessageType
+_G['ChatMessageType'] = {}
+

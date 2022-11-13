@@ -1,0 +1,36 @@
+---@meta
+---@class Barotrauma.Alignment : System.Enum
+---`Field Public Static`
+---@field CenterX Barotrauma.Alignment
+---`Field Public Static`
+---@field Left Barotrauma.Alignment
+---`Field Public Static`
+---@field Right Barotrauma.Alignment
+---`Field Public Static`
+---@field CenterY Barotrauma.Alignment
+---`Field Public Static`
+---@field Top Barotrauma.Alignment
+---`Field Public Static`
+---@field Bottom Barotrauma.Alignment
+---`Field Public Static`
+---@field TopLeft Barotrauma.Alignment
+---`Field Public Static`
+---@field TopCenter Barotrauma.Alignment
+---`Field Public Static`
+---@field TopRight Barotrauma.Alignment
+---`Field Public Static`
+---@field CenterLeft Barotrauma.Alignment
+---`Field Public Static`
+---@field Center Barotrauma.Alignment
+---`Field Public Static`
+---@field CenterRight Barotrauma.Alignment
+---`Field Public Static`
+---@field BottomLeft Barotrauma.Alignment
+---`Field Public Static`
+---@field BottomCenter Barotrauma.Alignment
+---`Field Public Static`
+---@field BottomRight Barotrauma.Alignment
+---`Field Public Static`
+---@field Any Barotrauma.Alignment
+_G['GUI']['Alignment'] = {}
+

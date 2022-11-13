@@ -1,0 +1,26 @@
+---@meta
+---@class Barotrauma.Item.EventType : System.Enum
+---`Field Public Static`
+---@field ComponentState Barotrauma.Item.EventType
+---`Field Public Static`
+---@field InventoryState Barotrauma.Item.EventType
+---`Field Public Static`
+---@field Treatment Barotrauma.Item.EventType
+---`Field Public Static`
+---@field ChangeProperty Barotrauma.Item.EventType
+---`Field Public Static`
+---@field Combine Barotrauma.Item.EventType
+---`Field Public Static`
+---@field Status Barotrauma.Item.EventType
+---`Field Public Static`
+---@field AssignCampaignInteraction Barotrauma.Item.EventType
+---`Field Public Static`
+---@field ApplyStatusEffect Barotrauma.Item.EventType
+---`Field Public Static`
+---@field Upgrade Barotrauma.Item.EventType
+---`Field Public Static`
+---@field MinValue Barotrauma.Item.EventType
+---`Field Public Static`
+---@field MaxValue Barotrauma.Item.EventType
+_G['Item']['EventType'] = {}
+
