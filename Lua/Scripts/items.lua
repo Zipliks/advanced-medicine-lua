@@ -199,6 +199,8 @@ Main.SetItemFunction("adrenaline", function(item, usingCharacter, targetCharacte
         end
         Utils.SetAfflictionTime(targetCharacter, "organdamage", 1, LimbType.Torso, true, 60, usingCharacter)
     end
+end)
+
 Main.SetItemFunction("antibleeding1", function(item, source, target, limb)
 	local limbtype = Utils.NormalizeLimbType(limb.type)
 	Utils.SetAffliction(target, "bleeding", -15, limbtype, true)
