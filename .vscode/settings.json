@@ -1,0 +1,13 @@
+{
+    "Lua.diagnostics.globals": [
+        "Hook",
+        "SERVER",
+        "CLIENT"
+    ],
+
+    "Lua.diagnostics.libraryFiles": "Enable",
+    "Lua.workspace.library": [
+        "${workspaceRoot}/Lua/lua-docs/server",
+        "${workspaceRoot}/Lua/lua-docs/shared"
+    ]
+}
