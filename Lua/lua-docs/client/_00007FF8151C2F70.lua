@@ -1,0 +1,32 @@
+---@meta
+---@class Barotrauma.AIState : System.Enum
+---`Field Public Static`
+---@field Idle Barotrauma.AIState
+---`Field Public Static`
+---@field Attack Barotrauma.AIState
+---`Field Public Static`
+---@field Escape Barotrauma.AIState
+---`Field Public Static`
+---@field Eat Barotrauma.AIState
+---`Field Public Static`
+---@field Flee Barotrauma.AIState
+---`Field Public Static`
+---@field Avoid Barotrauma.AIState
+---`Field Public Static`
+---@field Aggressive Barotrauma.AIState
+---`Field Public Static`
+---@field PassiveAggressive Barotrauma.AIState
+---`Field Public Static`
+---@field Protect Barotrauma.AIState
+---`Field Public Static`
+---@field Observe Barotrauma.AIState
+---`Field Public Static`
+---@field Freeze Barotrauma.AIState
+---`Field Public Static`
+---@field Follow Barotrauma.AIState
+---`Field Public Static`
+---@field FleeTo Barotrauma.AIState
+---`Field Public Static`
+---@field Patrol Barotrauma.AIState
+_G['AIState'] = {}
+
