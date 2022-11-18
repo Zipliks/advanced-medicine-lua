@@ -1,0 +1,66 @@
+---@meta
+---@class Barotrauma.GUIMessage : System.Object
+---`Field Private Instance`
+---@field coloredText Barotrauma.ColoredText
+---`Field Private Instance`
+---@field pos Microsoft.Xna.Framework.Vector2
+---`Field Private Instance`
+---@field lifeTime System.Single|number
+---`Field Private Instance`
+---@field size Microsoft.Xna.Framework.Vector2
+---`Field Public Instance`
+---@field WorldSpace System.Boolean|boolean
+---`Field Public Instance`
+---@field Origin Microsoft.Xna.Framework.Vector2
+---`Field Public Instance`
+---@field Timer System.Single|number
+---`Getter Public Instance`
+---@field Text System.String|string
+---`Getter Public Instance`
+---@field Color Microsoft.Xna.Framework.Color
+---`Getter Public Instance`
+---<br/>`Setter Public Instance`
+---@field Pos Microsoft.Xna.Framework.Vector2
+---`Getter Public Instance`
+---<br/>`Setter Private Instance`
+---@field Velocity Microsoft.Xna.Framework.Vector2
+---`Getter Public Instance`
+---@field Size Microsoft.Xna.Framework.Vector2
+---`Getter Public Instance`
+---@field LifeTime System.Single|number
+---`Getter Public Instance`
+---<br/>`Setter Private Instance`
+---@field Font Barotrauma.ScalableFont
+---`Getter Public Instance`
+---<br/>`Setter Private Instance`
+---@field Submarine Barotrauma.Submarine
+---`Getter Public Instance`
+---@field DrawPos Microsoft.Xna.Framework.Vector2
+_G['GUIMessage'] = {}
+
+---`Constructor Public Instance`
+---@overload fun(text:System.String|string, color:Microsoft.Xna.Framework.Color, lifeTime:System.Single|number, font?:Barotrauma.ScalableFont):Barotrauma.GUIMessage
+---@param text System.String|string
+---@param color Microsoft.Xna.Framework.Color
+---@param position Microsoft.Xna.Framework.Vector2
+---@param velocity Microsoft.Xna.Framework.Vector2
+---@param lifeTime System.Single|number
+---@param textAlignment? Barotrauma.Alignment
+---@param font? Barotrauma.ScalableFont
+---@param sub? Barotrauma.Submarine
+---@return Barotrauma.GUIMessage
+_G['GUIMessage'] = function(text, color, position, velocity, lifeTime, textAlignment, font, sub) end
+
+---`Constructor Public Instance`
+---@overload fun(text:System.String|string, color:Microsoft.Xna.Framework.Color, lifeTime:System.Single|number, font?:Barotrauma.ScalableFont):Barotrauma.GUIMessage
+---@param text System.String|string
+---@param color Microsoft.Xna.Framework.Color
+---@param position Microsoft.Xna.Framework.Vector2
+---@param velocity Microsoft.Xna.Framework.Vector2
+---@param lifeTime System.Single|number
+---@param textAlignment? Barotrauma.Alignment
+---@param font? Barotrauma.ScalableFont
+---@param sub? Barotrauma.Submarine
+---@return Barotrauma.GUIMessage
+_G['GUIMessage'].__new = function(text, color, position, velocity, lifeTime, textAlignment, font, sub) end
+

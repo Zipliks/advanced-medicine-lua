@@ -1,0 +1,42 @@
+---@meta
+---@class Barotrauma.Networking.ClientPermissions : System.Enum
+---`Field Public Static`
+---@field None Barotrauma.Networking.ClientPermissions
+---`Field Public Static`
+---@field ManageRound Barotrauma.Networking.ClientPermissions
+---`Field Public Static`
+---@field Kick Barotrauma.Networking.ClientPermissions
+---`Field Public Static`
+---@field Ban Barotrauma.Networking.ClientPermissions
+---`Field Public Static`
+---@field Unban Barotrauma.Networking.ClientPermissions
+---`Field Public Static`
+---@field SelectSub Barotrauma.Networking.ClientPermissions
+---`Field Public Static`
+---@field SelectMode Barotrauma.Networking.ClientPermissions
+---`Field Public Static`
+---@field ManageCampaign Barotrauma.Networking.ClientPermissions
+---`Field Public Static`
+---@field ConsoleCommands Barotrauma.Networking.ClientPermissions
+---`Field Public Static`
+---@field ServerLog Barotrauma.Networking.ClientPermissions
+---`Field Public Static`
+---@field ManageSettings Barotrauma.Networking.ClientPermissions
+---`Field Public Static`
+---@field ManagePermissions Barotrauma.Networking.ClientPermissions
+---`Field Public Static`
+---@field KarmaImmunity Barotrauma.Networking.ClientPermissions
+---`Field Public Static`
+---@field ManageMoney Barotrauma.Networking.ClientPermissions
+---`Field Public Static`
+---@field SellInventoryItems Barotrauma.Networking.ClientPermissions
+---`Field Public Static`
+---@field SellSubItems Barotrauma.Networking.ClientPermissions
+---`Field Public Static`
+---@field ManageMap Barotrauma.Networking.ClientPermissions
+---`Field Public Static`
+---@field ManageHires Barotrauma.Networking.ClientPermissions
+---`Field Public Static`
+---@field All Barotrauma.Networking.ClientPermissions
+_G['ClientPermissions'] = {}
+

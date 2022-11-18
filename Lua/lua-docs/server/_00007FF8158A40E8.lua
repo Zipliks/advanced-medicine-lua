@@ -1,0 +1,26 @@
+---@meta
+---@class Barotrauma.PropertyConditional.ConditionType : System.Enum
+---`Field Public Static`
+---@field Uncertain Barotrauma.PropertyConditional.ConditionType
+---`Field Public Static`
+---@field PropertyValue Barotrauma.PropertyConditional.ConditionType
+---`Field Public Static`
+---@field Name Barotrauma.PropertyConditional.ConditionType
+---`Field Public Static`
+---@field SpeciesName Barotrauma.PropertyConditional.ConditionType
+---`Field Public Static`
+---@field SpeciesGroup Barotrauma.PropertyConditional.ConditionType
+---`Field Public Static`
+---@field HasTag Barotrauma.PropertyConditional.ConditionType
+---`Field Public Static`
+---@field HasStatusTag Barotrauma.PropertyConditional.ConditionType
+---`Field Public Static`
+---@field HasSpecifierTag Barotrauma.PropertyConditional.ConditionType
+---`Field Public Static`
+---@field Affliction Barotrauma.PropertyConditional.ConditionType
+---`Field Public Static`
+---@field EntityType Barotrauma.PropertyConditional.ConditionType
+---`Field Public Static`
+---@field LimbType Barotrauma.PropertyConditional.ConditionType
+_G['PropertyConditional']['ConditionType'] = {}
+

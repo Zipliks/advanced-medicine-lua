@@ -1,0 +1,34 @@
+---@meta
+---@class Barotrauma.MapEntityCategory : System.Enum
+---`Field Public Static`
+---@field Structure Barotrauma.MapEntityCategory
+---`Field Public Static`
+---@field Decorative Barotrauma.MapEntityCategory
+---`Field Public Static`
+---@field Machine Barotrauma.MapEntityCategory
+---`Field Public Static`
+---@field Medical Barotrauma.MapEntityCategory
+---`Field Public Static`
+---@field Weapon Barotrauma.MapEntityCategory
+---`Field Public Static`
+---@field Diving Barotrauma.MapEntityCategory
+---`Field Public Static`
+---@field Equipment Barotrauma.MapEntityCategory
+---`Field Public Static`
+---@field Fuel Barotrauma.MapEntityCategory
+---`Field Public Static`
+---@field Electrical Barotrauma.MapEntityCategory
+---`Field Public Static`
+---@field Material Barotrauma.MapEntityCategory
+---`Field Public Static`
+---@field Alien Barotrauma.MapEntityCategory
+---`Field Public Static`
+---@field Wrecked Barotrauma.MapEntityCategory
+---`Field Public Static`
+---@field ItemAssembly Barotrauma.MapEntityCategory
+---`Field Public Static`
+---@field Legacy Barotrauma.MapEntityCategory
+---`Field Public Static`
+---@field Misc Barotrauma.MapEntityCategory
+_G['MapEntityCategory'] = {}
+
