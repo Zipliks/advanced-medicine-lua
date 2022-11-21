@@ -100,7 +100,7 @@ end)
 
 Main.SetItemFunction("hemostat", function(item, source, target, limb)
 	local limbtype = Utils.NormalizeLimbType(limb.type)
-	local has_incision = Utils.GetAfflictionLimb(target, "incision", limbtype)
+	local has_incision = Utils.GetAfflictionLimb(target, "incision", limbtype) or false
 	if (not has_incision) then
 		return
 	end
@@ -111,7 +111,7 @@ end)
 
 Main.SetItemFunction("retractor", function(item, source, target, limb)
 	local limbtype = Utils.NormalizeLimbType(limb.type)
-	local has_ligature = Utils.GetAfflictionLimb(target, "ligature", limbtype)
+	local has_ligature = Utils.GetAfflictionLimb(target, "ligature", limbtype) or false
 	if (not has_ligature) then
 		return
 	end
@@ -121,7 +121,7 @@ end)
 
 Main.SetItemFunction("tweezers", function(item, source, target, limb)
 	local limbtype = Utils.NormalizeLimbType(limb.type)
-	local is_retracted = Utils.GetAfflictionLimb(target, "retraction", limbtype)
+	local is_retracted = Utils.GetAfflictionLimb(target, "retraction", limbtype) or false
 
 	if (not is_retracted) then
 		return
@@ -131,16 +131,14 @@ end)
 
 Main.SetItemFunction("suture", function(item, source, target, limb)
 	local limbtype = Utils.NormalizeLimbType(limb.type)
-	local is_retracted = Utils.GetAfflictionLimb(target, "retraction", limbtype)
+	suturable = {"incision", "ligature", "retraction"}
+	local afflictionlist = target.CharacterHealth.GetAllAfflictions()
+	for value in afflictionlist do
+		local prefab = value.Prefab
 
-	if (has_incision) then
-		Utils.SetAffliction(target, "incision", -1, true)
-	elseif (has_ligature) then
-		Utils.SetAffliction(target, "ligature", -1, true)
-	elseif (is_retracted) then
-		Utils.SetAffliction(target, "retraction", -1, true)
-	else
-		return
+		if Utils.SearchTable(suturable, prefab.Identifier.Value) then
+			Utils.SetAffliction(target, prefab.Identifier.Value, -25, limbtype, false)
+		end
 	end
 
 	Utils.RemoveItem(item)
