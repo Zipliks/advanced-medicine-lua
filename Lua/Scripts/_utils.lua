@@ -68,6 +68,15 @@ function Utils.RemoveItem(item)
 	end
 end
 
+function Utils.SearchTable(table, value)
+	for _, val in ipairs(table) do
+		if val == value then
+			return true
+		end
+	end
+	return false
+end
+
 --[[
 Utils.GetAffliction
 * character: У кого проверять (Barotrauma.Character)
