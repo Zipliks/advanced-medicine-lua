@@ -131,7 +131,7 @@ end)
 
 Main.SetItemFunction("suture", function(item, source, target, limb)
 	local limbtype = Utils.NormalizeLimbType(limb.type)
-	suturable = {"incision", "ligature", "retraction"}
+	local suturable = {"incision", "ligature", "retraction"}
 	local afflictionlist = target.CharacterHealth.GetAllAfflictions()
 	for value in afflictionlist do
 		local prefab = value.Prefab
