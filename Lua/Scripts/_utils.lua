@@ -21,8 +21,8 @@ end
 function Utils.SetAffliction(character, affliction, strength, limb, add, source)
 	local prefab = AfflictionPrefab.Prefabs[affliction]
 
-	limb = limb or LimbType.Torso
-	add = add or false
+	local limb = limb or LimbType.Torso
+	local add = add or false
 
 	local strength = strength * character.CharacterHealth.MaxVitality / 100
 	local affliction = prefab.Instantiate(strength, source)
@@ -41,9 +41,9 @@ end
 function Utils.SetAfflictionTime(character, affliction, strength, limb, add, seconds, source)
 	local prefab = AfflictionPrefab.Prefabs[affliction]
 
-	limb = limb or LimbType.Torso
-	add = add or false
-	delay = 0 or seconds * 1000
+	local limb = limb or LimbType.Torso
+	local add = add or false
+	local delay = 0 or seconds * 1000
 
 	local strength = strength * character.CharacterHealth.MaxVitality / 100
 	local affliction = prefab.Instantiate(strength, source)
@@ -180,7 +180,7 @@ function Utils.CharacterToClient(character)
 
 	if not SERVER then return nil end
 
-	for key, client in pairs(Client.ClientList) do
+	for _, client in pairs(Client.ClientList) do
 		if client.Character == character then
 			return client
 		end
