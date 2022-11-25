@@ -344,7 +344,7 @@
 	<Affliction name="Retracted Wound" identifier="retraction" description="" type="gaze" isbuff="false" limbspecific="True" maxstrength="1" showiconthreshold="1" showinhealthscannerthreshold="300">
 		<icon texture="%ModDIr%/Images/AfflictionIcons.png" sheetindex="2,2" sheetelementsize="128,128" color="139,60,42,255" origin="0,0" />
 	</Affliction>
-	<Affliction name="Stitches" identifier="stitches" description="" type="gaze" isbuff="true" limbspecific="True" maxstrength="100" showiconthreshold="1" showinhealthscannerthreshold="300">
+	<Affliction name="Stitches" identifier="stitches" description="" type="gaze" isbuff="true" limbspecific="true" maxstrength="100" showiconthreshold="1" showinhealthscannerthreshold="300">
 		<icon texture="%ModDIr%/Images/AfflictionIcons.png" sheetindex="3,2" sheetelementsize="128,128" color="139,60,42,255" origin="0,0" />
 	</Affliction>
 	<!-- //!SECTION -->
@@ -359,16 +359,19 @@
 	</Override>
 
 	<Override>
-		<Bloodloss name="" identifier="bloodloss" description="" type="bloodloss" causeofdeathdescription="Bled to death" selfcauseofdeathdescription="You have bled to death." healableinmedicalclinic="false" limbspecific="false" indicatorlimb="Torso" activationthreshold="0" showiconthreshold="700" showinhealthscannerthreshold="5" maxstrength="200">
-			<PeriodicEffect mininterval="4" maxinterval="4">
-				<StatusEffect target="Character" disabledeltatime="true" stackable="false" delay="1" checkconditionalalways="false">
-					<Conditional ishuman="false" />
-					<ReduceAffliction identifier="bloodloss" amount="999" />
-				</StatusEffect>
-				<StatusEffect target="Character" disabledeltatime="true" stackable="false" delay="1" checkconditionalalways="false">
-					<ReduceAffliction identifier="bloodloss" amount="0.4" />
-				</StatusEffect>
-			</PeriodicEffect>
+		<Bloodloss name="" 
+		identifier="bloodloss" 
+		description="" 
+		type="bloodloss" 
+		causeofdeathdescription="Bled to death" 
+		selfcauseofdeathdescription="You have bled to death." 
+		healableinmedicalclinic="false" 
+		limbspecific="false" 
+		indicatorlimb="Torso" 
+		activationthreshold="0" 
+		showiconthreshold="700" 
+		showinhealthscannerthreshold="5" 
+		maxstrength="200">
 			<icon texture="Content/UI/MainIconsAtlas.png" sourcerect="0,768,128,128" color="139,60,42,255" origin="0,0" />
 		</Bloodloss>
 	</Override>
