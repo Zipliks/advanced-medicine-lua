@@ -3,11 +3,16 @@ local asystole = AfflictionPrefab.Prefabs["asystole"]
 
 
 Hook.Add('chatMessage', 'AM.chat_console', function(msg, client)
+	local function check(character)
+		if (Utils.GetAffliction(character, "ominus")) then
+			print(Utils.GetAffliction(character, "ominus"))
+			print(Utils.GetAffliction(character, "ominus"))
+		end
+	end
 	-- Если клиент не управляет персонажем - игнорить
-	if client.Character == nil then return false end
+	if client.Character == nil then return end
 
 	local char = client.Character
-
 	-- Suicide command, obviously
 	if msg == '--die' then
 		for key, character in pairs(Character.CharacterList) do
@@ -72,10 +77,3 @@ Hook.Add('chatMessage', 'AM.chat_console', function(msg, client)
 		end
 	end
 end)
-
-local function check(character)
-	if (Utils.GetAffliction(character, "ominus")) then
-		print(Utils.GetAffliction(character, "ominus"))
-		print(Utils.GetAffliction(character, "ominus"))
-	end
-end
