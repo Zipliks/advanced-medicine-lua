@@ -132,15 +132,8 @@ end)
 Main.SetItemFunction("suture", function(item, source, target, limb)
 	local limbtype = Utils.NormalizeLimbType(limb.type)
 	local suturable = {"incision", "ligature", "retraction"}
-	local afflictionlist = target.CharacterHealth.GetAllAfflictions()
-	for value in afflictionlist do
-		local prefab = value.Prefab
-
-		if Utils.SearchTable(suturable, prefab.Identifier.Value) then
-			Utils.SetAffliction(target, prefab.Identifier.Value, -25, limbtype, false)
-		end
+	if(Utils.SetAffCondition(target, "retraction", 1, limbtype, suturable, 1, true)) then
+		Utils.RemoveItem(item)
+		Utils.SetAfflictionTime(target, "stitches", 20, limbtype, false, 30)
 	end
-
-	Utils.RemoveItem(item)
-	Utils.SetAfflictionTime(target, "stitches", 100, limbtype, false, 300)
 end)
