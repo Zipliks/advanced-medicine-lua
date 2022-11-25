@@ -2,19 +2,19 @@
 <Afflictions>
 	<!-- /// Head /// -->
 	<!-- Brain Hypoxia -->
-	<Affliction name="" identifier="hypoxia" description="" limbspecific="false" indicatorlimb="Head" showiconthreshold="1" showinhealthscannerthreshold="10" maxstrength="30" targets="human" type="gaze" isbuff="false" healableinmedicalclinic="false" iconcolors="255,90,0,255;255,90,0,255">
-		<icon texture="%ModDir%/Images/AfflictionIcons.png" sheetindex="1,1" sheetelementsize="128,128" origin="0,0" sourcerect="256,384,128,128" />
+	<Affliction name="Cerebral Hypoxia" identifier="hypoxia" description="" limbspecific="false" indicatorlimb="Head" showiconthreshold="1" showinhealthscannerthreshold="10" maxstrength="30" targets="human" type="gaze" isbuff="false" healableinmedicalclinic="false" iconcolors="255,90,0,255;255,90,0,255">
+		<icon texture="%ModDir%/Images/AfflictionIcons.png" sheetindex="0,3" sheetelementsize="160,160" origin="0,0" />
 	</Affliction>
 	<!-- Brain Damage-->
 	<Affliction name="Neurotrauma" identifier="neurotrauma" description="" limbspecific="false" indicatorlimb="Head" showiconthreshold="201" showinhealthscannerthreshold="20" maxstrength="200" targets="human" type="gaze" isbuff="false" healableinmedicalclinic="false" iconcolors="255,90,0,255;255,90,0,255">
-		<icon texture="%ModDir%/Images/debuff.png" sheetindex="1,1" sheetelementsize="128,128" origin="0,0" sourcerect="128,257,128,128" />
+		<icon texture="%ModDir%/Images/AfflictionIcons.png" sheetindex="0,0" sheetelementsize="160,160" origin="0,0" />
 	</Affliction>
 	<!-- ////////////////////////////////////////////////// -->
 	<!-- /// Heart Stuff /// -->
 	<!-- Tachycardia / Rapid Heartbeat
   Exposed Symptom, counters hypoxemia and hypotension-->
 	<Affliction name="" identifier="tachycardia" description="" limbspecific="false" indicatorlimb="Torso" showiconthreshold="1" showinhealthscannerthreshold="10" maxstrength="2" targets="human" type="gaze" isbuff="false" healableinmedicalclinic="false" iconcolors="255,90,0,255;255,90,0,255">
-		<icon texture="%ModDir%/Images/AfflictionIcons.png" sheetindex="1,1" sheetelementsize="128,128" origin="0,0" />
+		<icon texture="%ModDir%/Images/AfflictionIcons.png" sheetindex="7,8" sheetelementsize="128,128" origin="0,0" />
 	</Affliction>
 	<!-- Atrial fibrillation / The atrial contract randomly 
   Causes hypertension / Increased risk of myocarditis-->
