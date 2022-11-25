@@ -40,25 +40,56 @@ end
 * source: кто применил этот аффликшен (Barotrauma.Character) ]]
 function Utils.SetAfflictionTime(character, affliction, strength, limb, add, seconds, source)
 	local prefab = AfflictionPrefab.Prefabs[affliction]
-
-	local limb = limb or LimbType.Torso
-	local add = add or false
-	local delay = 0 or seconds * 1000
-
-	local strength = strength * character.CharacterHealth.MaxVitality / 100
-	local affliction = prefab.Instantiate(strength, source)
-
-	character.CharacterHealth.ApplyAffliction(character.AnimController.GetLimb(limb), affliction, add)
+	local limbtype = limb or LimbType.Torso
+	local is_add = add or false
+	local delay = seconds * 1000 or 0
+	local apply_str = strength * character.CharacterHealth.MaxVitality / 100
+	local apply_aff = prefab.Instantiate(apply_str, source)
+	character.CharacterHealth.ApplyAffliction(character.AnimController.GetLimb(limbtype), apply_aff, is_add)
 
 	Timer.Wait(function()
-		local affliction = prefab.Instantiate(-strength, source)
-		character.CharacterHealth.ApplyAffliction(character.AnimController.GetLimb(limb), affliction, add)
+		local apply_aff = prefab.Instantiate(-strength, source)
+		character.CharacterHealth.ApplyAffliction(character.AnimController.GetLimb(limbtype), apply_aff, is_add)
 	end, delay)
+end
+
+--[[ Utils.SetAffCondition
+* target: targetCharacter. Кого проверять.
+* id: String. Айди аффликшена
+* strength: Integer. Сила аффликшена
+* limb: LimbType. Конечность проверки
+* condition: String|Table. Условие при котором будет применён id
+* condition_str: Integer|Table. Сила condition при котором будет применён id
+* add: Bool. Перезаписывать значение или прибавлять
+* source: usingCharacter. Кто применил	
+	]]
+function Utils.SetAffCondition(target, id, strength, limb, condition, condition_str, add, source)
+	local prefab = AfflictionPrefab.Prefabs[id]
+	
+	local limbtype = limb or LimbType.Torso
+	local is_add = add or false
+
+	local apply_str = strength * target.CharacterHealth.MaxVitality / 100
+	local apply_aff = prefab.Instantiate(apply_str, source)
+	if (type(condition) == "table") then
+		local affliction_list = target.CharacterHealth.GetAllAfflictions()
+		for value in affliction_list do
+			local compare = value.Prefab
+			if (Utils.SearchTable(condition, compare.Identifier.Value)) then
+				print("Success")
+				target.CharacterHealth.ApplyAffliction(target.AnimController.GetLimb(limbtype), apply_aff, is_add)
+				return true
+			end
+		end
+	elseif (Utils.GetAfflictionLimb(target, condition, limbtype) == condition_str) then
+		target.CharacterHealth.ApplyAffliction(target.AnimController.GetLimb(_llimbtypeimb), apply_aff, is_add)
+		return true
+	end
+	return false
 end
 
 function Utils.RemoveItem(item)
 	if item == nil or item.Removed then return end
-
 	if SERVER then
 		-- use server remove method
 		Entity.Spawner.AddEntityToRemoveQueue(item)
@@ -153,7 +184,7 @@ function Utils.NormalizeLimbType(limbtype)
 end
 
 -- misc --
-function PrintChat(msg)
+local function PrintChat(msg)
 	if SERVER then
 		-- use server method
 		Game.SendMessage(msg, ChatMessageType.Server)
