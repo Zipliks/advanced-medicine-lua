@@ -73,7 +73,7 @@ Hook.Add('chatMessage', 'AM.chat_console', function(msg, client)
 	end
 end)
 
-function check(character)
+local function check(character)
 	if (Utils.GetAffliction(character, "ominus")) then
 		print(Utils.GetAffliction(character, "ominus"))
 		print(Utils.GetAffliction(character, "ominus"))
