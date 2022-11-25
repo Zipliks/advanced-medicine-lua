@@ -144,18 +144,6 @@ Main.AddAfflictionHandler("heart_failure", "has_heart_failure", function(charact
 end)
 -- //!SECTION
 
--- //SECTION - Ventricular Tachycardia
-Main.AddAfflictionHandler("ventricular_tachy", "has_ventricular_tachy", function(character, strength)
-    local bloodpressure_strength = Utils.GetAffliction(character, "bloodpressure")
-
-    if(bloodpressure_strength >= 2) then
-        Utils.SetAffliction(character, "bloodpressure", bloodpressure_strength*-0.01*DELTA_TIME, LimbType.Torso, true)
-    end
-
-    Utils.SetAffliction(character, "heart_failure", 0.03*DELTA_TIME, LimbType.Torso, true)
-end)
--- //!SECTION
-
 -- //SECTION - Ventricular Fibrillation
 Main.AddAfflictionHandler("ventricular_fib", "has_ventricular_fib", function(character, strength)
     local bloodpressure_strength = Utils.GetAffliction(character, "bloodpressure")
