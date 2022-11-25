@@ -133,27 +133,6 @@ function Utils.GetAfflictionLimb(character, affliction, limb)
 	return aff.Strength
 end
 
-function Utils.NormalizeLimbType(limbtype) 
-    if 
-        limbtype == LimbType.Head or 
-        limbtype == LimbType.Torso or 
-        limbtype == LimbType.RightArm or
-        limbtype == LimbType.LeftArm or
-        limbtype == LimbType.RightLeg or
-        limbtype == LimbType.LeftLeg then 
-        return limbtype end
-
-    if limbtype == LimbType.LeftForearm or limbtype==LimbType.LeftHand then return LimbType.LeftArm end
-    if limbtype == LimbType.RightForearm or limbtype==LimbType.RightHand then return LimbType.RightArm end
-
-    if limbtype == LimbType.LeftThigh or limbtype==LimbType.LeftFoot then return LimbType.LeftLeg end
-    if limbtype == LimbType.RightThigh or limbtype==LimbType.RightFoot then return LimbType.RightLeg end
-
-    if limbtype == LimbType.Waist then return LimbType.Torso end
-
-    return limbtype
-end
-
 function Utils.GetSkillLevel(character,skilltype)
     return character.GetSkillLevel(Identifier(skilltype))
 end
