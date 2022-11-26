@@ -1,81 +1,30 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Afflictions>
-	<!-- /// Head /// -->
-	<!-- Brain Hypoxia -->
+	<!-- SECTION: Head -->
 	<Affliction name="Cerebral Hypoxia" identifier="hypoxia" description="" limbspecific="false" indicatorlimb="Head" showiconthreshold="1" showinhealthscannerthreshold="10" maxstrength="30" targets="human" type="gaze" isbuff="false" healableinmedicalclinic="false" iconcolors="255,90,0,255;255,90,0,255">
 		<icon texture="%ModDir%/Images/AfflictionIcons.png" sheetindex="0,3" sheetelementsize="160,160" origin="0,0" />
 	</Affliction>
-	<!-- Brain Damage-->
 	<Affliction name="Neurotrauma" identifier="neurotrauma" description="" limbspecific="false" indicatorlimb="Head" showiconthreshold="201" showinhealthscannerthreshold="20" maxstrength="200" targets="human" type="gaze" isbuff="false" healableinmedicalclinic="false" iconcolors="255,90,0,255;255,90,0,255">
 		<icon texture="%ModDir%/Images/AfflictionIcons.png" sheetindex="0,0" sheetelementsize="160,160" origin="0,0" />
 	</Affliction>
-	<!-- ////////////////////////////////////////////////// -->
-	<!-- /// Heart Stuff /// -->
-	<!-- Tachycardia / Rapid Heartbeat
-  Exposed Symptom, counters hypoxemia and hypotension-->
-	<Affliction name="" identifier="tachycardia" description="" limbspecific="false" indicatorlimb="Torso" showiconthreshold="1" showinhealthscannerthreshold="10" maxstrength="2" targets="human" type="gaze" isbuff="false" healableinmedicalclinic="false" iconcolors="255,90,0,255;255,90,0,255">
-		<icon texture="%ModDir%/Images/AfflictionIcons.png" sheetindex="7,8" sheetelementsize="128,128" origin="0,0" />
-	</Affliction>
-	<!-- Atrial fibrillation / The atrial contract randomly 
-  Causes hypertension / Increased risk of myocarditis-->
-	<Affliction name="" identifier="af" description="" healableinmedicalclinic="false" limbspecific="false" indicatorlimb="Torso" showiconthreshold="1" showinhealthscannerthreshold="1" targets="human" type="gaze" isbuff="false" maxstrength="10">
-		<icon texture="%ModDir%/Images/AfflictionIcons.png" sheetindex="0,1" sheetelementsize="128,128" origin="0,0" />
-	</Affliction>
-	<!-- Ventricular Fibrillation / The ventricles contract randomly
-  cause hypoxemia and hypotension, if left untreated, it will become asystole-->
+	<!-- !SECTION -->
+	<!-- SECTION: Heart -->
 	<Affliction name="Ventricular Fibrillation" identifier="ventricular_fib" description="" healableinmedicalclinic="false" limbspecific="false" indicatorlimb="Torso" showiconthreshold="1" showinhealthscannerthreshold="1" targets="human" type="gaze" isbuff="false" maxstrength="10">
 		<icon texture="%ModDir%/Images/AfflictionIcons.png" sheetindex="0,1" sheetelementsize="128,128" origin="0,0" />
 	</Affliction>
-	<!-- Asystole / Lack of electrical activity of the heart
-  Occurs due to exhaustion of the heart, cause hypoxemia and hypotension -->
-	<Affliction name="" identifier="asystole" description="" healableinmedicalclinic="false" limbspecific="false" indicatorlimb="Torso" showiconthreshold="1" showinhealthscannerthreshold="1" targets="human" type="gaze" isbuff="false" maxstrength="10">
+	<Affliction name="Asystole" identifier="asystole" description="" healableinmedicalclinic="false" limbspecific="false" indicatorlimb="Torso" showiconthreshold="1" showinhealthscannerthreshold="1" targets="human" type="gaze" isbuff="false" maxstrength="10">
 		<icon texture="%ModDir%/Images/AfflictionIcons.png" sheetindex="0,1" sheetelementsize="128,128" origin="0,0" />
 	</Affliction>
-	<!-- Heart failure
-  cause asystole and heart damage -->
-	<Affliction name="Heart failure" identifier="heart_failure" description="" healableinmedicalclinic="false" limbspecific="false" indicatorlimb="Torso" showiconthreshold="1" showinhealthscannerthreshold="1" targets="human" type="gaze" isbuff="false" maxstrength="200">
-		<icon texture="%ModDir%/Images/AfflictionIcons.png" sheetindex="0,1" sheetelementsize="128,128" origin="0,0" />
-	</Affliction>
-	<!-- Angina / Angina Pectoris
-  Scanned Symptom, causes shortness of breath, chest pain,
-  nausea, sweating, heart damage and potentially cardiac arrest -->
-	<Affliction name="" identifier="angina" description="" healableinmedicalclinic="false" limbspecific="false" indicatorlimb="Torso" maxstrength="100" targets="human" showiconthreshold="500" showinhealthscannerthreshold="1" type="gaze" isbuff="false" damageoverlayalpha="1">
+	<Affliction name="Heart Damage" identifier="heartdamage" description="" healableinmedicalclinic="false" type="" isbuff="false" targets="human" limbspecific="false" indicatorlimb="Torso" maxstrength="100" showiconthreshold="500" showinhealthscannerthreshold="20" damageoverlayalpha="1">
 		<icon texture="Content/UI/MainIconsAtlas.png" sourcerect="128,384,128,128" color="195,136,60,255" origin="0,0" />
 	</Affliction>
-	<!-- Сoronary artery disease
-  Occurs due to atherosclerosis or heart damage, can cause angina or myocardial infarction-->
-	<Affliction name="" identifier="coronary_a_d" description="" healableinmedicalclinic="false" limbspecific="false" indicatorlimb="Torso" maxstrength="100" targets="human" showiconthreshold="500" showinhealthscannerthreshold="1" type="gaze" isbuff="false" damageoverlayalpha="1">
-		<icon texture="Content/UI/MainIconsAtlas.png" sourcerect="128,384,128,128" color="195,136,60,255" origin="0,0" />
-	</Affliction>
-	<!-- Myocarditis bacterial
-  if normal immunity, passes by itself, otherwise leads to heart damage and asystole-->
-	<Affliction name="" identifier="myocarditisinf" description="" healableinmedicalclinic="false" limbspecific="false" indicatorlimb="Torso" maxstrength="100" targets="human" showiconthreshold="500" showinhealthscannerthreshold="1" type="gaze" isbuff="false" damageoverlayalpha="1">
-		<icon texture="Content/UI/MainIconsAtlas.png" sourcerect="128,384,128,128" color="195,136,60,255" origin="0,0" />
-	</Affliction>
-	<!-- Myocarditis viral
-  if normal immunity, passes by itself, otherwise leads to heart damage and asystole-->
-	<Affliction name="" identifier="myocarditisvir" description="" healableinmedicalclinic="false" limbspecific="false" indicatorlimb="Torso" maxstrength="100" targets="human" showiconthreshold="500" showinhealthscannerthreshold="1" type="gaze" isbuff="false" damageoverlayalpha="1">
-		<icon texture="Content/UI/MainIconsAtlas.png" sourcerect="128,384,128,128" color="195,136,60,255" origin="0,0" />
-	</Affliction>
-	<!-- Heart Damage
-  Scanned Symptom, causes shortness of breath, chest pain and cough, hypoxemia
-  leads to lung failure if severe enough -->
-	<Affliction name="" identifier="heartdamage" description="" healableinmedicalclinic="false" type="" isbuff="false" targets="human" limbspecific="false" indicatorlimb="Torso" maxstrength="100" showiconthreshold="500" showinhealthscannerthreshold="20" damageoverlayalpha="1">
-		<icon texture="Content/UI/MainIconsAtlas.png" sourcerect="128,384,128,128" color="195,136,60,255" origin="0,0" />
-	</Affliction>
-	<Affliction name="" identifier="heartfibrosis" description="" healableinmedicalclinic="false" type="" isbuff="false" targets="human" limbspecific="false" indicatorlimb="Torso" maxstrength="100" showiconthreshold="500" showinhealthscannerthreshold="20" damageoverlayalpha="1">
-		<icon texture="Content/UI/MainIconsAtlas.png" sourcerect="128,384,128,128" color="195,136,60,255" origin="0,0" />
-	</Affliction>
-	<!-- Heart removed
-  Exposed Symptom, cardiac arrest -->
-	<Affliction name="" identifier="heartremoved" description="The heart has been surgically removed" targets="human" healableinmedicalclinic="false" limbspecific="false" indicatorlimb="Torso" showiconthreshold="1" showinhealthscannerthreshold="1" type="gaze" isbuff="false" causeofdeathdescription="Died of missing a heart" selfcauseofdeathdescription="Your heart got removed." iconcolors="84,211,211,255;84,211,211,255" maxstrength="2">
+	<Affliction name="Heart Removed" identifier="heartremoved" description="The heart has been surgically removed" targets="human" healableinmedicalclinic="false" limbspecific="false" indicatorlimb="Torso" showiconthreshold="1" showinhealthscannerthreshold="1" type="gaze" isbuff="false" causeofdeathdescription="Died of missing a heart" selfcauseofdeathdescription="Your heart got removed." iconcolors="84,211,211,255;84,211,211,255" maxstrength="2">
 		<icon texture="%ModDir%/Images/AfflictionIcons.png" sheetindex="3,5" sheetelementsize="128,128" origin="0,0" />
 	</Affliction>
-	<!-- Cardiac tamponade -->
-	<Affliction name="Cardiac tamponade" identifier="tamponade" description="" healableinmedicalclinic="false" targets="human" type="gaze" isbuff="false" causeofdeathdescription="" selfcauseofdeathdescription="" limbspecific="False" indicatorlimb="Torso" showinhealthscannerthreshold="10" showiconthreshold="300" maxstrength="100">
+	<Affliction name="Cardiac Tamponade" identifier="tamponade" description="" healableinmedicalclinic="false" targets="human" type="gaze" isbuff="false" causeofdeathdescription="" selfcauseofdeathdescription="" limbspecific="False" indicatorlimb="Torso" showinhealthscannerthreshold="10" showiconthreshold="300" maxstrength="100">
 		<icon texture="%ModDir%/Images/AfflictionIcons.png" sheetindex="2,2" sheetelementsize="128,128" origin="0,0" />
 	</Affliction>
-
+	<!-- !SECTION -->
 	<!-- /// Blood Stuff /// -->
 	<!-- Blood Pressure
   Scanned Symptom -->
@@ -89,7 +38,7 @@
 	</Affliction>
 	<!-- Internal Bleeding
   Scanned Symptom -->
-	<Affliction name="" identifier="internalbleeding" healableinmedicalclinic="false" targets="human" description="" causeofdeathdescription="" selfcauseofdeathdescription="" limbspecific="False" indicatorlimb="Torso" showinhealthscannerthreshold="10" showiconthreshold="300" maxstrength="100">
+	<Affliction name="Internal Bleeding" identifier="internalbleeding" healableinmedicalclinic="false" targets="human" description="" causeofdeathdescription="" selfcauseofdeathdescription="" limbspecific="False" indicatorlimb="Torso" showinhealthscannerthreshold="10" showiconthreshold="300" maxstrength="100">
 		<icon texture="%ModDir%/Images/AfflictionIcons.png" sheetindex="6,2" sheetelementsize="128,128" origin="0,0" />
 	</Affliction>
 
@@ -323,7 +272,7 @@
 		<icon texture="%ModDIr%/Images/placeholder.png" sheetindex="0,0" sheetelementsize="16,16" color="139,60,42,255" origin="0,0" />
 	</Affliction>
 
-	<!-- //SECTION - Surgery -->
+	<!-- SECTION - Surgery -->
 	<Affliction name="Open Incision" identifier="incision" description="" type="gaze" isbuff="false" limbspecific="True" maxstrength="1" showiconthreshold="1" showinhealthscannerthreshold="300">
 		<icon texture="%ModDIr%/Images/AfflictionIcons.png" sheetindex="0,2" sheetelementsize="128,128" color="139,60,42,255" origin="0,0" />
 	</Affliction>
@@ -339,7 +288,7 @@
 	<!-- //!SECTION -->
 
 
-	<!-- //SECTION: Override -->
+	<!-- SECTION: Override -->
 	<Override>
 		<OxygenLow name="" identifier="oxygenlow" description="" type="oxygenlow" causeofdeathdescription="Suffocated" selfcauseofdeathdescription="You have suffocated." limbspecific="false" indicatorlimb="Torso" activationthreshold="1" showiconthreshold="500" showinhealthscannerthreshold="5" karmachangeonapplied="-0.2" maxstrength="200">
 			<Effect minstrength="1" maxstrength="200" strengthchange="0" />
@@ -348,19 +297,19 @@
 	</Override>
 
 	<Override>
-		<Bloodloss name="" 
-		identifier="bloodloss" 
-		description="" 
-		type="bloodloss" 
-		causeofdeathdescription="Bled to death" 
-		selfcauseofdeathdescription="You have bled to death." 
-		healableinmedicalclinic="false" 
-		limbspecific="false" 
-		indicatorlimb="Torso" 
-		activationthreshold="0" 
-		showiconthreshold="700" 
-		showinhealthscannerthreshold="5" 
-		maxstrength="200">
+		<Bloodloss name=""
+			identifier="bloodloss"
+			description=""
+			type="bloodloss"
+			causeofdeathdescription="Bled to death"
+			selfcauseofdeathdescription="You have bled to death."
+			healableinmedicalclinic="false"
+			limbspecific="false"
+			indicatorlimb="Torso"
+			activationthreshold="0"
+			showiconthreshold="700"
+			showinhealthscannerthreshold="5"
+			maxstrength="200">
 			<icon texture="Content/UI/MainIconsAtlas.png" sourcerect="0,768,128,128" color="139,60,42,255" origin="0,0" />
 		</Bloodloss>
 	</Override>
@@ -702,5 +651,5 @@
 			<icon texture="Content/UI/MainIconsAtlas.png" sourcerect="128,640,128,128" color="195,177,60,255" origin="0,0" />
 		</Affliction>
 	</Override>
-	<!-- //!SECTION -->
+	<!-- !SECTION -->
 </Afflictions>
