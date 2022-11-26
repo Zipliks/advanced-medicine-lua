@@ -64,24 +64,36 @@ end
 * source: usingCharacter. Кто применил	
 	]]
 function Utils.SetAffCondition(target, id, strength, limb, condition, condition_str, add, source)
-	local prefab = AfflictionPrefab.Prefabs[id]
-	
-	local limbtype = limb or LimbType.Torso
-	local is_add = add or false
-
-	local apply_str = strength * target.CharacterHealth.MaxVitality / 100
+	local prefab = {}
+	local new_strength = {}
+	-- take all ids as prefabs
+	if (type(id) == "table") then
+		for key, value in ipairs(id) do
+			table.insert(prefab, key, AfflictionPrefab.Prefabs[value])
+		end
+	else
+		prefab = AfflictionPrefab.Prefabs[id]
+	end
+	-- calc new strength values
+	if (type(strength) == "table") then
+		for key, value in ipairs(strength) do
+			table.insert(new_strength, key, value * target.CharacterHealth.MaxVitality / 100)
+		end
+	else
+		table.insert(new_strength, strength * target.CharacterHealth.MaxVitality / 100)
+	end
 	local apply_aff = prefab.Instantiate(apply_str, source)
 	if (type(condition) == "table") then
 		local affliction_list = target.CharacterHealth.GetAllAfflictions()
 		for value in affliction_list do
 			local compare = value.Prefab
 			if (Utils.SearchTable(condition, compare.Identifier.Value)) then
-				print("Success")
 				target.CharacterHealth.ApplyAffliction(target.AnimController.GetLimb(limbtype), apply_aff, is_add)
 				return true
 			end
 		end
-	elseif (Utils.GetAfflictionLimb(target, condition, limbtype) == condition_str) then
+	end
+	if (Utils.GetAfflictionLimb(target, condition, limbtype) == condition_str) then
 		target.CharacterHealth.ApplyAffliction(target.AnimController.GetLimb(_llimbtypeimb), apply_aff, is_add)
 		return true
 	end
