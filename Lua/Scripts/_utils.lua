@@ -145,6 +145,10 @@ function Utils.GetAfflictionLimb(character, affliction, limb)
 	return aff.Strength
 end
 
+function Utils.GetSkillLevel(character,skilltype)
+    return character.GetSkillLevel(Identifier(skilltype))
+end
+
 function Utils.ThrowError(text, level)
 	if level == nil then level = 0 end
 	error("AMlua Custom Error: " .. text, 2 + level)
@@ -179,19 +183,21 @@ function Utils.NormalizeLimbType(limbtype)
 		limbtype == LimbType.LeftLeg then
 		return limbtype
 	end
-
 	if limbtype == LimbType.LeftForearm or limbtype == LimbType.LeftHand then
 		return LimbType.LeftArm
-	elseif limbtype == LimbType.RightForearm or limbtype == LimbType.RightHand then
+	end
+	if limbtype == LimbType.RightForearm or limbtype == LimbType.RightHand then
 		return LimbType.RightArm
-	elseif limbtype == LimbType.LeftThigh or limbtype == LimbType.LeftFoot then
+	end
+	if limbtype == LimbType.LeftThigh or limbtype == LimbType.LeftFoot then
 		return LimbType.LeftLeg
-	elseif limbtype == LimbType.RightThigh or limbtype == LimbType.RightFoot then
+	end
+	if limbtype == LimbType.RightThigh or limbtype == LimbType.RightFoot then
 		return LimbType.RightLeg
-	elseif limbtype == LimbType.Waist then
+	end
+	if limbtype == LimbType.Waist then
 		return LimbType.Torso
 	end
-
 	return limbtype
 end
 

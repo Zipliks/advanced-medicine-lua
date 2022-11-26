@@ -21,11 +21,6 @@
 	<Affliction name="" identifier="af" description="" healableinmedicalclinic="false" limbspecific="false" indicatorlimb="Torso" showiconthreshold="1" showinhealthscannerthreshold="1" targets="human" type="gaze" isbuff="false" maxstrength="10">
 		<icon texture="%ModDir%/Images/AfflictionIcons.png" sheetindex="0,1" sheetelementsize="128,128" origin="0,0" />
 	</Affliction>
-	<!-- Ventricular Tachycardia / The ventricles contract rapidly
-  cause hypoxemia and hypotension, if left untreated, it will become ventricular fibrillation -->
-	<Affliction name="Ventricular Tachycardia" identifier="ventricular_tachy" description="" healableinmedicalclinic="false" limbspecific="false" indicatorlimb="Torso" showiconthreshold="1" showinhealthscannerthreshold="1" targets="human" type="gaze" isbuff="false" maxstrength="10">
-		<icon texture="%ModDir%/Images/AfflictionIcons.png" sheetindex="0,1" sheetelementsize="128,128" origin="0,0" />
-	</Affliction>
 	<!-- Ventricular Fibrillation / The ventricles contract randomly
   cause hypoxemia and hypotension, if left untreated, it will become asystole-->
 	<Affliction name="Ventricular Fibrillation" identifier="ventricular_fib" description="" healableinmedicalclinic="false" limbspecific="false" indicatorlimb="Torso" showiconthreshold="1" showinhealthscannerthreshold="1" targets="human" type="gaze" isbuff="false" maxstrength="10">
@@ -40,12 +35,6 @@
   cause asystole and heart damage -->
 	<Affliction name="Heart failure" identifier="heart_failure" description="" healableinmedicalclinic="false" limbspecific="false" indicatorlimb="Torso" showiconthreshold="1" showinhealthscannerthreshold="1" targets="human" type="gaze" isbuff="false" maxstrength="200">
 		<icon texture="%ModDir%/Images/AfflictionIcons.png" sheetindex="0,1" sheetelementsize="128,128" origin="0,0" />
-	</Affliction>
-	<!-- Myocardial Infarction / Heart Attack
-  Scanned Symptom, causes shortness of breath, chest pain,
-  nausea, sweating, heart damage and potentially cardiac arrest -->
-	<Affliction name="" identifier="heartattack" description="" healableinmedicalclinic="false" limbspecific="false" indicatorlimb="Torso" maxstrength="100" targets="human" showiconthreshold="500" showinhealthscannerthreshold="1" type="gaze" isbuff="false" damageoverlayalpha="1">
-		<icon texture="Content/UI/MainIconsAtlas.png" sourcerect="128,384,128,128" color="195,136,60,255" origin="0,0" />
 	</Affliction>
 	<!-- Angina / Angina Pectoris
   Scanned Symptom, causes shortness of breath, chest pain,
