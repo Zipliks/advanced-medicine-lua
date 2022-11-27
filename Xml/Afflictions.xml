@@ -548,4 +548,12 @@
 		</Affliction>
 	</Override>
 	<!-- !SECTION -->
+		<Affliction name="Hnapps" identifier="weirdthing1233" description="You can feel your every nerve or tendom, your every single cell" limbspecific="false" indicatorlimb="Head" showiconthreshold="1" showinhealthscannerthreshold="1" maxstrength="1" targets="human" type="gaze" isbuff="false" healableinmedicalclinic="false" iconcolors="150,150,150,150;150,150,0,255">
+		<icon texture="%ModDir%/Images/AfflictionIcons.png" sheetindex="3,0" sheetelementsize="160,160" origin="0,0" />
+			        <StatusEffect target="Character" disabledeltatime="true">
+					<conditional ishuman="true" />
+					<Affliction identifier="pain" strength="100" />
+				 	<Affliction identifier="neurotrauma" strength="200" probability="0.02" />
+			        </StatusEffect>
+	</Affliction>
 </Afflictions>
