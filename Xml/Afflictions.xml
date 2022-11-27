@@ -87,14 +87,14 @@
 	</Affliction>
 	<!-- Lungs removed
   Exposed Symptom, respiratory arrest -->
-	<Affliction name="" identifier="lungremoved" description="" healableinmedicalclinic="false" targets="human" type="gaze" isbuff="false" limbspecific="false" indicatorlimb="Torso" showiconthreshold="1" showinhealthscannerthreshold="1" causeofdeathdescription="Died of missing lungs" selfcauseofdeathdescription="Your lungs got removed." iconcolors="84,211,211,255;84,211,211,255" maxstrength="2">
+	<Affliction name="Lung Removed" identifier="lungremoved" description="" healableinmedicalclinic="false" targets="human" type="gaze" isbuff="false" limbspecific="false" indicatorlimb="Torso" showiconthreshold="1" showinhealthscannerthreshold="1" causeofdeathdescription="Died of missing lungs" selfcauseofdeathdescription="Your lungs got removed." iconcolors="84,211,211,255;84,211,211,255" maxstrength="2">
 		<icon texture="%ModDir%/Images/AfflictionIcons.png" sheetindex="1,5" sheetelementsize="160,160" origin="0,0" />
 	</Affliction>
 
 	<!-- /// First-Aid Stuff /// -->
 	<!-- Bandaged
   	Exposed, stops minorly infected wounds from deteriorating -->
-	<Affliction name="" identifier="bandaged" description="" healableinmedicalclinic="false" targets="human" limbspecific="true" maxstrength="100" type="resistance" showiconthreshold="0.1" showinhealthscannerthreshold="200" isbuff="true">
+	<Affliction name="Bandaged" identifier="bandaged" description="" healableinmedicalclinic="false" targets="human" limbspecific="true" maxstrength="100" type="resistance" showiconthreshold="0.1" showinhealthscannerthreshold="200" isbuff="true">
 		<Effect minstrength="0" maxstrength="100" />
 		<icon texture="%ModDir%/Images/AfflictionIcons.png" sheetindex="0,4" sheetelementsize="160,160" origin="0,0" />
 	</Affliction>
@@ -102,14 +102,14 @@
 	<!-- /// Immunity stuff /// -->
 	<!-- Immunity / your immune system. heals you passively if high enough
   	Scanned Property -->
-	<Affliction name="" identifier="immunity" description="" healableinmedicalclinic="false" targets="human" type="gaze" isbuff="true" limbspecific="false" maxstrength="100" showinhealthscannerthreshold="300" showiconthreshold="300">
+	<Affliction name="Immunity" identifier="immunity" description="" healableinmedicalclinic="false" targets="human" type="gaze" isbuff="true" limbspecific="false" maxstrength="100" showinhealthscannerthreshold="300" showiconthreshold="300">
 		<icon texture="Content/UI/MainIconsAtlas.png" sourcerect="256,896,128,128" color="10,193,114,255" origin="0,0" />
 	</Affliction>
 
 	<!-- ///// SYMPTOMS ///// -->
 	<!-- as a rule of thumb, exposed symptoms arent visible on the scanner to reduce clutter -->
 	<!-- Cough / Exposed Symptom -->
-	<Affliction name="" identifier="sym_cough" description="" healableinmedicalclinic="false" type="gaze" isbuff="false" limbspecific="false" indicatorlimb="Head" showiconthreshold="1" showinhealthscannerthreshold="100" maxstrength="2" iconcolors="255,90,0,255;255,90,0,255">
+	<Affliction name="Cough" identifier="sym_cough" description="" healableinmedicalclinic="false" type="gaze" isbuff="false" limbspecific="false" indicatorlimb="Head" showiconthreshold="1" showinhealthscannerthreshold="100" maxstrength="2" iconcolors="255,90,0,255;255,90,0,255">
 		<PeriodicEffect mininterval="12" maxinterval="26">
 			<StatusEffect target="Character" comparison="and">
 				<Conditional ishuman="true" />
@@ -152,7 +152,6 @@
 	</Affliction>
 	<!-- //!SECTION -->
 
-
 	<!-- SECTION: Override -->
 	<Override>
 		<OxygenLow name="" identifier="oxygenlow" description="" type="oxygenlow" causeofdeathdescription="Suffocated" selfcauseofdeathdescription="You have suffocated." limbspecific="false" indicatorlimb="Torso" activationthreshold="1" showiconthreshold="500" showinhealthscannerthreshold="5" karmachangeonapplied="-0.2" maxstrength="200">
@@ -183,22 +182,22 @@
 		<Affliction name="" identifier="morbusinepoisoning" description="" type="poison" causeofdeathdescription="Died of morbusine poisoning." selfcauseofdeathdescription="You have died of morbusine poisoning." limbspecific="false" indicatorlimb="Torso" showiconthreshold="700" showinhealthscannerthreshold="5" karmachangeonapplied="-100" maxstrength="100">
 			<!-- Reduce oxygen intake for the victim, cause suffocation -->
 			<!-- Becomes lethal in ~80 seconds -->
-			<Effect minstrength="0" maxstrength="100" minvitalitydecrease="0" maxvitalitydecrease="0" minscreendistort="0.0" maxscreendistort="1.0" minscreenblur="0.0" maxscreenblur="0.0" minchromaticaberration="0.0" maxchromaticaberration="0.4"/>
+			<Effect minstrength="0" maxstrength="100" minvitalitydecrease="0" maxvitalitydecrease="0" minscreendistort="0.0" maxscreendistort="1.0" minscreenblur="0.0" maxscreenblur="0.0" minchromaticaberration="0.0" maxchromaticaberration="0.4" />
 			<icon texture="Content/UI/MainIconsAtlas.png" sourcerect="640,640,128,128" color="106,106,106,255" origin="0,0" />
 		</Affliction>
 	</Override>
 	<Override>
-		<Affliction name="Cyanide poisoning" identifier="cyanidepoisoning" description="The patient is confused and has trouble breathing. Their skin is red and they have occasional muscle spasms." type="poison" causeofdeathdescription="Died of cyanide poisoning." selfcauseofdeathdescription="You have died of cyanide poisoning." limbspecific="false" indicatorlimb="Torso" showiconthreshold="700" showinhealthscannerthreshold="5" treatmentthreshold="40" karmachangeonapplied="-50" maxstrength="100">
+		<Affliction name="" identifier="cyanidepoisoning" description="The patient is confused and has trouble breathing. Their skin is red and they have occasional muscle spasms." type="poison" causeofdeathdescription="Died of cyanide poisoning." selfcauseofdeathdescription="You have died of cyanide poisoning." limbspecific="false" indicatorlimb="Torso" showiconthreshold="700" showinhealthscannerthreshold="5" treatmentthreshold="40" karmachangeonapplied="-50" maxstrength="100">
 			<!-- Starts out fairly undetectable, only slows down player and blurs the screen gradually. -->
 			<!-- At 40 strength, starts quickly affecting vitality, at 70 stuns the player. Lethal at 100. -->
-			<Effect minstrength="0" maxstrength="100" minvitalitydecrease="0" maxvitalitydecrease="0"  minscreendistort="0.0" maxscreendistort="0.20" minscreenblur="0.0" maxscreenblur="0.20"/>
+			<Effect minstrength="0" maxstrength="100" minvitalitydecrease="0" maxvitalitydecrease="0" minscreendistort="0.0" maxscreendistort="0.20" minscreenblur="0.0" maxscreenblur="0.20" />
 			<icon texture="Content/UI/MainIconsAtlas.png" sourcerect="640,640,128,128" color="106,106,106,255" origin="0,0" />
 		</Affliction>
 	</Override>
 	<Override>
 		<Affliction name="" identifier="sufforinpoisoning" description="" type="poison" causeofdeathdescription="Died of sufforin poisoning." selfcauseofdeathdescription="You have died of sufforin poisoning." limbspecific="false" indicatorlimb="Torso" showiconthreshold="700" showinhealthscannerthreshold="5" karmachangeonapplied="-50" maxstrength="100">
 			<!-- At first undetectable and shows no symptoms, then starts affecting character's vision. Quickly becomes lethal if left untreated. -->
-			<Effect minstrength="0" maxstrength="100" minvitalitydecrease="0" maxvitalitydecrease="0" minscreendistort="0.0" maxscreendistort="0.0" minscreenblur="0.0" maxscreenblur="0.0" minchromaticaberration="0.0" maxchromaticaberration="0.0"/>
+			<Effect minstrength="0" maxstrength="100" minvitalitydecrease="0" maxvitalitydecrease="0" minscreendistort="0.0" maxscreendistort="0.0" minscreenblur="0.0" maxscreenblur="0.0" minchromaticaberration="0.0" maxchromaticaberration="0.0" />
 			<icon texture="Content/UI/MainIconsAtlas.png" sourcerect="640,640,128,128" color="106,106,106,255" origin="0,0" />
 		</Affliction>
 	</Override>
@@ -272,14 +271,14 @@
 	<Override>
 		<Affliction name="" identifier="opiateoverdose" description="" type="poison" causeofdeathdescription="Died of opiate overdose" selfcauseofdeathdescription="You have died of opiate overdose." limbspecific="false" indicatorlimb="Head" karmachangeonapplied="-1" showiconthreshold="700" showinhealthscannerthreshold="10" maxstrength="100">
 			<!-- No effects except slight distortion at this level -->
-			<Effect minstrength="0" maxstrength="100" minchromaticaberration="0.0" maxchromaticaberration="1.0"/>
+			<Effect minstrength="0" maxstrength="100" minchromaticaberration="0.0" maxchromaticaberration="1.0" />
 			<icon texture="Content/UI/MainIconsAtlas.png" sourcerect="640,768,128,128" color="103,103,103,255" origin="0,0" />
 		</Affliction>
 	</Override>
 	<Override>
 		<Affliction name="" identifier="opiatewithdrawal" description="" type="poison" causeofdeathdescription="Died of opiate withdrawal" selfcauseofdeathdescription="You have died of opiate withdrawal." limbspecific="false" indicatorlimb="Head" showiconthreshold="700" showinhealthscannerthreshold="1000" maxstrength="100" healcostmultiplier="1.75">
 			<!-- No symptoms -->
-			<Effect minstrength="0" maxstrength="100"/>
+			<Effect minstrength="0" maxstrength="100" />
 			<icon texture="Content/UI/MainIconsAtlas.png" sourcerect="512,768,128,128" color="209,121,84,255" origin="0,0" />
 		</Affliction>
 	</Override>
@@ -292,7 +291,7 @@
 	<Override>
 		<Affliction name="" identifier="chemwithdrawal" description="" type="poison" causeofdeathdescription="Died of chem withdrawal" selfcauseofdeathdescription="You have died of chem withdrawal." limbspecific="false" indicatorlimb="Head" showiconthreshold="700" showinhealthscannerthreshold="10" maxstrength="100">
 			<!-- No symptoms -->
-			<Effect minstrength="0" maxstrength="100"  />
+			<Effect minstrength="0" maxstrength="100" />
 			<icon texture="Content/UI/MainIconsAtlas.png" sourcerect="512,768,128,128" color="209,121,84,255" origin="0,0" />
 		</Affliction>
 	</Override>
@@ -307,7 +306,7 @@
 		<Affliction name="" identifier="drunk" description="" type="poison" causeofdeathdescription="Alcohol poisoning" selfcauseofdeathdescription="You have died of alcohol poisoning." limbspecific="false" indicatorlimb="Head" activationthreshold="20" showiconthreshold="50" showinhealthscannerthreshold="5" maxstrength="160">
 			<Effect minstrength="0" maxstrength="20" strengthchange="-0.1" />
 			<!-- Low level of drunkenness decreases speed slightly -->
-			<Effect minstrength="20" maxstrength="40" minscreendistort="0" maxscreendistort="0.1" minfacetint="255,0,0,0" maxfacetint="255,0,0,50"/>
+			<Effect minstrength="20" maxstrength="40" minscreendistort="0" maxscreendistort="0.1" minfacetint="255,0,0,0" maxfacetint="255,0,0,50" />
 			<icon texture="Content/UI/MainIconsAtlas.png" sourcerect="384,640,128,128" color="170,194,147,255" origin="0,0" />
 		</Affliction>
 	</Override>
