@@ -42,58 +42,10 @@
 		<icon texture="%ModDir%/Images/AfflictionIcons.png" sheetindex="6,2" sheetelementsize="128,128" origin="0,0" />
 	</Affliction>
 
-	<!-- Saline / increases blood pressure, even into potentially unwanted and harmful regions.
-  also causes acidosis.
-  scanned Drug -->
-	<Affliction name="" identifier="afsaline" description="" healableinmedicalclinic="false" targets="human" type="resistance" isbuff="true" limbspecific="false" showiconthreshold="200" showinhealthscannerthreshold="1" maxstrength="100">
-		<Effect minstrength="0" maxstrength="100" strengthchange="-0.25">
-			<StatusEffect target="Character">
-				<Conditional ishuman="true" />
-				<Affliction identifier="acidosis" amount="0.1" />
-				<Affliction identifier="bloodpressure" amount="3" />
-			</StatusEffect>
-		</Effect>
-		<icon texture="%ModDir%/Images/AfflictionIcons.png" sheetindex="3,3" sheetelementsize="128,128" origin="0,0" />
-	</Affliction>
-
-	<!-- Ringer's solution / increases blood pressure, even into potentially unwanted and harmful regions.
-  unlike saline, doesnt cause acidosis.
-  scanned Drug -->
-	<Affliction name="" identifier="afringerssolution" description="" healableinmedicalclinic="false" targets="human" type="resistance" isbuff="true" limbspecific="false" showiconthreshold="200" showinhealthscannerthreshold="1" maxstrength="100">
-		<Effect minstrength="0" maxstrength="100" strengthchange="-0.25">
-			<StatusEffect target="Character">
-				<Conditional ishuman="true" />
-				<Affliction identifier="bloodpressure" amount="3" />
-			</StatusEffect>
-		</Effect>
-		<icon texture="%ModDir%/Images/AfflictionIcons.png" sheetindex="3,3" sheetelementsize="128,128" origin="0,0" />
-	</Affliction>
-
 	<!-- Hemotransfusion shock
   Scanned Symptom -->
 	<Affliction name="" identifier="hemotransfusionshock" description="" healableinmedicalclinic="false" targets="human" type="gaze" isbuff="false" limbspecific="false" showinhealthscannerthreshold="10" showiconthreshold="300" maxstrength="100">
 		<Effect minstrength="0" maxstrength="100" strengthchange="-0.5" />
-		<PeriodicEffect mininterval="1" maxinterval="3">
-			<StatusEffect target="character" disabledeltatime="true" comparison="and" checkconditionalalways="false">
-				<Conditional hemotransfusionshock="lt 70" />
-				<Conditional hemotransfusionshock="gte 15" />
-				<Affliction identifier="bloodloss" amount="1" />
-				<Affliction identifier="organdamage" amount="0.25" />
-				<Affliction identifier="liverdamage" amount="0.25" />
-				<Affliction identifier="kidneydamage" amount="0.25" />
-				<Affliction identifier="heartdamage" amount="0.25" />
-				<Affliction identifier="lungdamage" amount="0.25" />
-			</StatusEffect>
-			<StatusEffect target="character" disabledeltatime="true" comparison="and" checkconditionalalways="false">
-				<Conditional hemotransfusionshock="lt 15" />
-				<Affliction identifier="bloodloss" amount="1" />
-				<Affliction identifier="organdamage" amount="0.5" />
-				<Affliction identifier="liverdamage" amount="0.5" />
-				<Affliction identifier="kidneydamage" amount="0.5" />
-				<Affliction identifier="heartdamage" amount="0.5" />
-				<Affliction identifier="lungdamage" amount="0.5" />
-			</StatusEffect>
-		</PeriodicEffect>
 		<icon texture="%ModDir%/Images/AfflictionIcons.png" sourcerect="256,0,128,128" color="68,157,198,255" origin="0,0" />
 	</Affliction>
 
@@ -127,71 +79,17 @@
 	<!-- /// Lung Stuff /// -->
 	<!-- Respiratory Arrest / Apnea
   Exposed Symptom -->
-	<Affliction name="Respiratory Arrest" identifier="respiratoryarrest" description="" healableinmedicalclinic="false" type="gaze" isbuff="false" targets="human" limbspecific="false" indicatorlimb="Torso" showiconthreshold="1" showinhealthscannerthreshold="100" maxstrength="2">
-		<icon texture="%ModDir%/Images/AfflictionIcons.png" sheetindex="3,0" sheetelementsize="128,128" origin="0,0" />
+	<Affliction name="Respiratory Arrest" identifier="respiratoryarrest" description="" healableinmedicalclinic="true" type="gaze" isbuff="false" targets="human" limbspecific="false" indicatorlimb="Torso" showiconthreshold="1" showinhealthscannerthreshold="100" maxstrength="2">
+		<icon texture="%ModDir%/Images/AfflictionIcons.png" sheetindex="2,3" sheetelementsize="160,160" origin="0.5,0.5" />
 	</Affliction>
-	<!-- Respiratory failure / Respiratory failure results from inadequate gas exchange by the respiratory system
-  Exposed Symptom -->
-	<Affliction name="Respiratory Failure" identifier="respiratoryfailure" description="" healableinmedicalclinic="false" type="gaze" isbuff="false" targets="human" limbspecific="false" indicatorlimb="Torso" showiconthreshold="1" showinhealthscannerthreshold="1" maxstrength="100">
-		<icon texture="%ModDir%/Images/AfflictionIcons.png" sheetindex="3,0" sheetelementsize="128,128" origin="0,0" />
-	</Affliction>
-	<!-- Pulmonary edema
-  Exposed Symptom -->
-	<Affliction name="" identifier="pulmonary_edema" description="" healableinmedicalclinic="false" type="gaze" isbuff="false" targets="human" limbspecific="false" indicatorlimb="Torso" showiconthreshold="1" showinhealthscannerthreshold="100" maxstrength="2">
-		<icon texture="%ModDir%/Images/AfflictionIcons.png" sheetindex="3,0" sheetelementsize="128,128" origin="0,0" />
-	</Affliction>
-	<!-- Hyperventilation
-  Exposed Symptom -->
-	<Affliction name="" identifier="hyperventilation" description="" healableinmedicalclinic="false" type="gaze" isbuff="false" targets="human" limbspecific="false" indicatorlimb="Torso" showiconthreshold="1" showinhealthscannerthreshold="200" maxstrength="2" iconcolors="255,90,0,255;255,90,0,255">
-		<icon texture="%ModDir%/Images/AfflictionIcons.png" sheetindex="4,0" sheetelementsize="128,128" origin="0,0" />
-	</Affliction>
-	<!-- Hypoventilation
-  Exposed Symptom -->
-	<Affliction name="" identifier="hypoventilation" description="" healableinmedicalclinic="false" type="gaze" isbuff="false" targets="human" limbspecific="false" indicatorlimb="Torso" showiconthreshold="1" showinhealthscannerthreshold="200" maxstrength="2" iconcolors="255,90,0,255;255,90,0,255">
-		<icon texture="%ModDir%/Images/AfflictionIcons.png" sheetindex="5,0" sheetelementsize="128,128" origin="0,0" />
-	</Affliction>
-	<!-- Dyspnea / Shortness of breath
-  Exposed Symptom -->
-	<Affliction name="" identifier="dyspnea" description="" healableinmedicalclinic="false" type="gaze" isbuff="false" targets="human" limbspecific="false" indicatorlimb="Torso" showinhealthscannerthreshold="100" showiconthreshold="1" maxstrength="2" iconcolors="255,90,0,255;255,90,0,255">
-		<icon texture="%ModDir%/Images/AfflictionIcons.png" sheetindex="6,0" sheetelementsize="128,128" origin="0,0" />
-	</Affliction>
-	<!-- Alkalosis
-  scanned Symptom -->
-	<Affliction name="" identifier="alkalosis" description="" healableinmedicalclinic="false" type="gaze" isbuff="false" targets="human" limbspecific="false" indicatorlimb="Torso" showiconthreshold="500" showinhealthscannerthreshold="500" maxstrength="100">
-		<icon texture="%ModDir%/Images/AfflictionIcons.png" sourcerect="0,128,128,128" color="0,255,0,255" origin="0,0" />
-	</Affliction>
-	<!-- Acidosis
-  scanned Symptom -->
-	<Affliction name="" identifier="acidosis" description="" healableinmedicalclinic="false" type="gaze" isbuff="false" targets="human" limbspecific="false" indicatorlimb="Torso" showiconthreshold="500" showinhealthscannerthreshold="500" maxstrength="100">
-		<icon texture="%ModDir%/Images/AfflictionIcons.png" sourcerect="0,128,128,128" color="0,255,0,255" origin="0,0" />
-	</Affliction>
-	<!-- Pneumothroax / collapsed lung / causes shortness of breath, tachycardia, hyperventilation, hypotension, chest pain
-  scanned Symptom -->
-	<Affliction name="" identifier="pneumothorax" description="" healableinmedicalclinic="false" targets="human" type="gaze" isbuff="false" causeofdeathdescription="" selfcauseofdeathdescription="" limbspecific="True" showiconthreshold="700" showinhealthscannerthreshold="10" maxstrength="100">
-		<icon texture="%ModDir%/Images/AfflictionIcons.png" sheetindex="2,4" sheetelementsize="128,128" origin="0,0" />
-	</Affliction>
-	<!-- Lung Damage
-  Scanned Symptom, causes shortness of breath, chest pain and cough, hypoxemia
-  leads to lung failure if severe enough -->
-	<Affliction name="" identifier="lungdamage" description="" healableinmedicalclinic="false" type="gaze" isbuff="false" targets="human" causeofdeathdescription="" selfcauseofdeathdescription="" limbspecific="false" indicatorlimb="Torso" maxstrength="100" showiconthreshold="500" showinhealthscannerthreshold="20" damageoverlayalpha="1">
-		<icon texture="Content/UI/MainIconsAtlas.png" sourcerect="128,384,128,128" color="195,136,60,255" origin="0,0" />
-	</Affliction>
-	<Affliction name="" identifier="lungfibrosis" description="" healableinmedicalclinic="false" type="gaze" isbuff="false" targets="human" causeofdeathdescription="" selfcauseofdeathdescription="" limbspecific="false" indicatorlimb="Torso" maxstrength="100" showiconthreshold="500" showinhealthscannerthreshold="20" damageoverlayalpha="1">
-		<icon texture="Content/UI/MainIconsAtlas.png" sourcerect="128,384,128,128" color="195,136,60,255" origin="0,0" />
+	<Affliction name="Pneumothorax" identifier="pneumothorax" description="" healableinmedicalclinic="true" targets="human" type="gaze" isbuff="false" causeofdeathdescription="" selfcauseofdeathdescription="" limbspecific="True" indicatorlimb="Torso" showiconthreshold="700" showinhealthscannerthreshold="10" maxstrength="100">
+		<icon texture="%ModDir%/Images/AfflictionIcons.png" sheetindex="3,3" sheetelementsize="160,160" origin="0.5,0.5" />
 	</Affliction>
 	<!-- Lungs removed
   Exposed Symptom, respiratory arrest -->
 	<Affliction name="" identifier="lungremoved" description="" healableinmedicalclinic="false" targets="human" type="gaze" isbuff="false" limbspecific="false" indicatorlimb="Torso" showiconthreshold="1" showinhealthscannerthreshold="1" causeofdeathdescription="Died of missing lungs" selfcauseofdeathdescription="Your lungs got removed." iconcolors="84,211,211,255;84,211,211,255" maxstrength="2">
 		<icon texture="%ModDir%/Images/AfflictionIcons.png" sheetindex="1,5" sheetelementsize="128,128" origin="0,0" />
 	</Affliction>
-
-	<!-- CPR
-  	Invisible Status -->
-	<Affliction name="CPR" identifier="cpr_buff" healableinmedicalclinic="false" isbuff="true" targets="human" limbspecific="true" indicatorlimb="Torso" activationthreshold="1" showiconthreshold="10" showinhealthscannerthreshold="10" maxstrength="2">
-		<Effect minstrength="0" maxstrength="2" strengthchange="-0.5" />
-		<icon texture="Content/UI/MainIconsAtlas.png" sourcerect="256,896,128,128" color="195,104,60,255" origin="0,0" />
-	</Affliction>
-
 
 	<!-- /// First-Aid Stuff /// -->
 	<!-- Bandaged
@@ -200,7 +98,6 @@
 		<Effect minstrength="0" maxstrength="100" />
 		<icon texture="%ModDir%/Images/AfflictionIcons.png" sheetindex="0,4" sheetelementsize="128,128" origin="0,0" />
 	</Affliction>
-
 
 	<!-- /// Immunity stuff /// -->
 	<!-- Immunity / your immune system. heals you passively if high enough
@@ -211,7 +108,6 @@
 
 	<!-- ///// SYMPTOMS ///// -->
 	<!-- as a rule of thumb, exposed symptoms arent visible on the scanner to reduce clutter -->
-
 	<!-- Cough / Exposed Symptom -->
 	<Affliction name="" identifier="sym_cough" description="" healableinmedicalclinic="false" type="gaze" isbuff="false" limbspecific="false" indicatorlimb="Head" showiconthreshold="1" showinhealthscannerthreshold="100" maxstrength="2" iconcolors="255,90,0,255;255,90,0,255">
 		<PeriodicEffect mininterval="12" maxinterval="26">
