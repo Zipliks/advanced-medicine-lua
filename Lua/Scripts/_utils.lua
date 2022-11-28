@@ -11,6 +11,13 @@ function Utils.is_game_paused()
 	return Game.Paused
 end
 
+local function isTable(array)
+	if(type(array) == "table") then
+		return true
+	end
+	return false
+end
+
 --[[ Utils.SetAffliction
 * character: Кто получит аффликшен (Barotrauma.Character)
 * affliction: Айди (String)
@@ -67,13 +74,8 @@ function Utils.SetAffCondition(target, id, strength, limb, condition, condition_
 	local prefab = {}
 	local new_strength = {}
 	-- take all ids as prefabs
-	if (type(id) == "table") then
-		for key, value in ipairs(id) do
-			table.insert(prefab, key, AfflictionPrefab.Prefabs[value])
-		end
-	else
-		prefab = AfflictionPrefab.Prefabs[id]
-	end
+	if (type(id) == "table") then id = Utils.AddToTable(id) end
+	prefab = AfflictionPrefab.Prefabs[id]
 	-- calc new strength values
 	if (type(strength) == "table") then
 		for key, value in ipairs(strength) do
@@ -145,8 +147,8 @@ function Utils.GetAfflictionLimb(character, affliction, limb)
 	return aff.Strength
 end
 
-function Utils.GetSkillLevel(character,skilltype)
-    return character.GetSkillLevel(Identifier(skilltype))
+function Utils.GetSkillLevel(character, skilltype)
+	return character.GetSkillLevel(Identifier(skilltype))
 end
 
 function Utils.ThrowError(text, level)
@@ -226,14 +228,11 @@ function Utils.DMClient(client, msg, color)
 end
 
 function Utils.CharacterToClient(character)
-
 	if not SERVER then return nil end
-
 	for _, client in pairs(Client.ClientList) do
 		if client.Character == character then
 			return client
 		end
 	end
-
 	return nil
 end
