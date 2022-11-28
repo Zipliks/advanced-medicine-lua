@@ -24,7 +24,7 @@
 	<Affliction name="Cardiac Tamponade" identifier="tamponade" description="" healableinmedicalclinic="false" targets="human" type="gaze" isbuff="false" causeofdeathdescription="" selfcauseofdeathdescription="" limbspecific="False" indicatorlimb="Torso" showinhealthscannerthreshold="10" showiconthreshold="300" maxstrength="100">
 		<icon texture="%ModDir%/Images/AfflictionIcons.png" sheetindex="2,2" sheetelementsize="160,160" origin="0,0" />
 	</Affliction>
-	<Affliction name="Hear Rate" identifier="heartrate" description="" healableinmedicalclinic="false" targets="human" type="gaze" isbuff="false" causeofdeathdescription="" selfcauseofdeathdescription="" limbspecific="False" indicatorlimb="Torso" showinhealthscannerthreshold="0" showiconthreshold="300" maxstrength="287"/>
+	<Affliction name="Heart Rate" identifier="heartrate" description="" healableinmedicalclinic="false" targets="human" type="gaze" isbuff="false" causeofdeathdescription="" selfcauseofdeathdescription="" limbspecific="False" indicatorlimb="Torso" showinhealthscannerthreshold="0" showiconthreshold="300" maxstrength="287"/>
 	<!-- !SECTION -->
 	<!-- /// Blood Stuff /// -->
 	<!-- Blood Pressure
