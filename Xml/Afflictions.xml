@@ -44,7 +44,7 @@
 
 	<!-- Hemotransfusion shock
   Scanned Symptom -->
-	<Affliction name="" identifier="hemotransfusionshock" description="" healableinmedicalclinic="false" targets="human" type="gaze" isbuff="false" limbspecific="false" showinhealthscannerthreshold="10" showiconthreshold="300" maxstrength="100">
+	<Affliction name="Hemotransfusion Shock" identifier="hemotransfusionshock" description="" healableinmedicalclinic="false" targets="human" type="gaze" isbuff="false" limbspecific="false" showinhealthscannerthreshold="10" showiconthreshold="300" maxstrength="100">
 		<Effect minstrength="0" maxstrength="100" strengthchange="-0.5" />
 		<icon texture="%ModDir%/Images/AfflictionIcons.png" sourcerect="256,0,128,128" color="68,157,198,255" origin="0,0" />
 	</Affliction>
@@ -106,32 +106,6 @@
 		<icon texture="Content/UI/MainIconsAtlas.png" sourcerect="256,896,128,128" color="10,193,114,255" origin="0,0" />
 	</Affliction>
 
-	<!-- ///// SYMPTOMS ///// -->
-	<!-- as a rule of thumb, exposed symptoms arent visible on the scanner to reduce clutter -->
-	<!-- Cough / Exposed Symptom -->
-	<Affliction name="Cough" identifier="sym_cough" description="" healableinmedicalclinic="false" type="gaze" isbuff="false" limbspecific="false" indicatorlimb="Head" showiconthreshold="1" showinhealthscannerthreshold="100" maxstrength="2" iconcolors="255,90,0,255;255,90,0,255">
-		<PeriodicEffect mininterval="12" maxinterval="26">
-			<StatusEffect target="Character" comparison="and">
-				<Conditional ishuman="true" />
-				<Conditional ismale="true" />
-				<Sound file="%ModDir%/Sound/Voice/male_cough1.ogg" selectionmode="Random" />
-				<Sound file="%ModDir%/Sound/Voice/male_cough2.ogg" />
-				<Sound file="%ModDir%/Sound/Voice/male_cough3.ogg" />
-				<Sound file="%ModDir%/Sound/Voice/male_cough4.ogg" />
-			</StatusEffect>
-			<StatusEffect target="Character" comparison="and">
-				<Conditional ishuman="true" />
-				<Conditional isfemale="true" />
-				<Sound file="%ModDir%/Sound/Voice/female_cough1.ogg" selectionmode="Random" />
-				<Sound file="%ModDir%/Sound/Voice/female_cough2.ogg" />
-				<Sound file="%ModDir%/Sound/Voice/female_cough3.ogg" />
-				<Sound file="%ModDir%/Sound/Voice/female_cough4.ogg" />
-				<Sound file="%ModDir%/Sound/Voice/female_cough5.ogg" />
-				<Sound file="%ModDir%/Sound/Voice/female_cough6.ogg" />
-			</StatusEffect>
-		</PeriodicEffect>
-		<icon texture="%ModDir%/Images/placeholder.png" sheetindex="1,1" sheetelementsize="160,160" origin="0,0" />
-	</Affliction>
 
 	<Affliction name="Foreign Body" identifier="foreignbody" description="" type="gaze" isbuff="false" limbspecific="True" maxstrength="10">
 		<icon texture="%ModDIr%/Images/placeholder.png" sheetindex="0,0" sheetelementsize="160,160" color="139,60,42,255" origin="0,0" />
