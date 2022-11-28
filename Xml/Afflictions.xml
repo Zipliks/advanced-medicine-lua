@@ -9,21 +9,22 @@
 	</Affliction>
 	<!-- !SECTION -->
 	<!-- SECTION: Heart -->
-	<Affliction name="Ventricular Fibrillation" identifier="ventricular_fib" description="" healableinmedicalclinic="false" limbspecific="false" indicatorlimb="Torso" showiconthreshold="1" showinhealthscannerthreshold="1" targets="human" type="gaze" isbuff="false" maxstrength="10">
+	<Affliction name="Ventricular Fibrillation" identifier="ventricular_fib" description="" healableinmedicalclinic="false" limbspecific="false" indicatorlimb="Torso" showiconthreshold="1" showinhealthscannerthreshold="1" targets="human" type="gaze" isbuff="false" maxstrength="100">
 		<icon texture="%ModDir%/Images/AfflictionIcons.png" sheetindex="0,1" sheetelementsize="160,160" origin="0,0" />
 	</Affliction>
-	<Affliction name="Asystole" identifier="asystole" description="" healableinmedicalclinic="false" limbspecific="false" indicatorlimb="Torso" showiconthreshold="1" showinhealthscannerthreshold="1" targets="human" type="gaze" isbuff="false" maxstrength="10">
+	<Affliction name="Asystole" identifier="asystole" description="" healableinmedicalclinic="false" limbspecific="false" indicatorlimb="Torso" showiconthreshold="1" showinhealthscannerthreshold="1" targets="human" type="gaze" isbuff="false" maxstrength="100">
 		<icon texture="%ModDir%/Images/AfflictionIcons.png" sheetindex="0,1" sheetelementsize="160,160" origin="0,0" />
 	</Affliction>
 	<Affliction name="Heart Damage" identifier="heartdamage" description="" healableinmedicalclinic="false" type="" isbuff="false" targets="human" limbspecific="false" indicatorlimb="Torso" maxstrength="100" showiconthreshold="500" showinhealthscannerthreshold="20" damageoverlayalpha="1">
 		<icon texture="Content/UI/MainIconsAtlas.png" sourcerect="128,384,128,128" color="195,136,60,255" origin="0,0" />
 	</Affliction>
-	<Affliction name="Heart Removed" identifier="heartremoved" description="The heart has been surgically removed" targets="human" healableinmedicalclinic="false" limbspecific="false" indicatorlimb="Torso" showiconthreshold="1" showinhealthscannerthreshold="1" type="gaze" isbuff="false" causeofdeathdescription="Died of missing a heart" selfcauseofdeathdescription="Your heart got removed." iconcolors="84,211,211,255;84,211,211,255" maxstrength="2">
+	<Affliction name="Heart Removed" identifier="heartremoved" description="The heart has been surgically removed" targets="human" healableinmedicalclinic="false" limbspecific="false" indicatorlimb="Torso" showiconthreshold="1" showinhealthscannerthreshold="1" type="gaze" isbuff="false" causeofdeathdescription="Died of missing a heart" selfcauseofdeathdescription="Your heart got removed." iconcolors="84,211,211,255;84,211,211,255" maxstrength="1">
 		<icon texture="%ModDir%/Images/AfflictionIcons.png" sheetindex="3,5" sheetelementsize="160,160" origin="0,0" />
 	</Affliction>
 	<Affliction name="Cardiac Tamponade" identifier="tamponade" description="" healableinmedicalclinic="false" targets="human" type="gaze" isbuff="false" causeofdeathdescription="" selfcauseofdeathdescription="" limbspecific="False" indicatorlimb="Torso" showinhealthscannerthreshold="10" showiconthreshold="300" maxstrength="100">
 		<icon texture="%ModDir%/Images/AfflictionIcons.png" sheetindex="2,2" sheetelementsize="160,160" origin="0,0" />
 	</Affliction>
+	<Affliction name="Hear Rate" identifier="heartrate" description="" healableinmedicalclinic="false" targets="human" type="gaze" isbuff="false" causeofdeathdescription="" selfcauseofdeathdescription="" limbspecific="False" indicatorlimb="Torso" showinhealthscannerthreshold="0" showiconthreshold="300" maxstrength="287"/>
 	<!-- !SECTION -->
 	<!-- /// Blood Stuff /// -->
 	<!-- Blood Pressure
@@ -102,7 +103,7 @@
 	<!-- /// Immunity stuff /// -->
 	<!-- Immunity / your immune system. heals you passively if high enough
   	Scanned Property -->
-	<Affliction name="Immunity" identifier="immunity" description="" healableinmedicalclinic="false" targets="human" type="gaze" isbuff="true" limbspecific="false" maxstrength="100" showinhealthscannerthreshold="300" showiconthreshold="300">
+	<Affliction name="Immunity" identifier="immunity" description="" healableinmedicalclinic="false" targets="human" type="gaze" isbuff="true" limbspecific="false" maxstrength="600" showinhealthscannerthreshold="300" showiconthreshold="300">
 		<icon texture="Content/UI/MainIconsAtlas.png" sourcerect="256,896,128,128" color="10,193,114,255" origin="0,0" />
 	</Affliction>
 
@@ -121,7 +122,7 @@
 	<Affliction name="Retracted Wound" identifier="retraction" description="" type="gaze" isbuff="false" limbspecific="True" maxstrength="1" showiconthreshold="1" showinhealthscannerthreshold="300">
 		<icon texture="%ModDIr%/Images/AfflictionIcons.png" sheetindex="2,2" sheetelementsize="160,160" color="139,60,42,255" origin="0,0" />
 	</Affliction>
-	<Affliction name="Stitches" identifier="stitches" description="" type="gaze" isbuff="true" limbspecific="true" maxstrength="100" showiconthreshold="1" showinhealthscannerthreshold="300">
+	<Affliction name="Stitches" identifier="stitches" description="" type="gaze" isbuff="true" limbspecific="true" maxstrength="1" showiconthreshold="1" showinhealthscannerthreshold="300">
 		<icon texture="%ModDIr%/Images/AfflictionIcons.png" sheetindex="3,2" sheetelementsize="160,160" color="139,60,42,255" origin="0,0" />
 	</Affliction>
 	<!-- //!SECTION -->
