@@ -11,6 +11,13 @@ function Utils.is_game_paused()
 	return Game.Paused
 end
 
+local function isTable(array)
+	if(type(array) == "table") then
+		return true
+	end
+	return false
+end
+
 --[[ Utils.SetAffliction
 * character: Кто получит аффликшен (Barotrauma.Character)
 * affliction: Айди (String)
@@ -64,24 +71,31 @@ end
 * source: usingCharacter. Кто применил	
 	]]
 function Utils.SetAffCondition(target, id, strength, limb, condition, condition_str, add, source)
-	local prefab = AfflictionPrefab.Prefabs[id]
-	
-	local limbtype = limb or LimbType.Torso
-	local is_add = add or false
-
-	local apply_str = strength * target.CharacterHealth.MaxVitality / 100
+	local prefab = {}
+	local new_strength = {}
+	-- take all ids as prefabs
+	if (type(id) == "table") then id = Utils.AddToTable(id) end
+	prefab = AfflictionPrefab.Prefabs[id]
+	-- calc new strength values
+	if (type(strength) == "table") then
+		for key, value in ipairs(strength) do
+			table.insert(new_strength, key, value * target.CharacterHealth.MaxVitality / 100)
+		end
+	else
+		table.insert(new_strength, strength * target.CharacterHealth.MaxVitality / 100)
+	end
 	local apply_aff = prefab.Instantiate(apply_str, source)
 	if (type(condition) == "table") then
 		local affliction_list = target.CharacterHealth.GetAllAfflictions()
 		for value in affliction_list do
 			local compare = value.Prefab
 			if (Utils.SearchTable(condition, compare.Identifier.Value)) then
-				print("Success")
 				target.CharacterHealth.ApplyAffliction(target.AnimController.GetLimb(limbtype), apply_aff, is_add)
 				return true
 			end
 		end
-	elseif (Utils.GetAfflictionLimb(target, condition, limbtype) == condition_str) then
+	end
+	if (Utils.GetAfflictionLimb(target, condition, limbtype) == condition_str) then
 		target.CharacterHealth.ApplyAffliction(target.AnimController.GetLimb(_llimbtypeimb), apply_aff, is_add)
 		return true
 	end
@@ -133,8 +147,8 @@ function Utils.GetAfflictionLimb(character, affliction, limb)
 	return aff.Strength
 end
 
-function Utils.GetSkillLevel(character,skilltype)
-    return character.GetSkillLevel(Identifier(skilltype))
+function Utils.GetSkillLevel(character, skilltype)
+	return character.GetSkillLevel(Identifier(skilltype))
 end
 
 function Utils.ThrowError(text, level)
@@ -214,14 +228,11 @@ function Utils.DMClient(client, msg, color)
 end
 
 function Utils.CharacterToClient(character)
-
 	if not SERVER then return nil end
-
 	for _, client in pairs(Client.ClientList) do
 		if client.Character == character then
 			return client
 		end
 	end
-
 	return nil
 end
