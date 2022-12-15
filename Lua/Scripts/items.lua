@@ -18,7 +18,7 @@ function Main.SetItemFunction(id, func)
 	print("INIT: Initialized ItemFunction for item \"" .. id .. "\"")
 end
 
-Hook.Add("item.applyTreatment", "AM.itemused", function(item, source, target, limb)
+Hook.Add("item.applyTreatment", "LM.itemused", function(item, source, target, limb)
 
 	local id = item.Prefab.Identifier.Value
 	local func = item_functions[id]

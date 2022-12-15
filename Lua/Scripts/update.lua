@@ -4,7 +4,6 @@
 local handlers_afflictions_body = {} -- Функции, привязанные к аффликшенам.
 local handlers_afflictions_limb = {} -- Функции, привязанные к аффликшенам на отдельных конечностях.
 local updaters_human = {} -- Функции, которые работают независимо от аффликшенов.
-
 local checkable_afflictions = {} -- Айди аффликшенов, которые будут проверятся апдейтером (для конечностей)
 
 
@@ -16,12 +15,11 @@ local checkable_afflictions = {} -- Айди аффликшенов, котор�
     * Аргументы func: Character    --]]
 function Main.AddHumanUpdater(name, func)
     if name == nil or type(func) ~= "function" then
-        Utils.ThrowError("Bad argument",1)
+        Utils.ThrowError("Bad argument", 1)
     end
     updaters_human[name] = func
-    print("INIT: Initialized HumanUpdater with name \""..name.."\"")
+    print("INIT: Initialized HumanUpdater with name \"" .. name .. "\"")
 end
-
 
 --[[ Main.AddAfflictionHandler
 "Добавит обработчик аффликшена: func будет исполнятся только при наличии аффликшена id"
@@ -31,17 +29,16 @@ end
     * Аргументы func: Character, Strength    --]]
 function Main.AddAfflictionHandler(id, name, func)
     if name == nil or id == nil or type(func) ~= "function" then
-        Utils.ThrowError("Bad argument",1)
+        Utils.ThrowError("Bad argument", 1)
     end
-    
+
     if handlers_afflictions_body[id] == nil then
         handlers_afflictions_body[id] = {}
     end
 
     handlers_afflictions_body[id][name] = func
-    print("INIT: Initialized AfflictionHandler \""..name.."\" on affliction \""..id.."\"")
+    print("INIT: Initialized AfflictionHandler \"" .. name .. "\" on affliction \"" .. id .. "\"")
 end
-
 
 --[[ Main.AddAfflictionLimbHandler
 "Добавит обработчик аффликшена на отдельных конечностях: func будет исполнятся только при наличии аффликшена id"
@@ -52,32 +49,29 @@ end
     P.S Strength - Сила аффликшена на конечности LimbType   --]]
 function Main.AddAfflictionLimbHandler(id, name, func)
     if name == nil or id == nil or type(func) ~= "function" then
-        Utils.ThrowError("Bad argument",1)
+        Utils.ThrowError("Bad argument", 1)
     end
-    
+
     if handlers_afflictions_limb[id] == nil then
         handlers_afflictions_limb[id] = {}
     end
 
     handlers_afflictions_limb[id][name] = func
-    table.insert(checkable_afflictions,id) -- Вставить проверяемый аффликшен в соответствующий массив
-    print("INIT: Initialized AfflictionLimbHandler \""..name.."\" on affliction \""..id.."\"")
+    table.insert(checkable_afflictions, id) -- Вставить проверяемый аффликшен в соответствующий массив
+    print("INIT: Initialized AfflictionLimbHandler \"" .. name .. "\" on affliction \"" .. id .. "\"")
 end
-
-
-
 
 -- Вот эта херня работает 60 раз за тик \
 -- Задаёт интервал для срабатывая update()
 Hook.Add("think", "AM.updater", function()
-    if(Utils.is_game_paused()) then
-         return
+    if (Utils.is_game_paused()) then
+        return
     end
 
-    UPDATE_COOLDOWN = UPDATE_COOLDOWN-1
-    if(UPDATE_COOLDOWN <= 0) then
+    UPDATE_COOLDOWN = UPDATE_COOLDOWN - 1
+    if (UPDATE_COOLDOWN <= 0) then
         UPDATE_COOLDOWN = UPDATE_INTERVAL
-        updater()
+        Updater()
     end
 end)
 
@@ -88,8 +82,6 @@ local function update_human(character)
     for _, func in pairs(updaters_human) do
         func(character)
     end
-
-
     -- Обработчики, привязанные к аффликшенам по всему телу
     local all_list = character.CharacterHealth.GetAllAfflictions()
     local merged_list = {}
@@ -101,17 +93,16 @@ local function update_human(character)
             --print("* (A) "..id.." = "..merged_list[id])
         end
     end
-    for id, strength in pairs(merged_list) do   
+
+    for id, strength in pairs(merged_list) do
         for _, func in pairs(handlers_afflictions_body[id]) do
             func(character, strength)
         end
     end
-
-
     -- Обработчики, привязанные к конечностям
     for _, limb in pairs(HUMAN_LIMBS) do
         for _, aff in pairs(checkable_afflictions) do
-            local strength = Utils.GetAfflictionLimb(character, aff, limb) 
+            local strength = Utils.GetAfflictionLimb(character, aff, limb)
             if strength ~= 0 then
                 --print("* ("..limb..") "..aff.." = "..strength)
                 for _, func in pairs(handlers_afflictions_limb[aff]) do
@@ -127,16 +118,15 @@ end
 -- * Срабатывает каждые 2 секунды
 -- * Проверяет каждого human
 -- * Задержка с разбросом в 0.5с. (500ms) чтобы сервер не умер
-function updater()
+function Updater()
     for _, character in pairs(Character.CharacterList) do
-        if(character.IsHuman and not character.IsDead) then
+        if (character.IsHuman and not character.IsDead) then
             Timer.Wait(function()
                 update_human(character)
             end, math.random() * 500)
         end
     end
 end
-
 
 -- ПРИМЕРЫ
 -- Раскомментируйте если вам надо, они сильно жрут консоль своими выводами

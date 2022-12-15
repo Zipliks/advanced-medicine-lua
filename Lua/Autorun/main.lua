@@ -7,8 +7,8 @@ print("honk!")
 
 if (Game.IsMultiplayer and SERVER) or (Game.IsSingleplayer) then
 	for _, value in pairs(IS_ENABLED) do
-		require("Scripts._const")
-		require("Scripts._utils")
+		require("Lua.Scripts.const")
+		require("Lua.Scripts.utils")
 
 		require("Scripts.damage")
 		require("Scripts.items")
