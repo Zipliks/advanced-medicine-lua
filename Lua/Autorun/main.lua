@@ -1,5 +1,4 @@
 ---@diagnostic disable: undefined-global
-PATH = table.pack(...)[1]
 IS_ENABLED = Game.GetEnabledContentPackages()
 Main = {}
 
