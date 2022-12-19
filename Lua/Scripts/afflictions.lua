@@ -1,7 +1,11 @@
 ---@diagnostic disable: undefined-global
 
 Main.AddAfflictionHandler("heartrate", "has_heartrate", function(character, strength)
-    
+    local id = {"bleeding", "organdamage"} --Set this
+    local strength = {30, 20} --Amount
+    local condition = {"bitewounds", "bloodloss"} --If this
+    local condition_str = {60, 10} --Is amount
+    Utils.SetAffCondition(character, id, strength, limb, condition, condition_str)
 end)
 -- //SECTION - Bite Wounds
 Main.AddAfflictionHandler("bitewounds", "has_bitewounds", function(character, strength)
