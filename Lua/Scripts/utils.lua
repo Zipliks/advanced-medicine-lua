@@ -119,7 +119,7 @@ end
 function Utils.GetAfflictionLimb(character, affliction, limb)
 	local aff = character.CharacterHealth.GetAffliction(affliction, character.AnimController.GetLimb(limb))
 	if aff == nil then
-		return 0
+		return nil
 	end
 	return aff.Strength
 end
