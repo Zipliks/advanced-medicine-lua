@@ -1,6 +1,8 @@
 ---@diagnostic disable: undefined-global
 
-
+Main.AddAfflictionHandler("heartrate", "has_heartrate", function(character, strength)
+    
+end)
 -- //SECTION - Bite Wounds
 Main.AddAfflictionHandler("bitewounds", "has_bitewounds", function(character, strength)
     Utils.SetAffliction(character, "bloodloss", 1*DELTA_TIME, nil, true)
