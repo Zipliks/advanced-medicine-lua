@@ -103,7 +103,7 @@ local function update_human(character)
     for _, limb in pairs(HUMAN_LIMBS) do
         for _, aff in pairs(checkable_afflictions) do
             local strength = Utils.GetAfflictionLimb(character, aff, limb)
-            if strength ~= 0 then
+            if not strength then
                 --print("* ("..limb..") "..aff.." = "..strength)
                 for _, func in pairs(handlers_afflictions_limb[aff]) do
                     func(character, strength)
