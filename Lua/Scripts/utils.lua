@@ -107,7 +107,7 @@ Utils.GetAffliction
 function Utils.GetAffliction(character, affliction)
 	local aff = character.CharacterHealth.GetAffliction(affliction)
 	if aff == nil then
-		return 0
+		return nil
 	end
 	return aff.Strength
 end
