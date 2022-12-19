@@ -71,35 +71,12 @@ end
 * source: usingCharacter. Кто применил	
 	]]
 function Utils.SetAffCondition(target, id, strength, limb, condition, condition_str, add, source)
-	local prefab = {}
-	local new_strength = {}
-	-- take all ids as prefabs
-	if (type(id) == "table") then id = Utils.AddToTable(id) end
-	prefab = AfflictionPrefab.Prefabs[id]
-	-- calc new strength values
-	if (type(strength) == "table") then
-		for key, value in ipairs(strength) do
-			table.insert(new_strength, key, value * target.CharacterHealth.MaxVitality / 100)
-		end
-	else
-		table.insert(new_strength, strength * target.CharacterHealth.MaxVitality / 100)
-	end
-	local apply_aff = prefab.Instantiate(apply_str, source)
-	if (type(condition) == "table") then
-		local affliction_list = target.CharacterHealth.GetAllAfflictions()
-		for value in affliction_list do
-			local compare = value.Prefab
-			if (Utils.SearchTable(condition, compare.Identifier.Value)) then
-				target.CharacterHealth.ApplyAffliction(target.AnimController.GetLimb(limbtype), apply_aff, is_add)
-				return true
-			end
+	local check = Utils.GetAffliction(target, condition[i])
+	for i=1, #id do
+		if check and check.Strength == condition_str[i] then
+			Utils.SetAffliction(id[i], strength[i])
 		end
 	end
-	if (Utils.GetAfflictionLimb(target, condition, limbtype) == condition_str) then
-		target.CharacterHealth.ApplyAffliction(target.AnimController.GetLimb(_llimbtypeimb), apply_aff, is_add)
-		return true
-	end
-	return false
 end
 
 function Utils.RemoveItem(item)
