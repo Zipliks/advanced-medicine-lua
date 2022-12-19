@@ -73,7 +73,7 @@ end
 function Utils.SetAffCondition(target, id, strength, limb, condition, condition_str, add, source)
 	local check = Utils.GetAffliction(target, condition[i])
 	for i=1, #id do
-		if check and check.Strength == condition_str[i] then
+		if check and check == condition_str[i] then
 			Utils.SetAffliction(id[i], strength[i])
 		end
 	end
